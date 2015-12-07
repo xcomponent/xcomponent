@@ -1,202 +1,114 @@
-                                 Apache License
-                           Version 2.0, January 2004
-                        http://www.apache.org/licenses/
 
-   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+                                                  
+                                                  XCOMPONENT COMMUNITY GENERAL TERMS OF USE 
 
-   1. Definitions.
+                                                  
+This Agreement is between Invivoo, located at 13 rue de l’Abreuvoir, 92400 Courbevoie (RCS Nanterre, B 513 962 415), France (hereinafter « Company ») and the natural person that has entered into this Agreement as licensee (hereinafter, the “Licensee”). Company provides different licensed modules (Application Control Center (hereinafter « AC2 »), Gallery, Studio) as described on www.xcomponent.com (hereinafter, the « Licensed Modules »)  and, when requested by Licensee, additional services relating to AC2 and Gallery Licensed Modules (hereinafter, the “Additional Services”), that are subject to these General Terms of Use and may also be subject to additional Specific Terms of Use (hereinafter and together, the « Agreement »), which are all together agreed by the Licensee when first accessing the XComponent platform (hereinafter, the “Platform”).
 
-      "License" shall mean the terms and conditions for use, reproduction,
-      and distribution as defined by Sections 1 through 9 of this document.
+1.	Grant of right and license by Company. 
 
-      "Licensor" shall mean the copyright owner or entity authorized by
-      the copyright owner that is granting the License.
+  Upon the acceptance of this Agreement and, when applicable, subject to payment of the applicable Fees by Licensee, Company grants Licensee, unless otherwise provided in this Agreement, only for the duration of the Term, a worldwide, non-exclusive, non-transferable right to i) use, via the Platform or on-site, the Licensed Modules and the applications made available via the different Licensed Modules on the Platform (hereinafter, the “Applications”), ii) test the Applications; iii) carry out developments on the basis of the Applications (hereinafter, the “Developments”). Licensee undertakes to use the Platform, the applicable Licensed Modules and the Applications in accordance with this Agreement, when applicable the relevant order(s) signed by Licensee (hereinafter, the “Order”) and the pertaining documentation.  
+  
+2.	Authorizations and restrictions
 
-      "Legal Entity" shall mean the union of the acting entity and all
-      other entities that control, are controlled by, or are under common
-      control with that entity. For the purposes of this definition,
-      "control" means (i) the power, direct or indirect, to cause the
-      direction or management of such entity, whether by contract or
-      otherwise, or (ii) ownership of fifty percent (50%) or more of the
-      outstanding shares, or (iii) beneficial ownership of such entity.
+  Licensee is authorized by Company to use the Platform, Licensed Modules and Applications in the conditions specified in section 1 of these General Terms of Use on an individual basis, in the framework of her/his personal and/or professional activities. .When Licensee uses the Platform, the Licensed Modules and the Applications in the framework of her/his professional activities, in no event is the Licensee authorized to exploit, distribute, perform or offer any types of service (including but not limited to consulting, training, assistance, outsourcing, service bureau) relating to the Developments, in whole or part, as standalone products or components, irrespective of the means of such exploitation, distribution or performance of services. However, Licensee using the Platform, the Licensed Modules and the Applications in the framework of her/his personal activities is authorized to exploit or distribute the Developments. . Licensee shall not reverse engineer, decompile, disassemble, or otherwise translate all or part of the Platform, the Licensed Modules and/or the Applications. 
+  
+3.	Fees and payments terms
 
-      "You" (or "Your") shall mean an individual or Legal Entity
-      exercising permissions granted by this License.
+  All of the licensed rights described in section 1 of these General Terms of Use are granted to Licensee free of charge by Company. However, if Licensee orders Additional Services, as described in the Specific Terms applicable to Additional Services, Licensee shall pay to Company the applicable fees indicated in the relevant Order.
+  
+4.	Intellectual Property Rights 
+  Licensee acknowledges that all intellectual property rights in the Platform, Licensed Modules and Applications belong and shall belong to the Company and Licensee shall have no rights in or to the Platform, Licensed Modules and Applications other than the right to use them in accordance with the terms of this Agreement. On each copy, enhancements or Developments made on the Licensed Modules and/or Applications by Licensee in accordance herewith, Licensee will reproduce or cause to be reproduced all copyright, trademark and other notices of the Company.  
+  
+5.	Intellectual Property indemnity
 
-      "Source" form shall mean the preferred form for making modifications,
-      including but not limited to software source code, documentation
-      source, and configuration files.
+Company undertakes at its own expense to defend Licensee or, at its option, to settle any claim or action brought against Licensee alleging that the use of the Platform and/or Licensed Modules and/or the Applications (or any part thereof) in accordance with the terms of this Agreement infringes any intellectual property rights of a third party and shall be responsible for any reasonable losses, damages, costs (including reasonable legal fees) and expenses incurred by or awarded against Licensee as a result or in connection with any such claim. For the avoidance of doubt, this shall not apply where the claim i) is attributable to acts breaching the terms of this Agreement and/or use of the Platform, Licensed Modules and/or Applications in combination with any hardware or software not supplied or specified by the Company, and/or ii) concerns Developments made by the Licensee including based on and/or using the Platform, the Licensed Modules and/or the Applications. If any third party makes a claim, or notifies its intention to make a claim against Licensee, Company’s above-mentioned obligations are applicable only if Licensee i) gives written notice of such claim to the Company as soon as reasonably practicable, ii) does not make any admission of liability, agreement or compromise in relation to the claim without the prior written consent of Company, and iii) gives Company at reasonable times access to its premises and/or to any relevant information or records so as to enable  Company to assess and/or defend the claim. In the event of a claim, Company may at its sole option and expense: i) procure for Licensee the right to continue possessing and using the Platform, the applicable Licensed Modules and Applications (or any part thereof) in accordance with the terms of this Agreement, ii) modify the Platform, the applicable Licensed Modules and/or Applications (or any part thereof) so that it/they cease to be infringing, or iii) replace the applicable Licensed Modules and/or Applications (or any part thereof) with non-infringing Licensed Modules and/or Applications.  
 
-      "Object" form shall mean any form resulting from mechanical
-      transformation or translation of a Source form, including but
-      not limited to compiled object code, generated documentation,
-      and conversions to other media types.
+6.	Confidentiality. 
 
-      "Work" shall mean the work of authorship, whether in Source or
-      Object form, made available under the License, as indicated by a
-      copyright notice that is included in or attached to the work
-      (an example is provided in the Appendix below).
+  Both parties shall keep confidential any non-public information, know-how and trade secret in any form, which is imparted verbally or in writing, by or on behalf of the other Party, that are designated as “Confidential” or that a reasonable person knows, or reasonably should understand to be, confidential, including but not limited to the Platform, the Licensed Modules and/or the Applications (or any part thereof) (hereinafter, the “Information”). The Information shall not include information, however marked “Confidential”, which (a) is already in a Party’s possession at the time of disclosure, as duly evidenced by such Party in writing, or (b) is now in or enters the public domain other than through unauthorised disclosure by the receiving Party and without a breach of this Agreement, or (c) is rightfully received by a Party from a third party who has a right to disclose such Information and without any obligation to keep it confidential, or (d) is independently developed by a Party without use or reference to any of the Confidential Information, (d) is required to be disclosed by law, in which case the Party required to make such disclosure shall give the other Party prompt written notice. Both Parties shall use the Information only for in connection with and for the sole purpose of carrying out its obligations and exercising its rights under this Agreement. Both Parties agree not to disclose the Information to a third party, provided that each party may disclose the Information to its employees, officers, representatives, advisers, agents or subcontractors who have a specific need to know the Information but only provided that they are bound by confidentiality obligations that are no less effective and binding than the provisions of this Agreement. Parties can exchange Information as long as this Agreement remains in full force and effect, until termination by one of the Parties of this Agreement. Confidentiality shall survive any termination of this Agreement, for whatever reason, for a period of five (5) years from receipt of each Information. 
+  
+7.	Warranty
 
-      "Derivative Works" shall mean any work, whether in Source or Object
-      form, that is based on (or derived from) the Work and for which the
-      editorial revisions, annotations, elaborations, or other modifications
-      represent, as a whole, an original work of authorship. For the purposes
-      of this License, Derivative Works shall not include works that remain
-      separable from, or merely link (or bind by name) to the interfaces of,
-      the Work and Derivative Works thereof.
+  Unless otherwise stated in this Agreement, the Platform, the Licensed Modules and Applications are provided on an “as is”, “as available” and with “all faults” basis. Company does not warrant that the functions of the Platform, Licensed Modules and/or Applications will meet Licensee’s requirements and/or will enable it to attain the objectives Licensee has set for itself, or that they will operate in the combination or environment selected for use by Licensee, or that the operation of the Platform, Licensed Modules and/or Applications will be uninterrupted or free of errors. 
+  
+8.	Limitation of liability
 
-      "Contribution" shall mean any work of authorship, including
-      the original version of the Work and any modifications or additions
-      to that Work or Derivative Works thereof, that is intentionally
-      submitted to Licensor for inclusion in the Work by the copyright owner
-      or by an individual or Legal Entity authorized to submit on behalf of
-      the copyright owner. For the purposes of this definition, "submitted"
-      means any form of electronic, verbal, or written communication sent
-      to the Licensor or its representatives, including but not limited to
-      communication on electronic mailing lists, source code control systems,
-      and issue tracking systems that are managed by, or on behalf of, the
-      Licensor for the purpose of discussing and improving the Work, but
-      excluding communication that is conspicuously marked or otherwise
-      designated in writing by the copyright owner as "Not a Contribution."
+  Unless otherwise stated in this Agreement, Company’s liability for direct damages shall not exceed EUR.  thousand (1.000). Licensee expressly waives, and Company shall not have any liability in respect of, any and all claims for indirect damages, including but not limited to claims for loss of profits, business interruption and loss of data. However, nothing in this Agreement shall limits or excludes the liability of either party for i) death or personal injury resulting from its negligence, or ii) any damages or liability incurred as a result of fraud or fraudulent misrepresentation., or iii) breach of Article 5 (Intellectual Property Indemnity) or 6 (Confidentiality) of these General Terms of Use. 
+  
+9.	Data processing and security
 
-      "Contributor" shall mean Licensor and any individual or Legal Entity
-      on behalf of whom a Contribution has been received by Licensor and
-      subsequently incorporated within the Work.
+  With respect to data that Licensee may transfer to Company or upload via the Platform, including personal data (hereinafter, the “Data”), Licensee shall be considered to act as “data controller’” and the Company as “subcontractor” within the meaning of such terms in the French Data Protection Act (la “Loi Informatique et Libertés” of January 6, 1978). Licensee retains sole ownership of the Data it may transmit to the Company, as well as the Data collected, generated, handled or modified by the Company or by using the SaaS Services, as defined in the section 1 of the Specific Terms of Use applicable to Ac2 and Gallery Licensed Modules. The Company has no right, title or interest in any Data. Accordingly, Company shall take necessary technical and organizational security measures in order to protect Data against accidental or unlawful destruction or accidental loss, alteration, unauthorized disclosure or access in accordance with the French Data Protection Act and the Licensee’s instructions. The Data will be hosted in a Member State of the European Union. In no event may any Data be hosted in a country which is not a Member of the European Union or of the European Economic Area without the prior written consent of the Licensee. For the Term of this Agreement, at Licensee’s request at any time and for any reason whatsoever, Company and any of its subcontractors must ensure that any Data Licensee has asked to be deleted is indeed fully deleted. At the end of this Agreement or in case of early termination thereof for any reason whatsoever, Company shall return and subsequently delete the Data.
+  
+10.	Term and termination
 
-   2. Grant of Copyright License. Subject to the terms and conditions of
-      this License, each Contributor hereby grants to You a perpetual,
-      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
-      copyright license to reproduce, prepare Derivative Works of,
-      publicly display, publicly perform, sublicense, and distribute the
-      Work and such Derivative Works in Source or Object form.
+  This Agreement shall become effective upon the date of its acceptance (hereinafter, the “Effective Date”) and shall continue thereafter as long as the Platform, Licensed Modules and/or Applications are used by Licensee and, when applicable, as long as an Order remains in force and effect (hereinafter, the “Term”). Should Licensee breache any of her/his obligations under this Agreement, Company reserves the right to immediately interrupt the access to the Platform, Licensed Modules and/or Applications and terminate the license granted to Licensee pursuant to the relevant sections of this Agreement hereof, , without prejudice to damages that could be claimed by Company. 
+11.	Governing law and jurisdiction
+This Agreement and any dispute or claim arising out of or in connection with it or its subject matter or formation, shall be governed by, and construed in accordance with, the law of France. The Parties irrevocably agree that the Courts of Paris shall have exclusive jurisdiction to settle any dispute or claim that arises out of or in connection with this Agreement or its subjects matter or formation.
+12.	Amendment, waiver and assignment
+ This Agreement may not be amended, modified or waived except by a signed written agreement. Neither Party shall have the right to assign or transfer this Agreement or any rights hereunder to any third party without the prior written consent of the Company.
 
-   3. Grant of Patent License. Subject to the terms and conditions of
-      this License, each Contributor hereby grants to You a perpetual,
-      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
-      (except as stated in this section) patent license to make, have made,
-      use, offer to sell, sell, import, and otherwise transfer the Work,
-      where such license applies only to those patent claims licensable
-      by such Contributor that are necessarily infringed by their
-      Contribution(s) alone or by combination of their Contribution(s)
-      with the Work to which such Contribution(s) was submitted. If You
-      institute patent litigation against any entity (including a
-      cross-claim or counterclaim in a lawsuit) alleging that the Work
-      or a Contribution incorporated within the Work constitutes direct
-      or contributory patent infringement, then any patent licenses
-      granted to You under this License for that Work shall terminate
-      as of the date such litigation is filed.
 
-   4. Redistribution. You may reproduce and distribute copies of the
-      Work or Derivative Works thereof in any medium, with or without
-      modifications, and in Source or Object form, provided that You
-      meet the following conditions:
+SPECIFIC TERMS OF USE APPLICABLE TO LICENSED MODULES AND RELATED APPLICATIONS
 
-      (a) You must give any other recipients of the Work or
-          Derivative Works a copy of this License; and
+  Licensee may order the Ac2 and the Gallery Licensed Modules with or without the Studio Licensed Modules. Each Module is subject, in addition to the above General Terms of Use, to the following additional Specific Terms of Use. 
+Studio Licensed Module 
 
-      (b) You must cause any modified files to carry prominent notices
-          stating that You changed the files; and
+1.	Upload of the Studio Licensed Module
 
-      (c) You must retain, in the Source form of any Derivative Works
-          that You distribute, all copyright, patent, trademark, and
-          attribution notices from the Source form of the Work,
-          excluding those notices that do not pertain to any part of
-          the Derivative Works; and
+  Company can provide Licensee, at her/his convenience, with the Studio Licensed Module and related Applications as a software to be uploaded on the Licensee’s environment.  
+  
+2.	Delivery
 
-      (d) If the Work includes a "NOTICE" text file as part of its
-          distribution, then any Derivative Works that You distribute must
-          include a readable copy of the attribution notices contained
-          within such NOTICE file, excluding those notices that do not
-          pertain to any part of the Derivative Works, in at least one
-          of the following places: within a NOTICE text file distributed
-          as part of the Derivative Works; within the Source form or
-          documentation, if provided along with the Derivative Works; or,
-          within a display generated by the Derivative Works, if and
-          wherever such third-party notices normally appear. The contents
-          of the NOTICE file are for informational purposes only and
-          do not modify the License. You may add Your own attribution
-          notices within Derivative Works that You distribute, alongside
-          or as an addendum to the NOTICE text from the Work, provided
-          that such additional attribution notices cannot be construed
-          as modifying the License.
+  Company will make available the Studio Licensed Module to Licensee electronically. Electronic delivery will be made by posting the Studio Licensed Module ordered by Licensee on Company’s Website with instructions for accessing and downloading the Studio Licensed Modules from such Website. Licensee is responsible for downloading the Studio Licensed Modules according to instructions provided by Company. 
+  
+3.	Authorizations
 
-      You may add Your own copyright statement to Your modifications and
-      may provide additional or different license terms and conditions
-      for use, reproduction, or distribution of Your modifications, or
-      for any such Derivative Works as a whole, provided Your use,
-      reproduction, and distribution of the Work otherwise complies with
-      the conditions stated in this License.
+  Company grants Licensee throughout the Term of this Agreement a worldwide, non-exclusive and non-transferable right to i) install, run and use the Studio Licensed Module and related Applications provided by Company, ii) make the necessary numbers of copies of the Studio Licensed Module and related Applications for installation and back-up, provided that this is for the use specified in this Agreement, iii) use, store and make copies of the associated documentation on existing or future media for archival purpose if necessary, provided that each copy of the documentation made by Licensee shall include the copyright and/or other proprietary notice contained in the documentation as delivered by Company.  All of the licensed rights mentioned above are i) applicable to any modifications, upgrades, enhancements or changes to the Studio Licensed Module that the Company may carry out, or have carried out by a third party, and ii) provided to Licensee, provided that it is for the use specified in this Agreement.
 
-   5. Submission of Contributions. Unless You explicitly state otherwise,
-      any Contribution intentionally submitted for inclusion in the Work
-      by You to the Licensor shall be under the terms and conditions of
-      this License, without any additional terms or conditions.
-      Notwithstanding the above, nothing herein shall supersede or modify
-      the terms of any separate license agreement you may have executed
-      with Licensor regarding such Contributions.
 
-   6. Trademarks. This License does not grant permission to use the trade
-      names, trademarks, service marks, or product names of the Licensor,
-      except as required for reasonable and customary use in describing the
-      origin of the Work and reproducing the content of the NOTICE file.
+AC2 and Gallery Licensed Modules
 
-   7. Disclaimer of Warranty. Unless required by applicable law or
-      agreed to in writing, Licensor provides the Work (and each
-      Contributor provides its Contributions) on an "AS IS" BASIS,
-      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
-      implied, including, without limitation, any warranties or conditions
-      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A
-      PARTICULAR PURPOSE. You are solely responsible for determining the
-      appropriateness of using or redistributing the Work and assume any
-      risks associated with Your exercise of permissions under this License.
+1.	SaaS Services 
 
-   8. Limitation of Liability. In no event and under no legal theory,
-      whether in tort (including negligence), contract, or otherwise,
-      unless required by applicable law (such as deliberate and grossly
-      negligent acts) or agreed to in writing, shall any Contributor be
-      liable to You for damages, including any direct, indirect, special,
-      incidental, or consequential damages of any character arising as a
-      result of this License or out of the use or inability to use the
-      Work (including but not limited to damages for loss of goodwill,
-      work stoppage, computer failure or malfunction, or any and all
-      other commercial damages or losses), even if such Contributor
-      has been advised of the possibility of such damages.
+  Company provide Licensee with Ac2 and/or Gallery Licensed Modules and related Applications in SaaS mode (hereinafter, the “SaaS Services”), accessible via the Platform. 
+  
+2.	Authorizations 
 
-   9. Accepting Warranty or Additional Liability. While redistributing
-      the Work or Derivative Works thereof, You may choose to offer,
-      and charge a fee for, acceptance of support, warranty, indemnity,
-      or other liability obligations and/or rights consistent with this
-      License. However, in accepting such obligations, You may act only
-      on Your own behalf and on Your sole responsibility, not on behalf
-      of any other Contributor, and only if You agree to indemnify,
-      defend, and hold each Contributor harmless for any liability
-      incurred by, or claims asserted against, such Contributor by reason
-      of your accepting any such warranty or additional liability.
+  Company grants Licensee throughout the Term of this Agreement a worldwide, non-exclusive and non-transferable right to i) access and use the Ac2 and the Gallery Licensed Modules and related Applications on the Platform by remote and distant access, with a User ID and Password provided by Company,  ii) install, run and use any software Company shall provide to access and use the Ac2 and Gallery Licensed Modules and related Applications on the Platform,  iii) use, store and make copies of the associated documentation on existing or future media for archival purpose if necessary, provided that each copy of the documentation made by Licensee shall include the copyright and/or other proprietary notice contained in the documentation as delivered by Company, and iv) copy and publish the Developments made by the Licensee on the Applications in the private and/or public sections of the Gallery on the Platform. All of the licensed rights mentioned above are i) applicable to any modifications, upgrades, enhancements or changes to the Ac2 and Gallery Modules that the Company may carry out, or have carried out by a third party, and ii) provided to Licensee, provided that it is for the use specified in this Agreement. 
+  
+3.	 Intellectual Property Rights
 
-   END OF TERMS AND CONDITIONS
+  Licensee grants Company with a worldwide, free of charge, exclusive and transferable right to access, use, copy, modify, adapt, distribute, in whole or in part, on any media, the Developments made by Licensee and published on the public section of the Platform, for any purposes, including commercial and marketing purposes, for the maximum duration of the applicable intellectual property rights.  
+  
+4.	 Intellectual Property Indemnity
 
-   APPENDIX: How to apply the Apache License to your work.
+  Licensee hereby represents and warrants that the Data provided to the Company and/or the Developments (or any part thereof) published by the Licensee on the private and/or public sections of the Gallery on the Platform do not infringe any third party intellectual property rights. Licensee shall indemnify and hold harmless at its own expense Company without limitation from fines, penalties, losses, costs, damages, injuries, claims, liabilities, settlements and expenses (including reasonable attorney’s fees) resulting from any claim or action brought against the Company alleging that the use of such Data and/or Developments (or any part thereof) in accordance with the terms of this Agreement infringes any intellectual property rights of a third party. Company shall have the sole control of the settlement or defense of infringement claim or action and Licensee undertakes to provide reasonable cooperation in the defense of the claim or action. Company will promptly notify Licensee if the Company is subject to any infringement claim or action.   
 
-      To apply the Apache License to your work, attach the following
-      boilerplate notice, with the fields enclosed by brackets "{}"
-      replaced with your own identifying information. (Don't include
-      the brackets!)  The text should be enclosed in the appropriate
-      comment syntax for the file format. We also recommend that a
-      file or class name and description of purpose be included on the
-      same "printed page" as the copyright notice for easier
-      identification within third-party archives.
 
-   Copyright {yyyy} {name of copyright owner}
+SPECIFIC TERMS APPLICABLE TO ADDITIONAL SERVICES 
 
-   Licensed under the Apache License, Version 2.0 (the "License");
-   you may not use this file except in compliance with the License.
-   You may obtain a copy of the License at
+  Licensee may order Additional Services to Company relating to AC2 and Gallery Licensed Modules, that are subject, in addition to the terms of this Agreement, to i) the following additional Specific Terms of Use applicable to Additional Services, and ii) the terms of the relevant Order(s). 
+  
+1.	Ordering process
 
-       http://www.apache.org/licenses/LICENSE-2.0
+  Additional Services that Company may provide to Licensee are described on the Website. Licensee can order Additional Services by contacting Company at the following address: order@xcomponent.com. 
+  
+2.	Service level agreement 
 
-   Unless required by applicable law or agreed to in writing, software
-   distributed under the License is distributed on an "AS IS" BASIS,
-   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   See the License for the specific language governing permissions and
-   limitations under the License.
+  When Licensee orders Additional Services relating to AC2 and/or Gallery, Company provides Licensee with Additional Services in the conditions set forth in the applicable Service Level Agreement provided to the Licensee by Company when Licensee signed the Order(s). 
+  
+3.	Fees and Payments terms
 
+  Licensee shall pay to Company the applicable fees indicated in the relevant Order (hereinafter, the “Fees”) that will be invoiced by Company on a monthly basis. Fees are exclusive of VAT. Unless otherwise stated in the relevant Order, Licensee shall pay each invoice, in full and in cleared funds, within thirty (30) days or receipt, to a bank account nominated in writing by the Company. If the Licensee fails to pay any amount due under this Agreement within such delay, Licensee shall pay, without prior notice, a late payment penalty equal to three times the legal interest rate and a fixed indemnity of EUR forty (40) for late payment will be invoiced to Licensee by Company. Company reserves the right to suspend the performance of these Additional Services in the event of non-payment of any portion of any amounts due and owing by Company. 
+  
+4.	Warranty
+
+  Company warrants that the Additional Services will be provided in accordance with i) standards typical in the industry, ii) the relevant service level agreement provided to Licensee and iii) their applicable documentation. 
+  
+5.	Liability
+
+  Company’s liability for direct damages caused to the Licensee related to the provision by Company of Additional Services shall not exceed the aggregate amount corresponding to fees actually paid by Licensee in the preceding twelve month period for the use of the Additional Services which caused the damages. 
+  
+6.	Termination of Additional Services
+  Should any of the Parties breaches any of their own obligations under these Specific Terms of Use for Additional Services, the other Party may terminate as of right this Agreement, effective thirty (30) days following formal notice from non-defaulting party, if said non-performance has not been cured within such period, without prejudice to damages that could be claimed by such non-defaulting Party.
