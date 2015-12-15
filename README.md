@@ -10,7 +10,7 @@ XComponent is a platform to create, monitor and share microservices.
 
 Use cases are pubished on GitHub ([Githttps://github.com/xcomponent](https://github.com/xcomponent)
 
-* Hello world ([https://github.com/xcomponent/xcomponent.hello](https://github.com/xcomponent/xcomponent.hello)): standard example to demonstrate the use of XComponent without knowing too much about microservices
+* Hello world ([https://github.com/xcomponent/xcomponent.helloworld](https://github.com/xcomponent/xcomponent.helloworld)): standard example to demonstrate the use of XComponent without knowing too much about microservices
 
 ## Test Plan
 
