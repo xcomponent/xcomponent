@@ -52,7 +52,7 @@ $ xcstudio.cmd
 
 ## "Authentication" project details
 
-Step by step tutorial: [Click here](documentation/README.md)
+More informations: [Click here](documentation/README.md)
 
 ## Questions?
 
