@@ -18,9 +18,9 @@ $ Tools\NuGet.exe install XComponent.Community -ConfigFile Tools\Nuget.Config -E
 
 ## Use Cases
 
-Use cases are published on GitHub ([Githttps://github.com/xcomponent](https://github.com/xcomponent)
+[Click here](Examples) to see XComponent examples.
 
-* **Hello World** ([https://github.com/xcomponent/xcomponent.helloworld](https://github.com/xcomponent/xcomponent.helloworld)): standard example to demonstrate the use of XComponent without knowing too much about microservices
+It is a good starting point to understand how the XComponent platform works.
 
 ## Test Plan
 
