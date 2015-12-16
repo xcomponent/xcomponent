@@ -74,7 +74,7 @@ This state machine receives login/password requests. If the login/password coupl
 
 
 ## Authentication Console Application
-The console application sends 2 events. The first one to test login failure and the second one to test login success.
+The console application sends 2 events: the first one to test login failure and the second one to test login success.
 
 ```cs		
 					 using(var myauthenticationserviceApi = new ApiWrapper<authenticationserviceApi>())
