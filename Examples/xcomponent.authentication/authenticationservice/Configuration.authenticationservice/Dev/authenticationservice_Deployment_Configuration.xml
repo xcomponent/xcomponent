@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<deployment environment="Dev" version="1.0" debugType="Debug" frameworkType="Framework4" visualstudioVersion="VS2015" defaultExportPath="" extractConfig="false" generateWebSocketApi="false" embedUserObjects="false" defaultDeployPath="" logsDirectory="$(installdir)" logsPattern="pid-${processid}-${component}-${shortdate}" runtimesLogs="True" logsLevel="TRACE" logsMaxSize="50">
+  <!--
+	THREADING IMPLEMENTATION VALUES = MAILBOX, DEDICATED - ->
+	<!- - THREADING TYPE VALUES = ONEBYSTM, ONEBYINSTANCE, INHERITFROMPARENT, INHERITFROMLINKING - ->
+	<!- - SERIALIZATION TYPE VALUES = BINARY, XML, JSON - ->
+	<!- - MESSAGE QUEUE VALUES = ONEBYSTM, ONEBYINSTANCE, INHERITFROMPARENT-->
+  <buildEvents>
+    <preBuildEvent></preBuildEvent>
+    <postBuildEvent></postBuildEvent>
+    <exportFolders>
+      <exportFolder websocket="False" rest="False" folder="AuthenticationConsoleApp\lib">
+        <apistomerge>
+          <clientAPI name="authenticationserviceApi" selected="True" />
+        </apistomerge>
+      </exportFolder>
+    </exportFolders>
+    <exportRuntimeFolders>
+      <exportRuntimeFolder folder="..\build\exportMicroservice" docker="False" />
+    </exportRuntimeFolders>
+  </buildEvents>
+  <components>
+    <component name="Authentication" alias="Authentication" deploymentTarget="authenticationService">
+      <communication name="rabbit" type="BUS" messageQueue="SEQUENTIAL">
+        <input>{topicType}.{version}.{runtime}.{component}.{std}</input>
+        <output>{topicType}.{version}.{runtime}.{component}.{std}</output>
+      </communication>
+      <threading impl="MAILBOX" type="SEQUENTIAL" />
+      <stateMachines>
+        <stateMachine id="1" poolSize="10000">
+          <communication name="rabbit" type="BUS" messageQueue="SEQUENTIAL">
+            <input>{topicType}.{version}.{runtime}.{component}.{std}</input>
+            <output>{topicType}.{version}.{runtime}.{component}.{std}</output>
+          </communication>
+          <threading impl="MAILBOX" type="INHERITFROMPARENT" />
+        </stateMachine>
+        <stateMachine id="2" poolSize="10000">
+          <communication name="rabbit" type="BUS" messageQueue="SEQUENTIAL">
+            <input>{topicType}.{version}.{runtime}.{component}.{std}</input>
+            <output>{topicType}.{version}.{runtime}.{component}.{std}</output>
+          </communication>
+          <threading impl="MAILBOX" type="INHERITFROMPARENT" />
+        </stateMachine>
+        <stateMachine id="5" poolSize="10000">
+          <communication name="rabbit" type="BUS" messageQueue="SEQUENTIAL">
+            <input>{topicType}.{version}.{runtime}.{component}.{std}</input>
+            <output>{topicType}.{version}.{runtime}.{component}.{std}</output>
+          </communication>
+          <threading impl="MAILBOX" type="INHERITFROMPARENT" />
+        </stateMachine>
+      </stateMachines>
+    </component>
+  </components>
+  <clientAPIs>
+    <clientAPI name="authenticationserviceApi" messageQueue="INHERITFROMPARENT">
+      <component name="Authentication" messageQueue="INHERITFROMPARENT">
+        <update from="1" state="-1" messageQueue="INHERITFROMPARENT" />
+        <update from="2" state="-1" messageQueue="INHERITFROMPARENT" />
+        <update from="5" state="12" messageQueue="INHERITFROMPARENT" />
+      </component>
+    </clientAPI>
+  </clientAPIs>
+  <configuration serialization="Json">
+    <communication>
+      <bus name="rabbit" host="localhost" port="5672" user="guest" password="guest" type="RABBIT_MQ" />
+    </communication>
+    <gateways>
+      <websocket name="" host="" port="0" bridgeport="0" type="Plain" user="" password="">
+        <loggedTopics><![CDATA[]]></loggedTopics>
+      </websocket>
+    </gateways>
+    <runtimes>
+      <runtime name="authenticationService" platform="AnyCpu" />
+    </runtimes>
+  </configuration>
+</deployment>

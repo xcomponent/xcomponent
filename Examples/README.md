@@ -19,3 +19,5 @@ Build results are in the *build* folder of each example.
 
 * **Hello World** ([Click here](xcomponent.helloworld)): 
 standard example to demonstrate the use of XComponent without knowing too much about microservices
+* **Simple Authentication service** ([Click here](xcomponent.authentication)): 
+example to demonstrate how to develop a simple authentication microservice with XComponent: you will learn how to store data in a component and how to use file resources

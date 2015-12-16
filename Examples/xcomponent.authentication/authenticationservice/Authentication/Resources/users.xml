@@ -1,0 +1,10 @@
+<users>
+	<user>
+		<name>John.Doe</name>
+		<password>password</password>
+	</user>
+	<user>
+		<name>Luc.Skywalker</name>
+		<password>force</password>
+	</user>
+</users>

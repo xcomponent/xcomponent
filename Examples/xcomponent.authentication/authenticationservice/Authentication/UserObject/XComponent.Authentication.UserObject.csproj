@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <ProjectGuid>{F2876AD5-3046-43AD-969E-78B99AA208AB}</ProjectGuid>
+    <RootNamespace>XComponent.Authentication.UserObject</RootNamespace>
+    <AssemblyName>XComponent.Authentication.UserObject</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(TargetDir)*.dll" "$(SolutionDir)generated\UserObject\"  /Y</PostBuildEvent>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="XComponent.Core">
+      <HintPath>..\UserReference\XComponent.Core.dll</HintPath>
+      <SpecificVersion>false</SpecificVersion>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ChangePassword.cs" />
+    <Compile Include="ChangePasswordError.cs" />
+    <Compile Include="ChangePwdSuccess.cs" />
+    <Compile Include="CheckLogin.cs" />
+    <Compile Include="CreateHeartBeat.cs" />
+    <Compile Include="InitializationError.cs" />
+    <Compile Include="InitializationSuccess.cs" />
+    <Compile Include="LoginError.cs" />
+    <Compile Include="LoginSuccess.cs" />
+    <Compile Include="Profiles.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="AuthenticationHeartBeat.cs" />
+    <Compile Include="UpdatePassword.cs" />
+  </ItemGroup>
+  <Import Condition="true" Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>
