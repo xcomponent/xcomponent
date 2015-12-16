@@ -155,7 +155,7 @@ The console application sends 2 events: the first one to test login failure and 
 
 * Run your console application. You should end up with the following output: 
 
-![consoleapp output](images/consoleoutput.png)
+![consoleapp output](images/consoleoutput.PNG)
 
 ## Questions?
 
