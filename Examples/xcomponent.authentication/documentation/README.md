@@ -159,4 +159,4 @@ The console application sends 2 events: the first one to test login failure and 
 
 ## Questions?
 
-If you have any questions about this sample, please [create a Github issue for us](https://github.com/xcomponent/issues)!
+If you have any questions about this sample, please [create a Github issue for us](https://github.com/xcomponent/xcomponent/issues)!
