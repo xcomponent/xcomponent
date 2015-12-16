@@ -22,7 +22,7 @@ On this method, you can initialize your component. On this project, we load a fi
 > Note: To add a file resource in XComponent, you can use the following screen: 
 > ![Authentication component](images/fileresource.png)
 
-XComponent provides a useful Api to load, files resources of a component. This Api is: `ComponentManager.Resources`.
+XComponent provides a useful Api to load files resources of a component. This Api is: `ComponentManager.Resources`.
 
 The code below is the implementation of the `OnComponentInitialized` method:
 ```cs
