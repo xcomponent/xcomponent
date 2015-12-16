@@ -77,9 +77,9 @@ This state machine receives login/password requests. If the login/password coupl
 The console application sends 2 events: the first one to test login failure and the second one to test login success.
 
 ```cs		
-					 using(var myauthenticationserviceApi = new ApiWrapper<authenticationserviceApi>())
+			 using(var myauthenticationserviceApi = new ApiWrapper<authenticationserviceApi>())
 			 {
-				ClientApiOptions clientApiOptions = new ClientApiOptions(); //fill this object to override default xcApi parameters
+				ClientApiOptions clientApiOptions = new ClientApiOptions(); 
  
 				if(myauthenticationserviceApi.Init(myauthenticationserviceApi.Api.DefaultXcApiFileName, clientApiOptions))
 				{
