@@ -1,4 +1,4 @@
-# XComponent Hello World
+# XComponent Authentication
 
 This project is a simple `authentication` microservice developped with [XComponent](http://www.xcomponent.com).
 
