@@ -194,3 +194,14 @@ FakesAssemblies/
 
 # Visual Studio 6 workspace options file
 *.opt
+
+# Avoid committing binaries
+*.dll
+*.exe
+generated/
+TestResults.xml
+build/
+xcstudio.cmd
+.fake/
+lib/
+index.txt
