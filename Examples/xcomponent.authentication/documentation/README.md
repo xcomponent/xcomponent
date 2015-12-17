@@ -116,7 +116,7 @@ The console application sends 2 events: the first one to test login failure and 
                             var checkLogin = new CheckLogin()
                             {
                                 RequestId = requestId1,
-                                Login = "Luc.Skywalker",
+                                Login = "Luke.Skywalker",
                                 Password = "noforce"
                             };
                             Console.WriteLine("Authenticate as {0} with password: {1}", checkLogin.Login, checkLogin.Password);
@@ -126,7 +126,7 @@ The console application sends 2 events: the first one to test login failure and 
                             checkLogin = new CheckLogin()
                             {
                                 RequestId = requestId1,
-                                Login = "Luc.Skywalker",
+                                Login = "Luke.Skywalker",
                                 Password = "force"
                             };
 
