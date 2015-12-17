@@ -206,7 +206,7 @@ check the triggered method CreateOrder (OrderInput).
  * Fix the problem described above with the public member of CreationFacade not being initialized 
  properly
   
-     * Go to the Order component view and check the triggered method for PublishOrderCreation in the state 
+ * Go to the Order component view and check the triggered method for PublishOrderCreation in the state 
    CreationFacade.Created. 
      * Navigate to the method `CreationFacadeTriggeredMethod.ExecuteOn_Created_Through_PublishOrderCreation`, 
      uncomment the clone method call in its body and save the changes:
