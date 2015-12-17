@@ -254,17 +254,15 @@ check the triggered method CreateOrder (OrderInput).
     ![enable specific rule on execute image](images/enable_specific_rule_execute.jpg)
 
       * Implement specific rules for the Execute and PartiallyExecute transitions
-        - For Execute transitions use    
+        * For Execute transitions use    
 ```cs 
             return executionInput.Quantity == order.RemainingQuantity;
 ```
-        - For PartiallyExecute transitions use
+        * For PartiallyExecute transitions use
 ```cs 
 	       return executionInput.Quantity != order.RemainingQuantity;
 ```
-
-
-        - Check the triggered method Execute in the Executed state and PartiallyExecute in 
+        * Check the triggered method Execute in the Executed state and PartiallyExecute in 
       the PartiallyExecuted state. Rebuild the component. Use the following code for these two 
       methods: 
 ```cs 
