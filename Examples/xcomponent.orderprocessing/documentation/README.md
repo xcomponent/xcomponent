@@ -182,7 +182,7 @@ check the triggered method CreateOrder (OrderInput).
 
  * Start XC Spy
  
-   ![Build composition image](images/run_xcspy.jpg)
+   ![Build composition image](images/run_xcspy.JPG)
    
     Under the OrderProcessingApi tab, open the Order component and 
  use the Get Snapshots to obtain up to date information on the entry point instance
