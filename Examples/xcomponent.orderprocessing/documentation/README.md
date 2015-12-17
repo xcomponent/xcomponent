@@ -258,10 +258,11 @@ check the triggered method CreateOrder (OrderInput).
 ```cs 
             return executionInput.Quantity == order.RemainingQuantity;
 ```
-       - For PartiallyExecute transitions use
+        - For PartiallyExecute transitions use
 ```cs 
 	       return executionInput.Quantity != order.RemainingQuantity;
 ```
+
 
         - Check the triggered method Execute in the Executed state and PartiallyExecute in 
       the PartiallyExecuted state. Rebuild the component. Use the following code for these two 
