@@ -3,11 +3,11 @@
 ## Contents
 
 * [Overview](#overview)
-* XComponent philosophy
- * Microservice definition
- * Component definition
- * State machine definition
- * State definition
+* [XComponent philosophy](#xcomponent-philosophy)
+ * [Microservice definition](#microservice-definition)
+ * [Component definition](#component-definition)
+ * [State machine definition](#state-machine-definition)
+ * [State definition](#state-definition)
 
 ## Overview
 
