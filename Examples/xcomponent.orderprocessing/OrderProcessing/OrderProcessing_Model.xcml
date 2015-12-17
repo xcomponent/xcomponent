@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinkingSchema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" isClientApiShown="false" isLinkingShown="false" name="OrderProcessing">
+  <LinkedComponents>
+    <LinkedComponent name="Order">
+      <XCToXCLinks>
+        <XCToXCLink stateMachineIdFrom="3" stateIdFrom="4" linkFrom="Order" linkTo="Trade" stateMachineIdTo="1" stateIdTo="2" transversalLink="false" />
+        <XCToXCLink stateMachineIdFrom="4" stateIdFrom="5" linkFrom="Order" linkTo="Trade" stateMachineIdTo="2" stateIdTo="3" transversalLink="false" />
+        <XCToXCLink stateMachineIdFrom="5" stateIdFrom="6" linkFrom="Order" linkTo="Trade" stateMachineIdTo="2" stateIdTo="3" transversalLink="false" />
+      </XCToXCLinks>
+      <XCToApiLinks>
+        <XCToApiLink stateMachineIdFrom="2" stateIdFrom="-1" linkFrom="Order" linkTo="OrderProcessingApi" />
+        <XCToApiLink stateMachineIdFrom="3" stateIdFrom="-1" linkFrom="Order" linkTo="OrderProcessingApi" />
+        <XCToApiLink stateMachineIdFrom="4" stateIdFrom="-1" linkFrom="Order" linkTo="OrderProcessingApi" />
+        <XCToApiLink stateMachineIdFrom="5" stateIdFrom="-1" linkFrom="Order" linkTo="OrderProcessingApi" />
+      </XCToApiLinks>
+    </LinkedComponent>
+    <LinkedComponent name="Trade">
+      <XCToXCLinks>
+        <XCToXCLink stateMachineIdFrom="3" stateIdFrom="5" linkFrom="Trade" linkTo="Trade" stateMachineIdTo="1" stateIdTo="2" transversalLink="true" />
+      </XCToXCLinks>
+      <XCToApiLinks>
+        <XCToApiLink stateMachineIdFrom="1" stateIdFrom="-1" linkFrom="Trade" linkTo="OrderProcessingApi" />
+        <XCToApiLink stateMachineIdFrom="2" stateIdFrom="-1" linkFrom="Trade" linkTo="OrderProcessingApi" />
+      </XCToApiLinks>
+    </LinkedComponent>
+  </LinkedComponents>
+  <LinkedClientApis>
+    <LinkedClientApi name="OrderProcessingApi">
+      <ApiToXCLinks>
+        <ApiToXCLink linkFrom="OrderProcessingApi" linkTo="Order" stateMachineIdTo="1" stateIdTo="2">
+          <AllowedTransitions>
+            <LinkingSimpleTransition id="2" stateMachineIdTo="1" stateIdTo="2" />
+          </AllowedTransitions>
+          <AllowedEvents>
+            <LinkingEvent eventTypeName="XComponent.Order.UserObject.OrderInput" stateMachineIdTo="1" stateIdTo="2" />
+          </AllowedEvents>
+          <NotAllowedTransitions />
+          <NotAllowedEvents />
+        </ApiToXCLink>
+        <ApiToXCLink linkFrom="OrderProcessingApi" linkTo="Order" stateMachineIdTo="2" stateIdTo="-1">
+          <AllowedTransitions>
+            <LinkingSimpleTransition id="3" stateMachineIdTo="2" stateIdTo="3" />
+            <LinkingSimpleTransition id="5" stateMachineIdTo="2" stateIdTo="3" />
+            <LinkingSimpleTransition id="6" stateMachineIdTo="2" stateIdTo="3" />
+            <LinkingSimpleTransition id="7" stateMachineIdTo="2" stateIdTo="8" />
+            <LinkingSimpleTransition id="8" stateMachineIdTo="2" stateIdTo="8" />
+            <LinkingSimpleTransition id="9" stateMachineIdTo="2" stateIdTo="7" />
+            <LinkingSimpleTransition id="12" stateMachineIdTo="2" stateIdTo="8" />
+          </AllowedTransitions>
+          <AllowedEvents>
+            <LinkingEvent eventTypeName="XComponent.Order.UserObject.ExecutionInput" stateMachineIdTo="2" stateIdTo="3" />
+            <LinkingEvent eventTypeName="XComponent.Order.UserObject.OrderCreation" stateMachineIdTo="2" stateIdTo="3" />
+            <LinkingEvent eventTypeName="XComponent.Order.UserObject.OrderExecution" stateMachineIdTo="2" stateIdTo="7" />
+          </AllowedEvents>
+          <NotAllowedTransitions />
+          <NotAllowedEvents />
+        </ApiToXCLink>
+      </ApiToXCLinks>
+    </LinkedClientApi>
+  </LinkedClientApis>
+</LinkingSchema>
