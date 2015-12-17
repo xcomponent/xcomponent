@@ -216,14 +216,16 @@ check the triggered method CreateOrder (OrderInput).
 			XComponent.Common.Clone.XCClone.Clone(orderCreation_TriggeringEvent,orderCreation_PublicMember);
 		}
 ```
-     * Go back to XCStudio, rebuild the linking and restart the player. Redo the same test and note that the instance created for CreationFacade has now a public member with the correct values for its properties
+     
+     
+ * Go back to XCStudio, rebuild the linking and restart the player. Redo the same test and note that the instance created for CreationFacade has now a public member with the correct values for its properties
  
  
  * Add implementation for order execution scenarios
  > Note: For the next steps there will be less detailed guidance, but with the most of the remaining implementation is 
  similar to what has been done so far in the case of order creation requests.
  
-      * Add two new state machines ExecutionFacade with one state Filled and PartialExecutionFacade with one state PartiallyFilled, both with a public member of type OrderExecution. At this point your component should have the following structure:
+     * Add two new state machines ExecutionFacade with one state Filled and PartialExecutionFacade with one state PartiallyFilled, both with a public member of type OrderExecution. At this point your component should have the following structure:
     ![add execution facade stms image](images/add_execution_facade_stms.jpg)
 
       * Link outputs of the two new façade state machines to the API. The composition should be as bellow:
@@ -249,7 +251,7 @@ check the triggered method CreateOrder (OrderInput).
 
     This is because each of the states Pending and PartiallyExecuted have 2 transitions with the same triggering event and the same matching rule. In order to distinguish them we have to add a specific triggering rule for these transitions, while maintaining the initial matching on the order id. Enable the user specific rules for all the Execute and PartiallyExecute transitions, rebuild the component (note that the errors are no longer raised) and then edit their code. 
 
-    ![enable specific rule on execute image](images/enable_specific_rule_execute.JPG)
+    ![enable specific rule on execute image](images/enable_specific_rule_execute.jpg)
 
       * Implement specific rules for the Execute and PartiallyExecute transitions
         - For Execute transitions use    
