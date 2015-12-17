@@ -216,7 +216,6 @@ check the triggered method CreateOrder (OrderInput).
 			XComponent.Common.Clone.XCClone.Clone(orderCreation_TriggeringEvent,orderCreation_PublicMember);
 		}
 ```
-
      * Go back to XCStudio, rebuild the linking and restart the player. Redo the same test and note that the instance created for CreationFacade has now a public member with the correct values for its properties
  
  
