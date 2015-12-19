@@ -22,7 +22,7 @@ On this method, you can initialize your component. On this project, we load a fi
 > Note: To add a file resource in XComponent, you can use the following screen: 
 > ![Authentication component](images/fileresource.png)
 
-XComponent provides a useful Api to load, files resources of a component. This Api is: `ComponentManager.Resources`.
+XComponent provides a useful Api to load files resources of a component. This Api is: `ComponentManager.Resources`.
 
 The code below is the implementation of the `OnComponentInitialized` method:
 ```cs
@@ -74,12 +74,12 @@ This state machine receives login/password requests. If the login/password coupl
 
 
 ## Authentication Console Application
-The console application sends 2 events. The first one to test login failure and the second one to test login success.
+The console application sends 2 events: the first one to test login failure and the second one to test login success.
 
 ```cs		
-					 using(var myauthenticationserviceApi = new ApiWrapper<authenticationserviceApi>())
+			 using(var myauthenticationserviceApi = new ApiWrapper<authenticationserviceApi>())
 			 {
-				ClientApiOptions clientApiOptions = new ClientApiOptions(); //fill this object to override default xcApi parameters
+				ClientApiOptions clientApiOptions = new ClientApiOptions(); 
  
 				if(myauthenticationserviceApi.Init(myauthenticationserviceApi.Api.DefaultXcApiFileName, clientApiOptions))
 				{
@@ -116,7 +116,7 @@ The console application sends 2 events. The first one to test login failure and 
                             var checkLogin = new CheckLogin()
                             {
                                 RequestId = requestId1,
-                                Login = "Luc.Skywalker",
+                                Login = "Luke.Skywalker",
                                 Password = "noforce"
                             };
                             Console.WriteLine("Authenticate as {0} with password: {1}", checkLogin.Login, checkLogin.Password);
@@ -126,7 +126,7 @@ The console application sends 2 events. The first one to test login failure and 
                             checkLogin = new CheckLogin()
                             {
                                 RequestId = requestId1,
-                                Login = "Luc.Skywalker",
+                                Login = "Luke.Skywalker",
                                 Password = "force"
                             };
 
@@ -155,8 +155,8 @@ The console application sends 2 events. The first one to test login failure and 
 
 * Run your console application. You should end up with the following output: 
 
-![consoleapp output](images/consoleoutput.png)
+![consoleapp output](images/consoleoutput.PNG)
 
 ## Questions?
 
-If you have any questions about this sample, please [create a Github issue for us](https://github.com/xcomponent/issues)!
+If you have any questions about this sample, please [create a Github issue for us](https://github.com/xcomponent/xcomponent/issues)!

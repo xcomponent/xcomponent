@@ -39,6 +39,20 @@ Target "Authentication" (fun _ ->
     if result <> 0 then failwithf "xcomponent.authentication build returned with a non-zero exit code"    
 )
   
+Target "OrderProcessing" (fun _ ->    
+    trace ("Building XComponent.OrderProcessing")
+    let timeoutExec = 5.0
+
+    let result = ExecProcess (fun info ->
+                    info.FileName <- "build.cmd"
+                    info.WorkingDirectory <- Path.Combine(__SOURCE_DIRECTORY__, "xcomponent.orderprocessing") 
+                    info.Arguments <- "All"
+                    ) 
+                    (TimeSpan.FromMinutes timeoutExec)
+  
+    if result <> 0 then failwithf "xcomponent.orderprocessing build returned with a non-zero exit code"    
+)
+
 // Default target
 Target "Help" (fun _ ->
     List.iter printfn [
@@ -53,7 +67,12 @@ Target "All" DoNothing
 
 // Dependencies
 "HelloWorld"  
+  ==> "All"
+
 "Authentication"    
+  ==> "All"
+
+"OrderProcessing"
   ==> "All"
 
 // start build

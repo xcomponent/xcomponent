@@ -1,0 +1,403 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<scxml version="1.0" name="Order">
+  <datamodel>
+    <data id="Version" expr="55" />
+    <data id="NameSeparator" expr=":" />
+    <data id="logKeys">
+      <logKeys />
+    </data>
+  </datamodel>
+  <state id="OrderProcessor">
+    <datamodel>
+      <data id="Id" expr="1" />
+    </datamodel>
+    <state id="OrderProcessor:EntryPoint">
+      <datamodel>
+        <data id="Comment" expr="" />
+        <data id="DisposeStateMachineInstance" expr="False" />
+        <data id="Id" expr="1" />
+      </datamodel>
+      <transition Event="XComponent.Common.Event.DefaultEvent" target="OrderProcessor:Up">
+        <datamodel>
+          <data id="Type" expr="TimeoutTransition" />
+          <data id="ExecutionDelay" expr="0" />
+          <data id="Id" expr="1" />
+          <data id="Name" expr="Init" />
+          <data id="Event">
+            <Event>
+              <Comment>
+              </Comment>
+              <EventTypeName>XComponent.Common.Event.DefaultEvent</EventTypeName>
+              <TimeToLive>0</TimeToLive>
+              <TriggeringRules />
+            </Event>
+          </data>
+        </datamodel>
+      </transition>
+    </state>
+    <state id="OrderProcessor:Up">
+      <datamodel>
+        <data id="Comment" expr="" />
+        <data id="DisposeStateMachineInstance" expr="False" />
+        <data id="Id" expr="2" />
+      </datamodel>
+      <transition Event="XComponent.Order.UserObject.OrderInput" target="Order:Pending">
+        <datamodel>
+          <data id="Type" expr="XTransition" />
+          <data id="Id" expr="2" />
+          <data id="Name" expr="CreateOrder" />
+          <data id="Event">
+            <Event>
+              <Comment>
+              </Comment>
+              <EventTypeName>XComponent.Order.UserObject.OrderInput</EventTypeName>
+              <TimeToLive>0</TimeToLive>
+              <TriggeringRules />
+            </Event>
+          </data>
+        </datamodel>
+        <onexit>
+          <invoke Type="ExecuteOn_Pending_Through_CreateOrder" id="1">
+            <content>
+              <Comment>
+              </Comment>
+              <Name>ExecuteOn_Pending_Through_CreateOrder</Name>
+              <Id>1</Id>
+              <CustomParameters xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                <PublicMember>XComponent.Order.UserObject.Order</PublicMember>
+                <EventsName>XComponent.Order.UserObject.OrderInput</EventsName>
+              </CustomParameters>
+            </content>
+          </invoke>
+        </onexit>
+      </transition>
+    </state>
+  </state>
+  <state id="Order">
+    <datamodel>
+      <data id="PublicMember" expr="XComponent.Order.UserObject.Order" />
+      <data id="Id" expr="2" />
+    </datamodel>
+    <state id="Order:Pending">
+      <datamodel>
+        <data id="Comment" expr="" />
+        <data id="DisposeStateMachineInstance" expr="False" />
+        <data id="Id" expr="3" />
+        <data id="TriggerableTransition">
+          <TriggerableTransition target="3" id="4" allTransitions="True">
+            <AllTransitions>true</AllTransitions>
+            <Id>4</Id>
+            <InnerTransition id="2" />
+          </TriggerableTransition>
+        </data>
+      </datamodel>
+      <transition Event="XComponent.Order.UserObject.OrderCreation" target="CreationFacade:Created">
+        <datamodel>
+          <data id="Type" expr="XTransition" />
+          <data id="Id" expr="3" />
+          <data id="Name" expr="PublishOrderCreation" />
+          <data id="Event">
+            <Event>
+              <Comment>
+              </Comment>
+              <EventTypeName>XComponent.Order.UserObject.OrderCreation</EventTypeName>
+              <TimeToLive>0</TimeToLive>
+              <TriggeringRules />
+            </Event>
+          </data>
+        </datamodel>
+        <onexit>
+          <invoke Type="ExecuteOn_Created_Through_PublishOrderCreation" id="2">
+            <content>
+              <Comment>
+              </Comment>
+              <Name>ExecuteOn_Created_Through_PublishOrderCreation</Name>
+              <Id>2</Id>
+              <CustomParameters xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                <PublicMember>XComponent.Order.UserObject.OrderCreation</PublicMember>
+                <EventsName>XComponent.Order.UserObject.OrderCreation</EventsName>
+              </CustomParameters>
+            </content>
+          </invoke>
+        </onexit>
+      </transition>
+      <transition Event="XComponent.Order.UserObject.ExecutionInput" target="Order:Executed">
+        <datamodel>
+          <data id="Type" expr="StandardTransition" />
+          <data id="Id" expr="5" />
+          <data id="Name" expr="Execute" />
+          <data id="Event">
+            <Event>
+              <Comment>
+              </Comment>
+              <EventTypeName>XComponent.Order.UserObject.ExecutionInput</EventTypeName>
+              <TimeToLive>0</TimeToLive>
+              <TriggeringRules>
+                <MatchingPropertyRule>
+                  <MemberProperty>Id</MemberProperty>
+                  <IsInternalMember>false</IsInternalMember>
+                  <EventProperty>OrderId</EventProperty>
+                </MatchingPropertyRule>
+                <UserSpecificRule />
+              </TriggeringRules>
+            </Event>
+          </data>
+        </datamodel>
+        <onexit>
+          <invoke Type="ExecuteOn_Executed_Through_Execute" id="3">
+            <content>
+              <Comment>
+              </Comment>
+              <Name>ExecuteOn_Executed_Through_Execute</Name>
+              <Id>3</Id>
+              <CustomParameters xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                <PublicMember>XComponent.Order.UserObject.Order</PublicMember>
+                <EventsName>XComponent.Order.UserObject.ExecutionInput</EventsName>
+              </CustomParameters>
+            </content>
+          </invoke>
+        </onexit>
+      </transition>
+      <transition Event="XComponent.Order.UserObject.ExecutionInput" target="Order:PartiallyExecuted">
+        <datamodel>
+          <data id="Type" expr="StandardTransition" />
+          <data id="Id" expr="6" />
+          <data id="Name" expr="PartiallyExecute" />
+          <data id="Event">
+            <Event>
+              <Comment>
+              </Comment>
+              <EventTypeName>XComponent.Order.UserObject.ExecutionInput</EventTypeName>
+              <TimeToLive>0</TimeToLive>
+              <TriggeringRules>
+                <MatchingPropertyRule>
+                  <MemberProperty>Id</MemberProperty>
+                  <IsInternalMember>false</IsInternalMember>
+                  <EventProperty>OrderId</EventProperty>
+                </MatchingPropertyRule>
+                <UserSpecificRule />
+              </TriggeringRules>
+            </Event>
+          </data>
+        </datamodel>
+        <onexit>
+          <invoke Type="ExecuteOn_PartiallyExecuted_Through_PartiallyExecute" id="5">
+            <content>
+              <Comment>
+              </Comment>
+              <Name>ExecuteOn_PartiallyExecuted_Through_PartiallyExecute</Name>
+              <Id>5</Id>
+              <CustomParameters xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                <PublicMember>XComponent.Order.UserObject.Order</PublicMember>
+                <EventsName>XComponent.Order.UserObject.ExecutionInput</EventsName>
+              </CustomParameters>
+            </content>
+          </invoke>
+        </onexit>
+      </transition>
+    </state>
+    <state id="Order:Executed">
+      <datamodel>
+        <data id="Comment" expr="" />
+        <data id="DisposeStateMachineInstance" expr="False" />
+        <data id="Id" expr="7" />
+        <data id="TriggerableTransition">
+          <TriggerableTransition target="9" id="10" allTransitions="True">
+            <AllTransitions>true</AllTransitions>
+            <Id>10</Id>
+            <InnerTransition id="5" />
+            <InnerTransition id="7" />
+          </TriggerableTransition>
+        </data>
+      </datamodel>
+      <transition Event="XComponent.Order.UserObject.OrderExecution" target="ExecutionFacade:Filled">
+        <datamodel>
+          <data id="Type" expr="XTransition" />
+          <data id="Id" expr="9" />
+          <data id="Name" expr="PublishOrderFilled" />
+          <data id="Event">
+            <Event>
+              <Comment>
+              </Comment>
+              <EventTypeName>XComponent.Order.UserObject.OrderExecution</EventTypeName>
+              <TimeToLive>0</TimeToLive>
+              <TriggeringRules />
+            </Event>
+          </data>
+        </datamodel>
+        <onexit>
+          <invoke Type="ExecuteOn_Filled_Through_PublishOrderFilled" id="7">
+            <content>
+              <Comment>
+              </Comment>
+              <Name>ExecuteOn_Filled_Through_PublishOrderFilled</Name>
+              <Id>7</Id>
+              <CustomParameters xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                <PublicMember>XComponent.Order.UserObject.OrderExecution</PublicMember>
+                <EventsName>XComponent.Order.UserObject.OrderExecution</EventsName>
+              </CustomParameters>
+            </content>
+          </invoke>
+        </onexit>
+      </transition>
+    </state>
+    <state id="Order:PartiallyExecuted">
+      <datamodel>
+        <data id="Comment" expr="" />
+        <data id="DisposeStateMachineInstance" expr="False" />
+        <data id="Id" expr="8" />
+        <data id="TriggerableTransition">
+          <TriggerableTransition target="8" id="11" allTransitions="True">
+            <AllTransitions>true</AllTransitions>
+            <Id>11</Id>
+            <InnerTransition id="6" />
+            <InnerTransition id="12" />
+          </TriggerableTransition>
+        </data>
+      </datamodel>
+      <transition Event="XComponent.Order.UserObject.ExecutionInput" target="Order:Executed">
+        <datamodel>
+          <data id="Type" expr="StandardTransition" />
+          <data id="Id" expr="7" />
+          <data id="Name" expr="Execute" />
+          <data id="Event">
+            <Event>
+              <Comment>
+              </Comment>
+              <EventTypeName>XComponent.Order.UserObject.ExecutionInput</EventTypeName>
+              <TimeToLive>0</TimeToLive>
+              <TriggeringRules>
+                <MatchingPropertyRule>
+                  <MemberProperty>Id</MemberProperty>
+                  <IsInternalMember>false</IsInternalMember>
+                  <EventProperty>OrderId</EventProperty>
+                </MatchingPropertyRule>
+                <UserSpecificRule />
+              </TriggeringRules>
+            </Event>
+          </data>
+        </datamodel>
+        <onexit>
+          <invoke Type="ExecuteOn_Executed_Through_Execute" id="4">
+            <content>
+              <Comment>
+              </Comment>
+              <Name>ExecuteOn_Executed_Through_Execute</Name>
+              <Id>4</Id>
+              <CustomParameters xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                <PublicMember>XComponent.Order.UserObject.Order</PublicMember>
+                <EventsName>XComponent.Order.UserObject.ExecutionInput</EventsName>
+              </CustomParameters>
+            </content>
+          </invoke>
+        </onexit>
+      </transition>
+      <transition Event="XComponent.Order.UserObject.OrderExecution" target="PartialExecutionFacade:PartiallyFilled">
+        <datamodel>
+          <data id="Type" expr="XTransition" />
+          <data id="Id" expr="8" />
+          <data id="Name" expr="PublishOrderPartiallyFilled" />
+          <data id="Event">
+            <Event>
+              <Comment>
+              </Comment>
+              <EventTypeName>XComponent.Order.UserObject.OrderExecution</EventTypeName>
+              <TimeToLive>0</TimeToLive>
+              <TriggeringRules />
+            </Event>
+          </data>
+        </datamodel>
+        <onexit>
+          <invoke Type="ExecuteOn_PartiallyFilled_Through_PublishOrderPartiallyFilled" id="8">
+            <content>
+              <Comment>
+              </Comment>
+              <Name>ExecuteOn_PartiallyFilled_Through_PublishOrderPartiallyFilled</Name>
+              <Id>8</Id>
+              <CustomParameters xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                <PublicMember>XComponent.Order.UserObject.OrderExecution</PublicMember>
+                <EventsName>XComponent.Order.UserObject.OrderExecution</EventsName>
+              </CustomParameters>
+            </content>
+          </invoke>
+        </onexit>
+      </transition>
+      <transition Event="XComponent.Order.UserObject.ExecutionInput" target="Order:PartiallyExecuted">
+        <datamodel>
+          <data id="Type" expr="StandardTransition" />
+          <data id="Id" expr="12" />
+          <data id="Name" expr="PartiallyExecute" />
+          <data id="Event">
+            <Event>
+              <Comment>
+              </Comment>
+              <EventTypeName>XComponent.Order.UserObject.ExecutionInput</EventTypeName>
+              <TimeToLive>0</TimeToLive>
+              <TriggeringRules>
+                <MatchingPropertyRule>
+                  <MemberProperty>Id</MemberProperty>
+                  <IsInternalMember>false</IsInternalMember>
+                  <EventProperty>OrderId</EventProperty>
+                </MatchingPropertyRule>
+                <UserSpecificRule />
+              </TriggeringRules>
+            </Event>
+          </data>
+        </datamodel>
+        <onexit>
+          <invoke Type="ExecuteOn_PartiallyExecuted_Through_PartiallyExecute" id="6">
+            <content>
+              <Comment>
+              </Comment>
+              <Name>ExecuteOn_PartiallyExecuted_Through_PartiallyExecute</Name>
+              <Id>6</Id>
+              <CustomParameters xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                <PublicMember>XComponent.Order.UserObject.Order</PublicMember>
+                <EventsName>XComponent.Order.UserObject.ExecutionInput</EventsName>
+              </CustomParameters>
+            </content>
+          </invoke>
+        </onexit>
+      </transition>
+    </state>
+  </state>
+  <state id="CreationFacade">
+    <datamodel>
+      <data id="PublicMember" expr="XComponent.Order.UserObject.OrderCreation" />
+      <data id="Id" expr="3" />
+    </datamodel>
+    <state id="CreationFacade:Created">
+      <datamodel>
+        <data id="Comment" expr="" />
+        <data id="DisposeStateMachineInstance" expr="True" />
+        <data id="Id" expr="4" />
+      </datamodel>
+    </state>
+  </state>
+  <state id="ExecutionFacade">
+    <datamodel>
+      <data id="PublicMember" expr="XComponent.Order.UserObject.OrderExecution" />
+      <data id="Id" expr="4" />
+    </datamodel>
+    <state id="ExecutionFacade:Filled">
+      <datamodel>
+        <data id="Comment" expr="" />
+        <data id="DisposeStateMachineInstance" expr="True" />
+        <data id="Id" expr="5" />
+      </datamodel>
+    </state>
+  </state>
+  <state id="PartialExecutionFacade">
+    <datamodel>
+      <data id="PublicMember" expr="XComponent.Order.UserObject.OrderExecution" />
+      <data id="Id" expr="5" />
+    </datamodel>
+    <state id="PartialExecutionFacade:PartiallyFilled">
+      <datamodel>
+        <data id="Comment" expr="" />
+        <data id="DisposeStateMachineInstance" expr="True" />
+        <data id="Id" expr="6" />
+      </datamodel>
+    </state>
+  </state>
+</scxml>

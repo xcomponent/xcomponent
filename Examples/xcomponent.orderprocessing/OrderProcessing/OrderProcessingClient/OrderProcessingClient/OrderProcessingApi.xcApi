@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<deployment environment="Dev" xcProjectName="OrderProcessing" deploymentTargetCode="1803271485" deploymentTargetName="OrderProcessingApi" version="1.0" frameworkType="Framework4" xmlns="http://xcomponent.com/DeploymentConfig.xsd" clientApiReference="XComponent.OrderProcessing.ClientApi.dll">
+  <threading />
+  <serialization>Binary</serialization>
+  <communication>
+    <bus name="rabbitmq" host="localhost" port="5672" user="guest" password="guest" type="RABBIT_MQ" />
+  </communication>
+  <clientAPICommunication>
+    <publish componentCode="823593371" stateMachineCode="-730646916" eventType="UPDATE" topicType="output" communicationType="BUS" stateCode="1" eventCode="12" event="XComponent.Order.UserObject.OrderInput" communication="rabbitmq">
+      <topic type="STATIC">input.1_0.OrderProcessingMicroservice.Order.OrderProcessor</topic>
+    </publish>
+    <publish componentCode="823593371" stateMachineCode="823593371" eventType="UPDATE" topicType="output" communicationType="BUS" stateCode="2" eventCode="10" event="XComponent.Order.UserObject.OrderCreation" communication="rabbitmq">
+      <topic type="STATIC">input.1_0.OrderProcessingMicroservice.Order.Order</topic>
+    </publish>
+    <publish componentCode="823593371" stateMachineCode="823593371" eventType="UPDATE" topicType="output" communicationType="BUS" stateCode="2" eventCode="8" event="XComponent.Order.UserObject.ExecutionInput" communication="rabbitmq">
+      <topic type="STATIC">input.1_0.OrderProcessingMicroservice.Order.Order</topic>
+    </publish>
+    <publish componentCode="823593371" stateMachineCode="823593371" eventType="UPDATE" topicType="output" communicationType="BUS" stateCode="0" eventCode="11" event="XComponent.Order.UserObject.OrderExecution" communication="rabbitmq">
+      <topic type="STATIC">input.1_0.OrderProcessingMicroservice.Order.Order</topic>
+    </publish>
+    <publish componentCode="823593371" stateMachineCode="823593371" eventType="UPDATE" topicType="output" communicationType="BUS" stateCode="1" eventCode="8" event="XComponent.Order.UserObject.ExecutionInput" communication="rabbitmq">
+      <topic type="STATIC">input.1_0.OrderProcessingMicroservice.Order.Order</topic>
+    </publish>
+    <publish componentCode="823593371" stateMachineCode="823593371" eventType="UPDATE" topicType="output" communicationType="BUS" stateCode="1" eventCode="11" event="XComponent.Order.UserObject.OrderExecution" communication="rabbitmq">
+      <topic type="STATIC">input.1_0.OrderProcessingMicroservice.Order.Order</topic>
+    </publish>
+    <subscribe componentCode="823593371" eventType="ERROR" topicType="input" communicationType="BUS" communication="rabbitmq">
+      <topic type="STATIC">error.1_0.OrderProcessingMicroservice.Order</topic>
+    </subscribe>
+    <subscribe componentCode="823593371" stateMachineCode="823593371" eventType="UPDATE" topicType="input" communicationType="BUS" event="XComponent.Order.UserObject.Order" communication="rabbitmq" communicationThreadingType="INHERITFROMPARENT">
+      <topic type="STATIC">output.1_0.OrderProcessingMicroservice.Order.Order</topic>
+    </subscribe>
+    <subscribe componentCode="823593371" stateMachineCode="-109111630" eventType="UPDATE" topicType="input" communicationType="BUS" event="XComponent.Order.UserObject.OrderCreation" communication="rabbitmq" communicationThreadingType="INHERITFROMPARENT">
+      <topic type="STATIC">output.1_0.OrderProcessingMicroservice.Order.CreationFacade</topic>
+    </subscribe>
+    <subscribe componentCode="823593371" stateMachineCode="934188424" eventType="UPDATE" topicType="input" communicationType="BUS" event="XComponent.Order.UserObject.OrderExecution" communication="rabbitmq" communicationThreadingType="INHERITFROMPARENT">
+      <topic type="STATIC">output.1_0.OrderProcessingMicroservice.Order.ExecutionFacade</topic>
+    </subscribe>
+    <subscribe componentCode="823593371" stateMachineCode="928146413" eventType="UPDATE" topicType="input" communicationType="BUS" event="XComponent.Order.UserObject.OrderExecution" communication="rabbitmq" communicationThreadingType="INHERITFROMPARENT">
+      <topic type="STATIC">output.1_0.OrderProcessingMicroservice.Order.PartialExecutionFacade</topic>
+    </subscribe>
+    <subscribe componentCode="-729436854" eventType="ERROR" topicType="input" communicationType="BUS" communication="rabbitmq">
+      <topic type="STATIC">error.1_0.OrderProcessingMicroservice.Trade</topic>
+    </subscribe>
+    <subscribe componentCode="-729436854" stateMachineCode="190855629" eventType="UPDATE" topicType="input" communicationType="BUS" event="" communication="rabbitmq" communicationThreadingType="INHERITFROMPARENT">
+      <topic type="STATIC">output.1_0.OrderProcessingMicroservice.Trade.TradeProcessor</topic>
+    </subscribe>
+    <subscribe componentCode="-729436854" stateMachineCode="-729436854" eventType="UPDATE" topicType="input" communicationType="BUS" event="XComponent.Trade.UserObject.Trade" communication="rabbitmq" communicationThreadingType="INHERITFROMPARENT">
+      <topic type="STATIC">output.1_0.OrderProcessingMicroservice.Trade.Trade</topic>
+    </subscribe>
+    <snapshot componentCode="823593371">
+      <topic type="STATIC">snapshot.1_0.OrderProcessingMicroservice.Order</topic>
+    </snapshot>
+    <snapshot componentCode="-729436854">
+      <topic type="STATIC">snapshot.1_0.OrderProcessingMicroservice.Trade</topic>
+    </snapshot>
+  </clientAPICommunication>
+  <codesConverter>
+    <components>
+      <component name="Order" id="823593371">
+        <events>
+          <event name="XComponent.Common.Event.ApiProxy.ApiInitError" id="0" />
+          <event name="XComponent.Common.Event.ApiProxy.ApiInitSuccessful" id="1" />
+          <event name="XComponent.Common.Event.ApiProxy.CancelApiInit" id="2" />
+          <event name="XComponent.Common.Event.ApiProxy.InstanceUpdatedSubscription" id="3" />
+          <event name="XComponent.Common.Event.ApiProxy.InstanceUpdatedUnsubscription" id="4" />
+          <event name="XComponent.Common.Event.ApiProxy.SnapshotOptions" id="5" />
+          <event name="XComponent.Common.Event.DefaultEvent" id="6" />
+          <event name="XComponent.Common.Event.ExceptionEvent" id="7" />
+          <event name="XComponent.Order.UserObject.ExecutionInput" id="8" />
+          <event name="XComponent.Order.UserObject.Order" id="9" />
+          <event name="XComponent.Order.UserObject.OrderCreation" id="10" />
+          <event name="XComponent.Order.UserObject.OrderExecution" id="11" />
+          <event name="XComponent.Order.UserObject.OrderInput" id="12" />
+        </events>
+        <stateMachines>
+          <stateMachine name="OrderProcessor" id="-730646916">
+            <states>
+              <State name="EntryPoint" id="0" />
+              <State name="Up" id="1" />
+            </states>
+          </stateMachine>
+          <stateMachine name="Order" id="823593371">
+            <states>
+              <State name="Pending" id="2" />
+              <State name="Executed" id="0" />
+              <State name="PartiallyExecuted" id="1" />
+            </states>
+          </stateMachine>
+          <stateMachine name="CreationFacade" id="-109111630">
+            <states>
+              <State name="Created" id="0" />
+            </states>
+          </stateMachine>
+          <stateMachine name="ExecutionFacade" id="934188424">
+            <states>
+              <State name="Filled" id="0" />
+            </states>
+          </stateMachine>
+          <stateMachine name="PartialExecutionFacade" id="928146413">
+            <states>
+              <State name="PartiallyFilled" id="0" />
+            </states>
+          </stateMachine>
+        </stateMachines>
+      </component>
+      <component name="Trade" id="-729436854">
+        <events>
+          <event name="XComponent.Common.Event.ApiProxy.ApiInitError" id="0" />
+          <event name="XComponent.Common.Event.ApiProxy.ApiInitSuccessful" id="1" />
+          <event name="XComponent.Common.Event.ApiProxy.CancelApiInit" id="2" />
+          <event name="XComponent.Common.Event.ApiProxy.InstanceUpdatedSubscription" id="3" />
+          <event name="XComponent.Common.Event.ApiProxy.InstanceUpdatedUnsubscription" id="4" />
+          <event name="XComponent.Common.Event.ApiProxy.SnapshotOptions" id="5" />
+          <event name="XComponent.Common.Event.DefaultEvent" id="6" />
+          <event name="XComponent.Common.Event.ExceptionEvent" id="7" />
+          <event name="XComponent.Order.UserObject.ExecutionInput" id="8" />
+          <event name="XComponent.Order.UserObject.Order" id="9" />
+          <event name="XComponent.Order.UserObject.OrderCreation" id="10" />
+          <event name="XComponent.Order.UserObject.OrderExecution" id="11" />
+          <event name="XComponent.Order.UserObject.OrderInput" id="12" />
+          <event name="XComponent.Trade.UserObject.Trade" id="13" />
+        </events>
+        <stateMachines>
+          <stateMachine name="TradeProcessor" id="190855629">
+            <states>
+              <State name="EntryPoint" id="0" />
+              <State name="Up" id="1" />
+            </states>
+          </stateMachine>
+          <stateMachine name="Trade" id="-729436854">
+            <states>
+              <State name="WaitingForExecution" id="1" />
+              <State name="Executed" id="0" />
+            </states>
+          </stateMachine>
+          <stateMachine name="OrderPartialFillProxy" id="-103749636">
+            <states>
+              <State name="Up" id="0" />
+            </states>
+          </stateMachine>
+        </stateMachines>
+      </component>
+    </components>
+  </codesConverter>
+</deployment>
