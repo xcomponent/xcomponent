@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GraphicalComponent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <GraphicalStates>
+    <GraphicalState id="1">
+      <Center>
+        <X>70</X>
+        <Y>85</Y>
+      </Center>
+    </GraphicalState>
+  </GraphicalStates>
+  <TransitionPatternStates />
+  <GraphicalTransitions />
+</GraphicalComponent>

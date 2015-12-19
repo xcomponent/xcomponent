@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XComponent.Referential.UserObject", "UserObject\XComponent.Referential.UserObject.csproj", "{0B3FE425-E80E-403D-8220-B6B48125D43E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XComponent.Referential.TriggeredMethod", "TriggeredMethod\XComponent.Referential.TriggeredMethod.csproj", "{3FF2493E-E98B-4B20-A17A-1D5C0B6D3D14}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XComponent.Referential.Common", "Common\XComponent.Referential.Common.csproj", "{BE692B62-C3EF-410D-9521-7739F2347E1C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0B3FE425-E80E-403D-8220-B6B48125D43E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B3FE425-E80E-403D-8220-B6B48125D43E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FF2493E-E98B-4B20-A17A-1D5C0B6D3D14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FF2493E-E98B-4B20-A17A-1D5C0B6D3D14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE692B62-C3EF-410D-9521-7739F2347E1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE692B62-C3EF-410D-9521-7739F2347E1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

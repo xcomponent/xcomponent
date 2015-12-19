@@ -1,0 +1,355 @@
+<?xml version="1.0"?>
+<doc>
+  <assembly>
+    <name>XComponent.DealCapture.ClientApi</name>
+  </assembly>
+  <members>
+    <member name="T:XComponent.DealCapture.DealApi.DealApi">
+      <summary>
+      </summary>
+    </member>
+    <member name="M:XComponent.DealCapture.DealApi.DealApi.Dispose">
+      <summary>
+            Dispose the Client Api and the communication layer
+             </summary>
+    </member>
+    <member name="P:XComponent.DealCapture.DealApi.DealApi.Referential_Component">
+      <summary>
+            This property is used to communicate with Referential
+             <para></para></summary>
+    </member>
+    <member name="P:XComponent.DealCapture.DealApi.DealApi.DealCapture_Component">
+      <summary>
+            This property is used to communicate with DealCapture
+             <para></para></summary>
+    </member>
+    <member name="P:XComponent.DealCapture.DealApi.DealApi.CloseConnectionOnDispose">
+      <summary>
+            The RabbitMq connection is shared by all client Apis instances. 
+             <para>When a client Api is disposed,  the RabbitMq thread is destroyed for all instances.</para><para>If you have several instances of your api set this property to false or use the helper ApiInstancesManager ()</para></summary>
+    </member>
+    <member name="P:XComponent.DealCapture.DealApi.DealApi.PrivateCommunicationIdentifier">
+      <summary>
+            Use this property to set a specific private topic.
+             <para>Warning: The topic should be set before client Api initialization.</para><para>This topic is used to send private events.</para></summary>
+    </member>
+    <member name="P:XComponent.DealCapture.DealApi.DealApi.TimeOut">
+      <summary>
+            Set TimeOut (in mms) for retrieving EntryPoint
+             <para>Default value is: 10000</para></summary>
+    </member>
+    <member name="P:XComponent.DealCapture.DealApi.DealApi.CommunicationType">
+      <summary>
+            Returns the type of communication
+             <para>Possible values: BUS, IN_MEMORY, WEB_SOCKET</para></summary>
+    </member>
+    <member name="M:XComponent.DealCapture.DealApi.Referential.IReferential_StateMachine.GetSnapshot(System.String,System.Int32)">
+      <summary>
+            Retrieves a snapshot of Referential state machines
+             </summary>
+      <param name="filter">This parameter is used to filter the snapshot request with a linq expression. The linq expression is applied to the public member</param>
+      <param name="timeout">Snapshot timeout</param>
+    </member>
+    <member name="M:XComponent.DealCapture.DealApi.Referential.IReferential_StateMachine.SendEvent(XComponent.Common.ApiContext.Context,XComponent.Common.Event.DefaultEvent,System.Action{System.Exception})">
+      <summary>
+            Sends the XComponent.Common.Event.DefaultEvent event using a context. 
+            </summary>
+      <param name="context">Client Api context. Used to target a specific instance of state machine</param>
+      <param name="transitionEvent">
+      </param>
+      <param name="onExceptionOccured">This event is triggered if an exception is raised. If this option is set, the exception will be catch. If this option is not set, the exception will be thrown.</param>
+    </member>
+    <member name="M:XComponent.DealCapture.DealApi.Referential.IReferential_StateMachine.SendEvent(XComponent.Common.ApiContext.Context,XComponent.Referential.UserObject.Instrument,System.Action{System.Exception})">
+      <summary>
+            Sends the XComponent.Referential.UserObject.Instrument event using a context. 
+            </summary>
+      <param name="context">Client Api context. Used to target a specific instance of state machine</param>
+      <param name="transitionEvent">
+      </param>
+      <param name="onExceptionOccured">This event is triggered if an exception is raised. If this option is set, the exception will be catch. If this option is not set, the exception will be thrown.</param>
+    </member>
+    <member name="M:XComponent.DealCapture.DealApi.Referential.IReferential_StateMachine.SendEvent(XComponent.Common.ApiContext.Context,XComponent.Referential.UserObject.GetSnapshot,System.Action{System.Exception})">
+      <summary>
+            Sends the XComponent.Referential.UserObject.GetSnapshot event using a context. 
+            </summary>
+      <param name="context">Client Api context. Used to target a specific instance of state machine</param>
+      <param name="transitionEvent">
+      </param>
+      <param name="onExceptionOccured">This event is triggered if an exception is raised. If this option is set, the exception will be catch. If this option is not set, the exception will be thrown.</param>
+    </member>
+    <member name="M:XComponent.DealCapture.DealApi.Referential.IReferential_StateMachine.SendEvent(XComponent.Common.Event.DefaultEvent,System.Action{System.Exception})">
+      <summary>
+            Sends the XComponent.Common.Event.DefaultEvent event
+            </summary>
+      <param name="evt">
+      </param>
+      <param name="onExceptionOccured">This event is triggered if an exception is raised. If this option is set, the exception will be catch. If this option is not set, the exception will be thrown.</param>
+    </member>
+    <member name="M:XComponent.DealCapture.DealApi.Referential.IReferential_StateMachine.SendEvent(XComponent.Referential.UserObject.GetSnapshot,System.Action{System.Exception})">
+      <summary>
+            Sends the XComponent.Referential.UserObject.GetSnapshot event
+            </summary>
+      <param name="evt">
+      </param>
+      <param name="onExceptionOccured">This event is triggered if an exception is raised. If this option is set, the exception will be catch. If this option is not set, the exception will be thrown.</param>
+    </member>
+    <member name="M:XComponent.DealCapture.DealApi.Referential.IReferential_StateMachine.SendEvent(XComponent.Referential.UserObject.Instrument,System.Action{System.Exception})">
+      <summary>
+            Sends the XComponent.Referential.UserObject.Instrument event
+            </summary>
+      <param name="evt">
+      </param>
+      <param name="onExceptionOccured">This event is triggered if an exception is raised. If this option is set, the exception will be catch. If this option is not set, the exception will be thrown.</param>
+    </member>
+    <member name="P:XComponent.DealCapture.DealApi.Referential.IReferential_StateMachine.EntryPoint_State">
+      <summary>
+      </summary>
+    </member>
+    <member name="P:XComponent.DealCapture.DealApi.Referential.IReferential_StateMachine.Referential_State">
+      <summary>
+      </summary>
+    </member>
+    <member name="M:XComponent.DealCapture.DealApi.Referential.Referential_StateMachine.GetSnapshot(System.String,System.Int32)">
+      <summary>
+            Retrieves a snapshot of Referential state machines
+             </summary>
+      <param name="filter">This parameter is used to filter the snapshot request with a linq expression. The linq expression is applied to the public member</param>
+      <param name="timeout">Snapshot timeout</param>
+    </member>
+    <member name="M:XComponent.DealCapture.DealApi.Referential.Referential_StateMachine.SendEvent(XComponent.Common.ApiContext.Context,XComponent.Common.Event.DefaultEvent,System.Action{System.Exception})">
+      <summary>
+            Sends the XComponent.Common.Event.DefaultEvent event using a context. 
+            </summary>
+      <param name="context">Client Api context. Used to target a specific instance of state machine</param>
+      <param name="transitionEvent">
+      </param>
+      <param name="onExceptionOccured">This event is triggered if an exception is raised. If this option is set, the exception will be catch. If this option is not set, the exception will be thrown.</param>
+    </member>
+    <member name="M:XComponent.DealCapture.DealApi.Referential.Referential_StateMachine.SendEvent(XComponent.Common.ApiContext.Context,XComponent.Referential.UserObject.Instrument,System.Action{System.Exception})">
+      <summary>
+            Sends the XComponent.Referential.UserObject.Instrument event using a context. 
+            </summary>
+      <param name="context">Client Api context. Used to target a specific instance of state machine</param>
+      <param name="transitionEvent">
+      </param>
+      <param name="onExceptionOccured">This event is triggered if an exception is raised. If this option is set, the exception will be catch. If this option is not set, the exception will be thrown.</param>
+    </member>
+    <member name="M:XComponent.DealCapture.DealApi.Referential.Referential_StateMachine.SendEvent(XComponent.Common.ApiContext.Context,XComponent.Referential.UserObject.GetSnapshot,System.Action{System.Exception})">
+      <summary>
+            Sends the XComponent.Referential.UserObject.GetSnapshot event using a context. 
+            </summary>
+      <param name="context">Client Api context. Used to target a specific instance of state machine</param>
+      <param name="transitionEvent">
+      </param>
+      <param name="onExceptionOccured">This event is triggered if an exception is raised. If this option is set, the exception will be catch. If this option is not set, the exception will be thrown.</param>
+    </member>
+    <member name="M:XComponent.DealCapture.DealApi.Referential.Referential_StateMachine.SendEvent(XComponent.Common.Event.DefaultEvent,System.Action{System.Exception})">
+      <summary>
+            Sends the XComponent.Common.Event.DefaultEvent event
+            </summary>
+      <param name="evt">
+      </param>
+      <param name="onExceptionOccured">This event is triggered if an exception is raised. If this option is set, the exception will be catch. If this option is not set, the exception will be thrown.</param>
+    </member>
+    <member name="M:XComponent.DealCapture.DealApi.Referential.Referential_StateMachine.SendEvent(XComponent.Referential.UserObject.GetSnapshot,System.Action{System.Exception})">
+      <summary>
+            Sends the XComponent.Referential.UserObject.GetSnapshot event
+            </summary>
+      <param name="evt">
+      </param>
+      <param name="onExceptionOccured">This event is triggered if an exception is raised. If this option is set, the exception will be catch. If this option is not set, the exception will be thrown.</param>
+    </member>
+    <member name="M:XComponent.DealCapture.DealApi.Referential.Referential_StateMachine.SendEvent(XComponent.Referential.UserObject.Instrument,System.Action{System.Exception})">
+      <summary>
+            Sends the XComponent.Referential.UserObject.Instrument event
+            </summary>
+      <param name="evt">
+      </param>
+      <param name="onExceptionOccured">This event is triggered if an exception is raised. If this option is set, the exception will be catch. If this option is not set, the exception will be thrown.</param>
+    </member>
+    <member name="P:XComponent.DealCapture.DealApi.Referential.Referential_StateMachine.EntryPoint_State">
+      <summary>
+      </summary>
+    </member>
+    <member name="P:XComponent.DealCapture.DealApi.Referential.Referential_StateMachine.Referential_State">
+      <summary>
+      </summary>
+    </member>
+    <member name="E:XComponent.DealCapture.DealApi.Referential.Referential_StateMachine.InstanceUpdated">
+      <summary>
+            This event is triggered when the Referential state machine is updated
+            </summary>
+    </member>
+    <member name="M:XComponent.DealCapture.DealApi.Referential.Referential.IEntryPoint_State.Start(XComponent.Common.ApiContext.Context,XComponent.Common.Event.DefaultEvent,System.Action{System.Exception})">
+      <summary>
+            Sends the XComponent.Common.Event.DefaultEvent event using a context. 
+            </summary>
+      <param name="context">Client Api context. Used to target a specific instance of state machine</param>
+      <param name="transitionEvent">
+      </param>
+      <param name="onExceptionOccured">This event is triggered if an exception is raised. If this option is set, the exception will be catch. If this option is not set, the exception will be thrown.</param>
+    </member>
+    <member name="M:XComponent.DealCapture.DealApi.Referential.Referential.IEntryPoint_State.Start(XComponent.Common.ApiContext.Context,System.Action{System.Exception})">
+      <summary>
+            Triggers the Start transition using a context. 
+             <para></para></summary>
+      <param name="context">Client Api context. Used to target a specific instance of state machine</param>
+      <param name="onExceptionOccured">This event is triggered if an exception is raised. If this option is set, the exception will be catch. If this option is not set, the exception will be thrown.</param>
+    </member>
+    <member name="M:XComponent.DealCapture.DealApi.Referential.Referential.IReferential_State.AddInstrument(XComponent.Common.ApiContext.Context,XComponent.Referential.UserObject.Instrument,System.Action{System.Exception})">
+      <summary>
+            Sends the XComponent.Referential.UserObject.Instrument event using a context. 
+            </summary>
+      <param name="context">Client Api context. Used to target a specific instance of state machine</param>
+      <param name="transitionEvent">
+      </param>
+      <param name="onExceptionOccured">This event is triggered if an exception is raised. If this option is set, the exception will be catch. If this option is not set, the exception will be thrown.</param>
+    </member>
+    <member name="M:XComponent.DealCapture.DealApi.Referential.Referential.IReferential_State.GetInstrumentSnapshot(XComponent.Common.ApiContext.Context,XComponent.Referential.UserObject.GetSnapshot,System.Action{System.Exception})">
+      <summary>
+            Sends the XComponent.Referential.UserObject.GetSnapshot event using a context. 
+            </summary>
+      <param name="context">Client Api context. Used to target a specific instance of state machine</param>
+      <param name="transitionEvent">
+      </param>
+      <param name="onExceptionOccured">This event is triggered if an exception is raised. If this option is set, the exception will be catch. If this option is not set, the exception will be thrown.</param>
+    </member>
+    <member name="M:XComponent.DealCapture.DealApi.Referential.Referential.IReferential_State.AddInstrument(XComponent.Common.ApiContext.Context,System.Action{System.Exception})">
+      <summary>
+            Triggers the AddInstrument transition using a context. 
+             <para></para></summary>
+      <param name="context">Client Api context. Used to target a specific instance of state machine</param>
+      <param name="onExceptionOccured">This event is triggered if an exception is raised. If this option is set, the exception will be catch. If this option is not set, the exception will be thrown.</param>
+    </member>
+    <member name="M:XComponent.DealCapture.DealApi.Referential.Referential.IReferential_State.GetInstrumentSnapshot(XComponent.Common.ApiContext.Context,System.Action{System.Exception})">
+      <summary>
+            Triggers the GetInstrumentSnapshot transition using a context. 
+             <para></para></summary>
+      <param name="context">Client Api context. Used to target a specific instance of state machine</param>
+      <param name="onExceptionOccured">This event is triggered if an exception is raised. If this option is set, the exception will be catch. If this option is not set, the exception will be thrown.</param>
+    </member>
+    <member name="M:XComponent.DealCapture.DealApi.DealCapture.IXCTradeProcessor_StateMachine.GetSnapshot(System.String,System.Int32)">
+      <summary>
+            Retrieves a snapshot of XCTradeProcessor state machines
+             </summary>
+      <param name="filter">This parameter is used to filter the snapshot request with a linq expression. The linq expression is applied to the public member</param>
+      <param name="timeout">Snapshot timeout</param>
+    </member>
+    <member name="M:XComponent.DealCapture.DealApi.DealCapture.IXCTradeProcessor_StateMachine.SendEvent(XComponent.Common.ApiContext.Context,XComponent.DealCapture.UserObject.Transaction,System.Action{System.Exception},XCClientAPICommon.Client.Visibility)">
+      <summary>
+            Sends the XComponent.DealCapture.UserObject.Transaction event using a context. 
+            </summary>
+      <param name="context">Client Api context. Used to target a specific instance of state machine</param>
+      <param name="transitionEvent">
+      </param>
+      <param name="onExceptionOccured">This event is triggered if an exception is raised. If this option is set, the exception will be catch. If this option is not set, the exception will be thrown.</param>
+      <param name="visibility">If parameter is set to Visibility.Private, the event will be sent with a private topic.</param>
+    </member>
+    <member name="M:XComponent.DealCapture.DealApi.DealCapture.IXCTradeProcessor_StateMachine.SendEvent(XComponent.DealCapture.UserObject.Transaction,System.Action{System.Exception},XCClientAPICommon.Client.Visibility)">
+      <summary>
+            Sends the XComponent.DealCapture.UserObject.Transaction event
+            </summary>
+      <param name="evt">
+      </param>
+      <param name="onExceptionOccured">This event is triggered if an exception is raised. If this option is set, the exception will be catch. If this option is not set, the exception will be thrown.</param>
+      <param name="visibility">If parameter is set to Visibility.Private, the event will be sent with a private topic.</param>
+    </member>
+    <member name="P:XComponent.DealCapture.DealApi.DealCapture.IXCTradeProcessor_StateMachine.EntryPoint_State">
+      <summary>
+      </summary>
+    </member>
+    <member name="M:XComponent.DealCapture.DealApi.DealCapture.XCTradeProcessor_StateMachine.GetSnapshot(System.String,System.Int32)">
+      <summary>
+            Retrieves a snapshot of XCTradeProcessor state machines
+             </summary>
+      <param name="filter">This parameter is used to filter the snapshot request with a linq expression. The linq expression is applied to the public member</param>
+      <param name="timeout">Snapshot timeout</param>
+    </member>
+    <member name="M:XComponent.DealCapture.DealApi.DealCapture.XCTradeProcessor_StateMachine.SendEvent(XComponent.Common.ApiContext.Context,XComponent.DealCapture.UserObject.Transaction,System.Action{System.Exception},XCClientAPICommon.Client.Visibility)">
+      <summary>
+            Sends the XComponent.DealCapture.UserObject.Transaction event using a context. 
+            </summary>
+      <param name="context">Client Api context. Used to target a specific instance of state machine</param>
+      <param name="transitionEvent">
+      </param>
+      <param name="onExceptionOccured">This event is triggered if an exception is raised. If this option is set, the exception will be catch. If this option is not set, the exception will be thrown.</param>
+      <param name="visibility">If parameter is set to Visibility.Private, the event will be sent with a private topic.</param>
+    </member>
+    <member name="M:XComponent.DealCapture.DealApi.DealCapture.XCTradeProcessor_StateMachine.SendEvent(XComponent.DealCapture.UserObject.Transaction,System.Action{System.Exception},XCClientAPICommon.Client.Visibility)">
+      <summary>
+            Sends the XComponent.DealCapture.UserObject.Transaction event
+            </summary>
+      <param name="evt">
+      </param>
+      <param name="onExceptionOccured">This event is triggered if an exception is raised. If this option is set, the exception will be catch. If this option is not set, the exception will be thrown.</param>
+      <param name="visibility">If parameter is set to Visibility.Private, the event will be sent with a private topic.</param>
+    </member>
+    <member name="P:XComponent.DealCapture.DealApi.DealCapture.XCTradeProcessor_StateMachine.EntryPoint_State">
+      <summary>
+      </summary>
+    </member>
+    <member name="E:XComponent.DealCapture.DealApi.DealCapture.XCTradeProcessor_StateMachine.InstanceUpdated">
+      <summary>
+            This event is triggered when the XCTradeProcessor state machine is updated
+            </summary>
+    </member>
+    <member name="M:XComponent.DealCapture.DealApi.DealCapture.XCTradeProcessor.IEntryPoint_State.NewTransaction(XComponent.Common.ApiContext.Context,XComponent.DealCapture.UserObject.Transaction,System.Action{System.Exception},XCClientAPICommon.Client.Visibility)">
+      <summary>
+            Sends the XComponent.DealCapture.UserObject.Transaction event using a context. 
+            </summary>
+      <param name="context">Client Api context. Used to target a specific instance of state machine</param>
+      <param name="transitionEvent">
+      </param>
+      <param name="onExceptionOccured">This event is triggered if an exception is raised. If this option is set, the exception will be catch. If this option is not set, the exception will be thrown.</param>
+      <param name="visibility">If parameter is set to Visibility.Private, the event will be sent with a private topic.</param>
+    </member>
+    <member name="M:XComponent.DealCapture.DealApi.DealCapture.XCTradeProcessor.IEntryPoint_State.NewTransaction(XComponent.Common.ApiContext.Context,System.Action{System.Exception},XCClientAPICommon.Client.Visibility)">
+      <summary>
+            Triggers the NewTransaction transition using a context. 
+             <para></para></summary>
+      <param name="context">Client Api context. Used to target a specific instance of state machine</param>
+      <param name="onExceptionOccured">This event is triggered if an exception is raised. If this option is set, the exception will be catch. If this option is not set, the exception will be thrown.</param>
+      <param name="visibility">If parameter is set to Visibility.Private, the event will be sent with a private topic.</param>
+    </member>
+    <member name="M:XComponent.DealCapture.DealApi.IReferential_Component.GetEntryPoint">
+      <summary>
+            Retrieves the entry point of the Referential component
+             </summary>
+    </member>
+    <member name="P:XComponent.DealCapture.DealApi.IReferential_Component.Referential_StateMachine">
+      <summary>
+            This property is used to communicate with Referential state machine
+             <para></para></summary>
+    </member>
+    <member name="M:XComponent.DealCapture.DealApi.IDealCapture_Component.GetEntryPoint">
+      <summary>
+            Retrieves the entry point of the XCTradeProcessor component
+             </summary>
+    </member>
+    <member name="P:XComponent.DealCapture.DealApi.IDealCapture_Component.XCTradeProcessor_StateMachine">
+      <summary>
+            This property is used to communicate with XCTradeProcessor state machine
+             <para></para></summary>
+    </member>
+    <member name="M:XComponent.DealCapture.DealApi.Referential_Component.GetEntryPoint">
+      <summary>
+            Retrieves the entry point of the Referential component
+             </summary>
+    </member>
+    <member name="P:XComponent.DealCapture.DealApi.Referential_Component.Referential_StateMachine">
+      <summary>
+            This property is used to communicate with Referential state machine
+             <para></para></summary>
+    </member>
+    <member name="M:XComponent.DealCapture.DealApi.DealCapture_Component.GetEntryPoint">
+      <summary>
+            Retrieves the entry point of the XCTradeProcessor component
+             </summary>
+    </member>
+    <member name="P:XComponent.DealCapture.DealApi.DealCapture_Component.XCTradeProcessor_StateMachine">
+      <summary>
+            This property is used to communicate with XCTradeProcessor state machine
+             <para></para></summary>
+    </member>
+  </members>
+</doc>

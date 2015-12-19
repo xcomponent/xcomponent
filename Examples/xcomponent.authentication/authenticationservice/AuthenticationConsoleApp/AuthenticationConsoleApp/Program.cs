@@ -74,7 +74,7 @@ namespace AuthenticationConsoleApp
                             var checkLogin = new CheckLogin()
                             {
                                 RequestId = requestId1,
-                                Login = "Luc.Skywalker",
+                                Login = "Luke.Skywalker",
                                 Password = "noforce"
                             };
                             Console.WriteLine("Authenticate as {0} with password: {1}", checkLogin.Login, checkLogin.Password);
@@ -84,7 +84,7 @@ namespace AuthenticationConsoleApp
                             checkLogin = new CheckLogin()
                             {
                                 RequestId = requestId1,
-                                Login = "Luc.Skywalker",
+                                Login = "Luke.Skywalker",
                                 Password = "force"
                             };
 

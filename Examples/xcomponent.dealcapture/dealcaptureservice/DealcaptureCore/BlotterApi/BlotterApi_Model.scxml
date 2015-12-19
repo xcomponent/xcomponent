@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<scxml version="1.0" name="BlotterApi">
+	<datamodel>
+		<data id="Version" expr="1" />
+		<data id="NameSeparator" expr=":" />
+	</datamodel>
+	<state id="StateMachine1">
+		<datamodel>
+			<data id="Id" expr="1" />
+		</datamodel>
+		<state id="StateMachine1:EntryPoint">
+			<datamodel>
+				<data id="Comment" expr="" />
+				<data id="DisposeStateMachineInstance" expr="True" />
+				<data id="Id" expr="1" />
+			</datamodel>
+		</state>
+	</state>
+</scxml>
