@@ -83,7 +83,7 @@ When the application is loading, there is a call to the XComponent client api.
     } , TaskScheduler.FromCurrentSynchronizationContext());
 ```
 
->Note: You can notice that the call to the client api is not done in the dispatcher thread. Indeed, the `Init()` method and `GetEntryPoint()` of the client api are synchronus, so it is necessary in a GUI to call them from another thread.
+>Note: You can notice that the call to the client api is not done in the dispatcher thread. Indeed, the `Init()` and `GetEntryPoint()` methods of the client api are synchronous: so it is necessary in a GUI to call them from another thread.
 
 Once the Api is initialized, the combo box is filled with the instruments available in the `Referential` component.
 
