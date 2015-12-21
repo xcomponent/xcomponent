@@ -147,7 +147,7 @@ When a trade is on `ErrorOnMapping` state, you can right click on the line. You 
 * Start the microservices
 * Run the GUIs
 
-** Test 1 - Test a known instrument
+#### Test 1 - Test a known instrument
 
 In the `Trade Creator` Gui, select an instrument from the combo box and click on **Send Transaction**
 
@@ -157,7 +157,7 @@ In the `Trade Validator` Gui,  you can notice that the transaction is in **Trans
 
 ![Trade Validator - Test 1](images/tradeValidator_Test1.PNG)
  
- ** Test 2 - Unknown instrument which timed out
+#### Test 2 - Unknown instrument which timed out
  In the `Trade Creator` Gui, enter a new instrument (named **DUMMY** in the screenshot) and click on **Send Transaction**
  
 ![Trade Creator - Test 2](images/tradeCreator_Test2.PNG)
@@ -168,7 +168,7 @@ After 20 seconds, the transaction will be in  **TransactionRejected** status.
 
 ![Trade Validator - Test 2](images/tradeValidator_Test2.PNG)
 
-** Test 3 - Accept an unknown instrument 
+#### Test 3 - Accept an unknown instrument 
 
  In the `Trade Creator` Gui, enter a new instrument (named **DUMMY** in the screenshot) and click on **Send Transaction**
  
