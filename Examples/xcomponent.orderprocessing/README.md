@@ -32,7 +32,7 @@ Build results are in the *build* folder
 
 Execute the following script in the *build* folder:
 ```
-$ startMicroservice.cmd
+$ startMicroservices.cmd
 ```
 
 ### Start the ConsoleApp
