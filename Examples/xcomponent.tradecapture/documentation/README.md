@@ -45,7 +45,7 @@ New instruments can be added by triggering the `AddInstrument` transition.
 
 ## 2.1 Trade Creator
 
-![Trade Creator](images/TradeCreator.png)
+![Trade Creator](images/TradeCreator.PNG)
 
 From this simple GUI, we can create new trades. The trades have the following properties:
 * An instrument code: we can set this property by selecting a code from the combo box. 
@@ -103,7 +103,7 @@ A click to `Send Transaction` send an event to the `Trade Capture` microservices
 
 ## 2.2 Trade Validator
 
-![Trade Validator](images/tradeValidatorWithValidTrade.png)
+![Trade Validator](images/tradeValidatorWithValidTrade.PNG)
 
 From this simple GUI, you see the trades and the  status of the trades. 
 The color of the line depends on the status of the trade:
