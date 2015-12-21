@@ -56,4 +56,8 @@ More informations: [Click here](documentation/README.md)
 
 ## Questions?
 
+<<<<<<< HEAD
 If you have any questions about this sample, please [create a Github issue for us](https://github.com/xcomponent/issues)!
+=======
+If you have any questions about this sample, please [create a Github issue for us](https://github.com/xcomponent/xcomponent.restapiclient/issues)!
+>>>>>>> ded11e7603a1629b3194f0a94a09a55a31a4ee67

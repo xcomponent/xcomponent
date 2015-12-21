@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 namespace XComponent.Trade.TriggeredMethod
 {
 	using System;
@@ -25,6 +26,8 @@ namespace XComponent.Trade.TriggeredMethod
 	}
 }
 =======
+=======
+>>>>>>> ded11e7603a1629b3194f0a94a09a55a31a4ee67
 using XComponent.Trade.UserObject;
 
 namespace XComponent.Trade.TriggeredMethod

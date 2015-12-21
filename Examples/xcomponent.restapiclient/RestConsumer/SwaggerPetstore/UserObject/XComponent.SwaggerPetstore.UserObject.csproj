@@ -51,10 +51,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApiResponse.cs" />
-    <Compile Include="Category.cs" />
-    <Compile Include="Order.cs" />
-    <Compile Include="Pet.cs" />
+    <Compile Include="Models\ApiResponse.cs" />
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\Pet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SwaggerPetstore_EntryPoint.cs" />
     <Compile Include="SuccessResponse.cs" />
@@ -63,8 +63,8 @@
     <Compile Include="AddPetOperation.cs" />
     <Compile Include="GetPetById.cs" />
     <Compile Include="GetPetByIdOperation.cs" />
-    <Compile Include="Tag.cs" />
-    <Compile Include="User.cs" />
+    <Compile Include="Models\Tag.cs" />
+    <Compile Include="Models\User.cs" />
   </ItemGroup>
   <Import Condition="true" Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
