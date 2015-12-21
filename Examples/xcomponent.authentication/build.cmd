@@ -1,6 +1,6 @@
 @echo off
 
-set /p xcversion=<xcversion.txt
+set /p xcversion=<../xcversion.txt
 
 pushd %~dp0
 

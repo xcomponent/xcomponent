@@ -58,7 +58,7 @@ Target "Generate" (fun _ ->
     //Generate xcstudio.cmd
     trace("Generating xcstudio.cmd")
     let studioScriptContents = [| "pushd %~dp0"
-    ;"cd \"" + Path.Combine(parentDirectory, "packages\\xcomponent.community\\tools\XCStudio") + "\""
+    ;"cd /d \"" + Path.Combine(parentDirectory, "packages\\xcomponent.community\\tools\XCStudio") + "\""
     ;"start \"\" XCStudio.exe \"" + Path.Combine(__SOURCE_DIRECTORY__, "OrderProcessing\\OrderProcessing_Model.xcml") + "\""
     ;"popd" |]
     File.WriteAllLines(studioScriptPath, studioScriptContents)    
@@ -66,7 +66,7 @@ Target "Generate" (fun _ ->
     //Generate startMicroservice.cmd
     trace("Generating startMicroservice.cmd")
     let startMicroserviceScriptContents = [| "pushd %~dp0"
-    ;"cd \"" + Path.Combine(parentDirectory, "packages\\xcomponent.community\\tools\XCStudio\XCRuntime") + "\""
+    ;"cd /d \"" + Path.Combine(parentDirectory, "packages\\xcomponent.community\\tools\XCStudio\XCRuntime") + "\""
     ;"start \"\" XCRuntime.exe \"" + Path.Combine(__SOURCE_DIRECTORY__, "build\\exportMicroservice\\xcassemblies\\OrderProcessing-OrderProcessingMicroservice.xcr") + "\""
     ;"popd"|]
     File.WriteAllLines(startMicroserviceScriptPath, startMicroserviceScriptContents)    
@@ -74,7 +74,7 @@ Target "Generate" (fun _ ->
     //Generate startConsoleApp.cmd
     trace("Generating startConsoleApp.cmd")
     let startConsoleAppScriptContents = [| "pushd %~dp0"
-    ;"cd \"" + Path.Combine(__SOURCE_DIRECTORY__, "build\\consoleApp") + "\""
+    ;"cd /d \"" + Path.Combine(__SOURCE_DIRECTORY__, "build\\consoleApp") + "\""
     ;"start \"\" OrderProcessingClient.exe"
     ;"popd"|]
     File.WriteAllLines(startConsoleAppScriptPath, startConsoleAppScriptContents)    

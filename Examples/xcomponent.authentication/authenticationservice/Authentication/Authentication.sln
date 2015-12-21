@@ -1,5 +1,5 @@
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XComponent.Authentication.UserObject", "UserObject\XComponent.Authentication.UserObject.csproj", "{F2876AD5-3046-43AD-969E-78B99AA208AB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XComponent.Authentication.TriggeredMethod", "TriggeredMethod\XComponent.Authentication.TriggeredMethod.csproj", "{1D794473-5ECE-4AE5-8F04-2F35318EC6C9}"

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinkingSchema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" isClientApiShown="false" isLinkingShown="false" name="TradeCapture">
+  <LinkedComponents>
+    <LinkedComponent name="Referential">
+      <XCToXCLinks>
+        <XCToXCLink stateMachineIdFrom="1" stateIdFrom="3" linkFrom="Referential" linkTo="TradeCapture" stateMachineIdTo="2" stateIdTo="-1" transversalLink="false" />
+      </XCToXCLinks>
+      <XCToApiLinks>
+        <XCToApiLink stateMachineIdFrom="1" stateIdFrom="-1" linkFrom="Referential" linkTo="TradeApi" />
+      </XCToApiLinks>
+    </LinkedComponent>
+    <LinkedComponent name="TradeCapture">
+      <XCToXCLinks>
+        <XCToXCLink stateMachineIdFrom="3" stateIdFrom="8" linkFrom="TradeCapture" linkTo="Referential" stateMachineIdTo="1" stateIdTo="3" transversalLink="false" />
+        <XCToXCLink stateMachineIdFrom="4" stateIdFrom="9" linkFrom="TradeCapture" linkTo="Referential" stateMachineIdTo="1" stateIdTo="3" transversalLink="false" />
+      </XCToXCLinks>
+      <XCToApiLinks>
+        <XCToApiLink stateMachineIdFrom="1" stateIdFrom="1" linkFrom="TradeCapture" linkTo="TradeApi" />
+        <XCToApiLink stateMachineIdFrom="1" stateIdFrom="-1" linkFrom="TradeCapture" linkTo="TradeValidatorApi" />
+        <XCToApiLink stateMachineIdFrom="2" stateIdFrom="-1" linkFrom="TradeCapture" linkTo="TradeValidatorApi" />
+      </XCToApiLinks>
+    </LinkedComponent>
+  </LinkedComponents>
+  <LinkedClientApis>
+    <LinkedClientApi name="TradeApi">
+      <ApiToXCLinks>
+        <ApiToXCLink linkFrom="TradeApi" linkTo="Referential" stateMachineIdTo="1" stateIdTo="-1">
+          <AllowedTransitions>
+            <LinkingSimpleTransition id="1" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingSimpleTransition id="2" stateMachineIdTo="1" stateIdTo="1" />
+            <LinkingSimpleTransition id="4" stateMachineIdTo="1" stateIdTo="3" />
+          </AllowedTransitions>
+          <AllowedEvents>
+            <LinkingEvent eventTypeName="XComponent.Common.Event.DefaultEvent" stateMachineIdTo="1" stateIdTo="1" />
+            <LinkingEvent eventTypeName="XComponent.Referential.UserObject.GetSnapshot" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingEvent eventTypeName="XComponent.Referential.UserObject.Instrument" stateMachineIdTo="1" stateIdTo="3" />
+          </AllowedEvents>
+          <NotAllowedTransitions />
+          <NotAllowedEvents />
+        </ApiToXCLink>
+        <ApiToXCLink linkFrom="TradeApi" linkTo="TradeCapture" stateMachineIdTo="1" stateIdTo="1">
+          <AllowedTransitions>
+            <LinkingSimpleTransition id="5" stateMachineIdTo="1" stateIdTo="1" />
+          </AllowedTransitions>
+          <AllowedEvents>
+            <LinkingEvent eventTypeName="XComponent.TradeCapture.UserObject.Transaction" stateMachineIdTo="1" stateIdTo="1" />
+          </AllowedEvents>
+          <NotAllowedTransitions />
+          <NotAllowedEvents />
+        </ApiToXCLink>
+      </ApiToXCLinks>
+    </LinkedClientApi>
+    <LinkedClientApi name="TradeValidatorApi">
+      <ApiToXCLinks>
+        <ApiToXCLink linkFrom="TradeValidatorApi" linkTo="TradeCapture" stateMachineIdTo="2" stateIdTo="-1">
+          <AllowedTransitions>
+            <LinkingSimpleTransition id="1" stateMachineIdTo="2" stateIdTo="2" />
+            <LinkingSimpleTransition id="2" stateMachineIdTo="2" stateIdTo="3" />
+            <LinkingSimpleTransition id="3" stateMachineIdTo="2" stateIdTo="2" />
+            <LinkingSimpleTransition id="4" stateMachineIdTo="2" stateIdTo="5" />
+            <LinkingSimpleTransition id="6" stateMachineIdTo="2" stateIdTo="3" />
+            <LinkingSimpleTransition id="7" stateMachineIdTo="2" stateIdTo="6" />
+            <LinkingSimpleTransition id="8" stateMachineIdTo="2" stateIdTo="5" />
+            <LinkingSimpleTransition id="9" stateMachineIdTo="2" stateIdTo="3" />
+            <LinkingSimpleTransition id="10" stateMachineIdTo="2" stateIdTo="6" />
+            <LinkingSimpleTransition id="11" stateMachineIdTo="2" stateIdTo="6" />
+            <LinkingSimpleTransition id="12" stateMachineIdTo="2" stateIdTo="6" />
+            <LinkingSimpleTransition id="13" stateMachineIdTo="2" stateIdTo="5" />
+            <LinkingSimpleTransition id="14" stateMachineIdTo="2" stateIdTo="5" />
+          </AllowedTransitions>
+          <AllowedEvents>
+            <LinkingEvent eventTypeName="XComponent.Common.Event.DefaultEvent" stateMachineIdTo="2" stateIdTo="3" />
+            <LinkingEvent eventTypeName="XComponent.Referential.UserObject.GetSnapshot" stateMachineIdTo="2" stateIdTo="5" />
+            <LinkingEvent eventTypeName="XComponent.Referential.UserObject.Instrument" stateMachineIdTo="2" stateIdTo="6" />
+            <LinkingEvent eventTypeName="XComponent.Referential.UserObject.InstrumentSnapshot" stateMachineIdTo="2" stateIdTo="5" />
+            <LinkingEvent eventTypeName="XComponent.TradeCapture.UserObject.Accept" stateMachineIdTo="2" stateIdTo="5" />
+            <LinkingEvent eventTypeName="XComponent.TradeCapture.UserObject.Error" stateMachineIdTo="2" stateIdTo="2" />
+            <LinkingEvent eventTypeName="XComponent.TradeCapture.UserObject.Init" stateMachineIdTo="2" stateIdTo="2" />
+            <LinkingEvent eventTypeName="XComponent.TradeCapture.UserObject.Reject" stateMachineIdTo="2" stateIdTo="3" />
+            <LinkingEvent eventTypeName="XComponent.TradeCapture.UserObject.UpdateAndRetry" stateMachineIdTo="2" stateIdTo="3" />
+          </AllowedEvents>
+          <NotAllowedTransitions />
+          <NotAllowedEvents />
+        </ApiToXCLink>
+      </ApiToXCLinks>
+    </LinkedClientApi>
+  </LinkedClientApis>
+</LinkingSchema>

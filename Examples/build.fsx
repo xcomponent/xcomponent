@@ -53,6 +53,20 @@ Target "OrderProcessing" (fun _ ->
     if result <> 0 then failwithf "xcomponent.orderprocessing build returned with a non-zero exit code"    
 )
 
+Target "TradeCapture" (fun _ ->    
+    trace ("Building Xcomponent.TradeCapture")
+    let timeoutExec = 5.0
+
+    let result = ExecProcess (fun info ->
+                    info.FileName <- "build.cmd"
+                    info.WorkingDirectory <- Path.Combine(__SOURCE_DIRECTORY__, "xcomponent.tradecapture") 
+                    info.Arguments <- "All"
+                    ) 
+                    (TimeSpan.FromMinutes timeoutExec)
+  
+    if result <> 0 then failwithf "xcomponent.dealcapture build returned with a non-zero exit code"    
+)
+
 // Default target
 Target "Help" (fun _ ->
     List.iter printfn [
@@ -75,5 +89,8 @@ Target "All" DoNothing
 "OrderProcessing"
   ==> "All"
 
+"TradeCapture"
+  ==> "All"
+  
 // start build
 RunTargetOrDefault "Help"
