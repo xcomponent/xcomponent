@@ -194,6 +194,9 @@ namespace PetstoreConsoleApplication
 					AnalyseReport(myRestConsumerApi.Report);
 				}
 			}
+			
+			Console.WriteLine("Press any key to leave..");
+		    Console.ReadKey();
 		}
 	}
 }
