@@ -151,7 +151,7 @@ When a trade is on `ErrorOnMapping` state, you can right click on the line. You 
 
 In the `Trade Creator` Gui, select an instrument from the combo box and click on **Send Transaction**
 
-![Trade Creator - Test 1](images/tradeCreator_Test1.PNG)
+![Trade Creator - Test 1](images/tradeCreator_Test1.png)
 
 In the `Trade Validator` Gui,  you can notice that the transaction is in **TransactionAccepted** status
 
