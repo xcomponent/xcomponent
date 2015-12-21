@@ -20,6 +20,7 @@
  * [XCStudio project hierarchy](#xcstudio-project-hierarchy)
  * [Creating a new project](#Creating-a-new-project)
  * [Navigate within your project](#navigate-within-your-project)
+ * [Creating a new component](#creating-a-new-component)
 
 ## 1 - Overview
 
@@ -207,3 +208,18 @@ It contains:
 - The APIs
 - The GUI applications
 - Your project documentation
+
+### Creating a new component
+
+To add a new component, just use the context menu in the explorer panel:
+
+![new component](Images/new_component.jpg)
+
+The application switches automatically to the component menu and leaves you to a space where you can edit component.
+
+> Note that there is already a state machine on this window. It’s the entry point and cannot be removed. The entry point is the first state created by the XComponent Runtime.
+
+This is what you have on the screen in standard profile hiding properties error and console.
+
+![first component](Images/first_component.jpg)
+ 
