@@ -8,6 +8,12 @@
  * [Component definition](#component-definition)
  * [State machine definition](#state-machine-definition)
  * [State definition](#state-definition)
+ * [Transition definition](#transition-definition)
+ * [Event definition](#event-definition)
+ * [Triggered method](#triggered-method)
+ * [Triggering rules](#triggering-rules)
+ * [API](#api)
+ * [Composition](#composition)
 
 ## Overview
 
@@ -74,6 +80,50 @@ In XCStudio a state machine is a set of states, a state machine is delimited by 
 
 A state is the current status of a state machine instance.
 A state is represented by a colored circle in XCStudio.
+
+## Transition definition
+
+A transition is the only way to go from a state to another. A transition can be triggered by an event called a triggering event which is represented by a C# class. 
+For instance let’s consider two states: StateA and StateB are linked by a transition: Trans1, triggered by event: EventX.
+If we’re in StateA and EventX is received, the status changes from StateA to StateB.
+Transitions are represented in XCStudio by arrows.
+Below the scheme of previous example:
+
+![transition](Images/transition.jpg)
+
+## Event definition
+
+An event is an object that triggers a transition. When an event is received by a machine instance, it triggers a transition.
+
+## Triggered method
+
+This is the method called once the transition is activated in which you can do whatever you want. The developer codes the triggered method in C#.
+
+## Triggering rules
+
+Triggering rules have been set up to implement, if needed, tests before launching transition to make sure that when an event is received, we can change the state of the state machine instance.
+You can check if data matches other, contains elements or implement specific rules using Visual studio.
+If one test is not ok the transition is not launched and the current state doesn’t change.
+
+## API
+
+A client API defines the contract between external applications and components, in other words what you’re going to be able to do with the user applications. 
+Example of user application can be generated using XC Studio (WPF or Console applications).
+
+## Composition
+
+The default composition view enables you to manage the dependencies (or links) between components and APIs.
+It means that this view contains the definition of all the communication links between components and APIs.
+* The link source is the component or API output.
+* The link target is the component or API input.
+
+The following figure shows a composition example:
+
+![composition](Images/composition.jpg)
+
+The microservices composition view contains the definition of each microservice. Microservices composition example:
+
+![microservices](Images/microservices.jpg)
 
 
 
