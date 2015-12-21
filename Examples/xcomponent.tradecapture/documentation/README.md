@@ -45,7 +45,7 @@ New instruments can be added by triggering the `AddInstrument` transition.
 
 ## 2.1 Trade Creator
 
-![Trade Creator](images/TradeCreator.PNG)
+![Trade Creator](images/tradeCreator.PNG)
 
 From this simple GUI, we can create new trades. The trades have the following properties:
 * An instrument code: we can set this property by selecting a code from the combo box. 
