@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<deployment environment="Dev" xcProjectName="RestConsumer" deploymentTargetCode="-1604954942" deploymentTargetName="RestConsumerApi" version="1.0" frameworkType="Framework45" xmlns="http://xcomponent.com/DeploymentConfig.xsd" clientApiReference="XComponent.RestConsumer.ClientApi.dll">
+  <threading>
+    <configuration componentName="SwaggerPetstore" componentCode="-1217457941" stateMachineName="SwaggerPetstore" stateMachineCode="-1217457941" threadingType="SEQUENTIAL" agentImplementation="MAILBOX" />
+    <configuration componentName="SwaggerPetstore" componentCode="-1217457941" stateMachineName="AddPetOperation" stateMachineCode="-1573098133" threadingType="SEQUENTIAL" agentImplementation="MAILBOX" />
+    <configuration componentName="SwaggerPetstore" componentCode="-1217457941" stateMachineName="GetPetByIdOperation" stateMachineCode="1341262500" threadingType="SEQUENTIAL" agentImplementation="MAILBOX" />
+  </threading>
+  <serialization>Binary</serialization>
+  <communication>
+    <publish componentCode="-1217457941" eventType="ERROR" topicType="output" communicationType="IN_MEMORY" />
+    <publish componentCode="-1217457941" stateMachineCode="-1217457941" eventType="CREATE" topicType="output" communicationType="IN_MEMORY" stateCode="1" eventCode="9" event="XComponent.SwaggerPetstore.UserObject.AddPetOperation" targetComponentCode="-1217457941" targetStateMachineCode="-1573098133" targetStateCode="-1" />
+    <publish componentCode="-1217457941" stateMachineCode="-1573098133" eventType="UPDATE" topicType="output" communicationType="IN_MEMORY" stateCode="1" eventCode="9" event="XComponent.SwaggerPetstore.UserObject.AddPetOperation" />
+    <publish componentCode="-1217457941" stateMachineCode="-1217457941" eventType="CREATE" topicType="output" communicationType="IN_MEMORY" stateCode="1" eventCode="12" event="XComponent.SwaggerPetstore.UserObject.GetPetByIdOperation" targetComponentCode="-1217457941" targetStateMachineCode="1341262500" targetStateCode="-1" />
+    <publish componentCode="-1217457941" stateMachineCode="1341262500" eventType="UPDATE" topicType="output" communicationType="IN_MEMORY" stateCode="1" eventCode="12" event="XComponent.SwaggerPetstore.UserObject.GetPetByIdOperation" />
+    <publish componentCode="-1217457941" stateMachineCode="-1573098133" eventType="UPDATE" topicType="output" communicationType="IN_MEMORY" stateCode="2" eventCode="6" event="XComponent.Common.Event.DefaultEvent" />
+    <publish componentCode="-1217457941" stateMachineCode="-1573098133" eventType="UPDATE" topicType="output" communicationType="IN_MEMORY" stateCode="1" eventCode="19" event="XComponent.SwaggerPetstore.UserObject.SuccessResponse" />
+    <publish componentCode="-1217457941" stateMachineCode="-1573098133" eventType="UPDATE" topicType="output" communicationType="IN_MEMORY" stateCode="1" eventCode="10" event="XComponent.SwaggerPetstore.UserObject.ErrorResponse" />
+    <publish componentCode="-1217457941" stateMachineCode="1341262500" eventType="UPDATE" topicType="output" communicationType="IN_MEMORY" stateCode="2" eventCode="6" event="XComponent.Common.Event.DefaultEvent" />
+    <publish componentCode="-1217457941" stateMachineCode="1341262500" eventType="UPDATE" topicType="output" communicationType="IN_MEMORY" stateCode="1" eventCode="19" event="XComponent.SwaggerPetstore.UserObject.SuccessResponse" />
+    <publish componentCode="-1217457941" stateMachineCode="1341262500" eventType="UPDATE" topicType="output" communicationType="IN_MEMORY" stateCode="1" eventCode="10" event="XComponent.SwaggerPetstore.UserObject.ErrorResponse" />
+    <subscribe componentCode="-1217457941" stateMachineCode="-1217457941" eventType="UPDATE" topicType="input" communicationType="IN_MEMORY" event="" communicationThreadingType="SEQUENTIAL" />
+    <snapshot componentCode="-1217457941" />
+  </communication>
+  <clientAPICommunication>
+    <publish componentCode="-1217457941" stateMachineCode="-1217457941" eventType="UPDATE" topicType="output" communicationType="IN_MEMORY" stateCode="1" eventCode="8" event="XComponent.SwaggerPetstore.UserObject.AddPet" />
+    <publish componentCode="-1217457941" stateMachineCode="-1217457941" eventType="UPDATE" topicType="output" communicationType="IN_MEMORY" stateCode="1" eventCode="9" event="XComponent.SwaggerPetstore.UserObject.AddPetOperation" />
+    <publish componentCode="-1217457941" stateMachineCode="-1217457941" eventType="UPDATE" topicType="output" communicationType="IN_MEMORY" stateCode="1" eventCode="11" event="XComponent.SwaggerPetstore.UserObject.GetPetById" />
+    <publish componentCode="-1217457941" stateMachineCode="-1217457941" eventType="UPDATE" topicType="output" communicationType="IN_MEMORY" stateCode="1" eventCode="12" event="XComponent.SwaggerPetstore.UserObject.GetPetByIdOperation" />
+    <subscribe componentCode="-1217457941" eventType="ERROR" topicType="input" communicationType="IN_MEMORY" />
+    <subscribe componentCode="-1217457941" stateMachineCode="-1573098133" eventType="UPDATE" topicType="input" communicationType="IN_MEMORY" event="XComponent.SwaggerPetstore.UserObject.AddPetOperation" communicationThreadingType="INHERITFROMPARENT" />
+    <subscribe componentCode="-1217457941" stateMachineCode="1341262500" eventType="UPDATE" topicType="input" communicationType="IN_MEMORY" event="XComponent.SwaggerPetstore.UserObject.GetPetByIdOperation" communicationThreadingType="INHERITFROMPARENT" />
+    <snapshot componentCode="-1217457941" />
+  </clientAPICommunication>
+  <codesConverter>
+    <components>
+      <component name="SwaggerPetstore" id="-1217457941">
+        <events>
+          <event name="XComponent.Common.Event.ApiProxy.ApiInitError" id="0" />
+          <event name="XComponent.Common.Event.ApiProxy.ApiInitSuccessful" id="1" />
+          <event name="XComponent.Common.Event.ApiProxy.CancelApiInit" id="2" />
+          <event name="XComponent.Common.Event.ApiProxy.InstanceUpdatedSubscription" id="3" />
+          <event name="XComponent.Common.Event.ApiProxy.InstanceUpdatedUnsubscription" id="4" />
+          <event name="XComponent.Common.Event.ApiProxy.SnapshotOptions" id="5" />
+          <event name="XComponent.Common.Event.DefaultEvent" id="6" />
+          <event name="XComponent.Common.Event.ExceptionEvent" id="7" />
+          <event name="XComponent.SwaggerPetstore.UserObject.AddPet" id="8" />
+          <event name="XComponent.SwaggerPetstore.UserObject.AddPetOperation" id="9" />
+          <event name="XComponent.SwaggerPetstore.UserObject.ErrorResponse" id="10" />
+          <event name="XComponent.SwaggerPetstore.UserObject.GetPetById" id="11" />
+          <event name="XComponent.SwaggerPetstore.UserObject.GetPetByIdOperation" id="12" />
+          <event name="XComponent.SwaggerPetstore.UserObject.Models.ApiResponse" id="13" />
+          <event name="XComponent.SwaggerPetstore.UserObject.Models.Category" id="14" />
+          <event name="XComponent.SwaggerPetstore.UserObject.Models.Order" id="15" />
+          <event name="XComponent.SwaggerPetstore.UserObject.Models.Pet" id="16" />
+          <event name="XComponent.SwaggerPetstore.UserObject.Models.Tag" id="17" />
+          <event name="XComponent.SwaggerPetstore.UserObject.Models.User" id="18" />
+          <event name="XComponent.SwaggerPetstore.UserObject.SuccessResponse" id="19" />
+          <event name="XComponent.SwaggerPetstore.UserObject.SwaggerPetstore_EntryPoint" id="20" />
+        </events>
+        <stateMachines>
+          <stateMachine name="SwaggerPetstore" id="-1217457941">
+            <states>
+              <State name="EntryPoint" id="0" />
+              <State name="Up" id="1" />
+            </states>
+          </stateMachine>
+          <stateMachine name="AddPetOperation" id="-1573098133">
+            <states>
+              <State name="SendingRequest" id="2" />
+              <State name="RequestSent" id="1" />
+              <State name="SuccessResponseReceived" id="3" />
+              <State name="ErrorResponseReceived" id="0" />
+            </states>
+          </stateMachine>
+          <stateMachine name="GetPetByIdOperation" id="1341262500">
+            <states>
+              <State name="SendingRequest" id="2" />
+              <State name="RequestSent" id="1" />
+              <State name="SuccessResponseReceived" id="3" />
+              <State name="ErrorResponseReceived" id="0" />
+            </states>
+          </stateMachine>
+        </stateMachines>
+      </component>
+    </components>
+  </codesConverter>
+</deployment>
