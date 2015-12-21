@@ -2,8 +2,8 @@
 
 ## Contents
 
-* [1 - Overview](#1-overview)
-* [2 - XComponent philosophy](#2-xcomponent-philosophy)
+* [1 - Overview](#1---overview)
+* [2 - XComponent philosophy](#2---xcomponent-philosophy)
  * [Microservice definition](#microservice-definition)
  * [Component definition](#component-definition)
  * [State machine definition](#state-machine-definition)
@@ -14,7 +14,7 @@
  * [Triggering rules](#triggering-rules)
  * [API](#api)
  * [Composition](#composition)
-* [3 - XCStudion](#3-xcstudio)
+* [3 - XCStudio](#3---xcstudio)
 
 ## 1 - Overview
 
