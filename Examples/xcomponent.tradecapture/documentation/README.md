@@ -151,16 +151,16 @@ When a trade is on `ErrorOnMapping` state, you can right click on the line. You 
 
 In the `Trade Creator` Gui, select an instrument from the combo box and click on **Send Transaction**
 
-![Trade Creator - Test 1](images/tradeCreator_Test1.png)
+![Trade Creator - Test 1](images/tradeCreator_Test1.PNG)
 
 In the `Trade Validator` Gui,  you can notice that the transaction is in **TransactionAccepted** status
 
-![Trade Validator - Test 2](images/tradeValidator_Test1.png)
+![Trade Validator - Test 2](images/tradeValidator_Test1.PNG)
  
  ** Test 2 - Unknown instrument which timed out
  In the `Trade Creator` Gui, enter a new instrument (named **DUMMY** in the screenshot) and click on **Send Transaction**
  
-![Trade Creator - Test 2](images/tradeCreator_Test2.png)
+![Trade Creator - Test 2](images/tradeCreator_Test2.PNG)
 
 
 In the `Trade Validator` Gui, you can notice that the transaction is in **ErrorOnMapping** status.
