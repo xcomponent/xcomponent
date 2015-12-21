@@ -10,11 +10,7 @@
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-<<<<<<< HEAD:Examples/xcomponent.orderprocessing/OrderProcessing/Order/Common/Properties/AssemblyInfo.cs
-[assembly: AssemblyTitle("XComponent.Order.Common")]
-=======
 [assembly: AssemblyTitle("XComponent.SwaggerPetstore.Common")]
->>>>>>> ded11e7603a1629b3194f0a94a09a55a31a4ee67:Examples/xcomponent.restapiclient/RestConsumer/SwaggerPetstore/Common/Properties/AssemblyInfo.cs
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyCompany("neomantis")]
 [assembly: AssemblyProduct("XComponent")]

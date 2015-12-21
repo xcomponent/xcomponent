@@ -7,19 +7,11 @@
 //------------------------------------------------------------------------------
 
 
-<<<<<<< HEAD:Examples/xcomponent.orderprocessing/OrderProcessing/Order/Common/OrderProcessorStateEnum.cs
-namespace XComponent.Order.Common
-{
-    using System;
-    
-    public enum OrderProcessorStateEnum
-=======
 namespace XComponent.SwaggerPetstore.Common
 {
     using System;
     
     public enum SwaggerPetstoreStateEnum
->>>>>>> ded11e7603a1629b3194f0a94a09a55a31a4ee67:Examples/xcomponent.restapiclient/RestConsumer/SwaggerPetstore/Common/SwaggerPetstoreStateEnum.cs
     {
 		EntryPoint = 0,
 			

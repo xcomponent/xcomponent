@@ -7,11 +7,7 @@
 //------------------------------------------------------------------------------
 
 
-<<<<<<< HEAD:Examples/xcomponent.orderprocessing/OrderProcessing/Trade/Common/KeyValueParametersEnum.cs
-namespace XComponent.Trade.Common
-=======
 namespace XComponent.SwaggerPetstore.Common
->>>>>>> ded11e7603a1629b3194f0a94a09a55a31a4ee67:Examples/xcomponent.restapiclient/RestConsumer/SwaggerPetstore/Common/KeyValueParametersEnum.cs
 {
     public enum KeyValueParametersEnum
     {

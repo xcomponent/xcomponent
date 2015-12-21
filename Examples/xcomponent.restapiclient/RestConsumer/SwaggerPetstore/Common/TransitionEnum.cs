@@ -7,11 +7,7 @@
 //------------------------------------------------------------------------------
 
 
-<<<<<<< HEAD:Examples/xcomponent.orderprocessing/OrderProcessing/Order/Common/TransitionEnum.cs
-namespace XComponent.Order.Common
-=======
 namespace XComponent.SwaggerPetstore.Common
->>>>>>> ded11e7603a1629b3194f0a94a09a55a31a4ee67:Examples/xcomponent.restapiclient/RestConsumer/SwaggerPetstore/Common/TransitionEnum.cs
 {
     using System;
     
@@ -19,19 +15,6 @@ namespace XComponent.SwaggerPetstore.Common
     {
 		Init,
 			
-<<<<<<< HEAD:Examples/xcomponent.orderprocessing/OrderProcessing/Order/Common/TransitionEnum.cs
-		CreateOrder,
-			
-		PublishOrderCreation,
-			
-		Execute,
-			
-		PartiallyExecute,
-			
-		PublishOrderFilled,
-			
-		PublishOrderPartiallyFilled,
-=======
 		AddPet,
 			
 		CreateAddPetHttpRequest,
@@ -45,7 +28,6 @@ namespace XComponent.SwaggerPetstore.Common
 		ReceiveSuccess,
 			
 		ReceiveError,
->>>>>>> ded11e7603a1629b3194f0a94a09a55a31a4ee67:Examples/xcomponent.restapiclient/RestConsumer/SwaggerPetstore/Common/TransitionEnum.cs
 			
 		
     }

@@ -7,17 +7,10 @@
 //------------------------------------------------------------------------------
 
 
-<<<<<<< HEAD:Examples/xcomponent.orderprocessing/OrderProcessing/Order/Common/Senders/AbstractSender.cs
-namespace XComponent.Order.Common.Senders
-{
-    using System;
-    using XComponent.Order.Common;
-=======
 namespace XComponent.SwaggerPetstore.Common.Senders
 {
     using System;
     using XComponent.SwaggerPetstore.Common;
->>>>>>> ded11e7603a1629b3194f0a94a09a55a31a4ee67:Examples/xcomponent.restapiclient/RestConsumer/SwaggerPetstore/Common/Senders/AbstractSender.cs
     
     
     public class AbstractSender

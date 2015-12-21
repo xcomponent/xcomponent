@@ -67,6 +67,20 @@ Target "TradeCapture" (fun _ ->
     if result <> 0 then failwithf "xcomponent.dealcapture build returned with a non-zero exit code"    
 )
 
+Target "RestApiClient" (fun _ ->    
+    trace ("Building XComponent.RestApiClient")
+    let timeoutExec = 5.0
+
+    let result = ExecProcess (fun info ->
+                    info.FileName <- "build.cmd"
+                    info.WorkingDirectory <- Path.Combine(__SOURCE_DIRECTORY__, "xcomponent.restapiclient") 
+                    info.Arguments <- "All"
+                    ) 
+                    (TimeSpan.FromMinutes timeoutExec)
+  
+    if result <> 0 then failwithf "xcomponent.restapiclient build returned with a non-zero exit code"    
+)
+
 // Default target
 Target "Help" (fun _ ->
     List.iter printfn [
@@ -90,6 +104,9 @@ Target "All" DoNothing
   ==> "All"
 
 "TradeCapture"
+  ==> "All"
+  
+"RestApiClient"
   ==> "All"
   
 // start build

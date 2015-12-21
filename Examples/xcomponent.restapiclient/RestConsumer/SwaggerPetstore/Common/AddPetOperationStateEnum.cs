@@ -7,27 +7,6 @@
 //------------------------------------------------------------------------------
 
 
-<<<<<<< HEAD:Examples/xcomponent.orderprocessing/OrderProcessing/Trade/Common/TransitionEnum.cs
-namespace XComponent.Trade.Common
-{
-    using System;
-    
-    public enum TransitionEnum
-    {
-		Init,
-			
-		ProcessOrderCreation,
-			
-		CreateTrade,
-			
-		ProcessOrderPartialFill,
-			
-		Execute,
-			
-		
-    }
-}
-=======
 namespace XComponent.SwaggerPetstore.Common
 {
     using System;
@@ -45,4 +24,3 @@ namespace XComponent.SwaggerPetstore.Common
 		
     }
 }
->>>>>>> ded11e7603a1629b3194f0a94a09a55a31a4ee67:Examples/xcomponent.restapiclient/RestConsumer/SwaggerPetstore/Common/AddPetOperationStateEnum.cs

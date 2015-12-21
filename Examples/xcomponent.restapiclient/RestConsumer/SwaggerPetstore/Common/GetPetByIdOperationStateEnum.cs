@@ -7,27 +7,6 @@
 //------------------------------------------------------------------------------
 
 
-<<<<<<< HEAD:Examples/xcomponent.orderprocessing/OrderProcessing/Order/Common/StdEnum.cs
-namespace XComponent.Order.Common
-{
-    using System;
-    
-    public enum StdEnum
-    {
-		OrderProcessor = -730646916,
-			
-		Order = 823593371,
-			
-		CreationFacade = -109111630,
-			
-		ExecutionFacade = 934188424,
-			
-		PartialExecutionFacade = 928146413,
-			
-		
-    }
-}
-=======
 namespace XComponent.SwaggerPetstore.Common
 {
     using System;
@@ -45,4 +24,3 @@ namespace XComponent.SwaggerPetstore.Common
 		
     }
 }
->>>>>>> ded11e7603a1629b3194f0a94a09a55a31a4ee67:Examples/xcomponent.restapiclient/RestConsumer/SwaggerPetstore/Common/GetPetByIdOperationStateEnum.cs

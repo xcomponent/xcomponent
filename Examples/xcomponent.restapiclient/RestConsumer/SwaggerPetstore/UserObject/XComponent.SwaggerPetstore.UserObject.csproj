@@ -51,20 +51,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApiResponse.cs" />
+    <Compile Include="Category.cs" />
+    <Compile Include="Order.cs" />
+    <Compile Include="Pet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SwaggerPetstore_EntryPoint.cs" />
-    <Compile Include="C:\XComponentProjects\RestConsumer\SwaggerPetstore\UserObject\Models\ApiResponse.cs" />
-    <Compile Include="C:\XComponentProjects\RestConsumer\SwaggerPetstore\UserObject\Models\Category.cs" />
-    <Compile Include="C:\XComponentProjects\RestConsumer\SwaggerPetstore\UserObject\Models\Order.cs" />
-    <Compile Include="C:\XComponentProjects\RestConsumer\SwaggerPetstore\UserObject\Models\Pet.cs" />
-    <Compile Include="C:\XComponentProjects\RestConsumer\SwaggerPetstore\UserObject\Models\Tag.cs" />
-    <Compile Include="C:\XComponentProjects\RestConsumer\SwaggerPetstore\UserObject\Models\User.cs" />
     <Compile Include="SuccessResponse.cs" />
     <Compile Include="ErrorResponse.cs" />
     <Compile Include="AddPet.cs" />
     <Compile Include="AddPetOperation.cs" />
     <Compile Include="GetPetById.cs" />
     <Compile Include="GetPetByIdOperation.cs" />
+    <Compile Include="Tag.cs" />
+    <Compile Include="User.cs" />
   </ItemGroup>
   <Import Condition="true" Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,5 +1,5 @@
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XComponent.SwaggerPetstore.UserObject", "UserObject\XComponent.SwaggerPetstore.UserObject.csproj", "{2D12F6CA-D31B-47B7-B7FE-DB1195D99E6F}"

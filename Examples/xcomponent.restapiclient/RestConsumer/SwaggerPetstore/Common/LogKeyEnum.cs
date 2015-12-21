@@ -7,11 +7,7 @@
 //------------------------------------------------------------------------------
 
 
-<<<<<<< HEAD:Examples/xcomponent.orderprocessing/OrderProcessing/Order/Common/LogKeyEnum.cs
-namespace XComponent.Order.Common
-=======
 namespace XComponent.SwaggerPetstore.Common
->>>>>>> ded11e7603a1629b3194f0a94a09a55a31a4ee67:Examples/xcomponent.restapiclient/RestConsumer/SwaggerPetstore/Common/LogKeyEnum.cs
 {
     using System;
     using XComponent.Logger.Managers;
@@ -20,11 +16,8 @@ namespace XComponent.SwaggerPetstore.Common
 
     public enum LogKeyEnum
     {
-<<<<<<< HEAD:Examples/xcomponent.orderprocessing/OrderProcessing/Order/Common/LogKeyEnum.cs
-=======
 		SwaggerPetstoreLogger,
 			
->>>>>>> ded11e7603a1629b3194f0a94a09a55a31a4ee67:Examples/xcomponent.restapiclient/RestConsumer/SwaggerPetstore/Common/LogKeyEnum.cs
 		
     }
 
@@ -34,13 +27,9 @@ namespace XComponent.SwaggerPetstore.Common
        
          static Loggers()
          {
-<<<<<<< HEAD:Examples/xcomponent.orderprocessing/OrderProcessing/Order/Common/LogKeyEnum.cs
-            
-=======
             loggerByLogKeyEnum.Add(LogKeyEnum.SwaggerPetstoreLogger, ComponentLoggerManager<LogKeyEnum>.GetComponentLogger(LogKeyEnum.SwaggerPetstoreLogger, ComponentHelper.COMPONENT_NAME));
 			   
 		    
->>>>>>> ded11e7603a1629b3194f0a94a09a55a31a4ee67:Examples/xcomponent.restapiclient/RestConsumer/SwaggerPetstore/Common/LogKeyEnum.cs
             
          }
 

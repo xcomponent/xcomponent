@@ -7,11 +7,7 @@
 //------------------------------------------------------------------------------
 
 
-<<<<<<< HEAD:Examples/xcomponent.orderprocessing/OrderProcessing/Order/Common/HashCodeHelper/SendEventOrderInputOrderProcessor.cs
-namespace XComponent.Order.Common
-=======
 namespace XComponent.SwaggerPetstore.Common
->>>>>>> ded11e7603a1629b3194f0a94a09a55a31a4ee67:Examples/xcomponent.restapiclient/RestConsumer/SwaggerPetstore/Common/HashCodeHelper/ReceiveSuccessGetPetByIdOperation.cs
 {
     using System;
     using XComponent.Common.ApiContext;
@@ -21,11 +17,7 @@ namespace XComponent.SwaggerPetstore.Common
     using Microsoft.FSharp.Core;
     
     
-<<<<<<< HEAD:Examples/xcomponent.orderprocessing/OrderProcessing/Order/Common/HashCodeHelper/SendEventOrderInputOrderProcessor.cs
-    public class SendEventOrderInputOrderProcessor : XComponent.Common.Hashcode.IHashcodeGenerator
-=======
     public class ReceiveSuccessGetPetByIdOperation : XComponent.Common.Hashcode.IHashcodeGenerator
->>>>>>> ded11e7603a1629b3194f0a94a09a55a31a4ee67:Examples/xcomponent.restapiclient/RestConsumer/SwaggerPetstore/Common/HashCodeHelper/ReceiveSuccessGetPetByIdOperation.cs
     {
         
         public Tuple<Microsoft.FSharp.Core.FSharpOption<System.Int32>, Boolean> Generate(Object evt)

@@ -7,11 +7,7 @@
 //------------------------------------------------------------------------------
 
 
-<<<<<<< HEAD:Examples/xcomponent.orderprocessing/OrderProcessing/Order/Common/ComponentHelper.cs
-namespace XComponent.Order.Common
-=======
 namespace XComponent.SwaggerPetstore.Common
->>>>>>> ded11e7603a1629b3194f0a94a09a55a31a4ee67:Examples/xcomponent.restapiclient/RestConsumer/SwaggerPetstore/Common/ComponentHelper.cs
 {
     using System;
     
@@ -19,14 +15,8 @@ namespace XComponent.SwaggerPetstore.Common
     public class ComponentHelper
     {
         
-<<<<<<< HEAD:Examples/xcomponent.orderprocessing/OrderProcessing/Order/Common/ComponentHelper.cs
-        public const string COMPONENT_NAME = "Order";
-        
-        public const int COMPONENT_CODE = 823593371;
-=======
         public const string COMPONENT_NAME = "SwaggerPetstore";
         
         public const int COMPONENT_CODE = -1217457941;
->>>>>>> ded11e7603a1629b3194f0a94a09a55a31a4ee67:Examples/xcomponent.restapiclient/RestConsumer/SwaggerPetstore/Common/ComponentHelper.cs
     }
 }
