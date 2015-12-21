@@ -32,7 +32,7 @@ Build results are in the *build* folder
 
 Execute the following script in the *build* folder:
 ```
-$ startMicroservice.cmd
+$ startMicroservices.cmd
 ```
 
 ### Start the ConsoleApp
@@ -56,4 +56,8 @@ Step by step tutorial: [Click here](documentation/README.md)
 
 ## Questions?
 
+<<<<<<< HEAD
 If you have any questions about this sample, please [create a Github issue for us](https://github.com/xcomponent/xcomponent/issues)!
+=======
+If you have any questions about this sample, please [create a Github issue for us](https://github.com/xcomponent/xcomponent.orderprocessing/issues)!
+>>>>>>> ded11e7603a1629b3194f0a94a09a55a31a4ee67

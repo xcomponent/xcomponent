@@ -16,7 +16,7 @@ let buildClientAppDir = Path.Combine(buildDir, "consoleApp")
 let generatedDir = "./OrderProcessing/generated/"
 let exportDir = Path.Combine(buildDir, "exportMicroservice")
 let studioScriptPath = "./xcstudio.cmd"
-let startMicroserviceScriptPath = Path.Combine(buildDir, "startMicroservice.cmd")
+let startMicroserviceScriptPath = Path.Combine(buildDir, "startMicroservices.cmd")
 let startConsoleAppScriptPath = Path.Combine(buildDir, "startConsoleApp.cmd")
 let xctools = "../packages/xcomponent.community/tools/XCStudio\XCTools/XComponent.XCTools.exe"
 let timeoutExec = 5.0
@@ -63,11 +63,12 @@ Target "Generate" (fun _ ->
     ;"popd" |]
     File.WriteAllLines(studioScriptPath, studioScriptContents)    
 
-    //Generate startMicroservice.cmd
-    trace("Generating startMicroservice.cmd")
+    //Generate startMicroservices.cmd
+    trace("Generating startMicroservices.cmd")
     let startMicroserviceScriptContents = [| "pushd %~dp0"
     ;"cd /d \"" + Path.Combine(parentDirectory, "packages\\xcomponent.community\\tools\XCStudio\XCRuntime") + "\""
     ;"start \"\" XCRuntime.exe \"" + Path.Combine(__SOURCE_DIRECTORY__, "build\\exportMicroservice\\xcassemblies\\OrderProcessing-OrderProcessingMicroservice.xcr") + "\""
+    ;"start \"\" XCRuntime.exe \"" + Path.Combine(__SOURCE_DIRECTORY__, "build\\exportMicroservice\\xcassemblies\\OrderProcessing-TradeProcessingMicroservice.xcr") + "\""
     ;"popd"|]
     File.WriteAllLines(startMicroserviceScriptPath, startMicroserviceScriptContents)    
     
