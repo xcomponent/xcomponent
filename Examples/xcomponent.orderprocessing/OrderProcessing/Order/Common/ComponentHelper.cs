@@ -7,14 +7,16 @@
 //------------------------------------------------------------------------------
 
 
-namespace XComponent.Trade.Common
+namespace XComponent.Order.Common
 {
     using System;
     
-    public enum OrderPartialFillProxyStateEnum
+    
+    public class ComponentHelper
     {
-		Up = 0,
-			
-		
+        
+        public const string COMPONENT_NAME = "Order";
+        
+        public const int COMPONENT_CODE = 823593371;
     }
 }

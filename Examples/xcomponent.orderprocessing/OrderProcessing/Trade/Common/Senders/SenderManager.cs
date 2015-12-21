@@ -28,30 +28,43 @@ namespace XComponent.Trade.Common.Senders
                 return m_processOrderCreationOrderCreationOnUpTradeProcessorSender;
             }
         }
-		private static ProcessOrderPartialFillOrderExecutionOnUpTradeProcessorSender m_processOrderPartialFillOrderExecutionOnUpTradeProcessorSender;
+		private static ExecuteTradeTradeExecutionOnUpTradeProcessorSender m_executeTradeTradeExecutionOnUpTradeProcessorSender;
         
-        public static ProcessOrderPartialFillOrderExecutionOnUpTradeProcessorSender ProcessOrderPartialFillOrderExecutionOnUpTradeProcessorSender
+        public static ExecuteTradeTradeExecutionOnUpTradeProcessorSender ExecuteTradeTradeExecutionOnUpTradeProcessorSender
         {
             get
             {
-                if ((m_processOrderPartialFillOrderExecutionOnUpTradeProcessorSender == null))
+                if ((m_executeTradeTradeExecutionOnUpTradeProcessorSender == null))
                 {
-                    m_processOrderPartialFillOrderExecutionOnUpTradeProcessorSender = new ProcessOrderPartialFillOrderExecutionOnUpTradeProcessorSender();
+                    m_executeTradeTradeExecutionOnUpTradeProcessorSender = new ExecuteTradeTradeExecutionOnUpTradeProcessorSender();
                 }
-                return m_processOrderPartialFillOrderExecutionOnUpTradeProcessorSender;
+                return m_executeTradeTradeExecutionOnUpTradeProcessorSender;
             }
         }
-		private static ExecuteOrderExecutionOnExecutedTradeSender m_executeOrderExecutionOnExecutedTradeSender;
+		private static ProcessOrderExecutionOrderExecutionOnUpTradeProcessorSender m_processOrderExecutionOrderExecutionOnUpTradeProcessorSender;
         
-        public static ExecuteOrderExecutionOnExecutedTradeSender ExecuteOrderExecutionOnExecutedTradeSender
+        public static ProcessOrderExecutionOrderExecutionOnUpTradeProcessorSender ProcessOrderExecutionOrderExecutionOnUpTradeProcessorSender
         {
             get
             {
-                if ((m_executeOrderExecutionOnExecutedTradeSender == null))
+                if ((m_processOrderExecutionOrderExecutionOnUpTradeProcessorSender == null))
                 {
-                    m_executeOrderExecutionOnExecutedTradeSender = new ExecuteOrderExecutionOnExecutedTradeSender();
+                    m_processOrderExecutionOrderExecutionOnUpTradeProcessorSender = new ProcessOrderExecutionOrderExecutionOnUpTradeProcessorSender();
                 }
-                return m_executeOrderExecutionOnExecutedTradeSender;
+                return m_processOrderExecutionOrderExecutionOnUpTradeProcessorSender;
+            }
+        }
+		private static ExecuteTradeExecutionOnExecutedTradeSender m_executeTradeExecutionOnExecutedTradeSender;
+        
+        public static ExecuteTradeExecutionOnExecutedTradeSender ExecuteTradeExecutionOnExecutedTradeSender
+        {
+            get
+            {
+                if ((m_executeTradeExecutionOnExecutedTradeSender == null))
+                {
+                    m_executeTradeExecutionOnExecutedTradeSender = new ExecuteTradeExecutionOnExecutedTradeSender();
+                }
+                return m_executeTradeExecutionOnExecutedTradeSender;
             }
         }
 		private static CreateTradeTradeOnWaitingForExecutionTradeSender m_createTradeTradeOnWaitingForExecutionTradeSender;
@@ -65,19 +78,6 @@ namespace XComponent.Trade.Common.Senders
                     m_createTradeTradeOnWaitingForExecutionTradeSender = new CreateTradeTradeOnWaitingForExecutionTradeSender();
                 }
                 return m_createTradeTradeOnWaitingForExecutionTradeSender;
-            }
-        }
-		private static ProcessOrderPartialFillOrderExecutionOnUpOrderPartialFillProxySender m_processOrderPartialFillOrderExecutionOnUpOrderPartialFillProxySender;
-        
-        public static ProcessOrderPartialFillOrderExecutionOnUpOrderPartialFillProxySender ProcessOrderPartialFillOrderExecutionOnUpOrderPartialFillProxySender
-        {
-            get
-            {
-                if ((m_processOrderPartialFillOrderExecutionOnUpOrderPartialFillProxySender == null))
-                {
-                    m_processOrderPartialFillOrderExecutionOnUpOrderPartialFillProxySender = new ProcessOrderPartialFillOrderExecutionOnUpOrderPartialFillProxySender();
-                }
-                return m_processOrderPartialFillOrderExecutionOnUpOrderPartialFillProxySender;
             }
         }
 		

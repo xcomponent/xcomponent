@@ -102,6 +102,9 @@ Target "All" DoNothing
 
 "OrderProcessing"
   ==> "All"
+  
+"RestApiClient"
+  ==> "All"
 
 "TradeCapture"
   ==> "All"

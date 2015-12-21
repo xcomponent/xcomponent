@@ -1,74 +1,3 @@
-<<<<<<< HEAD
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <ProjectGuid>{5F7886A8-6968-4C98-9479-254D3BECD610}</ProjectGuid>
-    <RootNamespace>XComponent.Trade.TriggeredMethod</RootNamespace>
-    <AssemblyName>XComponent.Trade.TriggeredMethod</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <ProductVersion>9.0.21022</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-  </PropertyGroup>
-  <PropertyGroup Condition=" ('$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ) ">
-    <DebugSymbols>True</DebugSymbols>
-    <DebugType>Full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" ('$(Configuration)|$(Platform)' == 'Release|AnyCPU' ) ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-    <Reference Include="System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-    <Reference Include="System.Data.Entity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-    <Reference Include="System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-    <Reference Include="XComponent.Core, Version=4.5.0.30119, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\UserReference\XComponent.Core.dll</HintPath>
-      <SpecificVersion>false</SpecificVersion>
-    </Reference>
-    <Reference Include="XComponent.Extended, Version=4.5.0.30119, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\UserReference\XComponent.Extended.dll</HintPath>
-      <SpecificVersion>false</SpecificVersion>
-    </Reference>
-    <Reference Include="XComponent.Order.UserObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\..\Order\generated\UserObject\XComponent.Order.UserObject.dll</HintPath>
-      <SpecificVersion>false</SpecificVersion>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="OrderPartialFillProxyTriggeredMethod.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TradeFactory.cs" />
-    <Compile Include="TradeProcessorTriggeredMethod.cs" />
-    <Compile Include="TradeTriggeredMethod.cs" />
-    <Compile Include="TriggeredMethodContext.cs" />
-    <Compile Include="TriggeredMethodContext.generated..cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Common\XComponent.Trade.Common.csproj">
-      <Name>XComponent.Trade.Common</Name>
-      <Project>{BE692B62-C3EF-410D-9521-7739F2347E1C}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\UserObject\XComponent.Trade.UserObject.csproj">
-      <Name>XComponent.Trade.UserObject</Name>
-      <Project>{A38F533F-39FC-416A-9246-4D5E07283447}</Project>
-    </ProjectReference>
-  </ItemGroup>
-  <Import Condition="true" Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-=======
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
@@ -137,5 +66,4 @@
     </ProjectReference>
   </ItemGroup>
   <Import Condition="true" Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
->>>>>>> ded11e7603a1629b3194f0a94a09a55a31a4ee67
 </Project>

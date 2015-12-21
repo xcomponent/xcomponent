@@ -17,19 +17,11 @@ namespace XComponent.Trade.Common
     using Microsoft.FSharp.Core;
     
     
-    public class ExecuteTrade : XComponent.Common.Hashcode.IHashcodeGenerator
+    public class SendEventOrderCreationTradeProcessor : XComponent.Common.Hashcode.IHashcodeGenerator
     {
         
         public Tuple<Microsoft.FSharp.Core.FSharpOption<System.Int32>, Boolean> Generate(Object evt)
         {
-            if (evt is XComponent.Trade.UserObject.TradeExecution)
-            {
-                XComponent.Trade.UserObject.TradeExecution typedEvt = ((XComponent.Trade.UserObject.TradeExecution)(evt));
-                #pragma warning disable 472
-				var OrderIdHC = typedEvt.OrderId != null ? HashcodeHelper.GetXcHashCode(typedEvt.OrderId) : -1;
-				
-                return new Tuple<Microsoft.FSharp.Core.FSharpOption<System.Int32>, Boolean>(FSharpOption<int>.Some(OrderIdHC), false);
-            }
             return new Tuple<Microsoft.FSharp.Core.FSharpOption<System.Int32>, Boolean>(FSharpOption<int>.None, false);
         }
     }

@@ -17,47 +17,66 @@ namespace XComponent.Trade.Common.Senders
 	public interface IProcessOrderCreationOrderCreationOnUpTradeProcessorSenderInterface
     {
 		void CreateTrade(Context context);
+		void ExecuteTrade(Context context);
+		void Execute(Context context);
 		
 		
 		void CreateTrade(Context context, XComponent.Trade.UserObject.Trade transitionEvent);
+		void ExecuteTrade(Context context, XComponent.Trade.UserObject.TradeExecution transitionEvent);
+		void Execute(Context context, XComponent.Trade.UserObject.TradeExecution transitionEvent);
 		
 		
 		void SendEvent(XComponent.Trade.UserObject.Trade evt);
 			void SendEvent(StdEnum stdEnum, XComponent.Trade.UserObject.Trade evt);
+		void SendEvent(XComponent.Trade.UserObject.TradeExecution evt);
+			void SendEvent(StdEnum stdEnum, XComponent.Trade.UserObject.TradeExecution evt);
 		
     }
-	public interface IProcessOrderPartialFillOrderExecutionOnUpTradeProcessorSenderInterface
+	public interface IExecuteTradeTradeExecutionOnUpTradeProcessorSenderInterface
     {
 		void CreateTrade(Context context);
+		void ExecuteTrade(Context context);
+		void Execute(Context context);
 		
 		
 		void CreateTrade(Context context, XComponent.Trade.UserObject.Trade transitionEvent);
+		void ExecuteTrade(Context context, XComponent.Trade.UserObject.TradeExecution transitionEvent);
+		void Execute(Context context, XComponent.Trade.UserObject.TradeExecution transitionEvent);
 		
 		
 		void SendEvent(XComponent.Trade.UserObject.Trade evt);
 			void SendEvent(StdEnum stdEnum, XComponent.Trade.UserObject.Trade evt);
+		void SendEvent(XComponent.Trade.UserObject.TradeExecution evt);
+			void SendEvent(StdEnum stdEnum, XComponent.Trade.UserObject.TradeExecution evt);
 		
     }
-	public interface IExecuteOrderExecutionOnExecutedTradeSenderInterface
+	public interface IProcessOrderExecutionOrderExecutionOnUpTradeProcessorSenderInterface
+    {
+		void CreateTrade(Context context);
+		void ExecuteTrade(Context context);
+		void Execute(Context context);
+		
+		
+		void CreateTrade(Context context, XComponent.Trade.UserObject.Trade transitionEvent);
+		void ExecuteTrade(Context context, XComponent.Trade.UserObject.TradeExecution transitionEvent);
+		void Execute(Context context, XComponent.Trade.UserObject.TradeExecution transitionEvent);
+		
+		
+		void SendEvent(XComponent.Trade.UserObject.Trade evt);
+			void SendEvent(StdEnum stdEnum, XComponent.Trade.UserObject.Trade evt);
+		void SendEvent(XComponent.Trade.UserObject.TradeExecution evt);
+			void SendEvent(StdEnum stdEnum, XComponent.Trade.UserObject.TradeExecution evt);
+		
+    }
+	public interface IExecuteTradeExecutionOnExecutedTradeSenderInterface
     {
 		
 		
-		void ProcessOrderPartialFill_Trade(Context context, XComponent.Order.UserObject.OrderExecution transitionEvent);
 		
 		
-		void SendEvent(XComponent.Order.UserObject.OrderExecution evt);
-			void SendEvent(StdEnum stdEnum, XComponent.Order.UserObject.OrderExecution evt);
 		
     }
 	public interface ICreateTradeTradeOnWaitingForExecutionTradeSenderInterface
-    {
-		
-		
-		
-		
-		
-    }
-	public interface IProcessOrderPartialFillOrderExecutionOnUpOrderPartialFillProxySenderInterface
     {
 		
 		

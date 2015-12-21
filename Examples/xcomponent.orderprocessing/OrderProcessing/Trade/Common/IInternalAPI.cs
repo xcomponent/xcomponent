@@ -23,9 +23,9 @@ namespace XComponent.Trade.Common
 			
 		void CreateTrade(Context context);
 			
-		void ProcessOrderPartialFill_TradeProcessor(Context context);
+		void ExecuteTrade(Context context);
 			
-		void ProcessOrderPartialFill_Trade(Context context);
+		void ProcessOrderExecution(Context context);
 			
 		void Execute(Context context);
 			
@@ -37,11 +37,11 @@ namespace XComponent.Trade.Common
 			
 		void CreateTrade(Context context, XComponent.Trade.UserObject.Trade transitionEvent);
 			
-		void ProcessOrderPartialFill_TradeProcessor(Context context, XComponent.Order.UserObject.OrderExecution transitionEvent);
+		void ExecuteTrade(Context context, XComponent.Trade.UserObject.TradeExecution transitionEvent);
 			
-		void ProcessOrderPartialFill_Trade(Context context, XComponent.Order.UserObject.OrderExecution transitionEvent);
+		void ProcessOrderExecution(Context context, XComponent.Order.UserObject.OrderExecution transitionEvent);
 			
-		void Execute(Context context, XComponent.Order.UserObject.OrderExecution transitionEvent);
+		void Execute(Context context, XComponent.Trade.UserObject.TradeExecution transitionEvent);
 			
 		
 		
@@ -52,6 +52,10 @@ namespace XComponent.Trade.Common
 		void SendEvent(XComponent.Trade.UserObject.Trade evt);
 			
 			void SendEvent(StdEnum stdEnum, XComponent.Trade.UserObject.Trade evt);
+			
+		void SendEvent(XComponent.Trade.UserObject.TradeExecution evt);
+			
+			void SendEvent(StdEnum stdEnum, XComponent.Trade.UserObject.TradeExecution evt);
 			
 		void SendEvent(XComponent.Order.UserObject.OrderExecution evt);
 			

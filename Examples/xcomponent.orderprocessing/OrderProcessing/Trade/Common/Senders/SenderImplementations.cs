@@ -19,11 +19,27 @@ namespace XComponent.Trade.Common.Senders
 			{
 				internalAPI.CreateTrade(context);
 			}
+		public void ExecuteTrade(Context context)
+			{
+				internalAPI.ExecuteTrade(context);
+			}
+		public void Execute(Context context)
+			{
+				internalAPI.Execute(context);
+			}
 		
 		
 		public void CreateTrade(Context context, XComponent.Trade.UserObject.Trade transitionEvent)
 			{
 				internalAPI.CreateTrade(context, transitionEvent);
+			}
+		public void ExecuteTrade(Context context, XComponent.Trade.UserObject.TradeExecution transitionEvent)
+			{
+				internalAPI.ExecuteTrade(context, transitionEvent);
+			}
+		public void Execute(Context context, XComponent.Trade.UserObject.TradeExecution transitionEvent)
+			{
+				internalAPI.Execute(context, transitionEvent);
 			}
 		
 		
@@ -36,19 +52,44 @@ namespace XComponent.Trade.Common.Senders
 			{
 				internalAPI.SendEvent(stdEnum, evt);
 			}
+		public void SendEvent(XComponent.Trade.UserObject.TradeExecution evt)
+			{
+				internalAPI.SendEvent(evt);
+			}
+			
+			public void SendEvent(StdEnum stdEnum, XComponent.Trade.UserObject.TradeExecution evt)
+			{
+				internalAPI.SendEvent(stdEnum, evt);
+			}
 		
     }
-	public class ProcessOrderPartialFillOrderExecutionOnUpTradeProcessorSender : AbstractSender, IProcessOrderPartialFillOrderExecutionOnUpTradeProcessorSenderInterface
+	public class ExecuteTradeTradeExecutionOnUpTradeProcessorSender : AbstractSender, IExecuteTradeTradeExecutionOnUpTradeProcessorSenderInterface
     {
 		public void CreateTrade(Context context)
 			{
 				internalAPI.CreateTrade(context);
 			}
+		public void ExecuteTrade(Context context)
+			{
+				internalAPI.ExecuteTrade(context);
+			}
+		public void Execute(Context context)
+			{
+				internalAPI.Execute(context);
+			}
 		
 		
 		public void CreateTrade(Context context, XComponent.Trade.UserObject.Trade transitionEvent)
 			{
 				internalAPI.CreateTrade(context, transitionEvent);
+			}
+		public void ExecuteTrade(Context context, XComponent.Trade.UserObject.TradeExecution transitionEvent)
+			{
+				internalAPI.ExecuteTrade(context, transitionEvent);
+			}
+		public void Execute(Context context, XComponent.Trade.UserObject.TradeExecution transitionEvent)
+			{
+				internalAPI.Execute(context, transitionEvent);
 			}
 		
 		
@@ -61,30 +102,68 @@ namespace XComponent.Trade.Common.Senders
 			{
 				internalAPI.SendEvent(stdEnum, evt);
 			}
-		
-    }
-	public class ExecuteOrderExecutionOnExecutedTradeSender : AbstractSender, IExecuteOrderExecutionOnExecutedTradeSenderInterface
-    {
-		
-		
-		public void ProcessOrderPartialFill_Trade(Context context, XComponent.Order.UserObject.OrderExecution transitionEvent)
-			{
-				internalAPI.ProcessOrderPartialFill_Trade(context, transitionEvent);
-			}
-		
-		
-		public void SendEvent(XComponent.Order.UserObject.OrderExecution evt)
+		public void SendEvent(XComponent.Trade.UserObject.TradeExecution evt)
 			{
 				internalAPI.SendEvent(evt);
 			}
 			
-			public void SendEvent(StdEnum stdEnum, XComponent.Order.UserObject.OrderExecution evt)
+			public void SendEvent(StdEnum stdEnum, XComponent.Trade.UserObject.TradeExecution evt)
 			{
 				internalAPI.SendEvent(stdEnum, evt);
 			}
 		
     }
-	public class CreateTradeTradeOnWaitingForExecutionTradeSender : AbstractSender, ICreateTradeTradeOnWaitingForExecutionTradeSenderInterface
+	public class ProcessOrderExecutionOrderExecutionOnUpTradeProcessorSender : AbstractSender, IProcessOrderExecutionOrderExecutionOnUpTradeProcessorSenderInterface
+    {
+		public void CreateTrade(Context context)
+			{
+				internalAPI.CreateTrade(context);
+			}
+		public void ExecuteTrade(Context context)
+			{
+				internalAPI.ExecuteTrade(context);
+			}
+		public void Execute(Context context)
+			{
+				internalAPI.Execute(context);
+			}
+		
+		
+		public void CreateTrade(Context context, XComponent.Trade.UserObject.Trade transitionEvent)
+			{
+				internalAPI.CreateTrade(context, transitionEvent);
+			}
+		public void ExecuteTrade(Context context, XComponent.Trade.UserObject.TradeExecution transitionEvent)
+			{
+				internalAPI.ExecuteTrade(context, transitionEvent);
+			}
+		public void Execute(Context context, XComponent.Trade.UserObject.TradeExecution transitionEvent)
+			{
+				internalAPI.Execute(context, transitionEvent);
+			}
+		
+		
+		public void SendEvent(XComponent.Trade.UserObject.Trade evt)
+			{
+				internalAPI.SendEvent(evt);
+			}
+			
+			public void SendEvent(StdEnum stdEnum, XComponent.Trade.UserObject.Trade evt)
+			{
+				internalAPI.SendEvent(stdEnum, evt);
+			}
+		public void SendEvent(XComponent.Trade.UserObject.TradeExecution evt)
+			{
+				internalAPI.SendEvent(evt);
+			}
+			
+			public void SendEvent(StdEnum stdEnum, XComponent.Trade.UserObject.TradeExecution evt)
+			{
+				internalAPI.SendEvent(stdEnum, evt);
+			}
+		
+    }
+	public class ExecuteTradeExecutionOnExecutedTradeSender : AbstractSender, IExecuteTradeExecutionOnExecutedTradeSenderInterface
     {
 		
 		
@@ -92,7 +171,7 @@ namespace XComponent.Trade.Common.Senders
 		
 		
     }
-	public class ProcessOrderPartialFillOrderExecutionOnUpOrderPartialFillProxySender : AbstractSender, IProcessOrderPartialFillOrderExecutionOnUpOrderPartialFillProxySenderInterface
+	public class CreateTradeTradeOnWaitingForExecutionTradeSender : AbstractSender, ICreateTradeTradeOnWaitingForExecutionTradeSenderInterface
     {
 		
 		
