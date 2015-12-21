@@ -15,6 +15,9 @@
  * [API](#api)
  * [Composition](#composition)
 * [3 - XCStudio](#3---xcstudio)
+ * [XCStudio menus](#xcstudio-menus)
+ * [Top menu icon bar](#top-menu-icon-bar)
+ * [XCStudio project hierarchy](#xcstudio-project-hierarchy)
 
 ## 1 - Overview
 
@@ -138,3 +141,41 @@ XCStudio lets you:
 
 The following part briefly describes XCStudio menus to give you an overview of how to use this application.
 
+### XCStudio menus
+
+You navigate through 4 menus and a context menu:
+
+![menu](Images/studio_menu.jpg)
+
+The five top menus lets you control views and preferences of the project:
+- File menu: to create, open, save XComponent project, configure XCStudio and set user settings
+- Project: a global view of your XComponent project where you can edit your project settings, export and run your application.
+- Build menu: to build a component or the entire project
+- Window menu: to edit display preferences.
+
+The context menu depends on the selected window. In the previous screenshot, It provides tools to design your components and to customize your composition.
+
+### Top menu icon bar
+
+Around XComponent logo (in the top left hand corner) there’s a quick launch icon bar gathering the most used actions:
+
+![menu](Images/studio_topmenu.jpg)
+
+From left to right these shortcuts are:
+- Open project (Ctrl + O)
+- Save current project (Ctrl + Maj + S)
+- Save current document (Ctrl + S)
+- Close current project (Ctrl + W)
+
+### XCStudio project hierarchy
+
+XCStudio projects are stored in *.xcml files.
+
+Default XCStudio projects directory is “C:\XComponentProjects\{projectNameYouHaveChosen}\”
+Here below is the generated project hierarchy:
+
+![folders](Images/xcstudio_folders.jpg)
+
+When creating a new project you can change the default location.
+
+Other files can be stored in project directory, for instance if you generate GUI applications, by default location proposed by XCStudio is the same directory.
