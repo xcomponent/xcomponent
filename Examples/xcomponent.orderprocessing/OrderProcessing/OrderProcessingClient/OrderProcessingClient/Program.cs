@@ -38,8 +38,7 @@ namespace OrderProcessingClient
                 if (myOrderProcessingApi.Init(myOrderProcessingApi.Api.DefaultXcApiFileName, clientApiOptions))
                 {
                     int orderId = 0;
-                    using (var waitOrderCreation = new AutoResetEvent(false))
-                    using (var waitOrderExecution = new AutoResetEvent(false))
+                    using (var orderCreationEvent = new AutoResetEvent(false))
                     {
 
                         // Subscribe to new order instances
@@ -48,7 +47,7 @@ namespace OrderProcessingClient
                             {
                                 Console.WriteLine("New order pending for execution: " + DisplayOrder(instance));
                                 orderId = instance.PublicMember.Id;
-                                waitOrderCreation.Set();
+                                orderCreationEvent.Set();
                             };
 
                         myOrderProcessingApi.Api.Order_Component.Order_StateMachine.PartiallyExecuted_State
@@ -56,14 +55,12 @@ namespace OrderProcessingClient
                             instance =>
                             {
                                 Console.WriteLine("Order partially filled: " + DisplayOrder(instance));
-                                waitOrderExecution.Set();
                             };
 
                         myOrderProcessingApi.Api.Order_Component.Order_StateMachine.Executed_State.InstanceUpdated +=
                             instance =>
                             {
                                 Console.WriteLine("Order filled: " + DisplayOrder(instance));
-                                waitOrderExecution.Set();
                             };
 
                         myOrderProcessingApi.Api.Trade_Component.Trade_StateMachine.WaitingForExecution_State
@@ -87,7 +84,8 @@ namespace OrderProcessingClient
                         };
 
                         myOrderProcessingApi.Api.Order_Component.OrderProcessor_StateMachine.SendEvent(orderInput);
-                        waitOrderCreation.WaitOne();
+                        orderCreationEvent.WaitOne(1000);
+
                         // Partially fill the order
                         ExecutionInput executionInput = new ExecutionInput
                         {
@@ -97,7 +95,6 @@ namespace OrderProcessingClient
                         };
 
                         myOrderProcessingApi.Api.Order_Component.Order_StateMachine.SendEvent(executionInput);
-                        waitOrderExecution.WaitOne();
 
                         // Fill the order
                         executionInput = new ExecutionInput
@@ -107,7 +104,6 @@ namespace OrderProcessingClient
                             Price = 101.5,
                         };
                         myOrderProcessingApi.Api.Order_Component.Order_StateMachine.SendEvent(executionInput);
-                        waitOrderExecution.WaitOne();
 
                         Console.ReadKey();
                     }

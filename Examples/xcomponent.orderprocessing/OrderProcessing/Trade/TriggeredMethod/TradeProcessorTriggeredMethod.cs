@@ -1,3 +1,5 @@
+using XComponent.Trade.UserObject;
+
 namespace XComponent.Trade.TriggeredMethod
 {
 	using System;
@@ -17,9 +19,28 @@ namespace XComponent.Trade.TriggeredMethod
 		{
 			sender.CreateTrade(context, TradeFactory.CreateNewTrade(orderCreation.OrderId, orderCreation.Quantity, orderCreation.AssetName));
 		}
-		public static void ExecuteOn_Up_Through_ProcessOrderPartialFill(XComponent.Order.UserObject.OrderExecution orderExecution, object object_PublicMember, object object_InternalMember, Context context, IProcessOrderPartialFillOrderExecutionOnUpTradeProcessorSenderInterface sender)
+
+		public static void ExecuteOn_Up_Through_ProcessOrderExecution(XComponent.Order.UserObject.OrderExecution orderExecution, object object_PublicMember, object object_InternalMember, Context context, IProcessOrderExecutionOrderExecutionOnUpTradeProcessorSenderInterface sender)
 		{
-			sender.CreateTrade(context, TradeFactory.CreateNewTrade(orderExecution.OrderId, orderExecution.RemainingQuantity, orderExecution.AssetName));
+			// Execute the existing trade for a revised quantity
+			var tradeExecution = new TradeExecution {
+				AssetName = orderExecution.AssetName,
+				OrderId = orderExecution.OrderId,
+				Price = orderExecution.Price,
+				Quantity = orderExecution.Quantity,
+				RemainingQuantity = orderExecution.RemainingQuantity
+			};
+			sender.ExecuteTrade(context, tradeExecution);
+
+			// Create a new trade for the remaining quantity
+			if (orderExecution.RemainingQuantity > 0) {
+				sender.CreateTrade(context, TradeFactory.CreateNewTrade(orderExecution.OrderId, orderExecution.RemainingQuantity, orderExecution.AssetName));
+			}
+		}
+
+		public static void ExecuteOn_Up_Through_ExecuteTrade(XComponent.Trade.UserObject.TradeExecution tradeExecution, object object_PublicMember, object object_InternalMember, Context context, IExecuteTradeTradeExecutionOnUpTradeProcessorSenderInterface sender)
+		{
+			sender.SendEvent(StdEnum.Trade, tradeExecution);
 		}
 	}
 }

@@ -55,7 +55,6 @@
     <Compile Include="StdEnum.cs" />
     <Compile Include="TradeProcessorStateEnum.cs" />
     <Compile Include="TradeStateEnum.cs" />
-    <Compile Include="OrderPartialFillProxyStateEnum.cs" />
     <Compile Include="LogKeyEnum.cs" />
     <Compile Include="KeyValueParametersEnum.cs" />
     <Compile Include="ComponentHelper.cs" />
@@ -70,11 +69,12 @@
     <Compile Include="HashCodeHelper\SendEventOrderCreationTradeProcessor.cs" />
     <Compile Include="HashCodeHelper\CreateTradeTradeProcessor.cs" />
     <Compile Include="HashCodeHelper\SendEventTradeTradeProcessor.cs" />
-    <Compile Include="HashCodeHelper\ProcessOrderPartialFillTradeProcessor.cs" />
+    <Compile Include="HashCodeHelper\ExecuteTradeTradeProcessor.cs" />
+    <Compile Include="HashCodeHelper\SendEventTradeExecutionTradeProcessor.cs" />
+    <Compile Include="HashCodeHelper\ProcessOrderExecutionTradeProcessor.cs" />
     <Compile Include="HashCodeHelper\SendEventOrderExecutionTradeProcessor.cs" />
-    <Compile Include="HashCodeHelper\ProcessOrderPartialFillTrade.cs" />
     <Compile Include="HashCodeHelper\ExecuteTrade.cs" />
-    <Compile Include="HashCodeHelper\SendEventOrderExecutionTrade.cs" />
+    <Compile Include="HashCodeHelper\SendEventTradeExecutionTrade.cs" />
 
   </ItemGroup>
   <ItemGroup>

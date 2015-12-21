@@ -5,8 +5,8 @@ It gives new joiners a quick overview of the various tools of the platform (XCSt
 
 ## Overview
 
-In the `Order Processing` sample we're actually going to run two different pieces of software concurrently:
-* **`[Order Processing microservice]`** - A microservice that receives *order creation* and *order execution* requests. This microservice consist of two components, OrderProcessor and TradeProcessor. Splitting this simple system in two components may seem overkill, but in a real world use case, trade execution can require more resources as it is related, for instance, to book management, risk calculations, so it might be even interesting to isolate it in a separate, independently deployed microservice. Isolating trade execution in a separate component facilitates splitting our microservice later in two distinct microservices. 
+In the `Order Processing` sample we're actually going to run three different pieces of software concurrently:
+* **`[Order Processing microservices]`** - A microservice that receives *order creation* and *order execution* requests. A microservice that executes trades. Splitting this simple system in two components may seem overkill, but in a real world use case, trade execution can require more resources as it is related, for instance, to book management, risk calculations, so it might be interesting to isolate it in a separate, independently deployed microservice. As we will see, we can start development with a single microservice, but isolating trade execution in a separate component facilitates splitting our microservice later in two distinct microservices. 
 * **`[Console Application]`** - A simple application to test our microservice. Before implementing 
 this console you will test the microservice with XC Spy.
 
@@ -381,6 +381,9 @@ Here is a step by step guide to implementing the Trade component
 ```
    * Add a reference to the Order component so that user objects published by its facades (OrderCreation and OrderExecution) are available in the Trade component. 
    To do so, in the Trade component, click on Build => References and check Order, then rebuild the Trade component.
+ * Create the TradeExecution user object:
+ 
+ ![TradeExecution user object image](images/add_tradeexecution_userobject.jpg)
  * Create the Trade state machine
    * Add a new state machine named Trade with a state WaitingForExecution. Use Trade as public member
    * In order to monitor the state of trades in a more convenient way, map the property State to the state of the Trade machine (in the property window, State copy property => State).
@@ -434,37 +437,45 @@ sender.CreateTrade(context, TradeFactory.CreateNewTrade(orderCreation.OrderId, o
 
 * Handle incoming OrderExecution events 
  - In the Trade state machine add a state Executed 
- - Create a transition named Execute between Trade.WaitingForExecution and Trade.Executed, with a triggering event of type OrderExecution and a triggering rule based on the matching OrderExecution.OrderId = Trade.OrderId
- - Add an intermediate machine which allows us to get back to TradeProcessor from Trade without creating a new instance of TradeProcessor when partial fills are processed and a new trade has to be created for the remaining quantity. This state machine is named OrderPartialFillProxy, has a state Up and uses a public member of type OrderExecution.
- - Create a triggerable transition named ProcessOrderPartialFill between Trade.Executed and OrderPartialFillProxy.Up, with a triggering event of type. Its goal is to process partial order executions by creating a new trade for the remaining quantity.
- - Select the state OrderPartialFillProxy.Up, check the triggered method ProcessOrderPartialFill (OrderExecution) and rebuild the component. Edit the method in Visual Studio and uncomment the usual clone method call:
+ - Create a transition named Execute between Trade.WaitingForExecution and Trade.Executed, with a triggering event of type TradeExecution and a triggering rule based on the matching TradeExecution.OrderId = Trade.OrderId
+ - Draw a triggarable transition from the state TradeProcessor.Up to the transition Trade.Executed
+ - Create a recursive triggerable transition named ExecuteTrade on the state TradeProcessor.Up, with a triggering event of type TradeExecution. 
+ - Select the state TradeProcessor.Up, check the triggered method ExecuteTrade (TradeExecution) and rebuild the component. Edit the method in Visual Studio and use the following code (which simply triggers the transition Execute on the Trade state machine:
 ```cs
-    public static void ExecuteOn_Up_Through_ProcessOrderPartialFill(XComponent.Order.UserObject.OrderExecution orderExecution_TriggeringEvent, XComponent.Order.UserObject.OrderExecution orderExecution_PublicMember, object object_InternalMember, Context context, IProcessOrderPartialFillOrderExecutionOnUpOrderPartialFillProxySenderInterface sender)
-    {
-        XComponent.Common.Clone.XCClone.Clone(orderExecution_TriggeringEvent, orderExecution_PublicMember);
-    }
+		public static void ExecuteOn_Up_Through_ExecuteTrade(XComponent.Trade.UserObject.TradeExecution tradeExecution, object object_PublicMember, object object_InternalMember, Context context, IExecuteTradeTradeExecutionOnUpTradeProcessorSenderInterface sender)
+		{
+			sender.SendEvent(StdEnum.Trade, tradeExecution);
+		}
 ```
- - Add a recursive transition ProcessOrderPartialFill in the state TradeProcessor.Up with a triggering event of type OrderExecution. Add an internal connection from OrderPartialFillProxy.Up to this transition so that the target transition is triggered automatically whenever an instance of OrderPartialFillProxy reaches the state Up
- -	Select the state Trade.Executed, check the triggered method Execute (OrderExecution) and rebuild the component. Edit this method in Visual Studio and use the following code for its implementation:
+ - Add a recursive transition ProcessOrderExecution in the state TradeProcessor.Up with a triggering event of type OrderExecution. 
+ -	Select the state Trade.Executed, check the triggered method Execute (TradeExecution) and rebuild the component. Edit this method in Visual Studio and use the following code for its implementation:
 ```cs
     public static void ExecuteOn_Executed_Through_Execute(XComponent.Order.UserObject.OrderExecution orderExecution, XComponent.Trade.UserObject.Trade trade, object object_InternalMember, Context context, IExecuteOrderExecutionOnExecutedTradeSenderInterface sender)
     {
         trade.Quantity = orderExecution.Quantity;
         trade.Price = orderExecution.Price;
         trade.ExecutionDate = DateTime.Now;
-
-        if (orderExecution.RemainingQuantity > 0)
-        {
-            sender.ProcessOrderPartialFill_Trade(context, orderExecution);
-        }
     }
 ```
- - Select the state TradeProcessor.Up, check the triggered method ProcessOrderPartialFill (OrderExecution) and rebuild the component. Edit this method in VS and use the following code for its implementation:
+ - Select the state TradeProcessor.Up, check the triggered method ProcessOrderExecution (OrderExecution) and rebuild the component. Edit this method in VS and use the following code for its implementation:
 ```cs
-    public static void ExecuteOn_Up_Through_ProcessOrderPartialFill(XComponent.Order.UserObject.OrderExecution orderExecution, object object_PublicMember, object object_InternalMember, Context context, IProcessOrderPartialFillOrderExecutionOnUpTradeProcessorSenderInterface sender)
-    {
-        sender.CreateTrade(context, TradeFactory.CreateNewTrade(orderExecution.OrderId, orderExecution.RemainingQuantity, orderExecution.AssetName));
-    }
+		public static void ExecuteOn_Up_Through_ProcessOrderExecution(XComponent.Order.UserObject.OrderExecution orderExecution, object object_PublicMember, object object_InternalMember, Context context, IProcessOrderExecutionOrderExecutionOnUpTradeProcessorSenderInterface sender)
+		{
+            // Execute the existing trade for a revised quantity
+			var tradeExecution = new TradeExecution {
+				AssetName = orderExecution.AssetName,
+				OrderId = orderExecution.OrderId,
+				Price = orderExecution.Price,
+				Quantity = orderExecution.Quantity,
+				RemainingQuantity = orderExecution.RemainingQuantity
+			};
+			sender.ExecuteTrade(context, tradeExecution);
+
+            // Create a new trade for the remaining quantity
+			if (orderExecution.RemainingQuantity > 0) {
+				sender.CreateTrade(context, TradeFactory.CreateNewTrade(orderExecution.OrderId, orderExecution.RemainingQuantity, orderExecution.AssetName));
+			}
+		}
 ```
 
  At this point you should have the following model defined for the Trade component:
@@ -486,8 +497,8 @@ The Trade component uses OrderCreation and OrderExecution inputs, which are outp
 component through the Facade state machines. The composition view allows us to assemble our 
 two components so that order outputs are properly injected as trade inputs. We need to map OrderService façade outputs to correspondent TradeService inputs as follows
 * Link the state Order.CreationFacade.Created to the state Trade.TradeProcessor.Up
-* Link the state Order.ExecutionFacade.Filled to the state Trade.Trade.WaitingForExecution
-* Link the state Order.PartialExecutionFacade.PartiallyFilled to the state Trade.Trade.WaitingForExecution
+* Link the state Order.ExecutionFacade.Filled to the state Trade.TradeProcessor.Up
+* Link the state Order.PartialExecutionFacade.PartiallyFilled to the state Trade.TradeProcessor.Up
 
 Your final composition view should look like:
 
@@ -527,6 +538,14 @@ In the drop down you should see the previously configured rabbitmq bus.
 ![microservices](images/microservices.jpg)
 
 > Note: To rename a microservice, just right click on its name and select *rename microservice*. 
+
+* Move the Trade component to a new microservice called *TradeProcessingMicroservice*:
+
+![move to microservice](images/move_to_microservice.jpg)
+
+* You should end up with the following microservices
+
+![microservices final](images/microservices_final.jpg)
 
 ## Test your microservice
 
@@ -576,69 +595,75 @@ namespace OrderProcessingClient
                 if (myOrderProcessingApi.Init(myOrderProcessingApi.Api.DefaultXcApiFileName, clientApiOptions))
                 {
                     int orderId = 0;
-                    var waitOrderCreation = new AutoResetEvent(false);
-                    // Subscribe to new order instances
-                    myOrderProcessingApi.Api.Order_Component.Order_StateMachine.Pending_State.InstanceUpdated +=
-                        instance =>
+                    using (var orderCreationEvent = new AutoResetEvent(false))
+                    {
+
+                        // Subscribe to new order instances
+                        myOrderProcessingApi.Api.Order_Component.Order_StateMachine.Pending_State.InstanceUpdated +=
+                            instance =>
+                            {
+                                Console.WriteLine("New order pending for execution: " + DisplayOrder(instance));
+                                orderId = instance.PublicMember.Id;
+                                orderCreationEvent.Set();
+                            };
+
+                        myOrderProcessingApi.Api.Order_Component.Order_StateMachine.PartiallyExecuted_State
+                            .InstanceUpdated +=
+                            instance =>
+                            {
+                                Console.WriteLine("Order partially filled: " + DisplayOrder(instance));
+                            };
+
+                        myOrderProcessingApi.Api.Order_Component.Order_StateMachine.Executed_State.InstanceUpdated +=
+                            instance =>
+                            {
+                                Console.WriteLine("Order filled: " + DisplayOrder(instance));
+                            };
+
+                        myOrderProcessingApi.Api.Trade_Component.Trade_StateMachine.WaitingForExecution_State
+                            .InstanceUpdated +=
+                            instance =>
+                            {
+                                Console.WriteLine("Trade waiting for execution: " + DisplayTrade(instance));
+                            };
+
+                        myOrderProcessingApi.Api.Trade_Component.Trade_StateMachine.Executed_State.InstanceUpdated +=
+                            instance =>
+                            {
+                                Console.WriteLine("Trade executed : " + DisplayTrade(instance));
+                            };
+
+                        // Create an order
+                        OrderInput orderInput = new OrderInput
                         {
-                            Console.WriteLine("New order pending for execution: " + DisplayOrder(instance));
-                            orderId = instance.PublicMember.Id;
-                            waitOrderCreation.Set();
+                            AssetName = "INVIVOO",
+                            Quantity = 1000
                         };
 
-                    myOrderProcessingApi.Api.Order_Component.Order_StateMachine.PartiallyExecuted_State.InstanceUpdated +=
-                        instance =>
+                        myOrderProcessingApi.Api.Order_Component.OrderProcessor_StateMachine.SendEvent(orderInput);
+                        orderCreationEvent.WaitOne(1000);
+
+                        // Partially fill the order
+                        ExecutionInput executionInput = new ExecutionInput
                         {
-                            Console.WriteLine("Order partially filled: " + DisplayOrder(instance));
+                            OrderId = orderId,
+                            Quantity = 250,
+                            Price = 102
                         };
 
-                    myOrderProcessingApi.Api.Order_Component.Order_StateMachine.Executed_State.InstanceUpdated +=
-                        instance =>
+                        myOrderProcessingApi.Api.Order_Component.Order_StateMachine.SendEvent(executionInput);
+
+                        // Fill the order
+                        executionInput = new ExecutionInput
                         {
-                            Console.WriteLine("Order filled: " + DisplayOrder(instance));
+                            OrderId = orderId,
+                            Quantity = 750,
+                            Price = 101.5,
                         };
+                        myOrderProcessingApi.Api.Order_Component.Order_StateMachine.SendEvent(executionInput);
 
-                    myOrderProcessingApi.Api.Trade_Component.Trade_StateMachine.WaitingForExecution_State.InstanceUpdated +=
-                        instance =>
-                        {
-                            Console.WriteLine("Trade waiting for execution: " + DisplayTrade(instance));
-                        };
-
-                    myOrderProcessingApi.Api.Trade_Component.Trade_StateMachine.WaitingForExecution_State.InstanceUpdated +=
-                    instance =>
-                    {
-                        Console.WriteLine("Trade executed : " + DisplayTrade(instance));
-                    };
-                    
-                    // Create an order
-                    OrderInput orderInput = new OrderInput
-                    {
-                        AssetName = "INVIVOO",
-                        Quantity = 1000
-                    };
-
-                    myOrderProcessingApi.Api.Order_Component.OrderProcessor_StateMachine.SendEvent(orderInput);
-                    waitOrderCreation.WaitOne();
-                    // Partially fill the order
-                    ExecutionInput executionInput = new ExecutionInput
-                    {
-                        OrderId = orderId,
-                        Quantity = 250,
-                        Price = 102
-                    };
-
-                    myOrderProcessingApi.Api.Order_Component.Order_StateMachine.SendEvent(executionInput);
-
-                    // Fill the order
-                    executionInput = new ExecutionInput
-                    {
-                        OrderId = orderId,
-                        Quantity = 750,
-                        Price = 101.5,
-                    };
-                    myOrderProcessingApi.Api.Order_Component.Order_StateMachine.SendEvent(executionInput);
-
-                    Console.ReadKey();
+                        Console.ReadKey();
+                    }
                 }
                 else
                 {
