@@ -17,16 +17,12 @@ namespace XComponent.Trade.TriggeredMethod
 		{
 			XComponent.Common.Clone.XCClone.Clone(trade_TriggeringEvent, trade_PublicMember);
 		}
-		public static void ExecuteOn_Executed_Through_Execute(XComponent.Order.UserObject.OrderExecution orderExecution, XComponent.Trade.UserObject.Trade trade, object object_InternalMember, Context context, IExecuteOrderExecutionOnExecutedTradeSenderInterface sender)
+
+		public static void ExecuteOn_Executed_Through_Execute(XComponent.Trade.UserObject.TradeExecution tradeExecution, XComponent.Trade.UserObject.Trade trade, object object_InternalMember, Context context, IExecuteTradeExecutionOnExecutedTradeSenderInterface sender)
 		{
-			trade.Quantity = orderExecution.Quantity;
-			trade.Price = orderExecution.Price;
+			trade.Quantity = tradeExecution.Quantity;
+			trade.Price = tradeExecution.Price;
 			trade.ExecutionDate = DateTime.Now;
-
-			if (orderExecution.RemainingQuantity > 0) {
-				sender.ProcessOrderPartialFill_Trade(context, orderExecution);
-			}
-
 		}
 	}
 }

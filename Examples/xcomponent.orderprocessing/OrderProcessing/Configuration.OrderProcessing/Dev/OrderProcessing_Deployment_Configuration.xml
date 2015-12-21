@@ -64,7 +64,7 @@
         </stateMachine>
       </stateMachines>
     </component>
-    <component name="Trade" alias="Trade" deploymentTarget="OrderProcessingMicroservice">
+    <component name="Trade" alias="Trade" deploymentTarget="TradeProcessingMicroservice">
       <communication name="rabbitmq" type="BUS" messageQueue="SEQUENTIAL">
         <input>{topicType}.{version}.{runtime}.{component}.{std}</input>
         <output>{topicType}.{version}.{runtime}.{component}.{std}</output>
@@ -79,13 +79,6 @@
           <threading impl="MAILBOX" type="INHERITFROMPARENT" />
         </stateMachine>
         <stateMachine id="2" poolSize="10000">
-          <communication name="rabbitmq" type="BUS" messageQueue="SEQUENTIAL">
-            <input>{topicType}.{version}.{runtime}.{component}.{std}</input>
-            <output>{topicType}.{version}.{runtime}.{component}.{std}</output>
-          </communication>
-          <threading impl="MAILBOX" type="INHERITFROMPARENT" />
-        </stateMachine>
-        <stateMachine id="3" poolSize="10000">
           <communication name="rabbitmq" type="BUS" messageQueue="SEQUENTIAL">
             <input>{topicType}.{version}.{runtime}.{component}.{std}</input>
             <output>{topicType}.{version}.{runtime}.{component}.{std}</output>
@@ -120,6 +113,7 @@
     </gateways>
     <runtimes>
       <runtime name="OrderProcessingMicroservice" platform="AnyCpu" />
+      <runtime name="TradeProcessingMicroservice" platform="AnyCpu" />
     </runtimes>
   </configuration>
 </deployment>

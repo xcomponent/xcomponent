@@ -4,8 +4,8 @@
     <LinkedComponent name="Order">
       <XCToXCLinks>
         <XCToXCLink stateMachineIdFrom="3" stateIdFrom="4" linkFrom="Order" linkTo="Trade" stateMachineIdTo="1" stateIdTo="2" transversalLink="false" />
-        <XCToXCLink stateMachineIdFrom="4" stateIdFrom="5" linkFrom="Order" linkTo="Trade" stateMachineIdTo="2" stateIdTo="3" transversalLink="false" />
-        <XCToXCLink stateMachineIdFrom="5" stateIdFrom="6" linkFrom="Order" linkTo="Trade" stateMachineIdTo="2" stateIdTo="3" transversalLink="false" />
+        <XCToXCLink stateMachineIdFrom="4" stateIdFrom="5" linkFrom="Order" linkTo="Trade" stateMachineIdTo="1" stateIdTo="2" transversalLink="false" />
+        <XCToXCLink stateMachineIdFrom="5" stateIdFrom="6" linkFrom="Order" linkTo="Trade" stateMachineIdTo="1" stateIdTo="2" transversalLink="false" />
       </XCToXCLinks>
       <XCToApiLinks>
         <XCToApiLink stateMachineIdFrom="2" stateIdFrom="-1" linkFrom="Order" linkTo="OrderProcessingApi" />
@@ -15,9 +15,7 @@
       </XCToApiLinks>
     </LinkedComponent>
     <LinkedComponent name="Trade">
-      <XCToXCLinks>
-        <XCToXCLink stateMachineIdFrom="3" stateIdFrom="5" linkFrom="Trade" linkTo="Trade" stateMachineIdTo="1" stateIdTo="2" transversalLink="true" />
-      </XCToXCLinks>
+      <XCToXCLinks />
       <XCToApiLinks>
         <XCToApiLink stateMachineIdFrom="1" stateIdFrom="-1" linkFrom="Trade" linkTo="OrderProcessingApi" />
         <XCToApiLink stateMachineIdFrom="2" stateIdFrom="-1" linkFrom="Trade" linkTo="OrderProcessingApi" />

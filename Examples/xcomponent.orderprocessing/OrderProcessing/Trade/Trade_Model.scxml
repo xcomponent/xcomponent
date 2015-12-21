@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <scxml version="1.0" name="Trade">
   <datamodel>
-    <data id="Version" expr="44" />
+    <data id="Version" expr="60" />
     <data id="NameSeparator" expr=":" />
     <data id="public_assemblies">
       <ImportedAssembly Name="Order" Path="Order/generated/UserObject/XComponent.Order.UserObject.dll" />
@@ -50,6 +50,23 @@
             <InnerTransition id="1" />
             <InnerTransition id="2" />
             <InnerTransition id="8" />
+            <InnerTransition id="6" />
+          </TriggerableTransition>
+          <TriggerableTransition target="6" id="7" allTransitions="True">
+            <AllTransitions>true</AllTransitions>
+            <Id>7</Id>
+            <InnerTransition id="1" />
+            <InnerTransition id="2" />
+            <InnerTransition id="6" />
+            <InnerTransition id="8" />
+          </TriggerableTransition>
+          <TriggerableTransition target="5" id="10" allTransitions="True">
+            <AllTransitions>true</AllTransitions>
+            <Id>10</Id>
+            <InnerTransition id="1" />
+            <InnerTransition id="2" />
+            <InnerTransition id="8" />
+            <InnerTransition id="6" />
           </TriggerableTransition>
         </data>
       </datamodel>
@@ -71,8 +88,6 @@
         <onexit>
           <invoke Type="ExecuteOn_Up_Through_ProcessOrderCreation" id="1">
             <content>
-              <Comment>
-              </Comment>
               <Name>ExecuteOn_Up_Through_ProcessOrderCreation</Name>
               <Id>1</Id>
               <CustomParameters xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
@@ -100,8 +115,6 @@
         <onexit>
           <invoke Type="ExecuteOn_WaitingForExecution_Through_CreateTrade" id="2">
             <content>
-              <Comment>
-              </Comment>
               <Name>ExecuteOn_WaitingForExecution_Through_CreateTrade</Name>
               <Id>2</Id>
               <CustomParameters xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
@@ -112,11 +125,38 @@
           </invoke>
         </onexit>
       </transition>
+      <transition Event="XComponent.Trade.UserObject.TradeExecution" target="TradeProcessor:Up">
+        <datamodel>
+          <data id="Type" expr="StandardTransition" />
+          <data id="Id" expr="6" />
+          <data id="Name" expr="ExecuteTrade" />
+          <data id="Event">
+            <Event>
+              <Comment>
+              </Comment>
+              <EventTypeName>XComponent.Trade.UserObject.TradeExecution</EventTypeName>
+              <TimeToLive>0</TimeToLive>
+              <TriggeringRules />
+            </Event>
+          </data>
+        </datamodel>
+        <onexit>
+          <invoke Type="ExecuteOn_Up_Through_ExecuteTrade" id="3">
+            <content>
+              <Name>ExecuteOn_Up_Through_ExecuteTrade</Name>
+              <Id>3</Id>
+              <CustomParameters xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                <EventsName>XComponent.Trade.UserObject.TradeExecution</EventsName>
+              </CustomParameters>
+            </content>
+          </invoke>
+        </onexit>
+      </transition>
       <transition Event="XComponent.Order.UserObject.OrderExecution" target="TradeProcessor:Up">
         <datamodel>
           <data id="Type" expr="StandardTransition" />
           <data id="Id" expr="8" />
-          <data id="Name" expr="ProcessOrderPartialFill" />
+          <data id="Name" expr="ProcessOrderExecution" />
           <data id="Event">
             <Event>
               <Comment>
@@ -128,11 +168,9 @@
           </data>
         </datamodel>
         <onexit>
-          <invoke Type="ExecuteOn_Up_Through_ProcessOrderPartialFill" id="5">
+          <invoke Type="ExecuteOn_Up_Through_ProcessOrderExecution" id="5">
             <content>
-              <Comment>
-              </Comment>
-              <Name>ExecuteOn_Up_Through_ProcessOrderPartialFill</Name>
+              <Name>ExecuteOn_Up_Through_ProcessOrderExecution</Name>
               <Id>5</Id>
               <CustomParameters xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
                 <EventsName>XComponent.Order.UserObject.OrderExecution</EventsName>
@@ -155,7 +193,7 @@
         <data id="DisposeStateMachineInstance" expr="False" />
         <data id="Id" expr="3" />
       </datamodel>
-      <transition Event="XComponent.Order.UserObject.OrderExecution" target="Trade:Executed">
+      <transition Event="XComponent.Trade.UserObject.TradeExecution" target="Trade:Executed">
         <datamodel>
           <data id="Type" expr="StandardTransition" />
           <data id="Id" expr="5" />
@@ -164,7 +202,7 @@
             <Event>
               <Comment>
               </Comment>
-              <EventTypeName>XComponent.Order.UserObject.OrderExecution</EventTypeName>
+              <EventTypeName>XComponent.Trade.UserObject.TradeExecution</EventTypeName>
               <TimeToLive>0</TimeToLive>
               <TriggeringRules>
                 <MatchingPropertyRule>
@@ -179,13 +217,11 @@
         <onexit>
           <invoke Type="ExecuteOn_Executed_Through_Execute" id="4">
             <content>
-              <Comment>
-              </Comment>
               <Name>ExecuteOn_Executed_Through_Execute</Name>
               <Id>4</Id>
               <CustomParameters xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
                 <PublicMember>XComponent.Trade.UserObject.Trade</PublicMember>
-                <EventsName>XComponent.Order.UserObject.OrderExecution</EventsName>
+                <EventsName>XComponent.Trade.UserObject.TradeExecution</EventsName>
               </CustomParameters>
             </content>
           </invoke>
@@ -195,63 +231,8 @@
     <state id="Trade:Executed">
       <datamodel>
         <data id="Comment" expr="" />
-        <data id="DisposeStateMachineInstance" expr="False" />
-        <data id="Id" expr="4" />
-        <data id="TriggerableTransition">
-          <TriggerableTransition target="6" id="7" allTransitions="True">
-            <AllTransitions>true</AllTransitions>
-            <Id>7</Id>
-            <InnerTransition id="5" />
-          </TriggerableTransition>
-        </data>
-      </datamodel>
-      <transition Event="XComponent.Order.UserObject.OrderExecution" target="OrderPartialFillProxy:Up">
-        <datamodel>
-          <data id="Type" expr="XTransition" />
-          <data id="Id" expr="6" />
-          <data id="Name" expr="ProcessOrderPartialFill" />
-          <data id="Event">
-            <Event>
-              <Comment>
-              </Comment>
-              <EventTypeName>XComponent.Order.UserObject.OrderExecution</EventTypeName>
-              <TimeToLive>0</TimeToLive>
-              <TriggeringRules />
-            </Event>
-          </data>
-        </datamodel>
-        <onexit>
-          <invoke Type="ExecuteOn_Up_Through_ProcessOrderPartialFill" id="3">
-            <content>
-              <Comment>
-              </Comment>
-              <Name>ExecuteOn_Up_Through_ProcessOrderPartialFill</Name>
-              <Id>3</Id>
-              <CustomParameters xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-                <PublicMember>XComponent.Order.UserObject.OrderExecution</PublicMember>
-                <EventsName>XComponent.Order.UserObject.OrderExecution</EventsName>
-              </CustomParameters>
-            </content>
-          </invoke>
-        </onexit>
-      </transition>
-    </state>
-  </state>
-  <state id="OrderPartialFillProxy">
-    <datamodel>
-      <data id="PublicMember" expr="XComponent.Order.UserObject.OrderExecution" />
-      <data id="Id" expr="3" />
-    </datamodel>
-    <state id="OrderPartialFillProxy:Up">
-      <datamodel>
-        <data id="Comment" expr="" />
         <data id="DisposeStateMachineInstance" expr="True" />
-        <data id="Id" expr="5" />
-        <data id="InternalConnection">
-          <InternalConnection target="8">
-            <Id>9</Id>
-          </InternalConnection>
-        </data>
+        <data id="Id" expr="4" />
       </datamodel>
     </state>
   </state>
