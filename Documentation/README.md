@@ -18,6 +18,8 @@
  * [XCStudio menus](#xcstudio-menus)
  * [Top menu icon bar](#top-menu-icon-bar)
  * [XCStudio project hierarchy](#xcstudio-project-hierarchy)
+ * [Creating a new project](#Creating-a-new-project)
+ * [Navigate within your project](#navigate-within-your-project)
 
 ## 1 - Overview
 
@@ -179,3 +181,29 @@ Here below is the generated project hierarchy:
 When creating a new project you can change the default location.
 
 Other files can be stored in project directory, for instance if you generate GUI applications, by default location proposed by XCStudio is the same directory.
+
+### Creating a new project
+
+Start XCStudio and click on the *File* menu and select the new item. The following window is displayed:
+
+![new project](Images/new_project.jpg)
+
+Enter project name: for instance MyFirstMicroservice.
+
+The project window appears, you will be able to add components and api. You can see that an API called MyFirstMicroserviceApi has already been created by default.
+
+![home screen](Images/xcstudio_home.jpg)
+
+### Navigate within your project
+
+The explorer panel gives you an entire view of your project. 
+
+![explorer](Images/xcstudio_explorer.jpg)
+
+It contains:
+- A shortcut to your linking
+- The composition
+- The components
+- The APIs
+- The GUI applications
+- Your project documentation
