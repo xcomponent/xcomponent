@@ -222,4 +222,36 @@ The application switches automatically to the component menu and leaves you to a
 This is what you have on the screen in standard profile hiding properties error and console.
 
 ![first component](Images/first_component.jpg)
+
+To add a new state machine in your component, just click on the add button as shown in the next figure.
  
+![new state machine](Images/new_statemachine.jpg)
+
+There is a second way to do this: let CTRL pressed while double clicking on the white wide empty zone. This action creates a state. If you’re not double clicking inside a state machine, creating this state also creates a state machine.
+
+> Note: you can add a transition different ways:
+> * select two states and use the add button (ribbon)
+> * select a state and drag the blue circle to another state…
+
+Follow these instructions to create a simple state machine with 2 states and 1 transition:
+- Add a new state machine
+- *StateMachine2* appears. Double click on *StateMachine2* text to rename it to “FrontOffice”.
+- Click on *State2* a blue circle appears to show you that the selection is on the *State2* state and click on  and *new State form the selected states*
+- Drag *State3* to somewhere else in order to be able to read *Transaction1* on the arrow
+- Double click on *State2* text to rename it to *Pending*
+- Double click on *State3* text to rename it to *Validated*
+- Double click on *Transition1* text to rename it to “ValidateFrontOffice”
+- Add a transition between EntryPoint and Pending
+- Rename the transition to *SendToFrontOffice*
+- Rename *StateMachine1* to *Entry*
+
+The component looks like this:
+
+![component details](Images/component_impl.jpg)
+
+> It is important to notice that each time you arrive on a state machine from another, a new instance of state machine is created.
+
+Save your component: File + Save or Crtl+S.
+Notice that you can save the project by using the Maj+Ctrl+S shortcut
+
+
