@@ -45,7 +45,7 @@ New instruments can be added by triggering the `AddInstrument` transition.
 
 ## 2.1 Trade Creator
 
-![Trade Creator](images/TradeCreator.png)
+![Trade Creator](images/tradeCreator.PNG)
 
 From this simple GUI, we can create new trades. The trades have the following properties:
 * An instrument code: we can set this property by selecting a code from the combo box. 
@@ -83,7 +83,7 @@ When the application is loading, there is a call to the XComponent client api.
     } , TaskScheduler.FromCurrentSynchronizationContext());
 ```
 
->Note: You can notice that the call to the client api is not done in the dispatcher thread. Indeed, the `Init()` method and `GetEntryPoint()` of the client api are synchronus, so it is necessary in a GUI to call them from another thread.
+>Note: You can notice that the call to the client api is not done in the dispatcher thread. Indeed, the `Init()` and `GetEntryPoint()` methods of the client api are synchronous: so it is necessary in a GUI to call them from another thread.
 
 Once the Api is initialized, the combo box is filled with the instruments available in the `Referential` component.
 
@@ -103,7 +103,7 @@ A click to `Send Transaction` send an event to the `Trade Capture` microservices
 
 ## 2.2 Trade Validator
 
-![Trade Validator](images/tradeValidatorWithValidTrade.png)
+![Trade Validator](images/tradeValidatorWithValidTrade.PNG)
 
 From this simple GUI, you see the trades and the  status of the trades. 
 The color of the line depends on the status of the trade:
@@ -132,7 +132,7 @@ When the application is loading, there is a call to the XComponent client api.
 };
 ```
 
->Note: You can notice that the call to the client api is not done in the dispatcher thread. Indeed, the `Init()` method of the client api are synchronus, so it is necessary in a GUI to call them from another thread.
+>Note: You can notice that the call to the client api is not done in the dispatcher thread. Indeed, the `Init()` method of the client api are synchronous, so it is necessary in a GUI to call them from another thread.
 
 2.2.2 Trade Validation
 
@@ -147,7 +147,7 @@ When a trade is on `ErrorOnMapping` state, you can right click on the line. You 
 * Start the microservices
 * Run the GUIs
 
-** Test 1 - Test a known instrument
+#### Test 1 - Test a known instrument
 
 In the `Trade Creator` Gui, select an instrument from the combo box and click on **Send Transaction**
 
@@ -155,32 +155,32 @@ In the `Trade Creator` Gui, select an instrument from the combo box and click on
 
 In the `Trade Validator` Gui,  you can notice that the transaction is in **TransactionAccepted** status
 
-![Trade Validator - Test 2](images/tradeValidator_Test1.png)
+![Trade Validator - Test 1](images/tradeValidator_Test1.PNG)
  
- ** Test 2 - Unknown instrument which timed out
+#### Test 2 - Unknown instrument which timed out
  In the `Trade Creator` Gui, enter a new instrument (named **DUMMY** in the screenshot) and click on **Send Transaction**
  
-![Trade Creator - Test 2](images/tradeCreator_Test2.png)
+![Trade Creator - Test 2](images/tradeCreator_Test2.PNG)
 
 
 In the `Trade Validator` Gui, you can notice that the transaction is in **ErrorOnMapping** status.
 After 20 seconds, the transaction will be in  **TransactionRejected** status.
 
-![Trade Validator - Test 2](images/tradeValidator_Test2.png)
+![Trade Validator - Test 2](images/tradeValidator_Test2.PNG)
 
-** Test 3 - Accept an unknown instrument 
+#### Test 3 - Accept an unknown instrument 
 
  In the `Trade Creator` Gui, enter a new instrument (named **DUMMY** in the screenshot) and click on **Send Transaction**
  
-![Trade Creator - Test 2](images/tradeCreator_Test2.png)
+![Trade Creator - Test 2](images/tradeCreator_Test2.PNG)
 
 In the `Trade Validator` Gui, you can notice that the transaction is in **ErrorOnMapping** status.
 
-![Trade Creator - Test 2](images/tradeValidator_Test3.png)
+![Trade Creator - Test 2](images/tradeValidator_Test3.PNG)
 
 Right click on the "orange line" and select `Update and retry`. Then, the transaction is accepted.
 
-![Trade Creator - Test 2](images/tradeValidator_Test4.png)
+![Trade Creator - Test 2](images/tradeValidator_Test4.PNG)
 
 You should also notice that the combo box has been updated with this new instrument in `Trade Validator` Gui.
 ![Trade Creator - Test 2](images/tradeCreator_Test3.png)

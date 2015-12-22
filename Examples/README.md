@@ -27,7 +27,7 @@ a simple and naïve Order Processing microservice implemented using XComponent
 
 * **Simple Authentication service** ([Click here](xcomponent.authentication)): 
 example to demonstrate how to develop a simple authentication microservice with XComponent: you will learn how to store data in a component and how to use file resources
-* **Trade Capture ** ([Click here](xcomponent.tradecapture)): 
+* **Trade Capture** ([Click here](xcomponent.tradecapture)): 
 example to demonstrate how to develop a simple Trade Capture application with two microservices and two Wpf applications that interact wich each other
-* **Rest Api Client ** ([Click here](xcomponent.restapiclient)): 
+* **Rest Api Client** ([Click here](xcomponent.restapiclient)): 
 example to demonstrate how to consume a RestFul service with XComponent

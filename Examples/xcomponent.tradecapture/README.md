@@ -17,7 +17,7 @@ If you want to have more details about microservices, you should read [Martin Fo
 In this project, we're actually going to run different pieces of software concurrently:
 
 * **`[Referential microservice]`** - A microservice in charge of maintaining a list of valid financial instruments
-* **`[TradeCapture microservice]`** - A microservice in charge of the validating of trades
+* **`[TradeCapture microservice]`** - A microservice in charge of the trades validation
 
 * **`[Trade Creator Application]`** - A Wpf Application from which we can create new trades
 * **`[Trade Validator Application]`** - A Wpf Application from which we can monitor and validate trades
