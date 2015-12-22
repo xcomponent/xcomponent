@@ -57,9 +57,9 @@ Click on the `Console App` button of the ribbon (in the project tab).
 On the popup, you can change the name of the solution. Then, click on `Ok`.
 
 Then, there are several steps:
-1. The project is rebuilt
-2. The Visual Studio solution of the console application is generated
-3. The console application of the visual studio project is automatically open after the build
+ 1. The project is rebuilt
+ 2. The Visual Studio solution of the console application is generated
+ 3. The console application of the visual studio project is automatically open after the build
 
 >Note: You should check (in XCStudio), that the client Api is automatically exported when the project is built.
 ![Api export](Clients/images/export.png)
