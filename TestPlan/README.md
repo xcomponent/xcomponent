@@ -36,7 +36,7 @@ We have to create a use case (for each feature we want to test), deploy it (in m
 ## Clients
 
 The objective of these tests is to generate a `Console application` from a simple XComponent Project.
-This test is useful to test the **client api** and the **console application** generation.
+This test is useful to test both the **client api** and the **console application** generation.
 
 **For these tests, we will use a simple project.**
 
