@@ -53,6 +53,20 @@ Target "OrderProcessing" (fun _ ->
     if result <> 0 then failwithf "xcomponent.orderprocessing build returned with a non-zero exit code"    
 )
 
+Target "TradeCapture" (fun _ ->    
+    trace ("Building Xcomponent.TradeCapture")
+    let timeoutExec = 5.0
+
+    let result = ExecProcess (fun info ->
+                    info.FileName <- "build.cmd"
+                    info.WorkingDirectory <- Path.Combine(__SOURCE_DIRECTORY__, "xcomponent.tradecapture") 
+                    info.Arguments <- "All"
+                    ) 
+                    (TimeSpan.FromMinutes timeoutExec)
+  
+    if result <> 0 then failwithf "xcomponent.dealcapture build returned with a non-zero exit code"    
+)
+
 Target "RestApiClient" (fun _ ->    
     trace ("Building XComponent.RestApiClient")
     let timeoutExec = 5.0
@@ -60,6 +74,20 @@ Target "RestApiClient" (fun _ ->
     let result = ExecProcess (fun info ->
                     info.FileName <- "build.cmd"
                     info.WorkingDirectory <- Path.Combine(__SOURCE_DIRECTORY__, "xcomponent.restapiclient") 
+                    info.Arguments <- "All"
+                    ) 
+                    (TimeSpan.FromMinutes timeoutExec)
+  
+    if result <> 0 then failwithf "xcomponent.restapiclient build returned with a non-zero exit code"    
+)
+
+Target "Slack" (fun _ ->    
+    trace ("Building XComponent.Slack")
+    let timeoutExec = 5.0
+
+    let result = ExecProcess (fun info ->
+                    info.FileName <- "build.cmd"
+                    info.WorkingDirectory <- Path.Combine(__SOURCE_DIRECTORY__, "xcomponent.slack") 
                     info.Arguments <- "All"
                     ) 
                     (TimeSpan.FromMinutes timeoutExec)
@@ -92,5 +120,14 @@ Target "All" DoNothing
 "RestApiClient"
   ==> "All"
 
+"TradeCapture"
+  ==> "All"
+  
+"RestApiClient"
+  ==> "All"
+
+"Slack"
+  ==> "All"
+  
 // start build
 RunTargetOrDefault "Help"

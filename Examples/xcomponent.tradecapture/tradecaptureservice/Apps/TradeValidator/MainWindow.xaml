@@ -1,0 +1,90 @@
+﻿<Window x:Class="WpfApplication1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Trade Validator" Closed="Window_Closed" Width="780" Height="200" Icon="dealcapture.ico">
+    <Grid>        
+        <ListView ItemsSource="{Binding Transactions}">
+            <ListView.Resources>
+                    <ContextMenu x:Key="ItemContextMenu">
+                    <MenuItem Header="Update And Retry" Command="{Binding UpdateCommand}"></MenuItem>
+                    <MenuItem Header="Reject" Command="{Binding RejectCommand}"></MenuItem>
+                </ContextMenu>
+                <SolidColorBrush x:Key="acceptedBrush">
+                    <SolidColorBrush.Color>
+                        <Color A="100" B="0" G="250" R="0"></Color>
+                    </SolidColorBrush.Color>
+                </SolidColorBrush>
+                <SolidColorBrush x:Key="rejectedBrush">
+                    <SolidColorBrush.Color>
+                    <Color A="100" B="0" G="0" R="250"></Color>
+                    </SolidColorBrush.Color>
+                </SolidColorBrush>
+                <SolidColorBrush x:Key="errorBrush">
+                <SolidColorBrush.Color>
+                    <Color A="100" B="40" G="130" R="250"></Color>
+                </SolidColorBrush.Color>
+                </SolidColorBrush>
+                <Style TargetType="{x:Type ListViewItem}">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                    <Setter Property="ContextMenu" Value="{StaticResource ItemContextMenu}"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding State}" Value="Accepted">
+                            <Setter Property="Background" Value="{StaticResource acceptedBrush}" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding State}" Value="Rejected">
+                            <Setter Property="Background" Value="{StaticResource rejectedBrush}" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding State}" Value="Error">
+                            <Setter Property="Background" Value="{StaticResource errorBrush}" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </ListView.Resources>
+            
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="150" Header="Symbol">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Transaction.Instrument}" HorizontalAlignment="Stretch"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate >
+                    </GridViewColumn>
+
+                    <GridViewColumn Width="150" Header="Maturity">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Transaction.ExecutionDate, StringFormat={}{0:MMMM yyyy}}" HorizontalAlignment="Stretch" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate >
+                    </GridViewColumn>
+
+                    <GridViewColumn Width="150" Header="Execution Price" >
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Transaction.Price}"  TextAlignment="Right" HorizontalAlignment="Stretch"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate >
+                    </GridViewColumn>
+
+                    <GridViewColumn Width="150" Header="Current State" >
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding XCState}"  TextAlignment="Left" HorizontalAlignment="Stretch"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate >
+                    </GridViewColumn>
+                    
+                    <GridViewColumn Width="150" Header="Previous State" >
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding XCPreviousState}"  TextAlignment="Left" HorizontalAlignment="Stretch"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate >
+                    </GridViewColumn>
+                                           
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>

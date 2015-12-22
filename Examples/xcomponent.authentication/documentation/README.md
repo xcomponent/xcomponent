@@ -5,14 +5,13 @@ The objective of this tutorial is to explain how to use `TriggeredMethodContext`
 
 ## Overview
 
-In this project, there are 3 elements:
+In this project, there are mainly 2 elements:
 * An `Authentication` component
-* An Api: `authenticationserviceApi`
 * A console application
 
 ## Authentication component
 
-The `Authentication` component loads a list of users (login and password) from an xml file. It receives requests to check if login/password couple is valid or not.
+The `Authentication` component loads a list of users (login and password) from a xml file. It receives requests to check if login/password couple is valid or not.
 
 ![Authentication component](images/Authentication_Image.png)
 

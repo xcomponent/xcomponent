@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<deployment environment="Dev" xcProjectName="TradeCapture" deploymentTargetCode="1831703171" deploymentTargetName="TradeValidatorApi" version="1.0" frameworkType="Framework4" xmlns="http://xcomponent.com/DeploymentConfig.xsd" clientApiReference="XComponent.TradeCapture.ClientApi.dll">
+  <threading />
+  <serialization>Binary</serialization>
+  <communication>
+    <bus name="bus" host="localhost" port="5672" user="guest" password="guest" type="RABBIT_MQ" />
+  </communication>
+  <clientAPICommunication>
+    <publish componentCode="183271270" stateMachineCode="-1025633653" eventType="UPDATE" topicType="output" communicationType="BUS" stateCode="4" eventCode="12" event="XComponent.TradeCapture.UserObject.Error" communication="bus">
+      <topic type="STATIC">input.1_0.tradeService.TradeCapture.Transaction</topic>
+    </publish>
+    <publish componentCode="183271270" stateMachineCode="-1025633653" eventType="UPDATE" topicType="output" communicationType="BUS" stateCode="4" eventCode="13" event="XComponent.TradeCapture.UserObject.Init" communication="bus">
+      <topic type="STATIC">input.1_0.tradeService.TradeCapture.Transaction</topic>
+    </publish>
+    <publish componentCode="183271270" stateMachineCode="-1025633653" eventType="UPDATE" topicType="output" communicationType="BUS" stateCode="5" eventCode="14" event="XComponent.TradeCapture.UserObject.Reject" communication="bus">
+      <topic type="STATIC">input.1_0.tradeService.TradeCapture.Transaction</topic>
+    </publish>
+    <publish componentCode="183271270" stateMachineCode="-1025633653" eventType="UPDATE" topicType="output" communicationType="BUS" stateCode="5" eventCode="16" event="XComponent.TradeCapture.UserObject.UpdateAndRetry" communication="bus">
+      <topic type="STATIC">input.1_0.tradeService.TradeCapture.Transaction</topic>
+    </publish>
+    <publish componentCode="183271270" stateMachineCode="-1025633653" eventType="UPDATE" topicType="output" communicationType="BUS" stateCode="5" eventCode="6" event="XComponent.Common.Event.DefaultEvent" communication="bus">
+      <topic type="STATIC">input.1_0.tradeService.TradeCapture.Transaction</topic>
+    </publish>
+    <publish componentCode="183271270" stateMachineCode="-1025633653" eventType="UPDATE" topicType="output" communicationType="BUS" stateCode="1" eventCode="12" event="XComponent.TradeCapture.UserObject.Error" communication="bus">
+      <topic type="STATIC">input.1_0.tradeService.TradeCapture.Transaction</topic>
+    </publish>
+    <publish componentCode="183271270" stateMachineCode="-1025633653" eventType="UPDATE" topicType="output" communicationType="BUS" stateCode="1" eventCode="11" event="XComponent.TradeCapture.UserObject.Accept" communication="bus">
+      <topic type="STATIC">input.1_0.tradeService.TradeCapture.Transaction</topic>
+    </publish>
+    <publish componentCode="183271270" stateMachineCode="-1025633653" eventType="UPDATE" topicType="output" communicationType="BUS" stateCode="1" eventCode="8" event="XComponent.Referential.UserObject.GetSnapshot" communication="bus">
+      <topic type="STATIC">input.1_0.tradeService.TradeCapture.Transaction</topic>
+    </publish>
+    <publish componentCode="183271270" stateMachineCode="-1025633653" eventType="UPDATE" topicType="output" communicationType="BUS" stateCode="1" eventCode="10" event="XComponent.Referential.UserObject.InstrumentSnapshot" communication="bus">
+      <topic type="STATIC">input.1_0.tradeService.TradeCapture.Transaction</topic>
+    </publish>
+    <publish componentCode="183271270" stateMachineCode="-1025633653" eventType="UPDATE" topicType="output" communicationType="BUS" stateCode="0" eventCode="10" event="XComponent.Referential.UserObject.InstrumentSnapshot" communication="bus">
+      <topic type="STATIC">input.1_0.tradeService.TradeCapture.Transaction</topic>
+    </publish>
+    <publish componentCode="183271270" stateMachineCode="-1025633653" eventType="UPDATE" topicType="output" communicationType="BUS" stateCode="0" eventCode="6" event="XComponent.Common.Event.DefaultEvent" communication="bus">
+      <topic type="STATIC">input.1_0.tradeService.TradeCapture.Transaction</topic>
+    </publish>
+    <publish componentCode="183271270" stateMachineCode="-1025633653" eventType="UPDATE" topicType="output" communicationType="BUS" stateCode="0" eventCode="14" event="XComponent.TradeCapture.UserObject.Reject" communication="bus">
+      <topic type="STATIC">input.1_0.tradeService.TradeCapture.Transaction</topic>
+    </publish>
+    <publish componentCode="183271270" stateMachineCode="-1025633653" eventType="UPDATE" topicType="output" communicationType="BUS" stateCode="0" eventCode="9" event="XComponent.Referential.UserObject.Instrument" communication="bus">
+      <topic type="STATIC">input.1_0.tradeService.TradeCapture.Transaction</topic>
+    </publish>
+    <subscribe componentCode="183271270" eventType="ERROR" topicType="input" communicationType="BUS" communication="bus">
+      <topic type="STATIC">error.1_0.tradeService.TradeCapture</topic>
+    </subscribe>
+    <subscribe componentCode="183271270" stateMachineCode="-1802001970" eventType="UPDATE" topicType="input" communicationType="BUS" event="" communication="bus" communicationThreadingType="INHERITFROMPARENT">
+      <topic type="STATIC">output.1_0.tradeService.TradeCapture.XCTradeProcessor</topic>
+    </subscribe>
+    <subscribe componentCode="183271270" stateMachineCode="-1025633653" eventType="UPDATE" topicType="input" communicationType="BUS" event="XComponent.TradeCapture.UserObject.Transaction" communication="bus" communicationThreadingType="INHERITFROMPARENT">
+      <topic type="STATIC">output.1_0.tradeService.TradeCapture.Transaction</topic>
+    </subscribe>
+    <snapshot componentCode="183271270">
+      <topic type="STATIC">snapshot.1_0.tradeService.TradeCapture</topic>
+    </snapshot>
+  </clientAPICommunication>
+  <codesConverter>
+    <components>
+      <component name="Referential" id="1667656897">
+        <events>
+          <event name="XComponent.Common.Event.ApiProxy.ApiInitError" id="0" />
+          <event name="XComponent.Common.Event.ApiProxy.ApiInitSuccessful" id="1" />
+          <event name="XComponent.Common.Event.ApiProxy.CancelApiInit" id="2" />
+          <event name="XComponent.Common.Event.ApiProxy.InstanceUpdatedSubscription" id="3" />
+          <event name="XComponent.Common.Event.ApiProxy.InstanceUpdatedUnsubscription" id="4" />
+          <event name="XComponent.Common.Event.ApiProxy.SnapshotOptions" id="5" />
+          <event name="XComponent.Common.Event.DefaultEvent" id="6" />
+          <event name="XComponent.Common.Event.ExceptionEvent" id="7" />
+          <event name="XComponent.Referential.UserObject.GetSnapshot" id="8" />
+          <event name="XComponent.Referential.UserObject.Instrument" id="9" />
+          <event name="XComponent.Referential.UserObject.InstrumentSnapshot" id="10" />
+        </events>
+        <stateMachines>
+          <stateMachine name="Referential" id="1667656897">
+            <states>
+              <State name="EntryPoint" id="0" />
+              <State name="Referential" id="1" />
+            </states>
+          </stateMachine>
+        </stateMachines>
+      </component>
+      <component name="TradeCapture" id="183271270">
+        <events>
+          <event name="XComponent.Common.Event.ApiProxy.ApiInitError" id="0" />
+          <event name="XComponent.Common.Event.ApiProxy.ApiInitSuccessful" id="1" />
+          <event name="XComponent.Common.Event.ApiProxy.CancelApiInit" id="2" />
+          <event name="XComponent.Common.Event.ApiProxy.InstanceUpdatedSubscription" id="3" />
+          <event name="XComponent.Common.Event.ApiProxy.InstanceUpdatedUnsubscription" id="4" />
+          <event name="XComponent.Common.Event.ApiProxy.SnapshotOptions" id="5" />
+          <event name="XComponent.Common.Event.DefaultEvent" id="6" />
+          <event name="XComponent.Common.Event.ExceptionEvent" id="7" />
+          <event name="XComponent.Referential.UserObject.GetSnapshot" id="8" />
+          <event name="XComponent.Referential.UserObject.Instrument" id="9" />
+          <event name="XComponent.Referential.UserObject.InstrumentSnapshot" id="10" />
+          <event name="XComponent.TradeCapture.UserObject.Accept" id="11" />
+          <event name="XComponent.TradeCapture.UserObject.Error" id="12" />
+          <event name="XComponent.TradeCapture.UserObject.Init" id="13" />
+          <event name="XComponent.TradeCapture.UserObject.Reject" id="14" />
+          <event name="XComponent.TradeCapture.UserObject.Transaction" id="15" />
+          <event name="XComponent.TradeCapture.UserObject.UpdateAndRetry" id="16" />
+        </events>
+        <stateMachines>
+          <stateMachine name="XCTradeProcessor" id="-1802001970">
+            <states>
+              <State name="EntryPoint" id="0" />
+            </states>
+          </stateMachine>
+          <stateMachine name="Transaction" id="-1025633653">
+            <states>
+              <State name="Validation" id="4" />
+              <State name="ValidationError" id="5" />
+              <State name="TransactionRejected" id="3" />
+              <State name="Mapping" id="1" />
+              <State name="ErrorOnMapping" id="0" />
+              <State name="TransactionAccepted" id="2" />
+            </states>
+          </stateMachine>
+          <stateMachine name="UpdateReferential" id="-253835822">
+            <states>
+              <State name="UpdateReferential" id="0" />
+            </states>
+          </stateMachine>
+          <stateMachine name="GetInstrumentSnapshot" id="1101023624">
+            <states>
+              <State name="GetInstrumentSnapshot" id="0" />
+            </states>
+          </stateMachine>
+        </stateMachines>
+      </component>
+    </components>
+  </codesConverter>
+</deployment>
