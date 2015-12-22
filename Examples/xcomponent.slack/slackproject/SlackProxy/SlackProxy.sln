@@ -10,8 +10,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XComponent.SlackProxy.Commo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlackApi", "SlackApi\SlackApi.csproj", "{24257723-366E-4FBB-8511-22383F3AEF27}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication1", "ConsoleApplication1\ConsoleApplication1.csproj", "{B9AB16EA-D4BE-418B-9CA2-706F6DE42D33}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -34,10 +32,6 @@ Global
 		{24257723-366E-4FBB-8511-22383F3AEF27}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{24257723-366E-4FBB-8511-22383F3AEF27}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{24257723-366E-4FBB-8511-22383F3AEF27}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B9AB16EA-D4BE-418B-9CA2-706F6DE42D33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B9AB16EA-D4BE-418B-9CA2-706F6DE42D33}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B9AB16EA-D4BE-418B-9CA2-706F6DE42D33}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B9AB16EA-D4BE-418B-9CA2-706F6DE42D33}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

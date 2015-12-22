@@ -38,6 +38,7 @@ TestResult.xml
 [Rr]eleasePS/
 dlldata.c
 
+*_.TemporaryItems
 *_i.c
 *_p.c
 *_i.h

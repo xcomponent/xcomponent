@@ -3,14 +3,14 @@
   <GraphicalStates>
     <GraphicalState id="1">
       <Center>
-        <X>70</X>
-        <Y>92.31198</Y>
+        <X>164</X>
+        <Y>224</Y>
       </Center>
     </GraphicalState>
     <GraphicalState id="2">
       <Center>
-        <X>378.048828</X>
-        <Y>100.187</Y>
+        <X>472.048828</X>
+        <Y>231.875015</Y>
       </Center>
     </GraphicalState>
     <GraphicalState id="3">
@@ -46,12 +46,12 @@
         <ScB>0</ScB>
       </TransitionColor>
       <C1>
-        <X>185.270248</X>
-        <Y>45.62768</Y>
+        <X>279.751129</X>
+        <Y>183.924072</Y>
       </C1>
       <C2>
-        <X>264.7753</X>
-        <Y>47.6590538</Y>
+        <X>358.493439</X>
+        <Y>185.945068</Y>
       </C2>
     </GraphicalTransition>
     <GraphicalTransition id="2" curviness="20" isLabelDisplayed="false" isTransitionColorUpdated="false">
@@ -66,12 +66,12 @@
         <ScB>0</ScB>
       </TransitionColor>
       <C1>
-        <X>544.2282</X>
-        <Y>86.9929</Y>
+        <X>600.184937</X>
+        <Y>175.698914</Y>
       </C1>
       <C2>
-        <X>689.0046</X>
-        <Y>94.22415</Y>
+        <X>714.4226</X>
+        <Y>143.822021</Y>
       </C2>
     </GraphicalTransition>
     <GraphicalTransition id="3" curviness="10" isLabelDisplayed="false" isTransitionColorUpdated="false">
