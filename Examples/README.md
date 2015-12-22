@@ -31,3 +31,5 @@ example to demonstrate how to develop a simple authentication microservice with 
 example to demonstrate how to develop a simple Trade Capture application with two microservices and two Wpf applications that interact wich each other
 * **Rest Api Client** ([Click here](xcomponent.restapiclient)): 
 example to demonstrate how to consume a RestFul service with XComponent
+* **Slack Client** ([Click here](xcomponent.slack)): 
+example to demonstrate how to post a message to Slack with XComponent
