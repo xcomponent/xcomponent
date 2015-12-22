@@ -81,6 +81,20 @@ Target "RestApiClient" (fun _ ->
     if result <> 0 then failwithf "xcomponent.restapiclient build returned with a non-zero exit code"    
 )
 
+Target "Slack" (fun _ ->    
+    trace ("Building XComponent.Slack")
+    let timeoutExec = 5.0
+
+    let result = ExecProcess (fun info ->
+                    info.FileName <- "build.cmd"
+                    info.WorkingDirectory <- Path.Combine(__SOURCE_DIRECTORY__, "xcomponent.slack") 
+                    info.Arguments <- "All"
+                    ) 
+                    (TimeSpan.FromMinutes timeoutExec)
+  
+    if result <> 0 then failwithf "xcomponent.restapiclient build returned with a non-zero exit code"    
+)
+
 // Default target
 Target "Help" (fun _ ->
     List.iter printfn [
@@ -110,6 +124,9 @@ Target "All" DoNothing
   ==> "All"
   
 "RestApiClient"
+  ==> "All"
+
+"Slack"
   ==> "All"
   
 // start build

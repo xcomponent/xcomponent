@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinkingSchema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" isClientApiShown="false" isLinkingShown="false" name="XChristmas">
+  <LinkedComponents>
+    <LinkedComponent name="SlackProxy">
+      <XCToXCLinks />
+      <XCToApiLinks>
+        <XCToApiLink stateMachineIdFrom="1" stateIdFrom="-1" linkFrom="SlackProxy" linkTo="XChristmasApi" />
+        <XCToApiLink stateMachineIdFrom="2" stateIdFrom="-1" linkFrom="SlackProxy" linkTo="XChristmasApi" />
+      </XCToApiLinks>
+    </LinkedComponent>
+  </LinkedComponents>
+  <LinkedClientApis>
+    <LinkedClientApi name="XChristmasApi">
+      <ApiToXCLinks>
+        <ApiToXCLink linkFrom="XChristmasApi" linkTo="SlackProxy" stateMachineIdTo="1" stateIdTo="2">
+          <AllowedTransitions>
+            <LinkingSimpleTransition id="2" stateMachineIdTo="1" stateIdTo="2" />
+          </AllowedTransitions>
+          <AllowedEvents>
+            <LinkingEvent eventTypeName="XComponent.SlackProxy.UserObject.SendMessage" stateMachineIdTo="1" stateIdTo="2" />
+          </AllowedEvents>
+          <NotAllowedTransitions />
+          <NotAllowedEvents />
+        </ApiToXCLink>
+      </ApiToXCLinks>
+    </LinkedClientApi>
+  </LinkedClientApis>
+</LinkingSchema>
