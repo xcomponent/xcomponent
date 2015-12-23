@@ -30,6 +30,8 @@
  * [Timeout transitions](#timeout-transitions)
  * [Internal transitions](#internal-transitions)
  * [Triggerable transition](#triggerable-transition)
+ * [Customizing transitions](#customizing-transitions)
+ * [Enabling Triggered method to implement your own code](#enabling-triggered-method-to-implement-your-own-code)
  * [Composition](#composition)
 
 ## 1 - Overview
@@ -373,6 +375,37 @@ To draw them you can select a state then select the blue circle surrounding and 
 
 Click on Triggerable transition. You can also select both the state and the transition (letting CTRL pressed to select both with the mouse) and click on the button
 ![add transition](Images/add_transition.png)in the menu triggerable connections.
+
+### Customizing transitions
+
+You have the possibility to add some checks on transitions. On XCStudio in transition properties window you can:
+- Add matching keys
+- Add contains keys
+- Add specific rules
+Following options can be set on the properties of a transition.  Click on a transition.
+
+Now you can navigate and add this key using this window:
+
+![triggering rules](Images/triggering_rules.png)
+
+Choose the right tab menu, select corresponding items and click on “Add” button to validate creation.
+
+Matching Key compares a “Public Member” property with a “Triggering Event” property. If it’s not a match, transition will not be triggered.
+
+Contains Key option searches the current state machine class if it contains a triggering event class member. If this class member is not in the list, transition will not be triggered.
+
+If you want to do more specific checks, click on “Specific” tab and tick use specific rule. When you click on the build button on the component menu, this will generate the skeleton of C# methods in which you’ll have access to everything you need to make some tests. In following parts will be described the Visual Studio Project Hierarchy.
+
+### Enabling Triggered method to implement your own code
+
+Two types of triggered methods exist. The first one is called initialize: before arriving on a state machine you can perform actions, and when you arrive from a specific transition you can perform specific actions.
+What’s important to understand is that the initialize part is executed before arriving on the state.
+
+The second type is a triggered method. This code is executed when arriving on a state from a precise transition. To enable this possibility of implementing your own code (by default it’s not) you have to go to the state properties clicking on a state and tick the method in which you want to write specific code.
+
+For instance on state pending in the *FrontOffice* state machine:
+
+![triggered methods](Images/triggered_methods.png)
 
 ### Composition
 
