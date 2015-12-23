@@ -32,6 +32,7 @@
  * [Triggerable transition](#triggerable-transition)
  * [Customizing transitions](#customizing-transitions)
  * [Enabling Triggered method to implement your own code](#enabling-triggered-method-to-implement-your-own-code)
+ * [Visual Studio generated project hierarchy](#visual-studio-generated-project-hierarchy)
  * [Composition](#composition)
 
 ## 1 - Overview
@@ -406,6 +407,27 @@ The second type is a triggered method. This code is executed when arriving on a 
 For instance on state pending in the *FrontOffice* state machine:
 
 ![triggered methods](Images/triggered_methods.png)
+
+### Visual Studio generated project hierarchy
+
+When you create your project in XCStudio, XCStudio application generates data in file, for instance, xcml file is the global file containing and including all the rest.
+When you create a new component you have a new directory created by the Studio in your workspace directory (by default: *C:\XComponentProjects\{MyProjectName}\*)
+Each time you add and set a class on state machine it creates a C# class in the component.
+When clicking on add and set a new class on a transition, it has the same effect.
+If you click on a state and check triggered methods to activate them, XCStudio generates C# code in a specific class.
+
+To visualize what has been generated in Visual Studio project click on
+![vs button](Images/vs_button.png) to open Visual Studio.
+
+You get a window that looks like the following figure:
+
+![vs](Images/vs.png)
+
+You can see that in the Visual Studio solution, three projects exist: 
+- Common: containing class reused by other visual studio projects and xcomponent core. 
+- TriggeredMethod: one by state machine when you enable triggered method or specific rules. Pattern for triggered method class file generated is named like this: {StateMachineName}TriggeredMethod.cs, while specific rules class file is named like: {StateMachineName}UserSpecificRules.cs.
+- UserObject: all objects added from the XCStudio interface: triggering events, public members, internal members.
+
 
 ### Composition
 
