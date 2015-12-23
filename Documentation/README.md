@@ -21,6 +21,16 @@
  * [Creating a new project](#Creating-a-new-project)
  * [Navigate within your project](#navigate-within-your-project)
  * [Creating a new component](#creating-a-new-component)
+ * [Designing state machines using XCStudio](#designing-state-machines-using-xcstudio)
+ * [State machine in depth](#state-machine-in-depth)
+ * [Deleting parts of your components](#deleting-parts-of-your-components)
+ * [Creating a component data structure](#creating-a-component-data-structure)
+ * [States in depth](#states-in-depth)
+ * [Transition in depth](#transition-in-depth)
+ * [Timeout transitions](#timeout-transitions)
+ * [Internal transitions](#internal-transitions)
+ * [Triggerable transition](#triggerable-transition)
+ * [Composition](#composition)
 
 ## 1 - Overview
 
@@ -223,6 +233,8 @@ This is what you have on the screen in standard profile hiding properties error 
 
 ![first component](Images/first_component.jpg)
 
+### Designing state machines using XCStudio
+
 To add a new state machine in your component, just click on the add button as shown in the next figure.
  
 ![new state machine](Images/new_statemachine.jpg)
@@ -254,4 +266,122 @@ The component looks like this:
 Save your component: File + Save or Crtl+S.
 Notice that you can save the project by using the Maj+Ctrl+S shortcut
 
+### State machine in depth
 
+Two objects can be attributed to a state machine:
+- Internal member: a class you define in which are stored information that don’t need to be exposed on the network
+- Public member: a class you define in which are store information that need to be exposed on the network
+
+If you click on a state machine name, the properties panel displays details about the selected state machine.
+
+![properties panel](Images/properties_panel.jpg)
+
+### Deleting parts of your components
+
+You can delete API, components, state machines, states and transitions, except the first state machine that contains the EntryPoint.
+
+To do this you simply need to click on the object you want to remove, and click on the following buttons:
+- ![delete API](Images/delete_api.png) to delete an API
+- ![delete component](Images/delete_component.png) to remove a component
+- ![delete state machine](Images/delete_statemachine.png) to delete a state machine
+- ![delete state](Images/delete_state.png) to delete a state
+- ![delete transition](Images/delete_transition.png) to delete a transition
+
+Another way to do this is to press the DEL key when you have selected one or more entities that can be deleted.
+
+### Creating a component data structure
+
+XComponent is an event-driven platform. It means that:
+- you can events to components to trigger transitions
+- you will receive event notifications from state machines
+
+> Note: An event is defined as a C# class
+  
+In order to be functional, a component needs a class (representing an event type) for each transition.
+
+> Note: If you want to use an internal transition you’re have to set a public/internal member (classes for state machine representing shared data between all states of the current state machine; public member can be accessed by everyone while internal not).
+
+This is the way to exchange/save information: adding classes to state machines and transitions:
+- On a state machine it represents the public or internal member which is a C# class. All states belonging to this state machine have access to it,
+- On a transition it’s also a C# class that contains what you want to send to the destination state.
+
+To add a class, first click on the element you want to add a class to and then go to the Add new class panel. Please note that the *Add new class* window is activated in the Windows menu.
+
+For instance click on the “Entry” state machine and go to the *Add new class* panel.
+
+On the right pane, you can define properties using the table to store data such as text (string), integers/float values (int/double), or other types of data, in the class you want to add and attach to a transition or a public/internal member.
+
+The class name is already set to *Entry*, we don’t need any property so we just need to click on “Add and set”. “Add and set” allows you to add a new class and assign it to the current object selected; this action also generates C# code of this class.
+
+Now we need to add classes to all transitions and state machines.
+
+> Note: instead of using the class generator, you can import your own dll. 
+
+### States in depth
+
+You may have notice that circles representing states in XCStudio can have various colors.
+
+Here’s the meaning of the colors:
+- Black is reserved for *EntryPoint* states
+- White is for non-ending states
+- Green is used to indicate ending states inside a state machine
+
+In the property panel, you can specify a comment on a state.
+
+If you click on a state you can write a personal comment on it in the text area:
+
+![state comment](Images/state_comment.png)
+
+> Note: Comments are used to generate your project documentation.
+
+### Transition in depth
+
+Several transitions exist. Two transition types are commonly used: 
+- Regular transition between two states in the same state machine
+- Transition between two states from different states machine. 
+The first one is black (color can be customized) and ran in the same instance of the current state machine while the second one is green (also customizable) but, it creates a new instance of the state machine pointed by the arrow of the transition. 
+You can also add a comment on a transition.
+
+To create a comment: click on a transition, fill the comment text area (property panel).
+
+### Timeout transitions
+
+Timed out transitions are transitions that are automatically triggered once when the time is elapsed. Time out transitions can only be implemented between two states in a single state machine.
+To add a new timed out transition, click on the transition you created, check the property:
+![timeout](Images/timeout.png) and set the delay after which the transition will be triggered automatically. Numbers before comma represents second, so you have a millisecond precision.
+
+### Internal transitions
+
+An internal transition is a way to launch a transition which does not changes the current state of the state machine. For instance let’s consider the following example:
+
+![internal transition](Images/internal.png)
+
+Once arrived on “State4”, transition refresh on “State2” can be launched.
+Internal transitions have a particularity: the event sent by “State4” is necessarily the type of its public member, in this case “StateMachine3”. So the class set to refresh should be the type of “StateMachine3”.
+To draw them you can select a state then select the blue circle surrounding. You can also select both the state and the transition (letting CTRL pushed to select both with the mouse) and click on the button:
+![add transition](Images/add_transition.png) in the menu internal connections.
+
+### Triggerable transitions
+
+Triggerable transitions work the same as internal transitions but you use a different type of event to launch the transition.
+
+> *Triggerable transitions* enable you to trigger transition from your code (see triggered methods chapter)
+
+To draw them you can select a state then select the blue circle surrounding and drag from the state to the target transition. In the property panel, the following options are available:
+
+![triggerable](Images/triggerable.png)
+
+Click on Triggerable transition. You can also select both the state and the transition (letting CTRL pressed to select both with the mouse) and click on the button
+![add transition](Images/add_transition.png)in the menu triggerable connections.
+
+### Composition
+
+APIs will be used to define whose component/API a component/API is able to communicate with. 
+
+Several APIs can be used but, in most cases you only need a single API. It’s not useful unless you want to separate data. For instance some data are critical or secured so you will use one API for this type of data and another one for the rest. 
+
+White circles on the left of components/APIS represent the inputs and white circles on the right of components/APIs the outputs. If you link a state machine, all states belonging to this state machine are linked.
+
+Example of composition:
+
+![composition example](Images/composition_example.png)
