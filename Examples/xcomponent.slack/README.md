@@ -1,6 +1,6 @@
 # XComponent Slack
 
-This project is a simple gateway to [Slack](http://wwww.slack.com). We this gateway, you will be able to send messages to a [Slack](http://wwww.slack.com) channel using [XComponent](http://www.xcomponent.com).
+This project is a simple gateway to [Slack](http://wwww.slack.com). With this gateway you will be able to send messages to a [Slack](http://wwww.slack.com) channel using [XComponent](http://www.xcomponent.com).
 
 ## Prerequisite
 
