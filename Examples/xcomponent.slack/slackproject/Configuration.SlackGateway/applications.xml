@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfIHMApplication xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <IHMApplication>
-    <RelativativePath>XChristmasApp\XChristmasApp.sln</RelativativePath>
-    <Name>XChristmasApp</Name>
+    <RelativativePath>SlackApp\SlackApp.sln</RelativativePath>
+    <Name>SlackApp</Name>
   </IHMApplication>
 </ArrayOfIHMApplication>
