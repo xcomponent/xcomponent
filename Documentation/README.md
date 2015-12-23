@@ -27,6 +27,10 @@
  * [Creating a component data structure](#creating-a-component-data-structure)
  * [States in depth](#states-in-depth)
  * [Transition in depth](#transition-in-depth)
+ * [Timeout transitions](#timeout-transitions)
+ * [Internal transitions](#internal-transitions)
+ * [Triggerable transition](#triggerable-transition)
+ * [Composition](#composition)
 
 ## 1 - Overview
 
@@ -339,3 +343,45 @@ The first one is black (color can be customized) and ran in the same instance of
 You can also add a comment on a transition.
 
 To create a comment: click on a transition, fill the comment text area (property panel).
+
+### Timeout transitions
+
+Timed out transitions are transitions that are automatically triggered once when the time is elapsed. Time out transitions can only be implemented between two states in a single state machine.
+To add a new timed out transition, click on the transition you created, check the property:
+![timeout](Images/timeout.png) and set the delay after which the transition will be triggered automatically. Numbers before comma represents second, so you have a millisecond precision.
+
+### Internal transitions
+
+An internal transition is a way to launch a transition which does not changes the current state of the state machine. For instance let’s consider the following example:
+
+![internal transition](Images/internal.png)
+
+Once arrived on “State4”, transition refresh on “State2” can be launched.
+Internal transitions have a particularity: the event sent by “State4” is necessarily the type of its public member, in this case “StateMachine3”. So the class set to refresh should be the type of “StateMachine3”.
+To draw them you can select a state then select the blue circle surrounding. You can also select both the state and the transition (letting CTRL pushed to select both with the mouse) and click on the button:
+![add transition](Images/add_transition.png) in the menu internal connections.
+
+### Triggerable transitions
+
+Triggerable transitions work the same as internal transitions but you use a different type of event to launch the transition.
+
+> *Triggerable transitions* enable you to trigger transition from your code (see triggered methods chapter)
+
+To draw them you can select a state then select the blue circle surrounding and drag from the state to the target transition. In the property panel, the following options are available:
+
+![triggerable](Images/triggerable.png)
+
+Click on Triggerable transition. You can also select both the state and the transition (letting CTRL pressed to select both with the mouse) and click on the button
+![add transition](Images/add_transition.png)in the menu triggerable connections.
+
+### Composition
+
+APIs will be used to define whose component/API a component/API is able to communicate with. 
+
+Several APIs can be used but, in most cases you only need a single API. It’s not useful unless you want to separate data. For instance some data are critical or secured so you will use one API for this type of data and another one for the rest. 
+
+White circles on the left of components/APIS represent the inputs and white circles on the right of components/APIs the outputs. If you link a state machine, all states belonging to this state machine are linked.
+
+Example of composition:
+
+![composition example](Images/composition_example.png)
