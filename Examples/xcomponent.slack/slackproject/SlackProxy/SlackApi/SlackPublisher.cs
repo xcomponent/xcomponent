@@ -11,7 +11,19 @@ namespace SlackApi
         public string UrlWithToken { get; set; }
         public string Channel { get; set; }
         public string SlackUser { get; set; }
+        public string MessageImage { get; set; }
+        public string MessageTitle { get; set; }
+        public string Text { get; set; }
+        public string IconEmoji { get; set; }
+        public string Color { get; set; }
 
+        public SlackPublisher()
+        {
+            Color = "good";
+            MessageTitle = "Merry Christmas !!!";
+            Text = "We wish you a Merry Christmas and Happy Coding with XComponent <https://github.com/xcomponent/xcomponent | (Follow us on GitHub) >";
+            IconEmoji = ":christmas_tree:";
+        }
         public void SendMessage()
         {
             if (!string.IsNullOrEmpty(UrlWithToken) && !string.IsNullOrEmpty(Channel))
@@ -21,15 +33,17 @@ namespace SlackApi
                     SlackMessage slackMessage = new SlackMessage();
                     slackMessage.Channel = Channel;
                     slackMessage.Username = SlackUser;
-                    slackMessage.IconEmoji = ":christmas_tree:";
-
+                    slackMessage.IconEmoji = IconEmoji;
 
                     SlackAttachment a = new SlackAttachment();
-                    a.Color = "good";
-                    a.Title = "Merry Christhmas !!!";
-                    a.ImageUrl =
-                        "https://scontent-cdg2-1.xx.fbcdn.net/hphotos-xap1/t31.0-8/12052390_965355310189672_2198005579528258871_o.jpg";
-                    a.Text = "We wish you a Merry Christhmas and Happy Coding with XComponent <https://github.com/xcomponent/xcomponent | (Follow us on GitHub) >";
+                    a.Color = Color;
+                    a.Title = MessageTitle;
+                    if (!string.IsNullOrEmpty(MessageImage))
+                    {
+                        a.ImageUrl = MessageImage;
+                    }
+                   
+                    a.Text = Text;
 
                     slackMessage.Attachments = new List<SlackAttachment>() { a };
 

@@ -42,8 +42,12 @@ namespace XChristmasApp
             var commandLineParser = new Parser();
             if (!commandLineParser.ParseArguments(args, cmdLineOptions))
             {
-                Console.WriteLine(cmdLineOptions.GetUsage());
-                return; 
+                Console.WriteLine("Enter Slack WebHook url:");
+                cmdLineOptions.WebHookUrl = Console.ReadLine();
+                Console.WriteLine("Enter Slack channel:");
+                cmdLineOptions.Channel = Console.ReadLine();
+                Console.WriteLine("Enter Slack user:");
+                cmdLineOptions.User = Console.ReadLine();
             }
 
             using (var myXChristmasApi = new ApiWrapper<XChristmasApi>())
@@ -69,12 +73,18 @@ namespace XChristmasApp
                                autoResetEvent.Set();
                            };
 
-                        myXChristmasApi.Api.SlackProxy_Component.SlackProxy_StateMachine.SendEvent(new SendMessage()
-                        {
-                            SlackChannel = cmdLineOptions.Channel,
-                            SlackUrlWithToken = cmdLineOptions.WebHookUrl,
-                            SlackUser = cmdLineOptions.User
-                        });
+	                    SendMessage slackMessage = new SendMessage()
+	                    {
+	                        SlackChannel = cmdLineOptions.Channel,
+	                        SlackUrlWithToken = cmdLineOptions.WebHookUrl,
+	                        SlackUser = cmdLineOptions.User,
+                           // MessageTitle = "My first slack message",
+                           // Text = "Hello from slack",
+                           //  MessageImage = "https://raw.githubusercontent.com/xcomponent/xcomponent/master/Examples/xcomponent.slack/images/XCChristmasLogo.png",
+                           // IconEmoji = ":tv:" // http://www.emoji-cheat-sheet.com/
+                        };
+
+                        myXChristmasApi.Api.SlackProxy_Component.SlackProxy_StateMachine.SendEvent(slackMessage);
 
 	                    autoResetEvent.WaitOne();
 	                }

@@ -18,7 +18,21 @@ namespace XComponent.SlackProxy.TriggeredMethod
 				slackPublisher.UrlWithToken = sendMessage.SlackUrlWithToken;
 				slackPublisher.Channel = sendMessage.SlackChannel;
 				slackPublisher.SlackUser = sendMessage.SlackUser;
-
+				if (!string.IsNullOrEmpty(sendMessage.Color)) {
+					slackPublisher.Color = sendMessage.Color;
+				}
+				if (!string.IsNullOrEmpty(sendMessage.Text)) {
+					slackPublisher.Text = sendMessage.Text;
+				}
+				if (!string.IsNullOrEmpty(sendMessage.IconEmoji)) {
+					slackPublisher.IconEmoji = sendMessage.IconEmoji;
+				}
+				if (!string.IsNullOrEmpty(sendMessage.MessageImage)) {
+					slackPublisher.MessageImage = sendMessage.MessageImage;
+				}
+				if (!string.IsNullOrEmpty(sendMessage.MessageTitle)) {
+					slackPublisher.MessageTitle = sendMessage.MessageTitle;
+				}
 				slackPublisher.SendMessage();
 				sender.Success(context);
 			} catch (Exception ex) {

@@ -11,5 +11,11 @@ namespace XComponent.SlackProxy.UserObject
         public string SlackChannel { get; set; }
         public string SlackUrlWithToken { get; set; }
         public string SlackUser { get; set; }
+        public string MessageImage { get; set; }
+        public string MessageTitle { get; set; }
+        public string Text { get; set; }
+        public string IconEmoji { get; set; }
+        public string Color { get; set; }
+
     }
 }
