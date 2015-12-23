@@ -2,7 +2,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XChristmasApp", "XChristmasApp\XChristmasApp.csproj", "{14F06E94-124E-42D7-83A4-3B34312E5A1E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlackApp", "SlackApp\SlackApp.csproj", "{14F06E94-124E-42D7-83A4-3B34312E5A1E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

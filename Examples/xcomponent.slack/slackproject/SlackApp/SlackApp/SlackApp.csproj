@@ -8,8 +8,8 @@
     <ProjectGuid>{14F06E94-124E-42D7-83A4-3B34312E5A1E}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>XChristmasApp</RootNamespace>
-    <AssemblyName>XChristmasApp</AssemblyName>
+    <RootNamespace>SlackApp</RootNamespace>
+    <AssemblyName>SlackApp</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -44,24 +44,6 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="RestSharp">
-      <HintPath>..\lib\xcassemblies\RestSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="ServiceStack.Client">
-      <HintPath>..\lib\xcassemblies\ServiceStack.Client.dll</HintPath>
-    </Reference>
-    <Reference Include="ServiceStack.Common">
-      <HintPath>..\lib\xcassemblies\ServiceStack.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="ServiceStack">
-      <HintPath>..\lib\xcassemblies\ServiceStack.dll</HintPath>
-    </Reference>
-    <Reference Include="ServiceStack.Interfaces">
-      <HintPath>..\lib\xcassemblies\ServiceStack.Interfaces.dll</HintPath>
-    </Reference>
-    <Reference Include="ServiceStack.Text">
-      <HintPath>..\lib\xcassemblies\ServiceStack.Text.dll</HintPath>
-    </Reference>
     <Reference Include="SlackApi">
       <HintPath>..\lib\xcassemblies\SlackApi.dll</HintPath>
     </Reference>
@@ -71,11 +53,11 @@
     <Reference Include="XComponent.Extended">
       <HintPath>..\lib\xcassemblies\XComponent.Extended.dll</HintPath>
     </Reference>
+    <Reference Include="XComponent.SlackGateway.ClientApi">
+      <HintPath>..\lib\xcassemblies\XComponent.SlackGateway.ClientApi.dll</HintPath>
+    </Reference>
     <Reference Include="XComponent.SlackProxy.UserObject">
       <HintPath>..\lib\xcassemblies\XComponent.SlackProxy.UserObject.dll</HintPath>
-    </Reference>
-    <Reference Include="XComponent.XChristmas.ClientApi">
-      <HintPath>..\lib\xcassemblies\XComponent.XChristmas.ClientApi.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

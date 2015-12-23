@@ -9,9 +9,9 @@
     <preBuildEvent></preBuildEvent>
     <postBuildEvent></postBuildEvent>
     <exportFolders>
-      <exportFolder websocket="False" rest="False" folder="XChristmasApp\lib">
+      <exportFolder websocket="False" rest="False" folder="SlackApp\lib">
         <apistomerge>
-          <clientAPI name="XChristmasApi" selected="True" />
+          <clientAPI name="SlackGatewayApi" selected="True" />
         </apistomerge>
       </exportFolder>
     </exportFolders>
@@ -45,7 +45,7 @@
     </component>
   </components>
   <clientAPIs>
-    <clientAPI name="XChristmasApi" messageQueue="INHERITFROMPARENT">
+    <clientAPI name="SlackGatewayApi" messageQueue="INHERITFROMPARENT">
       <component name="SlackProxy" messageQueue="INHERITFROMPARENT">
         <update from="1" state="-1" messageQueue="INHERITFROMPARENT" />
         <update from="2" state="-1" messageQueue="INHERITFROMPARENT" />
