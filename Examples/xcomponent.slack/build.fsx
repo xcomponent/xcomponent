@@ -40,7 +40,7 @@ Target "Compile" (fun _ ->
     let result = ExecProcess (fun info ->
                     info.FileName <- xctools
                     info.WorkingDirectory <- __SOURCE_DIRECTORY__ 
-                    info.Arguments <- "--build --project=\"slackproject\XChristmas_Model.xcml\""
+                    info.Arguments <- "--build --project=\"slackproject\SlackGateway_Model.xcml\""
                     ) 
                     (TimeSpan.FromMinutes timeoutExec)
   
@@ -48,7 +48,7 @@ Target "Compile" (fun _ ->
 
     ensureDirectory buildClientAppDir
 
-    !! "slackproject\XChristmasApp/XChristmasApp.sln"
+    !! "slackproject\SlackApp/SlackApp.sln"
     |> MSBuildRelease buildClientAppDir "Build"
     |> Log "Slack client application build output: "
 )
@@ -59,7 +59,7 @@ Target "Generate" (fun _ ->
     trace("Generating xcstudio.cmd")
     let studioScriptContents = [| "pushd %~dp0"
     ;"cd /d \"" + Path.Combine(parentDirectory, "packages\\xcomponent.community\\tools\XCStudio") + "\""
-    ;"start \"\" XCStudio.exe \"" + Path.Combine(__SOURCE_DIRECTORY__, "slackproject\\XChristmas_Model.xcml") + "\""
+    ;"start \"\" XCStudio.exe \"" + Path.Combine(__SOURCE_DIRECTORY__, "slackproject\\SlackGateway_Model.xcml") + "\""
     ;"popd" |]
     File.WriteAllLines(studioScriptPath, studioScriptContents)    
 
@@ -67,7 +67,7 @@ Target "Generate" (fun _ ->
     trace("Generating startMicroservice.cmd")
     let startMicroserviceScriptContents = [| "pushd %~dp0"
     ;"cd /d \"" + Path.Combine(parentDirectory, "packages\\xcomponent.community\\tools\XCStudio\XCRuntime") + "\""
-    ;"start \"\" XCRuntime.exe \"" + Path.Combine(__SOURCE_DIRECTORY__, "build\\exportMicroservice\\xcassemblies\\XChristmas-microservice1.xcr") + "\""
+    ;"start \"\" XCRuntime.exe \"" + Path.Combine(__SOURCE_DIRECTORY__, "build\\exportMicroservice\\xcassemblies\\SlackGateway-microservice1.xcr") + "\""
     ;"popd"|]
     File.WriteAllLines(startMicroserviceScriptPath, startMicroserviceScriptContents)    
     
@@ -75,7 +75,7 @@ Target "Generate" (fun _ ->
     trace("Generating startConsoleApp.cmd")
     let startConsoleAppScriptContents = [| "pushd %~dp0"
     ;"cd /d \"" + Path.Combine(__SOURCE_DIRECTORY__, "build\\consoleApp") + "\""
-    ;"start \"\" XChristmasApp.exe"
+    ;"start \"\" SlackApp.exe"
     ;"popd"|]
     File.WriteAllLines(startConsoleAppScriptPath, startConsoleAppScriptContents)    
 )
@@ -83,7 +83,7 @@ Target "Generate" (fun _ ->
 // Default target
 Target "Help" (fun _ ->
     List.iter printfn [
-      "xcomponent.helloworld build usage: "      
+      "xcomponent.slack build usage: "      
       ""
       "build All"      
       ""                  

@@ -5,10 +5,8 @@ using System.Text;
 using System.Threading;
 using CommandLine;
 using CommandLine.Text;
-using ServiceStack.DataAnnotations;
-using XCClientAPICommon.Client;
 using XCClientAPICommon.ApiExtensions;
-using XComponent.XChristmas.XChristmasApi;
+using XComponent.SlackGateway.SlackGatewayApi;
 using XComponent.SlackProxy.UserObject;
 
 
@@ -50,23 +48,23 @@ namespace XChristmasApp
                 cmdLineOptions.User = Console.ReadLine();
             }
 
-            using (var myXChristmasApi = new ApiWrapper<XChristmasApi>())
+            using (var mySlackGateway = new ApiWrapper<SlackGatewayApi>())
 	        {
 	            ClientApiOptions clientApiOptions = new ClientApiOptions();
 	                //fill this object to override default xcApi parameters
 
-	            if (myXChristmasApi.Init(myXChristmasApi.Api.DefaultXcApiFileName, clientApiOptions))
+	            if (mySlackGateway.Init(mySlackGateway.Api.DefaultXcApiFileName, clientApiOptions))
 	            {
 	                using (AutoResetEvent autoResetEvent = new AutoResetEvent(false))
 	                {
-                        myXChristmasApi.Api.SlackProxy_Component.PublishMessage_StateMachine.Published_State.InstanceUpdated +=
+                        mySlackGateway.Api.SlackProxy_Component.PublishMessage_StateMachine.Published_State.InstanceUpdated +=
                          instance =>
                          {
                              Console.WriteLine("Message has been successfully published!");
                              autoResetEvent.Set();
                          };
 
-                        myXChristmasApi.Api.SlackProxy_Component.PublishMessage_StateMachine.Error_State.InstanceUpdated +=
+                        mySlackGateway.Api.SlackProxy_Component.PublishMessage_StateMachine.Error_State.InstanceUpdated +=
                            instance =>
                            {
                                Console.WriteLine("Error while publishing message: " + instance.PublicMember.Message);
@@ -84,7 +82,7 @@ namespace XChristmasApp
                            // IconEmoji = ":tv:" // http://www.emoji-cheat-sheet.com/
                         };
 
-                        myXChristmasApi.Api.SlackProxy_Component.SlackProxy_StateMachine.SendEvent(slackMessage);
+                        mySlackGateway.Api.SlackProxy_Component.SlackProxy_StateMachine.SendEvent(slackMessage);
 
 	                    autoResetEvent.WaitOne();
 	                }

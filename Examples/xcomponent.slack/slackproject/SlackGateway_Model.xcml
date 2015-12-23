@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinkingSchema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" isClientApiShown="false" isLinkingShown="false" name="XChristmas">
+<LinkingSchema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" isClientApiShown="false" isLinkingShown="false" name="SlackGateway">
   <LinkedComponents>
     <LinkedComponent name="SlackProxy">
       <XCToXCLinks />
       <XCToApiLinks>
-        <XCToApiLink stateMachineIdFrom="1" stateIdFrom="-1" linkFrom="SlackProxy" linkTo="XChristmasApi" />
-        <XCToApiLink stateMachineIdFrom="2" stateIdFrom="-1" linkFrom="SlackProxy" linkTo="XChristmasApi" />
+        <XCToApiLink stateMachineIdFrom="1" stateIdFrom="-1" linkFrom="SlackProxy" linkTo="SlackGatewayApi" />
+        <XCToApiLink stateMachineIdFrom="2" stateIdFrom="-1" linkFrom="SlackProxy" linkTo="SlackGatewayApi" />
       </XCToApiLinks>
     </LinkedComponent>
   </LinkedComponents>
   <LinkedClientApis>
-    <LinkedClientApi name="XChristmasApi">
+    <LinkedClientApi name="SlackGatewayApi">
       <ApiToXCLinks>
-        <ApiToXCLink linkFrom="XChristmasApi" linkTo="SlackProxy" stateMachineIdTo="1" stateIdTo="2">
+        <ApiToXCLink linkFrom="SlackGatewayApi" linkTo="SlackProxy" stateMachineIdTo="1" stateIdTo="2">
           <AllowedTransitions>
             <LinkingSimpleTransition id="2" stateMachineIdTo="1" stateIdTo="2" />
           </AllowedTransitions>
