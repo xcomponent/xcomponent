@@ -105,30 +105,30 @@ This application needs several inputs:
 
 The console source code is quite simple:
 ```cs
-  using (var myXChristmasApi = new ApiWrapper<XChristmasApi>())
+  using (var mySlackGateway = new ApiWrapper<SlackGatewayApi>())
 	        {
 	            ClientApiOptions clientApiOptions = new ClientApiOptions();
 	                //fill this object to override default xcApi parameters
 
-	            if (myXChristmasApi.Init(myXChristmasApi.Api.DefaultXcApiFileName, clientApiOptions))
+	            if (myXChristmasApi.Init(mySlackGateway.Api.DefaultXcApiFileName, clientApiOptions))
 	            {
 	                using (AutoResetEvent autoResetEvent = new AutoResetEvent(false))
 	                {
-                        myXChristmasApi.Api.SlackProxy_Component.PublishMessage_StateMachine.Published_State.InstanceUpdated +=
+                        mySlackGateway.Api.SlackProxy_Component.PublishMessage_StateMachine.Published_State.InstanceUpdated +=
                          instance =>
                          {
                              Console.WriteLine("Message has been successfully published!");
                              autoResetEvent.Set();
                          };
 
-                        myXChristmasApi.Api.SlackProxy_Component.PublishMessage_StateMachine.Error_State.InstanceUpdated +=
+                        mySlackGateway.Api.SlackProxy_Component.PublishMessage_StateMachine.Error_State.InstanceUpdated +=
                            instance =>
                            {
                                Console.WriteLine("Error while publishing message: " + instance.PublicMember.Message);
                                autoResetEvent.Set();
                            };
 
-                        myXChristmasApi.Api.SlackProxy_Component.SlackProxy_StateMachine.SendEvent(new SendMessage()
+                        mySlackGateway.Api.SlackProxy_Component.SlackProxy_StateMachine.SendEvent(new SendMessage()
                         {
                             SlackChannel = cmdLineOptions.Channel,
                             SlackUrlWithToken = cmdLineOptions.WebHookUrl,
