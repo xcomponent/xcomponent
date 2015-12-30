@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <scxml version="1.0" name="SlackProxy">
   <datamodel>
-    <data id="Version" expr="10" />
+    <data id="Version" expr="11" />
     <data id="NameSeparator" expr=":" />
     <data id="logKeys">
       <logKeys />
@@ -59,8 +59,6 @@
         <onexit>
           <invoke Type="ExecuteOn_Publishing_Through_SendMessage" id="1">
             <content>
-              <Comment>
-              </Comment>
               <Name>ExecuteOn_Publishing_Through_SendMessage</Name>
               <Id>1</Id>
               <CustomParameters xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">

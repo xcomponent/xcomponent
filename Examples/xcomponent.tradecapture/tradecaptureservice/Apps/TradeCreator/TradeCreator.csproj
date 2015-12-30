@@ -40,9 +40,6 @@
     <ApplicationIcon>dealcapture.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AvalonControlsLibrary">
-      <HintPath>references\AvalonControlsLibrary.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -64,15 +61,14 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>references\xcassemblies\XComponent.Extended.dll</HintPath>
     </Reference>
-    <Reference Include="XComponent.Referential.UserObject, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\XComponentSources\XComponentResourcesCenter\Examples\xcomponent.tradecapture\tradecaptureservice\Apps\TradeCreator\references\xcassemblies\XComponent.Referential.UserObject.dll</HintPath>
+    <Reference Include="XComponent.Referential.UserObject">
+      <HintPath>references\xcassemblies\XComponent.Referential.UserObject.dll</HintPath>
     </Reference>
     <Reference Include="XComponent.TradeCapture.ClientApi">
-      <HintPath>C:\XComponentSources\XComponentResourcesCenter\Examples\xcomponent.tradecapture\tradecaptureservice\Apps\TradeCreator\references\xcassemblies\XComponent.TradeCapture.ClientApi.dll</HintPath>
+      <HintPath>references\xcassemblies\XComponent.TradeCapture.ClientApi.dll</HintPath>
     </Reference>
     <Reference Include="XComponent.TradeCapture.UserObject">
-      <HintPath>C:\XComponentSources\XComponentResourcesCenter\Examples\xcomponent.tradecapture\tradecaptureservice\Apps\TradeCreator\references\xcassemblies\XComponent.TradeCapture.UserObject.dll</HintPath>
+      <HintPath>references\xcassemblies\XComponent.TradeCapture.UserObject.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

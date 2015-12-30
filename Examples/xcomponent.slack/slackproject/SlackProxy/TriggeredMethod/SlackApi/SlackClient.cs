@@ -8,7 +8,7 @@ using RestSharp;
 using ServiceStack;
 using ServiceStack.Text;
 
-namespace SlackApi
+namespace XComponent.SlackProxy.TriggeredMethod.SlackApi
 {
     internal class SlackClient
     {

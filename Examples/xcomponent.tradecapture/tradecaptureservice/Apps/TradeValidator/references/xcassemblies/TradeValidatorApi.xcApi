@@ -54,8 +54,14 @@
     <subscribe componentCode="183271270" stateMachineCode="-1025633653" eventType="UPDATE" topicType="input" communicationType="BUS" event="XComponent.TradeCapture.UserObject.Transaction" communication="bus" communicationThreadingType="INHERITFROMPARENT">
       <topic type="STATIC">output.1_0.tradeService.TradeCapture.Transaction</topic>
     </subscribe>
+    <subscribe componentCode="1667656897" eventType="ERROR" topicType="input" communicationType="BUS" communication="bus">
+      <topic type="STATIC">error.1_0.referentialService.Referential</topic>
+    </subscribe>
     <snapshot componentCode="183271270">
       <topic type="STATIC">snapshot.1_0.tradeService.TradeCapture</topic>
+    </snapshot>
+    <snapshot componentCode="1667656897">
+      <topic type="STATIC">snapshot.1_0.referentialService.Referential</topic>
     </snapshot>
   </clientAPICommunication>
   <codesConverter>

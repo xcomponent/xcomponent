@@ -1,4 +1,5 @@
-using SlackApi;
+
+using XComponent.SlackProxy.TriggeredMethod.SlackApi;
 
 namespace XComponent.SlackProxy.TriggeredMethod
 {

@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using SlackApi;
 
-namespace SlackApi
+namespace XComponent.SlackProxy.TriggeredMethod.SlackApi
 {
     internal class SlackMessage
     {
