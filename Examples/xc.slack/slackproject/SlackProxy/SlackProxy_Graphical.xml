@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GraphicalComponent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <GraphicalStates>
+    <GraphicalState id="1">
+      <Center>
+        <X>164</X>
+        <Y>224</Y>
+      </Center>
+    </GraphicalState>
+    <GraphicalState id="2">
+      <Center>
+        <X>472.048828</X>
+        <Y>231.875015</Y>
+      </Center>
+    </GraphicalState>
+    <GraphicalState id="3">
+      <Center>
+        <X>853.0488</X>
+        <Y>123.875015</Y>
+      </Center>
+    </GraphicalState>
+    <GraphicalState id="4">
+      <Center>
+        <X>1097.04883</X>
+        <Y>172.875015</Y>
+      </Center>
+    </GraphicalState>
+    <GraphicalState id="5">
+      <Center>
+        <X>878.0488</X>
+        <Y>364.875</Y>
+      </Center>
+    </GraphicalState>
+  </GraphicalStates>
+  <TransitionPatternStates />
+  <GraphicalTransitions>
+    <GraphicalTransition id="1" curviness="10" isLabelDisplayed="false" isTransitionColorUpdated="false">
+      <TransitionColor>
+        <A>255</A>
+        <R>255</R>
+        <G>165</G>
+        <B>0</B>
+        <ScA>1</ScA>
+        <ScR>1</ScR>
+        <ScG>0.376262158</ScG>
+        <ScB>0</ScB>
+      </TransitionColor>
+      <C1>
+        <X>279.751129</X>
+        <Y>183.924072</Y>
+      </C1>
+      <C2>
+        <X>358.493439</X>
+        <Y>185.945068</Y>
+      </C2>
+    </GraphicalTransition>
+    <GraphicalTransition id="2" curviness="20" isLabelDisplayed="false" isTransitionColorUpdated="false">
+      <TransitionColor>
+        <A>255</A>
+        <R>0</R>
+        <G>128</G>
+        <B>0</B>
+        <ScA>1</ScA>
+        <ScR>0</ScR>
+        <ScG>0.215860531</ScG>
+        <ScB>0</ScB>
+      </TransitionColor>
+      <C1>
+        <X>600.184937</X>
+        <Y>175.698914</Y>
+      </C1>
+      <C2>
+        <X>714.4226</X>
+        <Y>143.822021</Y>
+      </C2>
+    </GraphicalTransition>
+    <GraphicalTransition id="3" curviness="10" isLabelDisplayed="false" isTransitionColorUpdated="false">
+      <TransitionColor>
+        <A>255</A>
+        <R>76</R>
+        <G>76</G>
+        <B>76</B>
+        <ScA>1</ScA>
+        <ScR>0.07227185</ScR>
+        <ScG>0.07227185</ScG>
+        <ScB>0.07227185</ScB>
+      </TransitionColor>
+      <C1>
+        <X>945.3616</X>
+        <Y>121.12043</Y>
+      </C1>
+      <C2>
+        <X>1012.42639</X>
+        <Y>134.558243</Y>
+      </C2>
+    </GraphicalTransition>
+    <GraphicalTransition id="4" curviness="20" isLabelDisplayed="false" isTransitionColorUpdated="false">
+      <TransitionColor>
+        <A>255</A>
+        <R>76</R>
+        <G>76</G>
+        <B>76</B>
+        <ScA>1</ScA>
+        <ScR>0.07227185</ScR>
+        <ScG>0.07227185</ScG>
+        <ScB>0.07227185</ScB>
+      </TransitionColor>
+      <C1>
+        <X>912.0037</X>
+        <Y>115.659729</Y>
+      </C1>
+      <C2>
+        <X>946.8287</X>
+        <Y>122.871796</Y>
+      </C2>
+    </GraphicalTransition>
+    <GraphicalTransition id="5" curviness="20" isLabelDisplayed="false" isTransitionColorUpdated="false">
+      <TransitionColor>
+        <A>255</A>
+        <R>76</R>
+        <G>76</G>
+        <B>76</B>
+        <ScA>1</ScA>
+        <ScR>0.07227185</ScR>
+        <ScG>0.07227185</ScG>
+        <ScB>0.07227185</ScB>
+      </TransitionColor>
+      <C1>
+        <X>881.980469</X>
+        <Y>208.941666</Y>
+      </C1>
+      <C2>
+        <X>888.9037</X>
+        <Y>275.681061</Y>
+      </C2>
+    </GraphicalTransition>
+    <GraphicalTransition id="6" curviness="20" isLabelDisplayed="false" isTransitionColorUpdated="false">
+      <TransitionColor>
+        <A>255</A>
+        <R>76</R>
+        <G>76</G>
+        <B>76</B>
+        <ScA>1</ScA>
+        <ScR>0.07227185</ScR>
+        <ScG>0.07227185</ScG>
+        <ScB>0.07227185</ScB>
+      </TransitionColor>
+      <C1>
+        <X>884.902832</X>
+        <Y>178.598389</Y>
+      </C1>
+      <C2>
+        <X>892.9899</X>
+        <Y>217.3411</Y>
+      </C2>
+    </GraphicalTransition>
+  </GraphicalTransitions>
+</GraphicalComponent>

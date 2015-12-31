@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<scxml version="1.0" name="HelloWorld">
+  <datamodel>
+    <data id="Version" expr="2" />
+    <data id="NameSeparator" expr=":" />
+    <data id="logKeys">
+      <logKeys />
+    </data>
+  </datamodel>
+  <state id="HelloWorldManager">
+    <datamodel>
+      <data id="Id" expr="1" />
+    </datamodel>
+    <state id="HelloWorldManager:EntryPoint">
+      <datamodel>
+        <data id="Comment" expr="" />
+        <data id="DisposeStateMachineInstance" expr="False" />
+        <data id="Id" expr="1" />
+      </datamodel>
+      <transition Event="XComponent.HelloWorld.UserObject.SayHello" target="HelloResponse:Done">
+        <datamodel>
+          <data id="Type" expr="XTransition" />
+          <data id="Id" expr="1" />
+          <data id="Name" expr="SayHello" />
+          <data id="Event">
+            <Event>
+              <Comment>
+              </Comment>
+              <EventTypeName>XComponent.HelloWorld.UserObject.SayHello</EventTypeName>
+              <TimeToLive>0</TimeToLive>
+              <TriggeringRules />
+            </Event>
+          </data>
+        </datamodel>
+        <onexit>
+          <invoke Type="ExecuteOn_Done_Through_SayHello" id="1">
+            <content>
+              <Comment>
+              </Comment>
+              <Name>ExecuteOn_Done_Through_SayHello</Name>
+              <Id>1</Id>
+              <CustomParameters xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                <PublicMember>XComponent.HelloWorld.UserObject.HelloResponse</PublicMember>
+                <EventsName>XComponent.HelloWorld.UserObject.SayHello</EventsName>
+              </CustomParameters>
+            </content>
+          </invoke>
+        </onexit>
+      </transition>
+    </state>
+  </state>
+  <state id="HelloResponse">
+    <datamodel>
+      <data id="PublicMember" expr="XComponent.HelloWorld.UserObject.HelloResponse" />
+      <data id="Id" expr="2" />
+    </datamodel>
+    <state id="HelloResponse:Done">
+      <datamodel>
+        <data id="Comment" expr="" />
+        <data id="DisposeStateMachineInstance" expr="True" />
+        <data id="Id" expr="2" />
+      </datamodel>
+    </state>
+  </state>
+</scxml>

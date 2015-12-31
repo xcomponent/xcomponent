@@ -1,0 +1,266 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<scxml version="1.0" name="Authentication">
+	<datamodel>
+		<data id="Version" expr="53" />
+		<data id="NameSeparator" expr=":" />
+	</datamodel>
+	<state id="Authentication">
+		<datamodel>
+			<data id="Id" expr="1" />
+		</datamodel>
+		<state id="Authentication:EntryPoint">
+			<datamodel>
+				<data id="Comment" expr="" />
+				<data id="DisposeStateMachineInstance" expr="False" />
+				<data id="Id" expr="1" />
+			</datamodel>
+			<transition Event="XComponent.Common.Event.DefaultEvent" target="Authentication:Initializing">
+				<datamodel>
+					<data id="Type" expr="TimeoutTransition" />
+					<data id="ExecutionDelay" expr="0" />
+					<data id="Id" expr="1" />
+					<data id="Name" expr="Initialize" />
+					<data id="Event">
+						<Event>
+							<Comment></Comment>
+							<EventTypeName>XComponent.Common.Event.DefaultEvent</EventTypeName>
+							<TimeToLive>0</TimeToLive>
+							<TriggeringRules />
+						</Event>
+					</data>
+				</datamodel>
+				<onexit>
+					<invoke Type="OnInitializingFromInitialize" id="1">
+						<content>
+							<Name>OnInitializingFromInitialize</Name>
+							<Id>1</Id>
+							<CustomParameters xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+								<EventsName>XComponent.Common.Event.DefaultEvent</EventsName>
+							</CustomParameters>
+						</content>
+					</invoke>
+				</onexit>
+			</transition>
+		</state>
+		<state id="Authentication:Initializing">
+			<datamodel>
+				<data id="Comment" expr="" />
+				<data id="DisposeStateMachineInstance" expr="False" />
+				<data id="Id" expr="2" />
+				<data id="TriggerableTransition">
+					<TriggerableTransition target="2" id="9" allTransitions="True">
+						<AllTransitions>true</AllTransitions>
+						<Id>9</Id>
+						<InnerTransition id="1" />
+					</TriggerableTransition>
+					<TriggerableTransition target="3" id="10" allTransitions="True">
+						<AllTransitions>true</AllTransitions>
+						<Id>10</Id>
+						<InnerTransition id="1" />
+					</TriggerableTransition>
+				</data>
+			</datamodel>
+			<transition Event="XComponent.Authentication.UserObject.InitializationSuccess" target="Authentication:Up">
+				<datamodel>
+					<data id="Type" expr="StandardTransition" />
+					<data id="Id" expr="2" />
+					<data id="Name" expr="InitializationSuccess" />
+					<data id="Event">
+						<Event>
+							<Comment></Comment>
+							<EventTypeName>XComponent.Authentication.UserObject.InitializationSuccess</EventTypeName>
+							<TimeToLive>0</TimeToLive>
+							<TriggeringRules />
+						</Event>
+					</data>
+				</datamodel>
+				<onexit>
+					<invoke Type="ExecuteOn_Up_Through_InitializationSuccess" id="5">
+						<content>
+							<Name>ExecuteOn_Up_Through_InitializationSuccess</Name>
+							<Id>5</Id>
+							<CustomParameters xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+								<EventsName>XComponent.Authentication.UserObject.InitializationSuccess</EventsName>
+							</CustomParameters>
+						</content>
+					</invoke>
+				</onexit>
+			</transition>
+			<transition Event="XComponent.Authentication.UserObject.InitializationError" target="Authentication:InitializationError">
+				<datamodel>
+					<data id="Type" expr="StandardTransition" />
+					<data id="Id" expr="3" />
+					<data id="Name" expr="InitializationError" />
+					<data id="Event">
+						<Event>
+							<Comment></Comment>
+							<EventTypeName>XComponent.Authentication.UserObject.InitializationError</EventTypeName>
+							<TimeToLive>0</TimeToLive>
+							<TriggeringRules />
+						</Event>
+					</data>
+				</datamodel>
+			</transition>
+		</state>
+		<state id="Authentication:Up">
+			<datamodel>
+				<data id="Comment" expr="" />
+				<data id="DisposeStateMachineInstance" expr="False" />
+				<data id="Id" expr="3" />
+				<data id="TriggerableTransition">
+					<TriggerableTransition target="17" id="19" allTransitions="True">
+						<AllTransitions>true</AllTransitions>
+						<Id>19</Id>
+						<InnerTransition id="2" />
+					</TriggerableTransition>
+				</data>
+			</datamodel>
+			<transition Event="XComponent.Authentication.UserObject.CheckLogin" target="LoginStatus:CheckingLogin">
+				<datamodel>
+					<data id="Type" expr="XTransition" />
+					<data id="Id" expr="4" />
+					<data id="Name" expr="CheckLogin" />
+					<data id="Event">
+						<Event>
+							<Comment></Comment>
+							<EventTypeName>XComponent.Authentication.UserObject.CheckLogin</EventTypeName>
+							<TimeToLive>0</TimeToLive>
+							<TriggeringRules />
+						</Event>
+					</data>
+				</datamodel>
+				<onexit>
+					<invoke Type="OnCheckingLoginFromCheckLogin" id="2">
+						<content>
+							<Name>OnCheckingLoginFromCheckLogin</Name>
+							<Id>2</Id>
+							<CustomParameters xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+								<EventsName>XComponent.Authentication.UserObject.CheckLogin</EventsName>
+							</CustomParameters>
+						</content>
+					</invoke>
+				</onexit>
+			</transition>
+			<transition Event="XComponent.Authentication.UserObject.CreateHeartBeat" target="HeartBeat:Up">
+				<datamodel>
+					<data id="Type" expr="XTransition" />
+					<data id="Id" expr="17" />
+					<data id="Name" expr="CreateHeartBeat" />
+					<data id="Event">
+						<Event>
+							<Comment></Comment>
+							<EventTypeName>XComponent.Authentication.UserObject.CreateHeartBeat</EventTypeName>
+							<TimeToLive>0</TimeToLive>
+							<TriggeringRules />
+						</Event>
+					</data>
+				</datamodel>
+			</transition>
+		</state>
+		<state id="Authentication:InitializationError">
+			<datamodel>
+				<data id="Comment" expr="" />
+				<data id="DisposeStateMachineInstance" expr="True" />
+				<data id="Id" expr="4" />
+			</datamodel>
+		</state>
+	</state>
+	<state id="LoginStatus">
+		<datamodel>
+			<data id="PublicMember" expr="XComponent.Authentication.UserObject.CheckLogin" />
+			<data id="Id" expr="2" />
+		</datamodel>
+		<state id="LoginStatus:CheckingLogin">
+			<datamodel>
+				<data id="Comment" expr="" />
+				<data id="DisposeStateMachineInstance" expr="False" />
+				<data id="Id" expr="5" />
+				<data id="TriggerableTransition">
+					<TriggerableTransition target="5" id="6" allTransitions="True">
+						<AllTransitions>true</AllTransitions>
+						<Id>6</Id>
+						<InnerTransition id="4" />
+					</TriggerableTransition>
+					<TriggerableTransition target="7" id="8" allTransitions="True">
+						<AllTransitions>true</AllTransitions>
+						<Id>8</Id>
+						<InnerTransition id="4" />
+					</TriggerableTransition>
+				</data>
+			</datamodel>
+			<transition Event="XComponent.Authentication.UserObject.LoginSuccess" target="LoginStatus:LoginSuccess">
+				<datamodel>
+					<data id="Type" expr="StandardTransition" />
+					<data id="Id" expr="5" />
+					<data id="Name" expr="LoginSuccess" />
+					<data id="Event">
+						<Event>
+							<Comment></Comment>
+							<EventTypeName>XComponent.Authentication.UserObject.LoginSuccess</EventTypeName>
+							<TimeToLive>0</TimeToLive>
+							<TriggeringRules />
+						</Event>
+					</data>
+				</datamodel>
+			</transition>
+			<transition Event="XComponent.Authentication.UserObject.LoginError" target="LoginStatus:LoginError">
+				<datamodel>
+					<data id="Type" expr="StandardTransition" />
+					<data id="Id" expr="7" />
+					<data id="Name" expr="LoginError" />
+					<data id="Event">
+						<Event>
+							<Comment></Comment>
+							<EventTypeName>XComponent.Authentication.UserObject.LoginError</EventTypeName>
+							<TimeToLive>0</TimeToLive>
+							<TriggeringRules />
+						</Event>
+					</data>
+				</datamodel>
+			</transition>
+		</state>
+		<state id="LoginStatus:LoginSuccess">
+			<datamodel>
+				<data id="Comment" expr="" />
+				<data id="DisposeStateMachineInstance" expr="True" />
+				<data id="Id" expr="6" />
+			</datamodel>
+		</state>
+		<state id="LoginStatus:LoginError">
+			<datamodel>
+				<data id="Comment" expr="" />
+				<data id="DisposeStateMachineInstance" expr="True" />
+				<data id="Id" expr="7" />
+			</datamodel>
+		</state>
+	</state>
+	<state id="HeartBeat">
+		<datamodel>
+			<data id="PublicMember" expr="XComponent.Authentication.UserObject.AuthenticationHeartBeat" />
+			<data id="Id" expr="5" />
+		</datamodel>
+		<state id="HeartBeat:Up">
+			<datamodel>
+				<data id="Comment" expr="" />
+				<data id="DisposeStateMachineInstance" expr="False" />
+				<data id="Id" expr="12" />
+			</datamodel>
+			<transition Event="XComponent.Common.Event.DefaultEvent" target="HeartBeat:Up">
+				<datamodel>
+					<data id="Type" expr="TimeoutTransition" />
+					<data id="ExecutionDelay" expr="1" />
+					<data id="Id" expr="18" />
+					<data id="Name" expr="NotifyUp" />
+					<data id="Event">
+						<Event>
+							<Comment></Comment>
+							<EventTypeName>XComponent.Common.Event.DefaultEvent</EventTypeName>
+							<TimeToLive>0</TimeToLive>
+							<TriggeringRules />
+						</Event>
+					</data>
+				</datamodel>
+			</transition>
+		</state>
+	</state>
+</scxml>

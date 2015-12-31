@@ -12,12 +12,12 @@ open System.Text
 
 
 Target "HelloWorld" (fun _ ->    
-    trace ("Building XComponent.HelloWorld")
+    trace ("Building XC.HelloWorld")
     let timeoutExec = 5.0
 
     let result = ExecProcess (fun info ->
                     info.FileName <- "build.cmd"
-                    info.WorkingDirectory <- Path.Combine(__SOURCE_DIRECTORY__, "xcomponent.helloworld") 
+                    info.WorkingDirectory <- Path.Combine(__SOURCE_DIRECTORY__, "xc.helloworld") 
                     info.Arguments <- "All"
                     ) 
                     (TimeSpan.FromMinutes timeoutExec)
@@ -26,12 +26,12 @@ Target "HelloWorld" (fun _ ->
 )
 
 Target "Authentication" (fun _ ->    
-    trace ("Building XComponent.Authentication")
+    trace ("Building XC.Authentication")
     let timeoutExec = 5.0
 
     let result = ExecProcess (fun info ->
                     info.FileName <- "build.cmd"
-                    info.WorkingDirectory <- Path.Combine(__SOURCE_DIRECTORY__, "xcomponent.authentication") 
+                    info.WorkingDirectory <- Path.Combine(__SOURCE_DIRECTORY__, "xc.authentication") 
                     info.Arguments <- "All"
                     ) 
                     (TimeSpan.FromMinutes timeoutExec)
@@ -40,12 +40,12 @@ Target "Authentication" (fun _ ->
 )
   
 Target "OrderProcessing" (fun _ ->    
-    trace ("Building XComponent.OrderProcessing")
+    trace ("Building XC.OrderProcessing")
     let timeoutExec = 5.0
 
     let result = ExecProcess (fun info ->
                     info.FileName <- "build.cmd"
-                    info.WorkingDirectory <- Path.Combine(__SOURCE_DIRECTORY__, "xcomponent.orderprocessing") 
+                    info.WorkingDirectory <- Path.Combine(__SOURCE_DIRECTORY__, "xc.orderprocessing") 
                     info.Arguments <- "All"
                     ) 
                     (TimeSpan.FromMinutes timeoutExec)
@@ -54,12 +54,12 @@ Target "OrderProcessing" (fun _ ->
 )
 
 Target "TradeCapture" (fun _ ->    
-    trace ("Building Xcomponent.TradeCapture")
+    trace ("Building XC.TradeCapture")
     let timeoutExec = 5.0
 
     let result = ExecProcess (fun info ->
                     info.FileName <- "build.cmd"
-                    info.WorkingDirectory <- Path.Combine(__SOURCE_DIRECTORY__, "xcomponent.tradecapture") 
+                    info.WorkingDirectory <- Path.Combine(__SOURCE_DIRECTORY__, "xc.tradecapture") 
                     info.Arguments <- "All"
                     ) 
                     (TimeSpan.FromMinutes timeoutExec)
@@ -68,12 +68,12 @@ Target "TradeCapture" (fun _ ->
 )
 
 Target "RestApiClient" (fun _ ->    
-    trace ("Building XComponent.RestApiClient")
+    trace ("Building XC.RestApiClient")
     let timeoutExec = 5.0
 
     let result = ExecProcess (fun info ->
                     info.FileName <- "build.cmd"
-                    info.WorkingDirectory <- Path.Combine(__SOURCE_DIRECTORY__, "xcomponent.restapiclient") 
+                    info.WorkingDirectory <- Path.Combine(__SOURCE_DIRECTORY__, "xc.restapiclient") 
                     info.Arguments <- "All"
                     ) 
                     (TimeSpan.FromMinutes timeoutExec)
@@ -82,12 +82,12 @@ Target "RestApiClient" (fun _ ->
 )
 
 Target "Slack" (fun _ ->    
-    trace ("Building XComponent.Slack")
+    trace ("Building XC.Slack")
     let timeoutExec = 5.0
 
     let result = ExecProcess (fun info ->
                     info.FileName <- "build.cmd"
-                    info.WorkingDirectory <- Path.Combine(__SOURCE_DIRECTORY__, "xcomponent.slack") 
+                    info.WorkingDirectory <- Path.Combine(__SOURCE_DIRECTORY__, "xc.slack") 
                     info.Arguments <- "All"
                     ) 
                     (TimeSpan.FromMinutes timeoutExec)
