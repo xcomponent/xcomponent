@@ -1,358 +1,369 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <scxml version="1.0" name="SwaggerPetstore">
-	<datamodel>
-		<data id="Version" expr="11" />
-		<data id="NameSeparator" expr=":" />
-		<data id="logKeys">
-			<logKeys>
-				<logKey>SwaggerPetstoreLogger</logKey>
-			</logKeys>
-		</data>
-	</datamodel>
-	<state id="SwaggerPetstore">
-		<datamodel>
-			<data id="Id" expr="569" />
-		</datamodel>
-		<state id="SwaggerPetstore:EntryPoint">
-			<datamodel>
-				<data id="DisposeStateMachineInstance" expr="False" />
-				<data id="Id" expr="570" />
-			</datamodel>
-			<transition Event="XComponent.Common.Event.DefaultEvent" target="SwaggerPetstore:Up">
-				<datamodel>
-					<data id="Type" expr="TimeoutTransition" />
-					<data id="ExecutionDelay" expr="0" />
-					<data id="Id" expr="572" />
-					<data id="Name" expr="Init" />
-					<data id="Event">
-						<Event>
-							<Comment></Comment>
-							<EventTypeName>XComponent.Common.Event.DefaultEvent</EventTypeName>
-							<TimeToLive>0</TimeToLive>
-							<TriggeringRules />
-						</Event>
-					</data>
-				</datamodel>
-				<onexit>
-					<invoke Type="ExecuteOn_Up_Through_Init" id="1">
-						<content>
-							<Name>ExecuteOn_Up_Through_Init</Name>
-							<Id>1</Id>
-							<CustomParameters xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-								<EventsName>XComponent.Common.Event.DefaultEvent</EventsName>
-							</CustomParameters>
-						</content>
-					</invoke>
-				</onexit>
-			</transition>
-		</state>
-		<state id="SwaggerPetstore:Up">
-			<datamodel>
-				<data id="DisposeStateMachineInstance" expr="False" />
-				<data id="Id" expr="571" />
-				<data id="TriggerableTransition">
-					<TriggerableTransition target="579" id="580" allTransitions="False">
-						<AllTransitions>false</AllTransitions>
-						<Id>580</Id>
-						<InnerTransition id="578" />
-					</TriggerableTransition>
-					<TriggerableTransition target="593" id="594" allTransitions="False">
-						<AllTransitions>false</AllTransitions>
-						<Id>594</Id>
-						<InnerTransition id="592" />
-					</TriggerableTransition>
-				</data>
-			</datamodel>
-			<transition Event="XComponent.SwaggerPetstore.UserObject.AddPet" target="SwaggerPetstore:Up">
-				<datamodel>
-					<data id="Type" expr="StandardTransition" />
-					<data id="Id" expr="578" />
-					<data id="Name" expr="AddPet" />
-					<data id="Event">
-						<Event>
-							<Comment></Comment>
-							<EventTypeName>XComponent.SwaggerPetstore.UserObject.AddPet</EventTypeName>
-							<TimeToLive>0</TimeToLive>
-							<TriggeringRules />
-						</Event>
-					</data>
-				</datamodel>
-				<onexit>
-					<invoke Type="ExecuteOn_Up_Through_AddPet" id="2">
-						<content>
-							<Name>ExecuteOn_Up_Through_AddPet</Name>
-							<Id>2</Id>
-							<CustomParameters xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-								<EventsName>XComponent.SwaggerPetstore.UserObject.AddPet</EventsName>
-							</CustomParameters>
-						</content>
-					</invoke>
-				</onexit>
-			</transition>
-			<transition Event="XComponent.SwaggerPetstore.UserObject.AddPetOperation" target="AddPetOperation:SendingRequest">
-				<datamodel>
-					<data id="Type" expr="XTransition" />
-					<data id="Id" expr="579" />
-					<data id="Name" expr="CreateAddPetHttpRequest" />
-					<data id="Event">
-						<Event>
-							<Comment></Comment>
-							<EventTypeName>XComponent.SwaggerPetstore.UserObject.AddPetOperation</EventTypeName>
-							<TimeToLive>0</TimeToLive>
-							<TriggeringRules />
-						</Event>
-					</data>
-				</datamodel>
-				<onexit>
-					<invoke Type="ExecuteOn_SendingRequest_Through_CreateAddPetHttpRequest" id="3">
-						<content>
-							<Name>ExecuteOn_SendingRequest_Through_CreateAddPetHttpRequest</Name>
-							<Id>3</Id>
-							<CustomParameters xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-								<PublicMember>XComponent.SwaggerPetstore.UserObject.AddPetOperation</PublicMember>
-								<EventsName>XComponent.SwaggerPetstore.UserObject.AddPetOperation</EventsName>
-							</CustomParameters>
-						</content>
-					</invoke>
-				</onexit>
-			</transition>
-			<transition Event="XComponent.SwaggerPetstore.UserObject.GetPetById" target="SwaggerPetstore:Up">
-				<datamodel>
-					<data id="Type" expr="StandardTransition" />
-					<data id="Id" expr="592" />
-					<data id="Name" expr="GetPetById" />
-					<data id="Event">
-						<Event>
-							<Comment></Comment>
-							<EventTypeName>XComponent.SwaggerPetstore.UserObject.GetPetById</EventTypeName>
-							<TimeToLive>0</TimeToLive>
-							<TriggeringRules />
-						</Event>
-					</data>
-				</datamodel>
-				<onexit>
-					<invoke Type="ExecuteOn_Up_Through_GetPetById" id="4">
-						<content>
-							<Name>ExecuteOn_Up_Through_GetPetById</Name>
-							<Id>4</Id>
-							<CustomParameters xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-								<EventsName>XComponent.SwaggerPetstore.UserObject.GetPetById</EventsName>
-							</CustomParameters>
-						</content>
-					</invoke>
-				</onexit>
-			</transition>
-			<transition Event="XComponent.SwaggerPetstore.UserObject.GetPetByIdOperation" target="GetPetByIdOperation:SendingRequest">
-				<datamodel>
-					<data id="Type" expr="XTransition" />
-					<data id="Id" expr="593" />
-					<data id="Name" expr="CreateGetPetByIdHttpRequest" />
-					<data id="Event">
-						<Event>
-							<Comment></Comment>
-							<EventTypeName>XComponent.SwaggerPetstore.UserObject.GetPetByIdOperation</EventTypeName>
-							<TimeToLive>0</TimeToLive>
-							<TriggeringRules />
-						</Event>
-					</data>
-				</datamodel>
-				<onexit>
-					<invoke Type="ExecuteOn_SendingRequest_Through_CreateGetPetByIdHttpRequest" id="5">
-						<content>
-							<Name>ExecuteOn_SendingRequest_Through_CreateGetPetByIdHttpRequest</Name>
-							<Id>5</Id>
-							<CustomParameters xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-								<PublicMember>XComponent.SwaggerPetstore.UserObject.GetPetByIdOperation</PublicMember>
-								<EventsName>XComponent.SwaggerPetstore.UserObject.GetPetByIdOperation</EventsName>
-							</CustomParameters>
-						</content>
-					</invoke>
-				</onexit>
-			</transition>
-		</state>
-	</state>
-	<state id="AddPetOperation">
-		<datamodel>
-			<data id="PublicMember" expr="XComponent.SwaggerPetstore.UserObject.AddPetOperation" />
-			<data id="Id" expr="573" />
-		</datamodel>
-		<state id="AddPetOperation:SendingRequest">
-			<datamodel>
-				<data id="DisposeStateMachineInstance" expr="False" />
-				<data id="Id" expr="574" />
-				<data id="TriggerableTransition">
-					<TriggerableTransition target="581" id="582" allTransitions="False">
-						<AllTransitions>false</AllTransitions>
-						<Id>582</Id>
-						<InnerTransition id="579" />
-					</TriggerableTransition>
-					<TriggerableTransition target="583" id="584" allTransitions="False">
-						<AllTransitions>false</AllTransitions>
-						<Id>584</Id>
-						<InnerTransition id="579" />
-					</TriggerableTransition>
-					<TriggerableTransition target="585" id="586" allTransitions="False">
-						<AllTransitions>false</AllTransitions>
-						<Id>586</Id>
-						<InnerTransition id="579" />
-					</TriggerableTransition>
-				</data>
-			</datamodel>
-			<transition Event="XComponent.Common.Event.DefaultEvent" target="AddPetOperation:RequestSent">
-				<datamodel>
-					<data id="Type" expr="StandardTransition" />
-					<data id="Id" expr="581" />
-					<data id="Name" expr="SendRequest" />
-					<data id="Event">
-						<Event>
-							<Comment></Comment>
-							<EventTypeName>XComponent.Common.Event.DefaultEvent</EventTypeName>
-							<TimeToLive>0</TimeToLive>
-							<TriggeringRules />
-						</Event>
-					</data>
-				</datamodel>
-			</transition>
-		</state>
-		<state id="AddPetOperation:RequestSent">
-			<datamodel>
-				<data id="DisposeStateMachineInstance" expr="False" />
-				<data id="Id" expr="575" />
-			</datamodel>
-			<transition Event="XComponent.SwaggerPetstore.UserObject.SuccessResponse" target="AddPetOperation:SuccessResponseReceived">
-				<datamodel>
-					<data id="Type" expr="StandardTransition" />
-					<data id="Id" expr="583" />
-					<data id="Name" expr="ReceiveSuccess" />
-					<data id="Event">
-						<Event>
-							<Comment></Comment>
-							<EventTypeName>XComponent.SwaggerPetstore.UserObject.SuccessResponse</EventTypeName>
-							<TimeToLive>0</TimeToLive>
-							<TriggeringRules />
-						</Event>
-					</data>
-				</datamodel>
-			</transition>
-			<transition Event="XComponent.SwaggerPetstore.UserObject.ErrorResponse" target="AddPetOperation:ErrorResponseReceived">
-				<datamodel>
-					<data id="Type" expr="StandardTransition" />
-					<data id="Id" expr="585" />
-					<data id="Name" expr="ReceiveError" />
-					<data id="Event">
-						<Event>
-							<Comment></Comment>
-							<EventTypeName>XComponent.SwaggerPetstore.UserObject.ErrorResponse</EventTypeName>
-							<TimeToLive>0</TimeToLive>
-							<TriggeringRules />
-						</Event>
-					</data>
-				</datamodel>
-			</transition>
-		</state>
-		<state id="AddPetOperation:SuccessResponseReceived">
-			<datamodel>
-				<data id="DisposeStateMachineInstance" expr="True" />
-				<data id="Id" expr="576" />
-			</datamodel>
-		</state>
-		<state id="AddPetOperation:ErrorResponseReceived">
-			<datamodel>
-				<data id="DisposeStateMachineInstance" expr="True" />
-				<data id="Id" expr="577" />
-			</datamodel>
-		</state>
-	</state>
-	<state id="GetPetByIdOperation">
-		<datamodel>
-			<data id="PublicMember" expr="XComponent.SwaggerPetstore.UserObject.GetPetByIdOperation" />
-			<data id="Id" expr="587" />
-		</datamodel>
-		<state id="GetPetByIdOperation:SendingRequest">
-			<datamodel>
-				<data id="DisposeStateMachineInstance" expr="False" />
-				<data id="Id" expr="588" />
-				<data id="TriggerableTransition">
-					<TriggerableTransition target="595" id="596" allTransitions="False">
-						<AllTransitions>false</AllTransitions>
-						<Id>596</Id>
-						<InnerTransition id="593" />
-					</TriggerableTransition>
-					<TriggerableTransition target="597" id="598" allTransitions="False">
-						<AllTransitions>false</AllTransitions>
-						<Id>598</Id>
-						<InnerTransition id="593" />
-					</TriggerableTransition>
-					<TriggerableTransition target="599" id="600" allTransitions="False">
-						<AllTransitions>false</AllTransitions>
-						<Id>600</Id>
-						<InnerTransition id="593" />
-					</TriggerableTransition>
-				</data>
-			</datamodel>
-			<transition Event="XComponent.Common.Event.DefaultEvent" target="GetPetByIdOperation:RequestSent">
-				<datamodel>
-					<data id="Type" expr="StandardTransition" />
-					<data id="Id" expr="595" />
-					<data id="Name" expr="SendRequest" />
-					<data id="Event">
-						<Event>
-							<Comment></Comment>
-							<EventTypeName>XComponent.Common.Event.DefaultEvent</EventTypeName>
-							<TimeToLive>0</TimeToLive>
-							<TriggeringRules />
-						</Event>
-					</data>
-				</datamodel>
-			</transition>
-		</state>
-		<state id="GetPetByIdOperation:RequestSent">
-			<datamodel>
-				<data id="DisposeStateMachineInstance" expr="False" />
-				<data id="Id" expr="589" />
-			</datamodel>
-			<transition Event="XComponent.SwaggerPetstore.UserObject.SuccessResponse" target="GetPetByIdOperation:SuccessResponseReceived">
-				<datamodel>
-					<data id="Type" expr="StandardTransition" />
-					<data id="Id" expr="597" />
-					<data id="Name" expr="ReceiveSuccess" />
-					<data id="Event">
-						<Event>
-							<Comment></Comment>
-							<EventTypeName>XComponent.SwaggerPetstore.UserObject.SuccessResponse</EventTypeName>
-							<TimeToLive>0</TimeToLive>
-							<TriggeringRules />
-						</Event>
-					</data>
-				</datamodel>
-			</transition>
-			<transition Event="XComponent.SwaggerPetstore.UserObject.ErrorResponse" target="GetPetByIdOperation:ErrorResponseReceived">
-				<datamodel>
-					<data id="Type" expr="StandardTransition" />
-					<data id="Id" expr="599" />
-					<data id="Name" expr="ReceiveError" />
-					<data id="Event">
-						<Event>
-							<Comment></Comment>
-							<EventTypeName>XComponent.SwaggerPetstore.UserObject.ErrorResponse</EventTypeName>
-							<TimeToLive>0</TimeToLive>
-							<TriggeringRules />
-						</Event>
-					</data>
-				</datamodel>
-			</transition>
-		</state>
-		<state id="GetPetByIdOperation:SuccessResponseReceived">
-			<datamodel>
-				<data id="DisposeStateMachineInstance" expr="True" />
-				<data id="Id" expr="590" />
-			</datamodel>
-		</state>
-		<state id="GetPetByIdOperation:ErrorResponseReceived">
-			<datamodel>
-				<data id="DisposeStateMachineInstance" expr="True" />
-				<data id="Id" expr="591" />
-			</datamodel>
-		</state>
-	</state>
+  <datamodel>
+    <data id="Version" expr="11" />
+    <data id="NameSeparator" expr=":" />
+    <data id="logKeys">
+      <logKeys>
+        <logKey>SwaggerPetstoreLogger</logKey>
+      </logKeys>
+    </data>
+  </datamodel>
+  <state id="SwaggerPetstore">
+    <datamodel>
+      <data id="Id" expr="569" />
+    </datamodel>
+    <state id="SwaggerPetstore:EntryPoint">
+      <datamodel>
+        <data id="DisposeStateMachineInstance" expr="False" />
+        <data id="Id" expr="570" />
+      </datamodel>
+      <transition Event="XComponent.Common.Event.DefaultEvent" target="SwaggerPetstore:Up">
+        <datamodel>
+          <data id="Type" expr="TimeoutTransition" />
+          <data id="ExecutionDelay" expr="0" />
+          <data id="Id" expr="572" />
+          <data id="Name" expr="Init" />
+          <data id="Event">
+            <Event>
+              <Comment>
+              </Comment>
+              <EventTypeName>XComponent.Common.Event.DefaultEvent</EventTypeName>
+              <TimeToLive>0</TimeToLive>
+              <TriggeringRules />
+            </Event>
+          </data>
+        </datamodel>
+        <onexit>
+          <invoke Type="ExecuteOn_Up_Through_Init" id="1">
+            <content>
+              <Name>ExecuteOn_Up_Through_Init</Name>
+              <Id>1</Id>
+              <CustomParameters xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                <EventsName>XComponent.Common.Event.DefaultEvent</EventsName>
+              </CustomParameters>
+            </content>
+          </invoke>
+        </onexit>
+      </transition>
+    </state>
+    <state id="SwaggerPetstore:Up">
+      <datamodel>
+        <data id="DisposeStateMachineInstance" expr="False" />
+        <data id="Id" expr="571" />
+        <data id="TriggerableTransition">
+          <TriggerableTransition target="579" id="580" allTransitions="False">
+            <AllTransitions>false</AllTransitions>
+            <Id>580</Id>
+            <InnerTransition id="578" />
+          </TriggerableTransition>
+          <TriggerableTransition target="593" id="594" allTransitions="False">
+            <AllTransitions>false</AllTransitions>
+            <Id>594</Id>
+            <InnerTransition id="592" />
+          </TriggerableTransition>
+        </data>
+      </datamodel>
+      <transition Event="XComponent.SwaggerPetstore.UserObject.AddPet" target="SwaggerPetstore:Up">
+        <datamodel>
+          <data id="Type" expr="StandardTransition" />
+          <data id="Id" expr="578" />
+          <data id="Name" expr="AddPet" />
+          <data id="Event">
+            <Event>
+              <Comment>
+              </Comment>
+              <EventTypeName>XComponent.SwaggerPetstore.UserObject.AddPet</EventTypeName>
+              <TimeToLive>0</TimeToLive>
+              <TriggeringRules />
+            </Event>
+          </data>
+        </datamodel>
+        <onexit>
+          <invoke Type="ExecuteOn_Up_Through_AddPet" id="2">
+            <content>
+              <Name>ExecuteOn_Up_Through_AddPet</Name>
+              <Id>2</Id>
+              <CustomParameters xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                <EventsName>XComponent.SwaggerPetstore.UserObject.AddPet</EventsName>
+              </CustomParameters>
+            </content>
+          </invoke>
+        </onexit>
+      </transition>
+      <transition Event="XComponent.SwaggerPetstore.UserObject.AddPetOperation" target="AddPetOperation:SendingRequest">
+        <datamodel>
+          <data id="Type" expr="XTransition" />
+          <data id="Id" expr="579" />
+          <data id="Name" expr="CreateAddPetHttpRequest" />
+          <data id="Event">
+            <Event>
+              <Comment>
+              </Comment>
+              <EventTypeName>XComponent.SwaggerPetstore.UserObject.AddPetOperation</EventTypeName>
+              <TimeToLive>0</TimeToLive>
+              <TriggeringRules />
+            </Event>
+          </data>
+        </datamodel>
+        <onexit>
+          <invoke Type="ExecuteOn_SendingRequest_Through_CreateAddPetHttpRequest" id="3">
+            <content>
+              <Name>ExecuteOn_SendingRequest_Through_CreateAddPetHttpRequest</Name>
+              <Id>3</Id>
+              <CustomParameters xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                <PublicMember>XComponent.SwaggerPetstore.UserObject.AddPetOperation</PublicMember>
+                <EventsName>XComponent.SwaggerPetstore.UserObject.AddPetOperation</EventsName>
+              </CustomParameters>
+            </content>
+          </invoke>
+        </onexit>
+      </transition>
+      <transition Event="XComponent.SwaggerPetstore.UserObject.GetPetById" target="SwaggerPetstore:Up">
+        <datamodel>
+          <data id="Type" expr="StandardTransition" />
+          <data id="Id" expr="592" />
+          <data id="Name" expr="GetPetById" />
+          <data id="Event">
+            <Event>
+              <Comment>
+              </Comment>
+              <EventTypeName>XComponent.SwaggerPetstore.UserObject.GetPetById</EventTypeName>
+              <TimeToLive>0</TimeToLive>
+              <TriggeringRules />
+            </Event>
+          </data>
+        </datamodel>
+        <onexit>
+          <invoke Type="ExecuteOn_Up_Through_GetPetById" id="4">
+            <content>
+              <Name>ExecuteOn_Up_Through_GetPetById</Name>
+              <Id>4</Id>
+              <CustomParameters xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                <EventsName>XComponent.SwaggerPetstore.UserObject.GetPetById</EventsName>
+              </CustomParameters>
+            </content>
+          </invoke>
+        </onexit>
+      </transition>
+      <transition Event="XComponent.SwaggerPetstore.UserObject.GetPetByIdOperation" target="GetPetByIdOperation:SendingRequest">
+        <datamodel>
+          <data id="Type" expr="XTransition" />
+          <data id="Id" expr="593" />
+          <data id="Name" expr="CreateGetPetByIdHttpRequest" />
+          <data id="Event">
+            <Event>
+              <Comment>
+              </Comment>
+              <EventTypeName>XComponent.SwaggerPetstore.UserObject.GetPetByIdOperation</EventTypeName>
+              <TimeToLive>0</TimeToLive>
+              <TriggeringRules />
+            </Event>
+          </data>
+        </datamodel>
+        <onexit>
+          <invoke Type="ExecuteOn_SendingRequest_Through_CreateGetPetByIdHttpRequest" id="5">
+            <content>
+              <Name>ExecuteOn_SendingRequest_Through_CreateGetPetByIdHttpRequest</Name>
+              <Id>5</Id>
+              <CustomParameters xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                <PublicMember>XComponent.SwaggerPetstore.UserObject.GetPetByIdOperation</PublicMember>
+                <EventsName>XComponent.SwaggerPetstore.UserObject.GetPetByIdOperation</EventsName>
+              </CustomParameters>
+            </content>
+          </invoke>
+        </onexit>
+      </transition>
+    </state>
+  </state>
+  <state id="AddPetOperation">
+    <datamodel>
+      <data id="PublicMember" expr="XComponent.SwaggerPetstore.UserObject.AddPetOperation" />
+      <data id="Id" expr="573" />
+    </datamodel>
+    <state id="AddPetOperation:SendingRequest">
+      <datamodel>
+        <data id="DisposeStateMachineInstance" expr="False" />
+        <data id="Id" expr="574" />
+        <data id="TriggerableTransition">
+          <TriggerableTransition target="581" id="582" allTransitions="False">
+            <AllTransitions>false</AllTransitions>
+            <Id>582</Id>
+            <InnerTransition id="579" />
+          </TriggerableTransition>
+          <TriggerableTransition target="583" id="584" allTransitions="False">
+            <AllTransitions>false</AllTransitions>
+            <Id>584</Id>
+            <InnerTransition id="579" />
+          </TriggerableTransition>
+          <TriggerableTransition target="585" id="586" allTransitions="False">
+            <AllTransitions>false</AllTransitions>
+            <Id>586</Id>
+            <InnerTransition id="579" />
+          </TriggerableTransition>
+        </data>
+      </datamodel>
+      <transition Event="XComponent.Common.Event.DefaultEvent" target="AddPetOperation:RequestSent">
+        <datamodel>
+          <data id="Type" expr="StandardTransition" />
+          <data id="Id" expr="581" />
+          <data id="Name" expr="SendRequest" />
+          <data id="Event">
+            <Event>
+              <Comment>
+              </Comment>
+              <EventTypeName>XComponent.Common.Event.DefaultEvent</EventTypeName>
+              <TimeToLive>0</TimeToLive>
+              <TriggeringRules />
+            </Event>
+          </data>
+        </datamodel>
+      </transition>
+    </state>
+    <state id="AddPetOperation:RequestSent">
+      <datamodel>
+        <data id="DisposeStateMachineInstance" expr="False" />
+        <data id="Id" expr="575" />
+      </datamodel>
+      <transition Event="XComponent.SwaggerPetstore.UserObject.SuccessResponse" target="AddPetOperation:SuccessResponseReceived">
+        <datamodel>
+          <data id="Type" expr="StandardTransition" />
+          <data id="Id" expr="583" />
+          <data id="Name" expr="ReceiveSuccess" />
+          <data id="Event">
+            <Event>
+              <Comment>
+              </Comment>
+              <EventTypeName>XComponent.SwaggerPetstore.UserObject.SuccessResponse</EventTypeName>
+              <TimeToLive>0</TimeToLive>
+              <TriggeringRules />
+            </Event>
+          </data>
+        </datamodel>
+      </transition>
+      <transition Event="XComponent.SwaggerPetstore.UserObject.ErrorResponse" target="AddPetOperation:ErrorResponseReceived">
+        <datamodel>
+          <data id="Type" expr="StandardTransition" />
+          <data id="Id" expr="585" />
+          <data id="Name" expr="ReceiveError" />
+          <data id="Event">
+            <Event>
+              <Comment>
+              </Comment>
+              <EventTypeName>XComponent.SwaggerPetstore.UserObject.ErrorResponse</EventTypeName>
+              <TimeToLive>0</TimeToLive>
+              <TriggeringRules />
+            </Event>
+          </data>
+        </datamodel>
+      </transition>
+    </state>
+    <state id="AddPetOperation:SuccessResponseReceived">
+      <datamodel>
+        <data id="DisposeStateMachineInstance" expr="True" />
+        <data id="Id" expr="576" />
+      </datamodel>
+    </state>
+    <state id="AddPetOperation:ErrorResponseReceived">
+      <datamodel>
+        <data id="DisposeStateMachineInstance" expr="True" />
+        <data id="Id" expr="577" />
+      </datamodel>
+    </state>
+  </state>
+  <state id="GetPetByIdOperation">
+    <datamodel>
+      <data id="PublicMember" expr="XComponent.SwaggerPetstore.UserObject.GetPetByIdOperation" />
+      <data id="Id" expr="587" />
+    </datamodel>
+    <state id="GetPetByIdOperation:SendingRequest">
+      <datamodel>
+        <data id="DisposeStateMachineInstance" expr="False" />
+        <data id="Id" expr="588" />
+        <data id="TriggerableTransition">
+          <TriggerableTransition target="595" id="596" allTransitions="False">
+            <AllTransitions>false</AllTransitions>
+            <Id>596</Id>
+            <InnerTransition id="593" />
+          </TriggerableTransition>
+          <TriggerableTransition target="597" id="598" allTransitions="False">
+            <AllTransitions>false</AllTransitions>
+            <Id>598</Id>
+            <InnerTransition id="593" />
+          </TriggerableTransition>
+          <TriggerableTransition target="599" id="600" allTransitions="False">
+            <AllTransitions>false</AllTransitions>
+            <Id>600</Id>
+            <InnerTransition id="593" />
+          </TriggerableTransition>
+        </data>
+      </datamodel>
+      <transition Event="XComponent.Common.Event.DefaultEvent" target="GetPetByIdOperation:RequestSent">
+        <datamodel>
+          <data id="Type" expr="StandardTransition" />
+          <data id="Id" expr="595" />
+          <data id="Name" expr="SendRequest" />
+          <data id="Event">
+            <Event>
+              <Comment>
+              </Comment>
+              <EventTypeName>XComponent.Common.Event.DefaultEvent</EventTypeName>
+              <TimeToLive>0</TimeToLive>
+              <TriggeringRules />
+            </Event>
+          </data>
+        </datamodel>
+      </transition>
+    </state>
+    <state id="GetPetByIdOperation:RequestSent">
+      <datamodel>
+        <data id="DisposeStateMachineInstance" expr="False" />
+        <data id="Id" expr="589" />
+      </datamodel>
+      <transition Event="XComponent.SwaggerPetstore.UserObject.SuccessResponse" target="GetPetByIdOperation:SuccessResponseReceived">
+        <datamodel>
+          <data id="Type" expr="StandardTransition" />
+          <data id="Id" expr="597" />
+          <data id="Name" expr="ReceiveSuccess" />
+          <data id="Event">
+            <Event>
+              <Comment>
+              </Comment>
+              <EventTypeName>XComponent.SwaggerPetstore.UserObject.SuccessResponse</EventTypeName>
+              <TimeToLive>0</TimeToLive>
+              <TriggeringRules />
+            </Event>
+          </data>
+        </datamodel>
+      </transition>
+      <transition Event="XComponent.SwaggerPetstore.UserObject.ErrorResponse" target="GetPetByIdOperation:ErrorResponseReceived">
+        <datamodel>
+          <data id="Type" expr="StandardTransition" />
+          <data id="Id" expr="599" />
+          <data id="Name" expr="ReceiveError" />
+          <data id="Event">
+            <Event>
+              <Comment>
+              </Comment>
+              <EventTypeName>XComponent.SwaggerPetstore.UserObject.ErrorResponse</EventTypeName>
+              <TimeToLive>0</TimeToLive>
+              <TriggeringRules />
+            </Event>
+          </data>
+        </datamodel>
+      </transition>
+    </state>
+    <state id="GetPetByIdOperation:SuccessResponseReceived">
+      <datamodel>
+        <data id="DisposeStateMachineInstance" expr="True" />
+        <data id="Id" expr="590" />
+      </datamodel>
+    </state>
+    <state id="GetPetByIdOperation:ErrorResponseReceived">
+      <datamodel>
+        <data id="DisposeStateMachineInstance" expr="True" />
+        <data id="Id" expr="591" />
+      </datamodel>
+    </state>
+  </state>
 </scxml>

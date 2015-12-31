@@ -61,7 +61,7 @@
   </clientAPIs>
   <configuration serialization="Binary">
     <communication>
-      <bus name="RestDemo" host="" port="5672" user="guest" password="guest" type="RABBIT_MQ" />
+      <bus name="RestDemo" host="localhost" port="5672" user="guest" password="guest" type="RABBIT_MQ" />
     </communication>
     <gateways>
       <websocket name="" host="" port="0" bridgeport="0" type="Plain" user="" password="">
