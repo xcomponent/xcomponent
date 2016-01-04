@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <ProjectGuid>{E5498F76-98E7-48E9-B24D-EAB665D8AE33}</ProjectGuid>
+    <RootNamespace>XComponent.SwaggerPetstore.TriggeredMethod</RootNamespace>
+    <AssemblyName>XComponent.SwaggerPetstore.TriggeredMethod</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" ('$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ) ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" ('$(Configuration)|$(Platform)' == 'Release|AnyCPU' ) ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Reference Include="System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Reference Include="System.Data.Entity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Reference Include="Microsoft.Rest.ClientRuntime">
+      <HintPath>..\packages\Microsoft.Rest.ClientRuntime.1.4.1\lib\dotnet\Microsoft.Rest.ClientRuntime.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Aliases>AutoRestJson</Aliases>
+    </Reference>
+    <Reference Include="XComponent.Core">
+      <HintPath>..\UserReference\XComponent.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="XComponent.Extended">
+      <HintPath>..\UserReference\XComponent.Extended.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddPetOperationTriggeredMethod.cs" />
+    <Compile Include="GetPetByIdOperationTriggeredMethod.cs" />
+    <Compile Include="ServiceClient\ISwaggerPetstore.cs" />
+    <Compile Include="ServiceClient\SwaggerPetstore.cs" />
+    <Compile Include="ServiceClient\SwaggerPetstoreExtensions.cs" />
+    <Compile Include="SwaggerPetstoreServiceClientTracingInterceptor.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SwaggerPetstoreTriggeredMethod.cs" />
+    <Compile Include="TriggeredMethodContext.cs" />
+    <Compile Include="TriggeredMethodContext.generated..cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\XComponent.SwaggerPetstore.Common.csproj">
+      <Name>XComponent.SwaggerPetstore.Common</Name>
+      <Project>{BE692B62-C3EF-410D-9521-7739F2347E1C}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\UserObject\XComponent.SwaggerPetstore.UserObject.csproj">
+      <Name>XComponent.SwaggerPetstore.UserObject</Name>
+      <Project>{2D12F6CA-D31B-47B7-B7FE-DB1195D99E6F}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <Import Condition="true" Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>
