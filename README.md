@@ -9,8 +9,8 @@ XComponent is a platform to create, monitor and share microservices.
 $ Tools\NuGet.exe install XComponent.Community -ConfigFile Tools\Nuget.Config -ExcludeVersion -OutputDirectory .\packages -Version 4.5.0-rc0118
 ```
 * Download msi:
- * [4.5.0 RC - x64](https://github.com/xcomponent/xcomponent/releases/download/4.5.0-RC119/XComponentCommunity-4.5.0-C119_x64.msi)
- * [4.5.0 RC - x86](https://github.com/xcomponent/xcomponent/releases/download/4.5.0-RC119/XComponentCommunity-4.5.0-C119_x86.msi)
+ * [4.5.0 x64](https://github.com/xcomponent/xcomponent/releases/download/4.5.0/XComponentCommunity-4.5.0-G8_x64.msi)
+ * [4.5.0 x86](https://github.com/xcomponent/xcomponent/releases/download/4.5.0/XComponentCommunity-4.5.0-G8_x86.msi)
 
 ## Documentation
 

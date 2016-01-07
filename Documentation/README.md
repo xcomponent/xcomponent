@@ -33,7 +33,10 @@
  * [Customizing transitions](#customizing-transitions)
  * [Enabling Triggered method to implement your own code](#enabling-triggered-method-to-implement-your-own-code)
  * [Visual Studio generated project hierarchy](#visual-studio-generated-project-hierarchy)
+ * [Implementing triggered methods](#implementing-triggered-methods)
  * [Composition](#composition)
+ * [Microservices composition](#microservices-composition)
+* [4 - Testing your project using XCSpy](#4---testing-your-project-using-xcspy)
 
 ## 1 - Overview
 
@@ -428,6 +431,25 @@ You can see that in the Visual Studio solution, three projects exist:
 - TriggeredMethod: one by state machine when you enable triggered method or specific rules. Pattern for triggered method class file generated is named like this: {StateMachineName}TriggeredMethod.cs, while specific rules class file is named like: {StateMachineName}UserSpecificRules.cs.
 - UserObject: all objects added from the XCStudio interface: triggering events, public members, internal members.
 
+#### Implementing triggered methods
+
+> Please note that the initialize method skeleton is generated in the state machine file from which transition is leaving and not the state machine it’s arriving to.
+
+Example of triggered methods:
+
+```cs
+public static void ExecuteOn_Pending_Through_SendToFrontOffice(XComponent.MyFirstComponent.UserObject.SendToFrontOffice sendToFrontOffice, XComponent.MyFirstComponent.UserObject.FrontOffice frontOffice, object object_InternalMember, Context context, ISendToFrontOfficeSendToFrontOfficeOnPendingFrontOfficeSenderInterface sender)
+{
+    throw new NotImplementedException();
+}
+```
+
+In a triggered method, you can:
+- have access to the public member of your state machine and the event that triggered the transition
+- Update your public member
+- Interact with other state machines by using the sender object
+- Interact with third-party libraries
+
 
 ### Composition
 
@@ -440,3 +462,70 @@ White circles on the left of components/APIS represent the inputs and white circ
 Example of composition:
 
 ![composition example](Images/composition_example.png)
+
+### Microservices composition
+
+You can open the microservices composition view from your project explorer.
+
+Example of microservices composition:
+
+![microservices composition](Images/microservices_view.jpg)
+
+In this view, you can:
+- have a quick view of your architecture
+- rename your microservices
+- move a component to another microservice
+
+# 4 - Testing your project using XCSpy
+
+XCStudio integrates a player to run functional tests. This way you can validate your project and find eventual errors.
+
+You first need to build your project and then run the player.
+Click on Start player: ![xcspy button](Images/xcspy_button.png) to launch the player application.
+Click on a component name (for example *MyComponent*) to display the component you want to test.
+
+![xcspy ribbon](Images/xcspy_ribbon.png)
+
+You got this window:
+
+![xcspy](Images/xcspy.png)
+
+XCSpy allows you to test your component and validate its functional behavior by sending transitions/events.
+
+Right after the entryPoint there is (1), a number between parentheses. It represents the number of instances of the state machine that currently are in this state, and it the same principle for the state machine.
+When launching the player for the first time, once you have clicked on your component the entryPoint is orange with (1) just after. This is the beginning of your component. From here you can start testing.
+
+The Player menu contains:
+- A project menu. You can display the property panel by clicking on the *Show properties* button. This panel provides details about the selected element (state machine, state or transition)
+- A list of project menu. The following figure shows details about this menu
+
+![xcspy options](Images/xcspy_options.png)
+
+- A context menu used to interact with your component (send events)
+
+![xcspy context menu](Images/xcspy_context.png)
+
+In the *Events sender* menu we can choose the way of sending an event: send an event to a selected instance or to all instances. The first one only affects the entity selected while the other one affects all entities in this state.
+
+It is important to point out that you can send a default or a custom event. Default event is an empty class. Using customize events allows you to set to defines in the triggering event variables values.
+
+Keeping in mind the following example, if we want to trigger the transition called *SendToFrontOffice*, click on the transition. Then fill the event values in the property panel.
+
+![xcspy send properties](Images/xcspy_send_properties.png)
+
+Click on the *Send event to the selected instance* button to send the custom event to the state machine instance selected in the property panel (example: instance identifier 3500).
+
+![xcspy send](Images/xcspy_send.png)
+
+> It is important to notice that the entrypoint state machine always has one instance!
+
+![xcspy component](Images/xcspy_component.png)
+
+This creates a new instance of *FrontOffice* state machine and affects values to *FrontOffice* public member.
+We can verify *FrontOffice* public member affectation. Click on *Pending (1)* to display details in the property panel. 
+
+Click again on the *EntryPoint* again and create another instance of *FrontOffice* state machine sending a new event.
+
+Now you have two instances of *FrontOffice* state machine in *Pending State*.
+
+Using XCSpy allows you to instantly test your project, your component, what you implement, without developing a client API, and without wasting time and money. 
