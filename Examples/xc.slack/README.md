@@ -5,7 +5,7 @@ This project is a simple gateway to [Slack](http://wwww.slack.com). With this ga
 ## Prerequisite
 
 * Get [Visual Studio Community](https://www.visualstudio.com/en-us/products/visual-studio-community-vs.aspx)
-* Install RabbitMQ: [Download link](http://www.rabbitmq.com/download.html). Otherwise, you can install RabbitMQ using [Chocolatey](https://chocolatey.org/packages/rabbitmq)
+* Install RabbitMQ (3.5.1 version is recommanded) : [Download link](https://www.rabbitmq.com/releases/rabbitmq-server/v3.5.1/). Otherwise, you can install RabbitMQ using [Chocolatey](https://chocolatey.org/packages/rabbitmq)
 * You should have a [Slack](http://wwww.slack.com) account. On [Slack](http://wwww.slack.com), you should create a `WebHook`. For more details about `WebHook`, please refers to the [Slack api documentation](https://api.slack.com/)
 
 
