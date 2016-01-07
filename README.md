@@ -6,7 +6,7 @@ XComponent is a platform to create, monitor and share microservices.
 
 * Get [Visual Studio Community](https://www.visualstudio.com/en-us/products/visual-studio-community-vs.aspx)
 * Install RabbitMQ (3.5.1 version is recommanded) : [Download link](https://www.rabbitmq.com/releases/rabbitmq-server/v3.5.1/). Otherwise, you can install RabbitMQ using [Chocolatey](https://chocolatey.org/packages/rabbitmq)
-* 
+
 ## Install
 
 * XComponent community edition is available on Nuget:
