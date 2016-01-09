@@ -2,6 +2,8 @@
 
 This project is a simple gateway to [Slack](http://wwww.slack.com). With this gateway you will be able to send messages to a [Slack](http://wwww.slack.com) channel using [XComponent](http://www.xcomponent.com).
 
+> Note: For this sample you should have a [Slack](http://wwww.slack.com) account. On [Slack](http://wwww.slack.com), you should create a `WebHook`. For more details about `WebHook`, please refers to the [Slack api documentation](https://api.slack.com/)
+  
 ## Overview
 
 XComponent is a platform to create, monitor and share microservices.
