@@ -1,15 +1,10 @@
 # XComponent Examples
 
-## Prerequisite
-
-* Get [Visual Studio Community](https://www.visualstudio.com/en-us/products/visual-studio-community-vs.aspx)
-* Install RabbitMQ (3.5.1 version is recommanded) : [Download link](https://www.rabbitmq.com/releases/rabbitmq-server/v3.5.1/). Otherwise, you can install RabbitMQ using [Chocolatey](https://chocolatey.org/packages/rabbitmq)
-
 ## Build all examples
 
 Execute the following script:
 ```
-$ build All
+$ examples\build.cmd
 ```
 Build results are in the *build* folder of each example.
 

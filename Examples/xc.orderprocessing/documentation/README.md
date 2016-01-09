@@ -20,14 +20,6 @@ We can depict the two main parts of the system through two state machines:
 
 ![order stm image](images/order_stm.jpg)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![trade stm image](images/trade_stm.jpg)
 
-## Install XComponent Community
-
-Nuget is the easiest way to install the commmunity edition:
-```
-$ Tools\NuGet.exe install XComponent.Community -ConfigFile Tools\Nuget.Config -ExcludeVersion -OutputDirectory .\packages -Version 4.5.0-rc0118
-```
-> Note: Alternatively, you can download the msi installer from [www.xcomponent.com](http://www.xcomponent.com)
-
 ## Create the microservice
 
 ### Create a new XComponent project

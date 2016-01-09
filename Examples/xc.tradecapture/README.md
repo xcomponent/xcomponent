@@ -4,11 +4,6 @@
 **Trade capture** is the process of booking (or capturing) the trade into the systems used within a financial organisation.
 With this project you will learn how to design a simple `trade capture` application with [XComponent](http://www.xcomponent.com).
 
-## Prerequisite
-
-* Get [Visual Studio Community](https://www.visualstudio.com/en-us/products/visual-studio-community-vs.aspx)
-* Install RabbitMQ (3.5.1 version is recommanded) : [Download link](https://www.rabbitmq.com/releases/rabbitmq-server/v3.5.1/). Otherwise, you can install RabbitMQ using [Chocolatey](https://chocolatey.org/packages/rabbitmq)
-
 ## Overview
 
 XComponent is a platform to create, monitor and share microservices.
@@ -38,32 +33,32 @@ Build results are in the *build* folder
 ### 1. Start the microservices
 #### Start the "referential" microservice
 
-Execute the following script in the *build* folder:
+Execute the following script :
 ```
-$ startReferentialService.cmd
+$ build\startReferentialService.cmd
 ```
 
 #### Start the "trade" microservice
 
-Execute the following script in the *build* folder:
+Execute the following script:
 ```
-$ startTradeService.cmd
+$ build\startTradeService.cmd
 ```
 
 ### 2. Start the GUIs
 
 ### Start the Trade Creator Gui
 
-Execute the following script in the *build* folder:
+Execute the following script:
 ```
-$ startTradeCreatorGui.cmd
+$ build\startTradeCreatorGui.cmd
 ```
 
 ### Start the Trade Validator Gui
 
-Execute the following script in the *build* folder:
+Execute the following script:
 ```
-$ startTradeValidatorGui.cmd
+$ build\tartTradeValidatorGui.cmd
 ```
 
 > Note: RabbitMQ has to be running (default configuration)

@@ -13,11 +13,8 @@ In the `Hello World` sample we are going to create two different pieces of softw
 
 ## Install XComponent Community
 
-Nuget is the easiest way to install the commmunity edition:
-```
-$ Tools\NuGet.exe install XComponent.Community -ConfigFile Tools\Nuget.Config -ExcludeVersion -OutputDirectory .\packages -Version 4.5.0-rc0118
-```
-> Note: Alternatively, you can download the msi installer from [www.xcomponent.com](http://www.xcomponent.com)
+ 
+The easiest way to install the XComponent Commmunity Edition is to download the latest version from [Nuget](https://www.nuget.org/packages/xcomponent.community/)
 
 ## Create your first microservice
 

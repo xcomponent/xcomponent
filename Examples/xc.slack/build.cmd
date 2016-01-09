@@ -10,6 +10,6 @@ pushd %~dp0
 ..\Tools\NuGet.exe restore slackproject\SlackApp\SlackApp.sln
 
 set encoding=utf-8
-..\packages\FAKE\tools\FAKE.exe build.fsx %*
+..\packages\FAKE\tools\FAKE.exe build.fsx All
 
 popd

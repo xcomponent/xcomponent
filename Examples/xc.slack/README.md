@@ -2,13 +2,6 @@
 
 This project is a simple gateway to [Slack](http://wwww.slack.com). With this gateway you will be able to send messages to a [Slack](http://wwww.slack.com) channel using [XComponent](http://www.xcomponent.com).
 
-## Prerequisite
-
-* Get [Visual Studio Community](https://www.visualstudio.com/en-us/products/visual-studio-community-vs.aspx)
-* Install RabbitMQ (3.5.1 version is recommanded) : [Download link](https://www.rabbitmq.com/releases/rabbitmq-server/v3.5.1/). Otherwise, you can install RabbitMQ using [Chocolatey](https://chocolatey.org/packages/rabbitmq)
-* You should have a [Slack](http://wwww.slack.com) account. On [Slack](http://wwww.slack.com), you should create a `WebHook`. For more details about `WebHook`, please refers to the [Slack api documentation](https://api.slack.com/)
-
-
 ## Overview
 
 XComponent is a platform to create, monitor and share microservices.
@@ -34,14 +27,14 @@ Build results are in the *build* folder
 
 Execute the following script in the *build* folder:
 ```
-$ startMicroservice.cmd
+$ build\startMicroservice.cmd
 ```
 
 ### Start the ConsoleApp
 
 Execute the following script in the *build* folder:
 ```
-$ startConsoleApp.cmd
+$ build\startConsoleApp.cmd
 ```
 > Note: RabbitMQ has to be running (default configuration)
 

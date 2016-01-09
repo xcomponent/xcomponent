@@ -10,6 +10,6 @@ pushd %~dp0
 ..\Tools\NuGet.exe install XComponent.Community -ConfigFile ..\Tools\Nuget.Config -ExcludeVersion -OutputDirectory ..\packages -Version %xcversion%
 
 set encoding=utf-8
-..\packages\FAKE\tools\FAKE.exe build.fsx %*
+..\packages\FAKE\tools\FAKE.exe build.fsx All
 
 popd
