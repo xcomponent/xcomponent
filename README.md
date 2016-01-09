@@ -12,9 +12,6 @@ XComponent community edition provides the following tools:
 * XComponent Gallery: it enables you to share easily your projects
 
 
-The following figure is a good summary of the XComponent architecture.
-
-![xcomponent architecture](Images/architecture.jpg)
 
 > Note: "Microservice architectural style is an approach to develop a single application as a suite of small services, each running in its own process and communicating with lightweight mechanisms. These services are built around business capabilities and independently deployable by fully automated deployment machinery.” *James Lewis & Martin Fowler*
 
