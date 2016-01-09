@@ -15,6 +15,7 @@ In the `Order Processing` sample we're actually going to run two different piece
 
 Execute the following script:
 ```
+$ cd Examples\xc.orderprocessing
 $ build All
 ```
 Build results are in the *build* folder
