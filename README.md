@@ -8,7 +8,7 @@ Microservices are developed in **C#** (.NET4 or above).
 XComponent community edition provides the following tools:
 * XCStudio (requires .Net 4.5 Framework): an application to design / compose components and microservices 
 * XCRuntime (requires .Net 4.0 Framework and can runs on Windows or under [Mono](http://www.mono-project.com/)): an execution environment for xc microservices
-* XCSpy (requires .Net 4.5 Framework): a test tool
+* XCSpy (requires .Net 4.5 Framework): a test and monitoring tool
 * XComponent Gallery: it enables you to share easily your projects
 
 
