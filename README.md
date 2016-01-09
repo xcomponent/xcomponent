@@ -15,7 +15,7 @@ XComponent community edition provides the following tools:
 
 > Note: "Microservice architectural style is an approach to develop a single application as a suite of small services, each running in its own process and communicating with lightweight mechanisms. These services are built around business capabilities and independently deployable by fully automated deployment machinery.” *James Lewis & Martin Fowler*
 
-##Building Microservices with XComponent
+## Building Microservices with XComponent
 * Define your **Components** according to a business logic or a technical logic 
 > Note: In XComponent, a **“Component”** is a set of state machines (micro-orchestration)
 * Link the components (Composition) between them
