@@ -15,7 +15,8 @@ In the `authentication` sample we're actually going to run two different pieces 
 
 Execute the following script:
 ```
-$ build All
+$ cd Examples\xc.authentication
+$ build
 ```
 Build results are in the *build* folder
 
