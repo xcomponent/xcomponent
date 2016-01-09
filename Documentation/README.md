@@ -48,7 +48,7 @@ XComponent provides the following tools:
 * XCStudio: an application to design / compose components and microservices
 * XCRuntime: an execution environment for xc microservices
 * XCSpy: a test tool
-* XComponent AC2: an application to deploy and control microservices
+* XComponent AC2 (not available yet in community edition): an application to deploy and control microservices
 * XComponent Gallery: it enables you to share easily your projects
 
 The following figure is a good summary of the XComponent architecture.
