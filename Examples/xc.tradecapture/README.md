@@ -22,7 +22,8 @@ In this project, we're actually going to run different pieces of software concur
 
 Execute the following script:
 ```
-$ build All
+$ cd xc.tradecapture
+$ build
 ```
 Build results are in the *build* folder
 
