@@ -29,7 +29,7 @@ Thanks to the [Use Cases](Examples) section, you will able to understand:
 ## Prerequisite
 * .NET 4.5 framework
 * Get [Visual Studio Community](https://www.visualstudio.com/en-us/products/visual-studio-community-vs.aspx)
-* A RabbitMQ middleware (3.5.1 version is recommanded) : [Download link for windows](https://www.rabbitmq.com/releases/rabbitmq-server/v3.5.1/rabbitmq-server-3.5.1.exe). Otherwise, if you want to install RabbitMq on other OS you can follow this [link](https://www.rabbitmq.com/releases/rabbitmq-server/v3.5.1/)
+* A RabbitMQ middleware (3.5.1 version is recommanded) : [Download link for windows](https://www.rabbitmq.com/releases/rabbitmq-server/v3.5.1/rabbitmq-server-3.5.1.exe). Otherwise, if you want to install RabbitMQ on other OS you can follow this [link](https://www.rabbitmq.com/releases/rabbitmq-server/v3.5.1/)
 
 ## Install
 
