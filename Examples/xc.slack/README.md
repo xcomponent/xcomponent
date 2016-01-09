@@ -15,7 +15,8 @@ In the `Slack` sample we're actually going to run two different pieces of softwa
 
 Execute the following script:
 ```
-$ build All
+$ cd Examples\xc.slack
+$ build
 ```
 Build results are in the *build* folder
 
