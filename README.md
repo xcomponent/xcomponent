@@ -33,11 +33,8 @@ Thanks to the [Use Cases](Examples) section, you will able to understand:
 
 ## Install
 
-* XComponent community edition is available on Nuget:
-```
-$ Tools\NuGet.exe install XComponent.Community -ConfigFile Tools\Nuget.Config -ExcludeVersion -OutputDirectory .\packages -Version 4.5.0-rc0118
-```
-* Download msi:
+All samples will directly download XComponent Community Edition from [Nuget](https://www.nuget.org/packages/xcomponent.community/). Nevertheless, if for some reasons, you need an MSI, you can select one of the following link:
+
  * [4.5.0 x64](https://github.com/xcomponent/xcomponent/releases/download/4.5.0/XComponentCommunity-4.5.0-G8_x64.msi)
  * [4.5.0 x86](https://github.com/xcomponent/xcomponent/releases/download/4.5.0/XComponentCommunity-4.5.0-G8_x86.msi)
 
@@ -51,9 +48,6 @@ $ Tools\NuGet.exe install XComponent.Community -ConfigFile Tools\Nuget.Config -E
 
 It is a good starting point to understand how the XComponent platform works.
 
-## Test Plan
-
-[Test Plan](TestPlan/README.md)
 
 ## Questions ?
 
