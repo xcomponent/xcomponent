@@ -15,7 +15,8 @@ In the `REST API Client` sample we are going to create two pieces of software:
 
 Execute the following script:
 ```
-$ build All
+$ cd Examples\xc.restapiclient
+$ build
 ```
 Build results are in the *build* folder
 
