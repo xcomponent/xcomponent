@@ -22,8 +22,8 @@ XComponent community edition provides the following tools:
 
 * Link the components (Composition) between them
 * Create the **APIs**
-* Create your Microservices as sets of components
-* Deploy your microservices and run them with XCRuntime (under Windows or Mono)
+* Create your Microservices as sets of **Components**
+* Deploy your microservices and run them with **XCRuntime** (under Windows or Mono)
 
 With XComponent, your microservices have the following avantages:
 * They can communicate each other in Real-Time
