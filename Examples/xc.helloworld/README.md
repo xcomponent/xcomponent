@@ -15,7 +15,8 @@ In the `Hello World` sample we're actually going to run two different pieces of 
 
 Execute the following script:
 ```
-$ build All
+$ cd xc.helloworld
+$ build
 ```
 Build results are in the *build* folder
 
