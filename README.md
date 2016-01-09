@@ -17,7 +17,9 @@ XComponent community edition provides the following tools:
 
 ## Building Microservices with XComponent
 * Define your **Components** according to a business logic or a technical logic 
+
 > Note: In XComponent, a **“Component”** is a set of state machines (micro-orchestration)
+
 * Link the components (Composition) between them
 * Create the **APIs**
 * Create your Microservices as sets of components
