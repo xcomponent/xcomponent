@@ -31,7 +31,7 @@ With XComponent, your microservices have the following avantages:
 * You can easily **resize** your microservices 
 * You can migrate from a Monolith to a full microservices architecture without a line of code !
 * XComponent platform is fully asynchronous and it is running on the top of a RabbitMQ middleware. Nevertheless, the complexity of this kind of architecture is hidden to the developper
-* You can monitor is Real-Time the status of your microservices
+* You can monitor in Real-Time the status of your microservices
 For a better understanding of XComponent, and for more details, we suggest to read the [user guide](Documentation/README.md) and jump to the [Hello World sample](Examples/xc.helloworld/README.md).
 
 
