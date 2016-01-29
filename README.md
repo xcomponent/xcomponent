@@ -1,7 +1,7 @@
 # XComponent Resource Center
 
-XComponent is a platform to create, monitor and share microservices.
-XComponent is an open platform to easily create, control and share microservices. In XComponent, a microservice is a set of components. Each component is based on state machines. This approach is powerful and flexible because it enables you to size or resize your microservices as you want.
+XComponent is a platform to easily create, monitor and share microservices.
+In XComponent, a microservice is a set of components. Each component is based on state machines. This approach is powerful and flexible because it enables you to size or resize your microservices as you want.
 
 Microservices are developed in **C#** (.NET4 or above).
 
