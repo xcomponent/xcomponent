@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<scxml version="1.0" name="BenchSimpleFork">
+  <datamodel>
+    <data id="Version" expr="8" />
+    <data id="NameSeparator" expr=":" />
+    <data id="logKeys">
+      <logKeys />
+    </data>
+  </datamodel>
+  <state id="BenchManager">
+    <datamodel>
+      <data id="Id" expr="1" />
+    </datamodel>
+    <state id="BenchManager:EntryPoint">
+      <datamodel>
+        <data id="Comment" expr="" />
+        <data id="DisposeStateMachineInstance" expr="False" />
+        <data id="Id" expr="1" />
+      </datamodel>
+      <transition Event="XComponent.Common.Event.DefaultEvent" target="BenchManager:BenchReady">
+        <datamodel>
+          <data id="Type" expr="TimeoutTransition" />
+          <data id="ExecutionDelay" expr="0" />
+          <data id="Id" expr="1" />
+          <data id="Name" expr="Init" />
+          <data id="Event">
+            <Event>
+              <Comment>
+              </Comment>
+              <EventTypeName>XComponent.Common.Event.DefaultEvent</EventTypeName>
+              <TimeToLive>0</TimeToLive>
+              <TriggeringRules />
+            </Event>
+          </data>
+        </datamodel>
+      </transition>
+    </state>
+    <state id="BenchManager:BenchReady">
+      <datamodel>
+        <data id="Comment" expr="" />
+        <data id="DisposeStateMachineInstance" expr="False" />
+        <data id="Id" expr="2" />
+        <data id="TriggerableTransition">
+          <TriggerableTransition target="2" id="5" allTransitions="False">
+            <AllTransitions>false</AllTransitions>
+            <Id>5</Id>
+            <InnerTransition id="6" />
+          </TriggerableTransition>
+        </data>
+      </datamodel>
+      <transition Event="XComponent.BenchSimpleFork.UserObject.CreateChild" target="ChildStm:Done">
+        <datamodel>
+          <data id="Type" expr="XTransition" />
+          <data id="Id" expr="2" />
+          <data id="Name" expr="CreateChild" />
+          <data id="Event">
+            <Event>
+              <Comment>
+              </Comment>
+              <EventTypeName>XComponent.BenchSimpleFork.UserObject.CreateChild</EventTypeName>
+              <TimeToLive>0</TimeToLive>
+              <TriggeringRules />
+            </Event>
+          </data>
+        </datamodel>
+        <onexit>
+          <invoke Type="ExecuteOn_Done_Through_CreateChild" id="2">
+            <content>
+              <Comment>
+              </Comment>
+              <Name>ExecuteOn_Done_Through_CreateChild</Name>
+              <Id>2</Id>
+              <CustomParameters xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                <EventsName>XComponent.BenchSimpleFork.UserObject.CreateChild</EventsName>
+              </CustomParameters>
+            </content>
+          </invoke>
+        </onexit>
+      </transition>
+      <transition Event="XComponent.BenchSimpleFork.UserObject.BenchResult" target="BenchResult:Published">
+        <datamodel>
+          <data id="Type" expr="XTransition" />
+          <data id="Id" expr="3" />
+          <data id="Name" expr="PublishResult" />
+          <data id="Event">
+            <Event>
+              <Comment>
+              </Comment>
+              <EventTypeName>XComponent.BenchSimpleFork.UserObject.BenchResult</EventTypeName>
+              <TimeToLive>0</TimeToLive>
+              <TriggeringRules />
+            </Event>
+          </data>
+        </datamodel>
+        <onexit>
+          <invoke Type="ExecuteOn_Published_Through_PublishResult" id="3">
+            <content>
+              <Comment>
+              </Comment>
+              <Name>ExecuteOn_Published_Through_PublishResult</Name>
+              <Id>3</Id>
+              <CustomParameters xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                <PublicMember>XComponent.BenchSimpleFork.UserObject.BenchResult</PublicMember>
+                <EventsName>XComponent.BenchSimpleFork.UserObject.BenchResult</EventsName>
+              </CustomParameters>
+            </content>
+          </invoke>
+        </onexit>
+      </transition>
+      <transition Event="XComponent.BenchSimpleFork.UserObject.StartBench" target="BenchManager:BenchReady">
+        <datamodel>
+          <data id="Type" expr="StandardTransition" />
+          <data id="Id" expr="6" />
+          <data id="Name" expr="StartBench" />
+          <data id="Event">
+            <Event>
+              <Comment>
+              </Comment>
+              <EventTypeName>XComponent.BenchSimpleFork.UserObject.StartBench</EventTypeName>
+              <TimeToLive>0</TimeToLive>
+              <TriggeringRules />
+            </Event>
+          </data>
+        </datamodel>
+        <onexit>
+          <invoke Type="ExecuteOn_BenchReady_Through_StartBench" id="1">
+            <content>
+              <Comment>
+              </Comment>
+              <Name>ExecuteOn_BenchReady_Through_StartBench</Name>
+              <Id>1</Id>
+              <CustomParameters xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                <EventsName>XComponent.BenchSimpleFork.UserObject.StartBench</EventsName>
+              </CustomParameters>
+            </content>
+          </invoke>
+        </onexit>
+      </transition>
+    </state>
+  </state>
+  <state id="ChildStm">
+    <datamodel>
+      <data id="Id" expr="2" />
+    </datamodel>
+    <state id="ChildStm:Done">
+      <datamodel>
+        <data id="Comment" expr="" />
+        <data id="DisposeStateMachineInstance" expr="True" />
+        <data id="Id" expr="3" />
+        <data id="TriggerableTransition">
+          <TriggerableTransition target="3" id="4" allTransitions="True">
+            <AllTransitions>true</AllTransitions>
+            <Id>4</Id>
+            <InnerTransition id="2" />
+          </TriggerableTransition>
+        </data>
+      </datamodel>
+    </state>
+  </state>
+  <state id="BenchResult">
+    <datamodel>
+      <data id="PublicMember" expr="XComponent.BenchSimpleFork.UserObject.BenchResult" />
+      <data id="Id" expr="3" />
+    </datamodel>
+    <state id="BenchResult:Published">
+      <datamodel>
+        <data id="Comment" expr="" />
+        <data id="DisposeStateMachineInstance" expr="True" />
+        <data id="Id" expr="4" />
+      </datamodel>
+    </state>
+  </state>
+</scxml>

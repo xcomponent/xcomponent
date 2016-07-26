@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<deployment environment="Dev" xcProjectName="BenchSimpleFork" deploymentTargetCode="-2048406702" deploymentTargetName="BenchSimpleForkApi" version="1.0" frameworkType="Framework45" xmlns="http://xcomponent.com/DeploymentConfig.xsd" clientApiReference="XComponent.BenchSimpleFork.ClientApi.dll">
+  <threading />
+  <serialization>Binary</serialization>
+  <communication>
+    <bus name="localrabbit" host="localhost" port="5672" user="guest" password="guest" type="RABBIT_MQ" />
+  </communication>
+  <clientAPICommunication>
+    <publish componentCode="1488680988" stateMachineCode="-1356207417" eventType="UPDATE" topicType="output" communicationType="BUS" stateCode="1" eventCode="8" event="XComponent.Common.Event.DefaultEvent" communication="localrabbit">
+      <topic type="STATIC">input.1_0.microservice1.BenchSimpleFork.BenchManager</topic>
+    </publish>
+    <subscribe componentCode="1488680988" eventType="ERROR" topicType="input" communicationType="BUS" communication="localrabbit">
+      <topic type="STATIC">error.1_0.microservice1.BenchSimpleFork</topic>
+    </subscribe>
+    <subscribe componentCode="1488680988" stateMachineCode="-1356207417" eventType="UPDATE" topicType="input" communicationType="BUS" event="" communication="localrabbit" communicationThreadingType="INHERITFROMPARENT">
+      <topic type="STATIC">output.1_0.microservice1.BenchSimpleFork.BenchManager</topic>
+    </subscribe>
+    <subscribe componentCode="1488680988" stateMachineCode="-486018732" eventType="UPDATE" topicType="input" communicationType="BUS" event="XComponent.BenchSimpleFork.UserObject.BenchResult" communication="localrabbit" communicationThreadingType="INHERITFROMPARENT">
+      <topic type="STATIC">output.1_0.microservice1.BenchSimpleFork.BenchResult</topic>
+    </subscribe>
+    <snapshot componentCode="1488680988">
+      <topic type="STATIC">snapshot.1_0.microservice1.BenchSimpleFork</topic>
+    </snapshot>
+  </clientAPICommunication>
+  <codesConverter>
+    <components>
+      <component name="BenchSimpleFork" id="1488680988">
+        <events>
+          <event name="XComponent.BenchSimpleFork.UserObject.BenchResult" id="0" />
+          <event name="XComponent.BenchSimpleFork.UserObject.CreateChild" id="1" />
+          <event name="XComponent.Common.Event.ApiProxy.ApiInitError" id="2" />
+          <event name="XComponent.Common.Event.ApiProxy.ApiInitSuccessful" id="3" />
+          <event name="XComponent.Common.Event.ApiProxy.CancelApiInit" id="4" />
+          <event name="XComponent.Common.Event.ApiProxy.InstanceUpdatedSubscription" id="5" />
+          <event name="XComponent.Common.Event.ApiProxy.InstanceUpdatedUnsubscription" id="6" />
+          <event name="XComponent.Common.Event.ApiProxy.SnapshotOptions" id="7" />
+          <event name="XComponent.Common.Event.DefaultEvent" id="8" />
+          <event name="XComponent.Common.Event.ExceptionEvent" id="9" />
+        </events>
+        <stateMachines>
+          <stateMachine name="BenchManager" id="-1356207417">
+            <states>
+              <State name="EntryPoint" id="1" />
+              <State name="BenchReady" id="0" />
+            </states>
+          </stateMachine>
+          <stateMachine name="ChildStm" id="-1181488146">
+            <states>
+              <State name="Done" id="0" />
+            </states>
+          </stateMachine>
+          <stateMachine name="BenchResult" id="-486018732">
+            <states>
+              <State name="Published" id="0" />
+            </states>
+          </stateMachine>
+        </stateMachines>
+      </component>
+    </components>
+  </codesConverter>
+</deployment>

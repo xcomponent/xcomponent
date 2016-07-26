@@ -207,3 +207,6 @@ xcstudio.cmd
 .fake/
 lib/
 index.txt
+
+#XComponent generated sources
+Examples/xc.bench/benchsimplefork/BenchSimpleFork/Common/

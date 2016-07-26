@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinkingSchema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" isClientApiShown="false" isLinkingShown="false" name="BenchSimpleFork">
+  <LinkedComponents>
+    <LinkedComponent name="BenchSimpleFork">
+      <XCToXCLinks />
+      <XCToApiLinks>
+        <XCToApiLink stateMachineIdFrom="1" stateIdFrom="-1" linkFrom="BenchSimpleFork" linkTo="BenchSimpleForkApi" />
+        <XCToApiLink stateMachineIdFrom="3" stateIdFrom="-1" linkFrom="BenchSimpleFork" linkTo="BenchSimpleForkApi" />
+      </XCToApiLinks>
+    </LinkedComponent>
+  </LinkedComponents>
+  <LinkedClientApis>
+    <LinkedClientApi name="BenchSimpleForkApi">
+      <ApiToXCLinks>
+        <ApiToXCLink linkFrom="BenchSimpleForkApi" linkTo="BenchSimpleFork" stateMachineIdTo="1" stateIdTo="2">
+          <AllowedTransitions>
+            <LinkingSimpleTransition id="2" stateMachineIdTo="1" stateIdTo="2" />
+            <LinkingSimpleTransition id="3" stateMachineIdTo="1" stateIdTo="2" />
+            <LinkingSimpleTransition id="6" stateMachineIdTo="1" stateIdTo="2" />
+          </AllowedTransitions>
+          <AllowedEvents>
+            <LinkingEvent eventTypeName="XComponent.BenchSimpleFork.UserObject.BenchResult" stateMachineIdTo="1" stateIdTo="2" />
+            <LinkingEvent eventTypeName="XComponent.BenchSimpleFork.UserObject.CreateChild" stateMachineIdTo="1" stateIdTo="2" />
+            <LinkingEvent eventTypeName="XComponent.BenchSimpleFork.UserObject.StartBench" stateMachineIdTo="1" stateIdTo="2" />
+          </AllowedEvents>
+          <NotAllowedTransitions />
+          <NotAllowedEvents />
+        </ApiToXCLink>
+      </ApiToXCLinks>
+    </LinkedClientApi>
+  </LinkedClientApis>
+</LinkingSchema>
