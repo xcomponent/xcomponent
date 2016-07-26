@@ -41,12 +41,47 @@ namespace BenchRunner
                 if (myBenchSimpleForkApi.Init(myBenchSimpleForkApi.Api.DefaultXcApiFileName, clientApiOptions))
                 {
 
-                    myBenchSimpleForkApi.Api.BenchSimpleFork_Component.BenchResult_StateMachine.InstanceUpdated += BenchResult_StateMachine_InstanceUpdated;
+                    Queue<Action> benchs = new Queue<Action>();
+
+                    myBenchSimpleForkApi.Api.BenchSimpleFork_Component.BenchResult_StateMachine.InstanceUpdated +=
+                        benchResultInstance =>
+                        {
+                            Console.WriteLine("----------- Bench finished -----------");
+                            Console.WriteLine($"Instances received: {benchResultInstance.PublicMember.NbInstances}");
+                            Console.WriteLine($"Total time: {benchResultInstance.PublicMember.TotalTimeMilliseconds}ms");
+                            if (benchs.Count > 0)
+                                benchs.Dequeue()();
+                        };
 
                     BenchManagerInstance ep = myBenchSimpleForkApi.Api.BenchSimpleFork_Component.GetEntryPoint();
-                    StartBench startBench = new StartBench() { NbInstances = nbFork };
-                    myBenchSimpleForkApi.Api.BenchSimpleFork_Component.BenchManager_StateMachine.BenchReady_State.StartBench(ep.Context, startBench);
 
+                    benchs.Enqueue(() =>
+                    {
+                        Console.WriteLine("Starting simple fork bench...");
+                        StartSimpleForkBench startBench = new StartSimpleForkBench() { NbInstances = nbFork };
+                        myBenchSimpleForkApi.Api.BenchSimpleFork_Component.BenchManager_StateMachine.BenchReady_State.StartSimpleForkBench(ep.Context, startBench);
+                    }
+                    );
+
+                    benchs.Enqueue(() =>
+                    {
+                        Console.WriteLine("Starting loop fork bench...");
+                        StartLoopBench startLoopBench = new StartLoopBench() { NbInstances = nbFork };
+                        myBenchSimpleForkApi.Api.BenchSimpleFork_Component.BenchManager_StateMachine.BenchReady_State.StartLoopBench(ep.Context, startLoopBench);
+                    }
+                    );
+
+                    benchs.Enqueue(() =>
+                    {
+                        Console.WriteLine("Starting triggering rules bench...");
+                        StartTriggeringRulesBench startTriggeringBench = new StartTriggeringRulesBench() { NbInstances = nbFork };
+                        myBenchSimpleForkApi.Api.BenchSimpleFork_Component.BenchManager_StateMachine.BenchReady_State.StartTriggeringRulesBench(ep.Context, startTriggeringBench);
+                    }
+                    );
+
+
+
+                    benchs.Dequeue()();
 
 
                     //CreateChild child = new CreateChild() { IsFirst = true };
@@ -69,13 +104,6 @@ namespace BenchRunner
                     AnalyseReport(myBenchSimpleForkApi.Report);
                 }
             }
-        }
-
-        private static void BenchResult_StateMachine_InstanceUpdated(BenchResultInstance obj)
-        {
-            Console.WriteLine("----------- Bench finished -----------");
-            Console.WriteLine($"Instance received: {obj.PublicMember.NbInstances}");
-            Console.WriteLine($"Total time: {obj.PublicMember.TotalTimeMilliseconds}ms");
         }
     }
 }

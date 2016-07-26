@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <scxml version="1.0" name="BenchSimpleFork">
   <datamodel>
-    <data id="Version" expr="8" />
+    <data id="Version" expr="27" />
     <data id="NameSeparator" expr=":" />
     <data id="logKeys">
       <logKeys />
@@ -46,9 +46,14 @@
             <Id>5</Id>
             <InnerTransition id="6" />
           </TriggerableTransition>
+          <TriggerableTransition target="15" id="17" allTransitions="False">
+            <AllTransitions>false</AllTransitions>
+            <Id>17</Id>
+            <InnerTransition id="14" />
+          </TriggerableTransition>
         </data>
       </datamodel>
-      <transition Event="XComponent.BenchSimpleFork.UserObject.CreateChild" target="ChildStm:Done">
+      <transition Event="XComponent.BenchSimpleFork.UserObject.CreateChild" target="ForkBench:Done">
         <datamodel>
           <data id="Type" expr="XTransition" />
           <data id="Id" expr="2" />
@@ -66,8 +71,6 @@
         <onexit>
           <invoke Type="ExecuteOn_Done_Through_CreateChild" id="2">
             <content>
-              <Comment>
-              </Comment>
               <Name>ExecuteOn_Done_Through_CreateChild</Name>
               <Id>2</Id>
               <CustomParameters xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
@@ -95,8 +98,6 @@
         <onexit>
           <invoke Type="ExecuteOn_Published_Through_PublishResult" id="3">
             <content>
-              <Comment>
-              </Comment>
               <Name>ExecuteOn_Published_Through_PublishResult</Name>
               <Id>3</Id>
               <CustomParameters xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
@@ -107,30 +108,114 @@
           </invoke>
         </onexit>
       </transition>
-      <transition Event="XComponent.BenchSimpleFork.UserObject.StartBench" target="BenchManager:BenchReady">
+      <transition Event="XComponent.BenchSimpleFork.UserObject.StartSimpleForkBench" target="BenchManager:BenchReady">
         <datamodel>
           <data id="Type" expr="StandardTransition" />
           <data id="Id" expr="6" />
-          <data id="Name" expr="StartBench" />
+          <data id="Name" expr="StartSimpleForkBench" />
           <data id="Event">
             <Event>
               <Comment>
               </Comment>
-              <EventTypeName>XComponent.BenchSimpleFork.UserObject.StartBench</EventTypeName>
+              <EventTypeName>XComponent.BenchSimpleFork.UserObject.StartSimpleForkBench</EventTypeName>
               <TimeToLive>0</TimeToLive>
               <TriggeringRules />
             </Event>
           </data>
         </datamodel>
         <onexit>
-          <invoke Type="ExecuteOn_BenchReady_Through_StartBench" id="1">
+          <invoke Type="ExecuteOn_BenchReady_Through_StartSimpleForkBench" id="4">
+            <content>
+              <Name>ExecuteOn_BenchReady_Through_StartSimpleForkBench</Name>
+              <Id>4</Id>
+              <CustomParameters xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                <EventsName>XComponent.BenchSimpleFork.UserObject.StartSimpleForkBench</EventsName>
+              </CustomParameters>
+            </content>
+          </invoke>
+        </onexit>
+      </transition>
+      <transition Event="XComponent.BenchSimpleFork.UserObject.StartLoopBench" target="LoopBenchmark:Benching">
+        <datamodel>
+          <data id="Type" expr="XTransition" />
+          <data id="Id" expr="8" />
+          <data id="Name" expr="StartLoopBench" />
+          <data id="Event">
+            <Event>
+              <Comment>
+              </Comment>
+              <EventTypeName>XComponent.BenchSimpleFork.UserObject.StartLoopBench</EventTypeName>
+              <TimeToLive>0</TimeToLive>
+              <TriggeringRules />
+            </Event>
+          </data>
+        </datamodel>
+        <onexit>
+          <invoke Type="ExecuteOn_Benching_Through_StartLoopBench" id="1">
+            <content>
+              <Name>ExecuteOn_Benching_Through_StartLoopBench</Name>
+              <Id>1</Id>
+              <CustomParameters xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                <EventsName>XComponent.BenchSimpleFork.UserObject.StartLoopBench</EventsName>
+              </CustomParameters>
+            </content>
+          </invoke>
+        </onexit>
+      </transition>
+      <transition Event="XComponent.BenchSimpleFork.UserObject.StartTriggeringRulesBench" target="BenchManager:BenchReady">
+        <datamodel>
+          <data id="Type" expr="StandardTransition" />
+          <data id="Id" expr="14" />
+          <data id="Name" expr="StartTriggeringRulesBench" />
+          <data id="Event">
+            <Event>
+              <Comment>
+              </Comment>
+              <EventTypeName>XComponent.BenchSimpleFork.UserObject.StartTriggeringRulesBench</EventTypeName>
+              <TimeToLive>0</TimeToLive>
+              <TriggeringRules />
+            </Event>
+          </data>
+        </datamodel>
+        <onexit>
+          <invoke Type="ExecuteOn_BenchReady_Through_StartTriggeringRulesBench" id="7">
             <content>
               <Comment>
               </Comment>
-              <Name>ExecuteOn_BenchReady_Through_StartBench</Name>
-              <Id>1</Id>
+              <Name>ExecuteOn_BenchReady_Through_StartTriggeringRulesBench</Name>
+              <Id>7</Id>
               <CustomParameters xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-                <EventsName>XComponent.BenchSimpleFork.UserObject.StartBench</EventsName>
+                <EventsName>XComponent.BenchSimpleFork.UserObject.StartTriggeringRulesBench</EventsName>
+              </CustomParameters>
+            </content>
+          </invoke>
+        </onexit>
+      </transition>
+      <transition Event="XComponent.BenchSimpleFork.UserObject.CreateInstance" target="TriggeringRuleBench:Benching">
+        <datamodel>
+          <data id="Type" expr="XTransition" />
+          <data id="Id" expr="15" />
+          <data id="Name" expr="CreateInstance" />
+          <data id="Event">
+            <Event>
+              <Comment>
+              </Comment>
+              <EventTypeName>XComponent.BenchSimpleFork.UserObject.CreateInstance</EventTypeName>
+              <TimeToLive>0</TimeToLive>
+              <TriggeringRules />
+            </Event>
+          </data>
+        </datamodel>
+        <onexit>
+          <invoke Type="ExecuteOn_Benching_Through_CreateInstance" id="6">
+            <content>
+              <Comment>
+              </Comment>
+              <Name>ExecuteOn_Benching_Through_CreateInstance</Name>
+              <Id>6</Id>
+              <CustomParameters xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                <PublicMember />
+                <EventsName>XComponent.BenchSimpleFork.UserObject.CreateInstance</EventsName>
               </CustomParameters>
             </content>
           </invoke>
@@ -138,11 +223,11 @@
       </transition>
     </state>
   </state>
-  <state id="ChildStm">
+  <state id="ForkBench">
     <datamodel>
       <data id="Id" expr="2" />
     </datamodel>
-    <state id="ChildStm:Done">
+    <state id="ForkBench:Done">
       <datamodel>
         <data id="Comment" expr="" />
         <data id="DisposeStateMachineInstance" expr="True" />
@@ -167,6 +252,204 @@
         <data id="Comment" expr="" />
         <data id="DisposeStateMachineInstance" expr="True" />
         <data id="Id" expr="4" />
+      </datamodel>
+    </state>
+  </state>
+  <state id="LoopBenchmark">
+    <datamodel>
+      <data id="Id" expr="4" />
+    </datamodel>
+    <state id="LoopBenchmark:Benching">
+      <datamodel>
+        <data id="Comment" expr="" />
+        <data id="DisposeStateMachineInstance" expr="False" />
+        <data id="Id" expr="5" />
+        <data id="TriggerableTransition">
+          <TriggerableTransition target="9" id="10" allTransitions="False">
+            <AllTransitions>false</AllTransitions>
+            <Id>10</Id>
+            <InnerTransition id="8" />
+          </TriggerableTransition>
+          <TriggerableTransition target="3" id="11" allTransitions="False">
+            <AllTransitions>false</AllTransitions>
+            <Id>11</Id>
+            <InnerTransition id="9" />
+          </TriggerableTransition>
+          <TriggerableTransition target="7" id="12" allTransitions="False">
+            <AllTransitions>false</AllTransitions>
+            <Id>12</Id>
+            <InnerTransition id="9" />
+          </TriggerableTransition>
+        </data>
+      </datamodel>
+      <transition Event="XComponent.BenchSimpleFork.UserObject.Finalize" target="LoopBenchmark:Finalized">
+        <datamodel>
+          <data id="Type" expr="StandardTransition" />
+          <data id="Id" expr="7" />
+          <data id="Name" expr="Finalize" />
+          <data id="Event">
+            <Event>
+              <Comment>
+              </Comment>
+              <EventTypeName>XComponent.BenchSimpleFork.UserObject.Finalize</EventTypeName>
+              <TimeToLive>0</TimeToLive>
+              <TriggeringRules />
+            </Event>
+          </data>
+        </datamodel>
+      </transition>
+      <transition Event="XComponent.BenchSimpleFork.UserObject.TriggerLoopTransition" target="LoopBenchmark:Benching">
+        <datamodel>
+          <data id="Type" expr="StandardTransition" />
+          <data id="Id" expr="9" />
+          <data id="Name" expr="TriggerLoopTransition" />
+          <data id="Event">
+            <Event>
+              <Comment>
+              </Comment>
+              <EventTypeName>XComponent.BenchSimpleFork.UserObject.TriggerLoopTransition</EventTypeName>
+              <TimeToLive>0</TimeToLive>
+              <TriggeringRules />
+            </Event>
+          </data>
+        </datamodel>
+        <onexit>
+          <invoke Type="ExecuteOn_Benching_Through_TriggerLoopTransition" id="5">
+            <content>
+              <Name>ExecuteOn_Benching_Through_TriggerLoopTransition</Name>
+              <Id>5</Id>
+              <CustomParameters xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                <EventsName>XComponent.BenchSimpleFork.UserObject.TriggerLoopTransition</EventsName>
+              </CustomParameters>
+            </content>
+          </invoke>
+        </onexit>
+      </transition>
+    </state>
+    <state id="LoopBenchmark:Finalized">
+      <datamodel>
+        <data id="Comment" expr="" />
+        <data id="DisposeStateMachineInstance" expr="True" />
+        <data id="Id" expr="6" />
+      </datamodel>
+    </state>
+  </state>
+  <state id="TriggeringRuleBench">
+    <datamodel>
+      <data id="InternalMember" expr="XComponent.BenchSimpleFork.UserObject.TriggeringRuleBench" />
+      <data id="PublicMember" expr="" />
+      <data id="Id" expr="5" />
+    </datamodel>
+    <state id="TriggeringRuleBench:Benching">
+      <datamodel>
+        <data id="Comment" expr="" />
+        <data id="DisposeStateMachineInstance" expr="False" />
+        <data id="Id" expr="7" />
+        <data id="TriggerableTransition">
+          <TriggerableTransition target="18" id="19" allTransitions="True">
+            <AllTransitions>true</AllTransitions>
+            <Id>19</Id>
+            <InnerTransition id="15" />
+          </TriggerableTransition>
+        </data>
+      </datamodel>
+      <transition Event="XComponent.BenchSimpleFork.UserObject.TriggerTransition" target="TriggeringRuleBench:Done">
+        <datamodel>
+          <data id="Type" expr="StandardTransition" />
+          <data id="Id" expr="13" />
+          <data id="Name" expr="TriggerTransition" />
+          <data id="Event">
+            <Event>
+              <Comment>
+              </Comment>
+              <EventTypeName>XComponent.BenchSimpleFork.UserObject.TriggerTransition</EventTypeName>
+              <TimeToLive>0</TimeToLive>
+              <TriggeringRules>
+                <MatchingPropertyRule>
+                  <MemberProperty>Id</MemberProperty>
+                  <IsInternalMember>true</IsInternalMember>
+                  <EventProperty>Id</EventProperty>
+                </MatchingPropertyRule>
+              </TriggeringRules>
+            </Event>
+          </data>
+        </datamodel>
+        <onexit>
+          <invoke Type="ExecuteOn_Done_Through_TriggerTransition" id="9">
+            <content>
+              <Comment>
+              </Comment>
+              <Name>ExecuteOn_Done_Through_TriggerTransition</Name>
+              <Id>9</Id>
+              <CustomParameters xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                <PublicMember />
+                <EventsName>XComponent.BenchSimpleFork.UserObject.TriggerTransition</EventsName>
+              </CustomParameters>
+            </content>
+          </invoke>
+        </onexit>
+      </transition>
+      <transition Event="XComponent.BenchSimpleFork.UserObject.TransitionTrigger" target="TransitionTrigger:Done">
+        <datamodel>
+          <data id="Type" expr="XTransition" />
+          <data id="Id" expr="18" />
+          <data id="Name" expr="TransitionTrigger" />
+          <data id="Event">
+            <Event>
+              <Comment>
+              </Comment>
+              <EventTypeName>XComponent.BenchSimpleFork.UserObject.TransitionTrigger</EventTypeName>
+              <TimeToLive>0</TimeToLive>
+              <TriggeringRules />
+            </Event>
+          </data>
+        </datamodel>
+        <onexit>
+          <invoke Type="ExecuteOn_Done_Through_TransitionTrigger" id="8">
+            <content>
+              <Comment>
+              </Comment>
+              <Name>ExecuteOn_Done_Through_TransitionTrigger</Name>
+              <Id>8</Id>
+              <CustomParameters xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                <EventsName>XComponent.BenchSimpleFork.UserObject.TransitionTrigger</EventsName>
+              </CustomParameters>
+            </content>
+          </invoke>
+        </onexit>
+      </transition>
+    </state>
+    <state id="TriggeringRuleBench:Done">
+      <datamodel>
+        <data id="Comment" expr="" />
+        <data id="DisposeStateMachineInstance" expr="True" />
+        <data id="Id" expr="8" />
+        <data id="TriggerableTransition">
+          <TriggerableTransition target="3" id="16" allTransitions="True">
+            <AllTransitions>true</AllTransitions>
+            <Id>16</Id>
+            <InnerTransition id="13" />
+          </TriggerableTransition>
+        </data>
+      </datamodel>
+    </state>
+  </state>
+  <state id="TransitionTrigger">
+    <datamodel>
+      <data id="Id" expr="6" />
+    </datamodel>
+    <state id="TransitionTrigger:Done">
+      <datamodel>
+        <data id="Comment" expr="" />
+        <data id="DisposeStateMachineInstance" expr="True" />
+        <data id="Id" expr="9" />
+        <data id="TriggerableTransition">
+          <TriggerableTransition target="13" id="20" allTransitions="True">
+            <AllTransitions>true</AllTransitions>
+            <Id>20</Id>
+            <InnerTransition id="18" />
+          </TriggerableTransition>
+        </data>
       </datamodel>
     </state>
   </state>

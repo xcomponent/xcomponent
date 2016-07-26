@@ -17,11 +17,17 @@
             <LinkingSimpleTransition id="2" stateMachineIdTo="1" stateIdTo="2" />
             <LinkingSimpleTransition id="3" stateMachineIdTo="1" stateIdTo="2" />
             <LinkingSimpleTransition id="6" stateMachineIdTo="1" stateIdTo="2" />
+            <LinkingSimpleTransition id="8" stateMachineIdTo="1" stateIdTo="2" />
+            <LinkingSimpleTransition id="14" stateMachineIdTo="1" stateIdTo="2" />
+            <LinkingSimpleTransition id="15" stateMachineIdTo="1" stateIdTo="2" />
           </AllowedTransitions>
           <AllowedEvents>
             <LinkingEvent eventTypeName="XComponent.BenchSimpleFork.UserObject.BenchResult" stateMachineIdTo="1" stateIdTo="2" />
             <LinkingEvent eventTypeName="XComponent.BenchSimpleFork.UserObject.CreateChild" stateMachineIdTo="1" stateIdTo="2" />
-            <LinkingEvent eventTypeName="XComponent.BenchSimpleFork.UserObject.StartBench" stateMachineIdTo="1" stateIdTo="2" />
+            <LinkingEvent eventTypeName="XComponent.BenchSimpleFork.UserObject.CreateInstance" stateMachineIdTo="1" stateIdTo="2" />
+            <LinkingEvent eventTypeName="XComponent.BenchSimpleFork.UserObject.StartLoopBench" stateMachineIdTo="1" stateIdTo="2" />
+            <LinkingEvent eventTypeName="XComponent.BenchSimpleFork.UserObject.StartSimpleForkBench" stateMachineIdTo="1" stateIdTo="2" />
+            <LinkingEvent eventTypeName="XComponent.BenchSimpleFork.UserObject.StartTriggeringRulesBench" stateMachineIdTo="1" stateIdTo="2" />
           </AllowedEvents>
           <NotAllowedTransitions />
           <NotAllowedEvents />

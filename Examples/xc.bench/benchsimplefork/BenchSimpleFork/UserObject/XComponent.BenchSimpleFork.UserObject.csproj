@@ -41,8 +41,16 @@
   <ItemGroup>
     <Compile Include="BenchResult.cs" />
     <Compile Include="CreateChild.cs" />
+    <Compile Include="CreateInstance.cs" />
+    <Compile Include="Finalize.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StartBench.cs" />
+    <Compile Include="StartLoopBench.cs" />
+    <Compile Include="StartSimpleForkBench.cs" />
+    <Compile Include="StartTriggeringRulesBench.cs" />
+    <Compile Include="TransitionTrigger.cs" />
+    <Compile Include="TriggeringRuleBench.cs" />
+    <Compile Include="TriggerLoopTransition.cs" />
+    <Compile Include="TriggerTransition.cs" />
   </ItemGroup>
   <Import Condition="true" Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

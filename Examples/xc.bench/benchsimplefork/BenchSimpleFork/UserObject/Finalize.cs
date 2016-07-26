@@ -6,20 +6,7 @@ namespace XComponent.BenchSimpleFork.UserObject
     // IDisposable interface can be implemented to dispose public/internal members when the state machine is in a final state
     // ToString() can be overridden. XCSpy uses it to display state machine instances
     [System.Serializable()]
-    public class CreateChild
+    public class Finalize
     {
-        private bool isLast;
-
-        public bool IsLast
-        {
-            get
-            {
-                return this.isLast;
-            }
-            set
-            {
-                this.isLast = value;
-            }
-        }
     }
 }

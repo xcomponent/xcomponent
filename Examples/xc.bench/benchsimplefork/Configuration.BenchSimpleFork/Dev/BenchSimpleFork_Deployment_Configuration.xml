@@ -48,6 +48,27 @@
           </communication>
           <threading impl="MAILBOX" type="INHERITFROMPARENT" />
         </stateMachine>
+        <stateMachine id="4" poolSize="10000">
+          <communication name="localrabbit" type="BUS" messageQueue="SEQUENTIAL">
+            <input>{topicType}.{version}.{runtime}.{component}.{std}</input>
+            <output>{topicType}.{version}.{runtime}.{component}.{std}</output>
+          </communication>
+          <threading impl="MAILBOX" type="INHERITFROMPARENT" />
+        </stateMachine>
+        <stateMachine id="5" poolSize="10000">
+          <communication name="localrabbit" type="BUS" messageQueue="SEQUENTIAL">
+            <input>{topicType}.{version}.{runtime}.{component}.{std}</input>
+            <output>{topicType}.{version}.{runtime}.{component}.{std}</output>
+          </communication>
+          <threading impl="MAILBOX" type="INHERITFROMPARENT" />
+        </stateMachine>
+        <stateMachine id="6" poolSize="10000">
+          <communication name="localrabbit" type="BUS" messageQueue="SEQUENTIAL">
+            <input>{topicType}.{version}.{runtime}.{component}.{std}</input>
+            <output>{topicType}.{version}.{runtime}.{component}.{std}</output>
+          </communication>
+          <threading impl="MAILBOX" type="INHERITFROMPARENT" />
+        </stateMachine>
       </stateMachines>
     </component>
   </components>

@@ -46,10 +46,13 @@
   <ItemGroup>
     <Compile Include="BenchManagerTriggeredMethod.cs" />
     <Compile Include="BenchResultTriggeredMethod.cs" />
-    <Compile Include="ChildStmTriggeredMethod.cs" />
+    <Compile Include="ForkBenchTriggeredMethod.cs" />
+    <Compile Include="LoopBenchmarkTriggeredMethod.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TransitionTriggerTriggeredMethod.cs" />
     <Compile Include="TriggeredMethodContext.cs" />
     <Compile Include="TriggeredMethodContext.generated..cs" />
+    <Compile Include="TriggeringRuleBenchTriggeredMethod.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\XComponent.BenchSimpleFork.Common.csproj">

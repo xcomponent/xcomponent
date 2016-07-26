@@ -7,17 +7,17 @@ namespace XComponent.BenchSimpleFork.TriggeredMethod
 	using XComponent.BenchSimpleFork.Common;
 	using UserObject;
 
-	public static class ChildStmTriggeredMethod
+	public static class ForkBenchTriggeredMethod
 	{
 
 		/// <summary>
 		/// Executing triggeredMethod ExecuteOn_Done_Through_CreateChild
 		/// </summary>
-		public static void ExecuteOn_Done_Through_CreateChild(XComponent.BenchSimpleFork.UserObject.CreateChild createChild, object object_PublicMember, object object_InternalMember, Context context, ICreateChildCreateChildOnDoneChildStmSenderInterface sender)
+		public static void ExecuteOn_Done_Through_CreateChild(XComponent.BenchSimpleFork.UserObject.CreateChild createChild, object object_PublicMember, object object_InternalMember, Context context, ICreateChildCreateChildOnDoneForkBenchSenderInterface sender)
 		{
-			if (createChild.IsFirst) {
-				TriggeredMethodContext.Instance.StartBench();
-			}
+			//if (createChild.IsFirst) {
+			//	TriggeredMethodContext.Instance.StartBench();
+			//}
 			TriggeredMethodContext.Instance.IncrementInstances();
 			if (createChild.IsLast) {
 				TriggeredMethodContext.Instance.StopBench();
