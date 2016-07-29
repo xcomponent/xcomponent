@@ -22,7 +22,7 @@ namespace XComponent.BenchSimpleFork.TriggeredMethod
 					TotalTimeMilliseconds = TriggeredMethodContext.Instance.TotalTimeMilliseconds,
 					NbInstances = TriggeredMethodContext.Instance.NbInstances
 				});
-				sender.Finalize(context, new UserObject.Finalize());
+				sender.Finalize_LoopBenchmark(context, new UserObject.Finalize());
 			}
 		}
 

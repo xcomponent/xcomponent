@@ -31,7 +31,7 @@ namespace BenchRunner
         static void Main(string[] args)
         {
 
-            int nbFork = 1000000;
+            int nbFork = 100000;
 
             // Initialize the interfaces
             using (var myBenchSimpleForkApi = new ApiWrapper<BenchSimpleForkApi>())
@@ -73,12 +73,19 @@ namespace BenchRunner
 
                     benchs.Enqueue(() =>
                     {
+                        Console.WriteLine("Starting triggering rules loop bench...");
+                        StartLoopRuleBench startloopruleBench = new StartLoopRuleBench() { NbInstances = nbFork };
+                        myBenchSimpleForkApi.Api.BenchSimpleFork_Component.BenchManager_StateMachine.BenchReady_State.StartLoopRuleBench(ep.Context, startloopruleBench);
+                    }
+                    );
+
+                    benchs.Enqueue(() =>
+                    {
                         Console.WriteLine("Starting triggering rules bench...");
                         StartTriggeringRulesBench startTriggeringBench = new StartTriggeringRulesBench() { NbInstances = nbFork };
                         myBenchSimpleForkApi.Api.BenchSimpleFork_Component.BenchManager_StateMachine.BenchReady_State.StartTriggeringRulesBench(ep.Context, startTriggeringBench);
                     }
                     );
-
 
 
                     benchs.Dequeue()();

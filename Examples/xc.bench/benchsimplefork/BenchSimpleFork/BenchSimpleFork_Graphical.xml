@@ -55,6 +55,18 @@
         <Y>650.8712</Y>
       </Center>
     </GraphicalState>
+    <GraphicalState id="10">
+      <Center>
+        <X>602.668</X>
+        <Y>71.87808</Y>
+      </Center>
+    </GraphicalState>
+    <GraphicalState id="11">
+      <Center>
+        <X>823.3393</X>
+        <Y>89.03582</Y>
+      </Center>
+    </GraphicalState>
   </GraphicalStates>
   <TransitionPatternStates />
   <GraphicalTransitions>
@@ -456,6 +468,126 @@
       <C2>
         <X>159.939789</X>
         <Y>586.1958</Y>
+      </C2>
+    </GraphicalTransition>
+    <GraphicalTransition id="21" curviness="20" isLabelDisplayed="false" isTransitionColorUpdated="false">
+      <TransitionColor>
+        <A>255</A>
+        <R>0</R>
+        <G>128</G>
+        <B>0</B>
+        <ScA>1</ScA>
+        <ScR>0</ScR>
+        <ScG>0.215860531</ScG>
+        <ScB>0</ScB>
+      </TransitionColor>
+      <C1>
+        <X>406.3998</X>
+        <Y>181.696091</Y>
+      </C1>
+      <C2>
+        <X>489.584137</X>
+        <Y>123.3505</Y>
+      </C2>
+    </GraphicalTransition>
+    <GraphicalTransition id="22" curviness="20" isLabelDisplayed="false" isTransitionColorUpdated="false">
+      <TransitionColor>
+        <A>255</A>
+        <R>76</R>
+        <G>76</G>
+        <B>76</B>
+        <ScA>1</ScA>
+        <ScR>0.07227185</ScR>
+        <ScG>0.07227185</ScG>
+        <ScB>0.07227185</ScB>
+      </TransitionColor>
+      <C1>
+        <X>635.418</X>
+        <Y>128.602737</Y>
+      </C1>
+      <C2>
+        <X>569.918</X>
+        <Y>128.602737</Y>
+      </C2>
+    </GraphicalTransition>
+    <GraphicalTransition id="23" curviness="20" isLabelDisplayed="false" isTransitionColorUpdated="false">
+      <TransitionColor>
+        <A>255</A>
+        <R>76</R>
+        <G>76</G>
+        <B>76</B>
+        <ScA>1</ScA>
+        <ScR>0.07227185</ScR>
+        <ScG>0.07227185</ScG>
+        <ScB>0.07227185</ScB>
+      </TransitionColor>
+      <C1>
+        <X>687.7485</X>
+        <Y>37.6557541</Y>
+      </C1>
+      <C2>
+        <X>744.7764</X>
+        <Y>42.0957642</Y>
+      </C2>
+    </GraphicalTransition>
+    <GraphicalTransition id="24" curviness="20" isLabelDisplayed="false" isTransitionColorUpdated="false">
+      <TransitionColor>
+        <A>255</A>
+        <R>76</R>
+        <G>76</G>
+        <B>76</B>
+        <ScA>1</ScA>
+        <ScR>0.07227185</ScR>
+        <ScG>0.07227185</ScG>
+        <ScB>0.07227185</ScB>
+      </TransitionColor>
+      <C1>
+        <X>622.668</X>
+        <Y>104.365532</Y>
+      </C1>
+      <C2>
+        <X>668.458252</X>
+        <Y>134.266556</Y>
+      </C2>
+    </GraphicalTransition>
+    <GraphicalTransition id="25" curviness="20" isLabelDisplayed="false" isTransitionColorUpdated="false">
+      <TransitionColor>
+        <A>255</A>
+        <R>76</R>
+        <G>76</G>
+        <B>76</B>
+        <ScA>1</ScA>
+        <ScR>0.07227185</ScR>
+        <ScG>0.07227185</ScG>
+        <ScB>0.07227185</ScB>
+      </TransitionColor>
+      <C1>
+        <X>651.204468</X>
+        <Y>45.633667</Y>
+      </C1>
+      <C2>
+        <X>684.9058</X>
+        <Y>27.3575325</Y>
+      </C2>
+    </GraphicalTransition>
+    <GraphicalTransition id="26" curviness="20" isLabelDisplayed="false" isTransitionColorUpdated="false">
+      <TransitionColor>
+        <A>255</A>
+        <R>76</R>
+        <G>76</G>
+        <B>76</B>
+        <ScA>1</ScA>
+        <ScR>0.07227185</ScR>
+        <ScG>0.07227185</ScG>
+        <ScB>0.07227185</ScB>
+      </TransitionColor>
+      <C1>
+        <X>595.330933</X>
+        <Y>177.676117</Y>
+      </C1>
+      <C2>
+        <X>573.9102</X>
+        <Y>258.5362</Y>
       </C2>
     </GraphicalTransition>
   </GraphicalTransitions>
