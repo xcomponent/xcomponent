@@ -52,4 +52,4 @@ More informations: [Click here](documentation/README.md)
 
 ## Questions?
 
-If you have any questions about this sample, please [create a Github issue for us](https://github.com/xcomponent/xcomponent.helloworld/issues)!
+If you have any questions about this sample, please [create a Github issue for us](https://github.com/xcomponent/xcomponent/issues)!

@@ -227,7 +227,7 @@ check the triggered method CreateOrder (OrderInput).
     ![order component final image](images/order_component_final.jpg)
       
            * All the newly added transitions of the Order state machine use ExecutionInput as triggering event. Set up a matching 
-      rule OrderExecution.OrderId = Order.Id on each new transition of the Order state machine 
+      rule ExecutionInput.OrderId = Order.Id on each new transition of the Order state machine 
       (Execute x 2 and PartiallyExecute x 2). 
            * Both the PublishOrderFilled and PublishOrderPartiallyFilled transitions use OrderExecution as
        triggering event. 
@@ -442,12 +442,12 @@ sender.CreateTrade(context, TradeFactory.CreateNewTrade(orderCreation.OrderId, o
  - Add a recursive transition ProcessOrderExecution in the state TradeProcessor.Up with a triggering event of type OrderExecution. 
  -	Select the state Trade.Executed, check the triggered method Execute (TradeExecution) and rebuild the component. Edit this method in Visual Studio and use the following code for its implementation:
 ```cs
-    public static void ExecuteOn_Executed_Through_Execute(XComponent.Order.UserObject.OrderExecution orderExecution, XComponent.Trade.UserObject.Trade trade, object object_InternalMember, Context context, IExecuteOrderExecutionOnExecutedTradeSenderInterface sender)
-    {
-        trade.Quantity = orderExecution.Quantity;
-        trade.Price = orderExecution.Price;
-        trade.ExecutionDate = DateTime.Now;
-    }
+		public static void ExecuteOn_Executed_Through_Execute(XComponent.Trade.UserObject.TradeExecution tradeExecution, XComponent.Trade.UserObject.Trade trade, object object_InternalMember, Context context, IExecuteTradeExecutionOnExecutedTradeSenderInterface sender)
+		{
+			trade.Quantity = tradeExecution.Quantity;
+			trade.Price = tradeExecution.Price;
+			trade.ExecutionDate = DateTime.Now;
+		}
 ```
  - Select the state TradeProcessor.Up, check the triggered method ProcessOrderExecution (OrderExecution) and rebuild the component. Edit this method in VS and use the following code for its implementation:
 ```cs
@@ -475,12 +475,13 @@ sender.CreateTrade(context, TradeFactory.CreateNewTrade(orderCreation.OrderId, o
  ![Trade component final model image](images/trade_component_final_model.jpg)
 
 * Expose the Trade component through the API
- - Create the following links so that the TradeService events are available to listening clients (e.g. the Player in our tests). Note that the simplified link model below is a simplified view containing the TradeService and the API only. The OrderService component was omitted for the sake of simplicity.
-   - From Trade.TradeProcessor state machine to OrderProcessingApi
-   - From Trade.Trade state machine to OrderProcessingApi 
- - Your composition view should look like this at this stage:
- ![Trade component linked to api image](images/trade_component_link_to_api.jpg)
- 
+	- Create the following links so that the TradeService events are available to listening clients (e.g. the Player in our tests). Note that the simplified link model below is a simplified view containing the TradeService and the API only. The OrderService component was omitted for the sake of simplicity.
+		- From Trade.TradeProcessor state machine to OrderProcessingApi
+		- From Trade.Trade state machine to OrderProcessingApi 
+	- Your composition view should look like this at this stage:
+
+![Trade component linked to api image](images/trade_component_link_to_api.jpg)
+
  You have just completed the implementation of the trade service!
  
 ### Composing your microservice input output links
@@ -683,4 +684,4 @@ namespace OrderProcessingClient
 
 ## Questions?
 
-If you have any questions about this sample, please [create a Github issue for us](https://github.com/xcomponent/xcomponent.helloworld/issues)!
+If you have any questions about this sample, please [create a Github issue for us](https://github.com/xcomponent/xcomponent/issues)!
