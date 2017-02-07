@@ -69,5 +69,6 @@ It is a good starting point to understand how the XComponent platform works.
 ## Questions ?
 
 If you have any questions about this sample, please [create a Github issue for us](https://github.com/xcomponent/xcomponent/issues)!
-Or join us on [Slack](http://slack.xcomponent.com)
+
+You can also join us on [Slack](http://slack.xcomponent.com)!
 
