@@ -6,7 +6,7 @@
     <ProjectGuid>{1D794473-5ECE-4AE5-8F04-2F35318EC6C9}</ProjectGuid>
     <RootNamespace>XComponent.Authentication.TriggeredMethod</RootNamespace>
     <AssemblyName>XComponent.Authentication.TriggeredMethod</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
   </PropertyGroup>
@@ -28,17 +28,13 @@
       <HintPath>..\UserReference\XComponent.Core.dll</HintPath>
       <SpecificVersion>false</SpecificVersion>
     </Reference>
-    <Reference Include="XComponent.Extended, Version=4.0.0.10001, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\UserReference\XComponent.Extended.dll</HintPath>
-      <SpecificVersion>false</SpecificVersion>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AuthenticationTriggeredMethod.cs" />
     <Compile Include="LoginStatusTriggeredMethod.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TriggeredMethodContext.cs" />
-    <Compile Include="TriggeredMethodContext.generated..cs" />
+    <Compile Include="TriggeredMethodContext.generated.cs" />
     <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>
