@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<ComponentViewModelData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="HelloWorld" Version="2">
+  <StateMachines>
+    <StateMachineData Id="1" Name="HelloWorldManager" />
+    <StateMachineData Id="2" Name="HelloResponse" PublicMember="XComponent.HelloWorld.UserObject.HelloResponse" />
+  </StateMachines>
+  <States>
+    <StateData Id="1" Name="EntryPoint" IsEntryPoint="true" SubGraphKey="StateMachine1">
+      <Comment />
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="2" Name="Done" IsEntryPoint="false" SubGraphKey="StateMachine2">
+      <Comment />
+      <TriggeredMethods>
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="SayHello" TriggeringEvent="XComponent.HelloWorld.UserObject.SayHello" />
+      </TriggeredMethods>
+    </StateData>
+  </States>
+  <TransitionPatternStates />
+  <Links>
+    <TransitionData Id="1" Name="SayHello" FromKey="State1" ToKey="State2" Type="X" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.HelloWorld.UserObject.SayHello" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+  </Links>
+  <TransversalLinks />
+  <PublicAssemblies />
+  <ExternalAssemblies />
+</ComponentViewModelData>

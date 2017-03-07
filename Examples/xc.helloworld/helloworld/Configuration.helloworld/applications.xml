@@ -4,4 +4,8 @@
     <RelativativePath>HelloWorldClientApplication\HelloWorldClientApplication.sln</RelativativePath>
     <Name>HelloWorldClientApplication</Name>
   </IHMApplication>
+  <IHMApplication>
+    <RelativativePath>ConsoleApplication\ConsoleApplication.sln</RelativativePath>
+    <Name>ConsoleApplication</Name>
+  </IHMApplication>
 </ArrayOfIHMApplication>

@@ -7,7 +7,7 @@
     <ProjectGuid>{6C2538E9-444F-4623-9E23-8025EDD0D302}</ProjectGuid>
     <RootNamespace>XComponent.HelloWorld.UserObject</RootNamespace>
     <AssemblyName>XComponent.HelloWorld.UserObject</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
   </PropertyGroup>

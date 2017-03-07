@@ -1,40 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?>
-<GraphicalComponent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <GraphicalStates>
-    <GraphicalState id="1">
-      <Center>
-        <X>159</X>
-        <Y>306</Y>
-      </Center>
-    </GraphicalState>
-    <GraphicalState id="2">
-      <Center>
-        <X>766.0488</X>
-        <Y>251.875015</Y>
-      </Center>
-    </GraphicalState>
-  </GraphicalStates>
+<?xml version="1.0"?>
+<ComponentViewModelGraphicalData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <States>
+    <StateGraphicalData Id="1" CenterX="159" CenterY="306" />
+    <StateGraphicalData Id="2" CenterX="766.048828125" CenterY="251.87501525878906" />
+  </States>
   <TransitionPatternStates />
-  <GraphicalTransitions>
-    <GraphicalTransition id="1" curviness="20" isLabelDisplayed="false" isTransitionColorUpdated="false">
-      <TransitionColor>
-        <A>255</A>
-        <R>0</R>
-        <G>128</G>
-        <B>0</B>
-        <ScA>1</ScA>
-        <ScR>0</ScR>
-        <ScG>0.215860531</ScG>
-        <ScB>0</ScB>
-      </TransitionColor>
-      <C1>
-        <X>366.379761</X>
-        <Y>267.430359</Y>
-      </C1>
-      <C2>
-        <X>555.1167</X>
-        <Y>250.6024</Y>
-      </C2>
-    </GraphicalTransition>
-  </GraphicalTransitions>
-</GraphicalComponent>
+  <Links>
+    <TransitionGraphicalData Id="1" Curviness="20" Color="">
+      <Points />
+      <IsNameDisplayed>true</IsNameDisplayed>
+    </TransitionGraphicalData>
+  </Links>
+  <TransversalLinks />
+</ComponentViewModelGraphicalData>
