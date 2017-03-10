@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ComponentViewModelData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="Order" Version="58">
+  <StateMachines>
+    <StateMachineData Id="1" Name="OrderProcessor" />
+    <StateMachineData Id="2" Name="Order" PublicMember="XComponent.Order.UserObject.Order" />
+    <StateMachineData Id="3" Name="CreationFacade" PublicMember="XComponent.Order.UserObject.OrderCreation" />
+    <StateMachineData Id="4" Name="ExecutionFacade" PublicMember="XComponent.Order.UserObject.OrderExecution" />
+    <StateMachineData Id="5" Name="PartialExecutionFacade" PublicMember="XComponent.Order.UserObject.OrderExecution" />
+  </StateMachines>
+  <States>
+    <StateData Id="1" Name="EntryPoint" IsEntryPoint="true" SubGraphKey="StateMachine1">
+      <Comment />
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="2" Name="Up" IsEntryPoint="false" SubGraphKey="StateMachine1">
+      <Comment />
+      <TriggeredMethods>
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="false" TransitionName="Init" TriggeringEvent="XComponent.Common.Event.DefaultEvent" />
+      </TriggeredMethods>
+    </StateData>
+    <StateData Id="3" Name="Pending" IsEntryPoint="false" SubGraphKey="StateMachine2">
+      <Comment />
+      <TriggeredMethods>
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="CreateOrder" TriggeringEvent="XComponent.Order.UserObject.OrderInput" />
+        <TriggeredMethodData IsNodeInitializer="true" IsSelected="false" TransitionName="InitializePublicMember" />
+      </TriggeredMethods>
+    </StateData>
+    <StateData Id="7" Name="Executed" IsEntryPoint="false" SubGraphKey="StateMachine2">
+      <Comment />
+      <TriggeredMethods>
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="Execute" TriggeringEvent="XComponent.Order.UserObject.ExecutionInput" />
+      </TriggeredMethods>
+    </StateData>
+    <StateData Id="8" Name="PartiallyExecuted" IsEntryPoint="false" SubGraphKey="StateMachine2">
+      <Comment />
+      <TriggeredMethods>
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="PartiallyExecute" TriggeringEvent="XComponent.Order.UserObject.ExecutionInput" />
+      </TriggeredMethods>
+    </StateData>
+    <StateData Id="4" Name="Created" IsEntryPoint="false" SubGraphKey="StateMachine3">
+      <Comment />
+      <TriggeredMethods>
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="PublishOrderCreation" TriggeringEvent="XComponent.Order.UserObject.OrderCreation" />
+        <TriggeredMethodData IsNodeInitializer="true" IsSelected="false" TransitionName="InitializePublicMember" TriggeringEvent="XComponent.Order.UserObject.Order" />
+      </TriggeredMethods>
+    </StateData>
+    <StateData Id="5" Name="Filled" IsEntryPoint="false" SubGraphKey="StateMachine4">
+      <Comment />
+      <TriggeredMethods>
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="PublishOrderFilled" TriggeringEvent="XComponent.Order.UserObject.OrderExecution" />
+        <TriggeredMethodData IsNodeInitializer="true" IsSelected="false" TransitionName="InitializePublicMember" TriggeringEvent="XComponent.Order.UserObject.Order" />
+      </TriggeredMethods>
+    </StateData>
+    <StateData Id="6" Name="PartiallyFilled" IsEntryPoint="false" SubGraphKey="StateMachine5">
+      <Comment />
+      <TriggeredMethods>
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="PublishOrderPartiallyFilled" TriggeringEvent="XComponent.Order.UserObject.OrderExecution" />
+        <TriggeredMethodData IsNodeInitializer="true" IsSelected="false" TransitionName="InitializePublicMember" TriggeringEvent="XComponent.Order.UserObject.Order" />
+      </TriggeredMethods>
+    </StateData>
+  </States>
+  <TransitionPatternStates />
+  <Links>
+    <TransitionData Id="1" Name="Init" FromKey="State1" ToKey="State2" Type="TimeOut" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.Common.Event.DefaultEvent" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="2" Name="CreateOrder" FromKey="State2" ToKey="State3" Type="X" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.Order.UserObject.OrderInput" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="3" Name="PublishOrderCreation" FromKey="State3" ToKey="State4" Type="X" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.Order.UserObject.OrderCreation" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="5" Name="Execute" FromKey="State3" ToKey="State7" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.Order.UserObject.ExecutionInput" UserSpecificRule="true">
+      <MatchingRules>
+        <MatchingRuleData EventProperty="OrderId" IsInternalMemberProperty="false" MemberProperty="Id" />
+      </MatchingRules>
+    </TransitionData>
+    <TransitionData Id="6" Name="PartiallyExecute" FromKey="State3" ToKey="State8" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.Order.UserObject.ExecutionInput" UserSpecificRule="true">
+      <MatchingRules>
+        <MatchingRuleData EventProperty="OrderId" IsInternalMemberProperty="false" MemberProperty="Id" />
+      </MatchingRules>
+    </TransitionData>
+    <TransitionData Id="9" Name="PublishOrderFilled" FromKey="State7" ToKey="State5" Type="X" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.Order.UserObject.OrderExecution" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="7" Name="Execute" FromKey="State8" ToKey="State7" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.Order.UserObject.ExecutionInput" UserSpecificRule="true">
+      <MatchingRules>
+        <MatchingRuleData EventProperty="OrderId" IsInternalMemberProperty="false" MemberProperty="Id" />
+      </MatchingRules>
+    </TransitionData>
+    <TransitionData Id="8" Name="PublishOrderPartiallyFilled" FromKey="State8" ToKey="State6" Type="X" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.Order.UserObject.OrderExecution" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="12" Name="PartiallyExecute" FromKey="State8" ToKey="State8" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.Order.UserObject.ExecutionInput" UserSpecificRule="true">
+      <MatchingRules>
+        <MatchingRuleData EventProperty="OrderId" IsInternalMemberProperty="false" MemberProperty="Id" />
+      </MatchingRules>
+    </TransitionData>
+  </Links>
+  <TransversalLinks>
+    <TransversalTransitionData Id="4" Name="" FromKey="State3" ToId="3" SelectAllTransitions="true" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.Order.UserObject.OrderInput" Name="CreateOrder" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="10" Name="" FromKey="State7" ToId="9" SelectAllTransitions="true" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.Order.UserObject.ExecutionInput" Name="Execute" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="11" Name="" FromKey="State8" ToId="8" SelectAllTransitions="true" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.Order.UserObject.ExecutionInput" Name="PartiallyExecute" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+  </TransversalLinks>
+  <PublicAssemblies />
+  <ExternalAssemblies />
+</ComponentViewModelData>
