@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -38,31 +38,26 @@
       <HintPath>..\UserReference\XComponent.Core.dll</HintPath>
       <SpecificVersion>false</SpecificVersion>
     </Reference>
-    <Reference Include="XComponent.Extended">
-      <HintPath>..\UserReference\XComponent.Extended.dll</HintPath>
-      <SpecificVersion>false</SpecificVersion>
-    </Reference>    
-
     <Reference Include="Microsoft.Rest.ClientRuntime, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Rest.ClientRuntime.1.4.1\lib\dotnet\Microsoft.Rest.ClientRuntime.dll</HintPath>
       <SpecificVersion>false</SpecificVersion>
     </Reference>
-
+    <Reference Include="XComponent.Extended">
+      <HintPath>..\UserReference\XComponent.Extended.dll</HintPath>
+      <SpecificVersion>false</SpecificVersion>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
       <SpecificVersion>false</SpecificVersion>
     </Reference>
-
     <Reference Include="Microsoft.Rest.ClientRuntime">
       <HintPath>..\packages\Microsoft.Rest.ClientRuntime.1.4.1\lib\dotnet\Microsoft.Rest.ClientRuntime.dll</HintPath>
       <SpecificVersion>false</SpecificVersion>
     </Reference>
-
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
       <SpecificVersion>false</SpecificVersion>
     </Reference>
-
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -75,33 +70,37 @@
     <Compile Include="KeyValueParametersEnum.cs" />
     <Compile Include="ComponentHelper.cs" />
     <Compile Include="IInternalAPI.cs" />
+    <Compile Include="InternalAPI.cs" />
+    <Compile Include="IInternalCommunication.cs" />
+    <Compile Include="InternalCommunication.cs" />
     <Compile Include="Senders\AbstractSender.cs" />
     <Compile Include="Senders\SenderManager.cs" />
     <Compile Include="Senders\SenderInterfaces.cs" />
     <Compile Include="Senders\SenderImplementations.cs" />
-    <Compile Include="HashCodeHelper\InitSwaggerPetstore.cs" />
-    <Compile Include="HashCodeHelper\SendEventDefaultEventSwaggerPetstore.cs" />
-    <Compile Include="HashCodeHelper\SendRequestAddPetOperation.cs" />
-    <Compile Include="HashCodeHelper\SendEventDefaultEventAddPetOperation.cs" />
-    <Compile Include="HashCodeHelper\SendRequestGetPetByIdOperation.cs" />
-    <Compile Include="HashCodeHelper\SendEventDefaultEventGetPetByIdOperation.cs" />
-    <Compile Include="HashCodeHelper\AddPetSwaggerPetstore.cs" />
-    <Compile Include="HashCodeHelper\SendEventAddPetSwaggerPetstore.cs" />
-    <Compile Include="HashCodeHelper\CreateAddPetHttpRequestSwaggerPetstore.cs" />
-    <Compile Include="HashCodeHelper\SendEventAddPetOperationSwaggerPetstore.cs" />
-    <Compile Include="HashCodeHelper\GetPetByIdSwaggerPetstore.cs" />
-    <Compile Include="HashCodeHelper\SendEventGetPetByIdSwaggerPetstore.cs" />
-    <Compile Include="HashCodeHelper\CreateGetPetByIdHttpRequestSwaggerPetstore.cs" />
-    <Compile Include="HashCodeHelper\SendEventGetPetByIdOperationSwaggerPetstore.cs" />
-    <Compile Include="HashCodeHelper\ReceiveSuccessAddPetOperation.cs" />
-    <Compile Include="HashCodeHelper\SendEventSuccessResponseAddPetOperation.cs" />
-    <Compile Include="HashCodeHelper\ReceiveSuccessGetPetByIdOperation.cs" />
-    <Compile Include="HashCodeHelper\SendEventSuccessResponseGetPetByIdOperation.cs" />
-    <Compile Include="HashCodeHelper\ReceiveErrorAddPetOperation.cs" />
-    <Compile Include="HashCodeHelper\SendEventErrorResponseAddPetOperation.cs" />
-    <Compile Include="HashCodeHelper\ReceiveErrorGetPetByIdOperation.cs" />
-    <Compile Include="HashCodeHelper\SendEventErrorResponseGetPetByIdOperation.cs" />
-
+    <Compile Include="StateHashCodeCalculator\SwaggerPetstore\EntryPointStateHashCodeCalculator.cs" />
+    <Compile Include="StateHashCodeCalculator\SwaggerPetstore\UpStateHashCodeCalculator.cs" />
+    <Compile Include="StateHashCodeCalculator\AddPetOperation\SendingRequestStateHashCodeCalculator.cs" />
+    <Compile Include="StateHashCodeCalculator\AddPetOperation\RequestSentStateHashCodeCalculator.cs" />
+    <Compile Include="StateHashCodeCalculator\AddPetOperation\SuccessResponseReceivedStateHashCodeCalculator.cs" />
+    <Compile Include="StateHashCodeCalculator\AddPetOperation\ErrorResponseReceivedStateHashCodeCalculator.cs" />
+    <Compile Include="StateHashCodeCalculator\GetPetByIdOperation\SendingRequestStateHashCodeCalculator.cs" />
+    <Compile Include="StateHashCodeCalculator\GetPetByIdOperation\RequestSentStateHashCodeCalculator.cs" />
+    <Compile Include="StateHashCodeCalculator\GetPetByIdOperation\SuccessResponseReceivedStateHashCodeCalculator.cs" />
+    <Compile Include="StateHashCodeCalculator\GetPetByIdOperation\ErrorResponseReceivedStateHashCodeCalculator.cs" />
+    <Compile Include="EventHashCodeCalculator\SwaggerPetstore\XComponent.Common.Event.DefaultEventEventHashCodeCalculator.cs" />
+    <Compile Include="EventHashCodeCalculator\SwaggerPetstore\XComponent.SwaggerPetstore.UserObject.AddPetEventHashCodeCalculator.cs" />
+    <Compile Include="EventHashCodeCalculator\SwaggerPetstore\XComponent.SwaggerPetstore.UserObject.AddPetOperationEventHashCodeCalculator.cs" />
+    <Compile Include="EventHashCodeCalculator\SwaggerPetstore\XComponent.SwaggerPetstore.UserObject.GetPetByIdEventHashCodeCalculator.cs" />
+    <Compile Include="EventHashCodeCalculator\SwaggerPetstore\XComponent.SwaggerPetstore.UserObject.GetPetByIdOperationEventHashCodeCalculator.cs" />
+    <Compile Include="EventHashCodeCalculator\AddPetOperation\XComponent.Common.Event.DefaultEventEventHashCodeCalculator.cs" />
+    <Compile Include="EventHashCodeCalculator\AddPetOperation\XComponent.SwaggerPetstore.UserObject.SuccessResponseEventHashCodeCalculator.cs" />
+    <Compile Include="EventHashCodeCalculator\AddPetOperation\XComponent.SwaggerPetstore.UserObject.ErrorResponseEventHashCodeCalculator.cs" />
+    <Compile Include="EventHashCodeCalculator\GetPetByIdOperation\XComponent.Common.Event.DefaultEventEventHashCodeCalculator.cs" />
+    <Compile Include="EventHashCodeCalculator\GetPetByIdOperation\XComponent.SwaggerPetstore.UserObject.SuccessResponseEventHashCodeCalculator.cs" />
+    <Compile Include="EventHashCodeCalculator\GetPetByIdOperation\XComponent.SwaggerPetstore.UserObject.ErrorResponseEventHashCodeCalculator.cs" />
+    <Compile Include="EventHashCodeCalculator\SwaggerPetstoreEventHashCodeCalculatorRepository.cs" />
+    <Compile Include="EventHashCodeCalculator\AddPetOperationEventHashCodeCalculatorRepository.cs" />
+    <Compile Include="EventHashCodeCalculator\GetPetByIdOperationEventHashCodeCalculatorRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\UserObject\XComponent.SwaggerPetstore.UserObject.csproj">
