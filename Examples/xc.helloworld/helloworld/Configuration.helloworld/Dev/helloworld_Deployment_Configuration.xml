@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<deployment environment="Dev" version="1.0" debugType="Debug" frameworkType="Framework45" visualstudioVersion="VS2012" defaultExportPath="" extractConfig="false" generateWebSocketApi="false" embedUserObjects="false" defaultDeployPath="" logsDirectory="$(installdir)" logsPattern="pid-${processid}-${component}-${shortdate}" runtimesLogs="True" logsLevel="TRACE" logsMaxSize="50" reactiveApiName="ReactiveXComponent.Net" reactiveApiVersion="0.1.0-rcv011">
+<deployment environment="Dev" version="1.0" debugType="Debug" frameworkType="Framework45" visualstudioVersion="VS2015" defaultExportPath="" extractConfig="false" generateWebSocketApi="false" embedUserObjects="false" defaultDeployPath="" logsDirectory="$(installdir)" logsPattern="pid-${processid}-${component}-${shortdate}" runtimesLogs="True" logsLevel="TRACE" logsMaxSize="50" reactiveApiName="ReactiveXComponent.Net" reactiveApiVersion="0.1.0-rcv011">
   <!--
 	THREADING IMPLEMENTATION VALUES = AKKA - ->
 	<!- - THREADING TYPE VALUES = ONEBYSTM, ONEBYINSTANCE, INHERITFROMPARENT, INHERITFROMLINKING - ->
@@ -56,7 +56,7 @@
       </component>
     </clientAPI>
   </clientAPIs>
-  <configuration serialization="Binary">
+  <configuration serialization="Json">
     <communication>
       <bus name="rabbitmq" host="127.0.0.1" port="5672" user="guest" password="guest" type="RABBIT_MQ" />
     </communication>
