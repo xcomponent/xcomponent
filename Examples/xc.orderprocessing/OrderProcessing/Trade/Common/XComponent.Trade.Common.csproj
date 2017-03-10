@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -8,7 +8,7 @@
     <ProjectGuid>{BE692B62-C3EF-410D-9521-7739F2347E1C}</ProjectGuid>
     <RootNamespace>XComponent.Trade.Common</RootNamespace>
     <AssemblyName>XComponent.Trade.Common</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
   </PropertyGroup>
@@ -38,16 +38,14 @@
       <HintPath>..\UserReference\XComponent.Core.dll</HintPath>
       <SpecificVersion>false</SpecificVersion>
     </Reference>
-    <Reference Include="XComponent.Extended">
+    <Reference Include="XComponent.Extended, Version=4.5.0.30119, Culture=neutral, PublicKeyToken=null">
       <HintPath>..\UserReference\XComponent.Extended.dll</HintPath>
       <SpecificVersion>false</SpecificVersion>
-    </Reference>    
-
+    </Reference>
     <Reference Include="XComponent.Order.UserObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
       <HintPath>..\..\Order\generated\UserObject\XComponent.Order.UserObject.dll</HintPath>
       <SpecificVersion>false</SpecificVersion>
     </Reference>
-
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -59,23 +57,25 @@
     <Compile Include="KeyValueParametersEnum.cs" />
     <Compile Include="ComponentHelper.cs" />
     <Compile Include="IInternalAPI.cs" />
+    <Compile Include="InternalAPI.cs" />
+    <Compile Include="IInternalCommunication.cs" />
+    <Compile Include="InternalCommunication.cs" />
     <Compile Include="Senders\AbstractSender.cs" />
     <Compile Include="Senders\SenderManager.cs" />
     <Compile Include="Senders\SenderInterfaces.cs" />
     <Compile Include="Senders\SenderImplementations.cs" />
-    <Compile Include="HashCodeHelper\InitTradeProcessor.cs" />
-    <Compile Include="HashCodeHelper\SendEventDefaultEventTradeProcessor.cs" />
-    <Compile Include="HashCodeHelper\ProcessOrderCreationTradeProcessor.cs" />
-    <Compile Include="HashCodeHelper\SendEventOrderCreationTradeProcessor.cs" />
-    <Compile Include="HashCodeHelper\CreateTradeTradeProcessor.cs" />
-    <Compile Include="HashCodeHelper\SendEventTradeTradeProcessor.cs" />
-    <Compile Include="HashCodeHelper\ExecuteTradeTradeProcessor.cs" />
-    <Compile Include="HashCodeHelper\SendEventTradeExecutionTradeProcessor.cs" />
-    <Compile Include="HashCodeHelper\ProcessOrderExecutionTradeProcessor.cs" />
-    <Compile Include="HashCodeHelper\SendEventOrderExecutionTradeProcessor.cs" />
-    <Compile Include="HashCodeHelper\ExecuteTrade.cs" />
-    <Compile Include="HashCodeHelper\SendEventTradeExecutionTrade.cs" />
-
+    <Compile Include="StateHashCodeCalculator\TradeProcessor\EntryPointStateHashCodeCalculator.cs" />
+    <Compile Include="StateHashCodeCalculator\TradeProcessor\UpStateHashCodeCalculator.cs" />
+    <Compile Include="StateHashCodeCalculator\Trade\WaitingForExecutionStateHashCodeCalculator.cs" />
+    <Compile Include="StateHashCodeCalculator\Trade\ExecutedStateHashCodeCalculator.cs" />
+    <Compile Include="EventHashCodeCalculator\TradeProcessor\XComponent.Common.Event.DefaultEventEventHashCodeCalculator.cs" />
+    <Compile Include="EventHashCodeCalculator\TradeProcessor\XComponent.Order.UserObject.OrderCreationEventHashCodeCalculator.cs" />
+    <Compile Include="EventHashCodeCalculator\TradeProcessor\XComponent.Trade.UserObject.TradeEventHashCodeCalculator.cs" />
+    <Compile Include="EventHashCodeCalculator\TradeProcessor\XComponent.Trade.UserObject.TradeExecutionEventHashCodeCalculator.cs" />
+    <Compile Include="EventHashCodeCalculator\TradeProcessor\XComponent.Order.UserObject.OrderExecutionEventHashCodeCalculator.cs" />
+    <Compile Include="EventHashCodeCalculator\Trade\XComponent.Trade.UserObject.TradeExecutionEventHashCodeCalculator.cs" />
+    <Compile Include="EventHashCodeCalculator\TradeProcessorEventHashCodeCalculatorRepository.cs" />
+    <Compile Include="EventHashCodeCalculator\TradeEventHashCodeCalculatorRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\UserObject\XComponent.Trade.UserObject.csproj">

@@ -43,11 +43,8 @@ Our target goal is to build an Order component with the following overall struct
 ![add component image](images/add_component.jpg)&nbsp;![add component image](images/add_order_component.jpg)
 
 > Note: In XComponent, a component is a set of state machines.
-
-* Create the entry point state machine for the Order component
-> Note: This state machine will be used as a rather technical part of the system, which listens to external order creation requests (it could also handle business validation on the incoming creations requests before actually creating orders, but this is out of the scope of this example)
-
- * Rename the automatically created *StateMachine1* to *OrderProcessor*. 
+ * Rename the automatically created *Order* to *OrderProcessor*. 
+> Note: The entry point state machine will be used as a rather technical part of the system, which listens to external order creation requests (it could also handle business validation on the incoming creations requests before actually creating orders, but this is out of the scope of this example)
  * Add a state Up to the OrderProcessor state machine
  * Link the EntryPoint state to the Up state through a transition named Init with Triggering event “DefaultEvent” 
  * Set the timeout of the newly created Init transition to 0, meaning that it will be automatically triggered when the component will be initialized
@@ -188,9 +185,8 @@ check the triggered method CreateOrder (OrderInput).
      * You should see a new instance of CreationFacade in Created state, which means that your component works as expected so far 
    
       ![new CreationFacade instance image](images/new_creationfacade_instance.jpg)
-    > Notes: 
-    > 1. You cannot see the Order instance, although an instance was created behind the scenes. This is because the Order state machine is not linked into the API in the composition view. 
-    > 2. Inspect the instance by selecting its state machine in the spy. You will notice that its 
+    > Note: 
+    > Inspect the instance by selecting its state machine in the spy. You will notice that its 
     properties have only default values (OrderId 0, AssetName "" and Quantity 0). 
     This is because we have never updated the public member of CreationFacade with values 
     received in the triggering event of the PublishOrderCreation transition. 
@@ -217,44 +213,44 @@ check the triggered method CreateOrder (OrderInput).
  > Note: For the next steps there will be less detailed guidance, but with the most of the remaining implementation is 
  similar to what has been done so far in the case of order creation requests.
  
-     * Add two new state machines ExecutionFacade with one state Filled and PartialExecutionFacade with one state PartiallyFilled, both with a public member of type OrderExecution. At this point your component should have the following structure:
-    ![add execution facade stms image](images/add_execution_facade_stms.jpg)
+* Add two new state machines ExecutionFacade with one state Filled and PartialExecutionFacade with one state PartiallyFilled, both with a public member of type OrderExecution. At this point your component should have the following structure:
+![add execution facade stms image](images/add_execution_facade_stms.jpg)
 
-      * Link outputs of the two new façade state machines to the API. The composition should be as bellow:
-    ![order execution facade composition image](images/order_execution_facade_composition.jpg)
+* Link outputs of the two new façade state machines to the API. The composition should be as bellow:
+![order execution facade composition image](images/order_execution_facade_composition.jpg)
 
-      * Add all the necessary states and transitions in order to reach the following model for the OrderService component:
-    ![order component final image](images/order_component_final.jpg)
+* Add all the necessary states and transitions in order to reach the following model for the OrderService component:
+![order component final image](images/order_component_final.jpg)
       
-           * All the newly added transitions of the Order state machine use ExecutionInput as triggering event. Set up a matching 
+* All the newly added transitions of the Order state machine use ExecutionInput as triggering event. Set up a matching 
       rule ExecutionInput.OrderId = Order.Id on each new transition of the Order state machine 
       (Execute x 2 and PartiallyExecute x 2). 
-           * Both the PublishOrderFilled and PublishOrderPartiallyFilled transitions use OrderExecution as
+* Both the PublishOrderFilled and PublishOrderPartiallyFilled transitions use OrderExecution as
        triggering event. 
        
-       At this point, building the component OrderService will give the following errors:
-       > 17:27:31 [ ERROR ]  All transitions from state Pending using the same event are using one or several matching property in common, but none can be used to differentiate them (this could be because they all have the same property on the right hand side of the equality) (Component: Order, StateMachine Id: 2, State Id: 3).
-       
-       > 17:27:31 [ ERROR ]  The state Pending is using the same event for several transitions, but does not specify a matching rule on the transition name to differentiate them (Component: Order, StateMachine Id: 2, State Id: 3).
+    At this point, building the component OrderService will give the following errors:
+    > 17:27:31 [ ERROR ]  All transitions from state Pending using the same event are using one or several matching property in common, but none can be used to differentiate them (this could be because they all have the same property on the right hand side of the equality) (Component: Order, StateMachine Id: 2, State Id: 3).
 
-       > 17:27:31 [ ERROR ]  All transitions from state PartiallyExecuted using the same event are using one or several matching property in common, but none can be used to differentiate them (this could be because they all have the same property on the right hand side of the equality) (Component: Order, StateMachine Id: 2, State Id: 8).
+    > 17:27:31 [ ERROR ]  The state Pending is using the same event for several transitions, but does not specify a matching rule on the transition name to differentiate them (Component: Order, StateMachine Id: 2, State Id: 3).
 
-       > 17:27:31 [ ERROR ]  The state PartiallyExecuted is using the same event for several transitions, but does not specify a matching rule on the transition name to differentiate them (Component: Order, StateMachine Id: 2, State Id: 8).
+    > 17:27:31 [ ERROR ]  All transitions from state PartiallyExecuted using the same event are using one or several matching property in common, but none can be used to differentiate them (this could be because they all have the same property on the right hand side of the equality) (Component: Order, StateMachine Id: 2, State Id: 8).
+
+    > 17:27:31 [ ERROR ]  The state PartiallyExecuted is using the same event for several transitions, but does not specify a matching rule on the transition name to differentiate them (Component: Order, StateMachine Id: 2, State Id: 8).
 
     This is because each of the states Pending and PartiallyExecuted have 2 transitions with the same triggering event and the same matching rule. In order to distinguish them we have to add a specific triggering rule for these transitions, while maintaining the initial matching on the order id. Enable the user specific rules for all the Execute and PartiallyExecute transitions, rebuild the component (note that the errors are no longer raised) and then edit their code. 
 
     ![enable specific rule on execute image](images/enable_specific_rule_execute.jpg)
 
-      * Implement specific rules for the Execute and PartiallyExecute transitions
-        * For Execute transitions use    
+* Implement specific rules for the Execute and PartiallyExecute transitions
+    * For Execute transitions use    
 ```cs 
             return executionInput.Quantity == order.RemainingQuantity;
 ```
-        * For PartiallyExecute transitions use
+    * For PartiallyExecute transitions use
 ```cs 
 	       return executionInput.Quantity != order.RemainingQuantity;
 ```
-        * Check the triggered method Execute in the Executed state and PartiallyExecute in 
+    * Check the triggered method Execute in the Executed state and PartiallyExecute in 
       the PartiallyExecuted state. Rebuild the component. Use the following code for these two 
       methods: 
 ```cs 
@@ -296,7 +292,7 @@ check the triggered method CreateOrder (OrderInput).
 
    > Note that, obviously, we could do better than raising a generic Exception, but we don't care in this context ;)
 
-      - The last bit is to properly set the public member properties for the two new façade machines, ExecutionFacade and PartialExecutionFacade, when the transitions PublishOrderFilled and PublishOrderPartiallyFilled are triggered respectively. 
+- The last bit is to properly set the public member properties for the two new façade machines, ExecutionFacade and PartialExecutionFacade, when the transitions PublishOrderFilled and PublishOrderPartiallyFilled are triggered respectively. 
       Check the triggered methods PublishOrderFilled on ExecutionFacade.Filled and PublishOrderPartiallyFilled on 
       PartialExecutionFacade.PartiallyFilled. Rebuild the component and then edit each the triggered methods and uncomment the clone method call. You
       should end up with : 
