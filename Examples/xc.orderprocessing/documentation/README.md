@@ -43,8 +43,11 @@ Our target goal is to build an Order component with the following overall struct
 ![add component image](images/add_component.jpg)&nbsp;![add component image](images/add_order_component.jpg)
 
 > Note: In XComponent, a component is a set of state machines.
+
  * Rename the automatically created *Order* to *OrderProcessor*. 
+
 > Note: The entry point state machine will be used as a rather technical part of the system, which listens to external order creation requests (it could also handle business validation on the incoming creations requests before actually creating orders, but this is out of the scope of this example)
+ 
  * Add a state Up to the OrderProcessor state machine
  * Link the EntryPoint state to the Up state through a transition named Init with Triggering event “DefaultEvent” 
  * Set the timeout of the newly created Init transition to 0, meaning that it will be automatically triggered when the component will be initialized
@@ -54,20 +57,26 @@ Our target goal is to build an Order component with the following overall struct
  ![order entry point state machine component](images/order_entrypoint_stm.jpg)
 
 * Create the main state machine of the Order component. 
+
 > Note: The implementation of the Order state machine aims at reducing the number of user objects needed and the number of triggered methods to be implemented so that duplication is reduced as much as possible.
 In order to reduce the number of user objects we use the same triggering event for all transitions and discriminate between several transitions of a given state (e.g. Pending) with a mix of matching and specific triggering rules. Matching rules use order ids for optimal selection performance in a first step, while specific rules rely on other properties to select among the available transitions (e.g. Execute vs PartiallyExecute) of an already matched instance. We end up with 3 user objects (OrderInput, OrderExecution, corresponding to creation and execution requests respectively, and Order which is the main business object). On the other hand, the technique of naming the same way two incoming transition with the same triggering event (e.g. PartiallyExecuted has two incoming transition named PartiallyExecute, both being triggered by OrderExecution events) allows one to define only one triggering method per state (although one could argue that ExecuteRemaining would be clearer when leaving the state PartiallyExecuted).
 
- * Create the user objects needed by the component OrderService 
- > Note: Make sure the window Add new class is enabled and use its Add button
+* Create the user objects needed by the component OrderService 
+ 
+> Note: Make sure the window Add new class is enabled and use its Add button
    
    * OrderInput  
    ![OrderInput user object image](images/add_orderinput_userobject.jpg)
+   
    * ExecutionInput  
    ![ExecutionInput user object image](images/add_executioninput_userobject.jpg)
+   
    * OrderCreation  
    ![OrderCreation user object image](images/add_ordercreation_userobject.jpg)
+   
    * OrderExecution  
    ![OrderExecution user object image](images/add_orderexecution_userobject.jpg)
+   
    * Order. First create the class through the XCStudio UI with the following fields:  
    ![Order user object image](images/add_order_userobject.jpg)
     
@@ -541,6 +550,7 @@ In the drop down you should see the previously configured rabbitmq bus.
 * Build the composition of your project
 * Start your microservice (*Project* menu + *Run microservices* sub menu + *Start* button)
 * Create a simple console application named OrderProcessingClient in order to test your microservice (*Project* menu + *Generate console app* sub menu)
+
 ![create console app](images/create_console_app.jpg)
 * Copy/Paste the following code in *Program.cs*
 ```cs
