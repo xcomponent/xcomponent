@@ -184,6 +184,8 @@ From left to right these shortcuts are:
 - Open project (Ctrl + O)
 - Save current project (Ctrl + Maj + S)
 - Save current document (Ctrl + S)
+- Undo (Ctrl + Z)
+- Redo (Ctrl + Y)
 - Close current project (Ctrl + W)
 
 ### XCStudio project hierarchy
@@ -221,6 +223,7 @@ It contains:
 - A shortcut to your linking
 - The composition
 - The components
+- The views
 - The APIs
 - The GUI applications
 - Your project documentation
@@ -345,7 +348,7 @@ If you click on a state you can write a personal comment on it in the text area:
 Several transitions exist. Two transition types are commonly used: 
 - Regular transition between two states in the same state machine
 - Transition between two states from different states machine. 
-The first one is black (color can be customized) and ran in the same instance of the current state machine while the second one is green (also customizable) but, it creates a new instance of the state machine pointed by the arrow of the transition. 
+The first one is gray (color can be customized) and ran in the same instance of the current state machine while the second one is green (also customizable) but, it creates a new instance of the state machine pointed by the arrow of the transition. 
 You can also add a comment on a transition.
 
 To create a comment: click on a transition, fill the comment text area (property panel).
@@ -384,7 +387,6 @@ Click on Triggerable transition. You can also select both the state and the tran
 
 You have the possibility to add some checks on transitions. On XCStudio in transition properties window you can:
 - Add matching keys
-- Add contains keys
 - Add specific rules
 Following options can be set on the properties of a transition.  Click on a transition.
 
