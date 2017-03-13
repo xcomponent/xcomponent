@@ -103,7 +103,7 @@ With these configurations done, we can now build the composition.
 ## Console Application
  
 * Create a simple console application to test your microservice (*Project* menu + *Generate console app* sub menu)
-* Use the *Program.cs* you can find (here)[https://github.com/xcomponent/xcomponent/blob/master/Examples/xc.restapiclient/RestConsumer/PetstoreConsoleApplication/PetstoreConsoleApplication/Program.cs]
+* Use the *Program.cs* you can find (here)[https://github.com/xcomponent/xcomponent/blob/v4.6/Examples/xc.restapiclient/RestConsumerApi/ConsoleApplication/ConsoleApplication/Program.cs]
 
 > Note: this sample code enables you to add a pet with the name you want to the store then to request the pet's info from the server.
 
