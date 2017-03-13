@@ -3,12 +3,8 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading;
 using System.Windows;
 using System.Windows.Input;
-using XComponent.Common.WPF;
 
 namespace TradeSender
 {
@@ -61,7 +57,7 @@ namespace TradeSender
                 if (int.TryParse(value, out dVal))
                 {
                     _dealAmount = dVal;
-                    this.NotifyPropertyChanged(PropertyChanged, ()=> DealAmount);
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(DealAmount)));
                 }
             }
         }
@@ -82,7 +78,7 @@ namespace TradeSender
                 if (_selectedInstrument != value)
                 {
                     _selectedInstrument = value;
-                    this.NotifyPropertyChanged(PropertyChanged, () => SelectedInstrument);
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SelectedInstrument)));
                 }
             }
         }
@@ -93,7 +89,7 @@ namespace TradeSender
             set
             {
                 _dealMaturity = value;
-                this.NotifyPropertyChanged(PropertyChanged, () => DealMaturity);
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(DealMaturity)));
             }
         }
 

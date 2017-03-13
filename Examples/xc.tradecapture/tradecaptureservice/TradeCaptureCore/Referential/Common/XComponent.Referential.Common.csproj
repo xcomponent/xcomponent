@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -8,7 +8,7 @@
     <ProjectGuid>{BE692B62-C3EF-410D-9521-7739F2347E1C}</ProjectGuid>
     <RootNamespace>XComponent.Referential.Common</RootNamespace>
     <AssemblyName>XComponent.Referential.Common</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
   </PropertyGroup>
@@ -38,11 +38,6 @@
       <HintPath>..\UserReference\XComponent.Core.dll</HintPath>
       <SpecificVersion>false</SpecificVersion>
     </Reference>
-    <Reference Include="XComponent.Extended">
-      <HintPath>..\UserReference\XComponent.Extended.dll</HintPath>
-      <SpecificVersion>false</SpecificVersion>
-    </Reference>    
-
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -53,17 +48,19 @@
     <Compile Include="KeyValueParametersEnum.cs" />
     <Compile Include="ComponentHelper.cs" />
     <Compile Include="IInternalAPI.cs" />
+    <Compile Include="InternalAPI.cs" />
+    <Compile Include="IInternalCommunication.cs" />
+    <Compile Include="InternalCommunication.cs" />
     <Compile Include="Senders\AbstractSender.cs" />
     <Compile Include="Senders\SenderManager.cs" />
     <Compile Include="Senders\SenderInterfaces.cs" />
     <Compile Include="Senders\SenderImplementations.cs" />
-    <Compile Include="HashCodeHelper\StartReferential.cs" />
-    <Compile Include="HashCodeHelper\SendEventDefaultEventReferential.cs" />
-    <Compile Include="HashCodeHelper\AddInstrumentReferential.cs" />
-    <Compile Include="HashCodeHelper\SendEventInstrumentReferential.cs" />
-    <Compile Include="HashCodeHelper\GetInstrumentSnapshotReferential.cs" />
-    <Compile Include="HashCodeHelper\SendEventGetSnapshotReferential.cs" />
-
+    <Compile Include="StateHashCodeCalculator\Referential\EntryPointStateHashCodeCalculator.cs" />
+    <Compile Include="StateHashCodeCalculator\Referential\ReferentialStateHashCodeCalculator.cs" />
+    <Compile Include="EventHashCodeCalculator\Referential\XComponent.Common.Event.DefaultEventEventHashCodeCalculator.cs" />
+    <Compile Include="EventHashCodeCalculator\Referential\XComponent.Referential.UserObject.InstrumentEventHashCodeCalculator.cs" />
+    <Compile Include="EventHashCodeCalculator\Referential\XComponent.Referential.UserObject.GetSnapshotEventHashCodeCalculator.cs" />
+    <Compile Include="EventHashCodeCalculator\ReferentialEventHashCodeCalculatorRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\UserObject\XComponent.Referential.UserObject.csproj">

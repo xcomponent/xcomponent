@@ -5,7 +5,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>XComponent.TradeCapture.TriggeredMethod</RootNamespace>
     <AssemblyName>XComponent.TradeCapture.TriggeredMethod</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{29F1CA2B-A82F-49CD-B6A2-109386518FC3}</ProjectGuid>
@@ -29,21 +29,18 @@
       <HintPath>..\UserReference\XComponent.Core.dll</HintPath>
       <SpecificVersion>false</SpecificVersion>
     </Reference>
-    <Reference Include="XComponent.Extended, Version=4.0.0.10001, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\UserReference\XComponent.Extended.dll</HintPath>
-      <SpecificVersion>false</SpecificVersion>
-    </Reference>
     <Reference Include="XComponent.Referential.UserObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
       <HintPath>..\..\Referential\generated\UserObject\XComponent.Referential.UserObject.dll</HintPath>
       <SpecificVersion>false</SpecificVersion>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GetInstrumentSnapshotTriggeredMethod.cs" />
     <Compile Include="Mapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TransactionTriggeredMethod.cs" />
     <Compile Include="TriggeredMethodContext.cs" />
-    <Compile Include="TriggeredMethodContext.generated..cs" />
+    <Compile Include="TriggeredMethodContext.generated.cs" />
     <Compile Include="UpdateReferentialTriggeredMethod.cs" />
     <Compile Include="Validator.cs" />
   </ItemGroup>

@@ -1,80 +1,23 @@
-<?xml version="1.0" encoding="utf-8"?>
-<GraphicalComponent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <GraphicalStates>
-    <GraphicalState id="1">
-      <Center>
-        <X>103</X>
-        <Y>165</Y>
-      </Center>
-    </GraphicalState>
-    <GraphicalState id="3">
-      <Center>
-        <X>461</X>
-        <Y>231</Y>
-      </Center>
-    </GraphicalState>
-  </GraphicalStates>
+<?xml version="1.0"?>
+<ComponentViewModelGraphicalData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <States>
+    <StateGraphicalData Id="1" CenterX="103" CenterY="165" />
+    <StateGraphicalData Id="3" CenterX="461" CenterY="231" />
+  </States>
   <TransitionPatternStates />
-  <GraphicalTransitions>
-    <GraphicalTransition id="1" curviness="20" isLabelDisplayed="false" isTransitionColorUpdated="false">
-      <TransitionColor>
-        <A>255</A>
-        <R>76</R>
-        <G>76</G>
-        <B>76</B>
-        <ScA>1</ScA>
-        <ScR>0.07227185</ScR>
-        <ScG>0.07227185</ScG>
-        <ScB>0.07227185</ScB>
-      </TransitionColor>
-      <C1>
-        <X>713.2578</X>
-        <Y>416.8134</Y>
-      </C1>
-      <C2>
-        <X>373</X>
-        <Y>335</Y>
-      </C2>
-    </GraphicalTransition>
-    <GraphicalTransition id="2" curviness="20" isLabelDisplayed="false" isTransitionColorUpdated="false">
-      <TransitionColor>
-        <A>255</A>
-        <R>255</R>
-        <G>165</G>
-        <B>0</B>
-        <ScA>1</ScA>
-        <ScR>1</ScR>
-        <ScG>0.376262158</ScG>
-        <ScB>0</ScB>
-      </TransitionColor>
-      <C1>
-        <X>240.479065</X>
-        <Y>119.8751</Y>
-      </C1>
-      <C2>
-        <X>345.21817</X>
-        <Y>138.948227</Y>
-      </C2>
-    </GraphicalTransition>
-    <GraphicalTransition id="4" curviness="40" isLabelDisplayed="false" isTransitionColorUpdated="false">
-      <TransitionColor>
-        <A>255</A>
-        <R>76</R>
-        <G>76</G>
-        <B>76</B>
-        <ScA>1</ScA>
-        <ScR>0.07227185</ScR>
-        <ScG>0.07227185</ScG>
-        <ScB>0.07227185</ScB>
-      </TransitionColor>
-      <C1>
-        <X>899.2578</X>
-        <Y>112.813393</Y>
-      </C1>
-      <C2>
-        <X>421</X>
-        <Y>138</Y>
-      </C2>
-    </GraphicalTransition>
-  </GraphicalTransitions>
-</GraphicalComponent>
+  <Links>
+    <TransitionGraphicalData Id="1" Curviness="20" Color="">
+      <Points />
+      <IsNameDisplayed>true</IsNameDisplayed>
+    </TransitionGraphicalData>
+    <TransitionGraphicalData Id="2" Curviness="20" Color="">
+      <Points />
+      <IsNameDisplayed>true</IsNameDisplayed>
+    </TransitionGraphicalData>
+    <TransitionGraphicalData Id="4" Curviness="40" Color="">
+      <Points />
+      <IsNameDisplayed>true</IsNameDisplayed>
+    </TransitionGraphicalData>
+  </Links>
+  <TransversalLinks />
+</ComponentViewModelGraphicalData>

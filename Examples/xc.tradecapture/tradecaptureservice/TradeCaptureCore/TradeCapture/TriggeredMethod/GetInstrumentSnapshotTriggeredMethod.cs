@@ -1,11 +1,7 @@
 namespace XComponent.DealCapture.TriggeredMethod
 {
 	using System;
-
-	using XComponent.DealCapture.Common.Senders;
-	using XComponent.DealCapture.Common;
-
-
+[Obsolete]
 	// var logger1 =  ComponentLoggerManager<LogKeyEnum>.GetComponentLogger(LogKeyEnum.Key1, ComponentHelper.COMPONENT_NAME);
 	// 
 	// var logger2 =  ComponentLoggerManager<LogKeyEnum>.GetComponentLogger(LogKeyEnum.Key2, ComponentHelper.COMPONENT_NAME);
@@ -31,7 +27,7 @@ namespace XComponent.DealCapture.TriggeredMethod
 	// One can try and trigger a transition in the state machine by giving the current context.
 	// sender.MyTransition(context);
 	// 
-	public class GetInstrumentSnapshotTriggeredMethod : AbstractTriggeredMethod
+	public class GetInstrumentSnapshotTriggeredMethod
 	{
 
 		/// <summary>

@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
 using System.Windows.Input;
 using WpfApplication1.Commands;
 using XComponent.Common.ApiContext;
-using XComponent.Common.WPF;
 using XComponent.TradeCapture.UserObject;
 
 namespace WpfApplication1
@@ -30,7 +26,7 @@ namespace WpfApplication1
             set
             {
                 _xcState = value;
-                this.NotifyPropertyChanged(PropertyChanged, ()=> XCState);
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(XCState)));
             }
         }
 
@@ -40,7 +36,7 @@ namespace WpfApplication1
             set
             {
                 _xcPreviousState = value;
-                this.NotifyPropertyChanged(PropertyChanged, () => XCPreviousState);
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(XCPreviousState))); 
             }
         }
 
@@ -50,8 +46,8 @@ namespace WpfApplication1
             set
             {
                 CommandManager.InvalidateRequerySuggested();
-                this._state = value;
-                this.NotifyPropertyChanged(PropertyChanged, ()=> State);
+                _state = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(State)));
             } 
         }
 
@@ -66,10 +62,7 @@ namespace WpfApplication1
 
         public void UpdateAndRetry()
         {
-            if(this.OnUpdateRequested != null)
-            {
-                this.OnUpdateRequested(this);
-            }
+            OnUpdateRequested?.Invoke(this);
         }
 
         public void Reject()
