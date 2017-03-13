@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ComponentViewModelData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="Trade" Version="62">
+<ComponentViewModelData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="Trade" Version="64">
   <StateMachines>
     <StateMachineData Id="1" Name="TradeProcessor" />
     <StateMachineData Id="2" Name="Trade" PublicMember="XComponent.Trade.UserObject.Trade" StateCopyProperty="State" />

@@ -1,21 +1,27 @@
+using System;
+using XComponent.Common.ApiContext;
+using XComponent.Common.Timeouts;
+using XComponent.Order.Common;
+using XComponent.Order.Common.Senders;
+
 namespace XComponent.Order.TriggeredMethod
 {
-	using System;
-	using XComponent.Common.ApiContext;
-	using XComponent.Common.Timeouts;
-	using XComponent.Order.Common.Senders;
-	using XComponent.Order.Common;
+    using System;
+    using XComponent.Common.ApiContext;
+    using XComponent.Common.Timeouts;
+    using XComponent.Order.Common.Senders;
+    using XComponent.Order.Common;
 
 
-	public static class ExecutionFacadeTriggeredMethod
-	{
+    public static class ExecutionFacadeTriggeredMethod
+    {
 
-		/// <summary>
-		/// Executing triggeredMethod ExecuteOn_Filled_Through_PublishOrderFilled
-		/// </summary>
-		public static void ExecuteOn_Filled_Through_PublishOrderFilled(XComponent.Order.UserObject.OrderExecution orderExecution_TriggeringEvent, XComponent.Order.UserObject.OrderExecution orderExecution_PublicMember, object object_InternalMember, Context context, IPublishOrderFilledOrderExecutionOnFilledExecutionFacadeSenderInterface sender)
-		{
-			XComponent.Common.Clone.XCClone.Clone(orderExecution_TriggeringEvent, orderExecution_PublicMember);
-		}
-	}
+        /// <summary>
+        /// Executing triggeredMethod ExecuteOn_Filled_Through_PublishOrderFilled
+        /// </summary>
+        public static void ExecuteOn_Filled_Through_PublishOrderFilled(XComponent.Order.UserObject.OrderExecution orderExecution_TriggeringEvent, XComponent.Order.UserObject.OrderExecution orderExecution_PublicMember, object object_InternalMember, Context context, IPublishOrderFilledOrderExecutionOnFilledExecutionFacadeSenderInterface sender)
+        {
+            XComponent.Common.Clone.XCClone.Clone(orderExecution_TriggeringEvent, orderExecution_PublicMember);
+        }
+    }
 }

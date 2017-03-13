@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ComponentViewModelData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="BenchSimpleFork" Version="33">
+  <StateMachines>
+    <StateMachineData Id="1" Name="BenchManager" />
+    <StateMachineData Id="2" Name="ForkBench" />
+    <StateMachineData Id="3" Name="BenchResult" PublicMember="XComponent.BenchSimpleFork.UserObject.BenchResult" />
+    <StateMachineData Id="4" Name="LoopBenchmark" />
+    <StateMachineData Id="5" Name="TriggeringRuleBench" InternalMember="XComponent.BenchSimpleFork.UserObject.TriggeringRuleBench" />
+    <StateMachineData Id="6" Name="TransitionTrigger" />
+    <StateMachineData Id="7" Name="LoopTriggeringRuleBench" InternalMember="XComponent.BenchSimpleFork.UserObject.LoopTriggeringRuleBench" />
+  </StateMachines>
+  <States>
+    <StateData Id="1" Name="EntryPoint" IsEntryPoint="true" SubGraphKey="StateMachine1">
+      <Comment />
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="2" Name="BenchReady" IsEntryPoint="false" SubGraphKey="StateMachine1">
+      <Comment />
+      <TriggeredMethods>
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="StartSimpleForkBench" TriggeringEvent="XComponent.BenchSimpleFork.UserObject.StartSimpleForkBench" />
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="StartTriggeringRulesBench" TriggeringEvent="XComponent.BenchSimpleFork.UserObject.StartTriggeringRulesBench" />
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="false" TransitionName="Init" TriggeringEvent="XComponent.Common.Event.DefaultEvent" />
+      </TriggeredMethods>
+    </StateData>
+    <StateData Id="3" Name="Done" IsEntryPoint="false" SubGraphKey="StateMachine2">
+      <Comment />
+      <TriggeredMethods>
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="CreateChild" TriggeringEvent="XComponent.BenchSimpleFork.UserObject.CreateChild" />
+        <TriggeredMethodData IsNodeInitializer="true" IsSelected="false" TransitionName="InitializePublicMember" />
+      </TriggeredMethods>
+    </StateData>
+    <StateData Id="4" Name="Published" IsEntryPoint="false" SubGraphKey="StateMachine3">
+      <Comment />
+      <TriggeredMethods>
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="PublishResult" TriggeringEvent="XComponent.BenchSimpleFork.UserObject.BenchResult" />
+        <TriggeredMethodData IsNodeInitializer="true" IsSelected="false" TransitionName="InitializePublicMember" />
+      </TriggeredMethods>
+    </StateData>
+    <StateData Id="5" Name="Benching" IsEntryPoint="false" SubGraphKey="StateMachine4">
+      <Comment />
+      <TriggeredMethods>
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="StartLoopBench" TriggeringEvent="XComponent.BenchSimpleFork.UserObject.StartLoopBench" />
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="TriggerLoopTransition" TriggeringEvent="XComponent.BenchSimpleFork.UserObject.TriggerLoopTransition" />
+        <TriggeredMethodData IsNodeInitializer="true" IsSelected="false" TransitionName="InitializePublicMember" />
+      </TriggeredMethods>
+    </StateData>
+    <StateData Id="6" Name="Finalized" IsEntryPoint="false" SubGraphKey="StateMachine4">
+      <Comment />
+      <TriggeredMethods>
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="false" TransitionName="Finalize" TriggeringEvent="XComponent.BenchSimpleFork.UserObject.Finalize" />
+      </TriggeredMethods>
+    </StateData>
+    <StateData Id="7" Name="Benching" IsEntryPoint="false" SubGraphKey="StateMachine5">
+      <Comment />
+      <TriggeredMethods>
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="CreateInstance" TriggeringEvent="XComponent.BenchSimpleFork.UserObject.CreateInstance" />
+        <TriggeredMethodData IsNodeInitializer="true" IsSelected="false" TransitionName="InitializePublicMember" />
+      </TriggeredMethods>
+    </StateData>
+    <StateData Id="8" Name="Done" IsEntryPoint="false" SubGraphKey="StateMachine5">
+      <Comment />
+      <TriggeredMethods>
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="TriggerTransition" TriggeringEvent="XComponent.BenchSimpleFork.UserObject.TriggerTransition" />
+      </TriggeredMethods>
+    </StateData>
+    <StateData Id="9" Name="Done" IsEntryPoint="false" SubGraphKey="StateMachine6">
+      <Comment />
+      <TriggeredMethods>
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="TransitionTrigger" TriggeringEvent="XComponent.BenchSimpleFork.UserObject.TransitionTrigger" />
+        <TriggeredMethodData IsNodeInitializer="true" IsSelected="false" TransitionName="InitializePublicMember" />
+      </TriggeredMethods>
+    </StateData>
+    <StateData Id="10" Name="Benching" IsEntryPoint="false" SubGraphKey="StateMachine7">
+      <Comment />
+      <TriggeredMethods>
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="StartLoopRuleBench" TriggeringEvent="XComponent.BenchSimpleFork.UserObject.StartLoopRuleBench" />
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="TriggerTransition" TriggeringEvent="XComponent.BenchSimpleFork.UserObject.TriggerTransition" />
+        <TriggeredMethodData IsNodeInitializer="true" IsSelected="false" TransitionName="InitializePublicMember" />
+      </TriggeredMethods>
+    </StateData>
+    <StateData Id="11" Name="Finalized" IsEntryPoint="false" SubGraphKey="StateMachine7">
+      <Comment />
+      <TriggeredMethods>
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="false" TransitionName="Finalize" TriggeringEvent="XComponent.BenchSimpleFork.UserObject.Finalize" />
+      </TriggeredMethods>
+    </StateData>
+  </States>
+  <TransitionPatternStates />
+  <Links>
+    <TransitionData Id="1" Name="Init" FromKey="State1" ToKey="State2" Type="TimeOut" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.Common.Event.DefaultEvent" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="2" Name="CreateChild" FromKey="State2" ToKey="State3" Type="X" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.BenchSimpleFork.UserObject.CreateChild" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="3" Name="PublishResult" FromKey="State2" ToKey="State4" Type="X" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.BenchSimpleFork.UserObject.BenchResult" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="6" Name="StartSimpleForkBench" FromKey="State2" ToKey="State2" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.BenchSimpleFork.UserObject.StartSimpleForkBench" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="8" Name="StartLoopBench" FromKey="State2" ToKey="State5" Type="X" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.BenchSimpleFork.UserObject.StartLoopBench" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="14" Name="StartTriggeringRulesBench" FromKey="State2" ToKey="State2" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.BenchSimpleFork.UserObject.StartTriggeringRulesBench" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="15" Name="CreateInstance" FromKey="State2" ToKey="State7" Type="X" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.BenchSimpleFork.UserObject.CreateInstance" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="21" Name="StartLoopRuleBench" FromKey="State2" ToKey="State10" Type="X" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.BenchSimpleFork.UserObject.StartLoopRuleBench" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="7" Name="Finalize" FromKey="State5" ToKey="State6" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.BenchSimpleFork.UserObject.Finalize" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="9" Name="TriggerLoopTransition" FromKey="State5" ToKey="State5" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.BenchSimpleFork.UserObject.TriggerLoopTransition" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="13" Name="TriggerTransition" FromKey="State7" ToKey="State8" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.BenchSimpleFork.UserObject.TriggerTransition" UserSpecificRule="false">
+      <MatchingRules>
+        <MatchingRuleData EventProperty="Id" IsInternalMemberProperty="true" MemberProperty="Id" />
+      </MatchingRules>
+    </TransitionData>
+    <TransitionData Id="18" Name="TransitionTrigger" FromKey="State7" ToKey="State9" Type="X" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.BenchSimpleFork.UserObject.TransitionTrigger" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="22" Name="TriggerTransition" FromKey="State10" ToKey="State10" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.BenchSimpleFork.UserObject.TriggerTransition" UserSpecificRule="false">
+      <MatchingRules>
+        <MatchingRuleData EventProperty="Id" IsInternalMemberProperty="true" MemberProperty="Id" />
+      </MatchingRules>
+    </TransitionData>
+    <TransitionData Id="23" Name="Finalize" FromKey="State10" ToKey="State11" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.BenchSimpleFork.UserObject.Finalize" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+  </Links>
+  <TransversalLinks>
+    <TransversalTransitionData Id="5" Name="" FromKey="State2" ToId="2" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.BenchSimpleFork.UserObject.StartSimpleForkBench" Name="StartSimpleForkBench" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="17" Name="" FromKey="State2" ToId="15" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.BenchSimpleFork.UserObject.StartTriggeringRulesBench" Name="StartTriggeringRulesBench" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="4" Name="" FromKey="State3" ToId="3" SelectAllTransitions="true" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.BenchSimpleFork.UserObject.CreateChild" Name="CreateChild" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="10" Name="" FromKey="State5" ToId="9" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.BenchSimpleFork.UserObject.StartLoopBench" Name="StartLoopBench" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="11" Name="" FromKey="State5" ToId="3" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.BenchSimpleFork.UserObject.TriggerLoopTransition" Name="TriggerLoopTransition" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="12" Name="" FromKey="State5" ToId="7" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.BenchSimpleFork.UserObject.TriggerLoopTransition" Name="TriggerLoopTransition" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="19" Name="" FromKey="State7" ToId="18" SelectAllTransitions="true" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.BenchSimpleFork.UserObject.CreateInstance" Name="CreateInstance" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="16" Name="" FromKey="State8" ToId="3" SelectAllTransitions="true" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.BenchSimpleFork.UserObject.TriggerTransition" Name="TriggerTransition" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="20" Name="" FromKey="State9" ToId="13" SelectAllTransitions="true" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.BenchSimpleFork.UserObject.TransitionTrigger" Name="TransitionTrigger" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="24" Name="" FromKey="State10" ToId="22" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.BenchSimpleFork.UserObject.StartLoopRuleBench" Name="StartLoopRuleBench" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="25" Name="" FromKey="State10" ToId="23" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.BenchSimpleFork.UserObject.TriggerTransition" Name="TriggerTransition" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="26" Name="" FromKey="State10" ToId="3" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.BenchSimpleFork.UserObject.TriggerTransition" Name="TriggerTransition" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+  </TransversalLinks>
+  <PublicAssemblies />
+  <ExternalAssemblies />
+</ComponentViewModelData>

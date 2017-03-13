@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<scxml version="1.0" name="Referential">
+  <datamodel>
+    <data id="Version" expr="51" />
+    <data id="NameSeparator" expr=":" />
+    <data id="logKeys">
+      <logKeys />
+    </data>
+  </datamodel>
+  <state id="Referential">
+    <datamodel>
+      <data id="PublicMember" expr="XComponent.Referential.UserObject.InstrumentSnapshot" />
+      <data id="Id" expr="1" />
+    </datamodel>
+    <state id="Referential:EntryPoint">
+      <datamodel>
+        <data id="Comment" expr="" />
+        <data id="DisposeStateMachineInstance" expr="False" />
+        <data id="Id" expr="1" />
+      </datamodel>
+      <transition Event="XComponent.Common.Event.DefaultEvent" target="Referential:Referential">
+        <datamodel>
+          <data id="Type" expr="TimeoutTransition" />
+          <data id="ExecutionDelay" expr="0" />
+          <data id="Id" expr="2" />
+          <data id="Name" expr="Start" />
+          <data id="Event">
+            <Event>
+              <Comment>
+              </Comment>
+              <EventTypeName>XComponent.Common.Event.DefaultEvent</EventTypeName>
+              <TimeToLive>0</TimeToLive>
+              <TriggeringRules />
+            </Event>
+          </data>
+        </datamodel>
+      </transition>
+    </state>
+    <state id="Referential:Referential">
+      <datamodel>
+        <data id="Comment" expr="" />
+        <data id="DisposeStateMachineInstance" expr="False" />
+        <data id="Id" expr="3" />
+      </datamodel>
+      <transition Event="XComponent.Referential.UserObject.Instrument" target="Referential:Referential">
+        <datamodel>
+          <data id="Type" expr="StandardTransition" />
+          <data id="Id" expr="1" />
+          <data id="Name" expr="AddInstrument" />
+          <data id="Event">
+            <Event>
+              <Comment>
+              </Comment>
+              <EventTypeName>XComponent.Referential.UserObject.Instrument</EventTypeName>
+              <TimeToLive>0</TimeToLive>
+              <TriggeringRules />
+            </Event>
+          </data>
+        </datamodel>
+        <onexit>
+          <invoke Type="OnReferentialFromAddInstrument" id="1">
+            <content>
+              <Name>OnReferentialFromAddInstrument</Name>
+              <Id>1</Id>
+              <CustomParameters xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                <PublicMember>XComponent.Referential.UserObject.InstrumentSnapshot</PublicMember>
+                <EventsName>XComponent.Referential.UserObject.Instrument</EventsName>
+              </CustomParameters>
+            </content>
+          </invoke>
+        </onexit>
+      </transition>
+      <transition Event="XComponent.Referential.UserObject.GetSnapshot" target="Referential:Referential">
+        <datamodel>
+          <data id="Type" expr="StandardTransition" />
+          <data id="Id" expr="4" />
+          <data id="Name" expr="GetInstrumentSnapshot" />
+          <data id="Event">
+            <Event>
+              <Comment>
+              </Comment>
+              <EventTypeName>XComponent.Referential.UserObject.GetSnapshot</EventTypeName>
+              <TimeToLive>0</TimeToLive>
+              <TriggeringRules />
+            </Event>
+          </data>
+        </datamodel>
+      </transition>
+    </state>
+  </state>
+</scxml>

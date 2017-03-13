@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ComponentViewModelData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="TradeCapture" Version="117">
+  <StateMachines>
+    <StateMachineData Id="1" Name="XCTradeProcessor" />
+    <StateMachineData Id="2" Name="Transaction" PublicMember="XComponent.TradeCapture.UserObject.Transaction" StateCopyProperty="CurrentState" />
+    <StateMachineData Id="3" Name="UpdateReferential" PublicMember="XComponent.Referential.UserObject.Instrument" />
+    <StateMachineData Id="4" Name="GetInstrumentSnapshot" PublicMember="XComponent.Referential.UserObject.GetSnapshot" />
+  </StateMachines>
+  <States>
+    <StateData Id="1" Name="EntryPoint" IsEntryPoint="true" SubGraphKey="StateMachine1">
+      <Comment />
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="2" Name="Validation" IsEntryPoint="false" SubGraphKey="StateMachine2">
+      <Comment />
+      <TriggeredMethods>
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="NewTransaction" TriggeringEvent="XComponent.TradeCapture.UserObject.Transaction" />
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="UpdateAndRetry" TriggeringEvent="XComponent.TradeCapture.UserObject.UpdateAndRetry" />
+        <TriggeredMethodData IsNodeInitializer="true" IsSelected="false" TransitionName="InitializePublicMember" />
+      </TriggeredMethods>
+    </StateData>
+    <StateData Id="3" Name="ValidationError" IsEntryPoint="false" SubGraphKey="StateMachine2">
+      <Comment />
+      <TriggeredMethods>
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="false" TransitionName="ValidationError" TriggeringEvent="XComponent.TradeCapture.UserObject.Error" />
+      </TriggeredMethods>
+    </StateData>
+    <StateData Id="4" Name="TransactionRejected" IsEntryPoint="false" SubGraphKey="StateMachine2">
+      <Comment />
+      <TriggeredMethods>
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="Reject" TriggeringEvent="XComponent.TradeCapture.UserObject.Reject" />
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="TimeOut" TriggeringEvent="XComponent.Common.Event.DefaultEvent" />
+      </TriggeredMethods>
+    </StateData>
+    <StateData Id="5" Name="Mapping" IsEntryPoint="false" SubGraphKey="StateMachine2">
+      <Comment />
+      <TriggeredMethods>
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="InitMapping" TriggeringEvent="XComponent.TradeCapture.UserObject.Init" />
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="ReferentialNotification" TriggeringEvent="XComponent.Referential.UserObject.InstrumentSnapshot" />
+      </TriggeredMethods>
+    </StateData>
+    <StateData Id="6" Name="ErrorOnMapping" IsEntryPoint="false" SubGraphKey="StateMachine2">
+      <Comment />
+      <TriggeredMethods>
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="Error" TriggeringEvent="XComponent.TradeCapture.UserObject.Error" />
+      </TriggeredMethods>
+    </StateData>
+    <StateData Id="7" Name="TransactionAccepted" IsEntryPoint="false" SubGraphKey="StateMachine2">
+      <Comment />
+      <TriggeredMethods>
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="Accepted" TriggeringEvent="XComponent.TradeCapture.UserObject.Accept" />
+      </TriggeredMethods>
+    </StateData>
+    <StateData Id="8" Name="UpdateReferential" IsEntryPoint="false" SubGraphKey="StateMachine3">
+      <Comment />
+      <TriggeredMethods>
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="UpdateReferential" TriggeringEvent="XComponent.Referential.UserObject.Instrument" />
+        <TriggeredMethodData IsNodeInitializer="true" IsSelected="false" TransitionName="InitializePublicMember" TriggeringEvent="XComponent.TradeCapture.UserObject.Transaction" />
+      </TriggeredMethods>
+    </StateData>
+    <StateData Id="9" Name="GetInstrumentSnapshot" IsEntryPoint="false" SubGraphKey="StateMachine4">
+      <Comment />
+      <TriggeredMethods>
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="false" TransitionName="GetInstrumentSnapshot" TriggeringEvent="XComponent.Referential.UserObject.GetSnapshot" />
+        <TriggeredMethodData IsNodeInitializer="true" IsSelected="false" TransitionName="InitializePublicMember" TriggeringEvent="XComponent.TradeCapture.UserObject.Transaction" />
+      </TriggeredMethods>
+    </StateData>
+  </States>
+  <TransitionPatternStates />
+  <Links>
+    <TransitionData Id="5" Name="NewTransaction" FromKey="State1" ToKey="State2" Type="X" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.TradeCapture.UserObject.Transaction" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="1" Name="ValidationError" FromKey="State2" ToKey="State3" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.TradeCapture.UserObject.Error" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="3" Name="InitMapping" FromKey="State2" ToKey="State5" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.TradeCapture.UserObject.Init" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="2" Name="Reject" FromKey="State3" ToKey="State4" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.TradeCapture.UserObject.Reject" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="6" Name="UpdateAndRetry" FromKey="State3" ToKey="State2" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.TradeCapture.UserObject.UpdateAndRetry" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="9" Name="TimeOut" FromKey="State3" ToKey="State4" Type="TimeOut" ExecutionDelay="20" SetCustomTimeout="false" TriggeringEvent="XComponent.Common.Event.DefaultEvent" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="4" Name="Error" FromKey="State5" ToKey="State6" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.TradeCapture.UserObject.Error" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="8" Name="Accepted" FromKey="State5" ToKey="State7" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.TradeCapture.UserObject.Accept" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="13" Name="GetInstrumentSnapshot" FromKey="State5" ToKey="State9" Type="X" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.Referential.UserObject.GetSnapshot" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="14" Name="ReferentialNotification" FromKey="State5" ToKey="State5" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.Referential.UserObject.InstrumentSnapshot" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="7" Name="ReferentialNotification" FromKey="State6" ToKey="State5" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.Referential.UserObject.InstrumentSnapshot" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="10" Name="TimeOut" FromKey="State6" ToKey="State4" Type="TimeOut" ExecutionDelay="20" SetCustomTimeout="false" TriggeringEvent="XComponent.Common.Event.DefaultEvent" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="11" Name="Reject" FromKey="State6" ToKey="State4" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.TradeCapture.UserObject.Reject" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="12" Name="UpdateReferential" FromKey="State6" ToKey="State8" Type="X" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.Referential.UserObject.Instrument" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+  </Links>
+  <TransversalLinks>
+    <TransversalTransitionData Id="18" Name="" FromKey="State2" ToId="3" SelectAllTransitions="true" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.TradeCapture.UserObject.Transaction" Name="NewTransaction" />
+        <SelectedTransitionData Event="XComponent.TradeCapture.UserObject.UpdateAndRetry" Name="UpdateAndRetry" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="19" Name="" FromKey="State2" ToId="1" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.TradeCapture.UserObject.Transaction" Name="NewTransaction" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="15" Name="" FromKey="State5" ToId="8" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.Referential.UserObject.InstrumentSnapshot" Name="ReferentialNotification" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="16" Name="" FromKey="State5" ToId="4" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.Referential.UserObject.InstrumentSnapshot" Name="ReferentialNotification" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="17" Name="" FromKey="State5" ToId="13" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.TradeCapture.UserObject.Init" Name="InitMapping" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="20" Name="" FromKey="State6" ToId="12" SelectAllTransitions="true" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.TradeCapture.UserObject.Error" Name="Error" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+  </TransversalLinks>
+  <PublicAssemblies>
+    <AssemblyData Name="Referential" Path="D:\xc-community\xcomponent\Examples\xc.tradecapture\tradecaptureservice\TradeCaptureCore\Referential/generated/UserObject/XComponent.Referential.UserObject.dll" />
+  </PublicAssemblies>
+  <ExternalAssemblies />
+</ComponentViewModelData>

@@ -1,0 +1,376 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<deployment environment="Dev" xcProjectName="RestConsumerApi" deploymentTargetCode="-1642425938" deploymentTargetName="RestConsumerApiApi" version="1.0" frameworkType="Framework45" xmlns="http://xcomponent.com/DeploymentConfig.xsd" clientApiReference="XComponent.RestConsumerApi.ClientApi.dll">
+  <threading />
+  <serialization>Json</serialization>
+  <communication>
+    <bus name="rabbitmq" host="localhost" port="5672" user="guest" password="guest" type="RABBIT_MQ" />
+  </communication>
+  <clientAPICommunication>
+    <publish componentCode="-1217457941" stateMachineCode="-1217457941" eventType="UPDATE" topicType="output" communicationType="BUS" stateCode="1" eventCode="8" event="XComponent.SwaggerPetstore.UserObject.AddPet" communication="rabbitmq">
+      <topic type="STATIC">input.1_0.microservice1.SwaggerPetstore.SwaggerPetstore</topic>
+    </publish>
+    <publish componentCode="-1217457941" stateMachineCode="-1217457941" eventType="UPDATE" topicType="output" communicationType="BUS" stateCode="1" eventCode="9" event="XComponent.SwaggerPetstore.UserObject.AddPetOperation" communication="rabbitmq">
+      <topic type="STATIC">input.1_0.microservice1.SwaggerPetstore.SwaggerPetstore</topic>
+    </publish>
+    <publish componentCode="-1217457941" stateMachineCode="-1217457941" eventType="UPDATE" topicType="output" communicationType="BUS" stateCode="1" eventCode="50" event="XComponent.SwaggerPetstore.UserObject.UpdatePet" communication="rabbitmq">
+      <topic type="STATIC">input.1_0.microservice1.SwaggerPetstore.SwaggerPetstore</topic>
+    </publish>
+    <publish componentCode="-1217457941" stateMachineCode="-1217457941" eventType="UPDATE" topicType="output" communicationType="BUS" stateCode="1" eventCode="51" event="XComponent.SwaggerPetstore.UserObject.UpdatePetOperation" communication="rabbitmq">
+      <topic type="STATIC">input.1_0.microservice1.SwaggerPetstore.SwaggerPetstore</topic>
+    </publish>
+    <publish componentCode="-1217457941" stateMachineCode="-1217457941" eventType="UPDATE" topicType="output" communicationType="BUS" stateCode="1" eventCode="23" event="XComponent.SwaggerPetstore.UserObject.FindPetsByStatus" communication="rabbitmq">
+      <topic type="STATIC">input.1_0.microservice1.SwaggerPetstore.SwaggerPetstore</topic>
+    </publish>
+    <publish componentCode="-1217457941" stateMachineCode="-1217457941" eventType="UPDATE" topicType="output" communicationType="BUS" stateCode="1" eventCode="24" event="XComponent.SwaggerPetstore.UserObject.FindPetsByStatusOperation" communication="rabbitmq">
+      <topic type="STATIC">input.1_0.microservice1.SwaggerPetstore.SwaggerPetstore</topic>
+    </publish>
+    <publish componentCode="-1217457941" stateMachineCode="-1217457941" eventType="UPDATE" topicType="output" communicationType="BUS" stateCode="1" eventCode="25" event="XComponent.SwaggerPetstore.UserObject.FindPetsByTags" communication="rabbitmq">
+      <topic type="STATIC">input.1_0.microservice1.SwaggerPetstore.SwaggerPetstore</topic>
+    </publish>
+    <publish componentCode="-1217457941" stateMachineCode="-1217457941" eventType="UPDATE" topicType="output" communicationType="BUS" stateCode="1" eventCode="26" event="XComponent.SwaggerPetstore.UserObject.FindPetsByTagsOperation" communication="rabbitmq">
+      <topic type="STATIC">input.1_0.microservice1.SwaggerPetstore.SwaggerPetstore</topic>
+    </publish>
+    <publish componentCode="-1217457941" stateMachineCode="-1217457941" eventType="UPDATE" topicType="output" communicationType="BUS" stateCode="1" eventCode="31" event="XComponent.SwaggerPetstore.UserObject.GetPetById" communication="rabbitmq">
+      <topic type="STATIC">input.1_0.microservice1.SwaggerPetstore.SwaggerPetstore</topic>
+    </publish>
+    <publish componentCode="-1217457941" stateMachineCode="-1217457941" eventType="UPDATE" topicType="output" communicationType="BUS" stateCode="1" eventCode="32" event="XComponent.SwaggerPetstore.UserObject.GetPetByIdOperation" communication="rabbitmq">
+      <topic type="STATIC">input.1_0.microservice1.SwaggerPetstore.SwaggerPetstore</topic>
+    </publish>
+    <publish componentCode="-1217457941" stateMachineCode="-1217457941" eventType="UPDATE" topicType="output" communicationType="BUS" stateCode="1" eventCode="52" event="XComponent.SwaggerPetstore.UserObject.UpdatePetWithForm" communication="rabbitmq">
+      <topic type="STATIC">input.1_0.microservice1.SwaggerPetstore.SwaggerPetstore</topic>
+    </publish>
+    <publish componentCode="-1217457941" stateMachineCode="-1217457941" eventType="UPDATE" topicType="output" communicationType="BUS" stateCode="1" eventCode="53" event="XComponent.SwaggerPetstore.UserObject.UpdatePetWithFormOperation" communication="rabbitmq">
+      <topic type="STATIC">input.1_0.microservice1.SwaggerPetstore.SwaggerPetstore</topic>
+    </publish>
+    <publish componentCode="-1217457941" stateMachineCode="-1217457941" eventType="UPDATE" topicType="output" communicationType="BUS" stateCode="1" eventCode="18" event="XComponent.SwaggerPetstore.UserObject.DeletePet" communication="rabbitmq">
+      <topic type="STATIC">input.1_0.microservice1.SwaggerPetstore.SwaggerPetstore</topic>
+    </publish>
+    <publish componentCode="-1217457941" stateMachineCode="-1217457941" eventType="UPDATE" topicType="output" communicationType="BUS" stateCode="1" eventCode="19" event="XComponent.SwaggerPetstore.UserObject.DeletePetOperation" communication="rabbitmq">
+      <topic type="STATIC">input.1_0.microservice1.SwaggerPetstore.SwaggerPetstore</topic>
+    </publish>
+    <publish componentCode="-1217457941" stateMachineCode="-1217457941" eventType="UPDATE" topicType="output" communicationType="BUS" stateCode="1" eventCode="56" event="XComponent.SwaggerPetstore.UserObject.UploadFile" communication="rabbitmq">
+      <topic type="STATIC">input.1_0.microservice1.SwaggerPetstore.SwaggerPetstore</topic>
+    </publish>
+    <publish componentCode="-1217457941" stateMachineCode="-1217457941" eventType="UPDATE" topicType="output" communicationType="BUS" stateCode="1" eventCode="57" event="XComponent.SwaggerPetstore.UserObject.UploadFileOperation" communication="rabbitmq">
+      <topic type="STATIC">input.1_0.microservice1.SwaggerPetstore.SwaggerPetstore</topic>
+    </publish>
+    <publish componentCode="-1217457941" stateMachineCode="-1217457941" eventType="UPDATE" topicType="output" communicationType="BUS" stateCode="1" eventCode="27" event="XComponent.SwaggerPetstore.UserObject.GetInventory" communication="rabbitmq">
+      <topic type="STATIC">input.1_0.microservice1.SwaggerPetstore.SwaggerPetstore</topic>
+    </publish>
+    <publish componentCode="-1217457941" stateMachineCode="-1217457941" eventType="UPDATE" topicType="output" communicationType="BUS" stateCode="1" eventCode="28" event="XComponent.SwaggerPetstore.UserObject.GetInventoryOperation" communication="rabbitmq">
+      <topic type="STATIC">input.1_0.microservice1.SwaggerPetstore.SwaggerPetstore</topic>
+    </publish>
+    <publish componentCode="-1217457941" stateMachineCode="-1217457941" eventType="UPDATE" topicType="output" communicationType="BUS" stateCode="1" eventCode="46" event="XComponent.SwaggerPetstore.UserObject.PlaceOrder" communication="rabbitmq">
+      <topic type="STATIC">input.1_0.microservice1.SwaggerPetstore.SwaggerPetstore</topic>
+    </publish>
+    <publish componentCode="-1217457941" stateMachineCode="-1217457941" eventType="UPDATE" topicType="output" communicationType="BUS" stateCode="1" eventCode="47" event="XComponent.SwaggerPetstore.UserObject.PlaceOrderOperation" communication="rabbitmq">
+      <topic type="STATIC">input.1_0.microservice1.SwaggerPetstore.SwaggerPetstore</topic>
+    </publish>
+    <publish componentCode="-1217457941" stateMachineCode="-1217457941" eventType="UPDATE" topicType="output" communicationType="BUS" stateCode="1" eventCode="29" event="XComponent.SwaggerPetstore.UserObject.GetOrderById" communication="rabbitmq">
+      <topic type="STATIC">input.1_0.microservice1.SwaggerPetstore.SwaggerPetstore</topic>
+    </publish>
+    <publish componentCode="-1217457941" stateMachineCode="-1217457941" eventType="UPDATE" topicType="output" communicationType="BUS" stateCode="1" eventCode="30" event="XComponent.SwaggerPetstore.UserObject.GetOrderByIdOperation" communication="rabbitmq">
+      <topic type="STATIC">input.1_0.microservice1.SwaggerPetstore.SwaggerPetstore</topic>
+    </publish>
+    <publish componentCode="-1217457941" stateMachineCode="-1217457941" eventType="UPDATE" topicType="output" communicationType="BUS" stateCode="1" eventCode="16" event="XComponent.SwaggerPetstore.UserObject.DeleteOrder" communication="rabbitmq">
+      <topic type="STATIC">input.1_0.microservice1.SwaggerPetstore.SwaggerPetstore</topic>
+    </publish>
+    <publish componentCode="-1217457941" stateMachineCode="-1217457941" eventType="UPDATE" topicType="output" communicationType="BUS" stateCode="1" eventCode="17" event="XComponent.SwaggerPetstore.UserObject.DeleteOrderOperation" communication="rabbitmq">
+      <topic type="STATIC">input.1_0.microservice1.SwaggerPetstore.SwaggerPetstore</topic>
+    </publish>
+    <publish componentCode="-1217457941" stateMachineCode="-1217457941" eventType="UPDATE" topicType="output" communicationType="BUS" stateCode="1" eventCode="10" event="XComponent.SwaggerPetstore.UserObject.CreateUser" communication="rabbitmq">
+      <topic type="STATIC">input.1_0.microservice1.SwaggerPetstore.SwaggerPetstore</topic>
+    </publish>
+    <publish componentCode="-1217457941" stateMachineCode="-1217457941" eventType="UPDATE" topicType="output" communicationType="BUS" stateCode="1" eventCode="11" event="XComponent.SwaggerPetstore.UserObject.CreateUserOperation" communication="rabbitmq">
+      <topic type="STATIC">input.1_0.microservice1.SwaggerPetstore.SwaggerPetstore</topic>
+    </publish>
+    <publish componentCode="-1217457941" stateMachineCode="-1217457941" eventType="UPDATE" topicType="output" communicationType="BUS" stateCode="1" eventCode="12" event="XComponent.SwaggerPetstore.UserObject.CreateUsersWithArrayInput" communication="rabbitmq">
+      <topic type="STATIC">input.1_0.microservice1.SwaggerPetstore.SwaggerPetstore</topic>
+    </publish>
+    <publish componentCode="-1217457941" stateMachineCode="-1217457941" eventType="UPDATE" topicType="output" communicationType="BUS" stateCode="1" eventCode="13" event="XComponent.SwaggerPetstore.UserObject.CreateUsersWithArrayInputOperation" communication="rabbitmq">
+      <topic type="STATIC">input.1_0.microservice1.SwaggerPetstore.SwaggerPetstore</topic>
+    </publish>
+    <publish componentCode="-1217457941" stateMachineCode="-1217457941" eventType="UPDATE" topicType="output" communicationType="BUS" stateCode="1" eventCode="14" event="XComponent.SwaggerPetstore.UserObject.CreateUsersWithListInput" communication="rabbitmq">
+      <topic type="STATIC">input.1_0.microservice1.SwaggerPetstore.SwaggerPetstore</topic>
+    </publish>
+    <publish componentCode="-1217457941" stateMachineCode="-1217457941" eventType="UPDATE" topicType="output" communicationType="BUS" stateCode="1" eventCode="15" event="XComponent.SwaggerPetstore.UserObject.CreateUsersWithListInputOperation" communication="rabbitmq">
+      <topic type="STATIC">input.1_0.microservice1.SwaggerPetstore.SwaggerPetstore</topic>
+    </publish>
+    <publish componentCode="-1217457941" stateMachineCode="-1217457941" eventType="UPDATE" topicType="output" communicationType="BUS" stateCode="1" eventCode="35" event="XComponent.SwaggerPetstore.UserObject.LoginUser" communication="rabbitmq">
+      <topic type="STATIC">input.1_0.microservice1.SwaggerPetstore.SwaggerPetstore</topic>
+    </publish>
+    <publish componentCode="-1217457941" stateMachineCode="-1217457941" eventType="UPDATE" topicType="output" communicationType="BUS" stateCode="1" eventCode="36" event="XComponent.SwaggerPetstore.UserObject.LoginUserOperation" communication="rabbitmq">
+      <topic type="STATIC">input.1_0.microservice1.SwaggerPetstore.SwaggerPetstore</topic>
+    </publish>
+    <publish componentCode="-1217457941" stateMachineCode="-1217457941" eventType="UPDATE" topicType="output" communicationType="BUS" stateCode="1" eventCode="37" event="XComponent.SwaggerPetstore.UserObject.LogoutUser" communication="rabbitmq">
+      <topic type="STATIC">input.1_0.microservice1.SwaggerPetstore.SwaggerPetstore</topic>
+    </publish>
+    <publish componentCode="-1217457941" stateMachineCode="-1217457941" eventType="UPDATE" topicType="output" communicationType="BUS" stateCode="1" eventCode="38" event="XComponent.SwaggerPetstore.UserObject.LogoutUserOperation" communication="rabbitmq">
+      <topic type="STATIC">input.1_0.microservice1.SwaggerPetstore.SwaggerPetstore</topic>
+    </publish>
+    <publish componentCode="-1217457941" stateMachineCode="-1217457941" eventType="UPDATE" topicType="output" communicationType="BUS" stateCode="1" eventCode="33" event="XComponent.SwaggerPetstore.UserObject.GetUserByName" communication="rabbitmq">
+      <topic type="STATIC">input.1_0.microservice1.SwaggerPetstore.SwaggerPetstore</topic>
+    </publish>
+    <publish componentCode="-1217457941" stateMachineCode="-1217457941" eventType="UPDATE" topicType="output" communicationType="BUS" stateCode="1" eventCode="34" event="XComponent.SwaggerPetstore.UserObject.GetUserByNameOperation" communication="rabbitmq">
+      <topic type="STATIC">input.1_0.microservice1.SwaggerPetstore.SwaggerPetstore</topic>
+    </publish>
+    <publish componentCode="-1217457941" stateMachineCode="-1217457941" eventType="UPDATE" topicType="output" communicationType="BUS" stateCode="1" eventCode="54" event="XComponent.SwaggerPetstore.UserObject.UpdateUser" communication="rabbitmq">
+      <topic type="STATIC">input.1_0.microservice1.SwaggerPetstore.SwaggerPetstore</topic>
+    </publish>
+    <publish componentCode="-1217457941" stateMachineCode="-1217457941" eventType="UPDATE" topicType="output" communicationType="BUS" stateCode="1" eventCode="55" event="XComponent.SwaggerPetstore.UserObject.UpdateUserOperation" communication="rabbitmq">
+      <topic type="STATIC">input.1_0.microservice1.SwaggerPetstore.SwaggerPetstore</topic>
+    </publish>
+    <publish componentCode="-1217457941" stateMachineCode="-1217457941" eventType="UPDATE" topicType="output" communicationType="BUS" stateCode="1" eventCode="20" event="XComponent.SwaggerPetstore.UserObject.DeleteUser" communication="rabbitmq">
+      <topic type="STATIC">input.1_0.microservice1.SwaggerPetstore.SwaggerPetstore</topic>
+    </publish>
+    <publish componentCode="-1217457941" stateMachineCode="-1217457941" eventType="UPDATE" topicType="output" communicationType="BUS" stateCode="1" eventCode="21" event="XComponent.SwaggerPetstore.UserObject.DeleteUserOperation" communication="rabbitmq">
+      <topic type="STATIC">input.1_0.microservice1.SwaggerPetstore.SwaggerPetstore</topic>
+    </publish>
+    <subscribe componentCode="-1217457941" eventType="ERROR" topicType="input" communicationType="BUS" communication="rabbitmq">
+      <topic type="STATIC">error.1_0.microservice1.SwaggerPetstore</topic>
+    </subscribe>
+    <subscribe componentCode="-1217457941" stateMachineCode="-1573098133" eventType="UPDATE" topicType="input" communicationType="BUS" event="XComponent.SwaggerPetstore.UserObject.AddPetOperation" communication="rabbitmq" communicationThreadingType="INHERITFROMPARENT">
+      <topic type="STATIC">output.1_0.microservice1.SwaggerPetstore.AddPetOperation</topic>
+    </subscribe>
+    <subscribe componentCode="-1217457941" stateMachineCode="1341262500" eventType="UPDATE" topicType="input" communicationType="BUS" event="XComponent.SwaggerPetstore.UserObject.GetPetByIdOperation" communication="rabbitmq" communicationThreadingType="INHERITFROMPARENT">
+      <topic type="STATIC">output.1_0.microservice1.SwaggerPetstore.GetPetByIdOperation</topic>
+    </subscribe>
+    <snapshot componentCode="-1217457941">
+      <topic type="STATIC">snapshot.1_0.microservice1.SwaggerPetstore</topic>
+    </snapshot>
+  </clientAPICommunication>
+  <codesConverter>
+    <components>
+      <component name="SwaggerPetstore" id="-1217457941">
+        <events>
+          <event name="XComponent.Common.Event.ApiProxy.ApiInitError" id="0" />
+          <event name="XComponent.Common.Event.ApiProxy.ApiInitSuccessful" id="1" />
+          <event name="XComponent.Common.Event.ApiProxy.CancelApiInit" id="2" />
+          <event name="XComponent.Common.Event.ApiProxy.InstanceUpdatedSubscription" id="3" />
+          <event name="XComponent.Common.Event.ApiProxy.InstanceUpdatedUnsubscription" id="4" />
+          <event name="XComponent.Common.Event.ApiProxy.SnapshotOptions" id="5" />
+          <event name="XComponent.Common.Event.DefaultEvent" id="6" />
+          <event name="XComponent.Common.Event.ExceptionEvent" id="7" />
+          <event name="XComponent.SwaggerPetstore.UserObject.AddPet" id="8" />
+          <event name="XComponent.SwaggerPetstore.UserObject.AddPetOperation" id="9" />
+          <event name="XComponent.SwaggerPetstore.UserObject.CreateUser" id="10" />
+          <event name="XComponent.SwaggerPetstore.UserObject.CreateUserOperation" id="11" />
+          <event name="XComponent.SwaggerPetstore.UserObject.CreateUsersWithArrayInput" id="12" />
+          <event name="XComponent.SwaggerPetstore.UserObject.CreateUsersWithArrayInputOperation" id="13" />
+          <event name="XComponent.SwaggerPetstore.UserObject.CreateUsersWithListInput" id="14" />
+          <event name="XComponent.SwaggerPetstore.UserObject.CreateUsersWithListInputOperation" id="15" />
+          <event name="XComponent.SwaggerPetstore.UserObject.DeleteOrder" id="16" />
+          <event name="XComponent.SwaggerPetstore.UserObject.DeleteOrderOperation" id="17" />
+          <event name="XComponent.SwaggerPetstore.UserObject.DeletePet" id="18" />
+          <event name="XComponent.SwaggerPetstore.UserObject.DeletePetOperation" id="19" />
+          <event name="XComponent.SwaggerPetstore.UserObject.DeleteUser" id="20" />
+          <event name="XComponent.SwaggerPetstore.UserObject.DeleteUserOperation" id="21" />
+          <event name="XComponent.SwaggerPetstore.UserObject.ErrorResponse" id="22" />
+          <event name="XComponent.SwaggerPetstore.UserObject.FindPetsByStatus" id="23" />
+          <event name="XComponent.SwaggerPetstore.UserObject.FindPetsByStatusOperation" id="24" />
+          <event name="XComponent.SwaggerPetstore.UserObject.FindPetsByTags" id="25" />
+          <event name="XComponent.SwaggerPetstore.UserObject.FindPetsByTagsOperation" id="26" />
+          <event name="XComponent.SwaggerPetstore.UserObject.GetInventory" id="27" />
+          <event name="XComponent.SwaggerPetstore.UserObject.GetInventoryOperation" id="28" />
+          <event name="XComponent.SwaggerPetstore.UserObject.GetOrderById" id="29" />
+          <event name="XComponent.SwaggerPetstore.UserObject.GetOrderByIdOperation" id="30" />
+          <event name="XComponent.SwaggerPetstore.UserObject.GetPetById" id="31" />
+          <event name="XComponent.SwaggerPetstore.UserObject.GetPetByIdOperation" id="32" />
+          <event name="XComponent.SwaggerPetstore.UserObject.GetUserByName" id="33" />
+          <event name="XComponent.SwaggerPetstore.UserObject.GetUserByNameOperation" id="34" />
+          <event name="XComponent.SwaggerPetstore.UserObject.LoginUser" id="35" />
+          <event name="XComponent.SwaggerPetstore.UserObject.LoginUserOperation" id="36" />
+          <event name="XComponent.SwaggerPetstore.UserObject.LogoutUser" id="37" />
+          <event name="XComponent.SwaggerPetstore.UserObject.LogoutUserOperation" id="38" />
+          <event name="XComponent.SwaggerPetstore.UserObject.Models.ApiResponse" id="39" />
+          <event name="XComponent.SwaggerPetstore.UserObject.Models.Category" id="40" />
+          <event name="XComponent.SwaggerPetstore.UserObject.Models.LoginUserHeaders" id="41" />
+          <event name="XComponent.SwaggerPetstore.UserObject.Models.Order" id="42" />
+          <event name="XComponent.SwaggerPetstore.UserObject.Models.Pet" id="43" />
+          <event name="XComponent.SwaggerPetstore.UserObject.Models.Tag" id="44" />
+          <event name="XComponent.SwaggerPetstore.UserObject.Models.User" id="45" />
+          <event name="XComponent.SwaggerPetstore.UserObject.PlaceOrder" id="46" />
+          <event name="XComponent.SwaggerPetstore.UserObject.PlaceOrderOperation" id="47" />
+          <event name="XComponent.SwaggerPetstore.UserObject.SuccessResponse" id="48" />
+          <event name="XComponent.SwaggerPetstore.UserObject.SwaggerPetstore_EntryPoint" id="49" />
+          <event name="XComponent.SwaggerPetstore.UserObject.UpdatePet" id="50" />
+          <event name="XComponent.SwaggerPetstore.UserObject.UpdatePetOperation" id="51" />
+          <event name="XComponent.SwaggerPetstore.UserObject.UpdatePetWithForm" id="52" />
+          <event name="XComponent.SwaggerPetstore.UserObject.UpdatePetWithFormOperation" id="53" />
+          <event name="XComponent.SwaggerPetstore.UserObject.UpdateUser" id="54" />
+          <event name="XComponent.SwaggerPetstore.UserObject.UpdateUserOperation" id="55" />
+          <event name="XComponent.SwaggerPetstore.UserObject.UploadFile" id="56" />
+          <event name="XComponent.SwaggerPetstore.UserObject.UploadFileOperation" id="57" />
+        </events>
+        <stateMachines>
+          <stateMachine name="SwaggerPetstore" id="-1217457941">
+            <states>
+              <State name="EntryPoint" id="0" />
+              <State name="Up" id="1" />
+            </states>
+          </stateMachine>
+          <stateMachine name="AddPetOperation" id="-1573098133">
+            <states>
+              <State name="SendingRequest" id="2" />
+              <State name="RequestSent" id="1" />
+              <State name="SuccessResponseReceived" id="3" />
+              <State name="ErrorResponseReceived" id="0" />
+            </states>
+          </stateMachine>
+          <stateMachine name="UpdatePetOperation" id="-1548009360">
+            <states>
+              <State name="SendingRequest" id="2" />
+              <State name="RequestSent" id="1" />
+              <State name="SuccessResponseReceived" id="3" />
+              <State name="ErrorResponseReceived" id="0" />
+            </states>
+          </stateMachine>
+          <stateMachine name="FindPetsByStatusOperation" id="441322543">
+            <states>
+              <State name="SendingRequest" id="2" />
+              <State name="RequestSent" id="1" />
+              <State name="SuccessResponseReceived" id="3" />
+              <State name="ErrorResponseReceived" id="0" />
+            </states>
+          </stateMachine>
+          <stateMachine name="FindPetsByTagsOperation" id="715370505">
+            <states>
+              <State name="SendingRequest" id="2" />
+              <State name="RequestSent" id="1" />
+              <State name="SuccessResponseReceived" id="3" />
+              <State name="ErrorResponseReceived" id="0" />
+            </states>
+          </stateMachine>
+          <stateMachine name="GetPetByIdOperation" id="1341262500">
+            <states>
+              <State name="SendingRequest" id="2" />
+              <State name="RequestSent" id="1" />
+              <State name="SuccessResponseReceived" id="3" />
+              <State name="ErrorResponseReceived" id="0" />
+            </states>
+          </stateMachine>
+          <stateMachine name="UpdatePetWithFormOperation" id="-304199001">
+            <states>
+              <State name="SendingRequest" id="2" />
+              <State name="RequestSent" id="1" />
+              <State name="SuccessResponseReceived" id="3" />
+              <State name="ErrorResponseReceived" id="0" />
+            </states>
+          </stateMachine>
+          <stateMachine name="DeletePetOperation" id="-2038525811">
+            <states>
+              <State name="SendingRequest" id="2" />
+              <State name="RequestSent" id="1" />
+              <State name="SuccessResponseReceived" id="3" />
+              <State name="ErrorResponseReceived" id="0" />
+            </states>
+          </stateMachine>
+          <stateMachine name="UploadFileOperation" id="681824184">
+            <states>
+              <State name="SendingRequest" id="2" />
+              <State name="RequestSent" id="1" />
+              <State name="SuccessResponseReceived" id="3" />
+              <State name="ErrorResponseReceived" id="0" />
+            </states>
+          </stateMachine>
+          <stateMachine name="GetInventoryOperation" id="-27939533">
+            <states>
+              <State name="SendingRequest" id="2" />
+              <State name="RequestSent" id="1" />
+              <State name="SuccessResponseReceived" id="3" />
+              <State name="ErrorResponseReceived" id="0" />
+            </states>
+          </stateMachine>
+          <stateMachine name="PlaceOrderOperation" id="1641275182">
+            <states>
+              <State name="SendingRequest" id="2" />
+              <State name="RequestSent" id="1" />
+              <State name="SuccessResponseReceived" id="3" />
+              <State name="ErrorResponseReceived" id="0" />
+            </states>
+          </stateMachine>
+          <stateMachine name="GetOrderByIdOperation" id="-1136586326">
+            <states>
+              <State name="SendingRequest" id="2" />
+              <State name="RequestSent" id="1" />
+              <State name="SuccessResponseReceived" id="3" />
+              <State name="ErrorResponseReceived" id="0" />
+            </states>
+          </stateMachine>
+          <stateMachine name="DeleteOrderOperation" id="-1736304006">
+            <states>
+              <State name="SendingRequest" id="2" />
+              <State name="RequestSent" id="1" />
+              <State name="SuccessResponseReceived" id="3" />
+              <State name="ErrorResponseReceived" id="0" />
+            </states>
+          </stateMachine>
+          <stateMachine name="CreateUserOperation" id="-1885035300">
+            <states>
+              <State name="SendingRequest" id="2" />
+              <State name="RequestSent" id="1" />
+              <State name="SuccessResponseReceived" id="3" />
+              <State name="ErrorResponseReceived" id="0" />
+            </states>
+          </stateMachine>
+          <stateMachine name="CreateUsersWithArrayInputOperation" id="1610894133">
+            <states>
+              <State name="SendingRequest" id="2" />
+              <State name="RequestSent" id="1" />
+              <State name="SuccessResponseReceived" id="3" />
+              <State name="ErrorResponseReceived" id="0" />
+            </states>
+          </stateMachine>
+          <stateMachine name="CreateUsersWithListInputOperation" id="-778049146">
+            <states>
+              <State name="SendingRequest" id="2" />
+              <State name="RequestSent" id="1" />
+              <State name="SuccessResponseReceived" id="3" />
+              <State name="ErrorResponseReceived" id="0" />
+            </states>
+          </stateMachine>
+          <stateMachine name="LoginUserOperation" id="2145862436">
+            <states>
+              <State name="SendingRequest" id="2" />
+              <State name="RequestSent" id="1" />
+              <State name="SuccessResponseReceived" id="3" />
+              <State name="ErrorResponseReceived" id="0" />
+            </states>
+          </stateMachine>
+          <stateMachine name="LogoutUserOperation" id="1845274015">
+            <states>
+              <State name="SendingRequest" id="2" />
+              <State name="RequestSent" id="1" />
+              <State name="SuccessResponseReceived" id="3" />
+              <State name="ErrorResponseReceived" id="0" />
+            </states>
+          </stateMachine>
+          <stateMachine name="GetUserByNameOperation" id="-1901015653">
+            <states>
+              <State name="SendingRequest" id="2" />
+              <State name="RequestSent" id="1" />
+              <State name="SuccessResponseReceived" id="3" />
+              <State name="ErrorResponseReceived" id="0" />
+            </states>
+          </stateMachine>
+          <stateMachine name="UpdateUserOperation" id="-752139183">
+            <states>
+              <State name="SendingRequest" id="2" />
+              <State name="RequestSent" id="1" />
+              <State name="SuccessResponseReceived" id="3" />
+              <State name="ErrorResponseReceived" id="0" />
+            </states>
+          </stateMachine>
+          <stateMachine name="DeleteUserOperation" id="-647013823">
+            <states>
+              <State name="SendingRequest" id="2" />
+              <State name="RequestSent" id="1" />
+              <State name="SuccessResponseReceived" id="3" />
+              <State name="ErrorResponseReceived" id="0" />
+            </states>
+          </stateMachine>
+        </stateMachines>
+      </component>
+    </components>
+  </codesConverter>
+</deployment>
