@@ -48,6 +48,8 @@ also notice that, for simplicity, we omitted many operations and only 2 of them 
 is generated based on the service's title present in the description. The composition view should look like the following:
  
  ![New composition view](images/New_composition_view.jpg)
+
+Your actual model will include much more state machines.
   
 ### Explore the generated component
 
@@ -92,10 +94,14 @@ We also have the possibility to override the service's address by defining a *St
 
 With these configurations done, we can now build the composition.
   
+## Running the microservice
+
+* Start RabbitMQ
+* In the properties fo your project confgigure RabbitMQ on the *Communication* configuration. On the *Components* configuration, set the deployment target to *Server* and the serialization to *Json*.
+* Start your microservice (*Project* menu + *Run microservices* sub menu + *Start* button)
+
 ## Console Application
  
-* Start RabbitMQ
-* Start your microservice (*Project* menu + *Run microservices* sub menu + *Start* button)
 * Create a simple console application to test your microservice (*Project* menu + *Generate console app* sub menu)
 * Use the *Program.cs* you can find (here)[https://github.com/xcomponent/xcomponent/blob/master/Examples/xc.restapiclient/RestConsumer/PetstoreConsoleApplication/PetstoreConsoleApplication/Program.cs]
 
