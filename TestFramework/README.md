@@ -144,8 +144,4 @@ After the buid, a Visual Studio project is generated. These tests can be execute
 A full example is available in the HelloWorld project [Hello World sample](../Examples/xc.helloworld/README.md).
 
 
-By combining unit, integration and component testing, we are able to achieve high coverage of the modules that make up a microservice and can be sure that the microservice correctly implements the required business logic.
-Yet, in all but the simplest use cases, business value is not achieved unless many microservices work together to fulfil larger business processes. Within this testing scheme, there are still no tests that ensure external dependencies meet the contract expected of them or that our collection of microservices collaborate correctly to provide end-to-end business flows.
 
-XComponent is a platform to easily create, monitor and share **microservices**.
-In XComponent, a microservice is a set of components. Each component is based on **state machines** (States machines are designed graphically). This approach is powerful and flexible because it enables you to size or resize your microservices as you want.
