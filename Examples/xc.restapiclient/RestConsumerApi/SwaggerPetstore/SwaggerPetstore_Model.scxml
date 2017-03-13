@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<scxml version="1.0" name="SwaggerPetstore">
+  <datamodel>
+    <data id="Version" expr="2" />
+    <data id="logKeys">
+      <logKeys>
+        <logKey IsActivated="True">SwaggerPetstoreLogger</logKey>
+      </logKeys>
+    </data>
+  </datamodel>
+</scxml>

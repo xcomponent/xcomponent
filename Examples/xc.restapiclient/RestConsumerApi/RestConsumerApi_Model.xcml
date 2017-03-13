@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinkingSchema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" isClientApiShown="false" isLinkingShown="false" name="RestConsumerApi">
+  <LinkedComponents>
+    <LinkedComponent name="SwaggerPetstore">
+      <Comment />
+      <XCToXCLinks />
+      <XCToApiLinks>
+        <XCToApiLink stateMachineIdFrom="5" stateIdFrom="-1" linkFrom="SwaggerPetstore" linkTo="RestConsumerApiApi" />
+        <XCToApiLink stateMachineIdFrom="61" stateIdFrom="-1" linkFrom="SwaggerPetstore" linkTo="RestConsumerApiApi" />
+      </XCToApiLinks>
+    </LinkedComponent>
+  </LinkedComponents>
+  <LinkedClientApis>
+    <LinkedClientApi name="RestConsumerApiApi">
+      <ApiToXCLinks>
+        <ApiToXCLink linkFrom="RestConsumerApiApi" linkTo="SwaggerPetstore" stateMachineIdTo="1" stateIdTo="3">
+          <AllowedTransitions>
+            <LinkingSimpleTransition id="10" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingSimpleTransition id="11" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingSimpleTransition id="24" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingSimpleTransition id="25" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingSimpleTransition id="38" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingSimpleTransition id="39" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingSimpleTransition id="52" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingSimpleTransition id="53" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingSimpleTransition id="66" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingSimpleTransition id="67" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingSimpleTransition id="80" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingSimpleTransition id="81" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingSimpleTransition id="94" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingSimpleTransition id="95" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingSimpleTransition id="108" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingSimpleTransition id="109" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingSimpleTransition id="122" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingSimpleTransition id="123" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingSimpleTransition id="136" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingSimpleTransition id="137" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingSimpleTransition id="150" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingSimpleTransition id="151" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingSimpleTransition id="164" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingSimpleTransition id="165" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingSimpleTransition id="178" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingSimpleTransition id="179" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingSimpleTransition id="192" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingSimpleTransition id="193" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingSimpleTransition id="206" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingSimpleTransition id="207" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingSimpleTransition id="220" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingSimpleTransition id="221" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingSimpleTransition id="234" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingSimpleTransition id="235" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingSimpleTransition id="248" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingSimpleTransition id="249" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingSimpleTransition id="262" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingSimpleTransition id="263" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingSimpleTransition id="276" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingSimpleTransition id="277" stateMachineIdTo="1" stateIdTo="3" />
+          </AllowedTransitions>
+          <AllowedEvents>
+            <LinkingEvent eventTypeName="XComponent.SwaggerPetstore.UserObject.AddPet" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingEvent eventTypeName="XComponent.SwaggerPetstore.UserObject.AddPetOperation" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingEvent eventTypeName="XComponent.SwaggerPetstore.UserObject.CreateUser" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingEvent eventTypeName="XComponent.SwaggerPetstore.UserObject.CreateUserOperation" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingEvent eventTypeName="XComponent.SwaggerPetstore.UserObject.CreateUsersWithArrayInput" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingEvent eventTypeName="XComponent.SwaggerPetstore.UserObject.CreateUsersWithArrayInputOperation" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingEvent eventTypeName="XComponent.SwaggerPetstore.UserObject.CreateUsersWithListInput" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingEvent eventTypeName="XComponent.SwaggerPetstore.UserObject.CreateUsersWithListInputOperation" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingEvent eventTypeName="XComponent.SwaggerPetstore.UserObject.DeleteOrder" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingEvent eventTypeName="XComponent.SwaggerPetstore.UserObject.DeleteOrderOperation" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingEvent eventTypeName="XComponent.SwaggerPetstore.UserObject.DeletePet" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingEvent eventTypeName="XComponent.SwaggerPetstore.UserObject.DeletePetOperation" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingEvent eventTypeName="XComponent.SwaggerPetstore.UserObject.DeleteUser" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingEvent eventTypeName="XComponent.SwaggerPetstore.UserObject.DeleteUserOperation" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingEvent eventTypeName="XComponent.SwaggerPetstore.UserObject.FindPetsByStatus" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingEvent eventTypeName="XComponent.SwaggerPetstore.UserObject.FindPetsByStatusOperation" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingEvent eventTypeName="XComponent.SwaggerPetstore.UserObject.FindPetsByTags" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingEvent eventTypeName="XComponent.SwaggerPetstore.UserObject.FindPetsByTagsOperation" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingEvent eventTypeName="XComponent.SwaggerPetstore.UserObject.GetInventory" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingEvent eventTypeName="XComponent.SwaggerPetstore.UserObject.GetInventoryOperation" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingEvent eventTypeName="XComponent.SwaggerPetstore.UserObject.GetOrderById" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingEvent eventTypeName="XComponent.SwaggerPetstore.UserObject.GetOrderByIdOperation" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingEvent eventTypeName="XComponent.SwaggerPetstore.UserObject.GetPetById" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingEvent eventTypeName="XComponent.SwaggerPetstore.UserObject.GetPetByIdOperation" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingEvent eventTypeName="XComponent.SwaggerPetstore.UserObject.GetUserByName" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingEvent eventTypeName="XComponent.SwaggerPetstore.UserObject.GetUserByNameOperation" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingEvent eventTypeName="XComponent.SwaggerPetstore.UserObject.LoginUser" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingEvent eventTypeName="XComponent.SwaggerPetstore.UserObject.LoginUserOperation" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingEvent eventTypeName="XComponent.SwaggerPetstore.UserObject.LogoutUser" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingEvent eventTypeName="XComponent.SwaggerPetstore.UserObject.LogoutUserOperation" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingEvent eventTypeName="XComponent.SwaggerPetstore.UserObject.PlaceOrder" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingEvent eventTypeName="XComponent.SwaggerPetstore.UserObject.PlaceOrderOperation" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingEvent eventTypeName="XComponent.SwaggerPetstore.UserObject.UpdatePet" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingEvent eventTypeName="XComponent.SwaggerPetstore.UserObject.UpdatePetOperation" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingEvent eventTypeName="XComponent.SwaggerPetstore.UserObject.UpdatePetWithForm" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingEvent eventTypeName="XComponent.SwaggerPetstore.UserObject.UpdatePetWithFormOperation" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingEvent eventTypeName="XComponent.SwaggerPetstore.UserObject.UpdateUser" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingEvent eventTypeName="XComponent.SwaggerPetstore.UserObject.UpdateUserOperation" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingEvent eventTypeName="XComponent.SwaggerPetstore.UserObject.UploadFile" stateMachineIdTo="1" stateIdTo="3" />
+            <LinkingEvent eventTypeName="XComponent.SwaggerPetstore.UserObject.UploadFileOperation" stateMachineIdTo="1" stateIdTo="3" />
+          </AllowedEvents>
+          <NotAllowedTransitions />
+          <NotAllowedEvents />
+        </ApiToXCLink>
+      </ApiToXCLinks>
+    </LinkedClientApi>
+  </LinkedClientApis>
+</LinkingSchema>
