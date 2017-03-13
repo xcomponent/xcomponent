@@ -67,10 +67,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>references\xcassemblies\XComponent.Core.dll</HintPath>
     </Reference>
-    <Reference Include="XComponent.Extended, Version=4.0.0.10001, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>references\xcassemblies\XComponent.Extended.dll</HintPath>
-    </Reference>
     <Reference Include="XComponent.Referential.UserObject">
       <HintPath>references\xcassemblies\XComponent.Referential.UserObject.dll</HintPath>
     </Reference>
