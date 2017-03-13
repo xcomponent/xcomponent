@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<ComponentViewModelData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="SlackProxy" Version="11">
+  <StateMachines>
+    <StateMachineData Id="1" Name="SlackProxy" />
+    <StateMachineData Id="2" Name="PublishMessage" PublicMember="XComponent.SlackProxy.UserObject.PublishMessage" />
+  </StateMachines>
+  <States>
+    <StateData Id="1" Name="EntryPoint" IsEntryPoint="true" SubGraphKey="StateMachine1">
+      <Comment />
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="2" Name="Up" IsEntryPoint="false" SubGraphKey="StateMachine1">
+      <Comment />
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="3" Name="Publishing" IsEntryPoint="false" SubGraphKey="StateMachine2">
+      <Comment />
+      <TriggeredMethods>
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="SendMessage" TriggeringEvent="XComponent.SlackProxy.UserObject.SendMessage" />
+      </TriggeredMethods>
+    </StateData>
+    <StateData Id="4" Name="Published" IsEntryPoint="false" SubGraphKey="StateMachine2">
+      <Comment />
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="5" Name="Error" IsEntryPoint="false" SubGraphKey="StateMachine2">
+      <Comment />
+      <TriggeredMethods />
+    </StateData>
+  </States>
+  <TransitionPatternStates />
+  <Links>
+    <TransitionData Id="1" Name="Init" FromKey="State1" ToKey="State2" Type="TimeOut" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.Common.Event.DefaultEvent" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="2" Name="SendMessage" FromKey="State2" ToKey="State3" Type="X" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SlackProxy.UserObject.SendMessage" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="3" Name="Success" FromKey="State3" ToKey="State4" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SlackProxy.UserObject.Success" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="5" Name="Error" FromKey="State3" ToKey="State5" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SlackProxy.UserObject.Error" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+  </Links>
+  <TransversalLinks>
+    <TransversalTransitionData Id="4" FromKey="State3" ToId="3" SelectAllTransitions="true" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SlackProxy.UserObject.SendMessage" Name="SendMessage" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="6" FromKey="State3" ToId="5" SelectAllTransitions="true" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SlackProxy.UserObject.SendMessage" Name="SendMessage" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+  </TransversalLinks>
+  <PublicAssemblies />
+  <ExternalAssemblies />
+</ComponentViewModelData>
