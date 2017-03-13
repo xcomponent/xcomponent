@@ -46,9 +46,6 @@
     <Reference Include="XComponent.Core">
       <HintPath>..\lib\xcassemblies\XComponent.Core.dll</HintPath>
     </Reference>
-    <Reference Include="XComponent.Extended">
-      <HintPath>..\lib\xcassemblies\XComponent.Extended.dll</HintPath>
-    </Reference>
     <Reference Include="XComponent.Order.UserObject">
       <HintPath>..\lib\xcassemblies\XComponent.Order.UserObject.dll</HintPath>
     </Reference>
