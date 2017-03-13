@@ -13,7 +13,7 @@ open System.Text
 // parameters and constants definition
 let buildDir = "./build/"
 let buildClientAppDir = Path.Combine(buildDir, "consoleApp")
-let generatedDir = "./RestConsumer/generated/"
+let generatedDir = "./RestConsumerApi/generated/"
 let exportDir = Path.Combine(buildDir, "exportMicroservice")
 let studioScriptPath = "./xcstudio.cmd"
 let startMicroserviceScriptPath = Path.Combine(buildDir, "startMicroservice.cmd")
@@ -40,7 +40,7 @@ Target "Compile" (fun _ ->
     let result = ExecProcess (fun info ->
                     info.FileName <- xctools
                     info.WorkingDirectory <- __SOURCE_DIRECTORY__ 
-                    info.Arguments <- "--build --project=\"RestConsumer\RestConsumer_Model.xcml\""
+                    info.Arguments <- "--build --project=\"RestConsumerApi\RestConsumerApi_Model.xcml\""
                     ) 
                     (TimeSpan.FromMinutes timeoutExec)
   
@@ -48,7 +48,7 @@ Target "Compile" (fun _ ->
 
     ensureDirectory buildClientAppDir
 
-    !! "RestConsumer\PetstoreConsoleApplication/PetstoreConsoleApplication.sln"
+    !! "RestConsumerApi\ConsoleApplication/ConsoleApplication.sln"
     |> MSBuildRelease buildClientAppDir "Build"
     |> Log "Petstore console application build output: "
 )
@@ -59,7 +59,7 @@ Target "Generate" (fun _ ->
     trace("Generating xcstudio.cmd")
     let studioScriptContents = [| "pushd %~dp0"
     ;"cd /d \"" + Path.Combine(parentDirectory, "packages\\xcomponent.community\\tools\XCStudio") + "\""
-    ;"start \"\" XCStudio.exe \"" + Path.Combine(__SOURCE_DIRECTORY__, "RestConsumer\\RestConsumer_Model.xcml") + "\""
+    ;"start \"\" XCStudio.exe \"" + Path.Combine(__SOURCE_DIRECTORY__, "RestConsumerApi\\RestConsumerApi_Model.xcml") + "\""
     ;"popd" |]
     File.WriteAllLines(studioScriptPath, studioScriptContents)    
 
@@ -67,7 +67,7 @@ Target "Generate" (fun _ ->
     trace("Generating startMicroservice.cmd")
     let startMicroserviceScriptContents = [| "pushd %~dp0"
     ;"cd /d \"" + Path.Combine(parentDirectory, "packages\\xcomponent.community\\tools\XCStudio\XCRuntime") + "\""
-    ;"start \"\" XCRuntime.exe \"" + Path.Combine(__SOURCE_DIRECTORY__, "build\\exportMicroservice\\xcassemblies\\RestConsumer-RestConsumer.xcr") + "\""
+    ;"start \"\" XCRuntime.exe \"" + Path.Combine(__SOURCE_DIRECTORY__, "build\\exportMicroservice\\xcassemblies\\RestConsumerApi-microservice1.xcr") + "\""
     ;"popd"|]
     File.WriteAllLines(startMicroserviceScriptPath, startMicroserviceScriptContents)    
     
@@ -75,7 +75,7 @@ Target "Generate" (fun _ ->
     trace("Generating startConsoleApp.cmd")
     let startConsoleAppScriptContents = [| "pushd %~dp0"
     ;"cd /d \"" + Path.Combine(__SOURCE_DIRECTORY__, "build\\consoleApp") + "\""
-    ;"start \"\" PetstoreConsoleApplication.exe Fuego"
+    ;"start \"\" ConsoleApplication.exe"
     ;"popd"|]
     File.WriteAllLines(startConsoleAppScriptPath, startConsoleAppScriptContents)    
 )
@@ -83,7 +83,7 @@ Target "Generate" (fun _ ->
 // Default target
 Target "Help" (fun _ ->
     List.iter printfn [
-      "xcomponent.RestConsumer build usage: "      
+      "xcomponent.RestConsumerApi build usage: "      
       ""
       "build All"      
       ""                  
