@@ -138,7 +138,7 @@ XComponent.XCTools.exe -t --testconfig="HelloWorld.json" --testoutput="Integrati
 
 After the buid, a Visual Studio project is generated. These tests can be executed by the build factory.
 
-![Visual Studio test project](../Documentation/images/tests.png)
+![Visual Studio test project](../Documentation/Images/tests.png)
 
 
 A full example is available in the HelloWorld project [Hello World sample](../Examples/xc.helloworld/README.md).
