@@ -480,10 +480,10 @@ In this view, you can:
 
 # 4 - Testing your project using XCSpy
 
-XCStudio integrates a player to run functional tests. This way you can validate your project and find eventual errors.
+XCStudio integrates a spy called XCSpy to run functional tests. This way you can validate your project and find eventual errors.
 
-You first need to build your project and then run the player.
-Click on Start player: ![xcspy button](Images/xcspy_button.png) to launch the player application.
+You first need to build your project and then run the spy.
+Click on Start spy: ![xcspy button](Images/xcspy_button.png) to launch the spy application.
 Click on a component name (for example *MyComponent*) to display the component you want to test.
 
 ![xcspy ribbon](Images/xcspy_ribbon.png)
@@ -494,10 +494,10 @@ You got this window:
 
 XCSpy allows you to test your component and validate its functional behavior by sending transitions/events.
 
-Right after the entryPoint there is (1), a number between parentheses. It represents the number of instances of the state machine that currently are in this state, and it the same principle for the state machine.
-When launching the player for the first time, once you have clicked on your component the entryPoint is orange with (1) just after. This is the beginning of your component. From here you can start testing.
+The EntryPoint state has a red notification badge containing a 1 number. It represents the number of instances of the state machine that currently are in this state.
+When launching the spy for the first time, once you have clicked on your component the EntryPoint has 1 instance. This is the beginning of your component. From here you can start testing.
 
-The Player menu contains:
+The Spy menu contains:
 - A project menu. You can display the property panel by clicking on the *Show properties* button. This panel provides details about the selected element (state machine, state or transition)
 - A list of project menu. The following figure shows details about this menu
 
@@ -519,15 +519,15 @@ Click on the *Send event to the selected instance* button to send the custom eve
 
 ![xcspy send](Images/xcspy_send.png)
 
-> It is important to notice that the entrypoint state machine always has one instance!
+> It is important to notice that the EntryPoint state machine always has one instance!
 
 ![xcspy component](Images/xcspy_component.png)
 
 This creates a new instance of *FrontOffice* state machine and affects values to *FrontOffice* public member.
-We can verify *FrontOffice* public member affectation. Click on *Pending (1)* to display details in the property panel. 
+We can verify *FrontOffice* public member affectation. Click on *Pending* to display details in the property panel. 
 
 Click again on the *EntryPoint* again and create another instance of *FrontOffice* state machine sending a new event.
 
 Now you have two instances of *FrontOffice* state machine in *Pending State*.
 
-Using XCSpy allows you to instantly test your project, your component, what you implement, without developing a client API, and without wasting time and money. 
+Using XCSpy allows you to instantly test your project, your component, what you implement, without developing a User Interface, and without wasting time and money. 
