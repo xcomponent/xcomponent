@@ -44,7 +44,7 @@ Our target goal is to build an Order component with the following overall struct
 
 > Note: In XComponent, a component is a set of state machines.
 
- * Rename the automatically created *Order* to *OrderProcessor*. 
+ * Rename the automatically created statemachine *Order* to *OrderProcessor*. 
 
 > Note: The entry point state machine will be used as a rather technical part of the system, which listens to external order creation requests (it could also handle business validation on the incoming creations requests before actually creating orders, but this is out of the scope of this example)
  
