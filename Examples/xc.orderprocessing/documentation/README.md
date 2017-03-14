@@ -80,7 +80,7 @@ In order to reduce the number of user objects we use the same triggering event f
    * Order. First create the class through the XCStudio UI with the following fields:  
    ![Order user object image](images/add_order_userobject.jpg)
     
-   Then And add the following properties to the class Order directly via Edit in Visual studio, 
+   Then And add the following properties to the class Order directly via the *Edit in Visual studio* button, 
    because RemainingQuantity is a read-only calculated property and CreationDate/ExecutionDate are 
    DateTime respectively DateTime? properties, currently not supported in the UI:
    > Note: you need to build the component once in order to edit the code in Visual Studio
@@ -120,10 +120,10 @@ In order to reduce the number of user objects we use the same triggering event f
         }
 ```
  
-* Create the creation façade state machine
- * Add a new state machine named CreationFacade with one state Created.
- This will serve as output façade of the Order component for external components interested in 
- order related events. Use OrderCreation as public member of the state machine.
+* Create the CreationFaçade state machine
+	* Add a new state machine named CreationFacade with one state Created.
+	 This will serve as output façade of the Order component for external components interested in 
+	 order related events. Use OrderCreation as public member of the state machine.
 
 * Create the Order state machine 
    * Add a new state machine named Order with a state Pending. 
@@ -133,9 +133,8 @@ In order to reduce the number of user objects we use the same triggering event f
    * Draw a transition named PublishOrderCreation from Order.Pending to CreationFacade.Created and 
    make it triggerable through code (drag and drop the state on the transition 
 and make sure to check Triggerable Transition in the properties window). 
-Use a triggering event of type OrderCreation   * Select the Order.Pending state and 
-check the triggered method CreateOrder (OrderInput). 
-   
+Use a triggering event of type OrderCreation  
+ * Select the Order.Pending state and check the triggered method CreateOrder (OrderInput).  
    * Build the component, then edit it in Visual Studio. Define a static field currentOrderId in the
    class `OrderTriggeredMethod` and then use the following implementation for
    the triggered method:
@@ -206,11 +205,11 @@ check the triggered method CreateOrder (OrderInput).
  * Go to the Order component view and check the triggered method for PublishOrderCreation in the state 
    CreationFacade.Created. 
      * Navigate to the method `CreationFacadeTriggeredMethod.ExecuteOn_Created_Through_PublishOrderCreation`, 
-     uncomment the clone method call in its body and save the changes:
+     use the following clone call and save the changes:
 ```cs
 		public static void ExecuteOn_Created_Through_PublishOrderCreation(XComponent.Order.UserObject.OrderCreation orderCreation_TriggeringEvent, XComponent.Order.UserObject.OrderCreation orderCreation_PublicMember, object object_InternalMember, Context context, IPublishOrderCreationOrderCreationOnCreatedCreationFacadeSenderInterface sender)
 		{
-			XComponent.Common.Clone.XCClone.Clone(orderCreation_TriggeringEvent,orderCreation_PublicMember);
+			XComponent.Common.Clone.XCClone.Clone(orderCreation, orderCreation_PublicMember);
 		}
 ```
      
