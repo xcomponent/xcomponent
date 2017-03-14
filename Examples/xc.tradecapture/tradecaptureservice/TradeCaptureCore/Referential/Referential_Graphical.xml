@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="utf-8"?>
 <ComponentViewModelGraphicalData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <States>
     <StateGraphicalData Id="1" CenterX="103" CenterY="165" />
@@ -6,16 +6,67 @@
   </States>
   <TransitionPatternStates />
   <Links>
-    <TransitionGraphicalData Id="1" Curviness="20" Color="">
-      <Points />
+    <TransitionGraphicalData Id="2" Curviness="20" Color="#00FFFFFF">
+      <Points>
+        <Point>
+          <X>141.88466726190802</X>
+          <Y>196.26271826101649</Y>
+        </Point>
+        <Point>
+          <X>256.69421440903915</X>
+          <Y>199.04392966742711</Y>
+        </Point>
+        <Point>
+          <X>368.08785400925643</X>
+          <Y>219.53620708028222</Y>
+        </Point>
+        <Point>
+          <X>476.37072272836417</X>
+          <Y>257.79568427191327</Y>
+        </Point>
+      </Points>
       <IsNameDisplayed>true</IsNameDisplayed>
     </TransitionGraphicalData>
-    <TransitionGraphicalData Id="2" Curviness="20" Color="">
-      <Points />
+    <TransitionGraphicalData Id="1" Curviness="20" Color="#00FFFFFF">
+      <Points>
+        <Point>
+          <X>494.40666666666846</X>
+          <Y>272.78531754730733</Y>
+        </Point>
+        <Point>
+          <X>509.40666666666846</X>
+          <Y>298.76607966084049</Y>
+        </Point>
+        <Point>
+          <X>466.9066666666684</X>
+          <Y>298.76607966083685</Y>
+        </Point>
+        <Point>
+          <X>481.9066666666684</X>
+          <Y>272.78531754730369</Y>
+        </Point>
+      </Points>
       <IsNameDisplayed>true</IsNameDisplayed>
     </TransitionGraphicalData>
-    <TransitionGraphicalData Id="4" Curviness="40" Color="">
-      <Points />
+    <TransitionGraphicalData Id="4" Curviness="40" Color="#00FFFFFF">
+      <Points>
+        <Point>
+          <X>494.4066666666622</X>
+          <Y>272.78531754730005</Y>
+        </Point>
+        <Point>
+          <X>519.4066666666622</X>
+          <Y>316.086587736522</Y>
+        </Point>
+        <Point>
+          <X>456.90666666666613</X>
+          <Y>316.08658773652928</Y>
+        </Point>
+        <Point>
+          <X>481.90666666666613</X>
+          <Y>272.78531754730733</Y>
+        </Point>
+      </Points>
       <IsNameDisplayed>true</IsNameDisplayed>
     </TransitionGraphicalData>
   </Links>
