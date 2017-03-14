@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ComponentViewModelData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="Trade" Version="64">
+<ComponentViewModelData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="Trade" Version="72">
   <StateMachines>
     <StateMachineData Id="1" Name="TradeProcessor" />
     <StateMachineData Id="2" Name="Trade" PublicMember="XComponent.Trade.UserObject.Trade" StateCopyProperty="State" />
@@ -15,14 +15,12 @@
         <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="ProcessOrderCreation" TriggeringEvent="XComponent.Order.UserObject.OrderCreation" />
         <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="ExecuteTrade" TriggeringEvent="XComponent.Trade.UserObject.TradeExecution" />
         <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="ProcessOrderExecution" TriggeringEvent="XComponent.Order.UserObject.OrderExecution" />
-        <TriggeredMethodData IsNodeInitializer="false" IsSelected="false" TransitionName="Init" TriggeringEvent="XComponent.Common.Event.DefaultEvent" />
       </TriggeredMethods>
     </StateData>
     <StateData Id="3" Name="WaitingForExecution" IsEntryPoint="false" SubGraphKey="StateMachine2">
       <Comment />
       <TriggeredMethods>
         <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="CreateTrade" TriggeringEvent="XComponent.Trade.UserObject.Trade" />
-        <TriggeredMethodData IsNodeInitializer="true" IsSelected="false" TransitionName="InitializePublicMember" />
       </TriggeredMethods>
     </StateData>
     <StateData Id="4" Name="Executed" IsEntryPoint="false" SubGraphKey="StateMachine2">
@@ -59,30 +57,30 @@
     <TransversalTransitionData Id="4" Name="" FromKey="State2" ToId="3" SelectAllTransitions="true" Type="Triggerable">
       <SelectedTransitions>
         <SelectedTransitionData Event="XComponent.Common.Event.DefaultEvent" Name="Init" />
-        <SelectedTransitionData Event="XComponent.Order.UserObject.OrderCreation" Name="ProcessOrderCreation" />
         <SelectedTransitionData Event="XComponent.Trade.UserObject.TradeExecution" Name="ExecuteTrade" />
+        <SelectedTransitionData Event="XComponent.Order.UserObject.OrderCreation" Name="ProcessOrderCreation" />
         <SelectedTransitionData Event="XComponent.Order.UserObject.OrderExecution" Name="ProcessOrderExecution" />
       </SelectedTransitions>
     </TransversalTransitionData>
     <TransversalTransitionData Id="7" Name="" FromKey="State2" ToId="6" SelectAllTransitions="true" Type="Triggerable">
       <SelectedTransitions>
         <SelectedTransitionData Event="XComponent.Common.Event.DefaultEvent" Name="Init" />
-        <SelectedTransitionData Event="XComponent.Order.UserObject.OrderCreation" Name="ProcessOrderCreation" />
         <SelectedTransitionData Event="XComponent.Trade.UserObject.TradeExecution" Name="ExecuteTrade" />
+        <SelectedTransitionData Event="XComponent.Order.UserObject.OrderCreation" Name="ProcessOrderCreation" />
         <SelectedTransitionData Event="XComponent.Order.UserObject.OrderExecution" Name="ProcessOrderExecution" />
       </SelectedTransitions>
     </TransversalTransitionData>
     <TransversalTransitionData Id="10" Name="" FromKey="State2" ToId="5" SelectAllTransitions="true" Type="Triggerable">
       <SelectedTransitions>
         <SelectedTransitionData Event="XComponent.Common.Event.DefaultEvent" Name="Init" />
-        <SelectedTransitionData Event="XComponent.Order.UserObject.OrderCreation" Name="ProcessOrderCreation" />
         <SelectedTransitionData Event="XComponent.Trade.UserObject.TradeExecution" Name="ExecuteTrade" />
+        <SelectedTransitionData Event="XComponent.Order.UserObject.OrderCreation" Name="ProcessOrderCreation" />
         <SelectedTransitionData Event="XComponent.Order.UserObject.OrderExecution" Name="ProcessOrderExecution" />
       </SelectedTransitions>
     </TransversalTransitionData>
   </TransversalLinks>
   <PublicAssemblies>
-    <AssemblyData Name="Order" Path="D:\xc-community\xcomponent\Examples\xc.orderprocessing\OrderProcessing\Order/generated/UserObject/XComponent.Order.UserObject.dll" />
+    <AssemblyData Name="Order" Path="C:\Users\Marcos\work\yahya\xcomponent\Examples\xc.orderprocessing\OrderProcessing\Order\generated\UserObject\XComponent.Order.UserObject.dll" />
   </PublicAssemblies>
   <ExternalAssemblies />
 </ComponentViewModelData>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ComponentViewModelData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="Order" Version="61">
+<ComponentViewModelData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="Order" Version="64">
   <StateMachines>
     <StateMachineData Id="1" Name="OrderProcessor" />
     <StateMachineData Id="2" Name="Order" PublicMember="XComponent.Order.UserObject.Order" />
@@ -14,15 +14,12 @@
     </StateData>
     <StateData Id="2" Name="Up" IsEntryPoint="false" SubGraphKey="StateMachine1">
       <Comment />
-      <TriggeredMethods>
-        <TriggeredMethodData IsNodeInitializer="false" IsSelected="false" TransitionName="Init" TriggeringEvent="XComponent.Common.Event.DefaultEvent" />
-      </TriggeredMethods>
+      <TriggeredMethods />
     </StateData>
     <StateData Id="3" Name="Pending" IsEntryPoint="false" SubGraphKey="StateMachine2">
       <Comment />
       <TriggeredMethods>
         <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="CreateOrder" TriggeringEvent="XComponent.Order.UserObject.OrderInput" />
-        <TriggeredMethodData IsNodeInitializer="true" IsSelected="false" TransitionName="InitializePublicMember" />
       </TriggeredMethods>
     </StateData>
     <StateData Id="7" Name="Executed" IsEntryPoint="false" SubGraphKey="StateMachine2">
@@ -41,21 +38,18 @@
       <Comment />
       <TriggeredMethods>
         <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="PublishOrderCreation" TriggeringEvent="XComponent.Order.UserObject.OrderCreation" />
-        <TriggeredMethodData IsNodeInitializer="true" IsSelected="false" TransitionName="InitializePublicMember" TriggeringEvent="XComponent.Order.UserObject.Order" />
       </TriggeredMethods>
     </StateData>
     <StateData Id="5" Name="Filled" IsEntryPoint="false" SubGraphKey="StateMachine4">
       <Comment />
       <TriggeredMethods>
         <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="PublishOrderFilled" TriggeringEvent="XComponent.Order.UserObject.OrderExecution" />
-        <TriggeredMethodData IsNodeInitializer="true" IsSelected="false" TransitionName="InitializePublicMember" TriggeringEvent="XComponent.Order.UserObject.Order" />
       </TriggeredMethods>
     </StateData>
     <StateData Id="6" Name="PartiallyFilled" IsEntryPoint="false" SubGraphKey="StateMachine5">
       <Comment />
       <TriggeredMethods>
         <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="PublishOrderPartiallyFilled" TriggeringEvent="XComponent.Order.UserObject.OrderExecution" />
-        <TriggeredMethodData IsNodeInitializer="true" IsSelected="false" TransitionName="InitializePublicMember" TriggeringEvent="XComponent.Order.UserObject.Order" />
       </TriggeredMethods>
     </StateData>
   </States>
