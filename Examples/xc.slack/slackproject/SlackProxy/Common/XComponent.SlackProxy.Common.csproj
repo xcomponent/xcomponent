@@ -38,10 +38,6 @@
       <HintPath>..\UserReference\XComponent.Core.dll</HintPath>
       <SpecificVersion>false</SpecificVersion>
     </Reference>
-    <Reference Include="XComponent.Extended, Version=4.5.0.30122, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\UserReference\XComponent.Extended.dll</HintPath>
-      <SpecificVersion>false</SpecificVersion>
-    </Reference>
     <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\RestSharp.105.2.3\lib\net45\RestSharp.dll</HintPath>
       <SpecificVersion>false</SpecificVersion>

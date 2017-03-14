@@ -20,6 +20,9 @@ namespace XComponent.Trade.TriggeredMethod
         /// <summary>
         /// Executing triggeredMethod ExecuteOn_Up_Through_ProcessOrderCreation
         /// </summary>
+        /// <summary>
+        /// Executing triggeredMethod ExecuteOn_Up_Through_ProcessOrderCreation
+        /// </summary>
         public static void ExecuteOn_Up_Through_ProcessOrderCreation(XComponent.Order.UserObject.OrderCreation orderCreation, object object_PublicMember, object object_InternalMember, Context context, IProcessOrderCreationOrderCreationOnUpTradeProcessorSenderInterface sender)
         {
             sender.CreateTrade(context, TradeFactory.CreateNewTrade(orderCreation.OrderId, orderCreation.Quantity, orderCreation.AssetName));
@@ -49,5 +52,6 @@ namespace XComponent.Trade.TriggeredMethod
         {
             sender.SendEvent(StdEnum.Trade, tradeExecution);
         }
+
     }
 }
