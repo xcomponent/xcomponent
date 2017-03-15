@@ -66,6 +66,11 @@ All samples will directly download XComponent Community Edition from [Nuget](htt
 It is a good starting point to understand how the XComponent platform works.
 
 
+## Test Framework
+
+[Click here](TestFramework/README.md) to have details about the Test Framework.
+
+
 ## Questions ?
 
 If you have any questions about this sample, please [create a Github issue for us](https://github.com/xcomponent/xcomponent/issues)!

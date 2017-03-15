@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+    <assembly>
+        <name>XComponent.helloworld.ClientApi</name>
+    </assembly>
+    <members>
+        <member name="T:XComponent.helloworld.helloworldApi.helloworldApi">
+            <summary />
+        </member>
+        <member name="P:XComponent.helloworld.helloworldApi.helloworldApi.HelloWorld_Component">
+            <summary>
+            This property is used to communicate with HelloWorld
+             <para /></summary>
+        </member>
+        <member name="P:XComponent.helloworld.helloworldApi.helloworldApi.CloseConnectionOnDispose">
+            <summary>
+            The RabbitMq connection is shared by all client Apis instances. 
+             <para>When a client Api is disposed,  the RabbitMq thread is destroyed for all instances.</para><para>If you have several instances of your api set this property to false or use the helper ApiInstancesManager ()</para></summary>
+        </member>
+        <member name="P:XComponent.helloworld.helloworldApi.helloworldApi.PrivateCommunicationIdentifier">
+            <summary>
+            Use this property to set a specific private topic.
+             <para>Warning: The topic should be set before client Api initialization.</para><para>This topic is used to send private events.</para></summary>
+        </member>
+        <member name="P:XComponent.helloworld.helloworldApi.helloworldApi.TimeOut">
+            <summary>
+            Set TimeOut (in mms) for retrieving EntryPoint
+             <para>Default value is: 10000</para></summary>
+        </member>
+        <member name="P:XComponent.helloworld.helloworldApi.helloworldApi.CommunicationType">
+            <summary>
+            Returns the type of communication
+             <para>Possible values: BUS, IN_MEMORY, WEB_SOCKET</para></summary>
+        </member>
+        <member name="M:XComponent.helloworld.helloworldApi.helloworldApi.Dispose">
+            <summary>
+            Dispose the Client Api and the communication layer
+             </summary>
+        </member>
+        <member name="P:XComponent.helloworld.helloworldApi.HelloWorld.IHelloResponse_StateMachine.Done_State">
+            <summary />
+        </member>
+        <member name="M:XComponent.helloworld.helloworldApi.HelloWorld.IHelloResponse_StateMachine.GetSnapshot(System.String,System.Int32)">
+            <summary>
+            Retrieves a snapshot of HelloResponse state machines
+             </summary>
+            <param name="filter">This parameter is used to filter the snapshot request with a linq expression. The linq expression is applied to the public member</param>
+            <param name="timeout">Snapshot timeout</param>
+        </member>
+        <member name="P:XComponent.helloworld.helloworldApi.HelloWorld.HelloResponse_StateMachine.Done_State">
+            <summary />
+        </member>
+        <member name="M:XComponent.helloworld.helloworldApi.HelloWorld.HelloResponse_StateMachine.GetSnapshot(System.String,System.Int32)">
+            <summary>
+            Retrieves a snapshot of HelloResponse state machines
+             </summary>
+            <param name="filter">This parameter is used to filter the snapshot request with a linq expression. The linq expression is applied to the public member</param>
+            <param name="timeout">Snapshot timeout</param>
+        </member>
+        <member name="E:XComponent.helloworld.helloworldApi.HelloWorld.HelloResponse_StateMachine.InstanceUpdated">
+            <summary>
+            This event is triggered when the HelloResponse state machine is updated
+            </summary>
+        </member>
+        <member name="P:XComponent.helloworld.helloworldApi.HelloWorld.IHelloWorldManager_StateMachine.EntryPoint_State">
+            <summary />
+        </member>
+        <member name="M:XComponent.helloworld.helloworldApi.HelloWorld.IHelloWorldManager_StateMachine.GetSnapshot(System.String,System.Int32)">
+            <summary>
+            Retrieves a snapshot of HelloWorldManager state machines
+             </summary>
+            <param name="filter">This parameter is used to filter the snapshot request with a linq expression. The linq expression is applied to the public member</param>
+            <param name="timeout">Snapshot timeout</param>
+        </member>
+        <member name="M:XComponent.helloworld.helloworldApi.HelloWorld.IHelloWorldManager_StateMachine.SendEvent(XComponent.Common.ApiContext.Context,XComponent.HelloWorld.UserObject.SayHello,System.Action{System.Exception},XCClientAPICommon.Client.Visibility,System.String)">
+            <summary>
+            Sends the XComponent.HelloWorld.UserObject.SayHello event using a context. 
+            </summary>
+            <param name="context">Client Api context. Used to target a specific instance of state machine</param>
+            <param name="transitionEvent" />
+            <param name="onExceptionOccured">This event is triggered if an exception is raised. If this option is set, the exception will be catch. If this option is not set, the exception will be thrown.</param>
+            <param name="visibility">If parameter is set to Visibility.Private, the event will be sent with a private topic.</param>
+        </member>
+        <member name="M:XComponent.helloworld.helloworldApi.HelloWorld.IHelloWorldManager_StateMachine.SendEvent(XComponent.HelloWorld.UserObject.SayHello,System.Action{System.Exception},XCClientAPICommon.Client.Visibility,System.String)">
+            <summary>
+            Sends the XComponent.HelloWorld.UserObject.SayHello
+            </summary>
+            <param name="evt" />
+            <param name="onExceptionOccured">This event is triggered if an exception is raised. If this option is set, the exception will be catch. If this option is not set, the exception will be thrown.</param>
+            <param name="visibility">If parameter is set to Visibility.Private, the event will be sent with a private topic.</param>
+        </member>
+        <member name="P:XComponent.helloworld.helloworldApi.HelloWorld.HelloWorldManager_StateMachine.EntryPoint_State">
+            <summary />
+        </member>
+        <member name="M:XComponent.helloworld.helloworldApi.HelloWorld.HelloWorldManager_StateMachine.GetSnapshot(System.String,System.Int32)">
+            <summary>
+            Retrieves a snapshot of HelloWorldManager state machines
+             </summary>
+            <param name="filter">This parameter is used to filter the snapshot request with a linq expression. The linq expression is applied to the public member</param>
+            <param name="timeout">Snapshot timeout</param>
+        </member>
+        <member name="M:XComponent.helloworld.helloworldApi.HelloWorld.HelloWorldManager_StateMachine.SendEvent(XComponent.Common.ApiContext.Context,XComponent.HelloWorld.UserObject.SayHello,System.Action{System.Exception},XCClientAPICommon.Client.Visibility,System.String)">
+            <summary>
+            Sends the XComponent.HelloWorld.UserObject.SayHello event using a context. 
+            </summary>
+            <param name="context">Client Api context. Used to target a specific instance of state machine</param>
+            <param name="transitionEvent" />
+            <param name="onExceptionOccured">This event is triggered if an exception is raised. If this option is set, the exception will be catch. If this option is not set, the exception will be thrown.</param>
+            <param name="visibility">If parameter is set to Visibility.Private, the event will be sent with a private topic.</param>
+        </member>
+        <member name="M:XComponent.helloworld.helloworldApi.HelloWorld.HelloWorldManager_StateMachine.SendEvent(XComponent.HelloWorld.UserObject.SayHello,System.Action{System.Exception},XCClientAPICommon.Client.Visibility,System.String)">
+            <summary>
+            Sends the XComponent.HelloWorld.UserObject.SayHello
+            </summary>
+            <param name="evt" />
+            <param name="onExceptionOccured">This event is triggered if an exception is raised. If this option is set, the exception will be catch. If this option is not set, the exception will be thrown.</param>
+            <param name="visibility">If parameter is set to Visibility.Private, the event will be sent with a private topic.</param>
+        </member>
+        <member name="M:XComponent.helloworld.helloworldApi.HelloWorld.HelloWorldManager.IEntryPoint_State.SayHello(XComponent.Common.ApiContext.Context,XComponent.HelloWorld.UserObject.SayHello,System.Action{System.Exception},XCClientAPICommon.Client.Visibility)">
+            <summary>
+            Sends the XComponent.HelloWorld.UserObject.SayHello event using a context. 
+            </summary>
+            <param name="context">Client Api context. Used to target a specific instance of state machine</param>
+            <param name="transitionEvent" />
+            <param name="onExceptionOccured">This event is triggered if an exception is raised. If this option is set, the exception will be catch. If this option is not set, the exception will be thrown.</param>
+            <param name="visibility">If parameter is set to Visibility.Private, the event will be sent with a private topic.</param>
+        </member>
+        <member name="M:XComponent.helloworld.helloworldApi.HelloWorld.HelloWorldManager.IEntryPoint_State.SayHello(XComponent.Common.ApiContext.Context,System.Action{System.Exception},XCClientAPICommon.Client.Visibility)">
+            <summary>
+            Triggers the SayHello transition using a context. 
+             <para /></summary>
+            <param name="context">Client Api context. Used to target a specific instance of state machine</param>
+            <param name="onExceptionOccured">This event is triggered if an exception is raised. If this option is set, the exception will be catch. If this option is not set, the exception will be thrown.</param>
+            <param name="visibility">If parameter is set to Visibility.Private, the event will be sent with a private topic.</param>
+        </member>
+        <member name="P:XComponent.helloworld.helloworldApi.IHelloWorld_Component.HelloResponse_StateMachine">
+            <summary>
+            This property is used to communicate with HelloResponse state machine
+             <para /></summary>
+        </member>
+        <member name="P:XComponent.helloworld.helloworldApi.IHelloWorld_Component.HelloWorldManager_StateMachine">
+            <summary>
+            This property is used to communicate with HelloWorldManager state machine
+             <para /></summary>
+        </member>
+        <member name="M:XComponent.helloworld.helloworldApi.IHelloWorld_Component.GetEntryPoint">
+            <summary>
+            Retrieves the entry point of the HelloWorldManager component
+             </summary>
+        </member>
+        <member name="P:XComponent.helloworld.helloworldApi.HelloWorld_Component.HelloResponse_StateMachine">
+            <summary>
+            This property is used to communicate with HelloResponse state machine
+             <para /></summary>
+        </member>
+        <member name="P:XComponent.helloworld.helloworldApi.HelloWorld_Component.HelloWorldManager_StateMachine">
+            <summary>
+            This property is used to communicate with HelloWorldManager state machine
+             <para /></summary>
+        </member>
+        <member name="M:XComponent.helloworld.helloworldApi.HelloWorld_Component.GetEntryPoint">
+            <summary>
+            Retrieves the entry point of the HelloWorldManager component
+             </summary>
+        </member>
+    </members>
+</doc>

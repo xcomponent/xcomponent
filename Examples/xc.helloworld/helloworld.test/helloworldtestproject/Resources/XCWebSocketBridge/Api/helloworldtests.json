@@ -1,0 +1,99 @@
+{
+    "TestProjectName": "HelloWorldTests",
+    "TestedProjectName": "helloworld",
+    "DefaultNamespace": "XComponent.HelloWorld.IntegrationTests",
+    "AssemblyName": "XComponent.HelloWorld.IntegrationTests",
+    "TargetFramework": "v4.5.1",
+    "XcomponentVersion": "4.6.0-rc0240",
+    "XcomponentDistribution": "community",
+    "VisualStudioToolsVersion": "14.0",
+    "NUnitVersion": "2.6.3",
+    "NUnitTargetFramework": "v4.0",
+    "TestFixtures": [
+        {
+            "TestFixtureName": "HelloWorldTests",
+			"WindowStyle": "Hidden",
+            "Microservices": [
+                {
+                    "MicroserviceName": "helloworld-HelloMicroservice",
+                    "XcrPath": "C:\\XComponentSources\\xcomponentv46\\xcomponent\\Examples\\xc.helloworld\\build\\exportMicroservice\\xcassemblies\\helloworld-HelloMicroservice.xcr",
+                    "StartupTimeInMs": 30000
+                }
+            ],
+			"WebSocketBridge": {
+				"IsEnabled": false,
+				"StartupTimeInMs": 5000,
+				"Port": 443,
+				"ApiPath": ""
+			},
+            "Apis": [
+                {
+                    "ApiName": "helloworldApi",
+                    "ApiPath": "C:\\XComponentSources\\xcomponentv46\\xcomponent\\Examples\\xc.helloworld\\build\\consoleApp"
+                }
+            ],
+            "Tests": [
+                {
+                    "TestName": "TestSayHelloEvent",
+					"Parameters": [
+						{
+							"Type": "string",
+							"Name": "helloResponse"
+						}
+					],
+					"Variables": [
+						{
+							"Type": "string",
+							"Name": "userName",
+							"DefaultValue": "Guest"
+						},
+					],
+					"TestCases": [
+						{
+							"Values": ["\"Hello Guest\""]
+						}
+					],
+                    "Runs": [
+						{
+							"RunType": "SendEvent",
+							"Input": {
+								"MessageType": "XComponent.HelloWorld.UserObject.SayHello",
+								"Message": {
+									"Name": "$(userName)"
+								},
+								"Target": {
+									"ApiName": "helloworldApi",
+									"Component": "HelloWorld",
+									"StateMachine": "HelloWorldManager",
+								}
+                            },
+                            "TimeoutInMs": 10000,
+                            "Output": {
+                                "ExpectedInstances": [
+                                    {
+                                        "Source": {
+                                            "ApiName": "helloworldApi",
+                                            "Component": "HelloWorld",
+                                            "StateMachine": "HelloResponse"
+                                        },
+                                        "PublicMemberType": "XComponent.HelloWorld.UserObject.HelloResponse",
+                                        "Constraints": [
+                                            {
+                                                "PropertyPath": "instance.PublicMember.Text",
+                                                "Operator": "==",
+                                                "ExpectedValue": "${helloResponse}",
+												"IsStringValue": true
+                                            }
+                                        ],
+                                        "FailureMessage": "The state machine response for user ${userName} is not valid,  expected value: ${helloResponse}"
+                                    },
+                                ]
+                            }						
+						},
+						
+                    ]
+                }
+            ]
+        }
+    ]
+}
