@@ -35,7 +35,7 @@ A state machine is created, and you can observe the states updates with the sequ
 
 If you click again on the button, a new state machine is created, and the sequence diagram control is updated:
 
-![State Machine](Images/seq2.png)
+![State Machine](Images/Seq2.png)
 
 
 ## Technical overview of the Sequence Diagram Control
