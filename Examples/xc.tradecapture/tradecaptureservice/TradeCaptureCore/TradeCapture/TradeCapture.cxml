@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ComponentViewModelData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="TradeCapture" Version="117">
+<ComponentViewModelData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="TradeCapture" Version="119">
   <StateMachines>
     <StateMachineData Id="1" Name="XCTradeProcessor" />
     <StateMachineData Id="2" Name="Transaction" PublicMember="XComponent.TradeCapture.UserObject.Transaction" StateCopyProperty="CurrentState" />
@@ -16,14 +16,11 @@
       <TriggeredMethods>
         <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="NewTransaction" TriggeringEvent="XComponent.TradeCapture.UserObject.Transaction" />
         <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="UpdateAndRetry" TriggeringEvent="XComponent.TradeCapture.UserObject.UpdateAndRetry" />
-        <TriggeredMethodData IsNodeInitializer="true" IsSelected="false" TransitionName="InitializePublicMember" />
       </TriggeredMethods>
     </StateData>
     <StateData Id="3" Name="ValidationError" IsEntryPoint="false" SubGraphKey="StateMachine2">
       <Comment />
-      <TriggeredMethods>
-        <TriggeredMethodData IsNodeInitializer="false" IsSelected="false" TransitionName="ValidationError" TriggeringEvent="XComponent.TradeCapture.UserObject.Error" />
-      </TriggeredMethods>
+      <TriggeredMethods />
     </StateData>
     <StateData Id="4" Name="TransactionRejected" IsEntryPoint="false" SubGraphKey="StateMachine2">
       <Comment />
@@ -55,15 +52,11 @@
       <Comment />
       <TriggeredMethods>
         <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="UpdateReferential" TriggeringEvent="XComponent.Referential.UserObject.Instrument" />
-        <TriggeredMethodData IsNodeInitializer="true" IsSelected="false" TransitionName="InitializePublicMember" TriggeringEvent="XComponent.TradeCapture.UserObject.Transaction" />
       </TriggeredMethods>
     </StateData>
     <StateData Id="9" Name="GetInstrumentSnapshot" IsEntryPoint="false" SubGraphKey="StateMachine4">
       <Comment />
-      <TriggeredMethods>
-        <TriggeredMethodData IsNodeInitializer="false" IsSelected="false" TransitionName="GetInstrumentSnapshot" TriggeringEvent="XComponent.Referential.UserObject.GetSnapshot" />
-        <TriggeredMethodData IsNodeInitializer="true" IsSelected="false" TransitionName="InitializePublicMember" TriggeringEvent="XComponent.TradeCapture.UserObject.Transaction" />
-      </TriggeredMethods>
+      <TriggeredMethods />
     </StateData>
   </States>
   <TransitionPatternStates />
@@ -145,7 +138,7 @@
     </TransversalTransitionData>
   </TransversalLinks>
   <PublicAssemblies>
-    <AssemblyData Name="Referential" Path="D:\xc-community\xcomponent\Examples\xc.tradecapture\tradecaptureservice\TradeCaptureCore\Referential/generated/UserObject/XComponent.Referential.UserObject.dll" />
+    <AssemblyData Name="Referential" Path="C:\Users\Marcos\work\yahya\xcomponent\Examples\xc.tradecapture\TradeCaptureService\TradeCaptureCore\Referential\generated\UserObject\XComponent.Referential.UserObject.dll" />
   </PublicAssemblies>
   <ExternalAssemblies />
 </ComponentViewModelData>
