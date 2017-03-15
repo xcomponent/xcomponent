@@ -70,6 +70,9 @@ It is a good starting point to understand how the XComponent platform works.
 
 [Click here](TestFramework/README.md) to have details about the Test Framework.
 
+## Sequence Diagram Control
+
+[Click here](SequenceDiagram/README.md) to have details about the Sequence Diagram Control.
 
 ## Questions ?
 
