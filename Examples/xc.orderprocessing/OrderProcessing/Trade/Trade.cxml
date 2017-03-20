@@ -80,7 +80,7 @@
     </TransversalTransitionData>
   </TransversalLinks>
   <PublicAssemblies>
-    <AssemblyData Name="Order" Path="C:\Users\Marcos\work\yahya\xcomponent\Examples\xc.orderprocessing\OrderProcessing\Order\generated\UserObject\XComponent.Order.UserObject.dll" />
+    <AssemblyData Name="Order" Path="..\Order\generated\UserObject\XComponent.Order.UserObject.dll" />
   </PublicAssemblies>
   <ExternalAssemblies />
 </ComponentViewModelData>
