@@ -284,46 +284,6 @@
             <param name="context">Client Api context. Used to target a specific instance of state machine</param>
             <param name="onExceptionOccured">This event is triggered if an exception is raised. If this option is set, the exception will be catch. If this option is not set, the exception will be thrown.</param>
         </member>
-        <member name="P:XComponent.TradeCapture.TradeApi.ITradeCapture_Component.XCTradeProcessor_StateMachine">
-            <summary>
-            This property is used to communicate with XCTradeProcessor state machine
-             <para /></summary>
-        </member>
-        <member name="M:XComponent.TradeCapture.TradeApi.ITradeCapture_Component.GetEntryPoint">
-            <summary>
-            Retrieves the entry point of the XCTradeProcessor component
-             </summary>
-        </member>
-        <member name="P:XComponent.TradeCapture.TradeApi.IReferential_Component.Referential_StateMachine">
-            <summary>
-            This property is used to communicate with Referential state machine
-             <para /></summary>
-        </member>
-        <member name="M:XComponent.TradeCapture.TradeApi.IReferential_Component.GetEntryPoint">
-            <summary>
-            Retrieves the entry point of the Referential component
-             </summary>
-        </member>
-        <member name="P:XComponent.TradeCapture.TradeApi.TradeCapture_Component.XCTradeProcessor_StateMachine">
-            <summary>
-            This property is used to communicate with XCTradeProcessor state machine
-             <para /></summary>
-        </member>
-        <member name="M:XComponent.TradeCapture.TradeApi.TradeCapture_Component.GetEntryPoint">
-            <summary>
-            Retrieves the entry point of the XCTradeProcessor component
-             </summary>
-        </member>
-        <member name="P:XComponent.TradeCapture.TradeApi.Referential_Component.Referential_StateMachine">
-            <summary>
-            This property is used to communicate with Referential state machine
-             <para /></summary>
-        </member>
-        <member name="M:XComponent.TradeCapture.TradeApi.Referential_Component.GetEntryPoint">
-            <summary>
-            Retrieves the entry point of the Referential component
-             </summary>
-        </member>
         <member name="T:XComponent.TradeCapture.TradeValidatorApi.TradeValidatorApi">
             <summary />
         </member>
@@ -913,36 +873,6 @@
             <param name="context">Client Api context. Used to target a specific instance of state machine</param>
             <param name="onExceptionOccured">This event is triggered if an exception is raised. If this option is set, the exception will be catch. If this option is not set, the exception will be thrown.</param>
             <param name="visibility">If parameter is set to Visibility.Private, the event will be sent with a private topic.</param>
-        </member>
-        <member name="P:XComponent.TradeCapture.TradeValidatorApi.ITradeCapture_Component.XCTradeProcessor_StateMachine">
-            <summary>
-            This property is used to communicate with XCTradeProcessor state machine
-             <para /></summary>
-        </member>
-        <member name="P:XComponent.TradeCapture.TradeValidatorApi.ITradeCapture_Component.Transaction_StateMachine">
-            <summary>
-            This property is used to communicate with Transaction state machine
-             <para /></summary>
-        </member>
-        <member name="M:XComponent.TradeCapture.TradeValidatorApi.ITradeCapture_Component.GetEntryPoint">
-            <summary>
-            Retrieves the entry point of the XCTradeProcessor component
-             </summary>
-        </member>
-        <member name="P:XComponent.TradeCapture.TradeValidatorApi.TradeCapture_Component.XCTradeProcessor_StateMachine">
-            <summary>
-            This property is used to communicate with XCTradeProcessor state machine
-             <para /></summary>
-        </member>
-        <member name="P:XComponent.TradeCapture.TradeValidatorApi.TradeCapture_Component.Transaction_StateMachine">
-            <summary>
-            This property is used to communicate with Transaction state machine
-             <para /></summary>
-        </member>
-        <member name="M:XComponent.TradeCapture.TradeValidatorApi.TradeCapture_Component.GetEntryPoint">
-            <summary>
-            Retrieves the entry point of the XCTradeProcessor component
-             </summary>
         </member>
     </members>
 </doc>
