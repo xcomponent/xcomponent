@@ -50,7 +50,7 @@ Thanks to the [Use Cases](Examples) section, you will able to understand:
 
 ## Install
 
-All samples will directly download XComponent Community Edition from [Nuget](https://www.nuget.org/packages/xcomponent.community/). Nevertheless, if for some reasons, you need an MSI, you can get one in the [releases page](releases/).
+All samples will directly download XComponent Community Edition from [Nuget](https://www.nuget.org/packages/xcomponent.community/). Nevertheless, if for some reasons, you need an MSI, you can get one in the [releases page](https://github.com/xcomponent/xcomponent/releases).
 
 ## Documentation
 
