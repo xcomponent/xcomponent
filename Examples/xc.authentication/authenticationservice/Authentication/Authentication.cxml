@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ComponentViewModelData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="Authentication" Version="56">
+  <StateMachines>
+    <StateMachineData Id="1" Name="Authentication" />
+    <StateMachineData Id="2" Name="LoginStatus" PublicMember="XComponent.Authentication.UserObject.CheckLogin" />
+    <StateMachineData Id="5" Name="HeartBeat" PublicMember="XComponent.Authentication.UserObject.AuthenticationHeartBeat" />
+  </StateMachines>
+  <States>
+    <StateData Id="1" Name="EntryPoint" IsEntryPoint="true" SubGraphKey="StateMachine1">
+      <Comment />
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="2" Name="Initializing" IsEntryPoint="false" SubGraphKey="StateMachine1">
+      <Comment />
+      <TriggeredMethods>
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="Initialize" TriggeringEvent="XComponent.Common.Event.DefaultEvent" />
+      </TriggeredMethods>
+    </StateData>
+    <StateData Id="3" Name="Up" IsEntryPoint="false" SubGraphKey="StateMachine1">
+      <Comment />
+      <TriggeredMethods>
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="InitializationSuccess" TriggeringEvent="XComponent.Authentication.UserObject.InitializationSuccess" />
+      </TriggeredMethods>
+    </StateData>
+    <StateData Id="4" Name="InitializationError" IsEntryPoint="false" SubGraphKey="StateMachine1">
+      <Comment />
+      <TriggeredMethods>
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="false" TransitionName="InitializationError" TriggeringEvent="XComponent.Authentication.UserObject.InitializationError" />
+      </TriggeredMethods>
+    </StateData>
+    <StateData Id="5" Name="CheckingLogin" IsEntryPoint="false" SubGraphKey="StateMachine2">
+      <Comment />
+      <TriggeredMethods>
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="CheckLogin" TriggeringEvent="XComponent.Authentication.UserObject.CheckLogin" />
+        <TriggeredMethodData IsNodeInitializer="true" IsSelected="false" TransitionName="InitializePublicMember" />
+      </TriggeredMethods>
+    </StateData>
+    <StateData Id="6" Name="LoginSuccess" IsEntryPoint="false" SubGraphKey="StateMachine2">
+      <Comment />
+      <TriggeredMethods>
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="false" TransitionName="LoginSuccess" TriggeringEvent="XComponent.Authentication.UserObject.LoginSuccess" />
+      </TriggeredMethods>
+    </StateData>
+    <StateData Id="7" Name="LoginError" IsEntryPoint="false" SubGraphKey="StateMachine2">
+      <Comment />
+      <TriggeredMethods>
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="false" TransitionName="LoginError" TriggeringEvent="XComponent.Authentication.UserObject.LoginError" />
+      </TriggeredMethods>
+    </StateData>
+    <StateData Id="12" Name="Up" IsEntryPoint="false" SubGraphKey="StateMachine5">
+      <Comment />
+      <TriggeredMethods>
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="false" TransitionName="CreateHeartBeat" TriggeringEvent="XComponent.Authentication.UserObject.CreateHeartBeat" />
+        <TriggeredMethodData IsNodeInitializer="true" IsSelected="false" TransitionName="InitializePublicMember" />
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="false" TransitionName="NotifyUp" TriggeringEvent="XComponent.Common.Event.DefaultEvent" />
+      </TriggeredMethods>
+    </StateData>
+  </States>
+  <TransitionPatternStates />
+  <Links>
+    <TransitionData Id="1" Name="Initialize" FromKey="State1" ToKey="State2" Type="TimeOut" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.Common.Event.DefaultEvent" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="2" Name="InitializationSuccess" FromKey="State2" ToKey="State3" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.Authentication.UserObject.InitializationSuccess" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="3" Name="InitializationError" FromKey="State2" ToKey="State4" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.Authentication.UserObject.InitializationError" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="4" Name="CheckLogin" FromKey="State3" ToKey="State5" Type="X" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.Authentication.UserObject.CheckLogin" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="17" Name="CreateHeartBeat" FromKey="State3" ToKey="State12" Type="X" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.Authentication.UserObject.CreateHeartBeat" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="5" Name="LoginSuccess" FromKey="State5" ToKey="State6" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.Authentication.UserObject.LoginSuccess" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="7" Name="LoginError" FromKey="State5" ToKey="State7" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.Authentication.UserObject.LoginError" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="18" Name="NotifyUp" FromKey="State12" ToKey="State12" Type="TimeOut" ExecutionDelay="1" SetCustomTimeout="false" TriggeringEvent="XComponent.Common.Event.DefaultEvent" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+  </Links>
+  <TransversalLinks>
+    <TransversalTransitionData Id="9" Name="" FromKey="State2" ToId="2" SelectAllTransitions="true" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.Common.Event.DefaultEvent" Name="Initialize" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="10" Name="" FromKey="State2" ToId="3" SelectAllTransitions="true" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.Common.Event.DefaultEvent" Name="Initialize" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="19" Name="" FromKey="State3" ToId="17" SelectAllTransitions="true" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.Authentication.UserObject.InitializationSuccess" Name="InitializationSuccess" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="6" Name="" FromKey="State5" ToId="5" SelectAllTransitions="true" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.Authentication.UserObject.CheckLogin" Name="CheckLogin" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="8" Name="" FromKey="State5" ToId="7" SelectAllTransitions="true" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.Authentication.UserObject.CheckLogin" Name="CheckLogin" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+  </TransversalLinks>
+  <PublicAssemblies />
+  <ExternalAssemblies />
+</ComponentViewModelData>

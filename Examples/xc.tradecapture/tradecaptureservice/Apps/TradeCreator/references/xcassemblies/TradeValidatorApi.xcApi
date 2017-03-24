@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<deployment environment="Dev" xcProjectName="TradeCapture" deploymentTargetCode="1831703171" deploymentTargetName="TradeValidatorApi" version="1.0" frameworkType="Framework4" xmlns="http://xcomponent.com/DeploymentConfig.xsd" clientApiReference="XComponent.TradeCapture.ClientApi.dll">
+<deployment environment="Dev" xcProjectName="TradeCapture" deploymentTargetCode="1831703171" deploymentTargetName="TradeValidatorApi" version="1.0" frameworkType="Framework45" xmlns="http://xcomponent.com/DeploymentConfig.xsd" clientApiReference="XComponent.TradeCapture.ClientApi.dll">
   <threading />
   <serialization>Binary</serialization>
   <communication>

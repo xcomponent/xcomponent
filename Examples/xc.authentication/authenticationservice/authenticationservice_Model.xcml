@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinkingSchema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" isClientApiShown="false" isLinkingShown="false" name="authenticationservice">
+<LinkingSchema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" isClientApiShown="false" isLinkingShown="false" name="authenticationservice">
   <LinkedComponents>
     <LinkedComponent name="Authentication">
       <Comment />

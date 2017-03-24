@@ -1,0 +1,1046 @@
+<?xml version="1.0"?>
+<ComponentViewModelData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="SwaggerPetstore" Version="2">
+  <StateMachines>
+    <StateMachineData Id="1" Name="SwaggerPetstore" />
+    <StateMachineData Id="5" Name="AddPetOperation" PublicMember="XComponent.SwaggerPetstore.UserObject.AddPetOperation" />
+    <StateMachineData Id="19" Name="UpdatePetOperation" PublicMember="XComponent.SwaggerPetstore.UserObject.UpdatePetOperation" />
+    <StateMachineData Id="33" Name="FindPetsByStatusOperation" PublicMember="XComponent.SwaggerPetstore.UserObject.FindPetsByStatusOperation" />
+    <StateMachineData Id="47" Name="FindPetsByTagsOperation" PublicMember="XComponent.SwaggerPetstore.UserObject.FindPetsByTagsOperation" />
+    <StateMachineData Id="61" Name="GetPetByIdOperation" PublicMember="XComponent.SwaggerPetstore.UserObject.GetPetByIdOperation" />
+    <StateMachineData Id="75" Name="UpdatePetWithFormOperation" PublicMember="XComponent.SwaggerPetstore.UserObject.UpdatePetWithFormOperation" />
+    <StateMachineData Id="89" Name="DeletePetOperation" PublicMember="XComponent.SwaggerPetstore.UserObject.DeletePetOperation" />
+    <StateMachineData Id="103" Name="UploadFileOperation" PublicMember="XComponent.SwaggerPetstore.UserObject.UploadFileOperation" />
+    <StateMachineData Id="117" Name="GetInventoryOperation" PublicMember="XComponent.SwaggerPetstore.UserObject.GetInventoryOperation" />
+    <StateMachineData Id="131" Name="PlaceOrderOperation" PublicMember="XComponent.SwaggerPetstore.UserObject.PlaceOrderOperation" />
+    <StateMachineData Id="145" Name="GetOrderByIdOperation" PublicMember="XComponent.SwaggerPetstore.UserObject.GetOrderByIdOperation" />
+    <StateMachineData Id="159" Name="DeleteOrderOperation" PublicMember="XComponent.SwaggerPetstore.UserObject.DeleteOrderOperation" />
+    <StateMachineData Id="173" Name="CreateUserOperation" PublicMember="XComponent.SwaggerPetstore.UserObject.CreateUserOperation" />
+    <StateMachineData Id="187" Name="CreateUsersWithArrayInputOperation" PublicMember="XComponent.SwaggerPetstore.UserObject.CreateUsersWithArrayInputOperation" />
+    <StateMachineData Id="201" Name="CreateUsersWithListInputOperation" PublicMember="XComponent.SwaggerPetstore.UserObject.CreateUsersWithListInputOperation" />
+    <StateMachineData Id="215" Name="LoginUserOperation" PublicMember="XComponent.SwaggerPetstore.UserObject.LoginUserOperation" />
+    <StateMachineData Id="229" Name="LogoutUserOperation" PublicMember="XComponent.SwaggerPetstore.UserObject.LogoutUserOperation" />
+    <StateMachineData Id="243" Name="GetUserByNameOperation" PublicMember="XComponent.SwaggerPetstore.UserObject.GetUserByNameOperation" />
+    <StateMachineData Id="257" Name="UpdateUserOperation" PublicMember="XComponent.SwaggerPetstore.UserObject.UpdateUserOperation" />
+    <StateMachineData Id="271" Name="DeleteUserOperation" PublicMember="XComponent.SwaggerPetstore.UserObject.DeleteUserOperation" />
+  </StateMachines>
+  <States>
+    <StateData Id="2" Name="EntryPoint" IsEntryPoint="true" SubGraphKey="StateMachine1">
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="3" Name="Up" IsEntryPoint="false" SubGraphKey="StateMachine1">
+      <TriggeredMethods>
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="Init" TriggeringEvent="XComponent.Common.Event.DefaultEvent" />
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="AddPet" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.AddPet" />
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="UpdatePet" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.UpdatePet" />
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="FindPetsByStatus" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.FindPetsByStatus" />
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="FindPetsByTags" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.FindPetsByTags" />
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="GetPetById" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.GetPetById" />
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="UpdatePetWithForm" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.UpdatePetWithForm" />
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="DeletePet" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.DeletePet" />
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="UploadFile" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.UploadFile" />
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="GetInventory" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.GetInventory" />
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="PlaceOrder" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.PlaceOrder" />
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="GetOrderById" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.GetOrderById" />
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="DeleteOrder" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.DeleteOrder" />
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="CreateUser" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.CreateUser" />
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="CreateUsersWithArrayInput" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.CreateUsersWithArrayInput" />
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="CreateUsersWithListInput" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.CreateUsersWithListInput" />
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="LoginUser" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.LoginUser" />
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="LogoutUser" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.LogoutUser" />
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="GetUserByName" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.GetUserByName" />
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="UpdateUser" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.UpdateUser" />
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="DeleteUser" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.DeleteUser" />
+      </TriggeredMethods>
+    </StateData>
+    <StateData Id="6" Name="SendingRequest" IsEntryPoint="false" SubGraphKey="StateMachine5">
+      <TriggeredMethods>
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="CreateAddPetHttpRequest" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.AddPetOperation" />
+      </TriggeredMethods>
+    </StateData>
+    <StateData Id="7" Name="RequestSent" IsEntryPoint="false" SubGraphKey="StateMachine5">
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="8" Name="SuccessResponseReceived" IsEntryPoint="false" SubGraphKey="StateMachine5">
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="9" Name="ErrorResponseReceived" IsEntryPoint="false" SubGraphKey="StateMachine5">
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="20" Name="SendingRequest" IsEntryPoint="false" SubGraphKey="StateMachine19">
+      <TriggeredMethods>
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="CreateUpdatePetHttpRequest" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.UpdatePetOperation" />
+      </TriggeredMethods>
+    </StateData>
+    <StateData Id="21" Name="RequestSent" IsEntryPoint="false" SubGraphKey="StateMachine19">
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="22" Name="SuccessResponseReceived" IsEntryPoint="false" SubGraphKey="StateMachine19">
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="23" Name="ErrorResponseReceived" IsEntryPoint="false" SubGraphKey="StateMachine19">
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="34" Name="SendingRequest" IsEntryPoint="false" SubGraphKey="StateMachine33">
+      <TriggeredMethods>
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="CreateFindPetsByStatusHttpRequest" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.FindPetsByStatusOperation" />
+      </TriggeredMethods>
+    </StateData>
+    <StateData Id="35" Name="RequestSent" IsEntryPoint="false" SubGraphKey="StateMachine33">
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="36" Name="SuccessResponseReceived" IsEntryPoint="false" SubGraphKey="StateMachine33">
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="37" Name="ErrorResponseReceived" IsEntryPoint="false" SubGraphKey="StateMachine33">
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="48" Name="SendingRequest" IsEntryPoint="false" SubGraphKey="StateMachine47">
+      <TriggeredMethods>
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="CreateFindPetsByTagsHttpRequest" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.FindPetsByTagsOperation" />
+      </TriggeredMethods>
+    </StateData>
+    <StateData Id="49" Name="RequestSent" IsEntryPoint="false" SubGraphKey="StateMachine47">
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="50" Name="SuccessResponseReceived" IsEntryPoint="false" SubGraphKey="StateMachine47">
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="51" Name="ErrorResponseReceived" IsEntryPoint="false" SubGraphKey="StateMachine47">
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="62" Name="SendingRequest" IsEntryPoint="false" SubGraphKey="StateMachine61">
+      <TriggeredMethods>
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="CreateGetPetByIdHttpRequest" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.GetPetByIdOperation" />
+      </TriggeredMethods>
+    </StateData>
+    <StateData Id="63" Name="RequestSent" IsEntryPoint="false" SubGraphKey="StateMachine61">
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="64" Name="SuccessResponseReceived" IsEntryPoint="false" SubGraphKey="StateMachine61">
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="65" Name="ErrorResponseReceived" IsEntryPoint="false" SubGraphKey="StateMachine61">
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="76" Name="SendingRequest" IsEntryPoint="false" SubGraphKey="StateMachine75">
+      <TriggeredMethods>
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="CreateUpdatePetWithFormHttpRequest" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.UpdatePetWithFormOperation" />
+      </TriggeredMethods>
+    </StateData>
+    <StateData Id="77" Name="RequestSent" IsEntryPoint="false" SubGraphKey="StateMachine75">
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="78" Name="SuccessResponseReceived" IsEntryPoint="false" SubGraphKey="StateMachine75">
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="79" Name="ErrorResponseReceived" IsEntryPoint="false" SubGraphKey="StateMachine75">
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="90" Name="SendingRequest" IsEntryPoint="false" SubGraphKey="StateMachine89">
+      <TriggeredMethods>
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="CreateDeletePetHttpRequest" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.DeletePetOperation" />
+      </TriggeredMethods>
+    </StateData>
+    <StateData Id="91" Name="RequestSent" IsEntryPoint="false" SubGraphKey="StateMachine89">
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="92" Name="SuccessResponseReceived" IsEntryPoint="false" SubGraphKey="StateMachine89">
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="93" Name="ErrorResponseReceived" IsEntryPoint="false" SubGraphKey="StateMachine89">
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="104" Name="SendingRequest" IsEntryPoint="false" SubGraphKey="StateMachine103">
+      <TriggeredMethods>
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="CreateUploadFileHttpRequest" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.UploadFileOperation" />
+      </TriggeredMethods>
+    </StateData>
+    <StateData Id="105" Name="RequestSent" IsEntryPoint="false" SubGraphKey="StateMachine103">
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="106" Name="SuccessResponseReceived" IsEntryPoint="false" SubGraphKey="StateMachine103">
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="107" Name="ErrorResponseReceived" IsEntryPoint="false" SubGraphKey="StateMachine103">
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="118" Name="SendingRequest" IsEntryPoint="false" SubGraphKey="StateMachine117">
+      <TriggeredMethods>
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="CreateGetInventoryHttpRequest" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.GetInventoryOperation" />
+      </TriggeredMethods>
+    </StateData>
+    <StateData Id="119" Name="RequestSent" IsEntryPoint="false" SubGraphKey="StateMachine117">
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="120" Name="SuccessResponseReceived" IsEntryPoint="false" SubGraphKey="StateMachine117">
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="121" Name="ErrorResponseReceived" IsEntryPoint="false" SubGraphKey="StateMachine117">
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="132" Name="SendingRequest" IsEntryPoint="false" SubGraphKey="StateMachine131">
+      <TriggeredMethods>
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="CreatePlaceOrderHttpRequest" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.PlaceOrderOperation" />
+      </TriggeredMethods>
+    </StateData>
+    <StateData Id="133" Name="RequestSent" IsEntryPoint="false" SubGraphKey="StateMachine131">
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="134" Name="SuccessResponseReceived" IsEntryPoint="false" SubGraphKey="StateMachine131">
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="135" Name="ErrorResponseReceived" IsEntryPoint="false" SubGraphKey="StateMachine131">
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="146" Name="SendingRequest" IsEntryPoint="false" SubGraphKey="StateMachine145">
+      <TriggeredMethods>
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="CreateGetOrderByIdHttpRequest" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.GetOrderByIdOperation" />
+      </TriggeredMethods>
+    </StateData>
+    <StateData Id="147" Name="RequestSent" IsEntryPoint="false" SubGraphKey="StateMachine145">
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="148" Name="SuccessResponseReceived" IsEntryPoint="false" SubGraphKey="StateMachine145">
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="149" Name="ErrorResponseReceived" IsEntryPoint="false" SubGraphKey="StateMachine145">
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="160" Name="SendingRequest" IsEntryPoint="false" SubGraphKey="StateMachine159">
+      <TriggeredMethods>
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="CreateDeleteOrderHttpRequest" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.DeleteOrderOperation" />
+      </TriggeredMethods>
+    </StateData>
+    <StateData Id="161" Name="RequestSent" IsEntryPoint="false" SubGraphKey="StateMachine159">
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="162" Name="SuccessResponseReceived" IsEntryPoint="false" SubGraphKey="StateMachine159">
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="163" Name="ErrorResponseReceived" IsEntryPoint="false" SubGraphKey="StateMachine159">
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="174" Name="SendingRequest" IsEntryPoint="false" SubGraphKey="StateMachine173">
+      <TriggeredMethods>
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="CreateCreateUserHttpRequest" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.CreateUserOperation" />
+      </TriggeredMethods>
+    </StateData>
+    <StateData Id="175" Name="RequestSent" IsEntryPoint="false" SubGraphKey="StateMachine173">
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="176" Name="SuccessResponseReceived" IsEntryPoint="false" SubGraphKey="StateMachine173">
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="177" Name="ErrorResponseReceived" IsEntryPoint="false" SubGraphKey="StateMachine173">
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="188" Name="SendingRequest" IsEntryPoint="false" SubGraphKey="StateMachine187">
+      <TriggeredMethods>
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="CreateCreateUsersWithArrayInputHttpRequest" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.CreateUsersWithArrayInputOperation" />
+      </TriggeredMethods>
+    </StateData>
+    <StateData Id="189" Name="RequestSent" IsEntryPoint="false" SubGraphKey="StateMachine187">
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="190" Name="SuccessResponseReceived" IsEntryPoint="false" SubGraphKey="StateMachine187">
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="191" Name="ErrorResponseReceived" IsEntryPoint="false" SubGraphKey="StateMachine187">
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="202" Name="SendingRequest" IsEntryPoint="false" SubGraphKey="StateMachine201">
+      <TriggeredMethods>
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="CreateCreateUsersWithListInputHttpRequest" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.CreateUsersWithListInputOperation" />
+      </TriggeredMethods>
+    </StateData>
+    <StateData Id="203" Name="RequestSent" IsEntryPoint="false" SubGraphKey="StateMachine201">
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="204" Name="SuccessResponseReceived" IsEntryPoint="false" SubGraphKey="StateMachine201">
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="205" Name="ErrorResponseReceived" IsEntryPoint="false" SubGraphKey="StateMachine201">
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="216" Name="SendingRequest" IsEntryPoint="false" SubGraphKey="StateMachine215">
+      <TriggeredMethods>
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="CreateLoginUserHttpRequest" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.LoginUserOperation" />
+      </TriggeredMethods>
+    </StateData>
+    <StateData Id="217" Name="RequestSent" IsEntryPoint="false" SubGraphKey="StateMachine215">
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="218" Name="SuccessResponseReceived" IsEntryPoint="false" SubGraphKey="StateMachine215">
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="219" Name="ErrorResponseReceived" IsEntryPoint="false" SubGraphKey="StateMachine215">
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="230" Name="SendingRequest" IsEntryPoint="false" SubGraphKey="StateMachine229">
+      <TriggeredMethods>
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="CreateLogoutUserHttpRequest" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.LogoutUserOperation" />
+      </TriggeredMethods>
+    </StateData>
+    <StateData Id="231" Name="RequestSent" IsEntryPoint="false" SubGraphKey="StateMachine229">
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="232" Name="SuccessResponseReceived" IsEntryPoint="false" SubGraphKey="StateMachine229">
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="233" Name="ErrorResponseReceived" IsEntryPoint="false" SubGraphKey="StateMachine229">
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="244" Name="SendingRequest" IsEntryPoint="false" SubGraphKey="StateMachine243">
+      <TriggeredMethods>
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="CreateGetUserByNameHttpRequest" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.GetUserByNameOperation" />
+      </TriggeredMethods>
+    </StateData>
+    <StateData Id="245" Name="RequestSent" IsEntryPoint="false" SubGraphKey="StateMachine243">
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="246" Name="SuccessResponseReceived" IsEntryPoint="false" SubGraphKey="StateMachine243">
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="247" Name="ErrorResponseReceived" IsEntryPoint="false" SubGraphKey="StateMachine243">
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="258" Name="SendingRequest" IsEntryPoint="false" SubGraphKey="StateMachine257">
+      <TriggeredMethods>
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="CreateUpdateUserHttpRequest" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.UpdateUserOperation" />
+      </TriggeredMethods>
+    </StateData>
+    <StateData Id="259" Name="RequestSent" IsEntryPoint="false" SubGraphKey="StateMachine257">
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="260" Name="SuccessResponseReceived" IsEntryPoint="false" SubGraphKey="StateMachine257">
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="261" Name="ErrorResponseReceived" IsEntryPoint="false" SubGraphKey="StateMachine257">
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="272" Name="SendingRequest" IsEntryPoint="false" SubGraphKey="StateMachine271">
+      <TriggeredMethods>
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="CreateDeleteUserHttpRequest" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.DeleteUserOperation" />
+      </TriggeredMethods>
+    </StateData>
+    <StateData Id="273" Name="RequestSent" IsEntryPoint="false" SubGraphKey="StateMachine271">
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="274" Name="SuccessResponseReceived" IsEntryPoint="false" SubGraphKey="StateMachine271">
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="275" Name="ErrorResponseReceived" IsEntryPoint="false" SubGraphKey="StateMachine271">
+      <TriggeredMethods />
+    </StateData>
+  </States>
+  <TransitionPatternStates />
+  <Links>
+    <TransitionData Id="4" Name="Init" FromKey="State2" ToKey="State3" Type="TimeOut" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.Common.Event.DefaultEvent" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="10" Name="AddPet" FromKey="State3" ToKey="State3" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.AddPet" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="11" Name="CreateAddPetHttpRequest" FromKey="State3" ToKey="State6" Type="X" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.AddPetOperation" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="24" Name="UpdatePet" FromKey="State3" ToKey="State3" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.UpdatePet" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="25" Name="CreateUpdatePetHttpRequest" FromKey="State3" ToKey="State20" Type="X" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.UpdatePetOperation" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="38" Name="FindPetsByStatus" FromKey="State3" ToKey="State3" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.FindPetsByStatus" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="39" Name="CreateFindPetsByStatusHttpRequest" FromKey="State3" ToKey="State34" Type="X" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.FindPetsByStatusOperation" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="52" Name="FindPetsByTags" FromKey="State3" ToKey="State3" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.FindPetsByTags" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="53" Name="CreateFindPetsByTagsHttpRequest" FromKey="State3" ToKey="State48" Type="X" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.FindPetsByTagsOperation" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="66" Name="GetPetById" FromKey="State3" ToKey="State3" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.GetPetById" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="67" Name="CreateGetPetByIdHttpRequest" FromKey="State3" ToKey="State62" Type="X" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.GetPetByIdOperation" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="80" Name="UpdatePetWithForm" FromKey="State3" ToKey="State3" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.UpdatePetWithForm" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="81" Name="CreateUpdatePetWithFormHttpRequest" FromKey="State3" ToKey="State76" Type="X" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.UpdatePetWithFormOperation" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="94" Name="DeletePet" FromKey="State3" ToKey="State3" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.DeletePet" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="95" Name="CreateDeletePetHttpRequest" FromKey="State3" ToKey="State90" Type="X" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.DeletePetOperation" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="108" Name="UploadFile" FromKey="State3" ToKey="State3" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.UploadFile" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="109" Name="CreateUploadFileHttpRequest" FromKey="State3" ToKey="State104" Type="X" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.UploadFileOperation" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="122" Name="GetInventory" FromKey="State3" ToKey="State3" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.GetInventory" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="123" Name="CreateGetInventoryHttpRequest" FromKey="State3" ToKey="State118" Type="X" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.GetInventoryOperation" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="136" Name="PlaceOrder" FromKey="State3" ToKey="State3" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.PlaceOrder" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="137" Name="CreatePlaceOrderHttpRequest" FromKey="State3" ToKey="State132" Type="X" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.PlaceOrderOperation" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="150" Name="GetOrderById" FromKey="State3" ToKey="State3" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.GetOrderById" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="151" Name="CreateGetOrderByIdHttpRequest" FromKey="State3" ToKey="State146" Type="X" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.GetOrderByIdOperation" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="164" Name="DeleteOrder" FromKey="State3" ToKey="State3" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.DeleteOrder" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="165" Name="CreateDeleteOrderHttpRequest" FromKey="State3" ToKey="State160" Type="X" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.DeleteOrderOperation" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="178" Name="CreateUser" FromKey="State3" ToKey="State3" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.CreateUser" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="179" Name="CreateCreateUserHttpRequest" FromKey="State3" ToKey="State174" Type="X" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.CreateUserOperation" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="192" Name="CreateUsersWithArrayInput" FromKey="State3" ToKey="State3" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.CreateUsersWithArrayInput" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="193" Name="CreateCreateUsersWithArrayInputHttpRequest" FromKey="State3" ToKey="State188" Type="X" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.CreateUsersWithArrayInputOperation" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="206" Name="CreateUsersWithListInput" FromKey="State3" ToKey="State3" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.CreateUsersWithListInput" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="207" Name="CreateCreateUsersWithListInputHttpRequest" FromKey="State3" ToKey="State202" Type="X" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.CreateUsersWithListInputOperation" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="220" Name="LoginUser" FromKey="State3" ToKey="State3" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.LoginUser" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="221" Name="CreateLoginUserHttpRequest" FromKey="State3" ToKey="State216" Type="X" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.LoginUserOperation" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="234" Name="LogoutUser" FromKey="State3" ToKey="State3" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.LogoutUser" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="235" Name="CreateLogoutUserHttpRequest" FromKey="State3" ToKey="State230" Type="X" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.LogoutUserOperation" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="248" Name="GetUserByName" FromKey="State3" ToKey="State3" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.GetUserByName" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="249" Name="CreateGetUserByNameHttpRequest" FromKey="State3" ToKey="State244" Type="X" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.GetUserByNameOperation" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="262" Name="UpdateUser" FromKey="State3" ToKey="State3" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.UpdateUser" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="263" Name="CreateUpdateUserHttpRequest" FromKey="State3" ToKey="State258" Type="X" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.UpdateUserOperation" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="276" Name="DeleteUser" FromKey="State3" ToKey="State3" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.DeleteUser" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="277" Name="CreateDeleteUserHttpRequest" FromKey="State3" ToKey="State272" Type="X" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.DeleteUserOperation" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="13" Name="SendRequest" FromKey="State6" ToKey="State7" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.Common.Event.DefaultEvent" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="15" Name="ReceiveSuccess" FromKey="State7" ToKey="State8" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.SuccessResponse" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="17" Name="ReceiveError" FromKey="State7" ToKey="State9" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.ErrorResponse" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="27" Name="SendRequest" FromKey="State20" ToKey="State21" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.Common.Event.DefaultEvent" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="29" Name="ReceiveSuccess" FromKey="State21" ToKey="State22" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.SuccessResponse" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="31" Name="ReceiveError" FromKey="State21" ToKey="State23" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.ErrorResponse" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="41" Name="SendRequest" FromKey="State34" ToKey="State35" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.Common.Event.DefaultEvent" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="43" Name="ReceiveSuccess" FromKey="State35" ToKey="State36" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.SuccessResponse" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="45" Name="ReceiveError" FromKey="State35" ToKey="State37" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.ErrorResponse" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="55" Name="SendRequest" FromKey="State48" ToKey="State49" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.Common.Event.DefaultEvent" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="57" Name="ReceiveSuccess" FromKey="State49" ToKey="State50" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.SuccessResponse" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="59" Name="ReceiveError" FromKey="State49" ToKey="State51" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.ErrorResponse" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="69" Name="SendRequest" FromKey="State62" ToKey="State63" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.Common.Event.DefaultEvent" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="71" Name="ReceiveSuccess" FromKey="State63" ToKey="State64" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.SuccessResponse" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="73" Name="ReceiveError" FromKey="State63" ToKey="State65" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.ErrorResponse" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="83" Name="SendRequest" FromKey="State76" ToKey="State77" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.Common.Event.DefaultEvent" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="85" Name="ReceiveSuccess" FromKey="State77" ToKey="State78" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.SuccessResponse" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="87" Name="ReceiveError" FromKey="State77" ToKey="State79" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.ErrorResponse" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="97" Name="SendRequest" FromKey="State90" ToKey="State91" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.Common.Event.DefaultEvent" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="99" Name="ReceiveSuccess" FromKey="State91" ToKey="State92" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.SuccessResponse" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="101" Name="ReceiveError" FromKey="State91" ToKey="State93" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.ErrorResponse" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="111" Name="SendRequest" FromKey="State104" ToKey="State105" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.Common.Event.DefaultEvent" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="113" Name="ReceiveSuccess" FromKey="State105" ToKey="State106" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.SuccessResponse" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="115" Name="ReceiveError" FromKey="State105" ToKey="State107" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.ErrorResponse" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="125" Name="SendRequest" FromKey="State118" ToKey="State119" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.Common.Event.DefaultEvent" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="127" Name="ReceiveSuccess" FromKey="State119" ToKey="State120" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.SuccessResponse" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="129" Name="ReceiveError" FromKey="State119" ToKey="State121" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.ErrorResponse" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="139" Name="SendRequest" FromKey="State132" ToKey="State133" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.Common.Event.DefaultEvent" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="141" Name="ReceiveSuccess" FromKey="State133" ToKey="State134" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.SuccessResponse" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="143" Name="ReceiveError" FromKey="State133" ToKey="State135" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.ErrorResponse" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="153" Name="SendRequest" FromKey="State146" ToKey="State147" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.Common.Event.DefaultEvent" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="155" Name="ReceiveSuccess" FromKey="State147" ToKey="State148" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.SuccessResponse" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="157" Name="ReceiveError" FromKey="State147" ToKey="State149" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.ErrorResponse" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="167" Name="SendRequest" FromKey="State160" ToKey="State161" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.Common.Event.DefaultEvent" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="169" Name="ReceiveSuccess" FromKey="State161" ToKey="State162" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.SuccessResponse" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="171" Name="ReceiveError" FromKey="State161" ToKey="State163" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.ErrorResponse" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="181" Name="SendRequest" FromKey="State174" ToKey="State175" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.Common.Event.DefaultEvent" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="183" Name="ReceiveSuccess" FromKey="State175" ToKey="State176" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.SuccessResponse" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="185" Name="ReceiveError" FromKey="State175" ToKey="State177" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.ErrorResponse" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="195" Name="SendRequest" FromKey="State188" ToKey="State189" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.Common.Event.DefaultEvent" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="197" Name="ReceiveSuccess" FromKey="State189" ToKey="State190" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.SuccessResponse" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="199" Name="ReceiveError" FromKey="State189" ToKey="State191" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.ErrorResponse" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="209" Name="SendRequest" FromKey="State202" ToKey="State203" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.Common.Event.DefaultEvent" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="211" Name="ReceiveSuccess" FromKey="State203" ToKey="State204" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.SuccessResponse" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="213" Name="ReceiveError" FromKey="State203" ToKey="State205" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.ErrorResponse" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="223" Name="SendRequest" FromKey="State216" ToKey="State217" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.Common.Event.DefaultEvent" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="225" Name="ReceiveSuccess" FromKey="State217" ToKey="State218" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.SuccessResponse" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="227" Name="ReceiveError" FromKey="State217" ToKey="State219" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.ErrorResponse" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="237" Name="SendRequest" FromKey="State230" ToKey="State231" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.Common.Event.DefaultEvent" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="239" Name="ReceiveSuccess" FromKey="State231" ToKey="State232" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.SuccessResponse" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="241" Name="ReceiveError" FromKey="State231" ToKey="State233" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.ErrorResponse" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="251" Name="SendRequest" FromKey="State244" ToKey="State245" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.Common.Event.DefaultEvent" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="253" Name="ReceiveSuccess" FromKey="State245" ToKey="State246" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.SuccessResponse" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="255" Name="ReceiveError" FromKey="State245" ToKey="State247" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.ErrorResponse" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="265" Name="SendRequest" FromKey="State258" ToKey="State259" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.Common.Event.DefaultEvent" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="267" Name="ReceiveSuccess" FromKey="State259" ToKey="State260" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.SuccessResponse" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="269" Name="ReceiveError" FromKey="State259" ToKey="State261" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.ErrorResponse" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="279" Name="SendRequest" FromKey="State272" ToKey="State273" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.Common.Event.DefaultEvent" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="281" Name="ReceiveSuccess" FromKey="State273" ToKey="State274" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.SuccessResponse" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="283" Name="ReceiveError" FromKey="State273" ToKey="State275" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SwaggerPetstore.UserObject.ErrorResponse" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+  </Links>
+  <TransversalLinks>
+    <TransversalTransitionData Id="12" Name="trigtrans0" FromKey="State3" ToId="11" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.AddPet" Name="AddPet" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="26" Name="trigtrans0" FromKey="State3" ToId="25" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.UpdatePet" Name="UpdatePet" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="40" Name="trigtrans0" FromKey="State3" ToId="39" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.FindPetsByStatus" Name="FindPetsByStatus" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="54" Name="trigtrans0" FromKey="State3" ToId="53" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.FindPetsByTags" Name="FindPetsByTags" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="68" Name="trigtrans0" FromKey="State3" ToId="67" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.GetPetById" Name="GetPetById" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="82" Name="trigtrans0" FromKey="State3" ToId="81" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.UpdatePetWithForm" Name="UpdatePetWithForm" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="96" Name="trigtrans0" FromKey="State3" ToId="95" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.DeletePet" Name="DeletePet" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="110" Name="trigtrans0" FromKey="State3" ToId="109" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.UploadFile" Name="UploadFile" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="124" Name="trigtrans0" FromKey="State3" ToId="123" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.GetInventory" Name="GetInventory" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="138" Name="trigtrans0" FromKey="State3" ToId="137" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.PlaceOrder" Name="PlaceOrder" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="152" Name="trigtrans0" FromKey="State3" ToId="151" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.GetOrderById" Name="GetOrderById" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="166" Name="trigtrans0" FromKey="State3" ToId="165" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.DeleteOrder" Name="DeleteOrder" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="180" Name="trigtrans0" FromKey="State3" ToId="179" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.CreateUser" Name="CreateUser" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="194" Name="trigtrans0" FromKey="State3" ToId="193" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.CreateUsersWithArrayInput" Name="CreateUsersWithArrayInput" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="208" Name="trigtrans0" FromKey="State3" ToId="207" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.CreateUsersWithListInput" Name="CreateUsersWithListInput" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="222" Name="trigtrans0" FromKey="State3" ToId="221" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.LoginUser" Name="LoginUser" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="236" Name="trigtrans0" FromKey="State3" ToId="235" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.LogoutUser" Name="LogoutUser" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="250" Name="trigtrans0" FromKey="State3" ToId="249" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.GetUserByName" Name="GetUserByName" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="264" Name="trigtrans0" FromKey="State3" ToId="263" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.UpdateUser" Name="UpdateUser" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="278" Name="trigtrans0" FromKey="State3" ToId="277" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.DeleteUser" Name="DeleteUser" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="14" Name="trigtrans0" FromKey="State6" ToId="13" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.AddPetOperation" Name="CreateAddPetHttpRequest" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="16" Name="trigtrans0" FromKey="State6" ToId="15" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.AddPetOperation" Name="CreateAddPetHttpRequest" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="18" Name="trigtrans0" FromKey="State6" ToId="17" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.AddPetOperation" Name="CreateAddPetHttpRequest" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="28" Name="trigtrans0" FromKey="State20" ToId="27" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.UpdatePetOperation" Name="CreateUpdatePetHttpRequest" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="30" Name="trigtrans0" FromKey="State20" ToId="29" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.UpdatePetOperation" Name="CreateUpdatePetHttpRequest" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="32" Name="trigtrans0" FromKey="State20" ToId="31" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.UpdatePetOperation" Name="CreateUpdatePetHttpRequest" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="42" Name="trigtrans0" FromKey="State34" ToId="41" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.FindPetsByStatusOperation" Name="CreateFindPetsByStatusHttpRequest" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="44" Name="trigtrans0" FromKey="State34" ToId="43" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.FindPetsByStatusOperation" Name="CreateFindPetsByStatusHttpRequest" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="46" Name="trigtrans0" FromKey="State34" ToId="45" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.FindPetsByStatusOperation" Name="CreateFindPetsByStatusHttpRequest" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="56" Name="trigtrans0" FromKey="State48" ToId="55" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.FindPetsByTagsOperation" Name="CreateFindPetsByTagsHttpRequest" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="58" Name="trigtrans0" FromKey="State48" ToId="57" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.FindPetsByTagsOperation" Name="CreateFindPetsByTagsHttpRequest" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="60" Name="trigtrans0" FromKey="State48" ToId="59" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.FindPetsByTagsOperation" Name="CreateFindPetsByTagsHttpRequest" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="70" Name="trigtrans0" FromKey="State62" ToId="69" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.GetPetByIdOperation" Name="CreateGetPetByIdHttpRequest" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="72" Name="trigtrans0" FromKey="State62" ToId="71" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.GetPetByIdOperation" Name="CreateGetPetByIdHttpRequest" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="74" Name="trigtrans0" FromKey="State62" ToId="73" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.GetPetByIdOperation" Name="CreateGetPetByIdHttpRequest" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="84" Name="trigtrans0" FromKey="State76" ToId="83" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.UpdatePetWithFormOperation" Name="CreateUpdatePetWithFormHttpRequest" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="86" Name="trigtrans0" FromKey="State76" ToId="85" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.UpdatePetWithFormOperation" Name="CreateUpdatePetWithFormHttpRequest" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="88" Name="trigtrans0" FromKey="State76" ToId="87" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.UpdatePetWithFormOperation" Name="CreateUpdatePetWithFormHttpRequest" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="98" Name="trigtrans0" FromKey="State90" ToId="97" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.DeletePetOperation" Name="CreateDeletePetHttpRequest" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="100" Name="trigtrans0" FromKey="State90" ToId="99" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.DeletePetOperation" Name="CreateDeletePetHttpRequest" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="102" Name="trigtrans0" FromKey="State90" ToId="101" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.DeletePetOperation" Name="CreateDeletePetHttpRequest" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="112" Name="trigtrans0" FromKey="State104" ToId="111" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.UploadFileOperation" Name="CreateUploadFileHttpRequest" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="114" Name="trigtrans0" FromKey="State104" ToId="113" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.UploadFileOperation" Name="CreateUploadFileHttpRequest" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="116" Name="trigtrans0" FromKey="State104" ToId="115" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.UploadFileOperation" Name="CreateUploadFileHttpRequest" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="126" Name="trigtrans0" FromKey="State118" ToId="125" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.GetInventoryOperation" Name="CreateGetInventoryHttpRequest" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="128" Name="trigtrans0" FromKey="State118" ToId="127" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.GetInventoryOperation" Name="CreateGetInventoryHttpRequest" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="130" Name="trigtrans0" FromKey="State118" ToId="129" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.GetInventoryOperation" Name="CreateGetInventoryHttpRequest" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="140" Name="trigtrans0" FromKey="State132" ToId="139" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.PlaceOrderOperation" Name="CreatePlaceOrderHttpRequest" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="142" Name="trigtrans0" FromKey="State132" ToId="141" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.PlaceOrderOperation" Name="CreatePlaceOrderHttpRequest" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="144" Name="trigtrans0" FromKey="State132" ToId="143" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.PlaceOrderOperation" Name="CreatePlaceOrderHttpRequest" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="154" Name="trigtrans0" FromKey="State146" ToId="153" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.GetOrderByIdOperation" Name="CreateGetOrderByIdHttpRequest" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="156" Name="trigtrans0" FromKey="State146" ToId="155" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.GetOrderByIdOperation" Name="CreateGetOrderByIdHttpRequest" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="158" Name="trigtrans0" FromKey="State146" ToId="157" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.GetOrderByIdOperation" Name="CreateGetOrderByIdHttpRequest" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="168" Name="trigtrans0" FromKey="State160" ToId="167" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.DeleteOrderOperation" Name="CreateDeleteOrderHttpRequest" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="170" Name="trigtrans0" FromKey="State160" ToId="169" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.DeleteOrderOperation" Name="CreateDeleteOrderHttpRequest" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="172" Name="trigtrans0" FromKey="State160" ToId="171" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.DeleteOrderOperation" Name="CreateDeleteOrderHttpRequest" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="182" Name="trigtrans0" FromKey="State174" ToId="181" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.CreateUserOperation" Name="CreateCreateUserHttpRequest" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="184" Name="trigtrans0" FromKey="State174" ToId="183" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.CreateUserOperation" Name="CreateCreateUserHttpRequest" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="186" Name="trigtrans0" FromKey="State174" ToId="185" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.CreateUserOperation" Name="CreateCreateUserHttpRequest" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="196" Name="trigtrans0" FromKey="State188" ToId="195" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.CreateUsersWithArrayInputOperation" Name="CreateCreateUsersWithArrayInputHttpRequest" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="198" Name="trigtrans0" FromKey="State188" ToId="197" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.CreateUsersWithArrayInputOperation" Name="CreateCreateUsersWithArrayInputHttpRequest" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="200" Name="trigtrans0" FromKey="State188" ToId="199" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.CreateUsersWithArrayInputOperation" Name="CreateCreateUsersWithArrayInputHttpRequest" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="210" Name="trigtrans0" FromKey="State202" ToId="209" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.CreateUsersWithListInputOperation" Name="CreateCreateUsersWithListInputHttpRequest" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="212" Name="trigtrans0" FromKey="State202" ToId="211" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.CreateUsersWithListInputOperation" Name="CreateCreateUsersWithListInputHttpRequest" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="214" Name="trigtrans0" FromKey="State202" ToId="213" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.CreateUsersWithListInputOperation" Name="CreateCreateUsersWithListInputHttpRequest" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="224" Name="trigtrans0" FromKey="State216" ToId="223" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.LoginUserOperation" Name="CreateLoginUserHttpRequest" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="226" Name="trigtrans0" FromKey="State216" ToId="225" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.LoginUserOperation" Name="CreateLoginUserHttpRequest" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="228" Name="trigtrans0" FromKey="State216" ToId="227" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.LoginUserOperation" Name="CreateLoginUserHttpRequest" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="238" Name="trigtrans0" FromKey="State230" ToId="237" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.LogoutUserOperation" Name="CreateLogoutUserHttpRequest" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="240" Name="trigtrans0" FromKey="State230" ToId="239" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.LogoutUserOperation" Name="CreateLogoutUserHttpRequest" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="242" Name="trigtrans0" FromKey="State230" ToId="241" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.LogoutUserOperation" Name="CreateLogoutUserHttpRequest" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="252" Name="trigtrans0" FromKey="State244" ToId="251" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.GetUserByNameOperation" Name="CreateGetUserByNameHttpRequest" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="254" Name="trigtrans0" FromKey="State244" ToId="253" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.GetUserByNameOperation" Name="CreateGetUserByNameHttpRequest" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="256" Name="trigtrans0" FromKey="State244" ToId="255" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.GetUserByNameOperation" Name="CreateGetUserByNameHttpRequest" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="266" Name="trigtrans0" FromKey="State258" ToId="265" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.UpdateUserOperation" Name="CreateUpdateUserHttpRequest" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="268" Name="trigtrans0" FromKey="State258" ToId="267" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.UpdateUserOperation" Name="CreateUpdateUserHttpRequest" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="270" Name="trigtrans0" FromKey="State258" ToId="269" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.UpdateUserOperation" Name="CreateUpdateUserHttpRequest" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="280" Name="trigtrans0" FromKey="State272" ToId="279" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.DeleteUserOperation" Name="CreateDeleteUserHttpRequest" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="282" Name="trigtrans0" FromKey="State272" ToId="281" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.DeleteUserOperation" Name="CreateDeleteUserHttpRequest" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="284" Name="trigtrans0" FromKey="State272" ToId="283" SelectAllTransitions="false" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SwaggerPetstore.UserObject.DeleteUserOperation" Name="CreateDeleteUserHttpRequest" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+  </TransversalLinks>
+  <PublicAssemblies />
+  <ExternalAssemblies />
+</ComponentViewModelData>

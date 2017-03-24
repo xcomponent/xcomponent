@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ComponentViewModelData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="SimpleComponent" Version="15">
+  <StateMachines>
+    <StateMachineData Id="1" Name="SimpleComponent" />
+    <StateMachineData Id="2" Name="Workflow" PublicMember="XComponent.SimpleComponent.UserObject.Workflow" />
+  </StateMachines>
+  <States>
+    <StateData Id="1" Name="EntryPoint" IsEntryPoint="true" SubGraphKey="StateMachine1">
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="3" Name="A" IsEntryPoint="false" SubGraphKey="StateMachine2">
+      <TriggeredMethods>
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="CreateStateMachine" TriggeringEvent="XComponent.SimpleComponent.UserObject.CreateStateMachine" />
+      </TriggeredMethods>
+    </StateData>
+    <StateData Id="2" Name="B" IsEntryPoint="false" SubGraphKey="StateMachine2">
+      <TriggeredMethods>
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="AB" TriggeringEvent="XComponent.SimpleComponent.UserObject.AB" />
+      </TriggeredMethods>
+    </StateData>
+    <StateData Id="4" Name="C" IsEntryPoint="false" SubGraphKey="StateMachine2">
+      <TriggeredMethods>
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="BC" TriggeringEvent="XComponent.SimpleComponent.UserObject.BC" />
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="DC" TriggeringEvent="XComponent.SimpleComponent.UserObject.DC" />
+      </TriggeredMethods>
+    </StateData>
+    <StateData Id="5" Name="D" IsEntryPoint="false" SubGraphKey="StateMachine2">
+      <TriggeredMethods>
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="BD" TriggeringEvent="XComponent.SimpleComponent.UserObject.BD" />
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="CD" TriggeringEvent="XComponent.SimpleComponent.UserObject.CD" />
+      </TriggeredMethods>
+    </StateData>
+    <StateData Id="6" Name="E" IsEntryPoint="false" SubGraphKey="StateMachine2">
+      <TriggeredMethods />
+    </StateData>
+  </States>
+  <TransitionPatternStates />
+  <Links>
+    <TransitionData Id="1" Name="CreateStateMachine" FromKey="State1" ToKey="State3" Type="X" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SimpleComponent.UserObject.CreateStateMachine" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="2" Name="AB" FromKey="State3" ToKey="State2" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SimpleComponent.UserObject.AB" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="3" Name="BC" FromKey="State2" ToKey="State4" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SimpleComponent.UserObject.BC" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="4" Name="BD" FromKey="State2" ToKey="State5" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SimpleComponent.UserObject.BD" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="5" Name="CE" FromKey="State4" ToKey="State6" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SimpleComponent.UserObject.CE" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="6" Name="DE" FromKey="State5" ToKey="State6" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SimpleComponent.UserObject.DE" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="7" Name="CD" FromKey="State4" ToKey="State5" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SimpleComponent.UserObject.CD" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="8" Name="DC" FromKey="State5" ToKey="State4" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.SimpleComponent.UserObject.DC" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+  </Links>
+  <TransversalLinks>
+    <TransversalTransitionData Id="10" Name="" FromKey="State3" ToId="2" SelectAllTransitions="true" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SimpleComponent.UserObject.CreateStateMachine" Name="CreateStateMachine" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="11" Name="" FromKey="State2" ToId="3" SelectAllTransitions="true" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SimpleComponent.UserObject.AB" Name="AB" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="12" Name="" FromKey="State2" ToId="4" SelectAllTransitions="true" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SimpleComponent.UserObject.AB" Name="AB" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="13" Name="" FromKey="State5" ToId="8" SelectAllTransitions="true" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SimpleComponent.UserObject.BD" Name="BD" />
+        <SelectedTransitionData Event="XComponent.SimpleComponent.UserObject.CD" Name="CD" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="14" Name="" FromKey="State4" ToId="7" SelectAllTransitions="true" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SimpleComponent.UserObject.BC" Name="BC" />
+        <SelectedTransitionData Event="XComponent.SimpleComponent.UserObject.DC" Name="DC" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="15" Name="" FromKey="State4" ToId="5" SelectAllTransitions="true" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SimpleComponent.UserObject.BC" Name="BC" />
+        <SelectedTransitionData Event="XComponent.SimpleComponent.UserObject.DC" Name="DC" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="16" Name="" FromKey="State5" ToId="6" SelectAllTransitions="true" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.SimpleComponent.UserObject.BD" Name="BD" />
+        <SelectedTransitionData Event="XComponent.SimpleComponent.UserObject.CD" Name="CD" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+  </TransversalLinks>
+  <PublicAssemblies />
+  <ExternalAssemblies />
+</ComponentViewModelData>

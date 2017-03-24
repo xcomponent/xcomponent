@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -8,7 +8,7 @@
     <ProjectGuid>{BE692B62-C3EF-410D-9521-7739F2347E1C}</ProjectGuid>
     <RootNamespace>XComponent.TradeCapture.Common</RootNamespace>
     <AssemblyName>XComponent.TradeCapture.Common</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
   </PropertyGroup>
@@ -38,16 +38,10 @@
       <HintPath>..\UserReference\XComponent.Core.dll</HintPath>
       <SpecificVersion>false</SpecificVersion>
     </Reference>
-    <Reference Include="XComponent.Extended">
-      <HintPath>..\UserReference\XComponent.Extended.dll</HintPath>
-      <SpecificVersion>false</SpecificVersion>
-    </Reference>    
-
     <Reference Include="XComponent.Referential.UserObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
       <HintPath>..\..\Referential\generated\UserObject\XComponent.Referential.UserObject.dll</HintPath>
       <SpecificVersion>false</SpecificVersion>
     </Reference>
-
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -61,32 +55,36 @@
     <Compile Include="KeyValueParametersEnum.cs" />
     <Compile Include="ComponentHelper.cs" />
     <Compile Include="IInternalAPI.cs" />
+    <Compile Include="InternalAPI.cs" />
+    <Compile Include="IInternalCommunication.cs" />
+    <Compile Include="InternalCommunication.cs" />
     <Compile Include="Senders\AbstractSender.cs" />
     <Compile Include="Senders\SenderManager.cs" />
     <Compile Include="Senders\SenderInterfaces.cs" />
     <Compile Include="Senders\SenderImplementations.cs" />
-    <Compile Include="HashCodeHelper\NewTransactionXCTradeProcessor.cs" />
-    <Compile Include="HashCodeHelper\SendEventTransactionXCTradeProcessor.cs" />
-    <Compile Include="HashCodeHelper\ValidationErrorTransaction.cs" />
-    <Compile Include="HashCodeHelper\SendEventErrorTransaction.cs" />
-    <Compile Include="HashCodeHelper\ErrorTransaction.cs" />
-    <Compile Include="HashCodeHelper\InitMappingTransaction.cs" />
-    <Compile Include="HashCodeHelper\SendEventInitTransaction.cs" />
-    <Compile Include="HashCodeHelper\RejectTransaction.cs" />
-    <Compile Include="HashCodeHelper\SendEventRejectTransaction.cs" />
-    <Compile Include="HashCodeHelper\UpdateAndRetryTransaction.cs" />
-    <Compile Include="HashCodeHelper\SendEventUpdateAndRetryTransaction.cs" />
-    <Compile Include="HashCodeHelper\TimeOutTransaction.cs" />
-    <Compile Include="HashCodeHelper\SendEventDefaultEventTransaction.cs" />
-    <Compile Include="HashCodeHelper\AcceptedTransaction.cs" />
-    <Compile Include="HashCodeHelper\SendEventAcceptTransaction.cs" />
-    <Compile Include="HashCodeHelper\GetInstrumentSnapshotTransaction.cs" />
-    <Compile Include="HashCodeHelper\SendEventGetSnapshotTransaction.cs" />
-    <Compile Include="HashCodeHelper\ReferentialNotificationTransaction.cs" />
-    <Compile Include="HashCodeHelper\SendEventInstrumentSnapshotTransaction.cs" />
-    <Compile Include="HashCodeHelper\UpdateReferentialTransaction.cs" />
-    <Compile Include="HashCodeHelper\SendEventInstrumentTransaction.cs" />
-
+    <Compile Include="StateHashCodeCalculator\XCTradeProcessor\EntryPointStateHashCodeCalculator.cs" />
+    <Compile Include="StateHashCodeCalculator\Transaction\ValidationStateHashCodeCalculator.cs" />
+    <Compile Include="StateHashCodeCalculator\Transaction\ValidationErrorStateHashCodeCalculator.cs" />
+    <Compile Include="StateHashCodeCalculator\Transaction\TransactionRejectedStateHashCodeCalculator.cs" />
+    <Compile Include="StateHashCodeCalculator\Transaction\MappingStateHashCodeCalculator.cs" />
+    <Compile Include="StateHashCodeCalculator\Transaction\ErrorOnMappingStateHashCodeCalculator.cs" />
+    <Compile Include="StateHashCodeCalculator\Transaction\TransactionAcceptedStateHashCodeCalculator.cs" />
+    <Compile Include="StateHashCodeCalculator\UpdateReferential\UpdateReferentialStateHashCodeCalculator.cs" />
+    <Compile Include="StateHashCodeCalculator\GetInstrumentSnapshot\GetInstrumentSnapshotStateHashCodeCalculator.cs" />
+    <Compile Include="EventHashCodeCalculator\XCTradeProcessor\XComponent.TradeCapture.UserObject.TransactionEventHashCodeCalculator.cs" />
+    <Compile Include="EventHashCodeCalculator\Transaction\XComponent.TradeCapture.UserObject.ErrorEventHashCodeCalculator.cs" />
+    <Compile Include="EventHashCodeCalculator\Transaction\XComponent.TradeCapture.UserObject.InitEventHashCodeCalculator.cs" />
+    <Compile Include="EventHashCodeCalculator\Transaction\XComponent.TradeCapture.UserObject.RejectEventHashCodeCalculator.cs" />
+    <Compile Include="EventHashCodeCalculator\Transaction\XComponent.TradeCapture.UserObject.UpdateAndRetryEventHashCodeCalculator.cs" />
+    <Compile Include="EventHashCodeCalculator\Transaction\XComponent.Common.Event.DefaultEventEventHashCodeCalculator.cs" />
+    <Compile Include="EventHashCodeCalculator\Transaction\XComponent.TradeCapture.UserObject.AcceptEventHashCodeCalculator.cs" />
+    <Compile Include="EventHashCodeCalculator\Transaction\XComponent.Referential.UserObject.GetSnapshotEventHashCodeCalculator.cs" />
+    <Compile Include="EventHashCodeCalculator\Transaction\XComponent.Referential.UserObject.InstrumentSnapshotEventHashCodeCalculator.cs" />
+    <Compile Include="EventHashCodeCalculator\Transaction\XComponent.Referential.UserObject.InstrumentEventHashCodeCalculator.cs" />
+    <Compile Include="EventHashCodeCalculator\XCTradeProcessorEventHashCodeCalculatorRepository.cs" />
+    <Compile Include="EventHashCodeCalculator\TransactionEventHashCodeCalculatorRepository.cs" />
+    <Compile Include="EventHashCodeCalculator\UpdateReferentialEventHashCodeCalculatorRepository.cs" />
+    <Compile Include="EventHashCodeCalculator\GetInstrumentSnapshotEventHashCodeCalculatorRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\UserObject\XComponent.TradeCapture.UserObject.csproj">

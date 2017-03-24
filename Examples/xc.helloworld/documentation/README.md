@@ -43,7 +43,7 @@ A client API enables you to define how client applications interact with your mi
 > Note: In XComponent, a component is a set of state machines.
 
 * Implementation of this new component
- * Rename the automatically created *StateMachine1* to *HelloWorldManager*
+ * Rename the automatically created *HelloWorld* to *HelloWorldManager*
  * Add a new state named *Done* by double clicking in the designer view (a state and its state machine are created)
  * Rename the automatically generated *StateMachine2* to *HelloWorldResponse*
  * Add a transition named *SayHello* from *EntryPoint* to *Done*
@@ -126,8 +126,8 @@ In the drop down you should see the previously configured rabbitmq bus.
 
 ![microservices](images/build.jpg)
 
-* Start your microservice (*Project* menu + *Run microservices* sub menu + *Start* button)
-* Create a simple console application to test your microservice (*Project* menu + *Generate console app* sub menu)
+* Start your microservice (*Project* menu + *Run* sub menu + *Microservices* button and then the *Start* button)
+* Create a simple console application to test your microservice (*Project* menu + *Generate Applications* sub menu + *Console App* button)
 * Copy/Paste the following code in *Program.cs*
 
 ```cs

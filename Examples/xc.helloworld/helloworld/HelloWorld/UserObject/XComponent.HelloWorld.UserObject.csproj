@@ -7,7 +7,7 @@
     <ProjectGuid>{6C2538E9-444F-4623-9E23-8025EDD0D302}</ProjectGuid>
     <RootNamespace>XComponent.HelloWorld.UserObject</RootNamespace>
     <AssemblyName>XComponent.HelloWorld.UserObject</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
   </PropertyGroup>
@@ -34,10 +34,6 @@
   <ItemGroup>
     <Reference Include="XComponent.Core, Version=4.5.0.30001, Culture=neutral, PublicKeyToken=null">
       <HintPath>..\UserReference\XComponent.Core.dll</HintPath>
-      <SpecificVersion>false</SpecificVersion>
-    </Reference>
-    <Reference Include="XComponent.Extended, Version=4.5.0.30001, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\UserReference\XComponent.Extended.dll</HintPath>
       <SpecificVersion>false</SpecificVersion>
     </Reference>
   </ItemGroup>

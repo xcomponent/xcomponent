@@ -1,0 +1,58 @@
+﻿<UserControl x:Class="SequenceDiagramViewer.SequenceDiagramControl.SequenceDiagramControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:go="http://schemas.nwoods.com/GoXam"
+             xmlns:sequenceDiagramControl1="clr-namespace:SequenceDiagramViewer.SequenceDiagramControl"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+            <DataTemplate x:Key="Activity">
+                <Rectangle go:Node.LocationSpot="MiddleTop"
+                 go:Node.Location="{Binding Path=Data.Location}"
+                 Width="15" Height="{Binding Path=Data.Length}"
+                 Fill="White" Stroke="White"
+                 go:Part.Selectable="False" />
+            </DataTemplate>
+
+            <DataTemplate x:Key="Lifeline">
+                <StackPanel go:Node.LocationSpot="Center" go:Node.LocationElementName="Header"
+                  go:Node.Location="{Binding Path=Data.Location, Mode=TwoWay}"
+                  go:Node.MinLocation="0 0" go:Node.MaxLocation="9999 0"
+                  go:Part.SelectionAdorned="True" go:Part.SelectionElementName="LINE">
+                    <Border x:Name="Header" BorderBrush="White" BorderThickness="1" Background="Green">
+                    <TextBlock Margin="5" FontSize="10" Text="{Binding Path=Data.Text}" ToolTip="{Binding Path=Data.Key}" />
+                    </Border>
+                    <Line x:Name="LINE" Stroke="White" StrokeDashArray="3 3" 
+              X1="0" Y1="0" X2="0" Y2="{Binding Path=Data.Length}"
+              HorizontalAlignment="Center" />
+                </StackPanel>
+            </DataTemplate>
+
+            <DataTemplate x:Key="Message">
+                <go:LinkPanel go:Part.SelectionAdorned="True"  go:Part.SelectionElementName="Path">
+                    <go:Link.Route>
+                        <sequenceDiagramControl1:BarRoute Curviness="0" />
+                    </go:Link.Route>
+                    <go:LinkShape x:Name="Path" Stroke="White" StrokeThickness="1" />
+                    <Path go:LinkPanel.ToArrow="OpenTriangle" Stroke="White" />
+                    <TextBlock Margin="10" Text="{Binding Path=Data.Text}" Foreground="White" go:LinkPanel.Index="0" go:LinkPanel.Offset="NaN NaN" />
+                </go:LinkPanel>
+            </DataTemplate>
+        </UserControl.Resources>
+
+    <Grid>
+        <go:Diagram x:Name="myDiagram"
+                HorizontalContentAlignment="Stretch"
+                VerticalContentAlignment="Stretch"
+                Padding="10"
+                    NodesSource="{Binding NodesSource}"
+                    LinksSource="{Binding LinksSource}"
+                NodeTemplate="{StaticResource Activity}"
+                GroupTemplate="{StaticResource Lifeline}"
+                LinkTemplate="{StaticResource Message}"
+                AllowDelete="False" AllowCopy="False">
+        </go:Diagram>
+    </Grid>
+</UserControl>

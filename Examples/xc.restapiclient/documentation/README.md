@@ -48,6 +48,8 @@ also notice that, for simplicity, we omitted many operations and only 2 of them 
 is generated based on the service's title present in the description. The composition view should look like the following:
  
  ![New composition view](images/New_composition_view.jpg)
+
+Your actual model will include much more state machines.
   
 ### Explore the generated component
 
@@ -65,7 +67,7 @@ is generated based on the service's title present in the description. The compos
   
 Calling a service operation via the component is simply sending the proper event to the service's state machine.
  
-For example, if we need to call the AddPet opeartion we need to Send the *AddPet* event to the *SwaggerPetstore* state machine.
+For example, if we need to call the AddPet operation we need to Send the *AddPet* event to the *SwaggerPetstore* state machine.
 
 We can register on the instance updates of the operation's state machine for two main reasons:
 * Get updates about the operation's status
@@ -92,115 +94,16 @@ We also have the possibility to override the service's address by defining a *St
 
 With these configurations done, we can now build the composition.
   
+## Running the microservice
+
+* Start RabbitMQ
+* In the properties fo your project confgigure RabbitMQ on the *Communication* configuration. On the *Components* configuration, set the deployment target to *Server* and the serialization to *Json*.
+* Start your microservice (*Project* menu + *Run microservices* sub menu + *Start* button)
+
 ## Console Application
  
-* Start your microservice (*Project* menu + *Run microservices* sub menu + *Start* button)
 * Create a simple console application to test your microservice (*Project* menu + *Generate console app* sub menu)
-* Copy/Paste the following code in *Program.cs*
-
-```cs
-using System;
-using System.Collections.Generic;
-using System.Threading;
-using XCClientAPICommon.Client;
-using XCClientAPICommon.ApiExtensions;
-using XComponent.RestConsumer.RestConsumerApi;
-using XComponent.RestConsumer.RestConsumerApi.SwaggerPetstore;
-using XComponent.SwaggerPetstore.UserObject;
-using XComponent.SwaggerPetstore.UserObject.Models;
-
-
-namespace PetstoreConsoleApplication
-{
-	class Program
-	{
-		static void AnalyseReport(InitReport report)
-		{
-      if( !string.IsNullOrEmpty(report.Message) )
-      {
-      	Console.WriteLine("Init failed : {0}", report.Message);
-      }
-			foreach (var componentName in report.ComponentsInitSucceeded)
-			{
-				Console.WriteLine("Init succeeded : {0}", componentName);
-			}
-			foreach (var componentName in report.ComponentsInitFailed)
-			{
-				Console.WriteLine("Init failed : {0}", componentName);
-			}
-		}
-
-		static void Main(string[] args)
-		{
-			// Initialize the interfaces
-			 using(var myRestConsumerApi = new ApiWrapper<RestConsumerApi>())
-			 {
-				ClientApiOptions clientApiOptions = new ClientApiOptions(); //fill this object to override default xcApi parameters
- 
-				if(myRestConsumerApi.Init(myRestConsumerApi.Api.DefaultXcApiFileName, clientApiOptions))
-				{
-                    var addOperationDone = new ManualResetEvent(false);
-                    var getOperationDone = new ManualResetEvent(false);
-
-                    myRestConsumerApi.Api.SwaggerPetstore_Component.AddPetOperation_StateMachine.InstanceUpdated +=
-				        instance =>
-				        {
-                            Console.WriteLine(string.Format("AddPetOperation current state: {0}", instance.StateName));
-
-				            if (instance.StateCode ==
-				                (int) AddPetOperation_StateMachine.AddPetOperationStateEnum.SuccessResponseReceived
-				                ||
-				                instance.StateCode ==
-				                (int) AddPetOperation_StateMachine.AddPetOperationStateEnum.ErrorResponseReceived)
-				            {
-				                addOperationDone.Set();
-				            }
-				        };
-
-				    myRestConsumerApi.Api.SwaggerPetstore_Component.GetPetByIdOperation_StateMachine.InstanceUpdated +=
-				        instance =>
-				        {
-				            if (instance.StateCode == (int)GetPetByIdOperation_StateMachine.GetPetByIdOperationStateEnum.SuccessResponseReceived)
-				            {
-				                Console.WriteLine(string.Format("Found pet called {0}", instance.PublicMember.OperationResult.Name));
-                                getOperationDone.Set();
-
-				            }
-                            else if (instance.StateCode == (int) GetPetByIdOperation_StateMachine.GetPetByIdOperationStateEnum.ErrorResponseReceived)
-                            {
-                                Console.WriteLine(string.Format("An error occured: {0}", instance.PublicMember.Message));
-                                getOperationDone.Set();
-                            }
-				        };
-
-                    myRestConsumerApi.Api.SwaggerPetstore_Component.SwaggerPetstore_StateMachine.SendEvent(new AddPet()
-                    {
-                        body = new Pet("Milou", new List<string>(), 1001)
-                    });
-
-                    Console.WriteLine("Waiting for add operation..");
-				    addOperationDone.WaitOne();
-                    Console.WriteLine("Add operation done");
-
-                    myRestConsumerApi.Api.SwaggerPetstore_Component.SwaggerPetstore_StateMachine.SendEvent(new GetPetById()
-                    {
-                        petId = 1001
-                    });
-
-                    getOperationDone.WaitOne();
-				}
-				else			
-				{
-					AnalyseReport(myRestConsumerApi.Report);
-				}
-			}
-			
-			Console.WriteLine("Press any key to leave..");
-		    Console.ReadKey();
-		}
-	}
-}
-```
+* Use the *Program.cs* you can find (here)[../RestConsumerApi/ConsoleApplication/ConsoleApplication/Program.cs]
 
 > Note: this sample code enables you to add a pet with the name you want to the store then to request the pet's info from the server.
 

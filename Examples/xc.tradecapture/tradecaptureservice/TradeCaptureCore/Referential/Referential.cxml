@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ComponentViewModelData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="Referential" Version="56">
+  <StateMachines>
+    <StateMachineData Id="1" Name="Referential" PublicMember="XComponent.Referential.UserObject.InstrumentSnapshot" />
+  </StateMachines>
+  <States>
+    <StateData Id="1" Name="EntryPoint" IsEntryPoint="true" SubGraphKey="StateMachine1">
+      <Comment />
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="3" Name="Referential" IsEntryPoint="false" SubGraphKey="StateMachine1">
+      <Comment />
+      <TriggeredMethods>
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="AddInstrument" TriggeringEvent="XComponent.Referential.UserObject.Instrument" />
+      </TriggeredMethods>
+    </StateData>
+  </States>
+  <TransitionPatternStates />
+  <Links>
+    <TransitionData Id="2" Name="Start" FromKey="State1" ToKey="State3" Type="TimeOut" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.Common.Event.DefaultEvent" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="1" Name="AddInstrument" FromKey="State3" ToKey="State3" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.Referential.UserObject.Instrument" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="4" Name="GetInstrumentSnapshot" FromKey="State3" ToKey="State3" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.Referential.UserObject.GetSnapshot" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+  </Links>
+  <TransversalLinks />
+  <PublicAssemblies />
+  <ExternalAssemblies />
+</ComponentViewModelData>

@@ -1,15 +1,10 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Mime;
-using System.Text;
 using System.Threading;
 using XCClientAPICommon.Client;
 using XCClientAPICommon.ApiExtensions;
 using XComponent.authenticationservice.authenticationserviceApi;
 using XComponent.authenticationservice.authenticationserviceApi.Authentication;
 using XComponent.Authentication.UserObject;
-using XComponent.Common.ApiHelper;
 
 
 namespace AuthenticationConsoleApp

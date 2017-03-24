@@ -46,14 +46,11 @@ Thanks to the [Use Cases](Examples) section, you will able to understand:
 ## Prerequisite
 * .NET 4.5 framework
 * Get [Visual Studio Community](https://www.visualstudio.com/en-us/products/visual-studio-community-vs.aspx)
-* A RabbitMQ middleware (3.5.1 version is recommanded) : [Download link for windows](https://www.rabbitmq.com/releases/rabbitmq-server/v3.5.1/rabbitmq-server-3.5.1.exe). Otherwise, if you want to install RabbitMQ on other OS you can follow this [link](https://www.rabbitmq.com/releases/rabbitmq-server/v3.5.1/)
+* A RabbitMQ middleware (3.5.1 version or later is recommanded) : [Download link for windows](https://www.rabbitmq.com/releases/rabbitmq-server/current/). 
 
 ## Install
 
-All samples will directly download XComponent Community Edition from [Nuget](https://www.nuget.org/packages/xcomponent.community/). Nevertheless, if for some reasons, you need an MSI, you can select one of the following link:
-
- * [4.5.0 x64](https://github.com/xcomponent/xcomponent/releases/download/4.5.0/XComponentCommunity-4.5.0-G8_x64.msi)
- * [4.5.0 x86](https://github.com/xcomponent/xcomponent/releases/download/4.5.0/XComponentCommunity-4.5.0-G8_x86.msi)
+All samples will directly download XComponent Community Edition from [Nuget](https://www.nuget.org/packages/xcomponent.community/). Nevertheless, if for some reasons, you need an MSI, you can get one in the [releases page](releases/).
 
 ## Documentation
 
@@ -65,6 +62,14 @@ All samples will directly download XComponent Community Edition from [Nuget](htt
 
 It is a good starting point to understand how the XComponent platform works.
 
+
+## Test Framework
+
+[Click here](TestFramework/README.md) to have details about the Test Framework.
+
+## Sequence Diagram Control
+
+[Click here](SequenceDiagram/README.md) to have details about the Sequence Diagram Control.
 
 ## Questions ?
 

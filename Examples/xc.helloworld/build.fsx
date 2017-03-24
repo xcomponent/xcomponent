@@ -51,6 +51,16 @@ Target "Compile" (fun _ ->
     !! "helloworld\HelloWorldClientApplication/HelloWorldClientApplication.sln"
     |> MSBuildRelease buildClientAppDir "Build"
     |> Log "Hello world client application build output: "
+
+    result = ExecProcess (fun info ->
+                    info.FileName <- xctools
+                    info.WorkingDirectory <- __SOURCE_DIRECTORY__ 
+                    info.Arguments <- "-t --testconfig=\"helloworld.test\helloworldtests.json\" --testoutput=\"helloworld.test\helloworldtestproject\""
+                    ) 
+                    (TimeSpan.FromMinutes timeoutExec)
+    if result <> 0 then failwithf "xctools test project generation returned with a non-zero exit code"
+  
+    
 )
 
 Target "Generate" (fun _ ->

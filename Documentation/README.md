@@ -4,38 +4,38 @@
 
 * [1 - Overview](#1---overview)
 * [2 - XComponent philosophy](#2---xcomponent-philosophy)
- * [Microservice definition](#microservice-definition)
- * [Component definition](#component-definition)
- * [State machine definition](#state-machine-definition)
- * [State definition](#state-definition)
- * [Transition definition](#transition-definition)
- * [Event definition](#event-definition)
- * [Triggered method](#triggered-method)
- * [Triggering rules](#triggering-rules)
- * [API](#api)
- * [Composition](#composition)
+  * [Microservice definition](#microservice-definition)
+  * [Component definition](#component-definition)
+  * [State machine definition](#state-machine-definition)
+  * [State definition](#state-definition)
+  * [Transition definition](#transition-definition)
+  * [Event definition](#event-definition)
+  * [Triggered method](#triggered-method)
+  * [Triggering rules](#triggering-rules)
+  * [API](#api)
+  * [Composition](#composition)
 * [3 - XCStudio](#3---xcstudio)
- * [XCStudio menus](#xcstudio-menus)
- * [Top menu icon bar](#top-menu-icon-bar)
- * [XCStudio project hierarchy](#xcstudio-project-hierarchy)
- * [Creating a new project](#Creating-a-new-project)
- * [Navigate within your project](#navigate-within-your-project)
- * [Creating a new component](#creating-a-new-component)
- * [Designing state machines using XCStudio](#designing-state-machines-using-xcstudio)
- * [State machine in depth](#state-machine-in-depth)
- * [Deleting parts of your components](#deleting-parts-of-your-components)
- * [Creating a component data structure](#creating-a-component-data-structure)
- * [States in depth](#states-in-depth)
- * [Transition in depth](#transition-in-depth)
- * [Timeout transitions](#timeout-transitions)
- * [Internal transitions](#internal-transitions)
- * [Triggerable transition](#triggerable-transition)
- * [Customizing transitions](#customizing-transitions)
- * [Enabling Triggered method to implement your own code](#enabling-triggered-method-to-implement-your-own-code)
- * [Visual Studio generated project hierarchy](#visual-studio-generated-project-hierarchy)
- * [Implementing triggered methods](#implementing-triggered-methods)
- * [Composition](#composition)
- * [Microservices composition](#microservices-composition)
+  * [XCStudio menus](#xcstudio-menus)
+  * [Top menu icon bar](#top-menu-icon-bar)
+  * [XCStudio project hierarchy](#xcstudio-project-hierarchy)
+  * [Creating a new project](#creating-a-new-project)
+  * [Navigate within your project](#navigate-within-your-project)
+  * [Creating a new component](#creating-a-new-component)
+  * [Designing state machines using XCStudio](#designing-state-machines-using-xcstudio)
+  * [State machine in depth](#state-machine-in-depth)
+  * [Deleting parts of your components](#deleting-parts-of-your-components)
+  * [Creating a component data structure](#creating-a-component-data-structure)
+  * [States in depth](#states-in-depth)
+  * [Transition in depth](#transition-in-depth)
+  * [Timeout transitions](#timeout-transitions)
+  * [Internal transitions](#internal-transitions)
+  * [Triggerable transition](#triggerable-transitions)
+  * [Customizing transitions](#customizing-transitions)
+  * [Enabling Triggered method to implement your own code](#enabling-triggered-method-to-implement-your-own-code)
+  * [Visual Studio generated project hierarchy](#visual-studio-generated-project-hierarchy)
+  * [Implementing triggered methods](#implementing-triggered-methods)
+  * [Composition](#composition)
+  * [Microservices composition](#microservices-composition)
 * [4 - Testing your project using XCSpy](#4---testing-your-project-using-xcspy)
 
 ## 1 - Overview
@@ -184,6 +184,8 @@ From left to right these shortcuts are:
 - Open project (Ctrl + O)
 - Save current project (Ctrl + Maj + S)
 - Save current document (Ctrl + S)
+- Undo (Ctrl + Z)
+- Redo (Ctrl + Y)
 - Close current project (Ctrl + W)
 
 ### XCStudio project hierarchy
@@ -221,6 +223,7 @@ It contains:
 - A shortcut to your linking
 - The composition
 - The components
+- The views
 - The APIs
 - The GUI applications
 - Your project documentation
@@ -345,7 +348,7 @@ If you click on a state you can write a personal comment on it in the text area:
 Several transitions exist. Two transition types are commonly used: 
 - Regular transition between two states in the same state machine
 - Transition between two states from different states machine. 
-The first one is black (color can be customized) and ran in the same instance of the current state machine while the second one is green (also customizable) but, it creates a new instance of the state machine pointed by the arrow of the transition. 
+The first one is gray (color can be customized) and ran in the same instance of the current state machine while the second one is green (also customizable) but, it creates a new instance of the state machine pointed by the arrow of the transition. 
 You can also add a comment on a transition.
 
 To create a comment: click on a transition, fill the comment text area (property panel).
@@ -384,7 +387,6 @@ Click on Triggerable transition. You can also select both the state and the tran
 
 You have the possibility to add some checks on transitions. On XCStudio in transition properties window you can:
 - Add matching keys
-- Add contains keys
 - Add specific rules
 Following options can be set on the properties of a transition.  Click on a transition.
 
@@ -478,10 +480,10 @@ In this view, you can:
 
 # 4 - Testing your project using XCSpy
 
-XCStudio integrates a player to run functional tests. This way you can validate your project and find eventual errors.
+XCStudio integrates a spy called XCSpy to run functional tests. This way you can validate your project and find eventual errors.
 
-You first need to build your project and then run the player.
-Click on Start player: ![xcspy button](Images/xcspy_button.png) to launch the player application.
+You first need to build your project and then run the spy.
+Click on Start spy: ![xcspy button](Images/xcspy_button.png) to launch the spy application.
 Click on a component name (for example *MyComponent*) to display the component you want to test.
 
 ![xcspy ribbon](Images/xcspy_ribbon.png)
@@ -492,10 +494,10 @@ You got this window:
 
 XCSpy allows you to test your component and validate its functional behavior by sending transitions/events.
 
-Right after the entryPoint there is (1), a number between parentheses. It represents the number of instances of the state machine that currently are in this state, and it the same principle for the state machine.
-When launching the player for the first time, once you have clicked on your component the entryPoint is orange with (1) just after. This is the beginning of your component. From here you can start testing.
+The EntryPoint state has a red notification badge containing a 1 number. It represents the number of instances of the state machine that currently are in this state.
+When launching the spy for the first time, once you have clicked on your component the EntryPoint has 1 instance. This is the beginning of your component. From here you can start testing.
 
-The Player menu contains:
+The Spy menu contains:
 - A project menu. You can display the property panel by clicking on the *Show properties* button. This panel provides details about the selected element (state machine, state or transition)
 - A list of project menu. The following figure shows details about this menu
 
@@ -517,15 +519,15 @@ Click on the *Send event to the selected instance* button to send the custom eve
 
 ![xcspy send](Images/xcspy_send.png)
 
-> It is important to notice that the entrypoint state machine always has one instance!
+> It is important to notice that the EntryPoint state machine always has one instance!
 
 ![xcspy component](Images/xcspy_component.png)
 
 This creates a new instance of *FrontOffice* state machine and affects values to *FrontOffice* public member.
-We can verify *FrontOffice* public member affectation. Click on *Pending (1)* to display details in the property panel. 
+We can verify *FrontOffice* public member affectation. Click on *Pending* to display details in the property panel. 
 
 Click again on the *EntryPoint* again and create another instance of *FrontOffice* state machine sending a new event.
 
 Now you have two instances of *FrontOffice* state machine in *Pending State*.
 
-Using XCSpy allows you to instantly test your project, your component, what you implement, without developing a client API, and without wasting time and money. 
+Using XCSpy allows you to instantly test your project, your component, what you implement, without developing a User Interface, and without wasting time and money. 

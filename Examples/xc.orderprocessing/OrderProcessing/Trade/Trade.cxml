@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ComponentViewModelData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="Trade" Version="72">
+  <StateMachines>
+    <StateMachineData Id="1" Name="TradeProcessor" />
+    <StateMachineData Id="2" Name="Trade" PublicMember="XComponent.Trade.UserObject.Trade" StateCopyProperty="State" />
+  </StateMachines>
+  <States>
+    <StateData Id="1" Name="EntryPoint" IsEntryPoint="true" SubGraphKey="StateMachine1">
+      <Comment />
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="2" Name="Up" IsEntryPoint="false" SubGraphKey="StateMachine1">
+      <Comment />
+      <TriggeredMethods>
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="ProcessOrderCreation" TriggeringEvent="XComponent.Order.UserObject.OrderCreation" />
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="ExecuteTrade" TriggeringEvent="XComponent.Trade.UserObject.TradeExecution" />
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="ProcessOrderExecution" TriggeringEvent="XComponent.Order.UserObject.OrderExecution" />
+      </TriggeredMethods>
+    </StateData>
+    <StateData Id="3" Name="WaitingForExecution" IsEntryPoint="false" SubGraphKey="StateMachine2">
+      <Comment />
+      <TriggeredMethods>
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="CreateTrade" TriggeringEvent="XComponent.Trade.UserObject.Trade" />
+      </TriggeredMethods>
+    </StateData>
+    <StateData Id="4" Name="Executed" IsEntryPoint="false" SubGraphKey="StateMachine2">
+      <Comment />
+      <TriggeredMethods>
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="Execute" TriggeringEvent="XComponent.Trade.UserObject.TradeExecution" />
+      </TriggeredMethods>
+    </StateData>
+  </States>
+  <TransitionPatternStates />
+  <Links>
+    <TransitionData Id="1" Name="Init" FromKey="State1" ToKey="State2" Type="TimeOut" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.Common.Event.DefaultEvent" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="2" Name="ProcessOrderCreation" FromKey="State2" ToKey="State2" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.Order.UserObject.OrderCreation" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="3" Name="CreateTrade" FromKey="State2" ToKey="State3" Type="X" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.Trade.UserObject.Trade" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="6" Name="ExecuteTrade" FromKey="State2" ToKey="State2" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.Trade.UserObject.TradeExecution" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="8" Name="ProcessOrderExecution" FromKey="State2" ToKey="State2" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.Order.UserObject.OrderExecution" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="5" Name="Execute" FromKey="State3" ToKey="State4" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.Trade.UserObject.TradeExecution" UserSpecificRule="false">
+      <MatchingRules>
+        <MatchingRuleData EventProperty="OrderId" IsInternalMemberProperty="false" MemberProperty="OrderId" />
+      </MatchingRules>
+    </TransitionData>
+  </Links>
+  <TransversalLinks>
+    <TransversalTransitionData Id="4" Name="" FromKey="State2" ToId="3" SelectAllTransitions="true" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.Common.Event.DefaultEvent" Name="Init" />
+        <SelectedTransitionData Event="XComponent.Trade.UserObject.TradeExecution" Name="ExecuteTrade" />
+        <SelectedTransitionData Event="XComponent.Order.UserObject.OrderCreation" Name="ProcessOrderCreation" />
+        <SelectedTransitionData Event="XComponent.Order.UserObject.OrderExecution" Name="ProcessOrderExecution" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="7" Name="" FromKey="State2" ToId="6" SelectAllTransitions="true" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.Common.Event.DefaultEvent" Name="Init" />
+        <SelectedTransitionData Event="XComponent.Trade.UserObject.TradeExecution" Name="ExecuteTrade" />
+        <SelectedTransitionData Event="XComponent.Order.UserObject.OrderCreation" Name="ProcessOrderCreation" />
+        <SelectedTransitionData Event="XComponent.Order.UserObject.OrderExecution" Name="ProcessOrderExecution" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="10" Name="" FromKey="State2" ToId="5" SelectAllTransitions="true" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.Common.Event.DefaultEvent" Name="Init" />
+        <SelectedTransitionData Event="XComponent.Trade.UserObject.TradeExecution" Name="ExecuteTrade" />
+        <SelectedTransitionData Event="XComponent.Order.UserObject.OrderCreation" Name="ProcessOrderCreation" />
+        <SelectedTransitionData Event="XComponent.Order.UserObject.OrderExecution" Name="ProcessOrderExecution" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+  </TransversalLinks>
+  <PublicAssemblies>
+    <AssemblyData Name="Order" Path="..\Order\generated\UserObject\XComponent.Order.UserObject.dll" />
+  </PublicAssemblies>
+  <ExternalAssemblies />
+</ComponentViewModelData>

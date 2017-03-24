@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<deployment environment="Dev" version="1.0" debugType="Debug" frameworkType="Framework4" visualstudioVersion="VS2012" defaultExportPath="" extractConfig="false" generateWebSocketApi="false" embedUserObjects="false" defaultDeployPath="" logsDirectory="$(installdir)" logsPattern="pid-${processid}-${component}-${shortdate}" runtimesLogs="True" logsLevel="TRACE" logsMaxSize="50">
+<deployment environment="Dev" version="1.0" debugType="Debug" frameworkType="Framework45" visualstudioVersion="VS2015" defaultExportPath="" extractConfig="false" generateWebSocketApi="false" embedUserObjects="false" defaultDeployPath="" logsDirectory="$(installdir)" logsPattern="pid-${processid}-${component}-${shortdate}" runtimesLogs="True" logsLevel="TRACE" logsMaxSize="50" reactiveApiName="ReactiveXComponent.Net" reactiveApiVersion="0.1.0-rcv011">
   <!--
-	THREADING IMPLEMENTATION VALUES = MAILBOX, DEDICATED - ->
+	THREADING IMPLEMENTATION VALUES = AKKA - ->
 	<!- - THREADING TYPE VALUES = ONEBYSTM, ONEBYINSTANCE, INHERITFROMPARENT, INHERITFROMLINKING - ->
 	<!- - SERIALIZATION TYPE VALUES = BINARY, XML, JSON - ->
 	<!- - MESSAGE QUEUE VALUES = ONEBYSTM, ONEBYINSTANCE, INHERITFROMPARENT-->
@@ -9,6 +9,11 @@
     <preBuildEvent></preBuildEvent>
     <postBuildEvent></postBuildEvent>
     <exportFolders>
+      <exportFolder websocket="False" rest="False" folder="ConsoleApplication\lib">
+        <apistomerge>
+          <clientAPI name="helloworldApi" selected="True" />
+        </apistomerge>
+      </exportFolder>
       <exportFolder websocket="False" rest="False" folder="HelloWorldClientApplication\lib">
         <apistomerge>
           <clientAPI name="helloworldApi" selected="True" />
@@ -25,21 +30,21 @@
         <input>{topicType}.{version}.{runtime}.{component}.{std}</input>
         <output>{topicType}.{version}.{runtime}.{component}.{std}</output>
       </communication>
-      <threading impl="MAILBOX" type="SEQUENTIAL" />
+      <threading impl="Akka" type="SEQUENTIAL" />
       <stateMachines>
         <stateMachine id="1" poolSize="10000">
           <communication name="rabbitmq" type="BUS" messageQueue="SEQUENTIAL">
             <input>{topicType}.{version}.{runtime}.{component}.{std}</input>
             <output>{topicType}.{version}.{runtime}.{component}.{std}</output>
           </communication>
-          <threading impl="MAILBOX" type="INHERITFROMPARENT" />
+          <threading impl="Akka" type="INHERITFROMPARENT" />
         </stateMachine>
         <stateMachine id="2" poolSize="10000">
           <communication name="rabbitmq" type="BUS" messageQueue="SEQUENTIAL">
             <input>{topicType}.{version}.{runtime}.{component}.{std}</input>
             <output>{topicType}.{version}.{runtime}.{component}.{std}</output>
           </communication>
-          <threading impl="MAILBOX" type="INHERITFROMPARENT" />
+          <threading impl="Akka" type="INHERITFROMPARENT" />
         </stateMachine>
       </stateMachines>
     </component>
@@ -51,7 +56,7 @@
       </component>
     </clientAPI>
   </clientAPIs>
-  <configuration serialization="Binary">
+  <configuration serialization="Json">
     <communication>
       <bus name="rabbitmq" host="127.0.0.1" port="5672" user="guest" password="guest" type="RABBIT_MQ" />
     </communication>

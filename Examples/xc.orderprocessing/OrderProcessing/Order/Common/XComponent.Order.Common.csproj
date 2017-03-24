@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -8,7 +8,7 @@
     <ProjectGuid>{BE692B62-C3EF-410D-9521-7739F2347E1C}</ProjectGuid>
     <RootNamespace>XComponent.Order.Common</RootNamespace>
     <AssemblyName>XComponent.Order.Common</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
   </PropertyGroup>
@@ -38,11 +38,6 @@
       <HintPath>..\UserReference\XComponent.Core.dll</HintPath>
       <SpecificVersion>false</SpecificVersion>
     </Reference>
-    <Reference Include="XComponent.Extended">
-      <HintPath>..\UserReference\XComponent.Extended.dll</HintPath>
-      <SpecificVersion>false</SpecificVersion>
-    </Reference>    
-
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -57,23 +52,31 @@
     <Compile Include="KeyValueParametersEnum.cs" />
     <Compile Include="ComponentHelper.cs" />
     <Compile Include="IInternalAPI.cs" />
+    <Compile Include="InternalAPI.cs" />
+    <Compile Include="IInternalCommunication.cs" />
+    <Compile Include="InternalCommunication.cs" />
     <Compile Include="Senders\AbstractSender.cs" />
     <Compile Include="Senders\SenderManager.cs" />
     <Compile Include="Senders\SenderInterfaces.cs" />
     <Compile Include="Senders\SenderImplementations.cs" />
-    <Compile Include="HashCodeHelper\InitOrderProcessor.cs" />
-    <Compile Include="HashCodeHelper\SendEventDefaultEventOrderProcessor.cs" />
-    <Compile Include="HashCodeHelper\CreateOrderOrderProcessor.cs" />
-    <Compile Include="HashCodeHelper\SendEventOrderInputOrderProcessor.cs" />
-    <Compile Include="HashCodeHelper\PublishOrderCreationOrder.cs" />
-    <Compile Include="HashCodeHelper\SendEventOrderCreationOrder.cs" />
-    <Compile Include="HashCodeHelper\PublishOrderFilledOrder.cs" />
-    <Compile Include="HashCodeHelper\SendEventOrderExecutionOrder.cs" />
-    <Compile Include="HashCodeHelper\PublishOrderPartiallyFilledOrder.cs" />
-    <Compile Include="HashCodeHelper\ExecuteOrder.cs" />
-    <Compile Include="HashCodeHelper\SendEventExecutionInputOrder.cs" />
-    <Compile Include="HashCodeHelper\PartiallyExecuteOrder.cs" />
-
+    <Compile Include="StateHashCodeCalculator\OrderProcessor\EntryPointStateHashCodeCalculator.cs" />
+    <Compile Include="StateHashCodeCalculator\OrderProcessor\UpStateHashCodeCalculator.cs" />
+    <Compile Include="StateHashCodeCalculator\Order\PendingStateHashCodeCalculator.cs" />
+    <Compile Include="StateHashCodeCalculator\Order\ExecutedStateHashCodeCalculator.cs" />
+    <Compile Include="StateHashCodeCalculator\Order\PartiallyExecutedStateHashCodeCalculator.cs" />
+    <Compile Include="StateHashCodeCalculator\CreationFacade\CreatedStateHashCodeCalculator.cs" />
+    <Compile Include="StateHashCodeCalculator\ExecutionFacade\FilledStateHashCodeCalculator.cs" />
+    <Compile Include="StateHashCodeCalculator\PartialExecutionFacade\PartiallyFilledStateHashCodeCalculator.cs" />
+    <Compile Include="EventHashCodeCalculator\OrderProcessor\XComponent.Common.Event.DefaultEventEventHashCodeCalculator.cs" />
+    <Compile Include="EventHashCodeCalculator\OrderProcessor\XComponent.Order.UserObject.OrderInputEventHashCodeCalculator.cs" />
+    <Compile Include="EventHashCodeCalculator\Order\XComponent.Order.UserObject.OrderCreationEventHashCodeCalculator.cs" />
+    <Compile Include="EventHashCodeCalculator\Order\XComponent.Order.UserObject.ExecutionInputEventHashCodeCalculator.cs" />
+    <Compile Include="EventHashCodeCalculator\Order\XComponent.Order.UserObject.OrderExecutionEventHashCodeCalculator.cs" />
+    <Compile Include="EventHashCodeCalculator\OrderProcessorEventHashCodeCalculatorRepository.cs" />
+    <Compile Include="EventHashCodeCalculator\OrderEventHashCodeCalculatorRepository.cs" />
+    <Compile Include="EventHashCodeCalculator\CreationFacadeEventHashCodeCalculatorRepository.cs" />
+    <Compile Include="EventHashCodeCalculator\ExecutionFacadeEventHashCodeCalculatorRepository.cs" />
+    <Compile Include="EventHashCodeCalculator\PartialExecutionFacadeEventHashCodeCalculatorRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\UserObject\XComponent.Order.UserObject.csproj">

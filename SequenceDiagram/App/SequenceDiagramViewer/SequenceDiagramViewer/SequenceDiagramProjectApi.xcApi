@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<deployment environment="Dev" xcProjectName="SequenceDiagramProject" deploymentTargetCode="1249588979" deploymentTargetName="SequenceDiagramProjectApi" version="1.0" frameworkType="Framework45" xmlns="http://xcomponent.com/DeploymentConfig.xsd" clientApiReference="XComponent.SequenceDiagramProject.ClientApi.dll">
+  <threading>
+    <configuration componentName="SimpleComponent" componentCode="-904303471" stateMachineName="SimpleComponent" stateMachineCode="-904303471" threadingType="SEQUENTIAL" agentImplementation="Akka" />
+    <configuration componentName="SimpleComponent" componentCode="-904303471" stateMachineName="Workflow" stateMachineCode="1341509908" threadingType="SEQUENTIAL" agentImplementation="Akka" />
+  </threading>
+  <serialization>Binary</serialization>
+  <communication>
+    <publish componentCode="-904303471" eventType="ERROR" topicType="output" communicationType="IN_MEMORY" />
+    <publish componentCode="-904303471" stateMachineCode="-904303471" eventType="CREATE" topicType="output" communicationType="IN_MEMORY" stateCode="0" eventCode="13" event="XComponent.SimpleComponent.UserObject.CreateStateMachine" targetComponentCode="-904303471" targetStateMachineCode="1341509908" targetStateCode="-1" />
+    <publish componentCode="-904303471" stateMachineCode="1341509908" eventType="UPDATE" topicType="output" communicationType="IN_MEMORY" eventCode="16" event="XComponent.SimpleComponent.UserObject.Workflow" />
+    <subscribe componentCode="-904303471" stateMachineCode="-904303471" eventType="UPDATE" topicType="input" communicationType="IN_MEMORY" event="" communicationThreadingType="SEQUENTIAL" />
+    <snapshot componentCode="-904303471" />
+  </communication>
+  <clientAPICommunication>
+    <publish componentCode="-904303471" stateMachineCode="-904303471" eventType="UPDATE" topicType="output" communicationType="IN_MEMORY" stateCode="0" eventCode="13" event="XComponent.SimpleComponent.UserObject.CreateStateMachine" />
+    <subscribe componentCode="-904303471" eventType="ERROR" topicType="input" communicationType="IN_MEMORY" />
+    <subscribe componentCode="-904303471" stateMachineCode="1341509908" eventType="UPDATE" topicType="input" communicationType="IN_MEMORY" event="XComponent.SimpleComponent.UserObject.Workflow" communicationThreadingType="INHERITFROMPARENT" />
+    <subscribe componentCode="-904303471" stateMachineCode="-904303471" eventType="UPDATE" topicType="input" communicationType="IN_MEMORY" event="" communicationThreadingType="INHERITFROMPARENT" />
+    <snapshot componentCode="-904303471" />
+  </clientAPICommunication>
+  <codesConverter>
+    <components>
+      <component name="SimpleComponent" id="-904303471">
+        <events>
+          <event name="XComponent.Common.Event.ApiProxy.ApiInitError" id="0" />
+          <event name="XComponent.Common.Event.ApiProxy.ApiInitSuccessful" id="1" />
+          <event name="XComponent.Common.Event.ApiProxy.CancelApiInit" id="2" />
+          <event name="XComponent.Common.Event.ApiProxy.InstanceUpdatedSubscription" id="3" />
+          <event name="XComponent.Common.Event.ApiProxy.InstanceUpdatedUnsubscription" id="4" />
+          <event name="XComponent.Common.Event.ApiProxy.SnapshotOptions" id="5" />
+          <event name="XComponent.Common.Event.DefaultEvent" id="6" />
+          <event name="XComponent.Common.Event.ExceptionEvent" id="7" />
+          <event name="XComponent.SimpleComponent.UserObject.AB" id="8" />
+          <event name="XComponent.SimpleComponent.UserObject.BC" id="9" />
+          <event name="XComponent.SimpleComponent.UserObject.BD" id="10" />
+          <event name="XComponent.SimpleComponent.UserObject.CD" id="11" />
+          <event name="XComponent.SimpleComponent.UserObject.CE" id="12" />
+          <event name="XComponent.SimpleComponent.UserObject.CreateStateMachine" id="13" />
+          <event name="XComponent.SimpleComponent.UserObject.DC" id="14" />
+          <event name="XComponent.SimpleComponent.UserObject.DE" id="15" />
+          <event name="XComponent.SimpleComponent.UserObject.Workflow" id="16" />
+        </events>
+        <stateMachines>
+          <stateMachine name="SimpleComponent" id="-904303471">
+            <states>
+              <State name="EntryPoint" id="0" />
+            </states>
+          </stateMachine>
+          <stateMachine name="Workflow" id="1341509908">
+            <states>
+              <State name="A" id="0" />
+              <State name="B" id="1" />
+              <State name="C" id="2" />
+              <State name="D" id="3" />
+              <State name="E" id="4" />
+            </states>
+          </stateMachine>
+        </stateMachines>
+      </component>
+    </components>
+  </codesConverter>
+</deployment>

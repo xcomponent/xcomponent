@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<deployment environment="Dev" version="1.0" debugType="Debug" frameworkType="Framework45" visualstudioVersion="VS2015" defaultExportPath="" extractConfig="false" generateWebSocketApi="false" embedUserObjects="false" defaultDeployPath="" logsDirectory="$(installdir)" logsPattern="pid-${processid}-${component}-${shortdate}" runtimesLogs="True" logsLevel="TRACE" logsMaxSize="50" reactiveApiName="" reactiveApiVersion="">
+  <!--
+	THREADING IMPLEMENTATION VALUES = AKKA - ->
+	<!- - THREADING TYPE VALUES = ONEBYSTM, ONEBYINSTANCE, INHERITFROMPARENT, INHERITFROMLINKING - ->
+	<!- - SERIALIZATION TYPE VALUES = BINARY, XML, JSON - ->
+	<!- - MESSAGE QUEUE VALUES = ONEBYSTM, ONEBYINSTANCE, INHERITFROMPARENT-->
+  <buildEvents>
+    <preBuildEvent></preBuildEvent>
+    <postBuildEvent></postBuildEvent>
+    <exportFolders>
+      <exportFolder websocket="False" rest="False" folder="App\SequenceDiagramViewer\lib">
+        <apistomerge>
+          <clientAPI name="SequenceDiagramProjectApi" selected="True" />
+        </apistomerge>
+      </exportFolder>
+    </exportFolders>
+    <exportRuntimeFolders />
+  </buildEvents>
+  <components>
+    <component name="SimpleComponent" alias="SimpleComponent" deploymentTarget="EMBEDDED">
+      <communication name="IN_MEMORY" type="IN_MEMORY" />
+      <threading impl="Akka" type="SEQUENTIAL" />
+      <stateMachines>
+        <stateMachine id="1" poolSize="100">
+          <communication name="IN_MEMORY" type="IN_MEMORY" />
+          <threading impl="Akka" type="INHERITFROMPARENT" />
+        </stateMachine>
+        <stateMachine id="2" poolSize="100">
+          <communication name="IN_MEMORY" type="IN_MEMORY" />
+          <threading impl="Akka" type="INHERITFROMPARENT" />
+        </stateMachine>
+      </stateMachines>
+    </component>
+  </components>
+  <clientAPIs>
+    <clientAPI name="SequenceDiagramProjectApi" messageQueue="INHERITFROMPARENT">
+      <component name="SimpleComponent" messageQueue="INHERITFROMPARENT">
+        <update from="2" state="-1" messageQueue="INHERITFROMPARENT" />
+      </component>
+    </clientAPI>
+  </clientAPIs>
+  <configuration serialization="Binary">
+    <communication>
+      <bus name="bus" host="localhost" port="5672" user="guest" password="guest" type="RABBIT_MQ" />
+    </communication>
+    <gateways>
+      <websocket name="" host="" port="0" bridgeport="0" type="Plain" user="" password="">
+        <loggedTopics><![CDATA[]]></loggedTopics>
+      </websocket>
+    </gateways>
+  </configuration>
+</deployment>
