@@ -4,7 +4,7 @@
     "DefaultNamespace": "XComponent.HelloWorld.IntegrationTests",
     "AssemblyName": "XComponent.HelloWorld.IntegrationTests",
     "TargetFramework": "v4.5.1",
-    "XcomponentVersion": "4.6.0-rc0240",
+    "XcomponentVersion": "4.6.0",
     "XcomponentDistribution": "community",
     "VisualStudioToolsVersion": "14.0",
     "NUnitVersion": "2.6.3",
@@ -16,7 +16,7 @@
             "Microservices": [
                 {
                     "MicroserviceName": "helloworld-HelloMicroservice",
-                    "XcrPath": "C:\\XComponentSources\\xcomponentv46\\xcomponent\\Examples\\xc.helloworld\\build\\exportMicroservice\\xcassemblies\\helloworld-HelloMicroservice.xcr",
+                    "XcrPath": "..\\build\\exportMicroservice\\xcassemblies\\helloworld-HelloMicroservice.xcr",
                     "StartupTimeInMs": 30000
                 }
             ],
@@ -29,7 +29,7 @@
             "Apis": [
                 {
                     "ApiName": "helloworldApi",
-                    "ApiPath": "C:\\XComponentSources\\xcomponentv46\\xcomponent\\Examples\\xc.helloworld\\build\\consoleApp"
+                    "ApiPath": "..\\build\\consoleApp"
                 }
             ],
             "Tests": [
