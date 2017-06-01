@@ -12,20 +12,32 @@
     <exportRuntimeFolders />
   </buildEvents>
   <components>
-    <component name="ChatManager" alias="ChatManager" deploymentTarget="EMBEDDED">
-      <communication name="IN_MEMORY" type="IN_MEMORY" />
+    <component name="ChatManager" alias="ChatManager" deploymentTarget="microservice1">
+      <communication name="rabitmq" type="BUS" messageQueue="SEQUENTIAL">
+        <input>{topicType}.{version}.{runtime}.{component}.{std}</input>
+        <output>{topicType}.{version}.{runtime}.{component}.{std}</output>
+      </communication>
       <threading impl="Akka" type="SEQUENTIAL" />
       <stateMachines>
         <stateMachine id="1" poolSize="100">
-          <communication name="IN_MEMORY" type="IN_MEMORY" />
+          <communication name="rabitmq" type="BUS" messageQueue="SEQUENTIAL">
+            <input>{topicType}.{version}.{runtime}.{component}.{std}</input>
+            <output>{topicType}.{version}.{runtime}.{component}.{std}</output>
+          </communication>
           <threading impl="Akka" type="INHERITFROMPARENT" />
         </stateMachine>
         <stateMachine id="2" poolSize="100">
-          <communication name="IN_MEMORY" type="IN_MEMORY" />
+          <communication name="rabitmq" type="BUS" messageQueue="SEQUENTIAL">
+            <input>{topicType}.{version}.{runtime}.{component}.{std}</input>
+            <output>{topicType}.{version}.{runtime}.{component}.{std}</output>
+          </communication>
           <threading impl="Akka" type="INHERITFROMPARENT" />
         </stateMachine>
         <stateMachine id="3" poolSize="100">
-          <communication name="IN_MEMORY" type="IN_MEMORY" />
+          <communication name="rabitmq" type="BUS" messageQueue="SEQUENTIAL">
+            <input>{topicType}.{version}.{runtime}.{component}.{std}</input>
+            <output>{topicType}.{version}.{runtime}.{component}.{std}</output>
+          </communication>
           <threading impl="Akka" type="INHERITFROMPARENT" />
         </stateMachine>
       </stateMachines>
@@ -40,11 +52,17 @@
       </component>
     </clientAPI>
   </clientAPIs>
-  <configuration serialization="Binary">
+  <configuration serialization="Json">
+    <communication>
+      <bus name="rabitmq" host="localhost" port="5672" user="guest" password="guest" type="RABBIT_MQ" />
+    </communication>
     <gateways>
       <websocket name="" host="" port="0" bridgeport="0" type="Plain" user="" password="">
         <loggedTopics><![CDATA[]]></loggedTopics>
       </websocket>
     </gateways>
+    <runtimes>
+      <runtime name="microservice1" platform="AnyCpu" />
+    </runtimes>
   </configuration>
 </deployment>
