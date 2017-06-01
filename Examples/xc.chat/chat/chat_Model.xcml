@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinkingSchema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" isClientApiShown="false" isLinkingShown="false" name="chat">
+  <LinkedComponents>
+    <LinkedComponent name="ChatManager">
+      <XCToXCLinks />
+      <XCToApiLinks>
+        <XCToApiLink stateMachineIdFrom="1" stateIdFrom="1" linkFrom="ChatManager" linkTo="chatApi" />
+        <XCToApiLink stateMachineIdFrom="2" stateIdFrom="2" linkFrom="ChatManager" linkTo="chatApi" />
+        <XCToApiLink stateMachineIdFrom="3" stateIdFrom="3" linkFrom="ChatManager" linkTo="chatApi" />
+      </XCToApiLinks>
+    </LinkedComponent>
+  </LinkedComponents>
+  <LinkedClientApis>
+    <LinkedClientApi name="chatApi">
+      <ApiToXCLinks>
+        <ApiToXCLink linkFrom="chatApi" linkTo="ChatManager" stateMachineIdTo="1" stateIdTo="1">
+          <AllowedTransitions>
+            <LinkingSimpleTransition id="1" stateMachineIdTo="1" stateIdTo="1" />
+          </AllowedTransitions>
+          <AllowedEvents>
+            <LinkingEvent eventTypeName="XComponent.ChatManager.UserObject.CreateChatroom" stateMachineIdTo="1" stateIdTo="1" />
+          </AllowedEvents>
+          <NotAllowedTransitions />
+          <NotAllowedEvents />
+        </ApiToXCLink>
+        <ApiToXCLink linkFrom="chatApi" linkTo="ChatManager" stateMachineIdTo="2" stateIdTo="2">
+          <AllowedTransitions>
+            <LinkingSimpleTransition id="2" stateMachineIdTo="2" stateIdTo="2" />
+            <LinkingSimpleTransition id="3" stateMachineIdTo="2" stateIdTo="2" />
+            <LinkingSimpleTransition id="5" stateMachineIdTo="2" stateIdTo="2" />
+          </AllowedTransitions>
+          <AllowedEvents>
+            <LinkingEvent eventTypeName="XComponent.ChatManager.UserObject.CloseRoom" stateMachineIdTo="2" stateIdTo="2" />
+            <LinkingEvent eventTypeName="XComponent.ChatManager.UserObject.PublishedMessage" stateMachineIdTo="2" stateIdTo="2" />
+            <LinkingEvent eventTypeName="XComponent.ChatManager.UserObject.SentMessage" stateMachineIdTo="2" stateIdTo="2" />
+          </AllowedEvents>
+          <NotAllowedTransitions />
+          <NotAllowedEvents />
+        </ApiToXCLink>
+      </ApiToXCLinks>
+    </LinkedClientApi>
+  </LinkedClientApis>
+</LinkingSchema>
