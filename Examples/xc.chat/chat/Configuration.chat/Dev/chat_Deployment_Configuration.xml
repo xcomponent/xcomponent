@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<deployment environment="Dev" version="" debugType="Debug" frameworkType="Framework45" visualstudioVersion="VS2015" defaultExportPath="" extractConfig="false" generateWebSocketApi="false" embedUserObjects="false" defaultDeployPath="" logsDirectory="$(installdir)" logsPattern="pid-${processid}-${component}-${shortdate}" runtimesLogs="True" logsLevel="TRACE" logsMaxSize="50" reactiveApiName="" reactiveApiVersion="">
+<deployment environment="Dev" version="1.0" debugType="Debug" frameworkType="Framework45" visualstudioVersion="VS2015" defaultExportPath="" extractConfig="false" generateWebSocketApi="false" embedUserObjects="false" defaultDeployPath="" logsDirectory="$(installdir)" logsPattern="pid-${processid}-${component}-${shortdate}" runtimesLogs="True" logsLevel="TRACE" logsMaxSize="50" reactiveApiName="" reactiveApiVersion="">
   <!--
 	THREADING IMPLEMENTATION VALUES = AKKA - ->
 	<!- - THREADING TYPE VALUES = ONEBYSTM, ONEBYINSTANCE, INHERITFROMPARENT, INHERITFROMLINKING - ->
@@ -12,7 +12,7 @@
     <exportRuntimeFolders />
   </buildEvents>
   <components>
-    <component name="ChatManager" alias="ChatManager" deploymentTarget="microservice1">
+    <component name="ChatManager" alias="ChatManager" deploymentTarget="MyChatManagerService">
       <communication name="rabitmq" type="BUS" messageQueue="SEQUENTIAL">
         <input>{topicType}.{version}.{runtime}.{component}.{std}</input>
         <output>{topicType}.{version}.{runtime}.{component}.{std}</output>
@@ -42,6 +42,22 @@
         </stateMachine>
       </stateMachines>
     </component>
+    <component name="LoggerComponent" alias="LoggerComponent" deploymentTarget="MyLoggerComponentService">
+      <communication name="rabitmq" type="BUS" messageQueue="SEQUENTIAL">
+        <input>{topicType}.{version}.{runtime}.{component}.{std}</input>
+        <output>{topicType}.{version}.{runtime}.{component}.{std}</output>
+      </communication>
+      <threading impl="Akka" type="SEQUENTIAL" />
+      <stateMachines>
+        <stateMachine id="1" poolSize="100">
+          <communication name="rabitmq" type="BUS" messageQueue="SEQUENTIAL">
+            <input>{topicType}.{version}.{runtime}.{component}.{std}</input>
+            <output>{topicType}.{version}.{runtime}.{component}.{std}</output>
+          </communication>
+          <threading impl="Akka" type="INHERITFROMPARENT" />
+        </stateMachine>
+      </stateMachines>
+    </component>
   </components>
   <clientAPIs>
     <clientAPI name="chatApi" messageQueue="INHERITFROMPARENT">
@@ -62,7 +78,8 @@
       </websocket>
     </gateways>
     <runtimes>
-      <runtime name="microservice1" platform="AnyCpu" />
+      <runtime name="MyChatManagerService" platform="AnyCpu" />
+      <runtime name="MyLoggerComponentService" platform="AnyCpu" />
     </runtimes>
   </configuration>
 </deployment>
