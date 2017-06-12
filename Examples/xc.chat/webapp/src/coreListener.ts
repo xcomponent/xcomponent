@@ -1,7 +1,7 @@
 import { promiseSession } from "xcomponent";
 import { Dispatch } from "redux";
 import { addRoomEvent, removeRoomEvent, addMessageEvent } from "actions";
-import { RoomsState } from "reducers/rooms";
+import { RoomsState, Room } from "reducers/rooms";
 
 export const startListener = (dispatch: Dispatch<RoomsState>) => {
     promiseSession.then(session => {
@@ -12,7 +12,7 @@ export const startListener = (dispatch: Dispatch<RoomsState>) => {
             subscriber.getSnapshot(chatComponentName, chatRoomStateMachineName, function (items) {
                 items.forEach(function(chatRoom) {
                     if (chatRoom.stateMachineRef.StateName === "Created") {
-                        dispatch(addRoomEvent(chatRoom.jsonMessage.Name));
+                        dispatch(addRoomEvent(chatRoom.jsonMessage.Name, chatRoom.stateMachineRef));
                     }
                 });
             });
@@ -23,7 +23,7 @@ export const startListener = (dispatch: Dispatch<RoomsState>) => {
         const subscriberCollection = subscriber.getStateMachineUpdates(chatComponentName, chatRoomStateMachineName)
             .subscribe(jsonData => {
                 if (jsonData.stateMachineRef.StateName === "Created") {
-                    dispatch(addRoomEvent(jsonData.jsonMessage.Name));
+                    dispatch(addRoomEvent(jsonData.jsonMessage.Name, jsonData.stateMachineRef));
                 }
                 else {
                     dispatch(removeRoomEvent(jsonData.jsonMessage.Name));
@@ -35,17 +35,14 @@ export const startListener = (dispatch: Dispatch<RoomsState>) => {
         });
 };
 
-export const sendMessage = (room: string, user: string, message: string) => {
+export const sendMessage = (room: Room, user: string, message: string) => {
     promiseSession.then(session => {
-        const chatComponentName = "ChatManager";
-        const chatRoomStateMachineName = "Chatroom";
         const jsonMessage = { "User": user, "Message": message, };
         const messageType = "XComponent.ChatManager.UserObject.SentMessage";
         const visibility = true;
 
         const publisher = session.createPublisher();
-
-        publisher.send(chatComponentName, chatRoomStateMachineName, messageType, jsonMessage, visibility);
+        publisher.sendWithStateMachineRef(room.reference, messageType, jsonMessage, visibility, null);
 
     })
         .catch((error) => {

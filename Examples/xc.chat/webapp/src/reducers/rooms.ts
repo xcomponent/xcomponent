@@ -1,20 +1,27 @@
 import { Reducer, Action } from "redux";
-import { ADD_ROOM_EVENT, REMOVE_ROOM_EVENT, SELECT_ROOM_EVENT, ADD_MESSAGE_EVENT, RoomDetailsAction, MessageDetailsAction } from "actions";
+import { promiseSession } from "xcomponent";
+import { ADD_ROOM_EVENT, REMOVE_ROOM_EVENT, SELECT_ROOM_EVENT, ADD_MESSAGE_EVENT, AddRoomDetailsAction, RoomDetailsAction, MessageDetailsAction } from "actions";
+import { StateMachineRef } from "reactivexcomponent.js/lib/types/communication/xcomponentMessages";
 
 export interface RoomsState {
-    availableRooms: string[];
-    selectedRoom: string;
+    availableRooms: Room[];
+    selectedRoom: Room;
     messages: string[];
 }
 
-export const rooms: Reducer<RoomsState> = (state: RoomsState = { availableRooms: [], selectedRoom: "", messages: [] }, action: Action) => {
+export interface Room {
+    reference: StateMachineRef;
+    name: string;
+}
+
+export const rooms: Reducer<RoomsState> = (state: RoomsState = { availableRooms: [], selectedRoom: null, messages: [] }, action: Action) => {
     switch (action.type) {
         case ADD_ROOM_EVENT:
-            const addRoomAction = <RoomDetailsAction>action;
-            if (state.availableRooms.filter(room => room === addRoomAction.roomName).length === 0) {
+            const addRoomAction = <AddRoomDetailsAction>action;
+            if (state.availableRooms.filter(room => room.name === addRoomAction.roomName).length === 0) {
                 return {
                     ...state,
-                    availableRooms: [...state.availableRooms, addRoomAction.roomName]
+                    availableRooms: [...state.availableRooms, { name: addRoomAction.roomName, reference: addRoomAction.roomReference }]
                 };
             }
             else {
@@ -22,7 +29,7 @@ export const rooms: Reducer<RoomsState> = (state: RoomsState = { availableRooms:
             }
         case REMOVE_ROOM_EVENT:
             const removeRoomAction = <RoomDetailsAction>action;
-            const roomToRemoveIndex = state.availableRooms.findIndex(room => room === removeRoomAction.roomName);
+            const roomToRemoveIndex = state.availableRooms.findIndex(room => room.name === removeRoomAction.roomName);
             const updatedRooms = [
                 ...state.availableRooms.slice(0, roomToRemoveIndex),
                 ...state.availableRooms.slice(roomToRemoveIndex + 1)
@@ -33,19 +40,19 @@ export const rooms: Reducer<RoomsState> = (state: RoomsState = { availableRooms:
             };
         case SELECT_ROOM_EVENT:
             const selectRoomAction = <RoomDetailsAction>action;
-            if (state.selectedRoom === selectRoomAction.roomName) {
+            if (state.selectedRoom !== null && state.selectedRoom.name === selectRoomAction.roomName) {
                 return state;
             }
             else {
                 return {
                     ...state,
-                    selectedRoom: selectRoomAction.roomName,
+                    selectedRoom: state.availableRooms.find(availableRoom => availableRoom.name === selectRoomAction.roomName),
                     messages: []
                 };
             }
         case ADD_MESSAGE_EVENT:
             const messagesAction = <MessageDetailsAction>action;
-            if (messagesAction.room === state.selectedRoom) {
+            if (state.selectedRoom !== null && messagesAction.room === state.selectedRoom.name) {
                 return {
                     ...state,
                     messages: [...state.messages, messagesAction.user + " : " + messagesAction.message]

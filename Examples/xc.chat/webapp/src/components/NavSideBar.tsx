@@ -12,6 +12,7 @@ import { Link } from "react-router";
 import Logo from "components/Logo";
 import { navActivate, selectRoomEvent } from "actions";
 import { FormattedMessage } from "react-intl";
+import { Room } from "reducers/rooms";
 
 const mapStateToProps = (state, ownProps) => {
     return {
@@ -24,8 +25,8 @@ const mapDispatchToProps = (dispatch) => {
         onClose: () => {
             dispatch(navActivate(false));
         },
-        onClick: (roomName) => {
-            dispatch(selectRoomEvent(roomName));
+        onClick: (room) => {
+            dispatch(selectRoomEvent(room.name));
         }
     };
 };
@@ -36,9 +37,9 @@ const NavSideBar = ({ onClose, onClick, rooms }) => {
 
     if (rooms) {
         roomLinks.push(
-            Array.from(rooms).map((room) => {
+            Array.from(rooms).map((room: Room) => {
                 return (
-                    <Button icon={<ChatIcon />} onClick={() => onClick(room)} plain={true} label={room} />
+                    <Button icon={<ChatIcon />} onClick={() => onClick(room)} plain={true} label={room.name} />
                 );
             })
         );

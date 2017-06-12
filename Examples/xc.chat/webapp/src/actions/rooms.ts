@@ -1,10 +1,15 @@
 import { Action, Dispatch } from "redux";
 import { ThunkAction } from "redux-thunk";
+import { StateMachineRef } from "reactivexcomponent.js/lib/types/communication/xcomponentMessages";
 
 export const ADD_ROOM_EVENT = "ADD_ROOM_EVENT";
 export const REMOVE_ROOM_EVENT = "REMOVE_ROOM_EVENT";
 export const SELECT_ROOM_EVENT = "SELECT_ROOM_EVENT";
 export const ADD_MESSAGE_EVENT = "ADD_MESSAGE_EVENT";
+
+export interface AddRoomDetailsAction extends RoomDetailsAction {
+    roomReference: StateMachineRef;
+}
 
 export interface RoomDetailsAction extends Action {
     roomName: string;
@@ -16,10 +21,11 @@ export interface MessageDetailsAction extends Action {
     user: string;
 }
 
-export const addRoomEvent = (roomName: string): RoomDetailsAction => {
+export const addRoomEvent = (roomName: string, roomReference: StateMachineRef): AddRoomDetailsAction => {
     return {
         type: ADD_ROOM_EVENT,
-        roomName: roomName
+        roomName: roomName,
+        roomReference: roomReference,
     };
 };
 

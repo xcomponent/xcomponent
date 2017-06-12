@@ -13,7 +13,7 @@ interface HomeProps {
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        selectedRoom: state.chatRoom.selectedRoom
+        selectedRoom: state.chatRoom.selectedRoom ? state.chatRoom.selectedRoom.name : "",
     };
 };
 
