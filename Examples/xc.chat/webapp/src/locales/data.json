@@ -1,0 +1,12 @@
+{
+  "en": {
+    "app.title": "XComponent Chat",
+    "app.home": "Login",
+    "app.menu": "Rooms"
+  },
+  "fr": {
+    "app.title": "XComponent Chat",
+    "app.home": "Login",
+    "app.menu": "Rooms"
+  }
+}

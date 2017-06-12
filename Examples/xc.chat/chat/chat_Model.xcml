@@ -37,6 +37,20 @@
           <NotAllowedTransitions />
           <NotAllowedEvents />
         </ApiToXCLink>
+        <ApiToXCLink linkFrom="chatApi" linkTo="ChatManager" stateMachineIdTo="2" stateIdTo="-1">
+          <AllowedTransitions>
+            <LinkingSimpleTransition id="2" stateMachineIdTo="2" stateIdTo="2" />
+            <LinkingSimpleTransition id="3" stateMachineIdTo="2" stateIdTo="2" />
+            <LinkingSimpleTransition id="5" stateMachineIdTo="2" stateIdTo="2" />
+          </AllowedTransitions>
+          <AllowedEvents>
+            <LinkingEvent eventTypeName="XComponent.ChatManager.UserObject.CloseRoom" stateMachineIdTo="2" stateIdTo="2" />
+            <LinkingEvent eventTypeName="XComponent.ChatManager.UserObject.PublishedMessage" stateMachineIdTo="2" stateIdTo="2" />
+            <LinkingEvent eventTypeName="XComponent.ChatManager.UserObject.SentMessage" stateMachineIdTo="2" stateIdTo="2" />
+          </AllowedEvents>
+          <NotAllowedTransitions />
+          <NotAllowedEvents />
+        </ApiToXCLink>
       </ApiToXCLinks>
     </LinkedClientApi>
   </LinkedClientApis>
