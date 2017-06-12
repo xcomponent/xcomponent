@@ -8,7 +8,9 @@ import { sendMessage } from "coreListener";
 const mapStateToProps = (state, ownProps) => {
     return {
         sendMessage: (message: string) => {
-            sendMessage(state.chatRoom.selectedRoom, "Toto", message);
+            if (message && message !== "") {
+                sendMessage(state.chatRoom.selectedRoom, "Toto", message);
+            }
         },
     };
 };

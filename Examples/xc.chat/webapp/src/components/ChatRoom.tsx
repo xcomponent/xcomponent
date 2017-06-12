@@ -1,4 +1,5 @@
 import * as React from "react";
+import * as Component from "react";
 import * as Label from "grommet/components/Label";
 import * as Box from "grommet/components/Box";
 import * as Section from "grommet/components/Section";
@@ -10,7 +11,6 @@ import * as Article from "grommet/components/Article";
 import { connect } from "react-redux";
 import { FormattedDate, FormattedMessage, defineMessages, injectIntl, InjectedIntl } from "react-intl";
 import * as ReactDOM from "react-dom";
-import Scroller from "react-scroll-collapse";
 
 const mapStateToProps = (state, ownProps) => {
     return {
@@ -22,26 +22,35 @@ const mapDispatchToProps = (dispatch) => {
     return {};
 };
 
-const ChatRoom = ({messages}) => {
-    let messagesDisplay = [];
 
-    if (messages) {
-        messagesDisplay.push(
-            Array.from(messages).map((message) => {
-                return (
-                    <Paragraph margin="none">{message}</Paragraph>
-                );
-            })
-        );
-    }
-    return (
-        <Scroller>
+class ChatRoom extends React.Component<any, any> {
+    bottom: Paragraph;
+
+    render() {
+        let messagesDisplay = [];
+
+        if (this.props.messages) {
+            messagesDisplay.push(
+                Array.from(this.props.messages).map((message) => {
+                    return (
+                        <Paragraph margin="none">{message}</Paragraph>
+                    );
+                })
+            );
+        }
+        return (
             <Article>
                 {messagesDisplay}
+                <Paragraph margin="none" ref={(el) => { this.bottom = el; }}/>
             </Article>
-        </Scroller>
-    );
-};
+        );
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        const node = ReactDOM.findDOMNode(this.bottom);
+        node.scrollIntoView({ behavior: "smooth" });
+    }
+}
 
 export default connect(
     mapStateToProps,
