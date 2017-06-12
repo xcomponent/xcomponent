@@ -17,7 +17,7 @@ export const createAndInitStore = (mainReducer, render, browserHistory) => {
     }
 
     const store = createStore(mainReducer, applyMiddleware(...middlewares));
-    browserHistory.push(`/${HOME_ROUTE}`);
+    browserHistory.push(`${HOME_ROUTE}`);
 
     render(store);
 
