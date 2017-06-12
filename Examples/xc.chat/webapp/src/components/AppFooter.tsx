@@ -7,9 +7,10 @@ import { sendMessage } from "coreListener";
 
 const mapStateToProps = (state, ownProps) => {
     return {
+        connected: state.chatRoom.settings.login !== "",
         sendMessage: (message: string) => {
             if (message && message !== "") {
-                sendMessage(state.chatRoom.selectedRoom, "Toto", message);
+                sendMessage(state.chatRoom.selectedRoom, state.chatRoom.settings.login, message, state.chatRoom.settings.host, state.chatRoom.settings.port);
             }
         },
     };
@@ -19,21 +20,27 @@ const mapDispatchToProps = (dispatch) => {
     return {};
 };
 
-const AppFooter = ({sendMessage}) => (
-    <Box appCentered={true} direction="row" colorIndex="brand" reverse={true}>
-            <Box direction="row" pad="small">
-                <Label margin="none">powered by : <a href="http://www.xcomponent.com" target="_blank">XComponent</a></Label>
-            </Box>
-            <TextInput id="message" onKeyDown={ (evt) => {
+const AppFooter = ({sendMessage, connected}) => {
+    let sendMessageTextInput;
+
+    if (connected) {
+        sendMessageTextInput = <TextInput id="message" onKeyDown={ (evt) => {
                 let code = evt.charCode || evt.keyCode;
                 if (code === 13) {
                     sendMessage(evt.target.value);
                     evt.target.value = "";
                 }
                 }}
-            />
-    </Box>
-);
+            />;
+    }
+
+    return <Box appCentered={true} direction="row" colorIndex="brand" reverse={true}>
+            <Box direction="row" pad="small">
+                <Label margin="none">powered by : <a href="http://www.xcomponent.com" target="_blank">XComponent</a></Label>
+            </Box>
+            {sendMessageTextInput}
+    </Box>;
+};
 
 export default connect(
     mapStateToProps,

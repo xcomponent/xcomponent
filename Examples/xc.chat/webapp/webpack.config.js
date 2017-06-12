@@ -13,7 +13,7 @@ const config = {
     output: {
         path: BUILD_DIR,
         filename: "bundle.js",
-        publicPath: "/chat/"
+        publicPath: "/"
     },
     resolve: {
         extensions: [".webpack.js", ".web.js", ".ts", ".tsx", ".js"],

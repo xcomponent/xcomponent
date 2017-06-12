@@ -1,6 +1,6 @@
 $brand-font-family: 'Metric', Arial, sans-serif;
 $brand-large-number-font-family: 'Metric', Arial, sans-serif;
-$brand-color: #017456;
+$brand-color: #565b76;
 $warning-color: #e26b0a;
 $error-color: #F04953;
 $brand-color-lighter: desaturate(lighten($brand-color, 55%), 40%);
@@ -51,5 +51,5 @@ $hpe-fonts-path: "https://hpefonts.s3.amazonaws.com/web" !default;
 }
 
 $button-accent-color: #ff8d6d;
-$control-brand-color: #049371;
+$control-brand-color: #565b76;
 $border-radius: 0px;

@@ -4,8 +4,17 @@ import { connect } from "react-redux";
 import PageHeader from "components/PageHeader";
 import ChatRoom from "components/ChatRoom";
 import * as Box from "grommet/components/Box";
-import Table from "grommet/components/Table";
+import * as Form from "grommet/components/Form";
+import * as Header from "grommet/components/Header";
+import * as Heading from "grommet/components/Heading";
+import * as Footer from "grommet/components/Footer";
+import * as FormFields from "grommet/components/FormFields";
+import * as Button from "grommet/components/Button";
+import * as FormField from "grommet/components/FormField";
+import * as TextInput from "grommet/components/TextInput";
+import * as NumberInput from "grommet/components/NumberInput";
 import { FormattedDate, FormattedMessage, defineMessages, injectIntl, InjectedIntl } from "react-intl";
+import { connectEvent } from "actions";
 
 interface HomeProps {
     intl: InjectedIntl;
@@ -18,10 +27,14 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-    return {};
+    return {
+        onClick: (host: string, port: number, login: string) => {
+            dispatch(connectEvent(host, port, login));
+        }
+    };
 };
 
-const Home = ({ selectedRoom }) => {
+const Home = ({ selectedRoom, onClick }) => {
     if (selectedRoom !== "") {
         return (
             <div>
@@ -32,10 +45,35 @@ const Home = ({ selectedRoom }) => {
     }
     else {
         return (
-            <div>
+            <Box>
                 <PageHeader title="Login" />
-                    Test
-            </div>
+                <Box align="center">
+                    <Form>
+                        <Header>
+                            <Heading></Heading>
+                        </Header>
+                        <FormFields>
+                            <FormField label="Host">
+                                <TextInput name="host" defaultValue="localhost"/>
+                            </FormField>
+                            <FormField label="Port">
+                                <NumberInput name="port" defaultValue={443}/>
+                            </FormField>
+                            <FormField label="Login">
+                                <TextInput name="login" defaultValue="User"/>
+                            </FormField>
+                        </FormFields>
+                        <Footer pad={{"vertical": "medium"}}>
+                            <Button align="center" label="Connect" primary={true} onClick={ (evt) => {
+                                let host = (document.querySelector("[name=host]") as TextInput).value;
+                                let port = (document.querySelector("[name=port]") as NumberInput).value;
+                                let login = (document.querySelector("[name=login]") as TextInput).value;
+                                onClick(host, port, login);
+                                }}/>
+                        </Footer>
+                    </Form>
+                </Box>
+            </Box>
         );
     }
 };

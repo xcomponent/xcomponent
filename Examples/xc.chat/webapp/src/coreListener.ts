@@ -3,8 +3,8 @@ import { Dispatch } from "redux";
 import { addRoomEvent, removeRoomEvent, addMessageEvent } from "actions";
 import { RoomsState, Room } from "reducers/rooms";
 
-export const startListener = (dispatch: Dispatch<RoomsState>) => {
-    promiseSession.then(session => {
+export const startListener = (dispatch: Dispatch<RoomsState>, host: string, port: number) => {
+    promiseSession(host, port).then(session => {
         const chatComponentName = "ChatManager";
         const chatRoomStateMachineName = "Chatroom";
         const publishedMessageMachineName = "PublishedMessage";
@@ -35,8 +35,8 @@ export const startListener = (dispatch: Dispatch<RoomsState>) => {
         });
 };
 
-export const sendMessage = (room: Room, user: string, message: string) => {
-    promiseSession.then(session => {
+export const sendMessage = (room: Room, user: string, message: string, host: string, port: number) => {
+    promiseSession(host, port).then(session => {
         const jsonMessage = { "User": user, "Message": message, };
         const messageType = "XComponent.ChatManager.UserObject.SentMessage";
         const visibility = true;
