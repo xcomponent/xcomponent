@@ -22,7 +22,6 @@ export const startListener = (dispatch: Dispatch<RoomsState>) => {
             });
         const subscriberCollection = subscriber.getStateMachineUpdates(chatComponentName, chatRoomStateMachineName)
             .subscribe(jsonData => {
-                console.error(jsonData);
                 if (jsonData.stateMachineRef.StateName === "Created") {
                     dispatch(addRoomEvent(jsonData.jsonMessage.Name));
                 }
@@ -45,7 +44,6 @@ export const sendMessage = (room: string, user: string, message: string) => {
         const visibility = true;
 
         const publisher = session.createPublisher();
-        console.error("Plop");
 
         publisher.send(chatComponentName, chatRoomStateMachineName, messageType, jsonMessage, visibility);
 
