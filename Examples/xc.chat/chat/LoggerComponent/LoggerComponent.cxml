@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ComponentViewModelData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="LoggerComponent" Version="8">
+  <StateMachines>
+    <StateMachineData Id="1" Name="LoggerComponent" />
+  </StateMachines>
+  <States>
+    <StateData Id="1" Name="EntryPoint" IsEntryPoint="true" SubGraphKey="StateMachine1">
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="2" Name="Up" IsEntryPoint="false" SubGraphKey="StateMachine1">
+      <TriggeredMethods>
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="LogMessage" TriggeringEvent="XComponent.ChatManager.UserObject.PublishedMessage" />
+      </TriggeredMethods>
+    </StateData>
+  </States>
+  <TransitionPatternStates />
+  <Links>
+    <TransitionData Id="1" Name="Transition1" FromKey="State1" ToKey="State2" Type="TimeOut" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.Common.Event.DefaultEvent" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="2" Name="LogMessage" FromKey="State2" ToKey="State2" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.ChatManager.UserObject.PublishedMessage" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+  </Links>
+  <TransversalLinks />
+  <PublicAssemblies>
+    <AssemblyData Name="ChatManager" Path="..\ChatManager\generated\UserObject\XComponent.ChatManager.UserObject.dll" />
+  </PublicAssemblies>
+  <ExternalAssemblies />
+</ComponentViewModelData>

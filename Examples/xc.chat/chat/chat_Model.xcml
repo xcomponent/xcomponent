@@ -2,12 +2,18 @@
 <LinkingSchema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" isClientApiShown="false" isLinkingShown="false" name="chat">
   <LinkedComponents>
     <LinkedComponent name="ChatManager">
-      <XCToXCLinks />
+      <XCToXCLinks>
+        <XCToXCLink stateMachineIdFrom="3" stateIdFrom="3" linkFrom="ChatManager" linkTo="LoggerComponent" stateMachineIdTo="1" stateIdTo="2" transversalLink="false" />
+      </XCToXCLinks>
       <XCToApiLinks>
         <XCToApiLink stateMachineIdFrom="1" stateIdFrom="1" linkFrom="ChatManager" linkTo="chatApi" />
         <XCToApiLink stateMachineIdFrom="2" stateIdFrom="2" linkFrom="ChatManager" linkTo="chatApi" />
         <XCToApiLink stateMachineIdFrom="3" stateIdFrom="3" linkFrom="ChatManager" linkTo="chatApi" />
       </XCToApiLinks>
+    </LinkedComponent>
+    <LinkedComponent name="LoggerComponent">
+      <XCToXCLinks />
+      <XCToApiLinks />
     </LinkedComponent>
   </LinkedComponents>
   <LinkedClientApis>
