@@ -33,11 +33,16 @@ export const rooms: Reducer<RoomsState> = (state: RoomsState = { availableRooms:
             };
         case SELECT_ROOM_EVENT:
             const selectRoomAction = <RoomDetailsAction>action;
-            return {
-                ...state,
-                selectedRoom: selectRoomAction.roomName,
-                messages: []
-            };
+            if (state.selectedRoom === selectRoomAction.roomName) {
+                return state;
+            }
+            else {
+                return {
+                    ...state,
+                    selectedRoom: selectRoomAction.roomName,
+                    messages: []
+                };
+            }
         case ADD_MESSAGE_EVENT:
             const messagesAction = <MessageDetailsAction>action;
             if (messagesAction.room === state.selectedRoom) {
