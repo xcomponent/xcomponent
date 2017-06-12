@@ -29,7 +29,7 @@ export const rooms: Reducer<RoomsState> = (state: RoomsState = { availableRooms:
             ];
             return {
                 ...state,
-                rooms: updatedRooms
+                availableRooms: updatedRooms
             };
         case SELECT_ROOM_EVENT:
             const selectRoomAction = <RoomDetailsAction>action;

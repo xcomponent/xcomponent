@@ -11,7 +11,9 @@ export const startListener = (dispatch: Dispatch<RoomsState>) => {
         const subscriber = session.createSubscriber();
             subscriber.getSnapshot(chatComponentName, chatRoomStateMachineName, function (items) {
                 items.forEach(function(chatRoom) {
-                    dispatch(addRoomEvent(chatRoom.jsonMessage.Name));
+                    if (chatRoom.stateMachineRef.StateName === "Created") {
+                        dispatch(addRoomEvent(chatRoom.jsonMessage.Name));
+                    }
                 });
             });
         const messagesSubscriberCollection = subscriber.getStateMachineUpdates(chatComponentName, publishedMessageMachineName)
@@ -20,7 +22,13 @@ export const startListener = (dispatch: Dispatch<RoomsState>) => {
             });
         const subscriberCollection = subscriber.getStateMachineUpdates(chatComponentName, chatRoomStateMachineName)
             .subscribe(jsonData => {
-                dispatch(addRoomEvent(jsonData.jsonMessage.Name));
+                console.error(jsonData);
+                if (jsonData.stateMachineRef.StateName === "Created") {
+                    dispatch(addRoomEvent(jsonData.jsonMessage.Name));
+                }
+                else {
+                    dispatch(removeRoomEvent(jsonData.jsonMessage.Name));
+                }
             });
     })
         .catch((error) => {
