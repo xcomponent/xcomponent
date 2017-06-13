@@ -9,11 +9,13 @@ import Logo from "components/Logo";
 import * as Box from "grommet/components/Box";
 import * as Image from "grommet/components/Image";
 import * as Heading from "grommet/components/Heading";
+import CreateRoomLayer from "components/CreateRoomLayer";
 import { FormattedMessage } from "react-intl";
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        navActive: state.nav.active
+        navActive: state.nav.active,
+        creatingRoom: state.nav.creatingRoom
     };
 };
 
@@ -25,12 +27,14 @@ const mapDispatchToProps = (dispatch) => {
     };
 };
 
-let AppHeader = ({navActive, onMenuIconClick}) => {
+let AppHeader = ({navActive, creatingRoom, onMenuIconClick}) => {
     const navTitle = <Heading><FormattedMessage id="app.title" /></Heading>;
     let navLogo;
     if (!navActive) {
         navLogo = <Button plain={true} onClick={onMenuIconClick}><Logo /></Button>;
     }
+
+    const creatingRoomPopup = creatingRoom ? <CreateRoomLayer /> : null;
 
     return (
         <Header
@@ -45,7 +49,8 @@ let AppHeader = ({navActive, onMenuIconClick}) => {
             <Box align="center" flex={true} justify="center">{navTitle}</Box>
 
             <Image src={require("../resources/logo_xc.png")} size="small" />
-
+            
+            {creatingRoomPopup}
         </Header>
     );
 };

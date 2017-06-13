@@ -3,11 +3,11 @@ import * as Box from "grommet/components/Box";
 import * as Label from "grommet/components/Label";
 import *  as TextInput from "grommet/components/TextInput";
 import { connect } from "react-redux";
-import { sendMessage } from "coreListener";
+import { sendMessage } from "communication";
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        connected: state.chatRoom.settings.login !== "",
+        connected: state.chatRoom.settings.login !== "" && state.chatRoom.selectedRoom !== null,
         sendMessage: (message: string) => {
             if (message && message !== "") {
                 sendMessage(state.chatRoom.selectedRoom, state.chatRoom.settings.login, message, state.chatRoom.settings.host, state.chatRoom.settings.port);

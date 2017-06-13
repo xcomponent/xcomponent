@@ -39,11 +39,40 @@ export const sendMessage = (room: Room, user: string, message: string, host: str
     promiseSession(host, port).then(session => {
         const jsonMessage = { "User": user, "Message": message, };
         const messageType = "XComponent.ChatManager.UserObject.SentMessage";
-        const visibility = true;
+        const visibility = false;
 
         const publisher = session.createPublisher();
         publisher.sendWithStateMachineRef(room.reference, messageType, jsonMessage, visibility, null);
 
+    })
+        .catch((error) => {
+            console.log(error);
+        });
+};
+
+export const createRoom = (roomName: string, host: string, port: number) => {
+    promiseSession(host, port).then(session => {
+        const jsonMessage = { "Name": roomName };
+        const messageType = "XComponent.ChatManager.UserObject.CreateChatroom";
+        const visibility = false;
+
+        const publisher = session.createPublisher();
+        publisher.send("ChatManager", "ChatManager", messageType, jsonMessage, visibility, null);
+
+    })
+        .catch((error) => {
+            console.log(error);
+        });
+};
+
+export const closeRoom = (room: Room, host: string, port: number) => {
+    promiseSession(host, port).then(session => {
+        const jsonMessage = {};
+        const messageType = "XComponent.ChatManager.UserObject.CloseRoom";
+        const visibility = false;
+
+        const publisher = session.createPublisher();
+        publisher.sendWithStateMachineRef(room.reference, messageType, jsonMessage, visibility, null);
     })
         .catch((error) => {
             console.log(error);
