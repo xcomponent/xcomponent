@@ -21,10 +21,10 @@
       <ApiToXCLinks>
         <ApiToXCLink linkFrom="chatApi" linkTo="ChatManager" stateMachineIdTo="1" stateIdTo="1">
           <AllowedTransitions>
-            <LinkingSimpleTransition id="1" stateMachineIdTo="1" stateIdTo="1" />
+            <LinkingSimpleTransition id="7" stateMachineIdTo="1" stateIdTo="1" />
           </AllowedTransitions>
           <AllowedEvents>
-            <LinkingEvent eventTypeName="XComponent.ChatManager.UserObject.CreateChatroom" stateMachineIdTo="1" stateIdTo="1" />
+            <LinkingEvent eventTypeName="XComponent.Common.Event.DefaultEvent" stateMachineIdTo="1" stateIdTo="1" />
           </AllowedEvents>
           <NotAllowedTransitions />
           <NotAllowedEvents />

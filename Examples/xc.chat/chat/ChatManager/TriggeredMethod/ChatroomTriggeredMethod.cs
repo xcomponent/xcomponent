@@ -18,6 +18,7 @@ namespace XComponent.ChatManager.TriggeredMethod
                 User = sentMessage.User,
                 DateTime = DateTime.Now
             });
+            context.PublishNotification = false;
         }
 
         public static void ExecuteOn_Created_Through_CreateRoom(XComponent.ChatManager.UserObject.CreateChatroom createChatroom, XComponent.ChatManager.UserObject.Chatroom chatroom, object object_InternalMember, Context context, ICreateRoomCreateChatroomOnCreatedChatroomSenderInterface sender)

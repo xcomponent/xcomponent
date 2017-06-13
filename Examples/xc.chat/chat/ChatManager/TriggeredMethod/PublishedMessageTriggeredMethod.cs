@@ -13,6 +13,7 @@ namespace XComponent.ChatManager.TriggeredMethod
             publishedMessage_PublicMember.Message = publishedMessage.Message;
             publishedMessage_PublicMember.Room = publishedMessage.Room;
             publishedMessage_PublicMember.User = publishedMessage.User;
+            publishedMessage_PublicMember.DateTime = publishedMessage.DateTime;
         }
     }
 }

@@ -38,7 +38,7 @@ const Home = ({ selectedRoom, onClick }) => {
     if (selectedRoom !== "") {
         return (
             <div>
-                <PageHeader title={selectedRoom} />
+                <PageHeader title={"#" + selectedRoom} />
                 <ChatRoom/>
             </div>
         );

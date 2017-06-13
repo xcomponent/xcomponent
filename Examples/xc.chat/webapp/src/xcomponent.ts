@@ -4,6 +4,8 @@ import { chatApiName } from "settings";
 import { xcLogLevels } from "reactivexcomponent.js";
 
 export const promiseCreateSession = promisify(xcapi.createSession, xcapi);
+xcapi .setLogLevel(xcLogLevels.DEBUG);
+
 let session;
 
 const create = (host: string, port: number) => {
