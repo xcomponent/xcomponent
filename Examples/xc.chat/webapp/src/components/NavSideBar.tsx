@@ -39,7 +39,7 @@ const NavSideBar = ({ onClose, onClick, rooms }) => {
         roomLinks.push(
             Array.from(rooms).map((room: Room) => {
                 return (
-                    <Button icon={<ChatIcon />} onClick={() => onClick(room)} plain={true} label={room.name} />
+                    <Button icon={<ChatIcon />} onClick={() => onClick(room)} plain={true} label={"#" + room.name} />
                 );
             })
         );
