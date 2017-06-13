@@ -27,6 +27,7 @@ export interface MessageDetailsAction extends Action {
     room: string;
     message: string;
     user: string;
+    dateTime: string;
 }
 
 export const saveSettingsEvent = (host: string, port: number, login: string): ConnectDetailsAction => {
@@ -67,11 +68,12 @@ export const selectRoomEvent = (roomName: string): RoomDetailsAction => {
     };
 };
 
-export const addMessageEvent = (room: string, message: string, user: string): MessageDetailsAction => {
+export const addMessageEvent = (room: string, dateTime: string, message: string, user: string): MessageDetailsAction => {
     return {
         type: ADD_MESSAGE_EVENT,
         room: room,
         message: message,
         user: user,
+        dateTime: dateTime
     };
 };

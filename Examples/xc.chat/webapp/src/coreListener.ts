@@ -18,7 +18,7 @@ export const startListener = (dispatch: Dispatch<RoomsState>, host: string, port
             });
         const messagesSubscriberCollection = subscriber.getStateMachineUpdates(chatComponentName, publishedMessageMachineName)
             .subscribe(jsonData => {
-                dispatch(addMessageEvent(jsonData.jsonMessage.Room, jsonData.jsonMessage.Message, jsonData.jsonMessage.User));
+                dispatch(addMessageEvent(jsonData.jsonMessage.Room, jsonData.jsonMessage.DateTime, jsonData.jsonMessage.Message, jsonData.jsonMessage.User));
             });
         const subscriberCollection = subscriber.getStateMachineUpdates(chatComponentName, chatRoomStateMachineName)
             .subscribe(jsonData => {
