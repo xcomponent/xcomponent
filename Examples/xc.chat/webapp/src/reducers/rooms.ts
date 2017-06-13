@@ -64,7 +64,7 @@ export const rooms: Reducer<RoomsState> = (state: RoomsState = { availableRooms:
             if (state.selectedRoom !== null && messagesAction.room === state.selectedRoom.name) {
                 return {
                     ...state,
-                    messages: [...state.messages,  messagesAction.dateTime + " [" + messagesAction.user + "] : " + messagesAction.message]
+                    messages: [...state.messages,  messagesAction.dateTime.substring(11, 19) + " [" + messagesAction.user + "] : " + messagesAction.message]
                 };
             }
             else {
