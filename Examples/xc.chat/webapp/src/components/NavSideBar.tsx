@@ -46,7 +46,7 @@ const NavSideBar = ({ onClose, onClick, rooms }) => {
     }
 
     return (
-        <Sidebar fixed={true} colorIndex="neutral-1-t">
+        <Sidebar fixed={true} colorIndex="neutral-1">
             <Header size="large" justify="between" pad={{ horizontal: "medium" }}>
                 <Title onClick={onClose} a11yTitle={"Close"}>
                     <Logo colorIndex="light-1" />

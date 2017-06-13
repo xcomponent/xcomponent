@@ -21,7 +21,7 @@ export interface Settings {
     login: string;
 }
 
-export const rooms: Reducer<RoomsState> = (state: RoomsState = { availableRooms: [], selectedRoom: null, messages: [], settings: {host: "localhost", port: 443, login: "User"} }, action: Action) => {
+export const rooms: Reducer<RoomsState> = (state: RoomsState = { availableRooms: [], selectedRoom: null, messages: [], settings: {host: "localhost", port: 443, login: ""} }, action: Action) => {
     switch (action.type) {
         case ADD_ROOM_EVENT:
             const addRoomAction = <AddRoomDetailsAction>action;

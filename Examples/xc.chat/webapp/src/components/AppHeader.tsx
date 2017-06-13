@@ -44,7 +44,7 @@ let AppHeader = ({navActive, onMenuIconClick}) => {
 
             <Box align="center" flex={true} justify="center">{navTitle}</Box>
 
-            <Image src={require("../resources/logo_xcomp.png")} size="small" />
+            <Image src={require("../resources/logo_xc.png")} size="small" />
 
         </Header>
     );

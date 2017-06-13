@@ -34,7 +34,7 @@ const AppFooter = ({sendMessage, connected}) => {
             />;
     }
 
-    return <Box appCentered={true} direction="row" colorIndex="brand" reverse={true}>
+    return <Box appCentered={true} direction="row" reverse={true}>
             <Box direction="row" pad="small">
                 <Label margin="none">powered by : <a href="http://www.xcomponent.com" target="_blank">XComponent</a></Label>
             </Box>

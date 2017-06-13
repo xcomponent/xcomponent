@@ -39,7 +39,7 @@ class ChatRoom extends React.Component<any, any> {
             );
         }
         return (
-            <Article>
+            <Article margin="small">
                 {messagesDisplay}
                 <Paragraph margin="none" ref={(el) => { this.bottom = el; }}/>
             </Article>
