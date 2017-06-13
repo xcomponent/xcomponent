@@ -213,3 +213,4 @@ index.txt
 #XComponent generated sources
 Examples/xc.bench/benchsimplefork/BenchSimpleFork/Common/
 Examples/xc.chat/chat/ChatManager/Common/
+Examples/xc.chat/chat/LoggerComponent/Common/
