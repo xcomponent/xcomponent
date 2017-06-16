@@ -1,5 +1,6 @@
 [![](http://slack.xcomponent.com/badge.svg)](http://slack.xcomponent.com/)
 [![NuGet](https://img.shields.io/nuget/v/xcomponent.community.svg)](https://www.nuget.org/packages/xcomponent.community/)
+[![Twitter Follow](https://img.shields.io/twitter/follow/espadrine.svg?style=social&label=Follow)](https://twitter.com/XComponent)
 
 # XComponent Resource Center
 
