@@ -1,6 +1,5 @@
 [![](http://slack.xcomponent.com/badge.svg)](http://slack.xcomponent.com/)
-[![](https://www.nuget.org/favicon.ico)](https://www.nuget.org/packages/xcomponent.community/)
-
+[![NuGet](https://img.shields.io/nuget/v/xcomponent.community.svg)](https://www.nuget.org/packages/xcomponent.community/)
 
 # XComponent Resource Center
 
