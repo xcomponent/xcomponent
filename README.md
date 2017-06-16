@@ -1,3 +1,5 @@
+[![](http://slack.xcomponent.com/badge.svg)](http://slack.xcomponent.com/badge.svg)
+
 # XComponent Resource Center
 
 XComponent is a platform to easily create, monitor and share **microservices**.
