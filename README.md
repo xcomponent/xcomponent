@@ -1,4 +1,4 @@
-[![](http://slack.xcomponent.com/badge.svg)](http://slack.xcomponent.com:3000/)
+[![](http://slack.xcomponent.com/badge.svg)](http://slack.xcomponent.com/)
 
 # XComponent Resource Center
 
