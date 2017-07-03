@@ -5,6 +5,8 @@
 
 # XComponent Resource Center
 
+[![Join the chat at https://gitter.im/XComponent/xcomponent](https://badges.gitter.im/XComponent/xcomponent.svg)](https://gitter.im/XComponent/xcomponent?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 XComponent is a platform to easily create, monitor and share **microservices**.
 In XComponent, a microservice is a set of components. Each component is based on **state machines** (States machines are designed graphically). This approach is powerful and flexible because it enables you to size or resize your microservices as you want.
 
