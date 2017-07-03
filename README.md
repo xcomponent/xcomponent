@@ -1,3 +1,4 @@
+[![Join the chat at https://gitter.im/XComponent/xcomponent](https://badges.gitter.im/XComponent/xcomponent.svg)](https://gitter.im/XComponent/xcomponent?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![](http://slack.xcomponent.com/badge.svg)](http://slack.xcomponent.com/)
 [![NuGet](https://img.shields.io/nuget/v/xcomponent.community.svg)](https://www.nuget.org/packages/xcomponent.community/)
 [![NuGet](https://img.shields.io/nuget/dt/XComponent.Community.svg)](https://www.nuget.org/packages/XComponent.Community/)
