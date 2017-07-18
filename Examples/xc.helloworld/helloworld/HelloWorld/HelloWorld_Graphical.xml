@@ -1,15 +1,32 @@
-<?xml version="1.0"?>
-<ComponentViewModelGraphicalData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<?xml version="1.0" encoding="utf-8"?>
+<ComponentGraphicalData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <States>
-    <StateGraphicalData Id="1" CenterX="159" CenterY="306" />
+    <StateGraphicalData Id="1" CenterX="164" CenterY="295" />
     <StateGraphicalData Id="2" CenterX="766.048828125" CenterY="251.87501525878906" />
   </States>
   <TransitionPatternStates />
   <Links>
-    <TransitionGraphicalData Id="1" Curviness="20" Color="">
-      <Points />
+    <TransitionGraphicalData Id="1" Curviness="20" Color="#00FFFFFF">
+      <Points>
+        <Point>
+          <X>202.71136749199323</X>
+          <Y>323.86409229103441</Y>
+        </Point>
+        <Point>
+          <X>389.97682122085615</X>
+          <Y>291.35760808751172</Y>
+        </Point>
+        <Point>
+          <X>578.55110503052265</X>
+          <Y>277.5831646274292</Y>
+        </Point>
+        <Point>
+          <X>768.55249843297145</X>
+          <Y>282.53212216193043</Y>
+        </Point>
+      </Points>
       <IsNameDisplayed>true</IsNameDisplayed>
     </TransitionGraphicalData>
   </Links>
   <TransversalLinks />
-</ComponentViewModelGraphicalData>
+</ComponentGraphicalData>

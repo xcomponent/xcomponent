@@ -210,3 +210,6 @@ index.txt
 
 #XComponent generated sources
 Examples/xc.bench/benchsimplefork/BenchSimpleFork/Common/
+Examples/xc\.helloworld/helloworld/HelloWorld/Common/
+
+Examples/xc\.helloworld/helloworld/HelloWorld/StateMachine/
