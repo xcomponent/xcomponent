@@ -6,7 +6,7 @@
     <ProjectGuid>{F2876AD5-3046-43AD-969E-78B99AA208AB}</ProjectGuid>
     <RootNamespace>XComponent.Authentication.UserObject</RootNamespace>
     <AssemblyName>XComponent.Authentication.UserObject</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
   </PropertyGroup>
@@ -19,7 +19,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
+  <PropertyGroup Condition="'$(OS)' == 'Windows_NT'">
     <PostBuildEvent>xcopy "$(TargetDir)*.dll" "$(SolutionDir)generated\UserObject\"  /Y</PostBuildEvent>
   </PropertyGroup>
   <ItemGroup>
