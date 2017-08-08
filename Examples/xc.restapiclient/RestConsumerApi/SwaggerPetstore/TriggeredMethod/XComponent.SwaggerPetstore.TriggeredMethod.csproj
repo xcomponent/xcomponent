@@ -8,7 +8,7 @@
     <ProjectGuid>{E5498F76-98E7-48E9-B24D-EAB665D8AE33}</ProjectGuid>
     <RootNamespace>XComponent.SwaggerPetstore.TriggeredMethod</RootNamespace>
     <AssemblyName>XComponent.SwaggerPetstore.TriggeredMethod</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
   </PropertyGroup>
@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <HintPath>..\UserReference\mscorlib.dll</HintPath>
+      <SpecificVersion>false</SpecificVersion>
+    </Reference>
     <Reference Include="System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
     <Reference Include="System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
     <Reference Include="System.Data.Entity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using XComponent.Common.ApiContext;
 using XComponent.Common.Timeouts;
+using XComponent.Shared;
 using XComponent.SwaggerPetstore.Common;
 using XComponent.SwaggerPetstore.Common.Senders;
 using XComponent.SwaggerPetstore.TriggeredMethod.ServiceClient;
@@ -15,7 +16,7 @@ namespace XComponent.SwaggerPetstore.TriggeredMethod
     {
         public static void ExecuteOn_SendingRequest_Through_CreateGetOrderByIdHttpRequest(XComponent.SwaggerPetstore.UserObject.GetOrderByIdOperation getOrderByIdOperation, XComponent.SwaggerPetstore.UserObject.GetOrderByIdOperation getOrderByIdOperation_PublicMember, object object_InternalMember, Context context, ICreateGetOrderByIdHttpRequestGetOrderByIdOperationOnSendingRequestGetOrderByIdOperationSenderInterface sender)
         {
-            XComponent.Common.Clone.XCClone.Clone(getOrderByIdOperation, getOrderByIdOperation_PublicMember);
+            XComponent.Shared.XCClone.Clone(getOrderByIdOperation, getOrderByIdOperation_PublicMember);
 
             var task = TriggeredMethodContext.Instance.ServiceClient.GetOrderByIdWithHttpMessagesAsync(getOrderByIdOperation_PublicMember.Event.orderId);
             task.ContinueWith((Task<Microsoft.Rest.HttpOperationResponse<Order>> httpTask) =>

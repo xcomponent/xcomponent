@@ -233,3 +233,7 @@ Examples/xc\.tradecapture/tradecaptureservice/TradeCaptureCore/TradeCapture/Comm
 Examples/xc\.tradecapture/tradecaptureservice/TradeCaptureCore/Referential/StateMachine/
 
 Examples/xc\.tradecapture/tradecaptureservice/TradeCaptureCore/Referential/Common/
+
+Examples/xc\.restapiclient/RestConsumerApi/SwaggerPetstore/StateMachine/
+
+Examples/xc\.restapiclient/RestConsumerApi/SwaggerPetstore/Common/
