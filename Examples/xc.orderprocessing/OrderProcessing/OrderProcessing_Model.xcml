@@ -9,25 +9,25 @@
         <XCToXCLink stateMachineIdFrom="5" stateIdFrom="6" linkFrom="Order" linkTo="Trade" stateMachineIdTo="1" stateIdTo="2" transversalLink="false" />
       </XCToXCLinks>
       <XCToApiLinks>
-        <XCToApiLink stateMachineIdFrom="1" stateIdFrom="-1" linkFrom="Order" linkTo="OrderProcessingAPI" />
-        <XCToApiLink stateMachineIdFrom="2" stateIdFrom="-1" linkFrom="Order" linkTo="OrderProcessingAPI" />
-        <XCToApiLink stateMachineIdFrom="3" stateIdFrom="4" linkFrom="Order" linkTo="OrderProcessingAPI" />
-        <XCToApiLink stateMachineIdFrom="4" stateIdFrom="5" linkFrom="Order" linkTo="OrderProcessingAPI" />
-        <XCToApiLink stateMachineIdFrom="5" stateIdFrom="6" linkFrom="Order" linkTo="OrderProcessingAPI" />
+        <XCToApiLink stateMachineIdFrom="1" stateIdFrom="-1" linkFrom="Order" linkTo="OrderProcessingApi" />
+        <XCToApiLink stateMachineIdFrom="2" stateIdFrom="-1" linkFrom="Order" linkTo="OrderProcessingApi" />
+        <XCToApiLink stateMachineIdFrom="3" stateIdFrom="4" linkFrom="Order" linkTo="OrderProcessingApi" />
+        <XCToApiLink stateMachineIdFrom="4" stateIdFrom="5" linkFrom="Order" linkTo="OrderProcessingApi" />
+        <XCToApiLink stateMachineIdFrom="5" stateIdFrom="6" linkFrom="Order" linkTo="OrderProcessingApi" />
       </XCToApiLinks>
     </LinkedComponent>
     <LinkedComponent name="Trade">
       <XCToXCLinks />
       <XCToApiLinks>
-        <XCToApiLink stateMachineIdFrom="1" stateIdFrom="-1" linkFrom="Trade" linkTo="OrderProcessingAPI" />
-        <XCToApiLink stateMachineIdFrom="2" stateIdFrom="-1" linkFrom="Trade" linkTo="OrderProcessingAPI" />
+        <XCToApiLink stateMachineIdFrom="1" stateIdFrom="-1" linkFrom="Trade" linkTo="OrderProcessingApi" />
+        <XCToApiLink stateMachineIdFrom="2" stateIdFrom="-1" linkFrom="Trade" linkTo="OrderProcessingApi" />
       </XCToApiLinks>
     </LinkedComponent>
   </LinkedComponents>
   <LinkedClientApis>
-    <LinkedClientApi name="OrderProcessingAPI">
+    <LinkedClientApi name="OrderProcessingApi">
       <ApiToXCLinks>
-        <ApiToXCLink linkFrom="OrderProcessingAPI" linkTo="Order" stateMachineIdTo="1" stateIdTo="2">
+        <ApiToXCLink linkFrom="OrderProcessingApi" linkTo="Order" stateMachineIdTo="1" stateIdTo="2">
           <AllowedTransitions>
             <LinkingSimpleTransition id="2" stateMachineIdTo="1" stateIdTo="2" />
           </AllowedTransitions>
@@ -37,7 +37,7 @@
           <NotAllowedTransitions />
           <NotAllowedEvents />
         </ApiToXCLink>
-        <ApiToXCLink linkFrom="OrderProcessingAPI" linkTo="Order" stateMachineIdTo="2" stateIdTo="-1">
+        <ApiToXCLink linkFrom="OrderProcessingApi" linkTo="Order" stateMachineIdTo="2" stateIdTo="-1">
           <AllowedTransitions>
             <LinkingSimpleTransition id="3" stateMachineIdTo="2" stateIdTo="3" />
             <LinkingSimpleTransition id="5" stateMachineIdTo="2" stateIdTo="3" />

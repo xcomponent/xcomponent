@@ -213,3 +213,11 @@ Examples/xc.bench/benchsimplefork/BenchSimpleFork/Common/
 Examples/xc\.helloworld/helloworld/HelloWorld/Common/
 
 Examples/xc\.helloworld/helloworld/HelloWorld/StateMachine/
+
+Examples/xc\.orderprocessing/OrderProcessing/Order/Common/
+
+Examples/xc\.orderprocessing/OrderProcessing/Order/StateMachine/
+
+Examples/xc\.orderprocessing/OrderProcessing/Trade/Common/
+
+Examples/xc\.orderprocessing/OrderProcessing/Trade/StateMachine/

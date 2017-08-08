@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ComponentViewModelGraphicalData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<ComponentGraphicalData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <States>
     <StateGraphicalData Id="1" CenterX="70" CenterY="85" />
     <StateGraphicalData Id="2" CenterX="156.4375" CenterY="86.4375" />
@@ -267,4 +267,4 @@
       <IsNameDisplayed>false</IsNameDisplayed>
     </TransitionGraphicalData>
   </TransversalLinks>
-</ComponentViewModelGraphicalData>
+</ComponentGraphicalData>
