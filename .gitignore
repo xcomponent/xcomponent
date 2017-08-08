@@ -237,3 +237,7 @@ Examples/xc\.tradecapture/tradecaptureservice/TradeCaptureCore/Referential/Commo
 Examples/xc\.restapiclient/RestConsumerApi/SwaggerPetstore/StateMachine/
 
 Examples/xc\.restapiclient/RestConsumerApi/SwaggerPetstore/Common/
+
+Examples/xc\.slack/slackproject/SlackProxy/StateMachine/
+
+Examples/xc\.slack/slackproject/SlackProxy/Common/
