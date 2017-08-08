@@ -10,8 +10,8 @@ namespace XComponent.BenchSimpleFork.TriggeredMethod
     using System;
     using XComponent.BenchSimpleFork.Common;
     using XComponent.BenchSimpleFork.Common.Senders;
-    using XComponent.Common.TriggeredMethod;
-    using XComponent.Common.Manager;
+    using XComponent.Runtime.Shared.TriggeredMethods;
+    using XComponent.Runtime.Shared.Manager;
     using XComponent.Common.Logger;
     using System.Threading;
     using System.Diagnostics;
@@ -27,7 +27,7 @@ namespace XComponent.BenchSimpleFork.TriggeredMethod
         {
         }
         
-        public void UnHanledException(XComponent.Common.TriggeredMethod.TriggeredMethodException exception)
+        public void UnHanledException(XComponent.Runtime.StateMachine.Exceptions.TriggeredMethodException exception)
         {
         }
 

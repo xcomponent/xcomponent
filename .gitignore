@@ -241,3 +241,5 @@ Examples/xc\.restapiclient/RestConsumerApi/SwaggerPetstore/Common/
 Examples/xc\.slack/slackproject/SlackProxy/StateMachine/
 
 Examples/xc\.slack/slackproject/SlackProxy/Common/
+
+Examples/xc\.bench/benchsimplefork/BenchSimpleFork/StateMachine/
