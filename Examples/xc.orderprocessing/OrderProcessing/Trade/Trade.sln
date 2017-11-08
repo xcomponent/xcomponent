@@ -1,12 +1,14 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XComponent.Trade.UserObject", "UserObject\XComponent.Trade.UserObject.csproj", "{A38F533F-39FC-416A-9246-4D5E07283447}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XComponent.Trade.TriggeredMethod", "TriggeredMethod\XComponent.Trade.TriggeredMethod.csproj", "{5F7886A8-6968-4C98-9479-254D3BECD610}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XComponent.Trade.Common", "Common\XComponent.Trade.Common.csproj", "{BE692B62-C3EF-410D-9521-7739F2347E1C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XComponent.Trade.StateMachine", "StateMachine\XComponent.Trade.StateMachine.csproj", "{EBDD658B-3C96-4498-B0E2-865E4975EEED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,6 +28,10 @@ Global
 		{BE692B62-C3EF-410D-9521-7739F2347E1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE692B62-C3EF-410D-9521-7739F2347E1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE692B62-C3EF-410D-9521-7739F2347E1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBDD658B-3C96-4498-B0E2-865E4975EEED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBDD658B-3C96-4498-B0E2-865E4975EEED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBDD658B-3C96-4498-B0E2-865E4975EEED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBDD658B-3C96-4498-B0E2-865E4975EEED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

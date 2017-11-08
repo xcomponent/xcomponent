@@ -3,6 +3,7 @@ using XComponent.Common.ApiContext;
 using XComponent.Common.Timeouts;
 using XComponent.HelloWorld.Common;
 using XComponent.HelloWorld.Common.Senders;
+using XComponent.Shared;
 
 namespace XComponent.HelloWorld.TriggeredMethod
 {

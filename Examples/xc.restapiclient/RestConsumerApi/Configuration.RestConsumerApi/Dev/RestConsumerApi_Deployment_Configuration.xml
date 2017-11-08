@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<deployment environment="Dev" version="1.0" debugType="Debug" frameworkType="Framework45" visualstudioVersion="VS2015" defaultExportPath="" extractConfig="false" generateWebSocketApi="false" embedUserObjects="false" defaultDeployPath="" logsDirectory="$(installdir)" logsPattern="pid-${processid}-${component}-${shortdate}" runtimesLogs="True" logsLevel="TRACE" logsMaxSize="50" reactiveApiName="" reactiveApiVersion="">
+<deployment environment="Dev" version="1.0" debugType="Debug" frameworkType="Framework452" visualstudioVersion="VS2015" defaultExportPath="" extractConfig="false" generateWebSocketApi="false" embedUserObjects="false" defaultDeployPath="" logsDirectory="$(installdir)" logsPattern="pid-${processid}-${component}-${shortdate}" runtimesLogs="True" logsLevel="TRACE" logsMaxSize="50" reactiveApiName="" reactiveApiVersion="">
   <!--
 	THREADING IMPLEMENTATION VALUES = AKKA - ->
 	<!- - THREADING TYPE VALUES = ONEBYSTM, ONEBYINSTANCE, INHERITFROMPARENT, INHERITFROMLINKING - ->

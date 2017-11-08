@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ComponentViewModelData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="ChatManager" Version="25">
+  <StateMachines>
+    <StateMachineData Id="1" Name="ChatManager" />
+    <StateMachineData Id="2" Name="Chatroom" PublicMember="XComponent.ChatManager.UserObject.Chatroom" />
+    <StateMachineData Id="3" Name="PublishedMessage" PublicMember="XComponent.ChatManager.UserObject.PublishedMessage" />
+  </StateMachines>
+  <States>
+    <StateData Id="1" Name="EntryPoint" IsEntryPoint="true" SubGraphKey="StateMachine1">
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="2" Name="Created" IsEntryPoint="false" SubGraphKey="StateMachine2">
+      <TriggeredMethods>
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="CreateRoom" TriggeringEvent="XComponent.ChatManager.UserObject.CreateChatroom" />
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="PublishMessage" TriggeringEvent="XComponent.ChatManager.UserObject.SentMessage" />
+      </TriggeredMethods>
+    </StateData>
+    <StateData Id="3" Name="Published" IsEntryPoint="false" SubGraphKey="StateMachine3">
+      <TriggeredMethods>
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="PublishMessage" TriggeringEvent="XComponent.ChatManager.UserObject.PublishedMessage" />
+      </TriggeredMethods>
+    </StateData>
+    <StateData Id="4" Name="Closed" IsEntryPoint="false" SubGraphKey="StateMachine2">
+      <TriggeredMethods />
+    </StateData>
+    <StateData Id="6" Name="Up" IsEntryPoint="false" SubGraphKey="StateMachine1">
+      <TriggeredMethods>
+        <TriggeredMethodData IsNodeInitializer="false" IsSelected="true" TransitionName="Init" TriggeringEvent="XComponent.Common.Event.DefaultEvent" />
+      </TriggeredMethods>
+    </StateData>
+  </States>
+  <TransitionPatternStates />
+  <Links>
+    <TransitionData Id="1" Name="CreateRoom" FromKey="State6" ToKey="State2" Type="X" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.ChatManager.UserObject.CreateChatroom" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="3" Name="PublishMessage" FromKey="State2" ToKey="State2" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.ChatManager.UserObject.SentMessage" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="2" Name="PublishMessage" FromKey="State2" ToKey="State3" Type="X" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.ChatManager.UserObject.PublishedMessage" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="5" Name="Close" FromKey="State2" ToKey="State4" Type="Standard" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.ChatManager.UserObject.CloseRoom" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+    <TransitionData Id="7" Name="Init" FromKey="State1" ToKey="State6" Type="TimeOut" ExecutionDelay="0" SetCustomTimeout="false" TriggeringEvent="XComponent.Common.Event.DefaultEvent" UserSpecificRule="false">
+      <MatchingRules />
+    </TransitionData>
+  </Links>
+  <TransversalLinks>
+    <TransversalTransitionData Id="4" Name="" FromKey="State2" ToId="2" SelectAllTransitions="true" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.ChatManager.UserObject.CreateChatroom" Name="CreateRoom" />
+        <SelectedTransitionData Event="XComponent.ChatManager.UserObject.SentMessage" Name="PublishMessage" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="6" Name="" FromKey="State6" ToId="1" SelectAllTransitions="true" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.Common.Event.DefaultEvent" Name="Init" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+  </TransversalLinks>
+  <PublicAssemblies />
+  <ExternalAssemblies />
+</ComponentViewModelData>
