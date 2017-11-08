@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<deployment environment="Dev" version="1.0" debugType="Debug" frameworkType="Framework45" visualstudioVersion="VS2015" defaultExportPath="" extractConfig="false" generateWebSocketApi="false" embedUserObjects="false" defaultDeployPath="" logsDirectory="$(installdir)" logsPattern="pid-${processid}-${component}-${shortdate}" runtimesLogs="True" logsLevel="TRACE" logsMaxSize="50" reactiveApiName="" reactiveApiVersion="">
+<deployment environment="Dev" version="1.0" debugType="Debug" frameworkType="Framework452" visualstudioVersion="VS2015" defaultExportPath="" extractConfig="false" generateWebSocketApi="false" embedUserObjects="false" defaultDeployPath="" logsDirectory="$(installdir)" logsPattern="pid-${processid}-${component}-${shortdate}" runtimesLogs="True" logsLevel="TRACE" logsMaxSize="50" reactiveApiName="" reactiveApiVersion="">
   <!--
 	THREADING IMPLEMENTATION VALUES = AKKA - ->
 	<!- - THREADING TYPE VALUES = ONEBYSTM, ONEBYINSTANCE, INHERITFROMPARENT, INHERITFROMLINKING - ->
@@ -19,21 +19,21 @@
       </communication>
       <threading impl="Akka" type="SEQUENTIAL" />
       <stateMachines>
-        <stateMachine id="1" poolSize="100">
+        <stateMachine id="1" poolSize="100" numberOfWorker="0">
           <communication name="rabitmq" type="BUS" messageQueue="SEQUENTIAL">
             <input>{topicType}.{version}.{runtime}.{component}.{std}</input>
             <output>{topicType}.{version}.{runtime}.{component}.{std}</output>
           </communication>
           <threading impl="Akka" type="INHERITFROMPARENT" />
         </stateMachine>
-        <stateMachine id="2" poolSize="100">
+        <stateMachine id="2" poolSize="100" numberOfWorker="0">
           <communication name="rabitmq" type="BUS" messageQueue="SEQUENTIAL">
             <input>{topicType}.{version}.{runtime}.{component}.{std}</input>
             <output>{topicType}.{version}.{runtime}.{component}.{std}</output>
           </communication>
           <threading impl="Akka" type="INHERITFROMPARENT" />
         </stateMachine>
-        <stateMachine id="3" poolSize="100">
+        <stateMachine id="3" poolSize="100" numberOfWorker="0">
           <communication name="rabitmq" type="BUS" messageQueue="SEQUENTIAL">
             <input>{topicType}.{version}.{runtime}.{component}.{std}</input>
             <output>{topicType}.{version}.{runtime}.{component}.{std}</output>
@@ -49,7 +49,7 @@
       </communication>
       <threading impl="Akka" type="SEQUENTIAL" />
       <stateMachines>
-        <stateMachine id="1" poolSize="100">
+        <stateMachine id="1" poolSize="100" numberOfWorker="0">
           <communication name="rabitmq" type="BUS" messageQueue="SEQUENTIAL">
             <input>{topicType}.{version}.{runtime}.{component}.{std}</input>
             <output>{topicType}.{version}.{runtime}.{component}.{std}</output>

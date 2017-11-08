@@ -8,6 +8,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XComponent.ChatManager.Trig
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XComponent.ChatManager.Common", "Common\XComponent.ChatManager.Common.csproj", "{BE692B62-C3EF-410D-9521-7739F2347E1C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XComponent.ChatManager.StateMachine", "StateMachine\XComponent.ChatManager.StateMachine.csproj", "{1C108738-C286-4AEE-BF0C-DB8792FF5597}"
+EndProject
+
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,7 +29,11 @@ Global
 		{BE692B62-C3EF-410D-9521-7739F2347E1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE692B62-C3EF-410D-9521-7739F2347E1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE692B62-C3EF-410D-9521-7739F2347E1C}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
+	{1C108738-C286-4AEE-BF0C-DB8792FF5597}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+{1C108738-C286-4AEE-BF0C-DB8792FF5597}.Debug|Any CPU.Build.0 = Debug|Any CPU
+{1C108738-C286-4AEE-BF0C-DB8792FF5597}.Release|Any CPU.ActiveCfg = Release|Any CPU
+{1C108738-C286-4AEE-BF0C-DB8792FF5597}.Release|Any CPU.Build.0 = Release|Any CPU
+EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection

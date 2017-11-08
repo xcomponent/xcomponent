@@ -10,6 +10,9 @@ EndProject
 
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XComponent.LoggerComponent.Common", "Common\XComponent.LoggerComponent.Common.csproj", "{B5939221-3C00-4F1C-823E-5966D8E33088}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XComponent.LoggerComponent.StateMachine", "StateMachine\XComponent.LoggerComponent.StateMachine.csproj", "{268183F8-B540-4D45-A90C-5CDA593C67EA}"
+EndProject
+
 Global
 	            GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		            Debug|Any CPU = Debug|Any CPU
@@ -28,6 +31,10 @@ Global
 {B5939221-3C00-4F1C-823E-5966D8E33088}.Debug|Any CPU.Build.0 = Debug|Any CPU
 {B5939221-3C00-4F1C-823E-5966D8E33088}.Release|Any CPU.ActiveCfg = Release|Any CPU
 {B5939221-3C00-4F1C-823E-5966D8E33088}.Release|Any CPU.Build.0 = Release|Any CPU
+{268183F8-B540-4D45-A90C-5CDA593C67EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+{268183F8-B540-4D45-A90C-5CDA593C67EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+{268183F8-B540-4D45-A90C-5CDA593C67EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+{268183F8-B540-4D45-A90C-5CDA593C67EA}.Release|Any CPU.Build.0 = Release|Any CPU
 EndGlobalSection
 GlobalSection(SolutionProperties) = preSolution
 		            HideSolutionNode = FALSE

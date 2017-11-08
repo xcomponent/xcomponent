@@ -1,8 +1,8 @@
-﻿using System;
+using System;
 using XComponent.ChatManager.Common;
 using XComponent.ChatManager.Common.Senders;
-using XComponent.Common.TriggeredMethod;
-using XComponent.Common.Manager;
+using XComponent.Runtime.Shared.TriggeredMethods;
+using XComponent.Runtime.Shared.Manager;
 using XComponent.Common.Logger;
 
 namespace XComponent.ChatManager.TriggeredMethod
@@ -14,7 +14,7 @@ namespace XComponent.ChatManager.TriggeredMethod
         {
         }
         
-        public void UnHanledException(XComponent.Common.TriggeredMethod.TriggeredMethodException exception)
+        public void UnHanledException(XComponent.Runtime.StateMachine.Exceptions.TriggeredMethodException exception)
         {
         }
     }

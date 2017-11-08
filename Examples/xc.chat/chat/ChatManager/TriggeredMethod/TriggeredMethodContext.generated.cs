@@ -8,14 +8,17 @@
 using System;
 using XComponent.ChatManager.Common;
 using XComponent.ChatManager.Common.Senders;
-using XComponent.Common.TriggeredMethod;
-using XComponent.Common.Manager;
+using XComponent.Runtime.Shared.TriggeredMethods;
+using XComponent.Runtime.Shared.Manager;
 using XComponent.Common.Logger;
+using XComponent.Common.Logger.Logger;
+using XComponent.Functions.Core;
 
 namespace XComponent.ChatManager.TriggeredMethod
 {
     public partial class TriggeredMethodContext : ICustomTriggeredMethodContext
     {
+        private static ILogger _logger =  new XComponentLogger();
         
         private static ICustomTriggeredMethodContext instance = new TriggeredMethodContext();
         
@@ -38,7 +41,10 @@ namespace XComponent.ChatManager.TriggeredMethod
                 instance = value;
             }
         }
-        
+
+		public FunctionsManager ChatroomFunctionManager { get; set; }
+		public FunctionsManager PublishedMessageFunctionManager { get; set; }
+ 
         private ComponentManager componentManager;
         
         public IComponentManager ComponentManager
@@ -49,7 +55,7 @@ namespace XComponent.ChatManager.TriggeredMethod
             }
         }
         
-        public XComponent.Common.Logger.IComponentLogger GetLogger(LogKeyEnum loggerName)
+        public IComponentLogger GetLogger(LogKeyEnum loggerName)
         {
 				return  Loggers.GetLogger(loggerName);
         }
@@ -57,6 +63,16 @@ namespace XComponent.ChatManager.TriggeredMethod
         public void Init(ComponentManager componentMgrInput)
         {
 				componentManager = componentMgrInput;
+				var restEndpoint = string.IsNullOrEmpty(ComponentManager.FunctionsManagerConfiguration.RestEndpoint) 
+					? FunctionsFactory.DefaultUrl 
+					: new Uri(ComponentManager.FunctionsManagerConfiguration.RestEndpoint);
+				_logger.Info(string.Format("Endpoint address : {0}", restEndpoint));
+				_logger.Info(string.Format("Endpoint swagger address : {0}/swagger/ui/index", restEndpoint));
+
+				Environment.SetEnvironmentVariable("OWIN_SERVER", "Microsoft.Owin.Host.HttpListener.OwinServerFactory, XComponent.Core");
+				ChatroomFunctionManager = FunctionsFactory.CreateFunctionsManager(ComponentHelper.COMPONENT_NAME, "Chatroom", restEndpoint);
+				PublishedMessageFunctionManager = FunctionsFactory.CreateFunctionsManager(ComponentHelper.COMPONENT_NAME, "PublishedMessage", restEndpoint);
+
 				OnComponentInitialized();
         }
         
@@ -73,11 +89,14 @@ namespace XComponent.ChatManager.TriggeredMethod
         
         string GetParameterValue(KeyValueParametersEnum keyValueParameter);
         
-        XComponent.Common.Logger.IComponentLogger GetLogger(LogKeyEnum loggerName);
+        IComponentLogger GetLogger(LogKeyEnum loggerName);
         
         IComponentManager ComponentManager
         {
             get;
         }
-    }
+
+		FunctionsManager ChatroomFunctionManager { get; }
+		FunctionsManager PublishedMessageFunctionManager { get; }
+	}
 }

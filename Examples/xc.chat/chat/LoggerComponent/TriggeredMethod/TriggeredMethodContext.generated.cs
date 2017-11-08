@@ -8,14 +8,16 @@
 using System;
 using XComponent.LoggerComponent.Common;
 using XComponent.LoggerComponent.Common.Senders;
-using XComponent.Common.TriggeredMethod;
-using XComponent.Common.Manager;
+using XComponent.Runtime.Shared.TriggeredMethods;
+using XComponent.Runtime.Shared.Manager;
 using XComponent.Common.Logger;
+using XComponent.Common.Logger.Logger;
 
 namespace XComponent.LoggerComponent.TriggeredMethod
 {
     public partial class TriggeredMethodContext : ICustomTriggeredMethodContext
     {
+        private static ILogger _logger =  new XComponentLogger();
         
         private static ICustomTriggeredMethodContext instance = new TriggeredMethodContext();
         
@@ -38,7 +40,8 @@ namespace XComponent.LoggerComponent.TriggeredMethod
                 instance = value;
             }
         }
-        
+
+ 
         private ComponentManager componentManager;
         
         public IComponentManager ComponentManager
@@ -49,7 +52,7 @@ namespace XComponent.LoggerComponent.TriggeredMethod
             }
         }
         
-        public XComponent.Common.Logger.IComponentLogger GetLogger(LogKeyEnum loggerName)
+        public IComponentLogger GetLogger(LogKeyEnum loggerName)
         {
 				return  Loggers.GetLogger(loggerName);
         }
@@ -57,6 +60,7 @@ namespace XComponent.LoggerComponent.TriggeredMethod
         public void Init(ComponentManager componentMgrInput)
         {
 				componentManager = componentMgrInput;
+
 				OnComponentInitialized();
         }
         
@@ -73,11 +77,12 @@ namespace XComponent.LoggerComponent.TriggeredMethod
         
         string GetParameterValue(KeyValueParametersEnum keyValueParameter);
         
-        XComponent.Common.Logger.IComponentLogger GetLogger(LogKeyEnum loggerName);
+        IComponentLogger GetLogger(LogKeyEnum loggerName);
         
         IComponentManager ComponentManager
         {
             get;
         }
-    }
+
+	}
 }

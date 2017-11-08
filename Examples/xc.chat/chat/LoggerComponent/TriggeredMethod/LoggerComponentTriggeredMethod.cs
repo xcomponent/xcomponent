@@ -3,6 +3,7 @@ using XComponent.Common.ApiContext;
 using XComponent.Common.Timeouts;
 using XComponent.LoggerComponent.Common;
 using XComponent.LoggerComponent.Common.Senders;
+using XComponent.Shared;
 
 namespace XComponent.LoggerComponent.TriggeredMethod
 {

@@ -4,6 +4,7 @@ using XComponent.ChatManager.Common.Senders;
 using XComponent.ChatManager.UserObject;
 using XComponent.Common.ApiContext;
 using XComponent.Common.Timeouts;
+using XComponent.Shared;
 
 namespace XComponent.ChatManager.TriggeredMethod
 {

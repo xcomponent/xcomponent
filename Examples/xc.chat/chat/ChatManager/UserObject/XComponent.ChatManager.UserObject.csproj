@@ -1,4 +1,5 @@
-﻿<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -7,7 +8,7 @@
     <ProjectGuid>{9F8CF05E-F814-467B-829B-3048CDAC57A8}</ProjectGuid>
     <RootNamespace>XComponent.ChatManager.UserObject</RootNamespace>
     <AssemblyName>XComponent.ChatManager.UserObject</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
   </PropertyGroup>
@@ -28,7 +29,10 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
+  <PropertyGroup Condition="'$(OS)' != 'Windows_NT'">
+    <PostBuildEvent>mkdir -p "$(SolutionDir)generated\UserObject\" &amp;&amp; cp -f "$(TargetDir)"*.dll "$(SolutionDir)generated\UserObject\"</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(OS)' == 'Windows_NT'">
     <PostBuildEvent>xcopy "$(TargetDir)*.dll" "$(SolutionDir)generated\UserObject\"  /Y</PostBuildEvent>
   </PropertyGroup>
   <ItemGroup>
