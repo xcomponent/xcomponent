@@ -1,4 +1,4 @@
-#XComponent User Guide
+# XComponent User Guide
 
 ## Contents
 
@@ -62,7 +62,7 @@ The following figure is a good summary of the XComponent architecture.
 XComponent is based on state machine diagrams. To design, implement and build your projects you’re going to use XCStudio and Visual Studio. 
 XCStudio is an IDE to create microservices. 
 
-The aim of this chapter is to provide you few definitions of the concepts related to XComponent including:
+The aim of this chapter is to provide you with a few definitions of the concepts related to XComponent including:
 * a microservice
 * a component
 * a state machine
@@ -328,7 +328,7 @@ Now we need to add classes to all transitions and state machines.
 
 ### States in depth
 
-You may have notice that circles representing states in XCStudio can have various colors.
+You may have noticed that circles representing states in XCStudio can have various colors.
 
 Here’s the meaning of the colors:
 - Black is reserved for *EntryPoint* states
@@ -361,7 +361,7 @@ To add a new timed out transition, click on the transition you created, check th
 
 ### Internal transitions
 
-An internal transition is a way to launch a transition which does not changes the current state of the state machine. For instance let’s consider the following example:
+An internal transition is a way to launch a transition which does not change the current state of the state machine. For instance let’s consider the following example:
 
 ![internal transition](Images/internal.png)
 
@@ -494,7 +494,7 @@ You got this window:
 
 XCSpy allows you to test your component and validate its functional behavior by sending transitions/events.
 
-The EntryPoint state has a red notification badge containing a 1 number. It represents the number of instances of the state machine that currently are in this state.
+The EntryPoint state has a red notification badge containing a number. It represents the number of instances of the state machine that currently are in this state.
 When launching the spy for the first time, once you have clicked on your component the EntryPoint has 1 instance. This is the beginning of your component. From here you can start testing.
 
 The Spy menu contains:
@@ -508,8 +508,6 @@ The Spy menu contains:
 ![xcspy context menu](Images/xcspy_context.png)
 
 In the *Events sender* menu we can choose the way of sending an event: send an event to a selected instance or to all instances. The first one only affects the entity selected while the other one affects all entities in this state.
-
-It is important to point out that you can send a default or a custom event. Default event is an empty class. Using customize events allows you to set to defines in the triggering event variables values.
 
 Keeping in mind the following example, if we want to trigger the transition called *SendToFrontOffice*, click on the transition. Then fill the event values in the property panel.
 
