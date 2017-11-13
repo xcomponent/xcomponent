@@ -10,7 +10,7 @@ let session;
 
 const create = (host: string, port: number) => {
     xcapi.setLogLevel(xcLogLevels.INFO);
-    return promiseCreateSession(chatApiName, `wss://${host}:${port}`);
+    return promiseCreateSession(chatApiName, `ws://${host}:${port}`);
 };
 
 export const promiseSession = (host: string, port: number) => {
