@@ -12,6 +12,14 @@ import { connect } from "react-redux";
 import { FormattedDate, FormattedMessage, defineMessages, injectIntl, InjectedIntl } from "react-intl";
 import * as ReactDOM from "react-dom";
 
+interface ChatRoomState {
+
+}
+
+interface ChatRoomProps {
+    messages: string[];
+}
+
 const mapStateToProps = (state, ownProps) => {
     return {
         messages: state.chatRoom.messages,
@@ -23,7 +31,7 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 
-class ChatRoom extends React.Component<any, any> {
+class ChatRoom extends React.Component<ChatRoomProps, ChatRoomState> {
     bottom: Paragraph;
 
     render() {
