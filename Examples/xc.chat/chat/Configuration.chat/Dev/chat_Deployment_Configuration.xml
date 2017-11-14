@@ -12,6 +12,22 @@
     <exportRuntimeFolders />
   </buildEvents>
   <components>
+    <component name="bot" alias="bot" deploymentTarget="MyChatManagerService">
+      <communication name="rabitmq" type="BUS" messageQueue="SEQUENTIAL">
+        <input>{topicType}.{version}.{runtime}.{component}.{std}</input>
+        <output>{topicType}.{version}.{runtime}.{component}.{std}</output>
+      </communication>
+      <threading impl="Akka" type="SEQUENTIAL" />
+      <stateMachines>
+        <stateMachine id="1" poolSize="100" numberOfWorker="4">
+          <communication name="rabitmq" type="BUS" messageQueue="SEQUENTIAL">
+            <input>{topicType}.{version}.{runtime}.{component}.{std}</input>
+            <output>{topicType}.{version}.{runtime}.{component}.{std}</output>
+          </communication>
+          <threading impl="Akka" type="INHERITFROMPARENT" />
+        </stateMachine>
+      </stateMachines>
+    </component>
     <component name="ChatManager" alias="ChatManager" deploymentTarget="MyChatManagerService">
       <communication name="rabitmq" type="BUS" messageQueue="SEQUENTIAL">
         <input>{topicType}.{version}.{runtime}.{component}.{std}</input>
@@ -73,7 +89,7 @@
       <bus name="rabitmq" host="localhost" port="5672" user="guest" password="guest" type="RABBIT_MQ" />
     </communication>
     <gateways>
-      <websocket name="" host="" port="0" bridgeport="0" type="Plain" user="" password="">
+      <websocket name="websocket" host="localhost" port="9443" bridgeport="9443" type="Plain" user="" password="">
         <loggedTopics><![CDATA[]]></loggedTopics>
       </websocket>
     </gateways>

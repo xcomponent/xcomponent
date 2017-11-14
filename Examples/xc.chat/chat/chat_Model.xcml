@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinkingSchema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" environment="Dev" isClientApiShown="false" isLinkingShown="false" name="chat">
   <LinkedComponents>
+    <LinkedComponent name="bot">
+      <XCToXCLinks>
+        <XCToXCLink stateMachineIdFrom="1" stateIdFrom="2" linkFrom="bot" linkTo="ChatManager" stateMachineIdTo="2" stateIdTo="2" transversalLink="false" />
+      </XCToXCLinks>
+      <XCToApiLinks />
+    </LinkedComponent>
     <LinkedComponent name="ChatManager">
       <XCToXCLinks>
+        <XCToXCLink stateMachineIdFrom="3" stateIdFrom="3" linkFrom="ChatManager" linkTo="bot" stateMachineIdTo="1" stateIdTo="2" transversalLink="false" />
         <XCToXCLink stateMachineIdFrom="3" stateIdFrom="3" linkFrom="ChatManager" linkTo="LoggerComponent" stateMachineIdTo="1" stateIdTo="2" transversalLink="false" />
       </XCToXCLinks>
       <XCToApiLinks>
