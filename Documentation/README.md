@@ -337,7 +337,7 @@ Every component has exactly one entry point state. The state machine containing 
 
 This state in represented by a black circle in XCStudio. Its default name is *EntryPoint* and it can be renamed.
 
-![entry point state](Images/entrypoint_state.jpg)
+![entry point state](Images/entrypoint_state.JPG)
 
 #### Regular state
 
@@ -349,7 +349,7 @@ A final state is a regular state that has no transition leaving it. So there is 
 
 This state is represented by a green circle in XCStudio.
 
-![final state](Images/final_state.jpg)
+![final state](Images/final_state.JPG)
 
 #### Error state
 
@@ -357,7 +357,7 @@ This is a built-in state and every state machine has exactly one error state. An
 
 The error state is hidden and will not appear in the model. It is only visible in XCSpy. it will appear only if an instance reaches it. Otherwise it is hidden by default. The exception message will be visible in the *Error message* field of the instance's properties control in the spy. It is represented by a purple circle and its name is set to **FatalError**. It's a reserved keyword so no state in your model can have that name.
 
-![error state](Images/fatalerror_state.jpg)
+![error state](Images/fatalerror_state.JPG)
 
 Here are the properties related to a state:
 - The name
