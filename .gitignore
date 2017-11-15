@@ -210,3 +210,36 @@ index.txt
 
 #XComponent generated sources
 Examples/xc.bench/benchsimplefork/BenchSimpleFork/Common/
+Examples/xc\.helloworld/helloworld/HelloWorld/Common/
+
+Examples/xc\.helloworld/helloworld/HelloWorld/StateMachine/
+
+Examples/xc\.orderprocessing/OrderProcessing/Order/Common/
+
+Examples/xc\.orderprocessing/OrderProcessing/Order/StateMachine/
+
+Examples/xc\.orderprocessing/OrderProcessing/Trade/Common/
+
+Examples/xc\.orderprocessing/OrderProcessing/Trade/StateMachine/
+
+Examples/xc\.authentication/authenticationservice/Authentication/StateMachine/
+
+Examples/xc\.authentication/authenticationservice/Authentication/Common/
+
+Examples/xc\.tradecapture/tradecaptureservice/TradeCaptureCore/TradeCapture/StateMachine/
+
+Examples/xc\.tradecapture/tradecaptureservice/TradeCaptureCore/TradeCapture/Common/
+
+Examples/xc\.tradecapture/tradecaptureservice/TradeCaptureCore/Referential/StateMachine/
+
+Examples/xc\.tradecapture/tradecaptureservice/TradeCaptureCore/Referential/Common/
+
+Examples/xc\.restapiclient/RestConsumerApi/SwaggerPetstore/StateMachine/
+
+Examples/xc\.restapiclient/RestConsumerApi/SwaggerPetstore/Common/
+
+Examples/xc\.slack/slackproject/SlackProxy/StateMachine/
+
+Examples/xc\.slack/slackproject/SlackProxy/Common/
+
+Examples/xc\.bench/benchsimplefork/BenchSimpleFork/StateMachine/

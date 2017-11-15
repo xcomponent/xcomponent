@@ -8,8 +8,8 @@
 using System;
 using XComponent.SwaggerPetstore.Common;
 using XComponent.SwaggerPetstore.Common.Senders;
-using XComponent.Common.TriggeredMethod;
-using XComponent.Common.Manager;
+using XComponent.Runtime.Shared.TriggeredMethods;
+using XComponent.Runtime.Shared.Manager;
 using XComponent.Common.Logger;
 
 namespace XComponent.SwaggerPetstore.TriggeredMethod
@@ -49,7 +49,7 @@ namespace XComponent.SwaggerPetstore.TriggeredMethod
             }
         }
         
-        public XComponent.Common.Logger.IComponentLogger GetLogger(LogKeyEnum loggerName)
+        public IComponentLogger GetLogger(LogKeyEnum loggerName)
         {
 				return  Loggers.GetLogger(loggerName);
         }
@@ -73,7 +73,7 @@ namespace XComponent.SwaggerPetstore.TriggeredMethod
         
         string GetParameterValue(KeyValueParametersEnum keyValueParameter);
         
-        XComponent.Common.Logger.IComponentLogger GetLogger(LogKeyEnum loggerName);
+        IComponentLogger GetLogger(LogKeyEnum loggerName);
         
         IComponentManager ComponentManager
         {

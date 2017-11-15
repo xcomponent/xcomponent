@@ -7,14 +7,14 @@
         <member name="T:XComponent.TradeCapture.TradeApi.TradeApi">
             <summary />
         </member>
-        <member name="P:XComponent.TradeCapture.TradeApi.TradeApi.TradeCapture_Component">
-            <summary>
-            This property is used to communicate with TradeCapture
-             <para /></summary>
-        </member>
         <member name="P:XComponent.TradeCapture.TradeApi.TradeApi.Referential_Component">
             <summary>
             This property is used to communicate with Referential
+             <para /></summary>
+        </member>
+        <member name="P:XComponent.TradeCapture.TradeApi.TradeApi.TradeCapture_Component">
+            <summary>
+            This property is used to communicate with TradeCapture
              <para /></summary>
         </member>
         <member name="P:XComponent.TradeCapture.TradeApi.TradeApi.CloseConnectionOnDispose">
@@ -41,82 +41,6 @@
             <summary>
             Dispose the Client Api and the communication layer
              </summary>
-        </member>
-        <member name="P:XComponent.TradeCapture.TradeApi.TradeCapture.IXCTradeProcessor_StateMachine.EntryPoint_State">
-            <summary />
-        </member>
-        <member name="M:XComponent.TradeCapture.TradeApi.TradeCapture.IXCTradeProcessor_StateMachine.GetSnapshot(System.String,System.Int32)">
-            <summary>
-            Retrieves a snapshot of XCTradeProcessor state machines
-             </summary>
-            <param name="filter">This parameter is used to filter the snapshot request with a linq expression. The linq expression is applied to the public member</param>
-            <param name="timeout">Snapshot timeout</param>
-        </member>
-        <member name="M:XComponent.TradeCapture.TradeApi.TradeCapture.IXCTradeProcessor_StateMachine.SendEvent(XComponent.Common.ApiContext.Context,XComponent.TradeCapture.UserObject.Transaction,System.Action{System.Exception},XCClientAPICommon.Client.Visibility,System.String)">
-            <summary>
-            Sends the XComponent.TradeCapture.UserObject.Transaction event using a context. 
-            </summary>
-            <param name="context">Client Api context. Used to target a specific instance of state machine</param>
-            <param name="transitionEvent" />
-            <param name="onExceptionOccured">This event is triggered if an exception is raised. If this option is set, the exception will be catch. If this option is not set, the exception will be thrown.</param>
-            <param name="visibility">If parameter is set to Visibility.Private, the event will be sent with a private topic.</param>
-        </member>
-        <member name="M:XComponent.TradeCapture.TradeApi.TradeCapture.IXCTradeProcessor_StateMachine.SendEvent(XComponent.TradeCapture.UserObject.Transaction,System.Action{System.Exception},XCClientAPICommon.Client.Visibility,System.String)">
-            <summary>
-            Sends the XComponent.TradeCapture.UserObject.Transaction event
-            </summary>
-            <param name="evt" />
-            <param name="onExceptionOccured">This event is triggered if an exception is raised. If this option is set, the exception will be catch. If this option is not set, the exception will be thrown.</param>
-            <param name="visibility">If parameter is set to Visibility.Private, the event will be sent with a private topic.</param>
-        </member>
-        <member name="P:XComponent.TradeCapture.TradeApi.TradeCapture.XCTradeProcessor_StateMachine.EntryPoint_State">
-            <summary />
-        </member>
-        <member name="M:XComponent.TradeCapture.TradeApi.TradeCapture.XCTradeProcessor_StateMachine.GetSnapshot(System.String,System.Int32)">
-            <summary>
-            Retrieves a snapshot of XCTradeProcessor state machines
-             </summary>
-            <param name="filter">This parameter is used to filter the snapshot request with a linq expression. The linq expression is applied to the public member</param>
-            <param name="timeout">Snapshot timeout</param>
-        </member>
-        <member name="M:XComponent.TradeCapture.TradeApi.TradeCapture.XCTradeProcessor_StateMachine.SendEvent(XComponent.Common.ApiContext.Context,XComponent.TradeCapture.UserObject.Transaction,System.Action{System.Exception},XCClientAPICommon.Client.Visibility,System.String)">
-            <summary>
-            Sends the XComponent.TradeCapture.UserObject.Transaction event using a context. 
-            </summary>
-            <param name="context">Client Api context. Used to target a specific instance of state machine</param>
-            <param name="transitionEvent" />
-            <param name="onExceptionOccured">This event is triggered if an exception is raised. If this option is set, the exception will be catch. If this option is not set, the exception will be thrown.</param>
-            <param name="visibility">If parameter is set to Visibility.Private, the event will be sent with a private topic.</param>
-        </member>
-        <member name="M:XComponent.TradeCapture.TradeApi.TradeCapture.XCTradeProcessor_StateMachine.SendEvent(XComponent.TradeCapture.UserObject.Transaction,System.Action{System.Exception},XCClientAPICommon.Client.Visibility,System.String)">
-            <summary>
-            Sends the XComponent.TradeCapture.UserObject.Transaction event
-            </summary>
-            <param name="evt" />
-            <param name="onExceptionOccured">This event is triggered if an exception is raised. If this option is set, the exception will be catch. If this option is not set, the exception will be thrown.</param>
-            <param name="visibility">If parameter is set to Visibility.Private, the event will be sent with a private topic.</param>
-        </member>
-        <member name="E:XComponent.TradeCapture.TradeApi.TradeCapture.XCTradeProcessor_StateMachine.InstanceUpdated">
-            <summary>
-            This event is triggered when the XCTradeProcessor state machine is updated
-            </summary>
-        </member>
-        <member name="M:XComponent.TradeCapture.TradeApi.TradeCapture.XCTradeProcessor.IEntryPoint_State.NewTransaction(XComponent.Common.ApiContext.Context,XComponent.TradeCapture.UserObject.Transaction,System.Action{System.Exception},XCClientAPICommon.Client.Visibility)">
-            <summary>
-            Sends the XComponent.TradeCapture.UserObject.Transaction event using a context. 
-            </summary>
-            <param name="context">Client Api context. Used to target a specific instance of state machine</param>
-            <param name="transitionEvent" />
-            <param name="onExceptionOccured">This event is triggered if an exception is raised. If this option is set, the exception will be catch. If this option is not set, the exception will be thrown.</param>
-            <param name="visibility">If parameter is set to Visibility.Private, the event will be sent with a private topic.</param>
-        </member>
-        <member name="M:XComponent.TradeCapture.TradeApi.TradeCapture.XCTradeProcessor.IEntryPoint_State.NewTransaction(XComponent.Common.ApiContext.Context,System.Action{System.Exception},XCClientAPICommon.Client.Visibility)">
-            <summary>
-            Triggers the NewTransaction transition using a context. 
-             <para /></summary>
-            <param name="context">Client Api context. Used to target a specific instance of state machine</param>
-            <param name="onExceptionOccured">This event is triggered if an exception is raised. If this option is set, the exception will be catch. If this option is not set, the exception will be thrown.</param>
-            <param name="visibility">If parameter is set to Visibility.Private, the event will be sent with a private topic.</param>
         </member>
         <member name="P:XComponent.TradeCapture.TradeApi.Referential.IReferential_StateMachine.EntryPoint_State">
             <summary />
@@ -283,6 +207,82 @@
              <para /></summary>
             <param name="context">Client Api context. Used to target a specific instance of state machine</param>
             <param name="onExceptionOccured">This event is triggered if an exception is raised. If this option is set, the exception will be catch. If this option is not set, the exception will be thrown.</param>
+        </member>
+        <member name="P:XComponent.TradeCapture.TradeApi.TradeCapture.IXCTradeProcessor_StateMachine.EntryPoint_State">
+            <summary />
+        </member>
+        <member name="M:XComponent.TradeCapture.TradeApi.TradeCapture.IXCTradeProcessor_StateMachine.GetSnapshot(System.String,System.Int32)">
+            <summary>
+            Retrieves a snapshot of XCTradeProcessor state machines
+             </summary>
+            <param name="filter">This parameter is used to filter the snapshot request with a linq expression. The linq expression is applied to the public member</param>
+            <param name="timeout">Snapshot timeout</param>
+        </member>
+        <member name="M:XComponent.TradeCapture.TradeApi.TradeCapture.IXCTradeProcessor_StateMachine.SendEvent(XComponent.Common.ApiContext.Context,XComponent.TradeCapture.UserObject.Transaction,System.Action{System.Exception},XCClientAPICommon.Client.Visibility,System.String)">
+            <summary>
+            Sends the XComponent.TradeCapture.UserObject.Transaction event using a context. 
+            </summary>
+            <param name="context">Client Api context. Used to target a specific instance of state machine</param>
+            <param name="transitionEvent" />
+            <param name="onExceptionOccured">This event is triggered if an exception is raised. If this option is set, the exception will be catch. If this option is not set, the exception will be thrown.</param>
+            <param name="visibility">If parameter is set to Visibility.Private, the event will be sent with a private topic.</param>
+        </member>
+        <member name="M:XComponent.TradeCapture.TradeApi.TradeCapture.IXCTradeProcessor_StateMachine.SendEvent(XComponent.TradeCapture.UserObject.Transaction,System.Action{System.Exception},XCClientAPICommon.Client.Visibility,System.String)">
+            <summary>
+            Sends the XComponent.TradeCapture.UserObject.Transaction event
+            </summary>
+            <param name="evt" />
+            <param name="onExceptionOccured">This event is triggered if an exception is raised. If this option is set, the exception will be catch. If this option is not set, the exception will be thrown.</param>
+            <param name="visibility">If parameter is set to Visibility.Private, the event will be sent with a private topic.</param>
+        </member>
+        <member name="P:XComponent.TradeCapture.TradeApi.TradeCapture.XCTradeProcessor_StateMachine.EntryPoint_State">
+            <summary />
+        </member>
+        <member name="M:XComponent.TradeCapture.TradeApi.TradeCapture.XCTradeProcessor_StateMachine.GetSnapshot(System.String,System.Int32)">
+            <summary>
+            Retrieves a snapshot of XCTradeProcessor state machines
+             </summary>
+            <param name="filter">This parameter is used to filter the snapshot request with a linq expression. The linq expression is applied to the public member</param>
+            <param name="timeout">Snapshot timeout</param>
+        </member>
+        <member name="M:XComponent.TradeCapture.TradeApi.TradeCapture.XCTradeProcessor_StateMachine.SendEvent(XComponent.Common.ApiContext.Context,XComponent.TradeCapture.UserObject.Transaction,System.Action{System.Exception},XCClientAPICommon.Client.Visibility,System.String)">
+            <summary>
+            Sends the XComponent.TradeCapture.UserObject.Transaction event using a context. 
+            </summary>
+            <param name="context">Client Api context. Used to target a specific instance of state machine</param>
+            <param name="transitionEvent" />
+            <param name="onExceptionOccured">This event is triggered if an exception is raised. If this option is set, the exception will be catch. If this option is not set, the exception will be thrown.</param>
+            <param name="visibility">If parameter is set to Visibility.Private, the event will be sent with a private topic.</param>
+        </member>
+        <member name="M:XComponent.TradeCapture.TradeApi.TradeCapture.XCTradeProcessor_StateMachine.SendEvent(XComponent.TradeCapture.UserObject.Transaction,System.Action{System.Exception},XCClientAPICommon.Client.Visibility,System.String)">
+            <summary>
+            Sends the XComponent.TradeCapture.UserObject.Transaction event
+            </summary>
+            <param name="evt" />
+            <param name="onExceptionOccured">This event is triggered if an exception is raised. If this option is set, the exception will be catch. If this option is not set, the exception will be thrown.</param>
+            <param name="visibility">If parameter is set to Visibility.Private, the event will be sent with a private topic.</param>
+        </member>
+        <member name="E:XComponent.TradeCapture.TradeApi.TradeCapture.XCTradeProcessor_StateMachine.InstanceUpdated">
+            <summary>
+            This event is triggered when the XCTradeProcessor state machine is updated
+            </summary>
+        </member>
+        <member name="M:XComponent.TradeCapture.TradeApi.TradeCapture.XCTradeProcessor.IEntryPoint_State.NewTransaction(XComponent.Common.ApiContext.Context,XComponent.TradeCapture.UserObject.Transaction,System.Action{System.Exception},XCClientAPICommon.Client.Visibility)">
+            <summary>
+            Sends the XComponent.TradeCapture.UserObject.Transaction event using a context. 
+            </summary>
+            <param name="context">Client Api context. Used to target a specific instance of state machine</param>
+            <param name="transitionEvent" />
+            <param name="onExceptionOccured">This event is triggered if an exception is raised. If this option is set, the exception will be catch. If this option is not set, the exception will be thrown.</param>
+            <param name="visibility">If parameter is set to Visibility.Private, the event will be sent with a private topic.</param>
+        </member>
+        <member name="M:XComponent.TradeCapture.TradeApi.TradeCapture.XCTradeProcessor.IEntryPoint_State.NewTransaction(XComponent.Common.ApiContext.Context,System.Action{System.Exception},XCClientAPICommon.Client.Visibility)">
+            <summary>
+            Triggers the NewTransaction transition using a context. 
+             <para /></summary>
+            <param name="context">Client Api context. Used to target a specific instance of state machine</param>
+            <param name="onExceptionOccured">This event is triggered if an exception is raised. If this option is set, the exception will be catch. If this option is not set, the exception will be thrown.</param>
+            <param name="visibility">If parameter is set to Visibility.Private, the event will be sent with a private topic.</param>
         </member>
         <member name="T:XComponent.TradeCapture.TradeValidatorApi.TradeValidatorApi">
             <summary />

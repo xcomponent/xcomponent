@@ -4,6 +4,7 @@ using XComponent.Common.Timeouts;
 using XComponent.Order.Common;
 using XComponent.Order.Common.Senders;
 using XComponent.Order.UserObject;
+using XComponent.Shared;
 
 namespace XComponent.Order.TriggeredMethod
 {

@@ -1,5 +1,5 @@
-<?xml version="1.0"?>
-<ComponentViewModelData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="HelloWorld" Version="2">
+<?xml version="1.0" encoding="utf-8"?>
+<ComponentData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="HelloWorld" Version="3">
   <StateMachines>
     <StateMachineData Id="1" Name="HelloWorldManager" />
     <StateMachineData Id="2" Name="HelloResponse" PublicMember="XComponent.HelloWorld.UserObject.HelloResponse" />
@@ -25,4 +25,4 @@
   <TransversalLinks />
   <PublicAssemblies />
   <ExternalAssemblies />
-</ComponentViewModelData>
+</ComponentData>

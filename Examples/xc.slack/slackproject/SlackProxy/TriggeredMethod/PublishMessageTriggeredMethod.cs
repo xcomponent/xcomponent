@@ -1,6 +1,7 @@
 using System;
 using XComponent.Common.ApiContext;
 using XComponent.Common.Timeouts;
+using XComponent.Shared;
 using XComponent.SlackProxy.Common;
 using XComponent.SlackProxy.Common.Senders;
 using XComponent.SlackProxy.TriggeredMethod.SlackApi;
