@@ -335,7 +335,7 @@ A state machine can have 4 types of states.
 
 Every component has exactly one entry point state. The state machine containing that latter is referred to as *entry point state machine*. When the component is initialized an instance of that state machine is created and its state is set to the entry point. Only one instance of the entry point state machine can exist in a component. Transitions can go **from** this state but no transition can have it as its target. It's an initial state that your state machine starts from but can never go back to.
 
-This state in represented by a black circle in XCStudio. Its default name is *EntryPoint* and it can be renamed.
+This state is represented by a black circle in XCStudio. Its default name is *EntryPoint* and it can be renamed.
 
 ![entry point state](Images/entrypoint_state.JPG)
 
