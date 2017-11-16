@@ -57,7 +57,7 @@ const Home = ({ selectedRoom, onClick }) => {
                                 <TextInput name="host" defaultValue="localhost"/>
                             </FormField>
                             <FormField label="Port">
-                                <NumberInput name="port" defaultValue={443}/>
+                                <NumberInput name="port" defaultValue={9443}/>
                             </FormField>
                             <FormField label="Login">
                                 <TextInput name="login" defaultValue="User"/>
