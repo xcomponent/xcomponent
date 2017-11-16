@@ -214,3 +214,5 @@ index.txt
 Examples/**/Common/
 Examples/**/StateMachine/
 Examples/**/generated/
+
+coverage/
