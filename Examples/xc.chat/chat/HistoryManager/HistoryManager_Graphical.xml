@@ -68,7 +68,7 @@
           <Y>-48.514025738274263</Y>
         </Point>
       </Points>
-      <IsNameDisplayed>true</IsNameDisplayed>
+      <IsNameDisplayed>false</IsNameDisplayed>
     </TransitionGraphicalData>
     <TransitionGraphicalData Id="4" Curviness="NaN" Color="#00FFFFFF">
       <Points>

@@ -75,7 +75,7 @@
           <AllowedEvents>
             <LinkingEvent eventTypeName="XComponent.ChatManager.UserObject.PublishedMessage" stateMachineIdTo="1" stateIdTo="2" />
             <LinkingEvent eventTypeName="XComponent.HistoryManager.UserObject.HistoryRequest" stateMachineIdTo="1" stateIdTo="2" />
-            <LinkingEvent eventTypeName="XComponent.HistoryManager.UserObject.PublishedHistory" stateMachineIdTo="1" stateIdTo="2" />
+            <LinkingEvent eventTypeName="XComponent.HistoryManager.UserObject.HistoryResponse" stateMachineIdTo="1" stateIdTo="2" />
           </AllowedEvents>
           <NotAllowedTransitions />
           <NotAllowedEvents />

@@ -9,9 +9,10 @@ namespace XComponent.HistoryManager.TriggeredMethod
 {
     public static class PublishedHistoryTriggeredMethod
     {
-        public static void InitializePublicMember(XComponent.HistoryManager.UserObject.PublishedHistory publishedHistory_ParentPublicMember, object object_ParentInternalMember, XComponent.HistoryManager.UserObject.PublishedHistory publishedHistory_PublicMember, object object_InternalMember)
+        public static void ExecuteOn_Published_Through_PublishRequestResponse(XComponent.HistoryManager.UserObject.HistoryResponse historyResponse, XComponent.HistoryManager.UserObject.PublishedHistory publishedHistory, XComponent.HistoryManager.UserObject.PublishedHistoryInternalMember publishedHistoryInternalMember, Context context, IPublishRequestResponseHistoryResponseOnPublishedPublishedHistorySenderInterface sender)
         {
-            XCClone.Clone(publishedHistory_ParentPublicMember, publishedHistory_PublicMember);
+            XCClone.Clone(historyResponse.PublishedHistory, publishedHistory);
+            context.PrivateTopic = historyResponse.ResponseTopic;
         }
     }
 }

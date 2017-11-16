@@ -30,14 +30,17 @@ namespace XComponent.HistoryManager.TriggeredMethod
             TriggeredMethodContext.Instance.GetDefaultLogger().Info($"Sending response in private topic {historyRequest.ResponseTopic}...");
 
             sender.PublishRequestResponse(context,
-                new PublishedHistory()
+                new HistoryResponse()
                 {
-                    Messages = new List<PublishedMessage>(
-                        publishedHistory
-                            .Messages
-                            .Where(message => message.Room == historyRequest.RoomName))
-                },
-                historyRequest.ResponseTopic);
+                    PublishedHistory = new PublishedHistory()
+                    {
+                        Messages = new List<PublishedMessage>(
+                            publishedHistory
+                                .Messages
+                                .Where(message => message.Room == historyRequest.RoomName))
+                    },
+                    ResponseTopic = historyRequest.ResponseTopic
+                });
         }
     }
 }
