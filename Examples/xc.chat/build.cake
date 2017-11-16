@@ -64,7 +64,7 @@ Task("BuildXComponent")
 });
 
 
-Task("BuildChat")
+Task("BuildApp")
   .Does(() =>
 {
   foreach(var solution in GetFiles("./chat/**/*.sln"))
@@ -73,18 +73,13 @@ Task("BuildChat")
   }
 	XcBuildBuild("./" + modelPath, buildConfiguration, "Dev", "VS2015", getXCBuildExtraParam());
   RunTarget("ExportRuntime");
-  if (!FileExists("xcstudio.cmd"))
-  {
-    var xcStudioBinaryFilePath = MakeAbsolute(File(@"./tools/XComponent.Community/tools/XCStudio/XCStudio.exe"));
-    var modelFilePath = MakeAbsolute(File("./" + modelPath));
-
-    FileWriteText(@"xcstudio.cmd", @"start " + xcStudioBinaryFilePath + " " + modelFilePath);
-  }
+  RunTarget("GenerateStudioCmd");
+  RunTarget("GenerateRuntimeCmd");
 });
 
 Task("Build")
   .IsDependentOn("BuildWebapp")
-  .IsDependentOn("BuildChat")
+  .IsDependentOn("BuildApp")
   .Does(() =>
 {
 });
@@ -96,6 +91,28 @@ Task("RunWebapp")
     });
 });
 
+Task("GenerateStudioCmd")
+  .Does(() => {
+    var xcStudioBinaryFilePath = MakeAbsolute(File(@"./tools/XComponent.Community/tools/XCStudio/XCStudio.exe"));
+    var modelFilePath = MakeAbsolute(File("./" + modelPath));
+
+    FileWriteText(@"xcstudio.cmd", @"start " + xcStudioBinaryFilePath + " " + modelFilePath);
+});
+
+Task("GenerateRuntimeCmd")
+  .Does(() => {
+    var fileContents = "";
+    foreach(var xcrFile in GetFiles("./Runtime/xcassemblies/*.xcr"))
+    {
+      var xcPropertiesPath = xcrFile.FullPath.Replace("xcr", "xcproperties");
+      var xcRuntimeBinaryFilePath = MakeAbsolute(File(@"./tools/XComponent.Community/tools/XCStudio/XCRuntime/xcruntime.exe"));
+      fileContents += "start " + xcRuntimeBinaryFilePath + " " + xcrFile.FullPath + " " + xcPropertiesPath + "\n";
+    }
+    fileContents += "cd webapp\n";
+    fileContents += "start npm run start:dev\n";
+
+    FileWriteText(@"xcruntime.cmd", fileContents);
+});
   
 Task("Clean")
   .ContinueOnError() // some projects may exist only after compilation
