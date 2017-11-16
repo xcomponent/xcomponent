@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ComponentData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="ChatterBot" Version="43">
+  <StateMachines>
+    <StateMachineData Id="1" Name="ChatterBot" PublicMember="XComponent.ChatterBot.UserObject.ChatterBot" />
+    <StateMachineData Id="2" Name="SentMessage" PublicMember="XComponent.ChatManager.UserObject.SentMessage" />
+  </StateMachines>
+  <States>
+    <StateData Id="1" Name="EntryPoint" IsEntryPoint="true" SubGraphKey="StateMachine1" />
+    <StateData Id="2" Name="Up" SubGraphKey="StateMachine1">
+      <TriggeredMethods>
+        <TriggeredMethodData TransitionName="Receive" TriggeringEvent="XComponent.ChatManager.UserObject.PublishedMessage" />
+        <TriggeredMethodData TransitionName="Init" TriggeringEvent="XComponent.Common.Event.DefaultEvent" />
+      </TriggeredMethods>
+    </StateData>
+    <StateData Id="3" Name="Published" SubGraphKey="StateMachine2">
+      <TriggeredMethods>
+        <TriggeredMethodData TransitionName="Send" TriggeringEvent="XComponent.ChatManager.UserObject.SentMessage" />
+      </TriggeredMethods>
+    </StateData>
+  </States>
+  <Links>
+    <TransitionData Id="1" Name="Init" FromKey="State1" ToKey="State2" Type="TimeOut" TriggeringEvent="XComponent.Common.Event.DefaultEvent" />
+    <TransitionData Id="3" Name="Receive" FromKey="State2" ToKey="State2" Type="Standard" TriggeringEvent="XComponent.ChatManager.UserObject.PublishedMessage" />
+    <TransitionData Id="2" Name="Send" FromKey="State2" ToKey="State3" Type="X" TriggeringEvent="XComponent.ChatManager.UserObject.SentMessage" />
+  </Links>
+  <TransversalLinks>
+    <TransversalTransitionData Id="4" Name="" FromKey="State2" ToId="2" SelectAllTransitions="true" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.Common.Event.DefaultEvent" Name="Init" />
+        <SelectedTransitionData Event="XComponent.ChatManager.UserObject.PublishedMessage" Name="Receive" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+  </TransversalLinks>
+  <PublicAssemblies>
+    <AssemblyData Name="ChatManager" Path="..\ChatManager\generated\UserObject\XComponent.ChatManager.UserObject.dll" />
+  </PublicAssemblies>
+</ComponentData>

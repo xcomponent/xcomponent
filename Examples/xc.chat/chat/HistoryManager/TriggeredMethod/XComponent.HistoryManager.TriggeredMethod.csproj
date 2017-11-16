@@ -5,9 +5,9 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <ProjectGuid>{EF156CDD-B7DD-4F81-BB89-6D46BC1DB548}</ProjectGuid>
-    <RootNamespace>XComponent.LoggerComponent.TriggeredMethod</RootNamespace>
-    <AssemblyName>XComponent.LoggerComponent.TriggeredMethod</AssemblyName>
+    <ProjectGuid>{AE5EA4B2-79F0-4F69-A5F2-3919D76403C4}</ProjectGuid>
+    <RootNamespace>XComponent.HistoryManager.TriggeredMethod</RootNamespace>
+    <AssemblyName>XComponent.HistoryManager.TriggeredMethod</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
@@ -30,34 +30,34 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="HistoryManagerTriggeredMethod.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PublishedHistoryTriggeredMethod.cs" />
+    <Compile Include="TriggeredMethodContext.cs" />
+    <Compile Include="TriggeredMethodContext.generated.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <Reference Include="System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
     <Reference Include="System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-    <Reference Include="System.Data.Entity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
     <Reference Include="System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
     <Reference Include="XComponent.ChatManager.UserObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
       <HintPath>..\..\ChatManager\generated\UserObject\XComponent.ChatManager.UserObject.dll</HintPath>
       <SpecificVersion>false</SpecificVersion>
     </Reference>
-    <Reference Include="XComponent.Core, Version=4.6.1.10001, Culture=neutral, PublicKeyToken=null">
+    <Reference Include="XComponent.Core, Version=5.0.0.30001, Culture=neutral, PublicKeyToken=null">
       <HintPath>..\UserReference\XComponent.Core.dll</HintPath>
       <SpecificVersion>false</SpecificVersion>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LoggerComponentTriggeredMethod.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TriggeredMethodContext.cs" />
-    <Compile Include="TriggeredMethodContext.generated.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Common\XComponent.LoggerComponent.Common.csproj">
-      <Name>XComponent.LoggerComponent.Common</Name>
+    <ProjectReference Include="..\Common\XComponent.HistoryManager.Common.csproj">
+      <Name>XComponent.HistoryManager.Common</Name>
       <Project>{BE692B62-C3EF-410D-9521-7739F2347E1C}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\UserObject\XComponent.LoggerComponent.UserObject.csproj">
-      <Name>XComponent.LoggerComponent.UserObject</Name>
-      <Project>{EFC5ED68-ADC9-4DDD-9E5B-A2B7F685D696}</Project>
+    <ProjectReference Include="..\UserObject\XComponent.HistoryManager.UserObject.csproj">
+      <Name>XComponent.HistoryManager.UserObject</Name>
+      <Project>{56D133BD-F681-4BD6-9FE0-CCA4CFDE203F}</Project>
     </ProjectReference>
   </ItemGroup>
-  <Import Condition="true" Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

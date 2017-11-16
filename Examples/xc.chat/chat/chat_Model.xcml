@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinkingSchema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" environment="Dev" isClientApiShown="false" isLinkingShown="false" name="chat">
   <LinkedComponents>
-    <LinkedComponent name="bot">
-      <XCToXCLinks>
-        <XCToXCLink stateMachineIdFrom="1" stateIdFrom="2" linkFrom="bot" linkTo="ChatManager" stateMachineIdTo="2" stateIdTo="2" transversalLink="false" />
-      </XCToXCLinks>
-      <XCToApiLinks />
-    </LinkedComponent>
     <LinkedComponent name="ChatManager">
       <XCToXCLinks>
-        <XCToXCLink stateMachineIdFrom="3" stateIdFrom="3" linkFrom="ChatManager" linkTo="bot" stateMachineIdTo="1" stateIdTo="2" transversalLink="false" />
-        <XCToXCLink stateMachineIdFrom="3" stateIdFrom="3" linkFrom="ChatManager" linkTo="LoggerComponent" stateMachineIdTo="1" stateIdTo="2" transversalLink="false" />
+        <XCToXCLink stateMachineIdFrom="3" stateIdFrom="3" linkFrom="ChatManager" linkTo="ChatterBot" stateMachineIdTo="1" stateIdTo="2" transversalLink="false" />
+        <XCToXCLink stateMachineIdFrom="3" stateIdFrom="3" linkFrom="ChatManager" linkTo="HistoryManager" stateMachineIdTo="1" stateIdTo="2" transversalLink="false" />
       </XCToXCLinks>
       <XCToApiLinks>
         <XCToApiLink stateMachineIdFrom="1" stateIdFrom="1" linkFrom="ChatManager" linkTo="chatApi" />
@@ -18,9 +12,17 @@
         <XCToApiLink stateMachineIdFrom="3" stateIdFrom="3" linkFrom="ChatManager" linkTo="chatApi" />
       </XCToApiLinks>
     </LinkedComponent>
-    <LinkedComponent name="LoggerComponent">
-      <XCToXCLinks />
+    <LinkedComponent name="ChatterBot">
+      <XCToXCLinks>
+        <XCToXCLink stateMachineIdFrom="2" stateIdFrom="3" linkFrom="ChatterBot" linkTo="ChatManager" stateMachineIdTo="2" stateIdTo="2" transversalLink="false" />
+      </XCToXCLinks>
       <XCToApiLinks />
+    </LinkedComponent>
+    <LinkedComponent name="HistoryManager">
+      <XCToXCLinks />
+      <XCToApiLinks>
+        <XCToApiLink stateMachineIdFrom="2" stateIdFrom="3" linkFrom="HistoryManager" linkTo="chatApi" />
+      </XCToApiLinks>
     </LinkedComponent>
   </LinkedComponents>
   <LinkedClientApis>
@@ -60,6 +62,20 @@
           </AllowedTransitions>
           <AllowedEvents>
             <LinkingEvent eventTypeName="XComponent.ChatManager.UserObject.CreateChatroom" stateMachineIdTo="1" stateIdTo="6" />
+          </AllowedEvents>
+          <NotAllowedTransitions />
+          <NotAllowedEvents />
+        </ApiToXCLink>
+        <ApiToXCLink linkFrom="chatApi" linkTo="HistoryManager" stateMachineIdTo="1" stateIdTo="2">
+          <AllowedTransitions>
+            <LinkingSimpleTransition id="2" stateMachineIdTo="1" stateIdTo="2" />
+            <LinkingSimpleTransition id="3" stateMachineIdTo="1" stateIdTo="2" />
+            <LinkingSimpleTransition id="4" stateMachineIdTo="1" stateIdTo="2" />
+          </AllowedTransitions>
+          <AllowedEvents>
+            <LinkingEvent eventTypeName="XComponent.ChatManager.UserObject.PublishedMessage" stateMachineIdTo="1" stateIdTo="2" />
+            <LinkingEvent eventTypeName="XComponent.HistoryManager.UserObject.HistoryRequest" stateMachineIdTo="1" stateIdTo="2" />
+            <LinkingEvent eventTypeName="XComponent.HistoryManager.UserObject.PublishedHistory" stateMachineIdTo="1" stateIdTo="2" />
           </AllowedEvents>
           <NotAllowedTransitions />
           <NotAllowedEvents />

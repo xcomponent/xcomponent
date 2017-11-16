@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ComponentData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="HistoryManager" Version="24">
+  <StateMachines>
+    <StateMachineData Id="1" Name="HistoryManager" PublicMember="XComponent.HistoryManager.UserObject.PublishedHistory" />
+    <StateMachineData Id="2" Name="PublishedHistory" PublicMember="XComponent.HistoryManager.UserObject.PublishedHistory" />
+  </StateMachines>
+  <States>
+    <StateData Id="1" Name="EntryPoint" IsEntryPoint="true" SubGraphKey="StateMachine1" />
+    <StateData Id="2" Name="Up" SubGraphKey="StateMachine1">
+      <TriggeredMethods>
+        <TriggeredMethodData TransitionName="Up" TriggeringEvent="XComponent.Common.Event.DefaultEvent" />
+        <TriggeredMethodData TransitionName="MessageReceived" TriggeringEvent="XComponent.ChatManager.UserObject.PublishedMessage" />
+        <TriggeredMethodData TransitionName="HistoryRequestReceived" TriggeringEvent="XComponent.HistoryManager.UserObject.HistoryRequest" />
+      </TriggeredMethods>
+    </StateData>
+    <StateData Id="3" Name="Published" SubGraphKey="StateMachine2">
+      <TriggeredMethods>
+        <TriggeredMethodData IsNodeInitializer="true" TransitionName="InitializePublicMember" TriggeringEvent="XComponent.HistoryManager.UserObject.PublishedHistory" />
+      </TriggeredMethods>
+    </StateData>
+  </States>
+  <Links>
+    <TransitionData Id="1" Name="Up" FromKey="State1" ToKey="State2" Type="TimeOut" TriggeringEvent="XComponent.Common.Event.DefaultEvent" />
+    <TransitionData Id="2" Name="MessageReceived" FromKey="State2" ToKey="State2" Type="Standard" TriggeringEvent="XComponent.ChatManager.UserObject.PublishedMessage" />
+    <TransitionData Id="3" Name="PublishRequestResponse" FromKey="State2" ToKey="State3" Type="X" TriggeringEvent="XComponent.HistoryManager.UserObject.PublishedHistory" />
+    <TransitionData Id="4" Name="HistoryRequestReceived" FromKey="State2" ToKey="State2" Type="Standard" TriggeringEvent="XComponent.HistoryManager.UserObject.HistoryRequest" />
+  </Links>
+  <TransversalLinks>
+    <TransversalTransitionData Id="5" Name="" FromKey="State2" ToId="3" SelectAllTransitions="true" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.Common.Event.DefaultEvent" Name="Up" />
+        <SelectedTransitionData Event="XComponent.ChatManager.UserObject.PublishedMessage" Name="MessageReceived" />
+        <SelectedTransitionData Event="XComponent.HistoryManager.UserObject.HistoryRequest" Name="HistoryRequestReceived" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+  </TransversalLinks>
+  <PublicAssemblies>
+    <AssemblyData Name="ChatManager" Path="..\ChatManager\generated\UserObject\XComponent.ChatManager.UserObject.dll" />
+  </PublicAssemblies>
+</ComponentData>

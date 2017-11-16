@@ -6,23 +6,23 @@
 //// </auto-generated>
 ////------------------------------------------------------------------------------
 using System;
-using XComponent.LoggerComponent.Common;
-using XComponent.LoggerComponent.Common.Senders;
+using XComponent.ChatterBot.Common;
+using XComponent.ChatterBot.Common.Senders;
 using XComponent.Runtime.Shared.TriggeredMethods;
 using XComponent.Runtime.Shared.Manager;
 using XComponent.Common.Logger;
 using XComponent.Common.Logger.Logger;
 
-namespace XComponent.LoggerComponent.TriggeredMethod
+namespace XComponent.ChatterBot.TriggeredMethod
 {
     public partial class TriggeredMethodContext : ICustomTriggeredMethodContext
     {
         enum DefaultLogger
         {
-            LoggerComponentDefaultLogger
+            ChatterBotDefaultLogger
         }
 
-        private IComponentLogger _defaultLogger = XComponent.Common.Logger.Managers.ComponentLoggerManager<DefaultLogger>.GetComponentLogger(DefaultLogger.LoggerComponentDefaultLogger, ComponentHelper.COMPONENT_NAME);
+        private IComponentLogger _defaultLogger = XComponent.Common.Logger.Managers.ComponentLoggerManager<DefaultLogger>.GetComponentLogger(DefaultLogger.ChatterBotDefaultLogger, ComponentHelper.COMPONENT_NAME);
 
         
         private static ICustomTriggeredMethodContext instance = new TriggeredMethodContext();

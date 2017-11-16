@@ -12,23 +12,7 @@
     <exportRuntimeFolders />
   </buildEvents>
   <components>
-    <component name="bot" alias="bot" deploymentTarget="MyChatManagerService">
-      <communication name="rabitmq" type="BUS" messageQueue="SEQUENTIAL">
-        <input>{topicType}.{version}.{runtime}.{component}.{std}</input>
-        <output>{topicType}.{version}.{runtime}.{component}.{std}</output>
-      </communication>
-      <threading impl="Akka" type="SEQUENTIAL" />
-      <stateMachines>
-        <stateMachine id="1" poolSize="100" numberOfWorker="4">
-          <communication name="rabitmq" type="BUS" messageQueue="SEQUENTIAL">
-            <input>{topicType}.{version}.{runtime}.{component}.{std}</input>
-            <output>{topicType}.{version}.{runtime}.{component}.{std}</output>
-          </communication>
-          <threading impl="Akka" type="INHERITFROMPARENT" />
-        </stateMachine>
-      </stateMachines>
-    </component>
-    <component name="ChatManager" alias="ChatManager" deploymentTarget="MyChatManagerService">
+    <component name="ChatManager" alias="ChatManager" deploymentTarget="ChatManager">
       <communication name="rabitmq" type="BUS" messageQueue="SEQUENTIAL">
         <input>{topicType}.{version}.{runtime}.{component}.{std}</input>
         <output>{topicType}.{version}.{runtime}.{component}.{std}</output>
@@ -58,14 +42,21 @@
         </stateMachine>
       </stateMachines>
     </component>
-    <component name="LoggerComponent" alias="LoggerComponent" deploymentTarget="MyLoggerComponentService">
+    <component name="ChatterBot" alias="ChatterBot" deploymentTarget="ChatterBot">
       <communication name="rabitmq" type="BUS" messageQueue="SEQUENTIAL">
         <input>{topicType}.{version}.{runtime}.{component}.{std}</input>
         <output>{topicType}.{version}.{runtime}.{component}.{std}</output>
       </communication>
       <threading impl="Akka" type="SEQUENTIAL" />
       <stateMachines>
-        <stateMachine id="1" poolSize="100" numberOfWorker="0">
+        <stateMachine id="1" poolSize="100" numberOfWorker="4">
+          <communication name="rabitmq" type="BUS" messageQueue="SEQUENTIAL">
+            <input>{topicType}.{version}.{runtime}.{component}.{std}</input>
+            <output>{topicType}.{version}.{runtime}.{component}.{std}</output>
+          </communication>
+          <threading impl="Akka" type="INHERITFROMPARENT" />
+        </stateMachine>
+        <stateMachine id="2" poolSize="100" numberOfWorker="4">
           <communication name="rabitmq" type="BUS" messageQueue="SEQUENTIAL">
             <input>{topicType}.{version}.{runtime}.{component}.{std}</input>
             <output>{topicType}.{version}.{runtime}.{component}.{std}</output>
@@ -74,6 +65,32 @@
         </stateMachine>
       </stateMachines>
     </component>
+    <component name="HistoryManager" alias="HistoryManager" deploymentTarget="HistoryManager">
+      <communication name="rabitmq" type="BUS" messageQueue="SEQUENTIAL">
+        <input>{topicType}.{version}.{runtime}.{component}.{std}</input>
+        <output>{topicType}.{version}.{runtime}.{component}.{std}</output>
+      </communication>
+      <threading impl="Akka" type="SEQUENTIAL" />
+      <stateMachines>
+        <stateMachine id="1" poolSize="100" numberOfWorker="4">
+          <communication name="rabitmq" type="BUS" messageQueue="SEQUENTIAL">
+            <input>{topicType}.{version}.{runtime}.{component}.{std}</input>
+            <output>{topicType}.{version}.{runtime}.{component}.{std}</output>
+          </communication>
+          <threading impl="Akka" type="INHERITFROMPARENT" />
+        </stateMachine>
+        <stateMachine id="2" poolSize="100" numberOfWorker="4">
+          <communication name="rabitmq" type="BUS" messageQueue="SEQUENTIAL">
+            <input>{topicType}.{version}.{runtime}.{component}.{std}</input>
+            <output>{topicType}.{version}.{runtime}.{component}.{std}</output>
+          </communication>
+          <threading impl="Akka" type="INHERITFROMPARENT" />
+        </stateMachine>
+      </stateMachines>
+      <logKeys>
+        <logKey IsActivated="False">Default</logKey>
+      </logKeys>
+    </component>
   </components>
   <clientAPIs>
     <clientAPI name="chatApi" messageQueue="INHERITFROMPARENT">
@@ -81,6 +98,9 @@
         <update from="1" state="1" messageQueue="INHERITFROMPARENT" />
         <update from="2" state="2" messageQueue="INHERITFROMPARENT" />
         <update from="3" state="3" messageQueue="INHERITFROMPARENT" />
+      </component>
+      <component name="HistoryManager" messageQueue="INHERITFROMPARENT">
+        <update from="2" state="3" messageQueue="INHERITFROMPARENT" />
       </component>
     </clientAPI>
   </clientAPIs>
@@ -94,8 +114,9 @@
       </websocket>
     </gateways>
     <runtimes>
-      <runtime name="MyChatManagerService" platform="AnyCpu" />
-      <runtime name="MyLoggerComponentService" platform="AnyCpu" />
+      <runtime name="ChatManager" platform="AnyCpu" />
+      <runtime name="ChatterBot" platform="AnyCpu" />
+      <runtime name="HistoryManager" platform="AnyCpu" />
     </runtimes>
   </configuration>
 </deployment>

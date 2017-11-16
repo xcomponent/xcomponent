@@ -1,7 +1,7 @@
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-[assembly: AssemblyTitle("XComponent.LoggerComponent.TriggeredMethod")]
+[assembly: AssemblyTitle("XComponent.HistoryManager.TriggeredMethod")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyCompany("invivoo-grp")]
 [assembly: AssemblyProduct("XComponent")]

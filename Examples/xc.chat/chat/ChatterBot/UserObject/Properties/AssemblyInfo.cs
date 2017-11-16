@@ -1,7 +1,7 @@
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-[assembly: AssemblyTitle("XComponent.LoggerComponent.UserObject")]
+[assembly: AssemblyTitle("XComponent.ChatterBot.UserObject")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyCompany("invivoo-grp")]
 [assembly: AssemblyProduct("XComponent")]
