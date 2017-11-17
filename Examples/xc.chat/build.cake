@@ -51,7 +51,7 @@ Task("BuildWebapp")
   .Does(() => {
     DoInDirectory(@"webapp", () => {
       Yarn.Install();
-      Yarn.RunScript("build");
+      Yarn.RunScript("build:prod");
     });
 });
 
@@ -79,6 +79,7 @@ Task("BuildApp")
   }
 	XcBuildBuild("./" + modelPath, buildConfiguration, "Dev", "VS2015", getXCBuildExtraParam());
   RunTarget("ExportRuntime");
+  RunTarget("ExportInterface");
   RunTarget("GenerateStudioCmd");
   RunTarget("GenerateRuntimeCmd");
 });
