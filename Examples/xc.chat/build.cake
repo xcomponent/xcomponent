@@ -41,6 +41,12 @@ Task("ExportRuntime")
   XcBuildExportRuntimes(modelPath, @"./Runtime", buildConfiguration, "Dev", true, getXCBuildExtraParam());
 });
 
+Task("ExportInterface")
+  .Does(() =>
+{
+  XcBuildExecuteCommand("--compilationmode=Debug --exportInterface --env=Dev --output=\""+MakeAbsolute(File("./Runtime/Api"))+"\" --project=\""+modelPath+"\"");
+});
+
 Task("BuildWebapp")
   .Does(() => {
     DoInDirectory(@"webapp", () => {
@@ -110,7 +116,12 @@ Task("GenerateRuntimeCmd")
     }
     fileContents += "cd webapp\n";
     fileContents += "start npm run start:dev\n";
+    fileContents += "cd ..\n";
 
+    var xcBridgeBinaryPath = MakeAbsolute(File(@"./tools/XComponent.Community/tools/XCStudio/XCBridge/XCWebSocketBridge.exe"));
+    var xcBridgeParameters = "--apipath=\""+MakeAbsolute(File("./Runtime/Api/xcassemblies"))+"\" --port=9443  --unsecure";
+
+    fileContents += "start " + xcBridgeBinaryPath + " " + xcBridgeParameters + "\n";
     FileWriteText(@"xcruntime.cmd", fileContents);
 });
   
