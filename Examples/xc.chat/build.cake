@@ -113,8 +113,12 @@ Task("GenerateRuntimeCmd")
     {
       var xcPropertiesPath = xcrFile.FullPath.Replace("xcr", "xcproperties");
       var xcRuntimeBinaryFilePath = MakeAbsolute(File(@"./tools/XComponent.Community/tools/XCStudio/XCRuntime/xcruntime.exe"));
-      fileContents += "start " + xcRuntimeBinaryFilePath + " " + xcrFile.FullPath + " " + xcPropertiesPath + "\n";
+      var runServiceCmd = "start " + xcRuntimeBinaryFilePath + " " + xcrFile.FullPath + " " + xcPropertiesPath + "\n";
+
+      fileContents += runServiceCmd;
+      FileWriteText("run-"+xcrFile.GetFilename()+".cmd", runServiceCmd);
     }
+
     fileContents += "cd webapp\n";
     fileContents += "start npm run start:dev\n";
     fileContents += "cd ..\n";
@@ -122,7 +126,10 @@ Task("GenerateRuntimeCmd")
     var xcBridgeBinaryPath = MakeAbsolute(File(@"./tools/XComponent.Community/tools/XCStudio/XCBridge/XCWebSocketBridge.exe"));
     var xcBridgeParameters = "--apipath=\""+MakeAbsolute(File("./Runtime/Api/xcassemblies"))+"\" --port=9443  --unsecure";
 
-    fileContents += "start " + xcBridgeBinaryPath + " " + xcBridgeParameters + "\n";
+    var runBridgeCmd = "start " + xcBridgeBinaryPath + " " + xcBridgeParameters + "\n";
+    FileWriteText("runBridge.cmd", runBridgeCmd);
+
+    fileContents += runBridgeCmd;
     FileWriteText(@"xcruntime.cmd", fileContents);
 });
   
