@@ -15,19 +15,27 @@ namespace XComponent.ChatterBot.TriggeredMethod
             if (publishedMessage.Message.Contains(chatterBot.Name))
             {
                 TriggeredMethodContext.Instance.GetDefaultLogger().Info($"Message from {publishedMessage.User} in room {publishedMessage.Room} received");
-                sender.Send(context, new SentMessage()
-                {
-                    Message = $"Hello {publishedMessage.User}!",
-                    User = chatterBot.Name
-                });
+                SendMessage($"Hello {publishedMessage.User}!", chatterBot, context, sender.Send);
             }
+        }
+
+        private static void SendMessage(string message, UserObject.ChatterBot chatterBot, Context context,
+            Action<Context, SentMessage, string> sendMessageAction)
+        {
+            sendMessageAction(context, new SentMessage()
+            {
+                Message = message,
+                User = chatterBot.Name
+            }, null);
         }
 
         public static void ExecuteOn_Up_Through_Init(XComponent.Common.Event.DefaultEvent defaultEvent, XComponent.ChatterBot.UserObject.ChatterBot chatterBot, object object_InternalMember, Context context, IInitDefaultEventOnUpChatterBotSenderInterface sender)
         {
             TriggeredMethodContext.Instance.GetDefaultLogger().Info("Chatter bot is up!");
-            chatterBot.Name = "Marcos";
+            chatterBot.Name = "RealBot";
             TriggeredMethodContext.Instance.GetDefaultLogger().Info($"My name is {chatterBot.Name}");
+
+            SendMessage("Hello world!", chatterBot, context, sender.Send);
         }
     }
 }
