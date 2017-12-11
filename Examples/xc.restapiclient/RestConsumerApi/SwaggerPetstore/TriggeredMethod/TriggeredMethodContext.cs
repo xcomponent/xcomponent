@@ -11,9 +11,9 @@ namespace XComponent.SwaggerPetstore.TriggeredMethod
     using System;
     using XComponent.SwaggerPetstore.Common;
     using XComponent.SwaggerPetstore.Common.Senders;
-    using XComponent.Runtime.Shared.TriggeredMethods;
+    using XComponent.Common.TriggeredMethod;
     using XComponent.SwaggerPetstore.TriggeredMethod.ServiceClient;
-    using XComponent.Runtime.Shared.Manager;
+    using XComponent.Common.Manager;
     using XComponent.Common.Logger;
 
     using Microsoft.Rest;
@@ -33,7 +33,7 @@ public partial class TriggeredMethodContext : ICustomTriggeredMethodContext
             LogInfo(string.Format("Initialized service client. URL: {0}", this.ServiceClient.BaseUri));
         }
         
-        public void UnHanledException(XComponent.Runtime.StateMachine.Exceptions.TriggeredMethodException exception)
+        public void UnHanledException(XComponent.Common.TriggeredMethod.TriggeredMethodException exception)
         {
         }
 

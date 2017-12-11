@@ -8,7 +8,7 @@
     <ProjectGuid>{8CA16754-36E5-445C-8D9D-E296A7E4F761}</ProjectGuid>
     <RootNamespace>XComponent.BenchSimpleFork.UserObject</RootNamespace>
     <AssemblyName>XComponent.BenchSimpleFork.UserObject</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
   </PropertyGroup>
@@ -29,7 +29,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(OS)' == 'Windows_NT'">
+  <PropertyGroup>
     <PostBuildEvent>xcopy "$(TargetDir)*.dll" "$(SolutionDir)generated\UserObject\"  /Y</PostBuildEvent>
   </PropertyGroup>
   <ItemGroup>

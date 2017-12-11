@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<deployment environment="Dev" xcProjectName="TradeCapture" deploymentTargetCode="1831703171" deploymentTargetName="TradeValidatorApi" version="1.0" frameworkType="Framework452" xmlns="http://xcomponent.com/DeploymentConfig.xsd" clientApiReference="XComponent.TradeCapture.ClientApi.dll">
+<deployment environment="Dev" xcProjectName="TradeCapture" deploymentTargetCode="1831703171" deploymentTargetName="TradeValidatorApi" version="1.0" frameworkType="Framework45" xmlns="http://xcomponent.com/DeploymentConfig.xsd" clientApiReference="XComponent.TradeCapture.ClientApi.dll">
   <threading />
   <serialization>Binary</serialization>
   <communication>
@@ -48,10 +48,10 @@
     <subscribe componentCode="183271270" eventType="ERROR" topicType="input" communicationType="BUS" communication="bus">
       <topic type="STATIC">error.1_0.tradeService.TradeCapture</topic>
     </subscribe>
-    <subscribe componentCode="183271270" stateMachineCode="-1802001970" eventType="UPDATE" topicType="input" communicationType="BUS" event="" communication="bus">
+    <subscribe componentCode="183271270" stateMachineCode="-1802001970" eventType="UPDATE" topicType="input" communicationType="BUS" event="" communication="bus" communicationThreadingType="INHERITFROMPARENT">
       <topic type="STATIC">output.1_0.tradeService.TradeCapture.XCTradeProcessor</topic>
     </subscribe>
-    <subscribe componentCode="183271270" stateMachineCode="-1025633653" eventType="UPDATE" topicType="input" communicationType="BUS" event="XComponent.TradeCapture.UserObject.Transaction" communication="bus">
+    <subscribe componentCode="183271270" stateMachineCode="-1025633653" eventType="UPDATE" topicType="input" communicationType="BUS" event="XComponent.TradeCapture.UserObject.Transaction" communication="bus" communicationThreadingType="INHERITFROMPARENT">
       <topic type="STATIC">output.1_0.tradeService.TradeCapture.Transaction</topic>
     </subscribe>
     <subscribe componentCode="1667656897" eventType="ERROR" topicType="input" communicationType="BUS" communication="bus">
@@ -83,8 +83,8 @@
         <stateMachines>
           <stateMachine name="Referential" id="1667656897">
             <states>
-              <State name="EntryPoint" id="0" isEntryPoint="true" />
-              <State name="Referential" id="1" isEntryPoint="false" />
+              <State name="EntryPoint" id="0" />
+              <State name="Referential" id="1" />
             </states>
           </stateMachine>
         </stateMachines>
@@ -112,27 +112,27 @@
         <stateMachines>
           <stateMachine name="XCTradeProcessor" id="-1802001970">
             <states>
-              <State name="EntryPoint" id="0" isEntryPoint="true" />
+              <State name="EntryPoint" id="0" />
             </states>
           </stateMachine>
           <stateMachine name="Transaction" id="-1025633653">
             <states>
-              <State name="Validation" id="4" isEntryPoint="false" />
-              <State name="ValidationError" id="5" isEntryPoint="false" />
-              <State name="TransactionRejected" id="3" isEntryPoint="false" />
-              <State name="Mapping" id="1" isEntryPoint="false" />
-              <State name="ErrorOnMapping" id="0" isEntryPoint="false" />
-              <State name="TransactionAccepted" id="2" isEntryPoint="false" />
+              <State name="Validation" id="4" />
+              <State name="ValidationError" id="5" />
+              <State name="TransactionRejected" id="3" />
+              <State name="Mapping" id="1" />
+              <State name="ErrorOnMapping" id="0" />
+              <State name="TransactionAccepted" id="2" />
             </states>
           </stateMachine>
           <stateMachine name="UpdateReferential" id="-253835822">
             <states>
-              <State name="UpdateReferential" id="0" isEntryPoint="false" />
+              <State name="UpdateReferential" id="0" />
             </states>
           </stateMachine>
           <stateMachine name="GetInstrumentSnapshot" id="1101023624">
             <states>
-              <State name="GetInstrumentSnapshot" id="0" isEntryPoint="false" />
+              <State name="GetInstrumentSnapshot" id="0" />
             </states>
           </stateMachine>
         </stateMachines>

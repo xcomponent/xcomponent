@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using XComponent.Common.ApiContext;
 using XComponent.Common.Timeouts;
-using XComponent.Shared;
 using XComponent.SwaggerPetstore.Common;
 using XComponent.SwaggerPetstore.Common.Senders;
 using XComponent.SwaggerPetstore.TriggeredMethod.ServiceClient;
@@ -16,7 +15,7 @@ namespace XComponent.SwaggerPetstore.TriggeredMethod
     {
         public static void ExecuteOn_SendingRequest_Through_CreateUpdatePetWithFormHttpRequest(XComponent.SwaggerPetstore.UserObject.UpdatePetWithFormOperation updatePetWithFormOperation, XComponent.SwaggerPetstore.UserObject.UpdatePetWithFormOperation updatePetWithFormOperation_PublicMember, object object_InternalMember, Context context, ICreateUpdatePetWithFormHttpRequestUpdatePetWithFormOperationOnSendingRequestUpdatePetWithFormOperationSenderInterface sender)
         {
-            XComponent.Shared.XCClone.Clone(updatePetWithFormOperation, updatePetWithFormOperation_PublicMember);
+            XComponent.Common.Clone.XCClone.Clone(updatePetWithFormOperation, updatePetWithFormOperation_PublicMember);
 
             var task = TriggeredMethodContext.Instance.ServiceClient.UpdatePetWithFormWithHttpMessagesAsync(updatePetWithFormOperation_PublicMember.Event.petId, updatePetWithFormOperation_PublicMember.Event.name, updatePetWithFormOperation_PublicMember.Event.status);
             task.ContinueWith((Task<Microsoft.Rest.HttpOperationResponse> httpTask) =>

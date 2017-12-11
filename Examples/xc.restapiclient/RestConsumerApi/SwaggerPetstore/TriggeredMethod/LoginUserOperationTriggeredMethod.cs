@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using XComponent.Common.ApiContext;
 using XComponent.Common.Timeouts;
-using XComponent.Shared;
 using XComponent.SwaggerPetstore.Common;
 using XComponent.SwaggerPetstore.Common.Senders;
 using XComponent.SwaggerPetstore.TriggeredMethod.ServiceClient;
@@ -16,7 +15,7 @@ namespace XComponent.SwaggerPetstore.TriggeredMethod
     {
         public static void ExecuteOn_SendingRequest_Through_CreateLoginUserHttpRequest(XComponent.SwaggerPetstore.UserObject.LoginUserOperation loginUserOperation, XComponent.SwaggerPetstore.UserObject.LoginUserOperation loginUserOperation_PublicMember, object object_InternalMember, Context context, ICreateLoginUserHttpRequestLoginUserOperationOnSendingRequestLoginUserOperationSenderInterface sender)
         {
-            XComponent.Shared.XCClone.Clone(loginUserOperation, loginUserOperation_PublicMember);
+            XComponent.Common.Clone.XCClone.Clone(loginUserOperation, loginUserOperation_PublicMember);
 
             var task = TriggeredMethodContext.Instance.ServiceClient.LoginUserWithHttpMessagesAsync(loginUserOperation_PublicMember.Event.username, loginUserOperation_PublicMember.Event.password);
             task.ContinueWith((Task<Microsoft.Rest.HttpOperationResponse<string, LoginUserHeaders>> httpTask) =>

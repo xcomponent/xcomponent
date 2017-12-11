@@ -1,4 +1,4 @@
-# XComponent User Guide
+#XComponent User Guide
 
 ## Contents
 
@@ -62,7 +62,7 @@ The following figure is a good summary of the XComponent architecture.
 XComponent is based on state machine diagrams. To design, implement and build your projects you’re going to use XCStudio and Visual Studio. 
 XCStudio is an IDE to create microservices. 
 
-The aim of this chapter is to provide you with a few definitions of the concepts related to XComponent including:
+The aim of this chapter is to provide you few definitions of the concepts related to XComponent including:
 * a microservice
 * a component
 * a state machine
@@ -101,9 +101,8 @@ In XCStudio a state machine is a set of states, a state machine is delimited by 
 
 ### State definition
 
-A state is the current status of a state machine instance. An instance can only be in one state at a time. 
-
-The state is represented by a colored circle in XCStudio. We will explain the different state types and their associated colors with more details in the [States in depth](#states-in-depth) section.
+A state is the current status of a state machine instance.
+A state is represented by a colored circle in XCStudio.
 
 ### Transition definition
 
@@ -267,11 +266,11 @@ Follow these instructions to create a simple state machine with 2 states and 1 t
 - Rename the transition to *SendToFrontOffice*
 - Rename *StateMachine1* to *Entry*
 
-The component will look like the following:
+The component looks like this:
 
 ![component details](Images/component_impl.jpg)
 
-> It is important to notice that each time you arrive on a state machine from another, a new instance of that state machine is created.
+> It is important to notice that each time you arrive on a state machine from another, a new instance of state machine is created.
 
 Save your component: File + Save or Crtl+S.
 Notice that you can save the project by using the Maj+Ctrl+S shortcut
@@ -302,7 +301,7 @@ Another way to do this is to press the DEL key when you have selected one or mor
 ### Creating a component data structure
 
 XComponent is an event-driven platform. It means that:
-- you can send events to components to trigger transitions
+- you can events to components to trigger transitions
 - you will receive event notifications from state machines
 
 > Note: An event is defined as a C# class
@@ -329,45 +328,20 @@ Now we need to add classes to all transitions and state machines.
 
 ### States in depth
 
-A state machine can have 4 types of states.
+You may have notice that circles representing states in XCStudio can have various colors.
 
-#### Entry point state
+Here’s the meaning of the colors:
+- Black is reserved for *EntryPoint* states
+- White is for non-ending states
+- Green is used to indicate ending states inside a state machine
 
-Every component has exactly one entry point state. The state machine containing that latter is referred to as *entry point state machine*. When the component is initialized an instance of that state machine is created and its state is set to the entry point. Only one instance of the entry point state machine can exist in a component. Transitions can go **from** this state but no transition can have it as its target. It's an initial state that your state machine starts from but can never go back to.
+In the property panel, you can specify a comment on a state.
 
-This state is represented by a black circle in XCStudio. Its default name is *EntryPoint* and it can be renamed.
+If you click on a state you can write a personal comment on it in the text area:
 
-![entry point state](Images/entrypoint_state.JPG)
+![state comment](Images/state_comment.png)
 
-#### Regular state
-
-This is a normal state. You can have as many regular states as you want in a state machine. It can be renamed and transitions can go **from** and **to** it. It is represented by a white circle in XCStudio.
-
-#### Final state
-
-A final state is a regular state that has no transition leaving it. So there is no way for the instance to leave that state. An instance is disposed when it reaches such a state. We recommand that your public and private members implement the *IDisposable* interface as, in that case, the engine will call their *Dispose()* method when disposing the state machine instance.
-
-This state is represented by a green circle in XCStudio.
-
-![final state](Images/final_state.JPG)
-
-#### Error state
-
-This is a built-in state and every state machine has exactly one error state. An instance reaches this state if an unhandled exception occurs in a triggered method. It acts as a final state so the instance is disposed. 
-
-The error state is hidden and will not appear in the model. It is only visible in XCSpy. it will appear only if an instance reaches it. Otherwise it is hidden by default. The exception message will be visible in the *Error message* field of the instance's properties control in the spy. It is represented by a purple circle and its name is set to **FatalError**. It's a reserved keyword so no state in your model can have that name.
-
-![error state](Images/fatalerror_state.JPG)
-
-Here are the properties related to a state:
-- The name
-- The *Private* flag : The state will not be visible in the composition when this is checked. So it will not be visible by the client API. A lock will appear inside the state when it is set as *Private*.
-- The comment : You can write a personal comment that will be used to generate your project documentation.
-- Triggered methods : The triggered methods to generate for this state. You will have as many entries as transitions targetting this state.
-
-The following image shows a state machine containing a *Private* state:
-
-![private state](Images/private_state.jpg)
+> Note: Comments are used to generate your project documentation.
 
 ### Transition in depth
 
@@ -387,7 +361,7 @@ To add a new timed out transition, click on the transition you created, check th
 
 ### Internal transitions
 
-An internal transition is a way to launch a transition which does not change the current state of the state machine. For instance let’s consider the following example:
+An internal transition is a way to launch a transition which does not changes the current state of the state machine. For instance let’s consider the following example:
 
 ![internal transition](Images/internal.png)
 
@@ -520,7 +494,7 @@ You got this window:
 
 XCSpy allows you to test your component and validate its functional behavior by sending transitions/events.
 
-The EntryPoint state has a red notification badge containing a number. It represents the number of instances of the state machine that currently are in this state.
+The EntryPoint state has a red notification badge containing a 1 number. It represents the number of instances of the state machine that currently are in this state.
 When launching the spy for the first time, once you have clicked on your component the EntryPoint has 1 instance. This is the beginning of your component. From here you can start testing.
 
 The Spy menu contains:
@@ -534,6 +508,8 @@ The Spy menu contains:
 ![xcspy context menu](Images/xcspy_context.png)
 
 In the *Events sender* menu we can choose the way of sending an event: send an event to a selected instance or to all instances. The first one only affects the entity selected while the other one affects all entities in this state.
+
+It is important to point out that you can send a default or a custom event. Default event is an empty class. Using customize events allows you to set to defines in the triggering event variables values.
 
 Keeping in mind the following example, if we want to trigger the transition called *SendToFrontOffice*, click on the transition. Then fill the event values in the property panel.
 

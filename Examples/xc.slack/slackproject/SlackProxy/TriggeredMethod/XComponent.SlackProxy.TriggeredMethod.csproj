@@ -8,7 +8,7 @@
     <ProjectGuid>{AC9823A0-CE4F-41BC-8906-4C9C3B2722A0}</ProjectGuid>
     <RootNamespace>XComponent.SlackProxy.TriggeredMethod</RootNamespace>
     <AssemblyName>XComponent.SlackProxy.TriggeredMethod</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
   </PropertyGroup>
@@ -30,10 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-      <HintPath>..\UserReference\mscorlib.dll</HintPath>
-      <SpecificVersion>false</SpecificVersion>
-    </Reference>
     <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\RestSharp.105.2.3\lib\net45\RestSharp.dll</HintPath>
       <Private>True</Private>
