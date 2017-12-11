@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using XComponent.Common.ApiContext;
 using XComponent.Common.Timeouts;
-using XComponent.Shared;
 using XComponent.SwaggerPetstore.Common;
 using XComponent.SwaggerPetstore.Common.Senders;
 using XComponent.SwaggerPetstore.TriggeredMethod.ServiceClient;
@@ -16,7 +15,7 @@ namespace XComponent.SwaggerPetstore.TriggeredMethod
     {
         public static void ExecuteOn_SendingRequest_Through_CreateCreateUsersWithArrayInputHttpRequest(XComponent.SwaggerPetstore.UserObject.CreateUsersWithArrayInputOperation createUsersWithArrayInputOperation, XComponent.SwaggerPetstore.UserObject.CreateUsersWithArrayInputOperation createUsersWithArrayInputOperation_PublicMember, object object_InternalMember, Context context, ICreateCreateUsersWithArrayInputHttpRequestCreateUsersWithArrayInputOperationOnSendingRequestCreateUsersWithArrayInputOperationSenderInterface sender)
         {
-            XComponent.Shared.XCClone.Clone(createUsersWithArrayInputOperation, createUsersWithArrayInputOperation_PublicMember);
+            XComponent.Common.Clone.XCClone.Clone(createUsersWithArrayInputOperation, createUsersWithArrayInputOperation_PublicMember);
 
             var task = TriggeredMethodContext.Instance.ServiceClient.CreateUsersWithArrayInputWithHttpMessagesAsync(createUsersWithArrayInputOperation_PublicMember.Event.body);
             task.ContinueWith((Task<Microsoft.Rest.HttpOperationResponse> httpTask) =>

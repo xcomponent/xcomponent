@@ -2,7 +2,6 @@ using System;
 using XComponent.Common.ApiContext;
 using XComponent.Common.Timeouts;
 using XComponent.Referential.UserObject;
-using XComponent.Shared;
 using XComponent.TradeCapture.Common;
 using XComponent.TradeCapture.Common.Senders;
 using XComponent.TradeCapture.UserObject;
@@ -61,7 +60,7 @@ namespace XComponent.TradeCapture.TriggeredMethod
                 sender.ValidationError(context, new Error());
             }
 
-            XComponent.Shared.XCClone.Clone(transaction_TriggeringEvent, transaction_PublicMember);
+            XComponent.Common.Clone.XCClone.Clone(transaction_TriggeringEvent, transaction_PublicMember);
 
         }
         public static void ExecuteOn_TransactionRejected_Through_Reject(XComponent.TradeCapture.UserObject.Reject reject, XComponent.TradeCapture.UserObject.Transaction transaction, object object_InternalMember, Context context, IRejectRejectOnTransactionRejectedTransactionSenderInterface sender)

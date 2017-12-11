@@ -4,7 +4,6 @@ using XComponent.Authentication.Common;
 using XComponent.Authentication.Common.Senders;
 using XComponent.Common.ApiContext;
 using XComponent.Common.Timeouts;
-using XComponent.Shared;
 
 namespace XComponent.Authentication.TriggeredMethod
 {

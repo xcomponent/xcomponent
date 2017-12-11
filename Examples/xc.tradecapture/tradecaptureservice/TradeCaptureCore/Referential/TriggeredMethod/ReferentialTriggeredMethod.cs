@@ -4,7 +4,6 @@ using XComponent.Common.Timeouts;
 using XComponent.Referential.Common;
 using XComponent.Referential.Common.Senders;
 using XComponent.Referential.UserObject;
-using XComponent.Shared;
 
 namespace XComponent.Referential.TriggeredMethod
 {

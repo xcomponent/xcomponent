@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using XComponent.Common.ApiContext;
 using XComponent.Common.Timeouts;
-using XComponent.Shared;
 using XComponent.SwaggerPetstore.Common;
 using XComponent.SwaggerPetstore.Common.Senders;
 using XComponent.SwaggerPetstore.TriggeredMethod.ServiceClient;
@@ -16,7 +15,7 @@ namespace XComponent.SwaggerPetstore.TriggeredMethod
     {
         public static void ExecuteOn_SendingRequest_Through_CreateFindPetsByStatusHttpRequest(XComponent.SwaggerPetstore.UserObject.FindPetsByStatusOperation findPetsByStatusOperation, XComponent.SwaggerPetstore.UserObject.FindPetsByStatusOperation findPetsByStatusOperation_PublicMember, object object_InternalMember, Context context, ICreateFindPetsByStatusHttpRequestFindPetsByStatusOperationOnSendingRequestFindPetsByStatusOperationSenderInterface sender)
         {
-            XComponent.Shared.XCClone.Clone(findPetsByStatusOperation, findPetsByStatusOperation_PublicMember);
+            XComponent.Common.Clone.XCClone.Clone(findPetsByStatusOperation, findPetsByStatusOperation_PublicMember);
 
             var task = TriggeredMethodContext.Instance.ServiceClient.FindPetsByStatusWithHttpMessagesAsync(findPetsByStatusOperation_PublicMember.Event.status);
             task.ContinueWith((Task<Microsoft.Rest.HttpOperationResponse<System.Collections.Generic.IList<Pet>>> httpTask) =>
