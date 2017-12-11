@@ -101,8 +101,9 @@ In XCStudio a state machine is a set of states, a state machine is delimited by 
 
 ### State definition
 
-A state is the current status of a state machine instance.
-A state is represented by a colored circle in XCStudio.
+A state is the current status of a state machine instance. An instance can only be in one state at a time. 
+
+The state is represented by a colored circle in XCStudio. We will explain the different state types and their associated colors with more details in the [States in depth](#states-in-depth) section.
 
 ### Transition definition
 
@@ -266,11 +267,11 @@ Follow these instructions to create a simple state machine with 2 states and 1 t
 - Rename the transition to *SendToFrontOffice*
 - Rename *StateMachine1* to *Entry*
 
-The component looks like this:
+The component will look like the following:
 
 ![component details](Images/component_impl.jpg)
 
-> It is important to notice that each time you arrive on a state machine from another, a new instance of state machine is created.
+> It is important to notice that each time you arrive on a state machine from another, a new instance of that state machine is created.
 
 Save your component: File + Save or Crtl+S.
 Notice that you can save the project by using the Maj+Ctrl+S shortcut
@@ -301,7 +302,7 @@ Another way to do this is to press the DEL key when you have selected one or mor
 ### Creating a component data structure
 
 XComponent is an event-driven platform. It means that:
-- you can events to components to trigger transitions
+- you can send events to components to trigger transitions
 - you will receive event notifications from state machines
 
 > Note: An event is defined as a C# class
@@ -328,20 +329,45 @@ Now we need to add classes to all transitions and state machines.
 
 ### States in depth
 
-You may have noticed that circles representing states in XCStudio can have various colors.
+A state machine can have 4 types of states.
 
-Here’s the meaning of the colors:
-- Black is reserved for *EntryPoint* states
-- White is for non-ending states
-- Green is used to indicate ending states inside a state machine
+#### Entry point state
 
-In the property panel, you can specify a comment on a state.
+Every component has exactly one entry point state. The state machine containing that latter is referred to as *entry point state machine*. When the component is initialized an instance of that state machine is created and its state is set to the entry point. Only one instance of the entry point state machine can exist in a component. Transitions can go **from** this state but no transition can have it as its target. It's an initial state that your state machine starts from but can never go back to.
 
-If you click on a state you can write a personal comment on it in the text area:
+This state is represented by a black circle in XCStudio. Its default name is *EntryPoint* and it can be renamed.
 
-![state comment](Images/state_comment.png)
+![entry point state](Images/entrypoint_state.JPG)
 
-> Note: Comments are used to generate your project documentation.
+#### Regular state
+
+This is a normal state. You can have as many regular states as you want in a state machine. It can be renamed and transitions can go **from** and **to** it. It is represented by a white circle in XCStudio.
+
+#### Final state
+
+A final state is a regular state that has no transition leaving it. So there is no way for the instance to leave that state. An instance is disposed when it reaches such a state. We recommand that your public and private members implement the *IDisposable* interface as, in that case, the engine will call their *Dispose()* method when disposing the state machine instance.
+
+This state is represented by a green circle in XCStudio.
+
+![final state](Images/final_state.JPG)
+
+#### Error state
+
+This is a built-in state and every state machine has exactly one error state. An instance reaches this state if an unhandled exception occurs in a triggered method. It acts as a final state so the instance is disposed. 
+
+The error state is hidden and will not appear in the model. It is only visible in XCSpy. it will appear only if an instance reaches it. Otherwise it is hidden by default. The exception message will be visible in the *Error message* field of the instance's properties control in the spy. It is represented by a purple circle and its name is set to **FatalError**. It's a reserved keyword so no state in your model can have that name.
+
+![error state](Images/fatalerror_state.JPG)
+
+Here are the properties related to a state:
+- The name
+- The *Private* flag : The state will not be visible in the composition when this is checked. So it will not be visible by the client API. A lock will appear inside the state when it is set as *Private*.
+- The comment : You can write a personal comment that will be used to generate your project documentation.
+- Triggered methods : The triggered methods to generate for this state. You will have as many entries as transitions targetting this state.
+
+The following image shows a state machine containing a *Private* state:
+
+![private state](Images/private_state.jpg)
 
 ### Transition in depth
 
