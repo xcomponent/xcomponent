@@ -121,7 +121,7 @@ An event is an object that triggers a transition. When an event is received by a
 
 ### Triggered method
 
-This is the method called once the transition is activated in which you can do whatever you want. The developer codes the triggered method in C#, Java, C++, Javascript (c.f )...
+This is the method called once the transition is activated in which you can do whatever you want. The developer codes the triggered method in C#, Java, C++, Javascript ...
 
 ### Triggering rules
 
