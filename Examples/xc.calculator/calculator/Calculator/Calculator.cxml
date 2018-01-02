@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ComponentData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="Calculator" Version="36">
+  <StateMachines>
+    <StateMachineData Id="1" Name="CalculatorManager" />
+    <StateMachineData Id="2" Name="Calculator" PublicMember="XComponent.Calculator.UserObject.Calculator" />
+  </StateMachines>
+  <States>
+    <StateData Id="1" Name="EntryPoint" IsEntryPoint="true" EntryPointTriggeredMethod="rest" SubGraphKey="StateMachine1" />
+    <StateData Id="2" Name="Up" SubGraphKey="StateMachine1" />
+    <StateData Id="3" Name="Calculating" SubGraphKey="StateMachine2">
+      <TriggeredMethods>
+        <TriggeredMethodData Type="rest" TransitionName="Calculate" TriggeringEvent="XComponent.Calculator.UserObject.Calculate" />
+        <TriggeredMethodData IsNodeInitializer="true" Type="rest" TransitionName="InitializePublicMember" />
+      </TriggeredMethods>
+    </StateData>
+    <StateData Id="4" Name="Done" SubGraphKey="StateMachine2">
+      <TriggeredMethods>
+        <TriggeredMethodData Type="rest" TransitionName="Finished" TriggeringEvent="XComponent.Calculator.UserObject.Finished" />
+      </TriggeredMethods>
+    </StateData>
+    <StateData Id="5" Name="Error" SubGraphKey="StateMachine2" />
+    <StateData Id="6" Name="Ready" SubGraphKey="StateMachine1">
+      <TriggeredMethods>
+        <TriggeredMethodData Type="rest" TransitionName="Prepare" TriggeringEvent="XComponent.Common.Event.DefaultEvent" />
+      </TriggeredMethods>
+    </StateData>
+  </States>
+  <Links>
+    <TransitionData Id="1" Name="Init" FromKey="State1" ToKey="State2" Type="Standard" TriggeringEvent="XComponent.Common.Event.DefaultEvent" />
+    <TransitionData Id="2" Name="Calculate" FromKey="State6" ToKey="State3" Type="X" TriggeringEvent="XComponent.Calculator.UserObject.Calculate" />
+    <TransitionData Id="3" Name="Finished" FromKey="State3" ToKey="State4" Type="Standard" ExecutionDelay="10" TriggeringEvent="XComponent.Calculator.UserObject.Finished" />
+    <TransitionData Id="5" Name="Error" FromKey="State3" ToKey="State5" Type="Standard" TriggeringEvent="XComponent.Calculator.UserObject.Error" />
+    <TransitionData Id="7" Name="Prepare" FromKey="State2" ToKey="State6" Type="TimeOut" TriggeringEvent="XComponent.Common.Event.DefaultEvent" />
+    <TransitionData Id="9" Name="Relaunch" FromKey="State6" ToKey="State2" Type="Standard" TriggeringEvent="XComponent.Calculator.UserObject.Relaunch" />
+  </Links>
+  <TransversalLinks>
+    <TransversalTransitionData Id="6" Name="" FromKey="State3" ToId="5" SelectAllTransitions="true" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.Calculator.UserObject.Calculate" Name="Calculate" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="4" Name="" FromKey="State3" ToId="3" SelectAllTransitions="true" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.Calculator.UserObject.Calculate" Name="Calculate" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="8" Name="" FromKey="State6" ToId="2" SelectAllTransitions="true" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.Common.Event.DefaultEvent" Name="Prepare" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="10" Name="" FromKey="State6" ToId="9" SelectAllTransitions="true" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.Common.Event.DefaultEvent" Name="Prepare" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="11" Name="" FromKey="State1" ToId="1" SelectAllTransitions="true" Type="Triggerable" />
+  </TransversalLinks>
+</ComponentData>

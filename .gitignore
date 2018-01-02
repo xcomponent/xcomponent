@@ -7,6 +7,8 @@
 *.userosscache
 *.sln.docstates
 *.DS_Store
+tags
+
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
@@ -23,6 +25,10 @@ bld/
 [Oo]bj/
 [Tt]ools/
 XComponent.Studio.bat
+Runtime/
+run*xcr.cmd
+runBridge.cmd
+xcruntime.cmd
 
 # Visual Studo 2015 cache/options directory
 .vs/

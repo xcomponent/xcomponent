@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinkingSchema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" environment="Dev" isClientApiShown="false" isLinkingShown="false" name="Calculator">
+  <LinkedComponents>
+    <LinkedComponent name="Calculator">
+      <XCToXCLinks />
+      <XCToApiLinks>
+        <XCToApiLink stateMachineIdFrom="1" stateIdFrom="-1" linkFrom="Calculator" linkTo="CalculatorApi" />
+        <XCToApiLink stateMachineIdFrom="2" stateIdFrom="-1" linkFrom="Calculator" linkTo="CalculatorApi" />
+      </XCToApiLinks>
+    </LinkedComponent>
+  </LinkedComponents>
+  <LinkedClientApis>
+    <LinkedClientApi name="CalculatorApi">
+      <ApiToXCLinks>
+        <ApiToXCLink linkFrom="CalculatorApi" linkTo="Calculator" stateMachineIdTo="1" stateIdTo="-1">
+          <AllowedTransitions>
+            <LinkingSimpleTransition id="1" stateMachineIdTo="1" stateIdTo="1" />
+            <LinkingSimpleTransition id="2" stateMachineIdTo="1" stateIdTo="6" />
+            <LinkingSimpleTransition id="7" stateMachineIdTo="1" stateIdTo="2" />
+            <LinkingSimpleTransition id="9" stateMachineIdTo="1" stateIdTo="6" />
+          </AllowedTransitions>
+          <AllowedEvents>
+            <LinkingEvent eventTypeName="XComponent.Calculator.UserObject.Calculate" stateMachineIdTo="1" stateIdTo="6" />
+            <LinkingEvent eventTypeName="XComponent.Calculator.UserObject.Relaunch" stateMachineIdTo="1" stateIdTo="6" />
+            <LinkingEvent eventTypeName="XComponent.Common.Event.DefaultEvent" stateMachineIdTo="1" stateIdTo="1" />
+          </AllowedEvents>
+          <NotAllowedTransitions />
+          <NotAllowedEvents />
+        </ApiToXCLink>
+        <ApiToXCLink linkFrom="CalculatorApi" linkTo="Calculator" stateMachineIdTo="2" stateIdTo="-1">
+          <AllowedTransitions>
+            <LinkingSimpleTransition id="3" stateMachineIdTo="2" stateIdTo="3" />
+            <LinkingSimpleTransition id="5" stateMachineIdTo="2" stateIdTo="3" />
+          </AllowedTransitions>
+          <AllowedEvents>
+            <LinkingEvent eventTypeName="XComponent.Calculator.UserObject.Error" stateMachineIdTo="2" stateIdTo="3" />
+            <LinkingEvent eventTypeName="XComponent.Calculator.UserObject.Finished" stateMachineIdTo="2" stateIdTo="3" />
+          </AllowedEvents>
+          <NotAllowedTransitions />
+          <NotAllowedEvents />
+        </ApiToXCLink>
+      </ApiToXCLinks>
+    </LinkedClientApi>
+  </LinkedClientApis>
+</LinkingSchema>
