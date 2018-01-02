@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <ProjectGuid>{D6CD866B-E020-45C8-BEF4-C295A2E67734}</ProjectGuid>
+    <RootNamespace>XComponent.bot.TriggeredMethod</RootNamespace>
+    <AssemblyName>XComponent.bot.TriggeredMethod</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" ('$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ) ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" ('$(Configuration)|$(Platform)' == 'Release|AnyCPU' ) ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="botTriggeredMethod.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TriggeredMethodContext.cs" />
+    <Compile Include="TriggeredMethodContext.generated.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Reference Include="System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Reference Include="System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Reference Include="XComponent.Core, Version=5.0.0.30001, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\UserReference\XComponent.Core.dll</HintPath>
+      <SpecificVersion>false</SpecificVersion>
+    </Reference>
+    <Reference Include="XComponent.HistoryManager.UserObject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\HistoryManager\generated\UserObject\XComponent.HistoryManager.UserObject.dll</HintPath>
+      <SpecificVersion>false</SpecificVersion>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\XComponent.bot.Common.csproj">
+      <Name>XComponent.bot.Common</Name>
+      <Project>{BE692B62-C3EF-410D-9521-7739F2347E1C}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\UserObject\XComponent.bot.UserObject.csproj">
+      <Name>XComponent.bot.UserObject</Name>
+      <Project>{0933BC57-46D4-4179-BD25-CB42DCFDAC34}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ComponentData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="ChatManager" Version="35">
+  <StateMachines>
+    <StateMachineData Id="1" Name="ChatManager" />
+    <StateMachineData Id="2" Name="Chatroom" PublicMember="XComponent.ChatManager.UserObject.Chatroom" />
+    <StateMachineData Id="3" Name="PublishedMessage" PublicMember="XComponent.ChatManager.UserObject.PublishedMessage" />
+  </StateMachines>
+  <States>
+    <StateData Id="1" Name="EntryPoint" IsEntryPoint="true" SubGraphKey="StateMachine1" />
+    <StateData Id="2" Name="Created" SubGraphKey="StateMachine2">
+      <TriggeredMethods>
+        <TriggeredMethodData TransitionName="CreateRoom" TriggeringEvent="XComponent.ChatManager.UserObject.CreateChatroom" />
+        <TriggeredMethodData TransitionName="PublishMessage" TriggeringEvent="XComponent.ChatManager.UserObject.SentMessage" />
+      </TriggeredMethods>
+    </StateData>
+    <StateData Id="3" Name="Published" SubGraphKey="StateMachine3">
+      <TriggeredMethods>
+        <TriggeredMethodData TransitionName="PublishMessage" TriggeringEvent="XComponent.ChatManager.UserObject.PublishedMessage" />
+      </TriggeredMethods>
+    </StateData>
+    <StateData Id="4" Name="Closed" SubGraphKey="StateMachine2" />
+    <StateData Id="6" Name="Up" SubGraphKey="StateMachine1">
+      <TriggeredMethods>
+        <TriggeredMethodData TransitionName="Init" TriggeringEvent="XComponent.Common.Event.DefaultEvent" />
+      </TriggeredMethods>
+    </StateData>
+  </States>
+  <Links>
+    <TransitionData Id="1" Name="CreateRoom" FromKey="State6" ToKey="State2" Type="X" TriggeringEvent="XComponent.ChatManager.UserObject.CreateChatroom" />
+    <TransitionData Id="3" Name="PublishMessage" FromKey="State2" ToKey="State2" Type="Standard" TriggeringEvent="XComponent.ChatManager.UserObject.SentMessage" />
+    <TransitionData Id="2" Name="PublishMessage" FromKey="State2" ToKey="State3" Type="X" TriggeringEvent="XComponent.ChatManager.UserObject.PublishedMessage" />
+    <TransitionData Id="5" Name="Close" FromKey="State2" ToKey="State4" Type="Standard" TriggeringEvent="XComponent.ChatManager.UserObject.CloseRoom" />
+    <TransitionData Id="7" Name="Init" FromKey="State1" ToKey="State6" Type="TimeOut" TriggeringEvent="XComponent.Common.Event.DefaultEvent" />
+  </Links>
+  <TransversalLinks>
+    <TransversalTransitionData Id="4" Name="" FromKey="State2" ToId="2" SelectAllTransitions="true" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.ChatManager.UserObject.CreateChatroom" Name="CreateRoom" />
+        <SelectedTransitionData Event="XComponent.ChatManager.UserObject.SentMessage" Name="PublishMessage" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+    <TransversalTransitionData Id="6" Name="" FromKey="State6" ToId="1" SelectAllTransitions="true" Type="Triggerable">
+      <SelectedTransitions>
+        <SelectedTransitionData Event="XComponent.Common.Event.DefaultEvent" Name="Init" />
+      </SelectedTransitions>
+    </TransversalTransitionData>
+  </TransversalLinks>
+</ComponentData>

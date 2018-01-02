@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <ProjectGuid>{00CAF5D9-AB0B-49D6-B5ED-B7001D9FBAC1}</ProjectGuid>
+    <RootNamespace>XComponent.ChatManager.TriggeredMethod</RootNamespace>
+    <AssemblyName>XComponent.ChatManager.TriggeredMethod</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" ('$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ) ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" ('$(Configuration)|$(Platform)' == 'Release|AnyCPU' ) ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Reference Include="System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Reference Include="System.Data.Entity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Reference Include="System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Reference Include="XComponent.Core, Version=4.6.0.40010, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\UserReference\XComponent.Core.dll</HintPath>
+      <SpecificVersion>false</SpecificVersion>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ChatManagerTriggeredMethod.cs" />
+    <Compile Include="ChatroomTriggeredMethod.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PublishedMessageTriggeredMethod.cs" />
+    <Compile Include="TriggeredMethodContext.cs" />
+    <Compile Include="TriggeredMethodContext.generated.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\XComponent.ChatManager.Common.csproj">
+      <Name>XComponent.ChatManager.Common</Name>
+      <Project>{BE692B62-C3EF-410D-9521-7739F2347E1C}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\UserObject\XComponent.ChatManager.UserObject.csproj">
+      <Name>XComponent.ChatManager.UserObject</Name>
+      <Project>{9F8CF05E-F814-467B-829B-3048CDAC57A8}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Condition="true" Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>
