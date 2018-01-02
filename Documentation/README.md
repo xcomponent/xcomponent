@@ -121,7 +121,7 @@ An event is an object that triggers a transition. When an event is received by a
 
 ### Triggered method
 
-This is the method called once the transition is activated in which you can do whatever you want. The developer codes the triggered method in C#.
+This is the method called once the transition is activated in which you can do whatever you want. The developer codes the triggered method in C#, Java, C++, Javascript ...
 
 ### Triggering rules
 
@@ -430,14 +430,34 @@ If you want to do more specific checks, click on “Specific” tab and tick use
 
 ### Enabling Triggered method to implement your own code
 
-Two types of triggered methods exist. The first one is called initialize: before arriving on a state machine you can perform actions, and when you arrive from a specific transition you can perform specific actions.
+#### Triggered method types 
+
+Two types of triggered methods exist. The first one is a triggered method. This code is executed when arriving on a state from a precise transition. To enable this possibility of implementing your own code (by default it’s *None*) you have to go to the state properties clicking on a state and choose to write specific code in C# (selecting *Native C#*) or any other language (selecting *Rest Worker*).
+
+The second type is called Initialize PublicMember: before arriving on a state machine you can perform actions, and when you arrive from a specific transition you can perform specific actions.
 What’s important to understand is that the initialize part is executed before arriving on the state.
 
-The second type is a triggered method. This code is executed when arriving on a state from a precise transition. To enable this possibility of implementing your own code (by default it’s not) you have to go to the state properties clicking on a state and tick the method in which you want to write specific code.
+![triggered methods](Images/triggered_methods.png)   
 
-For instance on state pending in the *FrontOffice* state machine:
+#### REST Service configuration
 
-![triggered methods](Images/triggered_methods.png)
+These two types of triggered methods could be coded in several programming languages (Java, C++, Javascript ...) other than C#. To do so *Rest Worker* should be selected; this option sets REST service(s) through which the triggered methods are executed.
+
+![triggered methods](Images/triggered_methods_tech_choice.png)
+
+To configure REST service(s), service(s) URL should be precised in the project configuration.
+
+So first, we have to open Properties window.
+
+![triggered methods](Images/properties_window.png) 
+
+If we want to set a REST service per runtime, in "Components" window when a server mode is selected, a Function Manager Service URL should be entered.
+
+![triggered methods](Images/Rest_service_Config_window.png) 
+
+If we want to a set a REST service per state machine, in "String Ressources" window, select the component containing the state machine and enter the state machine name followed by *_FunctionManagerServiceUrl* as key and the service URL as value.
+
+![triggered methods](Images/Rest_service_Config_per_STM_window.png)
 
 ### Visual Studio generated project hierarchy
 
@@ -463,13 +483,44 @@ You can see that in the Visual Studio solution, three projects exist:
 
 > Please note that the initialize method skeleton is generated in the state machine file from which transition is leaving and not the state machine it’s arriving to.
 
-Example of triggered methods:
+Examples of triggered methods:
 
+- C#
 ```cs
 public static void ExecuteOn_Pending_Through_SendToFrontOffice(XComponent.MyFirstComponent.UserObject.SendToFrontOffice sendToFrontOffice, XComponent.MyFirstComponent.UserObject.FrontOffice frontOffice, object object_InternalMember, Context context, ISendToFrontOfficeSendToFrontOfficeOnPendingFrontOfficeSenderInterface sender)
 {
     throw new NotImplementedException();
 }
+```
+- Javascript
+```js
+getTask(getOptions('/api/Functions?componentName=Calculator&stateMachineName=CalculatorManager'), function(err, taskObj)
+    {
+        if( taskObj != null)
+        {
+            var jsonResponse;
+            if( taskObj.FunctionName === "ExecuteOn_EntryPoint")
+            {
+               jsonResponse = {
+                   "ComponentName":taskObj.ComponentName,
+                   "StateMachineName":taskObj.StateMachineName,
+                   "Senders" :  
+                    [
+                        {
+                            "SenderName" : "Init",
+                        }
+                    ],
+                   "RequestId":taskObj.RequestId
+               };
+
+               postResult(postOptions, JSON.stringify(jsonResponse));
+            }
+            else
+            {
+                console.error("Unknown task : ", taskObj);
+            }
+       }
+   });
 ```
 
 In a triggered method, you can:
