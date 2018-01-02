@@ -103,10 +103,10 @@ Task("GenerateRuntimeCmd")
 
     var runSpyCmd = "";
     runSpyCmd += "cd " + xcAssembliesPath + "\n";
-    runSpyCmd += "start " + xcSpyBinaryFilePath + " .\n";
+    runSpyCmd += xcSpyBinaryFilePath + " .\n";
     FileWriteText("runSpy.cmd", runSpyCmd);
 
-    var runBridgeCmd = "start " + xcBridgeBinaryPath + " " + xcBridgeParameters + "\n";
+    var runBridgeCmd = xcBridgeBinaryPath + " " + xcBridgeParameters + "\n";
     FileWriteText("runBridge.cmd", runBridgeCmd);
 
     fileContents += "start runBridge.cmd\n";
