@@ -28,7 +28,9 @@ XComponent.Studio.bat
 Runtime/
 run*xcr.cmd
 runBridge.cmd
+runSpy.cmd
 xcruntime.cmd
+*.generated.cs
 
 # Visual Studo 2015 cache/options directory
 .vs/
