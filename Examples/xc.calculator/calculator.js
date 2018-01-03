@@ -1,81 +1,18 @@
-var http = require('http');
+const xcfunctions = require('./xcfunctions.js');
 
-function getOptions(stmPath) {
-    return {
-        host:"127.0.0.1",
-        port: 9676,
-        path: stmPath,
-        method: 'GET'
-    }
-}
-var postheaders = {
-    'Content-Type' : 'application/json',
-};
-var postOptions = {
-    host:"127.0.0.1",
-    port: 9676,
-    path:'/api/Functions',
-    method: 'POST',
-    headers : postheaders
-};
-
-function getTask(options, cb)
+/*const CalculatorManagerExecuter = setInterval(function()
 {
-    http.request(options, function(res)
+   getTask('Calculator', 'CalculatorManager', function(err, taskObj)
     {
-        var body = '';
-        res.on('data', function(chunk){
-                body += chunk;
-        });
-        res.on("end", function()
-        {
-            if( body == "null")
-            {
-                cb("Body is null", null);
-                return;
-            }
-            var taskObj = JSON.parse(body);
-           
-            cb(null, taskObj);
-        });
-        res.on('error', cb);
-    }
-    )
-    .on('error', cb)
-    .end();
-}
-
-function postResult(options, jsonResponse)
-{
-   
-    var post_req = http.request(options, function(res) {
-        res.on('data', function (chunk) {
-            console.info('POST result:\n');
-            process.stdout.write(chunk);
-            console.info('\n\nPOST completed');
-        });
-    });
-  
-    // post the data
-    post_req.write(jsonResponse);
-    post_req.end();
-    post_req.on('error', function(e) {
-        console.error(e);
-    });
-    
-  
-}
-
-//Excute on CalculatorManager
-var CalculatorManagerExecuter = setInterval(function()
-{
-   getTask(getOptions('/api/Functions?componentName=Calculator&stateMachineName=CalculatorManager'), function(err, taskObj)
-    {
+        if (err && err != nullBodyError) {
+            console.error(err);
+            return;
+        }
         if( taskObj != null)
         {
             console.log("Getting Task: ", taskObj);
             var jsonResponse;
-            if( taskObj.FunctionName === "ExecuteOn_EntryPoint")
+            if( taskObj.FunctionName === "ExecuteOn_EntryPoint") // DONE
             {
                jsonResponse = {
                    "ComponentName":taskObj.ComponentName,
@@ -92,7 +29,7 @@ var CalculatorManagerExecuter = setInterval(function()
                console.log("Response : ", jsonResponse);
                postResult(postOptions, JSON.stringify(jsonResponse));
             }
-            else if( taskObj.FunctionName === "ExecuteOn_Ready_From_Up_Through_Prepare")
+            else if( taskObj.FunctionName === "ExecuteOn_Ready_From_Up_Through_Prepare") // DONE
             {
                 jsonResponse = {
                     "ComponentName":taskObj.ComponentName,
@@ -125,10 +62,11 @@ var CalculatorManagerExecuter = setInterval(function()
 //Execute on calculor 
  setInterval(function()
  {
-    getTask(getOptions('/api/Functions?componentName=Calculator&stateMachineName=Calculator'), function(err, taskObj)
+    getTask('Calculator', 'Calculator', function(err, taskObj)
     {
-        if (err) {
+        if (err && err != nullBodyError) {
             console.error(err);
+            return;
         } 
         else 
         {
@@ -138,9 +76,8 @@ var CalculatorManagerExecuter = setInterval(function()
                 console.log("Getting Task: ", taskObj);
                 var result = 0;
                 var jsonResponse;
-                if( taskObj.FunctionName === "InitializePublicMember")
+                if( taskObj.FunctionName === "InitializePublicMember") // DONE
                     {
-                        var result = taskObj.Event.Result;
                         jsonResponse = JSON.stringify({
                             "ComponentName":taskObj.ComponentName,
                             "StateMachineName":taskObj.StateMachineName,
@@ -220,9 +157,34 @@ var CalculatorManagerExecuter = setInterval(function()
             }        
         }
     });
- }, 1000);
+ }, 1000); */
 
  
 
+xcfunctions.registerTriggeredMethod('Calculator', 'CalculatorManager', 'ExecuteOn_EntryPoint', () => {
+        return { 'Senders' :  [ { 'SenderName' : 'Init' } ] };
+    });
 
+xcfunctions.registerTriggeredMethod('Calculator', 'CalculatorManager', 'ExecuteOn_Ready_From_Up_Through_Prepare', () => {
+        return {
+                    "Senders" :  
+                    [
+                         {
+                             "SenderName" : "Calculate",
+                             "SenderParameter" : { "Number1" : 5, "Number2" : 3},
+                             "UseContext" : true
+                         }, 
+
+                         {
+                             "SenderName" : "Relaunch"
+                         }
+                     ]
+                 };
+    });
+
+xcfunctions.registerTriggeredMethod('Calculator', 'Calculator', 'InitializePublicMember', () => {
+        return {"PublicMember": {"Result" : 10}};
+    });
+
+xcfunctions.startEventQueue();
 
