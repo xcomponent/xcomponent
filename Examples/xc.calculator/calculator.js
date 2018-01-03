@@ -15,11 +15,11 @@ xcfunctions.registerTriggeredMethods('Calculator', 'CalculatorManager', {
 
 xcfunctions.registerTriggeredMethods('Calculator', 'Calculator', {
     InitializePublicMember: (event, publicMember) => {
-        publicMember = {Result: 10};
+        publicMember.Result = 10;
     },
 
     ExecuteOn_Calculating_From_Ready_Through_Calculate: (event, publicMember, internalMember, context, sender) => {
-        const result = event.Number1 * event.Number2;
+    const result = event.Number1 * event.Number2;
 
         if (result >= 0) {
             publicMember.Result = result;
