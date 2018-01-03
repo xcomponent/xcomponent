@@ -77,12 +77,13 @@ exports.registerTriggeredMethod = (componentName, stateMachineName, triggeredMet
     if (!(triggeredMethodName in triggeredMethods[componentName][stateMachineName])) {
         triggeredMethods[componentName][stateMachineName][triggeredMethodName] = triggeredMethodFunction;
     }
-}
+};
 
 exports.startEventQueue= () => {
-    console.log(triggeredMethods);
+    console.log('Registered triggered methods: ', triggeredMethods);
     setInterval(eventQueue, 1000);
-}
+    console.log('Waiting for tasks...');
+};
 
 function processTaskResponse(error, result) {
     if (error) {
@@ -97,7 +98,7 @@ function eventQueue() {
             getTask(componentName, stateMachineName, (error, task) => 
                 {
                     if (error) {
-                        if (error !== nullBodyError) {
+                        if (error !== nullBodyError && !(error.code && error.code === 'ECONNREFUSED') ) {
                             console.error(error);
                         }
                         return;
@@ -112,15 +113,17 @@ function eventQueue() {
                     }
 
                     const triggeredMethod = triggeredMethods[componentName][stateMachineName][task.FunctionName];
-                    const response = triggeredMethod();
+                    const response = triggeredMethod(task.Event, task.PublicMember, task.InternalMember);
                     
                     if (!error && response) {
                         const augmentedResponse = {
+// jshint ignore:start
                             ...response,
                             'ComponentName': task.ComponentName,
                             'StateMachineName': task.StateMachineName,
                             'RequestId': task.RequestId
-                        };
+// jshint ignore:end
+                        }
 
                         console.log('Posted response: ', augmentedResponse);
                         postResult(augmentedResponse);
