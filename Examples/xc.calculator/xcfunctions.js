@@ -79,6 +79,12 @@ exports.registerTriggeredMethod = (componentName, stateMachineName, triggeredMet
     }
 };
 
+exports.registerTriggeredMethods = (componentName, stateMachineName, triggeredMethods) => {
+    for (const triggeredMethodName in triggeredMethods) {
+        exports.registerTriggeredMethod(componentName, stateMachineName, triggeredMethodName, triggeredMethods[triggeredMethodName]);
+    }
+}
+
 exports.startEventQueue= () => {
     console.log('Registered triggered methods: ', triggeredMethods);
     setInterval(eventQueue, 1000);
