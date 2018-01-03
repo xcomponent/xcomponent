@@ -92,6 +92,16 @@ function processTaskResponse(error, result) {
     }
 }
 
+function senderHandler(target, name) {
+    return (parameter, useContext) => {
+        target.Senders.push({
+            SenderName: name,
+            SenderParameter: parameter || {},
+            UseContext: useContext || false
+        });
+    };
+}
+
 function eventQueue() {
     for(const componentName in triggeredMethods) {
         for(const stateMachineName in triggeredMethods[componentName]) {
@@ -113,15 +123,20 @@ function eventQueue() {
                     }
 
                     const triggeredMethod = triggeredMethods[componentName][stateMachineName][task.FunctionName];
-                    const response = triggeredMethod(task.Event, task.PublicMember, task.InternalMember);
+                    const sendersList = [];
+                    const sender = new Proxy({ Senders: sendersList }, { get: senderHandler });
+
+                    triggeredMethod(task.Event, task.PublicMember, task.InternalMember, task.Context, sender);
                     
-                    if (!error && response) {
+                    if (!error) {
                         const augmentedResponse = {
 // jshint ignore:start
-                            ...response,
-                            'ComponentName': task.ComponentName,
-                            'StateMachineName': task.StateMachineName,
-                            'RequestId': task.RequestId
+                            Senders: sendersList,
+                            PublicMember: task.PublicMember,
+                            InternalMember: task.InternalMember,
+                            ComponentName: task.ComponentName,
+                            StateMachineName: task.StateMachineName,
+                            RequestId: task.RequestId
 // jshint ignore:end
                         }
 
