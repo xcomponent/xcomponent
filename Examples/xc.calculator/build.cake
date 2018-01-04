@@ -8,9 +8,9 @@
 var target = Argument("target", "Build");
 var buildConfiguration = Argument("buildConfiguration", "Debug");
 var modelPath = Argument("modelPath", "calculator/Calculator_Model.xcml");
-var toolsRoot = @"../tools/XComponent.Community/tools/XCStudio/XCBuild/";
+var toolsRoot = @"../tools/XComponent.Community/tools/XCStudio/";
 
-SetXcBuildPath(toolsRoot + "xcbuild.exe");
+SetXcBuildPath(toolsRoot + @"/XCBuild/xcbuild.exe");
 
 Func<bool> IsRunningOnLinux = () => {
     return IsRunningOnUnix() && !DirectoryExists("/Applications");
