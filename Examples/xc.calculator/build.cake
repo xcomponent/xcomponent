@@ -8,8 +8,9 @@
 var target = Argument("target", "Build");
 var buildConfiguration = Argument("buildConfiguration", "Debug");
 var modelPath = Argument("modelPath", "calculator/Calculator_Model.xcml");
+var toolsRoot = @"../tools/XComponent.Community/tools/XCStudio/XCBuild/";
 
-SetXcBuildPath("../tools/XComponent.Community/tools/XCStudio/XCBuild/xcbuild.exe");
+SetXcBuildPath(toolsRoot + "xcbuild.exe");
 
 Func<bool> IsRunningOnLinux = () => {
     return IsRunningOnUnix() && !DirectoryExists("/Applications");
@@ -79,7 +80,7 @@ Task("Build")
 
 Task("GenerateStudioCmd")
   .Does(() => {
-    var xcStudioBinaryFilePath = MakeAbsolute(File(@"../tools/XComponent.Community/tools/XCStudio/XCStudio.exe"));
+    var xcStudioBinaryFilePath = MakeAbsolute(File(toolsRoot + "XCStudio.exe"));
     var modelFilePath = MakeAbsolute(File("./" + modelPath));
 
     FileWriteText(@"xcstudio.cmd", @"start " + xcStudioBinaryFilePath + " " + modelFilePath);
@@ -91,15 +92,15 @@ Task("GenerateRuntimeCmd")
     foreach(var xcrFile in GetFiles("./Runtime/xcassemblies/*.xcr"))
     {
       var xcPropertiesPath = xcrFile.FullPath.Replace("xcr", "xcproperties");
-      var xcRuntimeBinaryFilePath = MakeAbsolute(File(@"../tools/XComponent.Community/tools/XCStudio/XCRuntime/xcruntime.exe"));
+      var xcRuntimeBinaryFilePath = MakeAbsolute(File(toolsRoot + @"XCRuntime/xcruntime.exe"));
       var runServiceCmd = "start " + xcRuntimeBinaryFilePath + " " + xcrFile.FullPath + " " + xcPropertiesPath + "\n";
 
       fileContents += runServiceCmd;
       FileWriteText("run-"+xcrFile.GetFilename()+".cmd", runServiceCmd);
     }
 
-    var xcBridgeBinaryPath = MakeAbsolute(File(@"../tools/XComponent.Community/tools/XCStudio/XCBridge/XCWebSocketBridge.exe"));
-    var xcSpyBinaryFilePath = MakeAbsolute(File(@"../tools/XComponent.Community/tools/XCStudio/XCSpy/xcspy.exe"));
+    var xcBridgeBinaryPath = MakeAbsolute(File(toolsRoot + @"XCBridge/XCWebSocketBridge.exe"));
+    var xcSpyBinaryFilePath = MakeAbsolute(File(toolsRoot + @"XCSpy/xcspy.exe"));
     var xcAssembliesPath = MakeAbsolute(File("./Runtime/Api/xcassemblies"));
     var xcBridgeParameters = "--apipath=\"" + xcAssembliesPath + "\" --port=9443  --unsecure";
 
