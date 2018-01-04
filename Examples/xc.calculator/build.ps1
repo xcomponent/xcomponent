@@ -15,6 +15,8 @@ and execute your Cake build script with the parameters you provide.
 
 .PARAMETER Script
 The build script to execute.
+.PARAMETER Tools
+Path to the Tools directory.
 .PARAMETER Target
 The build script target to run.
 .PARAMETER Configuration
@@ -41,6 +43,7 @@ http://cakebuild.net
 [CmdletBinding()]
 Param(
     [string]$Script = "build.cake",
+    [string]$Tools = "../tools",
     [string]$Target = "Build",
     [ValidateSet("Release", "Debug")]
     [string]$Configuration = "Release",
@@ -88,7 +91,8 @@ if(!$PSScriptRoot){
     $PSScriptRoot = Split-Path $MyInvocation.MyCommand.Path -Parent
 }
 
-$TOOLS_DIR = Join-Path $PSScriptRoot "tools"
+#Join-Path $PSScriptRoot "tools"
+$TOOLS_DIR = [System.IO.Path]::GetFullPath((Join-Path $PSScriptRoot $Tools))
 $ADDINS_DIR = Join-Path $TOOLS_DIR "addins"
 $MODULES_DIR = Join-Path $TOOLS_DIR "modules"
 $NUGET_EXE = Join-Path $TOOLS_DIR "nuget.exe"
@@ -226,5 +230,5 @@ if (!(Test-Path $CAKE_EXE)) {
 
 # Start Cake
 Write-Host "Running build script..."
-Invoke-Expression "& `"$CAKE_EXE`" `"$Script`" -target=`"$Target`" -configuration=`"$Configuration`" -verbosity=`"$Verbosity`" $UseMono $UseDryRun $UseExperimental $ScriptArgs"
+Invoke-Expression "& `"$CAKE_EXE`" `"$Script`" -target=`"$Target`" -configuration=`"$Configuration`" -verbosity=`"$Verbosity`" --paths_tools=`"$TOOLS_DIR`" --paths_addins=`"$ADDINS_DIR`" --paths_modules=`"$MODULES_DIR`" $UseMono $UseDryRun $UseExperimental $ScriptArgs"
 exit $LASTEXITCODE
