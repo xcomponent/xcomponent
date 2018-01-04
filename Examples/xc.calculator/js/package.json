@@ -1,0 +1,12 @@
+{
+  "name": "calculator.js",
+  "version": "1.0.0",
+  "description": "Implements triggered methods for the calculator example",
+  "main": "index.js",
+  "author": "XComponent <dev@xcomponent.com> (http://www.xcomponent.com)",
+  "license": "Apache Licence",
+  "private": false,
+  "scripts": {
+    "start": "node index.js"
+  }
+}

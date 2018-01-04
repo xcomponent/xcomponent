@@ -106,11 +106,16 @@ Task("GenerateRuntimeCmd")
     runSpyCmd += xcSpyBinaryFilePath + " .\n";
     FileWriteText("runSpy.cmd", runSpyCmd);
 
+    var runJSCmd = "";
+    runJSCmd += "cd js\n";
+    runJSCmd += "npm install && npm start\n";
+    FileWriteText("runJS.cmd", runJSCmd);
+
     var runBridgeCmd = xcBridgeBinaryPath + " " + xcBridgeParameters + "\n";
     FileWriteText("runBridge.cmd", runBridgeCmd);
 
     fileContents += "start runBridge.cmd\n";
-    fileContents += "start node calculator.js\n";
+    fileContents += "start runJS.cmd\n";
     fileContents += "start runSpy.cmd\n";
     FileWriteText(@"xcruntime.cmd", fileContents);
 });
