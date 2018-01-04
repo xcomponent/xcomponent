@@ -14,22 +14,21 @@ In the `Calculator` sample we will run two different pieces of software concurre
 
 ## Build the project
 
-Execute the following script:
+Execute the following script on PowerShell:
 ```
-$ build.cmd
-$ 
+$ ./build.ps1
 ```
 
 ## Run the example
 
 Execute the following script :
 ```
-$ xcruntime.cmd
+$ ./xcruntime.cmd
 ```
 
 ## Create your own "Calculator" project
 
-Step by step tutorial: [Click here](documentation/README.md)
+[ Step by step tutorial ](documentation/README.md)
 
 ## Questions?
 
