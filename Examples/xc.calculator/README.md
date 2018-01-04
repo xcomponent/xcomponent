@@ -1,49 +1,30 @@
 # XComponent Calculator
 
-The project `Calculator` is a classic program applied to [XComponent](http://www.xcomponent.com).
+The `Calculator` project is an example of project where triggered methods are implemented in JavaScript instead of C#.
 
 ## Overview
 
-XComponent is a platform to create, monitor and share microservices.
-If you want to have more details about microservices, you should read [Martin Fowler's article.](http://martinfowler.com/articles/microservices.html)
+As we have seen in other examples, in a XComponent project consists of a state machine model defined in XCStudio coupled with C# code to implement the behavior of state machine instances when they change state. This behavior is described as a set of C# methods called triggered methods. Starting at version 5.0, XComponent introduces the concept of *REST* implemented triggered methods, in opposition to *Native* triggered methods implemented in C#. It makes it possible to implement XComponent triggered methods in any language that is able to use a REST service.
 
-In the `Calculator` sample we're actually going to run two different pieces of software concurrently:
-* **`[Calculator microservice]`** - A microservice that receives *Calculate* requests 
-* **`[NodeJS Application]`** - A simple application to run triggered methods coded in Javascript
+A XComponent microservice whose triggered methods should be implemented by a REST service starts a REST service upon start up. The REST service queues triggered methods to be executed (called Tasks) by clients (called Workers) following a protocol described [here](https://github.com/xcomponent/XComponent.Functions).
+
+In the `Calculator` sample we will run two different pieces of software concurrently:
+* **`[Calculator microservice]`** - A XComponent microservice that receives requests to calculate additions;
+* **`[Calculator.js worker]`** - A simple NodeJS application to run triggered methods coded in JavaScript.
 
 ## Build the project
 
 Execute the following script:
 ```
-$ cd calculator
+$ build.cmd
 $ 
 ```
-Build results are in *...* folder
 
-> Note: the build is based on [Fake](http://fsharp.github.io/FAKE/)
-
-## Run the "Calculator" example
-
-### Start the "Calculator" microservice
+## Run the example
 
 Execute the following script :
 ```
-$ 
-```
-
-### Start the NodeJS application
-
-Execute the following script:
-```
-$ node Calculator/calculator.js
-```
-> Note: RabbitMQ has to be running (default configuration)
-
-### Open XComponent project
-
-Execute the following script at the root:
-```
-$ 
+$ xcruntime.cmd
 ```
 
 ## Create your own "Calculator" project

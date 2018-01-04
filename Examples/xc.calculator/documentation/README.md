@@ -1,18 +1,18 @@
 # Calculator: step by step tutorial
 
-This document describes how to create a simple `Calculator` microservice with XComponent.
+This document describes how to create a simple `Calculator` microservice with XComponent whose triggered methods are implemented in JavaScript instead of C#.
 
 ## Overview
 
 XComponent is a platform to create, monitor and share microservices.
 
 In the `Calculator` sample we are going to create two different pieces of software:
-* **`[Calculator microservice]`** - A microservice that receives *Calculate* requests 
-* **`[NodeJS Application]`** - A simple application to run triggered methods coded in Javascript
+* **`[Calculator microservice]`** - A XComponent microservice that receives requests to calculate additions;
+* **`[Calculator.js worker]`** - A simple NodeJS application to run triggered methods coded in JavaScript.
 
 ## Install XComponent Community
 
-The easiest way to install the XComponent Commmunity Edition is to download the latest version from [Nuget](https://www.nuget.org/packages/xcomponent.community/)
+The easiest way to install the XComponent Community Edition is to download the latest version from [Nuget](https://www.nuget.org/packages/xcomponent.community/)
 
 ## Create your first microservice
 
@@ -33,11 +33,11 @@ The easiest way to install the XComponent Commmunity Edition is to download the 
 
  You should end up with the following component:
 
- ![Calculator component](images/Calculator_Component.png)
+ ![Calculator component](images/Calculator_Component.PNG)
   
-  * On *Entry_Point*, *Ready*, *Calculating* and *Done* states select *Rest Worker* so as to implement the trigger methods in a programming language other than C# (Javascript here).
+  * On *Entry_Point*, *Ready*, *Calculating* and *Done* states triggered methods select *Rest Worker* so as they wont be generated in C# but will be implemented in any other language able to consume REST services. In the present example we will use JavaScript.
 
-### Create your composition
+### Complete your composition view
  
 * Go back to the composition view
 * Add links between your component and the default api.
@@ -46,7 +46,7 @@ You should end up with the following figure:
    
 ![composition view](images/composition.jpg)
   
-> Note: In the composition view, component inputs are the left bullet points and component outputs are the right bullet points.
+> Note: In the composition view, on each component, inputs are the left side bullet points and component outputs are the right side bullet points.
 
 ### Configuration
 
@@ -54,29 +54,26 @@ You should end up with the following figure:
 
 ![open properties](images/open_properties.jpg)
 
-* Add rabbitmq settings:
+* Fill the RabbitMQ settings:
 
-In the *Communication* section choose a name for the rabbitmq bus and click on the *Add* button.
+In the *Communication* section choose a name for the RabbitMQ bus and click on the *Add* button.
 You should see your bus with a green indicator as in the following figure:
 
 ![rabbitmq config](images/rabbitmq_config.jpg)
 
-* Set the deployment target to *server*
-* Set Function Manager Service URL to *http://127.0.0.1:9676* 
-
-In the *Components* section change the Deployment Target from *Stand Alone* to *Server*.
-In the drop down you should see the previously configured rabbitmq bus.
+In the *Components* section change the deployment target from *Stand Alone* to *Server*.
+In the drop down you should see the previously configured RabbitMQ bus.
 
 ![server mode](images/server_mode.png)
 
 ## Test your microservice
 
-* Build your project (see following figure)
+* Build your solution (see following figure)
 
 ![microservices](images/build.jpg)
 
 * Start your microservice (*Project* menu + *Run* sub menu + *Microservices* button and then the *Start* button)
-* Create a NodeJs application to implement your triggered methods
+* Create a NodeJS application to implement your triggered methods
 * Copy/Paste the following code in *calculator.js*
 
 ```js
@@ -310,7 +307,7 @@ var CalculatorManagerExecuter = setInterval(function()
  }, 1000);
 ```
 
-* Run your NodeJs application. You should end up with the following output:
+* Run your NodeJS application. You should end up with an output similar to that:
 
 ```txt 
 Body is null
