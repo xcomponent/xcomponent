@@ -74,394 +74,55 @@ In the drop down you should see the previously configured RabbitMQ bus.
 
 * Start your microservice (*Project* menu + *Run* sub menu + *Microservices* button and then the *Start* button)
 * Create a NodeJS application to implement your triggered methods
-* Copy/Paste the following code in *calculator.js*
+* Add the `xcfunctions.js` library to your project with the following command:
+```
+$ yarn add git+https://git@github.com/xcomponent/xcfunctions.js.git
+```
+
+* Copy/Paste the following code in your *index.js*
 
 ```js
-var http = require('http');
+const xcfunctions = require('xcfunctions');
 
-function getOptions(stmPath) {
-    return {
-        host:"127.0.0.1",
-        port: 9676,
-        path: stmPath,
-        method: 'GET'
+xcfunctions.registerTriggeredMethods('Calculator', 'CalculatorManager', {
+    ExecuteOn_EntryPoint: (event, publicMember, internalMember, context, sender) => {
+        sender.Init();
+    },
+
+    ExecuteOn_Ready_From_Up_Through_Prepare: (event, publicMember, internalMember, context, sender) => {
+        sender.Calculate({ Number1: 5, Number2: 3}, true);
+        sender.Relaunch();
     }
-}
-var postheaders = {
-    'Content-Type' : 'application/json',
-};
-var postOptions = {
-    host:"127.0.0.1",
-    port: 9676,
-    path:'/api/Functions',
-    method: 'POST',
-    headers : postheaders
-};
+});
 
-function getTask(options, cb)
-{
-    http.request(options, function(res)
-    {
-        var body = '';
-        res.on('data', function(chunk){
-                body += chunk;
-        });
-        res.on("end", function()
-        {
-            if( body == "null")
-            {
-                cb("Body is null", null);
-                return;
-            }
-            var taskObj = JSON.parse(body);
-           
-            cb(null, taskObj);
-        });
-        res.on('error', cb);
-    }
-    )
-    .on('error', cb)
-    .end();
-}
+xcfunctions.registerTriggeredMethods('Calculator', 'Calculator', {
+    InitializePublicMember: (event, publicMember) => {
+        publicMember.Result = 10;
+    },
 
-function postResult(options, jsonResponse)
-{
-   
-    var post_req = http.request(options, function(res) {
-        res.on('data', function (chunk) {
-            console.info('POST result:\n');
-            process.stdout.write(chunk);
-            console.info('\n\nPOST completed');
-        });
-    });
-  
-    // post the data
-    post_req.write(jsonResponse);
-    post_req.end();
-    post_req.on('error', function(e) {
-        console.error(e);
-    });
-    
-  
-}
+    ExecuteOn_Calculating_From_Ready_Through_Calculate: (event, publicMember, internalMember, context, sender) => {
+    const result = event.Number1 * event.Number2;
 
-//Trigger methods to excute on CalculatorManager state machine
-var CalculatorManagerExecuter = setInterval(function()
-{
-   getTask(getOptions('/api/Functions?componentName=Calculator&stateMachineName=CalculatorManager'), function(err, taskObj)
-    {
-        if( taskObj != null)
-        {
-            console.log("Getting Task: ", taskObj);
-            var jsonResponse;
-            //Trigger method to excute on Entry_Point state 
-            if( taskObj.FunctionName === "ExecuteOn_EntryPoint")
-            {
-               jsonResponse = {
-                   "ComponentName":taskObj.ComponentName,
-                   "StateMachineName":taskObj.StateMachineName,
-                   "Senders" :  
-                    [
-                        {
-                            "SenderName" : "Init",
-                        }
-                    ],
-                   "RequestId":taskObj.RequestId
-               };
-
-               console.log("Response : ", jsonResponse);
-               postResult(postOptions, JSON.stringify(jsonResponse));
-            }
-            //Trigger method to excute on Ready state 
-            else if( taskObj.FunctionName === "ExecuteOn_Ready_From_Up_Through_Prepare")
-            {
-                jsonResponse = {
-                    "ComponentName":taskObj.ComponentName,
-                    "StateMachineName":taskObj.StateMachineName,
-                    "Senders" :  
-                    [
-                         {
-                             "SenderName" : "Calculate",
-                             "SenderParameter" : { "Number1" : 5, "Number2" : 3},
-                             "UseContext" : true
-                         }, 
-                         {
-                             "SenderName" : "Relaunch"
-                         }
-                     ] ,
-                    "RequestId":taskObj.RequestId
-                };
- 
-                console.log("Response : ", jsonResponse);
-                postResult(postOptions, JSON.stringify(jsonResponse));
-            }
-            else
-            {
-                console.error("Unknown task : ", taskObj);
-            }
-       }
-   });
-}, 1000);
-
-//Triggered methods to execute on Calculor state machine 
- setInterval(function()
- {
-    getTask(getOptions('/api/Functions?componentName=Calculator&stateMachineName=Calculator'), function(err, taskObj)
-    {
-        if (err) {
-            console.error(err);
-        } 
-        else 
-        {
-            clearTimeout(CalculatorManagerExecuter);
-            if( taskObj != null)
-            {
-                console.log("Getting Task: ", taskObj);
-                var result = 0;
-                var jsonResponse;
-                //Trigger method to excute on InitializePublicMember
-                if( taskObj.FunctionName === "InitializePublicMember")
-                {
-                    var result = taskObj.Event.Result;
-                    jsonResponse = JSON.stringify({
-                        "ComponentName":taskObj.ComponentName,
-                        "StateMachineName":taskObj.StateMachineName,
-                        "PublicMember": {"Result" : 10},
-                        "Senders" : [],
-                        "RequestId":taskObj.RequestId
-                    });
-    
-                    console.log("Response : ", jsonResponse);
-                    postResult(postOptions, jsonResponse);
-                }
-                //Trigger methods to excute on Calculating state
-                else if( taskObj.FunctionName === "ExecuteOn_Calculating_From_Ready_Through_Calculate")
-                {
-                    var number1 = taskObj.Event.Number1;
-                    var number2 = taskObj.Event.Number2;
-                    var result = number1 * number2;
-                    if(result >= 0)
-                    {
-                        jsonResponse = JSON.stringify({
-                            "ComponentName":taskObj.ComponentName,
-                            "StateMachineName":taskObj.StateMachineName,
-                            "PublicMember": {"Result" : result},
-                            "Senders" : 
-                            [
-                                {
-                                    "SenderName" : "Finished",
-                                    "UseContext" : true,
-                                    "SenderParameter": {
-                                        "Result" : result,
-                                    }
-                                }
-                            ] ,
-                            "RequestId":taskObj.RequestId
-                        });
-                    }
-                    else
-                    {
-                        jsonResponse = JSON.stringify({
-                            "ComponentName":taskObj.ComponentName,
-                            "StateMachineName":taskObj.StateMachineName,
-                            "PublicMember": { "ErrorMessage" : "Bad value" },
-                            "Senders" : 
-                            [
-                                {
-                                    "SenderName" : "Error",
-                                    "UseContext" : true,
-                                    "SenderParameter": {
-                                        "Result" : taskObj.Value,
-                                    }
-                                }
-                            ] ,
-                            "RequestId":taskObj.RequestId
-                        });
-                    }
-    
-                    console.log("Response : ", jsonResponse);
-                    postResult(postOptions, jsonResponse);
-                }
-                //Trigger method to excute on Done state
-                else if( taskObj.FunctionName === "ExecuteOn_Done_From_Calculating_Through_Finished")
-                {
-                    var result = taskObj.Event.Result;
-                    jsonResponse = JSON.stringify({
-                        "ComponentName":taskObj.ComponentName,
-                        "StateMachineName":taskObj.StateMachineName,
-                        "PublicMember": {"Result" : result},
-                        "Senders" : [],
-                        "RequestId":taskObj.RequestId
-                    });
-    
-                    console.log("Response : ", jsonResponse);
-                    postResult(postOptions, jsonResponse);
-                }
-                else
-                {
-                    console.error("Unknown task : ", taskObj);
-                }
-            }        
+        if (result >= 0) {
+            publicMember.Result = result;
+            sender.Finished({ Result: result }, true);
+        } else {
+            publicMember.ErrorMessage = 'Bad value';
+            sender.Finished({ Result: result }, true);
         }
-    });
- }, 1000);
+    },
+
+    ExecuteOn_Done_From_Calculating_Through_Finished: (event, publicMember) => {
+        publicMember.Result = event.Result;
+    }
+});
+
+xcfunctions.startEventQueue();
 ```
 
 * Run your NodeJS application. You should end up with an output similar to that:
 
-```txt 
-Body is null
-Getting Task:  
-{ 
-    Event: {},
-    PublicMember: {},
-    InternalMember: {},
-    Context:
-    { PublishNotification: true,
-        StateMachineId: 1,
-        WorkerId: 1,
-        StateCode: 0,
-        StateMachineCode: 2032672968,
-        ComponentCode: 93084851,
-        PrivateTopic: null,
-        MessageType: null,
-        ErrorMessage: null,
-        SessionData: null },
-    ComponentName: 'Calculator',
-    StateMachineName: 'CalculatorManager',
-    FunctionName: 'ExecuteOn_EntryPoint',
-    RequestId: 'a334d5d0-8e91-4daf-a810-f2ada85dad96' 
-}
-Response :  
-{ 
-    ComponentName: 'Calculator',
-    StateMachineName: 'CalculatorManager',
-    Senders: [ { SenderName: 'Init' } ],
-    RequestId: 'a334d5d0-8e91-4daf-a810-f2ada85dad96' 
-}
-Body is null
-Getting Task:  
-{ 
-    Event: {},
-    PublicMember: {},
-    InternalMember: {},
-    Context:
-    { PublishNotification: true,
-        StateMachineId: 1,
-        WorkerId: 1,
-        StateCode: 1,
-        StateMachineCode: 2032672968,
-        ComponentCode: 93084851,
-        PrivateTopic: null,
-        MessageType: null,
-        ErrorMessage: null,
-        SessionData: null },
-    ComponentName: 'Calculator',
-    StateMachineName: 'CalculatorManager',
-    FunctionName: 'ExecuteOn_Ready_From_Up_Through_Prepare',
-    RequestId: '8531d4ad-4b11-4de3-a231-6a07759dd000' 
-}
-Response :  
-{ 
-    ComponentName: 'Calculator',
-    StateMachineName: 'CalculatorManager',
-    Senders:
-    [ 
-        { 
-            SenderName: 'Calculate',
-            SenderParameter: [Object],
-            UseContext: true 
-        },
-        { SenderName: 'Relaunch' } 
-    ],
-    RequestId: '8531d4ad-4b11-4de3-a231-6a07759dd000' 
-}
-Getting Task:  
-{ 
-    Event: { ParentPublicMember: {}, ParentInternalMember: {} },
-    PublicMember: { Result: 0, ErrorMessage: null },
-    InternalMember: {},
-    Context: {},
-    ComponentName: 'Calculator',
-    StateMachineName: 'Calculator',
-    FunctionName: 'InitializePublicMember',
-    RequestId: '58b3a178-9025-4bdf-9081-0953cb7a567e' 
-}
-Response :  
-{
-    "ComponentName":"Calculator",
-    "StateMachineName":"Calculator",
-    "PublicMember":{"Result":10},
-    "Senders":[],
-    "RequestId":"58b3a178-9025-4bdf-9081-0953cb7a567e"
-}
-Getting Task:  
-{ 
-    Event: { Number1: 5, Number2: 3 },
-    PublicMember: { Result: 0, ErrorMessage: null },
-    InternalMember: {},
-    Context:
-    { PublishNotification: true,
-        StateMachineId: 2,
-        WorkerId: 2,
-        StateCode: 0,
-        StateMachineCode: 93084851,
-        ComponentCode: 93084851,
-        PrivateTopic: null,
-        MessageType: null,
-        ErrorMessage: null,
-        SessionData: null },
-    ComponentName: 'Calculator',
-    StateMachineName: 'Calculator',
-    FunctionName: 'ExecuteOn_Calculating_From_Ready_Through_Calculate',
-    RequestId: '7f5c5b1e-c83a-41eb-88bb-06b15c6f1dc3' 
-}
-Response :  
-{
-    "ComponentName":"Calculator",
-    "StateMachineName":"Calculator",
-    "PublicMember":{"Result":15},
-    "Senders":
-    [
-        {
-            "SenderName":"Finished",
-            "UseContext":true,
-            "SenderParameter":{"Result":15}
-        }
-    ],
-    "RequestId":"7f5c5b1e-c83a-41eb-88bb-06b15c6f1dc3"
-}
-Getting Task:  
-{ 
-    Event: { Result: 15 },
-    PublicMember: { Result: 15, ErrorMessage: null },
-    InternalMember: {},
-    Context:
-    { PublishNotification: true,
-        StateMachineId: 2,
-        WorkerId: 2,
-        StateCode: 1,
-        StateMachineCode: 93084851,
-        ComponentCode: 93084851,
-        PrivateTopic: null,
-        MessageType: null,
-        ErrorMessage: null,
-        SessionData: null },
-    ComponentName: 'Calculator',
-    StateMachineName: 'Calculator',
-    FunctionName: 'ExecuteOn_Done_From_Calculating_Through_Finished',
-    RequestId: '0ee6cd18-6f0e-4766-b057-abc43994d43b' 
-}
-Response :  
-{
-    "ComponentName":"Calculator",
-    "StateMachineName":"Calculator",
-    "PublicMember":{"Result":15},
-    "Senders":[],
-    "RequestId":"0ee6cd18-6f0e-4766-b057-abc43994d43b"
-}
-Body is null
-``` 
+ ![JS output](images/runJS.PNG)
 
 ## Questions?
 
