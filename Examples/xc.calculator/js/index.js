@@ -1,6 +1,6 @@
 /* jshint esversion: 6 */
 
-const xcfunctions = require('./xcfunctions.js');
+const xcfunctions = require('xcfunctions');
 
 xcfunctions.registerTriggeredMethods('Calculator', 'CalculatorManager', {
     ExecuteOn_EntryPoint: (event, publicMember, internalMember, context, sender) => {

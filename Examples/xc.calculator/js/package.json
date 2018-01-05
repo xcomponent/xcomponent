@@ -4,9 +4,12 @@
   "description": "Implements triggered methods for the calculator example",
   "main": "index.js",
   "author": "XComponent <dev@xcomponent.com> (http://www.xcomponent.com)",
-  "license": "Apache Licence",
+  "license": "Apache-2.0",
   "private": false,
   "scripts": {
     "start": "node index.js"
+  },
+  "dependencies": {
+    "xcfunctions": "git+https://git@github.com/xcomponent/xcfunctions.js.git"
   }
 }
