@@ -92,7 +92,7 @@ Task("GenerateRuntimeCmd")
     foreach(var xcrFile in GetFiles("./Runtime/xcassemblies/*.xcr"))
     {
       var xcPropertiesPath = xcrFile.FullPath.Replace("xcr", "xcproperties");
-      var xcRuntimeBinaryFilePath = MakeAbsolute(File(toolsRoot + @"XCRuntime/xcruntime.exe"));
+      var xcRuntimeBinaryFilePath = MakeAbsolute(File(toolsRoot + @"XCBuild/XCRuntime/xcruntime.exe"));
       var runServiceCmd = "start " + xcRuntimeBinaryFilePath + " " + xcrFile.FullPath + " " + xcPropertiesPath + "\n";
 
       fileContents += runServiceCmd;
@@ -102,11 +102,11 @@ Task("GenerateRuntimeCmd")
     var xcBridgeBinaryPath = MakeAbsolute(File(toolsRoot + @"XCBridge/XCWebSocketBridge.exe"));
     var xcSpyBinaryFilePath = MakeAbsolute(File(toolsRoot + @"XCSpy/xcspy.exe"));
     var xcAssembliesPath = MakeAbsolute(File("./Runtime/Api/xcassemblies"));
-    var xcBridgeParameters = "--apipath=\"" + xcAssembliesPath + "\" --port=9443  --unsecure";
+    var xcBridgeParameters = "--apipath=\"" + xcAssembliesPath + "\" --port=9443  --unsecure ";
 
     var runSpyCmd = "";
     runSpyCmd += "cd " + xcAssembliesPath + "\n";
-    runSpyCmd += xcSpyBinaryFilePath + " .\n";
+    runSpyCmd += xcSpyBinaryFilePath + " . --privateTopic=privateTopic\n";
     FileWriteText("runSpy.cmd", runSpyCmd);
 
     var runJSCmd = "";

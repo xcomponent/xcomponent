@@ -29,6 +29,7 @@ Runtime/
 run*xcr.cmd
 runBridge.cmd
 runSpy.cmd
+runJS.cmd
 xcruntime.cmd
 *.generated.cs
 

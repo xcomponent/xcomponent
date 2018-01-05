@@ -112,7 +112,7 @@ Task("GenerateRuntimeCmd")
     foreach(var xcrFile in GetFiles("./Runtime/xcassemblies/*.xcr"))
     {
       var xcPropertiesPath = xcrFile.FullPath.Replace("xcr", "xcproperties");
-      var xcRuntimeBinaryFilePath = MakeAbsolute(File(@"../tools/XComponent.Community/tools/XCStudio/XCRuntime/xcruntime.exe"));
+      var xcRuntimeBinaryFilePath = MakeAbsolute(File(@"../tools/XComponent.Community/tools/XCStudio/XCBuild/XCRuntime/xcruntime.exe"));
       var runServiceCmd = "start " + xcRuntimeBinaryFilePath + " " + xcrFile.FullPath + " " + xcPropertiesPath + "\n";
 
       fileContents += runServiceCmd;
