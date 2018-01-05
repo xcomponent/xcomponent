@@ -64,7 +64,7 @@ You should see your bus with a green indicator as in the following figure:
 In the *Components* section change the deployment target from *Stand Alone* to *Server*.
 In the drop down you should see the previously configured RabbitMQ bus.
 
-![server mode](images/server_mode.png)
+![server mode](images/server_mode.PNG)
 
 ## Test your microservice
 
