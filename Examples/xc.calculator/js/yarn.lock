@@ -2,6 +2,6 @@
 # yarn lockfile v1
 
 
-"xcfunctions@git+https://git@github.com/xcomponent/xcfunctions.js.git":
+xcfunctions@0.0.1:
   version "0.0.1"
-  resolved "git+https://git@github.com/xcomponent/xcfunctions.js.git#dc12ecfb55be44ed030a7408e6b8ee144c9d8384"
+  resolved "https://registry.yarnpkg.com/xcfunctions/-/xcfunctions-0.0.1.tgz#cd42692c30944d6f500d490ce3be13fa32d56a2a"

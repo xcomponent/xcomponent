@@ -10,6 +10,6 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "xcfunctions": "git+https://git@github.com/xcomponent/xcfunctions.js.git"
+    "xcfunctions": "0.0.1"
   }
 }
