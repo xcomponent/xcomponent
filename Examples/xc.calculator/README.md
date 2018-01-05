@@ -16,14 +16,14 @@ In the `Calculator` sample we will run two different pieces of software concurre
 
 Execute the following script on PowerShell:
 ```
-$ ./build.ps1
+PS ./build.ps1
 ```
 
 ## Run the example
 
 Execute the following script :
 ```
-$ ./xcruntime.cmd
+PS > ./xcruntime.cmd
 ```
 
 ## Create your own "Calculator" project

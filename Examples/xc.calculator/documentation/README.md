@@ -76,7 +76,7 @@ In the drop down you should see the previously configured RabbitMQ bus.
 * Create a NodeJS application to implement your triggered methods
 * Add the `xcfunctions.js` library to your project with the following command:
 ```
-$ npm add xcfunctions
+PS npm add xcfunctions
 ```
 
 * Copy/Paste the following code in your *index.js*
