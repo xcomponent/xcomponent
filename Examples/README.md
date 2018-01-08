@@ -1,12 +1,5 @@
 # XComponent Examples
 
-## Build all examples
-
-Execute the following script:
-```
-$ build.cmd
-```
-Consult each example's `README` to see how to run each of them.
 
 ## Examples overview
 
