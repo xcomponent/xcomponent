@@ -12,7 +12,6 @@ namespace XComponent.HelloWorld.TriggeredMethod
     using XComponent.HelloWorld.Common.Senders;
     using XComponent.Runtime.Shared.TriggeredMethods;
     using XComponent.Runtime.Shared.Manager;
-    using XComponent.Shared.Loggers;
     
     
     public partial class TriggeredMethodContext : ICustomTriggeredMethodContext
