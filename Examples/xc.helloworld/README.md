@@ -25,6 +25,8 @@ Execute the following script :
 PS > ./run.cmd
 ```
 
+> Note: RabbitMQ has to be running (default configuration)
+
 ### Open XComponent project
 
 Execute the following script at the root:

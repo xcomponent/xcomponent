@@ -18,7 +18,7 @@ Execute the following script:
 PS > ./build.ps1
 ```
 
-## Run the "Hello World" example
+## Run the example
 
 Execute the following script :
 ```
