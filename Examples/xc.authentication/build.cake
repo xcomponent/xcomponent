@@ -113,8 +113,6 @@ Task("GenerateRuntimeCmd")
     runClientAppCmd += "AuthenticationConsoleApp.exe\n";
     FileWriteText("runClientApp.cmd", runClientAppCmd);
 
-    fileContents += "start runClientApp.cmd\n";
-
     var runSpyCmd = "";
     runSpyCmd += "cd " + xcAssembliesPath + "\n";
     runSpyCmd += xcSpyBinaryFilePath + " . --privateTopic=privateTopic\n";

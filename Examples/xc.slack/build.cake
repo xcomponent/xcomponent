@@ -111,8 +111,6 @@ Task("GenerateRuntimeCmd")
     runClientAppCmd += "SlackApp.exe\n";
     FileWriteText("runClientApp.cmd", runClientAppCmd);
 
-    fileContents += "start runClientApp.cmd\n";
-
     var runSpyCmd = "";
     runSpyCmd += "cd " + xcAssembliesPath + "\n";
     runSpyCmd += xcSpyBinaryFilePath + " . --privateTopic=privateTopic\n";
