@@ -15,35 +15,23 @@ In the `Bench` sample we're actually going to run two different pieces of softwa
 
 Execute the following script:
 ```
-$ cd Examples\xc.bench
-$ build
+PS > ./build.ps1
 ```
-Build results are in the *build* folder
 
-> Note: the build is based on [Fake](http://fsharp.github.io/FAKE/)
-
-## Run the "Bench" example
-
-### Start the "Bench" microservice
+## Run the "Hello World" example
 
 Execute the following script :
 ```
-$ build\startMicroservice.cmd
+PS > ./run.cmd
 ```
 
-### Start the ConsoleApp
-
-Execute the following script:
-```
-$ build\startConsoleApp.cmd
-```
 > Note: RabbitMQ has to be running (default configuration)
 
 ### Open XComponent project
 
 Execute the following script at the root:
 ```
-$ xcstudio.cmd
+PS > ./xcstudio.cmd
 ```
 
 ## Questions?
