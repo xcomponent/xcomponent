@@ -26,6 +26,13 @@ Execute the following script :
 PS > ./run.cmd
 ```
 
+### Open XComponent project
+
+Execute the following script at the root:
+```
+PS > ./xcstudio.cmd
+```
+
 ## Create your own "Calculator" project
 
 [ Step by step tutorial ](documentation/README.md)

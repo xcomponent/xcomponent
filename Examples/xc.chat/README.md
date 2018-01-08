@@ -8,7 +8,6 @@ This project is a classic a chat application implemented with XComponent.
 
 Using Windows Power Shell, execute the following steps:
 ```
-PS > cd Examples\xc.chat
 PS > ./build.ps1
 ```
 Build results are in the *Runtime* folder
@@ -17,7 +16,6 @@ Build results are in the *Runtime* folder
 
 Using Windows Power Shell, execute the following steps:
 ```
-PS > cd Examples\xc.chat
 PS > ./run.cmd
 ```
 
@@ -31,7 +29,6 @@ Execute the following script at the root:
 
 After build and using Windows Power Shell, execute the following steps:
 ```
-PS > cd Examples\xc.chat
 PS > ./xcstudio.cmd
 ```
 
