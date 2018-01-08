@@ -15,35 +15,14 @@ In the `Hello World` sample we're actually going to run two different pieces of 
 
 Execute the following script:
 ```
-$ cd Examples\xc.helloworld
-$ build
+PS > ./build.ps1
 ```
-Build results are in the *build* folder
-
-> Note: the build is based on [Fake](http://fsharp.github.io/FAKE/)
 
 ## Run the "Hello World" example
 
-### Start the "Hello World" microservice
-
 Execute the following script :
 ```
-$ build\startMicroservice.cmd
-```
-
-### Start the ConsoleApp
-
-Execute the following script:
-```
-$ build\startConsoleApp.cmd
-```
-> Note: RabbitMQ has to be running (default configuration)
-
-### Open XComponent project
-
-Execute the following script at the root:
-```
-$ xcstudio.cmd
+PS > xcruntime.cmd
 ```
 
 ## Create your own "Hello World" project
