@@ -30,7 +30,7 @@ run*xcr.cmd
 runBridge.cmd
 runSpy.cmd
 runJS.cmd
-runClientApp.cmd
+runClientApp*.cmd
 run.cmd
 *.generated.cs
 

@@ -19,6 +19,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(OS)' != 'Windows_NT'">
+    <PostBuildEvent>mkdir -p "$(SolutionDir)generated\UserObject\" &amp;&amp; cp -f "$(TargetDir)"*.dll "$(SolutionDir)generated\UserObject\"</PostBuildEvent>
+  </PropertyGroup>
   <PropertyGroup Condition="'$(OS)' == 'Windows_NT'">
     <PostBuildEvent>xcopy "$(TargetDir)*.dll" "$(SolutionDir)generated\UserObject\"  /Y</PostBuildEvent>
   </PropertyGroup>
