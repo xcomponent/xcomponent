@@ -13,8 +13,8 @@
 using System;
 using XComponent.TradeCapture.Common;
 using XComponent.TradeCapture.Common.Senders;
-using XComponent.Runtime.Shared.TriggeredMethods;
-using XComponent.Runtime.Shared.Manager;
+using XComponent.Common.TriggeredMethod;
+using XComponent.Common.Manager;
 using XComponent.Common.Logger;
 using XComponent.Common.Logger.Logger;
 
@@ -23,7 +23,44 @@ namespace XComponent.TradeCapture.TriggeredMethod
 {
     public partial class TriggeredMethodContext : ICustomTriggeredMethodContext
     {
+<<<<<<< HEAD
         enum DefaultLogger
+=======
+        
+        private static ICustomTriggeredMethodContext instance = new TriggeredMethodContext();
+        
+        static TriggeredMethodContext()
+        {
+        }
+        
+        private TriggeredMethodContext()
+        {
+        }
+        
+        public static ICustomTriggeredMethodContext Instance
+        {
+            get
+            {
+                return instance;
+            }
+            set
+            {
+                instance = value;
+            }
+        }
+        
+        private ComponentManager componentManager;
+        
+        public IComponentManager ComponentManager
+        {
+            get
+            {
+                return componentManager;
+            }
+        }
+        
+        public XComponent.Common.Logger.IComponentLogger GetLogger(LogKeyEnum loggerName)
+>>>>>>> origin/master
         {
             TradeCaptureDefaultLogger
         }
@@ -80,6 +117,7 @@ namespace XComponent.TradeCapture.TriggeredMethod
         {
 				_defaultLogger.Enable();
 				componentManager = componentMgrInput;
+<<<<<<< HEAD
 
 
 
@@ -110,4 +148,29 @@ namespace XComponent.TradeCapture.TriggeredMethod
 
 
 	}
+=======
+				OnComponentInitialized();
+        }
+        
+        public string GetParameterValue(KeyValueParametersEnum keyValueParameter)
+        {
+				if (componentManager.KeyValueParameters.IsKeyExists(keyValueParameter.ToString())) {
+				return componentManager.KeyValueParameters.GetValue(keyValueParameter.ToString()); }
+				return null;
+        }
+    }
+    
+    public partial interface ICustomTriggeredMethodContext : ITriggeredMethodContext
+    {
+        
+        string GetParameterValue(KeyValueParametersEnum keyValueParameter);
+        
+        XComponent.Common.Logger.IComponentLogger GetLogger(LogKeyEnum loggerName);
+        
+        IComponentManager ComponentManager
+        {
+            get;
+        }
+    }
+>>>>>>> origin/master
 }

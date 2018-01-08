@@ -11,6 +11,7 @@
 //// </auto-generated>
 ////------------------------------------------------------------------------------
 using System;
+<<<<<<< HEAD
 using XComponent.SwaggerPetstore.Common;
 using XComponent.SwaggerPetstore.Common.Senders;
 using XComponent.Runtime.Shared.TriggeredMethods;
@@ -29,6 +30,13 @@ namespace XComponent.SwaggerPetstore.TriggeredMethod
         }
 
         private IComponentLogger _defaultLogger = XComponent.Common.Logger.Managers.ComponentLoggerManager<DefaultLogger>.GetComponentLogger(DefaultLogger.SwaggerPetstoreDefaultLogger, ComponentHelper.COMPONENT_NAME);
+=======
+using XComponent.SwaggerPetstore.Common;
+using XComponent.SwaggerPetstore.Common.Senders;
+using XComponent.Common.TriggeredMethod;
+using XComponent.Common.Manager;
+using XComponent.Common.Logger;
+>>>>>>> origin/master
 
         
         private static ICustomTriggeredMethodContext instance = new TriggeredMethodContext();
@@ -64,7 +72,7 @@ namespace XComponent.SwaggerPetstore.TriggeredMethod
             }
         }
         
-        public IComponentLogger GetLogger(LogKeyEnum loggerName)
+        public XComponent.Common.Logger.IComponentLogger GetLogger(LogKeyEnum loggerName)
         {
 				return  Loggers.GetLogger(loggerName);
         }
@@ -99,10 +107,15 @@ namespace XComponent.SwaggerPetstore.TriggeredMethod
         
         string GetParameterValue(KeyValueParametersEnum keyValueParameter);
         
+<<<<<<< HEAD
         IComponentLogger GetLogger(LogKeyEnum loggerName);
 
         IComponentLogger GetDefaultLogger();
 
+=======
+        XComponent.Common.Logger.IComponentLogger GetLogger(LogKeyEnum loggerName);
+        
+>>>>>>> origin/master
         IComponentManager ComponentManager
         {
             get;

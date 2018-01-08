@@ -8,7 +8,7 @@
     <ProjectGuid>{2D12F6CA-D31B-47B7-B7FE-DB1195D99E6F}</ProjectGuid>
     <RootNamespace>XComponent.SwaggerPetstore.UserObject</RootNamespace>
     <AssemblyName>XComponent.SwaggerPetstore.UserObject</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
   </PropertyGroup>

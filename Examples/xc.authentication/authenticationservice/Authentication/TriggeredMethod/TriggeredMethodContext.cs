@@ -8,8 +8,8 @@ namespace XComponent.Authentication.TriggeredMethod
     using System;
     using XComponent.Authentication.Common;
     using XComponent.Authentication.Common.Senders;
-    using XComponent.Runtime.Shared.TriggeredMethods;
-    using XComponent.Runtime.Shared.Manager;
+    using XComponent.Common.TriggeredMethod;
+    using XComponent.Common.Manager;
     using XComponent.Common.Logger;
     
     
@@ -36,7 +36,7 @@ namespace XComponent.Authentication.TriggeredMethod
 
         public IEnumerable<User> Users { get; private set; }
 
-        public void UnHanledException(XComponent.Runtime.StateMachine.Exceptions.TriggeredMethodException exception)
+        public void UnHanledException(TriggeredMethodException exception)
         {
         }
     }

@@ -228,3 +228,4 @@ Examples/**/StateMachine/
 Examples/**/generated/
 
 coverage/
+Examples/xc.bench/benchsimplefork/BenchSimpleFork/Common/
