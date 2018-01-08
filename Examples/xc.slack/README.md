@@ -17,35 +17,23 @@ In the `Slack` sample we're actually going to run two different pieces of softwa
 
 Execute the following script:
 ```
-$ cd Examples\xc.slack
-$ build
-```
-Build results are in the *build* folder
-
-> Note: the build is based on [Fake](http://fsharp.github.io/FAKE/)
-
-## Run the "Slack" example
-
-### Start the "Slack" microservice
-
-Execute the following script in the *build* folder:
-```
-$ build\startMicroservice.cmd
+PS > ./build.ps1
 ```
 
-### Start the ConsoleApp
+## Run the "Hello World" example
 
-Execute the following script in the *build* folder:
+Execute the following script :
 ```
-$ build\startConsoleApp.cmd
+PS > ./run.cmd
 ```
+
 > Note: RabbitMQ has to be running (default configuration)
 
 ### Open XComponent project
 
 Execute the following script at the root:
 ```
-$ xcstudio.cmd
+PS > ./xcstudio.cmd
 ```
 
 ## Some details about the project
