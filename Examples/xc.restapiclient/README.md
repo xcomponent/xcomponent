@@ -15,29 +15,24 @@ In the `REST API Client` sample we are going to create two pieces of software:
 
 Execute the following script:
 ```
-$ cd Examples\xc.restapiclient
-$ build
+PS > ./build.ps1
 ```
-Build results are in the *build* folder
-
-> Note: the build is based on [Fake](http://fsharp.github.io/FAKE/)
 
 ## Run the example
 
-### Start the "RestConsumer" microservice
-
-Execute the following script:
+Execute the following script :
 ```
-$ build\startMicroservice.cmd
+PS > ./run.cmd
 ```
 
-### Start the ConsoleApp
-
-Execute the following script in the *build* folder:
-```
-$ build\startConsoleApp.cmd
-```
 > Note: RabbitMQ has to be running (default configuration)
+
+### Open XComponent project
+
+Execute the following script at the root:
+```
+PS > ./xcstudio.cmd
+```
 
 ### Open XComponent project
 
