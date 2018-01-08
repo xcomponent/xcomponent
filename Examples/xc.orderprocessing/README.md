@@ -32,7 +32,6 @@ Execute the following script at the root:
 PS > ./xcstudio.cmd
 ```
 
-
 ## Create your own "Order Processing" project
 
 Step by step tutorial: [Click here](documentation/README.md)
