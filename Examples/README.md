@@ -4,7 +4,7 @@
 
 Execute the following script:
 ```
-$ build.cmd
+PS > ./build.cmd
 ```
 Consult each example's `README` to see how to run each of them.
 
