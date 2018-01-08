@@ -301,7 +301,7 @@ Another way to do this is to press the DEL key when you have selected one or mor
 ### Creating a component data structure
 
 XComponent is an event-driven platform. It means that:
-- you can events to components to trigger transitions
+- you can send events to components to trigger transitions
 - you will receive event notifications from state machines
 
 > Note: An event is defined as a C# class
@@ -361,7 +361,7 @@ To add a new timed out transition, click on the transition you created, check th
 
 ### Internal transitions
 
-An internal transition is a way to launch a transition which does not changes the current state of the state machine. For instance let’s consider the following example:
+An internal transition is a way to launch a transition which does not change the current state of the state machine. For instance let’s consider the following example:
 
 ![internal transition](Images/internal.png)
 
@@ -545,7 +545,7 @@ You got this window:
 
 XCSpy allows you to test your component and validate its functional behavior by sending transitions/events.
 
-The EntryPoint state has a red notification badge containing a 1 number. It represents the number of instances of the state machine that currently are in this state.
+The EntryPoint state has a red notification badge containing a number. It represents the number of instances of the state machine that currently are in this state.
 When launching the spy for the first time, once you have clicked on your component the EntryPoint has 1 instance. This is the beginning of your component. From here you can start testing.
 
 The Spy menu contains:
