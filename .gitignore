@@ -33,6 +33,8 @@ runJS.cmd
 runClientApp*.cmd
 run.cmd
 *.generated.cs
+xcassemblies
+*.xcApi
 
 # Visual Studo 2015 cache/options directory
 .vs/
