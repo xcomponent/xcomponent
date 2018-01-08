@@ -123,7 +123,7 @@ Task("GenerateRuntimeCmd")
 
     fileContents += "start runClientApp.cmd\n";
     fileContents += "start runSpy.cmd\n";
-    FileWriteText(@"xcruntime.cmd", fileContents);
+    FileWriteText(@"run.cmd", fileContents);
 });
   
 Task("Clean")

@@ -130,7 +130,7 @@ Task("GenerateRuntimeCmd")
     FileWriteText("runBridge.cmd", runBridgeCmd);
 
     fileContents += runBridgeCmd;
-    FileWriteText(@"xcruntime.cmd", fileContents);
+    FileWriteText(@"run.cmd", fileContents);
 });
   
 Task("Clean")

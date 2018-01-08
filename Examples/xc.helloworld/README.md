@@ -22,7 +22,7 @@ PS > ./build.ps1
 
 Execute the following script :
 ```
-PS > xcruntime.cmd
+PS > ./run.cmd
 ```
 
 ## Create your own "Hello World" project

@@ -120,7 +120,7 @@ Task("GenerateRuntimeCmd")
     fileContents += "start runBridge.cmd\n";
     fileContents += "start runJS.cmd\n";
     fileContents += "start runSpy.cmd\n";
-    FileWriteText(@"xcruntime.cmd", fileContents);
+    FileWriteText(@"run.cmd", fileContents);
 });
   
 Task("Clean")

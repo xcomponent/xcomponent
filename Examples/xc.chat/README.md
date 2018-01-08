@@ -18,7 +18,7 @@ Build results are in the *Runtime* folder
 Using Windows Power Shell, execute the following steps:
 ```
 PS > cd Examples\xc.chat
-PS > ./xcruntime.cmd
+PS > ./run.cmd
 ```
 
 It will start the three micro-services of the chat application (Chat Manager, History Manager and Chatter bot) along with the Web application and the WebSocket Bridge.

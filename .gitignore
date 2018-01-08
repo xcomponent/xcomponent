@@ -31,7 +31,7 @@ runBridge.cmd
 runSpy.cmd
 runJS.cmd
 runClientApp.cmd
-xcruntime.cmd
+run.cmd
 *.generated.cs
 
 # Visual Studo 2015 cache/options directory
