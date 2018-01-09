@@ -1,4 +1,4 @@
-#XComponent User Guide
+# XComponent User Guide
 
 ## Contents
 
