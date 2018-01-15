@@ -35,5 +35,5 @@ xcfunctions.registerTriggeredMethods('Calculator', 'Calculator', {
     }
 });
 
-xcfunctions.startEventQueue();
+xcfunctions.startEventQueue({ TimeoutInMillis: 10000 });
 
