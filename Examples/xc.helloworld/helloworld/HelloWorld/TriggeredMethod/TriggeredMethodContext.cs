@@ -21,7 +21,7 @@ namespace XComponent.HelloWorld.TriggeredMethod
         {
         }
         
-        public void UnHanledException(XComponent.Common.TriggeredMethod.TriggeredMethodException exception)
+        public void UnHanledException(XComponent.Runtime.StateMachine.Exceptions.TriggeredMethodException exception)
         {
         }
     }

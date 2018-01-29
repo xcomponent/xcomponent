@@ -3,6 +3,7 @@ using XComponent.Common.ApiContext;
 using XComponent.Common.Timeouts;
 using XComponent.Order.Common;
 using XComponent.Order.Common.Senders;
+using XComponent.Shared;
 
 namespace XComponent.Order.TriggeredMethod
 {
@@ -21,7 +22,7 @@ namespace XComponent.Order.TriggeredMethod
         /// </summary>
         public static void ExecuteOn_Created_Through_PublishOrderCreation(XComponent.Order.UserObject.OrderCreation orderCreation_TriggeringEvent, XComponent.Order.UserObject.OrderCreation orderCreation_PublicMember, object object_InternalMember, Context context, IPublishOrderCreationOrderCreationOnCreatedCreationFacadeSenderInterface sender)
         {
-            XComponent.Common.Clone.XCClone.Clone(orderCreation_TriggeringEvent, orderCreation_PublicMember);
+            XComponent.Shared.XCClone.Clone(orderCreation_TriggeringEvent, orderCreation_PublicMember);
         }
     }
 }

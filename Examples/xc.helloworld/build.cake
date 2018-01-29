@@ -72,9 +72,9 @@ Task("Build")
     NuGetRestore(solution, new NuGetRestoreSettings { NoCache = true });
   }
   XcBuildBuild("./" + modelPath, buildConfiguration, "Dev", "VS2015", getXCBuildExtraParam());
-  BuildNETSolution(@"helloworld\HelloWorldClientApplication/HelloWorldClientApplication.sln");
   RunTarget("ExportRuntime");
   RunTarget("ExportInterface");
+  BuildNETSolution(@"helloworld\HelloWorldClientApplication/HelloWorldClientApplication.sln");
   RunTarget("GenerateStudioCmd");
   RunTarget("GenerateRuntimeCmd");
 });

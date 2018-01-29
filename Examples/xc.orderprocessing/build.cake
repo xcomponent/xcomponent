@@ -72,10 +72,10 @@ Task("Build")
     NuGetRestore(solution, new NuGetRestoreSettings { NoCache = true });
   }
   XcBuildBuild("./" + modelPath, buildConfiguration, "Dev", "VS2015", getXCBuildExtraParam());
-  BuildNETSolution(@"OrderProcessing\OrderProcessingClient\OrderProcessingClient.sln");
 
   RunTarget("ExportRuntime");
   RunTarget("ExportInterface");
+  BuildNETSolution(@"OrderProcessing\OrderProcessingClient\OrderProcessingClient.sln");
   RunTarget("GenerateStudioCmd");
   RunTarget("GenerateRuntimeCmd");
 });

@@ -3,9 +3,9 @@ using System.Threading;
 using XCClientAPICommon.Client;
 using XCClientAPICommon.ApiExtensions;
 using XComponent.Order.UserObject;
-using XComponent.OrderProcessing.OrderProcessingApi.Order;
-using XComponent.OrderProcessing.OrderProcessingApi.Trade;
-using XComponent.OrderProcessing.OrderProcessingApi;
+using XComponent.OrderProcessing.OrderProcessingAPI.Order;
+using XComponent.OrderProcessing.OrderProcessingAPI.Trade;
+using XComponent.OrderProcessing.OrderProcessingAPI;
 
 namespace OrderProcessingClient
 {
@@ -30,7 +30,7 @@ namespace OrderProcessingClient
         static void Main(string[] args)
         {
             // Initialize the interfaces
-            using (var myOrderProcessingApi = new ApiWrapper<OrderProcessingApi>())
+            using (var myOrderProcessingApi = new ApiWrapper<OrderProcessingAPI>())
             {
                 ClientApiOptions clientApiOptions = new ClientApiOptions(); //fill this object to override default xcApi parameters
 

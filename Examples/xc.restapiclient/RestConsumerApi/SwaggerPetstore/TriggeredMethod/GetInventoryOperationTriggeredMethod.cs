@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using XComponent.Common.ApiContext;
 using XComponent.Common.Timeouts;
+using XComponent.Shared;
 using XComponent.SwaggerPetstore.Common;
 using XComponent.SwaggerPetstore.Common.Senders;
 using XComponent.SwaggerPetstore.TriggeredMethod.ServiceClient;
@@ -15,7 +16,7 @@ namespace XComponent.SwaggerPetstore.TriggeredMethod
     {
         public static void ExecuteOn_SendingRequest_Through_CreateGetInventoryHttpRequest(XComponent.SwaggerPetstore.UserObject.GetInventoryOperation getInventoryOperation, XComponent.SwaggerPetstore.UserObject.GetInventoryOperation getInventoryOperation_PublicMember, object object_InternalMember, Context context, ICreateGetInventoryHttpRequestGetInventoryOperationOnSendingRequestGetInventoryOperationSenderInterface sender)
         {
-            XComponent.Common.Clone.XCClone.Clone(getInventoryOperation, getInventoryOperation_PublicMember);
+            XComponent.Shared.XCClone.Clone(getInventoryOperation, getInventoryOperation_PublicMember);
 
             var task = TriggeredMethodContext.Instance.ServiceClient.GetInventoryWithHttpMessagesAsync();
             task.ContinueWith((Task<Microsoft.Rest.HttpOperationResponse<System.Collections.Generic.IDictionary<string, int?>>> httpTask) =>

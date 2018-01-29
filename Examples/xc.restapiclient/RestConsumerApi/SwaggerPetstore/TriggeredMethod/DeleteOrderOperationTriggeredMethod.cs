@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using XComponent.Common.ApiContext;
 using XComponent.Common.Timeouts;
+using XComponent.Shared;
 using XComponent.SwaggerPetstore.Common;
 using XComponent.SwaggerPetstore.Common.Senders;
 using XComponent.SwaggerPetstore.TriggeredMethod.ServiceClient;
@@ -15,7 +16,7 @@ namespace XComponent.SwaggerPetstore.TriggeredMethod
     {
         public static void ExecuteOn_SendingRequest_Through_CreateDeleteOrderHttpRequest(XComponent.SwaggerPetstore.UserObject.DeleteOrderOperation deleteOrderOperation, XComponent.SwaggerPetstore.UserObject.DeleteOrderOperation deleteOrderOperation_PublicMember, object object_InternalMember, Context context, ICreateDeleteOrderHttpRequestDeleteOrderOperationOnSendingRequestDeleteOrderOperationSenderInterface sender)
         {
-            XComponent.Common.Clone.XCClone.Clone(deleteOrderOperation, deleteOrderOperation_PublicMember);
+            XComponent.Shared.XCClone.Clone(deleteOrderOperation, deleteOrderOperation_PublicMember);
 
             var task = TriggeredMethodContext.Instance.ServiceClient.DeleteOrderWithHttpMessagesAsync(deleteOrderOperation_PublicMember.Event.orderId);
             task.ContinueWith((Task<Microsoft.Rest.HttpOperationResponse> httpTask) =>

@@ -8,7 +8,7 @@
     <ProjectGuid>{1CD04BCC-0B01-4195-B53F-B0317AF7A154}</ProjectGuid>
     <RootNamespace>XComponent.BenchSimpleFork.TriggeredMethod</RootNamespace>
     <AssemblyName>XComponent.BenchSimpleFork.TriggeredMethod</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
   </PropertyGroup>

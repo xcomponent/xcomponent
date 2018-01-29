@@ -3,6 +3,7 @@ using XComponent.Common.ApiContext;
 using XComponent.Common.Timeouts;
 using XComponent.Order.Common;
 using XComponent.Order.Common.Senders;
+using XComponent.Shared;
 
 namespace XComponent.Order.TriggeredMethod
 {
@@ -21,7 +22,7 @@ namespace XComponent.Order.TriggeredMethod
         /// </summary>
         public static void ExecuteOn_PartiallyFilled_Through_PublishOrderPartiallyFilled(XComponent.Order.UserObject.OrderExecution orderExecution_TriggeringEvent, XComponent.Order.UserObject.OrderExecution orderExecution_PublicMember, object object_InternalMember, Context context, IPublishOrderPartiallyFilledOrderExecutionOnPartiallyFilledPartialExecutionFacadeSenderInterface sender)
         {
-            XComponent.Common.Clone.XCClone.Clone(orderExecution_TriggeringEvent, orderExecution_PublicMember);
+            XComponent.Shared.XCClone.Clone(orderExecution_TriggeringEvent, orderExecution_PublicMember);
         }
     }
 }

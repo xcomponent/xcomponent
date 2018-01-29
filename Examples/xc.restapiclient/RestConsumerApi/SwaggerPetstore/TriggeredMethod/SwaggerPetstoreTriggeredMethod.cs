@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using XComponent.Common.ApiContext;
 using XComponent.Common.Timeouts;
+using XComponent.Shared;
 using XComponent.SwaggerPetstore.Common;
 using XComponent.SwaggerPetstore.Common.Senders;
 using XComponent.SwaggerPetstore.TriggeredMethod.ServiceClient;

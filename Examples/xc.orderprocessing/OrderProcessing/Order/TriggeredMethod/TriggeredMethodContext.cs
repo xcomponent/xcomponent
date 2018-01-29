@@ -10,8 +10,8 @@ namespace XComponent.Order.TriggeredMethod
     using System;
     using XComponent.Order.Common;
     using XComponent.Order.Common.Senders;
-    using XComponent.Common.TriggeredMethod;
-    using XComponent.Common.Manager;
+    using XComponent.Runtime.Shared.TriggeredMethods;
+    using XComponent.Runtime.Shared.Manager;
     using XComponent.Common.Logger;
     
     
@@ -22,7 +22,7 @@ namespace XComponent.Order.TriggeredMethod
         {
         }
         
-        public void UnHanledException(XComponent.Common.TriggeredMethod.TriggeredMethodException exception)
+        public void UnHanledException(XComponent.Runtime.StateMachine.Exceptions.TriggeredMethodException exception)
         {
         }
     }

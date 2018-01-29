@@ -8,6 +8,9 @@
 var target = Argument("target", "Build");
 var buildConfiguration = Argument("buildConfiguration", "Debug");
 var modelPath = Argument("modelPath", "chat/chat_Model.xcml");
+var toolsRoot = @"../tools/XComponent.Community/tools/XCStudio/";
+
+SetXcBuildPath(toolsRoot + @"/XCBuild/xcbuild.exe");
 
 Func<bool> IsRunningOnLinux = () => {
     return IsRunningOnUnix() && !DirectoryExists("/Applications");

@@ -1,6 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 15.0.27130.2024
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XComponent.SlackProxy.UserObject", "UserObject\XComponent.SlackProxy.UserObject.csproj", "{5AA6B7DD-3E1F-4FFC-9B65-6793F54FC074}"
 EndProject
@@ -8,12 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XComponent.SlackProxy.Trigg
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XComponent.SlackProxy.Common", "Common\XComponent.SlackProxy.Common.csproj", "{BE692B62-C3EF-410D-9521-7739F2347E1C}"
 EndProject
-<<<<<<< HEAD
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XComponent.SlackProxy.StateMachine", "StateMachine\XComponent.SlackProxy.StateMachine.csproj", "{90A47DDD-A0BA-4268-BAC9-DDDEBFCC350B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XComponent.SlackProxy.StateMachine", "StateMachine\XComponent.SlackProxy.StateMachine.csproj", "{D9B9D8CB-66C8-4F52-B1DB-2899CD519BA0}"
 EndProject
-
-=======
->>>>>>> origin/master
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,8 +28,15 @@ Global
 		{BE692B62-C3EF-410D-9521-7739F2347E1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE692B62-C3EF-410D-9521-7739F2347E1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE692B62-C3EF-410D-9521-7739F2347E1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9B9D8CB-66C8-4F52-B1DB-2899CD519BA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9B9D8CB-66C8-4F52-B1DB-2899CD519BA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9B9D8CB-66C8-4F52-B1DB-2899CD519BA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9B9D8CB-66C8-4F52-B1DB-2899CD519BA0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A1F4D11E-8D35-49DB-A822-B6D79C63E2CD}
 	EndGlobalSection
 EndGlobal
