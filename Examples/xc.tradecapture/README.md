@@ -17,49 +17,18 @@ In this project, we're actually going to run different pieces of software concur
 * **`[Trade Creator Application]`** - A Wpf Application from which we can create new trades
 * **`[Trade Validator Application]`** - A Wpf Application from which we can monitor and validate trades
 
-
 ## Build the project
 
 Execute the following script:
 ```
-$ cd xc.tradecapture
-$ build
+PS > ./build.ps1
 ```
-Build results are in the *build* folder
 
-> Note: the build is based on [Fake](http://fsharp.github.io/FAKE/)
-
-## Run the "Trade Capture" project
-
-### 1. Start the microservices
-#### Start the "referential" microservice
+## Run the example
 
 Execute the following script :
 ```
-$ build\startReferentialService.cmd
-```
-
-#### Start the "trade" microservice
-
-Execute the following script:
-```
-$ build\startTradeService.cmd
-```
-
-### 2. Start the GUIs
-
-### Start the Trade Creator Gui
-
-Execute the following script:
-```
-$ build\startTradeCreatorGui.cmd
-```
-
-### Start the Trade Validator Gui
-
-Execute the following script:
-```
-$ build\tartTradeValidatorGui.cmd
+PS > ./run.cmd
 ```
 
 > Note: RabbitMQ has to be running (default configuration)
@@ -68,7 +37,7 @@ $ build\tartTradeValidatorGui.cmd
 
 Execute the following script at the root:
 ```
-$ xcstudio.cmd
+PS > ./xcstudio.cmd
 ```
 
 ## "Trade Capture" project details

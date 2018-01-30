@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ComponentData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="bot" Version="27">
+  <StateMachines>
+    <StateMachineData Id="1" Name="bot" PublicMember="XComponent.ChatManager.UserObject.PublishedMessage" />
+  </StateMachines>
+  <States>
+    <StateData Id="1" Name="EntryPoint" IsEntryPoint="true" SubGraphKey="StateMachine1" />
+    <StateData Id="2" Name="Up" SubGraphKey="StateMachine1">
+      <TriggeredMethods>
+        <TriggeredMethodData TransitionName="MessageReceived" TriggeringEvent="XComponent.ChatManager.UserObject.PublishedMessage" />
+      </TriggeredMethods>
+    </StateData>
+  </States>
+  <Links>
+    <TransitionData Id="1" Name="Up" FromKey="State1" ToKey="State2" Type="TimeOut" TriggeringEvent="XComponent.Common.Event.DefaultEvent" />
+    <TransitionData Id="2" Name="MessageReceived" FromKey="State2" ToKey="State2" Type="Standard" TriggeringEvent="XComponent.ChatManager.UserObject.PublishedMessage" />
+  </Links>
+  <PublicAssemblies>
+    <AssemblyData Name="ChatManager" Path="..\ChatManager\generated\UserObject\XComponent.ChatManager.UserObject.dll" />
+  </PublicAssemblies>
+</ComponentData>

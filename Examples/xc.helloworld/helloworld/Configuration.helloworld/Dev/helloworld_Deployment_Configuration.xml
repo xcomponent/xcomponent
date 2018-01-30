@@ -32,14 +32,14 @@
       </communication>
       <threading impl="Akka" type="SEQUENTIAL" />
       <stateMachines>
-        <stateMachine id="1" poolSize="10000">
+        <stateMachine id="1" poolSize="10000" numberOfWorker="0">
           <communication name="rabbitmq" type="BUS" messageQueue="SEQUENTIAL">
             <input>{topicType}.{version}.{runtime}.{component}.{std}</input>
             <output>{topicType}.{version}.{runtime}.{component}.{std}</output>
           </communication>
           <threading impl="Akka" type="INHERITFROMPARENT" />
         </stateMachine>
-        <stateMachine id="2" poolSize="10000">
+        <stateMachine id="2" poolSize="10000" numberOfWorker="0">
           <communication name="rabbitmq" type="BUS" messageQueue="SEQUENTIAL">
             <input>{topicType}.{version}.{runtime}.{component}.{std}</input>
             <output>{topicType}.{version}.{runtime}.{component}.{std}</output>

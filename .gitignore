@@ -7,6 +7,8 @@
 *.userosscache
 *.sln.docstates
 *.DS_Store
+tags
+
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
@@ -15,12 +17,25 @@
 [Dd]ebugPublic/
 [Rr]elease/
 [Rr]eleases/
+dist/
 x64/
 x86/
 build/
 bld/
 [Bb]in/
 [Oo]bj/
+[Tt]ools/
+XComponent.Studio.bat
+Runtime/
+run*xcr.cmd
+runBridge.cmd
+runSpy.cmd
+runJS.cmd
+runClientApp*.cmd
+run.cmd
+*.generated.cs
+xcassemblies
+*.xcApi
 
 # Visual Studo 2015 cache/options directory
 .vs/
@@ -209,4 +224,9 @@ lib/
 index.txt
 
 #XComponent generated sources
+Examples/**/Common/
+Examples/**/StateMachine/
+Examples/**/generated/
+
+coverage/
 Examples/xc.bench/benchsimplefork/BenchSimpleFork/Common/

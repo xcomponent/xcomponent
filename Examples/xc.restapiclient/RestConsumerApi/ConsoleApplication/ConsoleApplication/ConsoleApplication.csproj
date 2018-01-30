@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
@@ -10,8 +10,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ConsoleApplication</RootNamespace>
     <AssemblyName>ConsoleApplication</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>    
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -40,16 +41,6 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="FSharp.Core, Version=4.4.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\FSharp.Core.4.0.0.1\lib\net40\FSharp.Core.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="FSharp.Core">
-      <HintPath>..\lib\xcassemblies\FSharp.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="FSharp.Core.resources">
-      <HintPath>..\lib\xcassemblies\FSharp.Core.resources.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Rest.ClientRuntime">
       <HintPath>..\lib\xcassemblies\Microsoft.Rest.ClientRuntime.dll</HintPath>
     </Reference>
@@ -65,7 +56,6 @@
     <Reference Include="XComponent.SwaggerPetstore.UserObject">
       <HintPath>..\lib\xcassemblies\XComponent.SwaggerPetstore.UserObject.dll</HintPath>
     </Reference>
-
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
@@ -74,10 +64,8 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>  
-
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

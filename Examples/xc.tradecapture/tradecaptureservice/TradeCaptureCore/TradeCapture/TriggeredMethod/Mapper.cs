@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace XComponent.TradeCapture.TriggeredMethod
 {
@@ -9,7 +8,7 @@ namespace XComponent.TradeCapture.TriggeredMethod
     {
         private Dictionary<int, string> map = new Dictionary<int, string>();
         private List<string> instruments = new List<string>();
-        
+
         public Mapper()
         {
             map.Add(1, "F");
@@ -32,7 +31,7 @@ namespace XComponent.TradeCapture.TriggeredMethod
 
         public string GetValue(string key, DateTime maturityDate)
         {
-            String mapped = key.ToUpper();          
+            String mapped = key.ToUpper();
             string suffix = map.First(e => e.Key == maturityDate.Month).Value;
             suffix += maturityDate.Year.ToString().Substring(2, 2);
 
@@ -41,7 +40,7 @@ namespace XComponent.TradeCapture.TriggeredMethod
 
         public void AddValue(string instrument)
         {
-            if(!instruments.Contains(instrument))
+            if (!instruments.Contains(instrument))
                 instruments.Add(instrument);
         }
 

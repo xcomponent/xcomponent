@@ -1,0 +1,15 @@
+{
+  "name": "calculator.js",
+  "version": "1.0.0",
+  "description": "Implements triggered methods for the calculator example",
+  "main": "index.js",
+  "author": "XComponent <dev@xcomponent.com> (http://www.xcomponent.com)",
+  "license": "Apache-2.0",
+  "private": false,
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "xcfunctions": "0.0.3"
+  }
+}

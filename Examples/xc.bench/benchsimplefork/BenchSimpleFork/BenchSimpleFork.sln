@@ -8,6 +8,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XComponent.BenchSimpleFork.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XComponent.BenchSimpleFork.Common", "Common\XComponent.BenchSimpleFork.Common.csproj", "{BE692B62-C3EF-410D-9521-7739F2347E1C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XComponent.BenchSimpleFork.StateMachine", "StateMachine\XComponent.BenchSimpleFork.StateMachine.csproj", "{333CDF93-88A7-497D-8565-C8E021560D47}"
+EndProject
+
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

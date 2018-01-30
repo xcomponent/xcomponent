@@ -1,6 +1,7 @@
 using System;
 using XComponent.Common.ApiContext;
 using XComponent.Common.Timeouts;
+using XComponent.Shared;
 using XComponent.Trade.Common;
 using XComponent.Trade.Common.Senders;
 
@@ -21,7 +22,7 @@ namespace XComponent.Trade.TriggeredMethod
         /// </summary>
         public static void ExecuteOn_WaitingForExecution_Through_CreateTrade(XComponent.Trade.UserObject.Trade trade_TriggeringEvent, XComponent.Trade.UserObject.Trade trade_PublicMember, object object_InternalMember, Context context, ICreateTradeTradeOnWaitingForExecutionTradeSenderInterface sender)
         {
-            XComponent.Common.Clone.XCClone.Clone(trade_TriggeringEvent, trade_PublicMember);
+            XComponent.Shared.XCClone.Clone(trade_TriggeringEvent, trade_PublicMember);
         }
 
         public static void ExecuteOn_Executed_Through_Execute(XComponent.Trade.UserObject.TradeExecution tradeExecution, XComponent.Trade.UserObject.Trade trade, object object_InternalMember, Context context, IExecuteTradeExecutionOnExecutedTradeSenderInterface sender)

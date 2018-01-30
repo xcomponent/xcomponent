@@ -1,6 +1,7 @@
 using System;
 using XComponent.Common.ApiContext;
 using XComponent.Common.Timeouts;
+using XComponent.Shared;
 using XComponent.Trade.Common;
 using XComponent.Trade.Common.Senders;
 using XComponent.Trade.UserObject;

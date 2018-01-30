@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ComponentGraphicalData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <States>
+    <StateGraphicalData Id="1" CenterX="-194.40000000000003" CenterY="-5.6843418860808015E-14" />
+    <StateGraphicalData Id="2" CenterX="-74.400000000000034" CenterY="-5.6843418860808015E-14" />
+  </States>
+  <TransitionPatternStates />
+  <Links>
+    <TransitionGraphicalData Id="1" Curviness="NaN" Color="#00FFFFFF">
+      <Points>
+        <Point>
+          <X>-155.87836255921189</X>
+          <Y>27.954516438903617</Y>
+        </Point>
+        <Point>
+          <X>-127.64111111111116</X>
+          <Y>20.959999999999944</Y>
+        </Point>
+        <Point>
+          <X>-99.7705555555556</X>
+          <Y>20.959999999999944</Y>
+        </Point>
+        <Point>
+          <X>-71.533304107454839</X>
+          <Y>27.954516438903621</Y>
+        </Point>
+      </Points>
+      <IsNameDisplayed>true</IsNameDisplayed>
+    </TransitionGraphicalData>
+    <TransitionGraphicalData Id="2" Curviness="NaN" Color="#00FFFFFF">
+      <Points>
+        <Point>
+          <X>-53.150000000001128</X>
+          <Y>41.785317547303656</Y>
+        </Point>
+        <Point>
+          <X>-43.150000000001128</X>
+          <Y>59.105825622992427</Y>
+        </Point>
+        <Point>
+          <X>-75.649999999999707</X>
+          <Y>59.105825622992427</Y>
+        </Point>
+        <Point>
+          <X>-65.649999999999707</X>
+          <Y>41.785317547303656</Y>
+        </Point>
+      </Points>
+      <IsNameDisplayed>true</IsNameDisplayed>
+    </TransitionGraphicalData>
+  </Links>
+  <TransversalLinks />
+</ComponentGraphicalData>

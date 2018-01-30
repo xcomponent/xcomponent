@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <ProjectGuid>{56D133BD-F681-4BD6-9FE0-CCA4CFDE203F}</ProjectGuid>
+    <RootNamespace>XComponent.HistoryManager.UserObject</RootNamespace>
+    <AssemblyName>XComponent.HistoryManager.UserObject</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" ('$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ) ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" ('$(Configuration)|$(Platform)' == 'Release|AnyCPU' ) ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="HistoryManager.cs" />
+    <Compile Include="HistoryRequest.cs" />
+    <Compile Include="HistoryResponse.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PublishedHistory.cs" />
+    <Compile Include="PublishedHistoryInternalMember.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="XComponent.ChatManager.UserObject">
+      <HintPath>..\..\ChatManager\generated\UserObject\XComponent.ChatManager.UserObject.dll</HintPath>
+    </Reference>
+    <Reference Include="XComponent.Core.dll">
+      <HintPath>..\UserReference\XComponent.Core.dll</HintPath>
+      <SpecificVersion>false</SpecificVersion>
+    </Reference>
+  </ItemGroup>
+  <PropertyGroup Condition="'$(OS)' == 'Windows_NT'">
+    <PostBuildEvent>xcopy "$(TargetDir)*.dll" "$(SolutionDir)generated\UserObject\"  /Y</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(OS)' != 'Windows_NT'">
+    <PostBuildEvent>mkdir -p "$(SolutionDir)generated\UserObject\" &amp;&amp; cp -f "$(TargetDir)"*.dll "$(SolutionDir)generated\UserObject\"</PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

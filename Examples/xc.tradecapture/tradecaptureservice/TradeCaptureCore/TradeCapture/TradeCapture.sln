@@ -1,10 +1,14 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
+VisualStudioVersion = 15.0.27130.2024
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XComponent.TradeCapture.UserObject", "UserObject\XComponent.TradeCapture.UserObject.csproj", "{7AFC4DB7-EA78-4715-901C-02792976C8C0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XComponent.TradeCapture.TriggeredMethod", "TriggeredMethod\XComponent.TradeCapture.TriggeredMethod.csproj", "{29F1CA2B-A82F-49CD-B6A2-109386518FC3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XComponent.TradeCapture.Common", "Common\XComponent.TradeCapture.Common.csproj", "{BE692B62-C3EF-410D-9521-7739F2347E1C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XComponent.TradeCapture.StateMachine", "StateMachine\XComponent.TradeCapture.StateMachine.csproj", "{B3710D4B-BC5F-4EAC-9D29-C9BC4A31E4BE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,8 +28,15 @@ Global
 		{BE692B62-C3EF-410D-9521-7739F2347E1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE692B62-C3EF-410D-9521-7739F2347E1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE692B62-C3EF-410D-9521-7739F2347E1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3710D4B-BC5F-4EAC-9D29-C9BC4A31E4BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3710D4B-BC5F-4EAC-9D29-C9BC4A31E4BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3710D4B-BC5F-4EAC-9D29-C9BC4A31E4BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3710D4B-BC5F-4EAC-9D29-C9BC4A31E4BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {605365FF-67A6-49D7-9063-89F61F9DDEAB}
 	EndGlobalSection
 EndGlobal

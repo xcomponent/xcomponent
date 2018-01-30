@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ComponentGraphicalData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <States>
+    <StateGraphicalData Id="1" CenterX="120" CenterY="0" />
+    <StateGraphicalData Id="2" CenterX="240" CenterY="0" />
+    <StateGraphicalData Id="3" CenterX="460.24484609313294" CenterY="14.509617371658891" />
+  </States>
+  <TransitionPatternStates />
+  <Links>
+    <TransitionGraphicalData Id="1" Curviness="NaN" Color="#00FFFFFF">
+      <Points>
+        <Point>
+          <X>158.52163744078814</X>
+          <Y>27.954516438903674</Y>
+        </Point>
+        <Point>
+          <X>186.75888888888889</X>
+          <Y>20.96</Y>
+        </Point>
+        <Point>
+          <X>214.62944444444443</X>
+          <Y>20.96</Y>
+        </Point>
+        <Point>
+          <X>242.86669589254518</X>
+          <Y>27.954516438903678</Y>
+        </Point>
+      </Points>
+      <IsNameDisplayed>true</IsNameDisplayed>
+    </TransitionGraphicalData>
+    <TransitionGraphicalData Id="3" Curviness="NaN" Color="#00FFFFFF">
+      <Points>
+        <Point>
+          <X>261.24999999999892</X>
+          <Y>41.785317547303713</Y>
+        </Point>
+        <Point>
+          <X>271.24999999999892</X>
+          <Y>59.105825622992484</Y>
+        </Point>
+        <Point>
+          <X>238.75000000000031</X>
+          <Y>59.105825622992484</Y>
+        </Point>
+        <Point>
+          <X>248.75000000000031</X>
+          <Y>41.785317547303713</Y>
+        </Point>
+      </Points>
+      <IsNameDisplayed>true</IsNameDisplayed>
+    </TransitionGraphicalData>
+    <TransitionGraphicalData Id="2" Curviness="NaN" Color="#00FFFFFF">
+      <Points>
+        <Point>
+          <X>267.47765765533921</X>
+          <Y>30.212966241623064</Y>
+        </Point>
+        <Point>
+          <X>336.53728761456637</X>
+          <Y>26.078386150904958</Y>
+        </Point>
+        <Point>
+          <X>404.97040020221482</X>
+          <Y>30.390824556604482</Y>
+        </Point>
+        <Point>
+          <X>472.96467605752514</X>
+          <Y>43.162108499258949</Y>
+        </Point>
+      </Points>
+      <IsNameDisplayed>true</IsNameDisplayed>
+    </TransitionGraphicalData>
+  </Links>
+  <TransversalLinks>
+    <TransitionGraphicalData Id="4" Curviness="NaN" Color="#00FFFFFF">
+      <Points>
+        <Point>
+          <X>267.20897170026194</X>
+          <Y>28.278394133694782</Y>
+        </Point>
+        <Point>
+          <X>301.65383213687187</X>
+          <Y>20.712847904367724</Y>
+        </Point>
+        <Point>
+          <X>335.86078442106106</X>
+          <Y>20.531736834527937</Y>
+        </Point>
+        <Point>
+          <X>370.13949334095014</X>
+          <Y>30.211954023851405</Y>
+        </Point>
+      </Points>
+      <IsNameDisplayed>false</IsNameDisplayed>
+    </TransitionGraphicalData>
+  </TransversalLinks>
+</ComponentGraphicalData>

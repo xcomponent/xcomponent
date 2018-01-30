@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<deployment environment="Dev" version="1.0" debugType="Debug" frameworkType="Framework452" visualstudioVersion="VS2015" defaultExportPath="" extractConfig="false" generateWebSocketApi="false" embedUserObjects="false" defaultDeployPath="" logsDirectory="$(installdir)" logsPattern="pid-${processid}-${component}-${shortdate}" runtimesLogs="True" logsLevel="TRACE" logsMaxSize="50" reactiveApiName="" reactiveApiVersion="">
+  <!--
+	THREADING IMPLEMENTATION VALUES = AKKA - ->
+	<!- - THREADING TYPE VALUES = ONEBYSTM, ONEBYINSTANCE, INHERITFROMPARENT, INHERITFROMLINKING - ->
+	<!- - SERIALIZATION TYPE VALUES = BINARY, XML, JSON - ->
+	<!- - MESSAGE QUEUE VALUES = ONEBYSTM, ONEBYINSTANCE, INHERITFROMPARENT-->
+  <buildEvents>
+    <preBuildEvent></preBuildEvent>
+    <postBuildEvent></postBuildEvent>
+    <exportFolders />
+    <exportRuntimeFolders />
+  </buildEvents>
+  <components>
+    <component name="ChatManager" alias="ChatManager" deploymentTarget="ChatManager">
+      <communication name="rabitmq" type="BUS" messageQueue="SEQUENTIAL">
+        <input>{topicType}.{version}.{runtime}.{component}.{std}</input>
+        <output>{topicType}.{version}.{runtime}.{component}.{std}</output>
+      </communication>
+      <threading impl="Akka" type="SEQUENTIAL" />
+      <stateMachines>
+        <stateMachine id="1" poolSize="100" numberOfWorker="0">
+          <communication name="rabitmq" type="BUS" messageQueue="SEQUENTIAL">
+            <input>{topicType}.{version}.{runtime}.{component}.{std}</input>
+            <output>{topicType}.{version}.{runtime}.{component}.{std}</output>
+          </communication>
+          <threading impl="Akka" type="INHERITFROMPARENT" />
+        </stateMachine>
+        <stateMachine id="2" poolSize="100" numberOfWorker="0">
+          <communication name="rabitmq" type="BUS" messageQueue="SEQUENTIAL">
+            <input>{topicType}.{version}.{runtime}.{component}.{std}</input>
+            <output>{topicType}.{version}.{runtime}.{component}.{std}</output>
+          </communication>
+          <threading impl="Akka" type="INHERITFROMPARENT" />
+        </stateMachine>
+        <stateMachine id="3" poolSize="100" numberOfWorker="0">
+          <communication name="rabitmq" type="BUS" messageQueue="SEQUENTIAL">
+            <input>{topicType}.{version}.{runtime}.{component}.{std}</input>
+            <output>{topicType}.{version}.{runtime}.{component}.{std}</output>
+          </communication>
+          <threading impl="Akka" type="INHERITFROMPARENT" />
+        </stateMachine>
+      </stateMachines>
+    </component>
+    <component name="ChatterBot" alias="ChatterBot" deploymentTarget="ChatterBot">
+      <communication name="rabitmq" type="BUS" messageQueue="SEQUENTIAL">
+        <input>{topicType}.{version}.{runtime}.{component}.{std}</input>
+        <output>{topicType}.{version}.{runtime}.{component}.{std}</output>
+      </communication>
+      <threading impl="Akka" type="SEQUENTIAL" />
+      <stateMachines>
+        <stateMachine id="1" poolSize="100" numberOfWorker="4">
+          <communication name="rabitmq" type="BUS" messageQueue="SEQUENTIAL">
+            <input>{topicType}.{version}.{runtime}.{component}.{std}</input>
+            <output>{topicType}.{version}.{runtime}.{component}.{std}</output>
+          </communication>
+          <threading impl="Akka" type="INHERITFROMPARENT" />
+        </stateMachine>
+        <stateMachine id="2" poolSize="100" numberOfWorker="4">
+          <communication name="rabitmq" type="BUS" messageQueue="SEQUENTIAL">
+            <input>{topicType}.{version}.{runtime}.{component}.{std}</input>
+            <output>{topicType}.{version}.{runtime}.{component}.{std}</output>
+          </communication>
+          <threading impl="Akka" type="INHERITFROMPARENT" />
+        </stateMachine>
+      </stateMachines>
+    </component>
+    <component name="HistoryManager" alias="HistoryManager" deploymentTarget="HistoryManager">
+      <communication name="rabitmq" type="BUS" messageQueue="SEQUENTIAL">
+        <input>{topicType}.{version}.{runtime}.{component}.{std}</input>
+        <output>{topicType}.{version}.{runtime}.{component}.{std}</output>
+      </communication>
+      <threading impl="Akka" type="SEQUENTIAL" />
+      <stateMachines>
+        <stateMachine id="1" poolSize="100" numberOfWorker="4">
+          <communication name="rabitmq" type="BUS" messageQueue="SEQUENTIAL">
+            <input>{topicType}.{version}.{runtime}.{component}.{std}</input>
+            <output>{topicType}.{version}.{runtime}.{component}.{std}</output>
+          </communication>
+          <threading impl="Akka" type="INHERITFROMPARENT" />
+        </stateMachine>
+        <stateMachine id="2" poolSize="100" numberOfWorker="4">
+          <communication name="rabitmq" type="BUS" messageQueue="SEQUENTIAL">
+            <input>{topicType}.{version}.{runtime}.{component}.{std}</input>
+            <output>{topicType}.{version}.{runtime}.{component}.{std}</output>
+          </communication>
+          <threading impl="Akka" type="INHERITFROMPARENT" />
+        </stateMachine>
+      </stateMachines>
+      <logKeys>
+        <logKey IsActivated="False">Default</logKey>
+      </logKeys>
+    </component>
+  </components>
+  <clientAPIs>
+    <clientAPI name="chatApi" messageQueue="INHERITFROMPARENT">
+      <component name="ChatManager" messageQueue="INHERITFROMPARENT">
+        <update from="1" state="1" messageQueue="INHERITFROMPARENT" />
+        <update from="2" state="2" messageQueue="INHERITFROMPARENT" />
+        <update from="3" state="3" messageQueue="INHERITFROMPARENT" />
+      </component>
+      <component name="HistoryManager" messageQueue="INHERITFROMPARENT">
+        <update from="2" state="3" messageQueue="INHERITFROMPARENT" />
+      </component>
+    </clientAPI>
+  </clientAPIs>
+  <configuration serialization="Json">
+    <communication>
+      <bus name="rabitmq" host="localhost" port="5672" user="guest" password="guest" type="RABBIT_MQ" />
+    </communication>
+    <gateways>
+      <websocket name="websocket" host="localhost" port="9443" bridgeport="9443" type="Plain" user="" password="">
+        <loggedTopics><![CDATA[]]></loggedTopics>
+      </websocket>
+    </gateways>
+    <runtimes>
+      <runtime name="ChatManager" platform="AnyCpu" />
+      <runtime name="ChatterBot" platform="AnyCpu" />
+      <runtime name="HistoryManager" platform="AnyCpu" />
+    </runtimes>
+  </configuration>
+</deployment>

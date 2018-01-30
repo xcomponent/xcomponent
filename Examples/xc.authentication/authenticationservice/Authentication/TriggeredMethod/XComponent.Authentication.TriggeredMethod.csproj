@@ -6,7 +6,7 @@
     <ProjectGuid>{1D794473-5ECE-4AE5-8F04-2F35318EC6C9}</ProjectGuid>
     <RootNamespace>XComponent.Authentication.TriggeredMethod</RootNamespace>
     <AssemblyName>XComponent.Authentication.TriggeredMethod</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
   </PropertyGroup>

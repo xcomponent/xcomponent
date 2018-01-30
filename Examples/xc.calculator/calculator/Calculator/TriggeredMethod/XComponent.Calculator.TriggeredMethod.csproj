@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <ProjectGuid>{31A5C2D1-372A-43A6-A965-09FF8AA9A00D}</ProjectGuid>
+    <RootNamespace>XComponent.Calculator.TriggeredMethod</RootNamespace>
+    <AssemblyName>XComponent.Calculator.TriggeredMethod</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" ('$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ) ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" ('$(Configuration)|$(Platform)' == 'Release|AnyCPU' ) ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TriggeredMethodContext.cs" />
+    <Compile Include="TriggeredMethodContext.generated.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Reference Include="System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Reference Include="System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Reference Include="XComponent.Core, Version=5.0.0.30001, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\UserReference\XComponent.Core.dll</HintPath>
+      <SpecificVersion>false</SpecificVersion>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\XComponent.Calculator.Common.csproj">
+      <Name>XComponent.Calculator.Common</Name>
+      <Project>{BE692B62-C3EF-410D-9521-7739F2347E1C}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\UserObject\XComponent.Calculator.UserObject.csproj">
+      <Name>XComponent.Calculator.UserObject</Name>
+      <Project>{4EFA4186-53F6-4304-ADEF-F6B5B469CB91}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

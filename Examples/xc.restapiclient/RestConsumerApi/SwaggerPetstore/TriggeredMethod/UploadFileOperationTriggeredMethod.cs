@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using XComponent.Common.ApiContext;
 using XComponent.Common.Timeouts;
+using XComponent.Shared;
 using XComponent.SwaggerPetstore.Common;
 using XComponent.SwaggerPetstore.Common.Senders;
 using XComponent.SwaggerPetstore.TriggeredMethod.ServiceClient;
@@ -15,7 +16,7 @@ namespace XComponent.SwaggerPetstore.TriggeredMethod
     {
         public static void ExecuteOn_SendingRequest_Through_CreateUploadFileHttpRequest(XComponent.SwaggerPetstore.UserObject.UploadFileOperation uploadFileOperation, XComponent.SwaggerPetstore.UserObject.UploadFileOperation uploadFileOperation_PublicMember, object object_InternalMember, Context context, ICreateUploadFileHttpRequestUploadFileOperationOnSendingRequestUploadFileOperationSenderInterface sender)
         {
-            XComponent.Common.Clone.XCClone.Clone(uploadFileOperation, uploadFileOperation_PublicMember);
+            XComponent.Shared.XCClone.Clone(uploadFileOperation, uploadFileOperation_PublicMember);
 
             var task = TriggeredMethodContext.Instance.ServiceClient.UploadFileWithHttpMessagesAsync(uploadFileOperation_PublicMember.Event.petId, uploadFileOperation_PublicMember.Event.additionalMetadata, uploadFileOperation_PublicMember.Event.file);
             task.ContinueWith((Task<Microsoft.Rest.HttpOperationResponse<ApiResponse>> httpTask) =>

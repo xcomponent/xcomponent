@@ -3,10 +3,9 @@ using System.Threading;
 using XCClientAPICommon.Client;
 using XCClientAPICommon.ApiExtensions;
 using XComponent.Order.UserObject;
-using XComponent.OrderProcessing.OrderProcessingAPI;
 using XComponent.OrderProcessing.OrderProcessingAPI.Order;
 using XComponent.OrderProcessing.OrderProcessingAPI.Trade;
-
+using XComponent.OrderProcessing.OrderProcessingAPI;
 
 namespace OrderProcessingClient
 {

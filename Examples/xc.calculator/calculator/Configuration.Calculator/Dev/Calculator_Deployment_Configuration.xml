@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<deployment environment="Dev" version="1.0" debugType="Debug" frameworkType="Framework452" visualstudioVersion="VS2015" defaultExportPath="" extractConfig="false" generateWebSocketApi="false" embedUserObjects="false" defaultDeployPath="" logsDirectory="$(installdir)" logsPattern="pid-${processid}-${component}-${shortdate}" runtimesLogs="True" logsLevel="TRACE" logsMaxSize="50" reactiveApiName="" reactiveApiVersion="">
+  <!--
+	THREADING IMPLEMENTATION VALUES = AKKA - ->
+	<!- - THREADING TYPE VALUES = ONEBYSTM, ONEBYINSTANCE, INHERITFROMPARENT, INHERITFROMLINKING - ->
+	<!- - SERIALIZATION TYPE VALUES = BINARY, XML, JSON - ->
+	<!- - MESSAGE QUEUE VALUES = ONEBYSTM, ONEBYINSTANCE, INHERITFROMPARENT-->
+  <buildEvents>
+    <preBuildEvent></preBuildEvent>
+    <postBuildEvent></postBuildEvent>
+    <exportFolders />
+    <exportRuntimeFolders />
+  </buildEvents>
+  <components>
+    <component name="Calculator" alias="Calculator" deploymentTarget="microservice1">
+      <communication name="bus" type="BUS" messageQueue="SEQUENTIAL">
+        <input>{topicType}.{version}.{runtime}.{component}.{std}</input>
+        <output>{topicType}.{version}.{runtime}.{component}.{std}</output>
+      </communication>
+      <threading impl="Akka" type="SEQUENTIAL" />
+      <stateMachines>
+        <stateMachine id="1" poolSize="100" numberOfWorker="0">
+          <communication name="bus" type="BUS" messageQueue="SEQUENTIAL">
+            <input>{topicType}.{version}.{runtime}.{component}.{std}</input>
+            <output>{topicType}.{version}.{runtime}.{component}.{std}</output>
+          </communication>
+          <threading impl="Akka" type="INHERITFROMPARENT" />
+        </stateMachine>
+        <stateMachine id="2" poolSize="100" numberOfWorker="0">
+          <communication name="bus" type="BUS" messageQueue="SEQUENTIAL">
+            <input>{topicType}.{version}.{runtime}.{component}.{std}</input>
+            <output>{topicType}.{version}.{runtime}.{component}.{std}</output>
+          </communication>
+          <threading impl="Akka" type="INHERITFROMPARENT" />
+        </stateMachine>
+      </stateMachines>
+      <keypairvalues>
+        <keypairvalue value="http://127.0.0.1:9676" key="CalculatorManager_FunctionManagerServiceUrl" />
+      </keypairvalues>
+    </component>
+  </components>
+  <clientAPIs>
+    <clientAPI name="CalculatorApi" messageQueue="INHERITFROMPARENT">
+      <component name="Calculator" messageQueue="INHERITFROMPARENT">
+        <update from="1" state="-1" messageQueue="INHERITFROMPARENT" />
+        <update from="2" state="-1" messageQueue="INHERITFROMPARENT" />
+      </component>
+    </clientAPI>
+  </clientAPIs>
+  <configuration serialization="Json">
+    <communication>
+      <bus name="bus" host="localhost" port="5672" user="guest" password="guest" type="RABBIT_MQ" />
+    </communication>
+    <gateways>
+      <websocket name="" host="" port="0" bridgeport="0" type="Plain" user="" password="">
+        <loggedTopics><![CDATA[]]></loggedTopics>
+      </websocket>
+    </gateways>
+    <runtimes>
+      <runtime name="microservice1" platform="AnyCpu" functionManagerServiceUrl="http://127.0.0.1:9676" />
+    </runtimes>
+  </configuration>
+</deployment>

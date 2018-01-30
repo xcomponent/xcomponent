@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>HelloWorldClientApplication</RootNamespace>
     <AssemblyName>HelloWorldClientApplication</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -36,16 +36,8 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FSharp.Core, Version=4.3.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\FSharp.Core.3.1.2.5\lib\net40\FSharp.Core.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.ValueTuple, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.ValueTuple.4.3.0\lib\portable-net40+sl4+win8+wp8\System.ValueTuple.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -54,11 +46,13 @@
     <Reference Include="XComponent.Core">
       <HintPath>..\lib\xcassemblies\XComponent.Core.dll</HintPath>
     </Reference>
-    <Reference Include="XComponent.helloworld.ClientApi">
-      <HintPath>..\lib\xcassemblies\XComponent.helloworld.ClientApi.dll</HintPath>
+    <Reference Include="XComponent.helloworld.ClientApi, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Runtime\Api\xcassemblies\XComponent.helloworld.ClientApi.dll</HintPath>
     </Reference>
-    <Reference Include="XComponent.HelloWorld.UserObject">
-      <HintPath>..\lib\xcassemblies\XComponent.HelloWorld.UserObject.dll</HintPath>
+    <Reference Include="XComponent.HelloWorld.UserObject, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Runtime\Api\xcassemblies\XComponent.HelloWorld.UserObject.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

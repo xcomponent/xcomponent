@@ -10,9 +10,8 @@ namespace XComponent.HelloWorld.TriggeredMethod
     using System;
     using XComponent.HelloWorld.Common;
     using XComponent.HelloWorld.Common.Senders;
-    using XComponent.Common.TriggeredMethod;
-    using XComponent.Common.Manager;
-    using XComponent.Common.Logger;
+    using XComponent.Runtime.Shared.TriggeredMethods;
+    using XComponent.Runtime.Shared.Manager;
     
     
     public partial class TriggeredMethodContext : ICustomTriggeredMethodContext
@@ -22,7 +21,7 @@ namespace XComponent.HelloWorld.TriggeredMethod
         {
         }
         
-        public void UnHanledException(XComponent.Common.TriggeredMethod.TriggeredMethodException exception)
+        public void UnHanledException(XComponent.Runtime.StateMachine.Exceptions.TriggeredMethodException exception)
         {
         }
     }
