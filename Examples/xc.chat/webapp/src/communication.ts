@@ -94,7 +94,6 @@ export const createRoom = (roomName: string, host: string, port: number) => {
     const messageType = "XComponent.ChatManager.UserObject.CreateChatroom";
     const visibility = false;
 
-    const publisher = session.createPublisher();
     session.send("ChatManager", "ChatManager", messageType, jsonMessage, visibility, null);
   })
   .catch((error) => {
