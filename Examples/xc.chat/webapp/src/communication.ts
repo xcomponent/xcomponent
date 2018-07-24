@@ -24,7 +24,6 @@ export const startListener = (dispatch: Dispatch<RoomsState>, host: string, port
           console.log("Trying to retrieve room history...", chatRoom.jsonMessage.Name);
           if (session.canSend(historyManagerComponent, historyManagerStateMachine, historyRequestType)) {
             if (session.canSubscribe(historyManagerComponent, publishedHistoryStateMachine)) {
-              console.log("subscribing... ", historyManagerComponent, publishedHistoryStateMachine);
               session
                 .getStateMachineUpdates(historyManagerComponent, publishedHistoryStateMachine)
                 .subscribe(jsonData => {
