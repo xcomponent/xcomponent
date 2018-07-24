@@ -23,34 +23,33 @@ export const startListener = (dispatch: Dispatch<RoomsState>, host: string, port
 
           console.log("Trying to retrieve room history...", chatRoom.jsonMessage.Name);
           if (session.canSend(historyManagerComponent, historyManagerStateMachine, historyRequestType)) {
-            const privateTopic = uuid();
-
-            console.log("Creating private topic for response...", privateTopic);
-            session.privateTopics.addSubscriberTopic(privateTopic);
             if (session.canSubscribe(historyManagerComponent, publishedHistoryStateMachine)) {
               console.log("subscribing... ", historyManagerComponent, publishedHistoryStateMachine);
               session
                 .getStateMachineUpdates(historyManagerComponent, publishedHistoryStateMachine)
                 .subscribe(jsonData => {
-                  console.log("Received json data", jsonData);
-                  const messages: {Room: string, User: string, Message: string, DateTime: string}[] = jsonData.jsonMessage.Messages;
+                    console.log("Received json data", jsonData);
+                    const messages: {Room: string, User: string, Message: string, DateTime: string}[] = jsonData.jsonMessage.Messages;
 
-                  messages.forEach(message => {
-                    dispatch(addMessageEvent(message.Room, message.DateTime, message.Message, message.User));
-                  });
-
-                  console.log("Removing private topic... ", privateTopic);
-                  session.removeSubscriberTopic(privateTopic);
+                    messages.forEach(message => {
+                      if (message.Room === chatRoom.jsonMessage.Name) {
+                        dispatch(addMessageEvent(message.Room, message.DateTime, message.Message, message.User));
+                      }
+                    });
                 });
             } else {
               console.error("Can't subscribe to history manager subscriber!");
             }
 
             console.log("Sending history request...");
-            session.send(historyManagerComponent, historyManagerStateMachine, historyRequestType, {
-              "RoomName": chatRoom.jsonMessage.Name,
-              "ResponseTopic": privateTopic
-            });
+            session.send(
+              historyManagerComponent,
+              historyManagerStateMachine,
+              historyRequestType,
+              {
+                "RoomName": chatRoom.jsonMessage.Name,
+                "ResponseTopic": session.privateTopics.getDefaultPublisherTopic()
+              });
           } else {
             console.error("Can't sent messages to history manager!");
           }
