@@ -28,6 +28,7 @@ export const startListener = (dispatch: Dispatch<RoomsState>, host: string, port
             console.log("Creating private topic for response...", privateTopic);
             session.privateTopics.addSubscriberTopic(privateTopic);
             if (session.canSubscribe(historyManagerComponent, publishedHistoryStateMachine)) {
+              console.log("subscribing... ", historyManagerComponent, publishedHistoryStateMachine);
               session
                 .getStateMachineUpdates(historyManagerComponent, publishedHistoryStateMachine)
                 .subscribe(jsonData => {
@@ -42,7 +43,7 @@ export const startListener = (dispatch: Dispatch<RoomsState>, host: string, port
                   session.removeSubscriberTopic(privateTopic);
                 });
             } else {
-              console.error("History manager subscriber not available on the API!");
+              console.error("Can't subscribe to history manager subscriber!");
             }
 
             console.log("Sending history request...");
@@ -51,7 +52,7 @@ export const startListener = (dispatch: Dispatch<RoomsState>, host: string, port
               "ResponseTopic": privateTopic
             });
           } else {
-            console.error("History manager publisher not available on the API!");
+            console.error("Can't sent messages to history manager!");
           }
         }
       })
@@ -64,8 +65,7 @@ export const startListener = (dispatch: Dispatch<RoomsState>, host: string, port
       .subscribe(jsonData => {
         if (jsonData.stateMachineRef.StateName === "Created") {
           dispatch(addRoomEvent(jsonData.jsonMessage.Name, jsonData.stateMachineRef));
-        }
-        else {
+        } else {
           dispatch(removeRoomEvent(jsonData.jsonMessage.Name));
         }
       });
