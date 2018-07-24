@@ -5462,9 +5462,9 @@ react@^16.1.0:
     object-assign "^4.1.1"
     prop-types "^15.6.0"
 
-reactivexcomponent.js@^3.1.7:
-  version "3.1.7"
-  resolved "https://registry.yarnpkg.com/reactivexcomponent.js/-/reactivexcomponent.js-3.1.7.tgz#053337e98b4e7fdcae075a63a56478fe46fbe709"
+reactivexcomponent.js@^3.1.8:
+  version "3.1.8"
+  resolved "https://registry.yarnpkg.com/reactivexcomponent.js/-/reactivexcomponent.js-3.1.8.tgz#8d88b008cd520fa908bf547e88125e3d31173528"
   dependencies:
     "@types/es6-shim" "^0.31.32"
     "@types/jest" "^23.0.0"
