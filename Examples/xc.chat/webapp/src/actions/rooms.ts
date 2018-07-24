@@ -1,6 +1,6 @@
 import { Action, Dispatch } from "redux";
 import { ThunkAction } from "redux-thunk";
-import { StateMachineRef } from "reactivexcomponent.js/lib/types/communication/xcomponentMessages";
+import { StateMachineRef } from "reactivexcomponent.js/lib/types/interfaces/StateMachineRef";
 import { startListener } from "communication";
 
 export const ADD_ROOM_EVENT = "ADD_ROOM_EVENT";
