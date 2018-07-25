@@ -5,117 +5,109 @@ import { RoomsState, Room } from "reducers/rooms";
 import * as uuid from "uuid";
 
 export const startListener = (dispatch: Dispatch<RoomsState>, host: string, port: number) => {
-    promiseSession(host, port).then(session => {
-        const chatComponentName = "ChatManager";
-        const chatRoomStateMachineName = "Chatroom";
-        const publishedMessageMachineName = "PublishedMessage";
-        const subscriber = session.createSubscriber();
-            subscriber.getSnapshot(chatComponentName, chatRoomStateMachineName, function (items) {
-                items.forEach(function(chatRoom) {
-                    if (chatRoom.stateMachineRef.StateName === "Created") {
-                        dispatch(addRoomEvent(chatRoom.jsonMessage.Name, chatRoom.stateMachineRef));
+  promiseSession(host, port).then(session => {
+    const chatComponentName = "ChatManager";
+    const chatRoomStateMachineName = "Chatroom";
+    const publishedMessageMachineName = "PublishedMessage";
 
-                        let publisher = session.createPublisher();
-                        let historyManagerComponent = "HistoryManager";
-                        let historyManagerStateMachine = "HistoryManager";
-                        let publishedHistoryStateMachine = "PublishedHistory";
-                        let historyRequestType = "XComponent.HistoryManager.UserObject.HistoryRequest";
-                        let historyResponseType = "XComponent.HistoryManager.UserObject.PublishedHistory";
+    session.getSnapshot(chatComponentName, chatRoomStateMachineName).then(items =>
+      items.forEach(chatRoom => {
+        if (chatRoom.stateMachineRef.StateName === "Created") {
+          dispatch(addRoomEvent(chatRoom.jsonMessage.Name, chatRoom.stateMachineRef));
 
-                        console.log("Trying to retrieve room history...", chatRoom.jsonMessage.Name);
-                        if (publisher.canPublish(historyManagerComponent, historyManagerStateMachine, historyRequestType)) {
-                            let privateTopic = uuid();
+          const historyManagerComponent = "HistoryManager";
+          const historyManagerStateMachine = "HistoryManager";
+          const publishedHistoryStateMachine = "PublishedHistory";
+          const historyRequestType = "XComponent.HistoryManager.UserObject.HistoryRequest";
+          const historyResponseType = "XComponent.HistoryManager.UserObject.PublishedHistory";
 
-                            console.log("Creating private topic for response...", privateTopic);
-                            session.addPrivateTopic(privateTopic);
-                            if (subscriber.canSubscribe(historyManagerComponent, publishedHistoryStateMachine)) {
-                                subscriber
-                                    .getStateMachineUpdates(historyManagerComponent, publishedHistoryStateMachine)
-                                    .subscribe(jsonData => {
-                                        console.log("Received json data", jsonData);
-                                        let messages: {Room: string, User: string, Message: string, DateTime: string}[] = jsonData.jsonMessage.Messages;
+          console.log("Trying to retrieve room history...", chatRoom.jsonMessage.Name);
+          if (session.canSend(historyManagerComponent, historyManagerStateMachine, historyRequestType)) {
+            if (session.canSubscribe(historyManagerComponent, publishedHistoryStateMachine)) {
+              session
+                .getStateMachineUpdates(historyManagerComponent, publishedHistoryStateMachine)
+                .subscribe(jsonData => {
+                    console.log("Received json data", jsonData);
+                    const messages: {Room: string, User: string, Message: string, DateTime: string}[] = jsonData.jsonMessage.Messages;
 
-                                        messages.forEach(message => {
-                                            dispatch(addMessageEvent(message.Room, message.DateTime, message.Message, message.User));
-                                        });
-
-                                        console.log("Removing private topic... ", privateTopic);
-                                        session.removePrivateTopic(privateTopic);
-                                    });
-                            } else {
-                                console.error("History manager subscriber not available on the API!");
-                            }
-
-                            console.log("Sending history request...");
-                            publisher.send(historyManagerComponent, historyManagerStateMachine, historyRequestType, {
-                                "RoomName": chatRoom.jsonMessage.Name,
-                                "ResponseTopic": privateTopic
-                            });
-                        } else {
-                            console.error("History manager publisher not available on the API!");
-                        }
-                    }
+                    messages.forEach(message => {
+                      if (message.Room === chatRoom.jsonMessage.Name) {
+                        dispatch(addMessageEvent(message.Room, message.DateTime, message.Message, message.User));
+                      }
+                    });
                 });
-            });
-        const messagesSubscriberCollection = subscriber.getStateMachineUpdates(chatComponentName, publishedMessageMachineName)
-            .subscribe(jsonData => {
-                dispatch(addMessageEvent(jsonData.jsonMessage.Room, jsonData.jsonMessage.DateTime, jsonData.jsonMessage.Message, jsonData.jsonMessage.User));
-            });
-        const subscriberCollection = subscriber.getStateMachineUpdates(chatComponentName, chatRoomStateMachineName)
-            .subscribe(jsonData => {
-                if (jsonData.stateMachineRef.StateName === "Created") {
-                    dispatch(addRoomEvent(jsonData.jsonMessage.Name, jsonData.stateMachineRef));
-                }
-                else {
-                    dispatch(removeRoomEvent(jsonData.jsonMessage.Name));
-                }
-            });
-    })
-        .catch((error) => {
-            console.log(error);
-        });
+            } else {
+              console.error("Can't subscribe to history manager subscriber!");
+            }
+
+            console.log("Sending history request...");
+            session.send(
+              historyManagerComponent,
+              historyManagerStateMachine,
+              historyRequestType,
+              {
+                "RoomName": chatRoom.jsonMessage.Name,
+                "ResponseTopic": session.privateTopics.getDefaultPublisherTopic()
+              });
+          } else {
+            console.error("Can't sent messages to history manager!");
+          }
+        }
+      })
+    );
+    const messagesSubscriberCollection = session.getStateMachineUpdates(chatComponentName, publishedMessageMachineName)
+      .subscribe(jsonData => {
+        dispatch(addMessageEvent(jsonData.jsonMessage.Room, jsonData.jsonMessage.DateTime, jsonData.jsonMessage.Message, jsonData.jsonMessage.User));
+      });
+    const subscriberCollection = session.getStateMachineUpdates(chatComponentName, chatRoomStateMachineName)
+      .subscribe(jsonData => {
+        if (jsonData.stateMachineRef.StateName === "Created") {
+          dispatch(addRoomEvent(jsonData.jsonMessage.Name, jsonData.stateMachineRef));
+        } else {
+          dispatch(removeRoomEvent(jsonData.jsonMessage.Name));
+        }
+      });
+  })
+  .catch((error) => {
+      console.log(error);
+  });
 };
 
 export const sendMessage = (room: Room, user: string, message: string, host: string, port: number) => {
-    promiseSession(host, port).then(session => {
-        const jsonMessage = { "User": user, "Message": message, };
-        const messageType = "XComponent.ChatManager.UserObject.SentMessage";
-        const visibility = false;
+  promiseSession(host, port).then(session => {
+    const jsonMessage = { "User": user, "Message": message, };
+    const messageType = "XComponent.ChatManager.UserObject.SentMessage";
+    const visibility = false;
 
-        const publisher = session.createPublisher();
-        publisher.sendWithStateMachineRef(room.reference, messageType, jsonMessage, visibility, null);
-
-    })
-        .catch((error) => {
-            console.log(error);
-        });
+    room.reference.send(messageType, jsonMessage, visibility, null);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
 };
 
 export const createRoom = (roomName: string, host: string, port: number) => {
-    promiseSession(host, port).then(session => {
-        const jsonMessage = { "Name": roomName };
-        const messageType = "XComponent.ChatManager.UserObject.CreateChatroom";
-        const visibility = false;
+  promiseSession(host, port).then(session => {
+    const jsonMessage = { "Name": roomName };
+    const messageType = "XComponent.ChatManager.UserObject.CreateChatroom";
+    const visibility = false;
 
-        const publisher = session.createPublisher();
-        publisher.send("ChatManager", "ChatManager", messageType, jsonMessage, visibility, null);
-
-    })
-        .catch((error) => {
-            console.log(error);
-        });
+    session.send("ChatManager", "ChatManager", messageType, jsonMessage, visibility, null);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
 };
 
 export const closeRoom = (room: Room, host: string, port: number) => {
-    promiseSession(host, port).then(session => {
-        const jsonMessage = {};
-        const messageType = "XComponent.ChatManager.UserObject.CloseRoom";
-        const visibility = false;
+  promiseSession(host, port).then(session => {
+    const jsonMessage = {};
+    const messageType = "XComponent.ChatManager.UserObject.CloseRoom";
+    const visibility = false;
 
-        const publisher = session.createPublisher();
-        publisher.sendWithStateMachineRef(room.reference, messageType, jsonMessage, visibility, null);
-    })
-        .catch((error) => {
-            console.log(error);
-        });
+    room.reference.send(messageType, jsonMessage, visibility);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
 };

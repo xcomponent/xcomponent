@@ -10,25 +10,33 @@
   version "0.31.35"
   resolved "https://registry.yarnpkg.com/@types/es6-shim/-/es6-shim-0.31.35.tgz#d11920d8d4c938ad912c51e699ed7ba2505ba1eb"
 
+"@types/events@*":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@types/events/-/events-1.2.0.tgz#81a6731ce4df43619e5c8c945383b3e62a89ea86"
+
 "@types/history@^3":
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/@types/history/-/history-3.2.2.tgz#b6affa240cb10b5f841c6443d8a24d7f3fc8bb0c"
-
-"@types/jest@^18.1.1":
-  version "18.1.1"
-  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-18.1.1.tgz#6f63488c64726900885ab9cd5697bb7fa1b416cc"
 
 "@types/jest@^19.2.2":
   version "19.2.4"
   resolved "https://registry.yarnpkg.com/@types/jest/-/jest-19.2.4.tgz#543651712535962b7dc615e18e4a381fc2687442"
 
+"@types/jest@^23.0.0":
+  version "23.3.0"
+  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-23.3.0.tgz#5dd70033b616a6228042244ebd992f6426808810"
+
 "@types/node@*":
   version "8.0.51"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-8.0.51.tgz#b31d716fb8d58eeb95c068a039b9b6292817d5fb"
 
-"@types/pako@^0.2.31":
-  version "0.2.31"
-  resolved "https://registry.yarnpkg.com/@types/pako/-/pako-0.2.31.tgz#dbeff0274ae7b782046fe2b7d45f7285ae3d37bc"
+"@types/node@^10.0.0":
+  version "10.5.2"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-10.5.2.tgz#f19f05314d5421fe37e74153254201a7bf00a707"
+
+"@types/pako@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@types/pako/-/pako-1.0.0.tgz#eaae8364d1b7f752e263bc3fd68dfec98e6136c5"
 
 "@types/react-dom@^16.0.3":
   version "16.0.3"
@@ -147,15 +155,12 @@
     "@types/rx-lite-time" "*"
     "@types/rx-lite-virtualtime" "*"
 
-"@types/websocket@0.0.32":
-  version "0.0.32"
-  resolved "https://registry.yarnpkg.com/@types/websocket/-/websocket-0.0.32.tgz#72018fe908a2bafd508fd68869c83ffbe3c7f14d"
+"@types/xml2js@0.4.3":
+  version "0.4.3"
+  resolved "https://registry.yarnpkg.com/@types/xml2js/-/xml2js-0.4.3.tgz#2f41bfc74d5a4022511721f872ed395a210ad3b7"
   dependencies:
+    "@types/events" "*"
     "@types/node" "*"
-
-"@types/xml2js@0.0.32":
-  version "0.0.32"
-  resolved "https://registry.yarnpkg.com/@types/xml2js/-/xml2js-0.0.32.tgz#9f7e98cf0adcca085a35cdead0319b5ac19c9fd9"
 
 "@types/xmldom@^0.1.28":
   version "0.1.29"
@@ -544,14 +549,6 @@ babel-plugin-transform-strict-mode@^6.24.1:
   dependencies:
     babel-runtime "^6.22.0"
     babel-types "^6.24.1"
-
-babel-polyfill@^6.23.0:
-  version "6.26.0"
-  resolved "https://registry.yarnpkg.com/babel-polyfill/-/babel-polyfill-6.26.0.tgz#379937abc67d7895970adc621f284cd966cf2153"
-  dependencies:
-    babel-runtime "^6.26.0"
-    core-js "^2.5.0"
-    regenerator-runtime "^0.10.5"
 
 babel-preset-jest@^19.0.0:
   version "19.0.0"
@@ -4134,6 +4131,10 @@ lodash@^4.0.0, lodash@^4.14.0, lodash@^4.17.2, lodash@^4.17.3, lodash@^4.17.4, l
   version "4.17.4"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
 
+log4ts@^0.4.2:
+  version "0.4.2"
+  resolved "https://registry.yarnpkg.com/log4ts/-/log4ts-0.4.2.tgz#379c40bdc8390eab9cea4bd6f7bbae8b38d9839b"
+
 logalot@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/logalot/-/logalot-2.1.0.tgz#5f8e8c90d304edf12530951a5554abb8c5e3f552"
@@ -5461,25 +5462,24 @@ react@^16.1.0:
     object-assign "^4.1.1"
     prop-types "^15.6.0"
 
-reactivexcomponent.js@next:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/reactivexcomponent.js/-/reactivexcomponent.js-3.0.1.tgz#cc04d6c0c492503672396357d18e957cc321d446"
+reactivexcomponent.js@^3.1.8:
+  version "3.1.8"
+  resolved "https://registry.yarnpkg.com/reactivexcomponent.js/-/reactivexcomponent.js-3.1.8.tgz#8d88b008cd520fa908bf547e88125e3d31173528"
   dependencies:
     "@types/es6-shim" "^0.31.32"
-    "@types/jest" "^18.1.1"
-    "@types/pako" "^0.2.31"
+    "@types/jest" "^23.0.0"
+    "@types/node" "^10.0.0"
+    "@types/pako" "^1.0.0"
     "@types/rx" "^4.1.1"
-    "@types/websocket" "0.0.32"
-    "@types/xml2js" "0.0.32"
+    "@types/xml2js" "0.4.3"
     "@types/xmldom" "^0.1.28"
     atob "^2.0.3"
-    babel-polyfill "^6.23.0"
-    loglevel "^1.4.1"
+    log4ts "^0.4.2"
     pako "^1.0.3"
-    rxjs "^5.3.0"
-    typescript-collections "^1.2.3"
+    rxjs "^6.0.0"
+    rxjs-compat "^6"
     uuid "^3.0.1"
-    websocket "^1.0.24"
+    websocket "^1.0.25"
     xml2js "^0.4.17"
 
 read-all-stream@^3.0.0:
@@ -5601,10 +5601,6 @@ redux@^3.6.0:
 regenerate@^1.2.1:
   version "1.3.3"
   resolved "https://registry.yarnpkg.com/regenerate/-/regenerate-1.3.3.tgz#0c336d3980553d755c39b586ae3b20aa49c82b7f"
-
-regenerator-runtime@^0.10.5:
-  version "0.10.5"
-  resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.10.5.tgz#336c3efc1220adcedda2c9fab67b5a7955a33658"
 
 regenerator-runtime@^0.11.0:
   version "0.11.0"
@@ -5831,11 +5827,15 @@ ripemd160@^2.0.0, ripemd160@^2.0.1:
     hash-base "^2.0.0"
     inherits "^2.0.1"
 
-rxjs@^5.3.0:
-  version "5.5.2"
-  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-5.5.2.tgz#28d403f0071121967f18ad665563255d54236ac3"
+rxjs-compat@^6:
+  version "6.2.2"
+  resolved "https://registry.yarnpkg.com/rxjs-compat/-/rxjs-compat-6.2.2.tgz#3c0fcdb46130cc70aa55412c2b1147905ab4680a"
+
+rxjs@^6.0.0:
+  version "6.2.2"
+  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-6.2.2.tgz#eb75fa3c186ff5289907d06483a77884586e1cf9"
   dependencies:
-    symbol-observable "^1.0.1"
+    tslib "^1.9.0"
 
 safe-buffer@5.1.1, safe-buffer@^5.0.1, safe-buffer@^5.1.0, safe-buffer@^5.1.1, safe-buffer@~5.1.0, safe-buffer@~5.1.1:
   version "5.1.1"
@@ -6379,7 +6379,7 @@ svgo@^0.7.0:
     sax "~1.2.1"
     whet.extend "~0.9.9"
 
-symbol-observable@^1.0.1, symbol-observable@^1.0.3:
+symbol-observable@^1.0.3:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/symbol-observable/-/symbol-observable-1.0.4.tgz#29bf615d4aa7121bdd898b22d4b3f9bc4e2aa03d"
 
@@ -6607,6 +6607,10 @@ tsconfig@^6.0.0:
     strip-bom "^3.0.0"
     strip-json-comments "^2.0.0"
 
+tslib@^1.9.0:
+  version "1.9.3"
+  resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.9.3.tgz#d7e4dd79245d85428c4d7e4822a79917954ca286"
+
 tslint-loader@^3.3.0:
   version "3.5.3"
   resolved "https://registry.yarnpkg.com/tslint-loader/-/tslint-loader-3.5.3.tgz#343f74122d94f356b689457d3f59f64a69ab606f"
@@ -6675,10 +6679,6 @@ typedarray-to-buffer@^3.1.2:
 typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
-
-typescript-collections@^1.2.3:
-  version "1.2.5"
-  resolved "https://registry.yarnpkg.com/typescript-collections/-/typescript-collections-1.2.5.tgz#192978f2f432171222a5248663f45da4a0df3f18"
 
 typescript@^2.1.4:
   version "2.6.1"
@@ -7096,9 +7096,9 @@ websocket-extensions@>=0.1.1:
   version "0.1.3"
   resolved "https://registry.yarnpkg.com/websocket-extensions/-/websocket-extensions-0.1.3.tgz#5d2ff22977003ec687a4b87073dfbbac146ccf29"
 
-websocket@^1.0.24:
-  version "1.0.25"
-  resolved "https://registry.yarnpkg.com/websocket/-/websocket-1.0.25.tgz#998ec790f0a3eacb8b08b50a4350026692a11958"
+websocket@^1.0.25:
+  version "1.0.26"
+  resolved "https://registry.yarnpkg.com/websocket/-/websocket-1.0.26.tgz#a03a01299849c35268c83044aa919c6374be8194"
   dependencies:
     debug "^2.2.0"
     nan "^2.3.3"

@@ -39,9 +39,9 @@ class ChatRoom extends React.Component<ChatRoomProps, ChatRoomState> {
 
         if (this.props.messages) {
             messagesDisplay.push(
-                Array.from(this.props.messages).map((message) => {
+                Array.from(this.props.messages).map((message, i) => {
                     return (
-                        <Paragraph margin="small">{message}</Paragraph>
+                        <Paragraph key={i} margin="small">{message}</Paragraph>
                     );
                 })
             );

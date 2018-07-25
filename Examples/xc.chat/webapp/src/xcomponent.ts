@@ -1,16 +1,19 @@
-import * as promisify from "es6-promisify";
-import xcapi from "reactivexcomponent.js";
+import { XComponent } from "reactivexcomponent.js";
 import { chatApiName } from "settings";
-import { xcLogLevels } from "reactivexcomponent.js";
+import { LogLevel } from "reactivexcomponent.js";
 
-export const promiseCreateSession = promisify(xcapi.createSession, xcapi);
-xcapi .setLogLevel(xcLogLevels.DEBUG);
+const xcomponent = new XComponent();
+
+xcomponent.setLogLevel(LogLevel.DEBUG);
 
 let session;
 
 const create = (host: string, port: number) => {
-    xcapi.setLogLevel(xcLogLevels.INFO);
-    return promiseCreateSession(chatApiName, `ws://${host}:${port}`);
+    xcomponent.setLogLevel(LogLevel.INFO);
+    const serverUrl =  `ws://${host}:${port}`;
+    return xcomponent
+        .connect(serverUrl)
+        .then(connection => connection.createSession(chatApiName));
 };
 
 export const promiseSession = (host: string, port: number) => {
