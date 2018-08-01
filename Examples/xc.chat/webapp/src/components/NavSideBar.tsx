@@ -1,5 +1,5 @@
 import * as React from "react";
-import * as Sidebar from "grommet/components/SideBar";
+import * as Sidebar from "grommet/components/Sidebar";
 import * as Menu from "grommet/components/Menu";
 import * as Header from "grommet/components/Header";
 import * as Anchor from "grommet/components/Anchor";

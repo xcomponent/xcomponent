@@ -38,6 +38,14 @@ Action<string> BuildNETSolution = (string solution) => {
    MSBuild(solution, GetDefaultMSBuildSettings());
 };
 
+Setup(context =>
+{
+  foreach(var solution in GetFiles("./tradecaptureservice/**/*.sln"))
+  {
+    NuGetRestore(solution, new NuGetRestoreSettings { NoCache = true });
+  }
+});
+
 Task("ExportRuntime")
   .Does(() =>
 {
@@ -64,22 +72,27 @@ Task("BuildXComponent")
    XcBuildBuild(project, buildConfiguration, "Dev", "VS2015", "--framework=Framework451 --serializationtype=\"Json\" --logkeys=Common --component=" + component + getXCBuildExtraParam());
 });
 
+Task("BuildApps")
+  .Does(() =>
+{
+  BuildNETSolution(@"tradecaptureservice/Apps/TradeCreator/TradeCreator.sln");
+  BuildNETSolution(@"tradecaptureservice/Apps/TradeValidator/TradeValidator.sln");
+});
+
 Task("Build")
   .Does(() =>
 {
-  foreach(var solution in GetFiles("./tradecaptureservice/**/*.sln"))
-  {
-    NuGetRestore(solution, new NuGetRestoreSettings { NoCache = true });
-  }
   XcBuildBuild("./" + modelPath, buildConfiguration, "Dev", "VS2015", getXCBuildExtraParam());
-  BuildNETSolution(@"tradecaptureservice/Apps/TradeCreator/TradeCreator.sln");
-  BuildNETSolution(@"tradecaptureservice/Apps/TradeValidator/TradeValidator.sln");
 
   RunTarget("ExportRuntime");
   RunTarget("ExportInterface");
   RunTarget("GenerateStudioCmd");
   RunTarget("GenerateRuntimeCmd");
 });
+
+Task("BuildAll")
+  .IsDependentOn("BuildApps")
+  .IsDependentOn("Build");
 
 Task("GenerateStudioCmd")
   .Does(() => {
