@@ -1,7 +1,6 @@
 [![Join the chat at https://gitter.im/XComponent/xcomponent](https://badges.gitter.im/XComponent/xcomponent.svg)](https://gitter.im/XComponent/xcomponent?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![](http://slack.xcomponent.com/badge.svg)](http://slack.xcomponent.com/)
-[![NuGet](https://img.shields.io/nuget/v/xcomponent.community.svg)](https://www.nuget.org/packages/xcomponent.community/)
-[![NuGet](https://img.shields.io/nuget/dt/XComponent.Community.svg)](https://www.nuget.org/packages/XComponent.Community/)
+[![NuGet](https://img.shields.io/nuget/dt/XComponent.Studio.Community.svg)](https://www.nuget.org/packages/XComponent.Studio.Community)
 [![Twitter URL](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/XComponent)
 
 # XComponent Resource Center
@@ -15,17 +14,24 @@ Microservices are developed in **C#** (.NET 4.5.2 or above).
 
 XComponent community edition provides the following tools :
 * For Windows only :
-  * XCStudio : the IDE to design components and microservices
-  * XCSpy : a test and monitoring tool for XComponent microservices
+  * [![NuGet](https://img.shields.io/nuget/v/XComponent.Studio.Community.svg)](https://www.nuget.org/packages/XComponent.Studio.Community) XCStudio : the IDE to design components and microservices
+  * [![NuGet](https://img.shields.io/nuget/v/XComponent.Spy.Community.svg)](https://www.nuget.org/packages/XComponent.Spy.Community)
+ XCSpy : a test and monitoring tool for XComponent microservices
 * Multi platform tools :
-  * XCBuild : the tool that generates and builds microservices designed with XCStudio
-  * XCBridge : the WebSocket bridge to communicate with microservices through a WebSocket connection
-  * XCRuntime : the execution environment for XComponent microservices
-  * XCSpyWeb : the web version of XCSpy available at [spy.xcomponent.com](http://spy.xcomponent.com)
+  * [![NuGet](https://img.shields.io/nuget/v/XComponent.Build.Community.svg)](https://www.nuget.org/packages/XComponent.Build.Community)
+ XCBuild : the tool that generates and builds microservices designed with XCStudio
+  * [![NuGet](https://img.shields.io/nuget/v/XComponent.Bridge.Community.svg)](https://www.nuget.org/packages/XComponent.Bridge.Community)
+ XCBridge : the WebSocket bridge to communicate with microservices through a WebSocket connection
+  * [![NuGet](https://img.shields.io/nuget/v/XComponent.Runtime.Community.svg)](https://www.nuget.org/packages/XComponent.Runtime.Community)
+ XCRuntime : the execution environment for XComponent microservices
+* Online tools :
+  * [![Website](https://img.shields.io/website-up-down-green-red/http/shields.io.svg?label=spy)](https://spy.xcomponent.com) XCSpyWeb : the web version of XCSpy available online
 * Apis (to communicate with XComponent microservices through a reactive Api) :
-  * [Reactive XComponent JS Api](https://www.npmjs.com/package/reactivexcomponent.js) : The Javascript Api that uses the XCBridge
-  * [Reactive XComponent .NET Api](https://www.nuget.org/packages/ReactiveXComponent.Net/) : The C# Api
-  * [Reactive XComponent Python Api](https://github.com/xcomponent/ReactiveXComponent.py) : The Python Api (Still under construction)
+  * [![npm](https://img.shields.io/npm/v/reactivexcomponent.js.svg)](https://www.npmjs.com/package/reactivexcomponent.js)
+Reactive XComponent JS Api : The Javascript Api that uses the XCBridge
+  * [![NuGet](https://img.shields.io/nuget/v/ReactiveXComponent.Net.svg)](https://www.nuget.org/packages/ReactiveXComponent.Net)
+ Reactive XComponent .NET Api : The C# Api
+  * [![github](https://img.shields.io/badge/github-coming%20soon-yellow.svg)](https://github.com/xcomponent/ReactiveXComponent.py) Reactive XComponent Python Api : The Python Api (Still under construction)
 
 > Note: "Microservice architectural style is an approach to develop a single application as a suite of small services, each running in its own process and communicating with lightweight mechanisms. These services are built around business capabilities and independently deployable by fully automated deployment machinery.” *James Lewis & Martin Fowler*
 
@@ -62,7 +68,7 @@ Thanks to the [Use Cases](Examples) section, you will able to understand:
 
 ## Install
 
-All samples will directly download XComponent Community Edition from [Nuget](https://www.nuget.org/packages/xcomponent.community/). Nevertheless, if for some reasons, you need an MSI, you can get one in the [releases page](https://github.com/xcomponent/xcomponent/releases).
+All samples will directly download XComponent Community Edition from [Nuget](https://www.nuget.org/packages/XComponent.Studio.Community/). Nevertheless, if for some reasons, you need an MSI, you can get one in the [releases page](https://github.com/xcomponent/xcomponent/releases).
 
 ## Documentation
 
