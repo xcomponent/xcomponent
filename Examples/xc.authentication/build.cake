@@ -2,13 +2,13 @@
 #r "../tools/Cake.XComponent/Cake.XComponent.dll"
 #addin nuget:?package=Cake.Yarn
 #addin nuget:?package=Cake.DoInDirectory
-#addin "Cake.FileHelpers&version=1.0.4"
+#addin "Cake.FileHelpers&version=3.0.0"
 #addin "Cake.Incubator"
 
 var target = Argument("target", "Build");
 var buildConfiguration = Argument("buildConfiguration", "Debug");
 var modelPath = Argument("modelPath", "authenticationservice/authenticationservice_Model.xcml");
-var toolsRoot = @"../tools/XComponent.Community/tools/XCStudio/";
+var toolsRoot = @"../tools/XComponent.Studio.Community/tools/XCStudio/";
 
 SetXcBuildPath(toolsRoot + @"/XCBuild/xcbuild.exe");
 
@@ -47,7 +47,7 @@ Task("ExportRuntime")
 Task("ExportInterface")
   .Does(() =>
 {
-  XcBuildExecuteCommand("--compilationmode=Debug --exportInterface --env=Dev --output=\""+MakeAbsolute(File("./Runtime/Api"))+"\" --project=\""+modelPath+"\"");
+  XcBuildExecuteCommand("--compilationmode=Debug --exportInterface --env=Dev --output=\""+MakeAbsolute(File("./Runtime/Api"))+"\" --project=\""+modelPath+"\"" + getXCBuildExtraParam());
 });
 
 Task("BuildNETSolution")

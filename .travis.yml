@@ -1,0 +1,9 @@
+language: csharp
+sudo: true
+mono:
+  - latest
+os:
+- linux
+script:
+- cd Examples
+- ./build-linux.sh
