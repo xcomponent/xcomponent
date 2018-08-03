@@ -71,7 +71,7 @@
   "devDependencies": {
     "@types/deep-freeze": "0.0.29",
     "babel-core": "^6.11.4",
-    "babel-loader": "^6.2.4",
+    "babel-loader": "^7.0.0",
     "clean-webpack-plugin": "^0.1.14",
     "compression": "^1.6.2",
     "css-loader": "^0.27.3",
