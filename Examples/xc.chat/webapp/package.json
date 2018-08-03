@@ -78,7 +78,7 @@
     "deep-freeze": "0.0.1",
     "express": "^4.14.0",
     "extract-text-webpack-plugin": "^2.1.0",
-    "file-loader": "^0.10.1",
+    "file-loader": "^0.11.0",
     "html-webpack-plugin": "^2.24.1",
     "image-webpack-loader": "^3.2.0",
     "jasmine-reporters": "^2.2.0",
