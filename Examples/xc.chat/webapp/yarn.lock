@@ -2,9 +2,9 @@
 # yarn lockfile v1
 
 
-"@types/deep-freeze@0.0.29":
-  version "0.0.29"
-  resolved "https://registry.yarnpkg.com/@types/deep-freeze/-/deep-freeze-0.0.29.tgz#c2d4c0bb10fb247a2b2c9da1970bb0902859190a"
+"@types/deep-freeze@0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@types/deep-freeze/-/deep-freeze-0.1.1.tgz#0e1ee6ceee06f51baeb663deec0bb7780bd72827"
 
 "@types/es6-shim@^0.31.32":
   version "0.31.35"
