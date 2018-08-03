@@ -44,7 +44,7 @@ http://cakebuild.net
 Param(
     [string]$Script = "build.cake",
     [string]$Tools = "../tools",
-    [string]$Target = "Build",
+    [string]$Target = "BuildAll",
     [ValidateSet("Release", "Debug")]
     [string]$Configuration = "Release",
     [ValidateSet("Quiet", "Minimal", "Normal", "Verbose", "Diagnostic")]

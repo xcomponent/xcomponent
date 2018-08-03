@@ -2,13 +2,13 @@
 #r "../tools/Cake.XComponent/Cake.XComponent.dll"
 #addin nuget:?package=Cake.Yarn
 #addin nuget:?package=Cake.DoInDirectory
-#addin "Cake.FileHelpers&version=1.0.4"
+#addin "Cake.FileHelpers&version=3.0.0"
 #addin "Cake.Incubator"
 
 var target = Argument("target", "Build");
 var buildConfiguration = Argument("buildConfiguration", "Debug");
 var modelPath = Argument("modelPath", "tradecaptureservice/TradeCaptureCore/TradeCapture_Model.xcml");
-var toolsRoot = @"../tools/XComponent.Community/tools/XCStudio/";
+var toolsRoot = @"../tools/XComponent.Studio.Community/tools/XCStudio/";
 
 SetXcBuildPath(toolsRoot + @"/XCBuild/xcbuild.exe");
 
@@ -38,6 +38,14 @@ Action<string> BuildNETSolution = (string solution) => {
    MSBuild(solution, GetDefaultMSBuildSettings());
 };
 
+Setup(context =>
+{
+  foreach(var solution in GetFiles("./tradecaptureservice/**/*.sln"))
+  {
+    NuGetRestore(solution, new NuGetRestoreSettings { NoCache = true });
+  }
+});
+
 Task("ExportRuntime")
   .Does(() =>
 {
@@ -47,7 +55,7 @@ Task("ExportRuntime")
 Task("ExportInterface")
   .Does(() =>
 {
-  XcBuildExecuteCommand("--compilationmode=Debug --exportInterface --env=Dev --output=\""+MakeAbsolute(File("./Runtime/Api"))+"\" --project=\""+modelPath+"\"");
+  XcBuildExecuteCommand("--compilationmode=Debug --exportInterface --env=Dev --output=\""+MakeAbsolute(File("./Runtime/Api"))+"\" --project=\""+modelPath+"\"" + getXCBuildExtraParam());
 });
 
 Task("BuildNETSolution")
@@ -64,22 +72,27 @@ Task("BuildXComponent")
    XcBuildBuild(project, buildConfiguration, "Dev", "VS2015", "--framework=Framework451 --serializationtype=\"Json\" --logkeys=Common --component=" + component + getXCBuildExtraParam());
 });
 
+Task("BuildApps")
+  .Does(() =>
+{
+  BuildNETSolution(@"tradecaptureservice/Apps/TradeCreator/TradeCreator.sln");
+  BuildNETSolution(@"tradecaptureservice/Apps/TradeValidator/TradeValidator.sln");
+});
+
 Task("Build")
   .Does(() =>
 {
-  foreach(var solution in GetFiles("./tradecaptureservice/**/*.sln"))
-  {
-    NuGetRestore(solution, new NuGetRestoreSettings { NoCache = true });
-  }
   XcBuildBuild("./" + modelPath, buildConfiguration, "Dev", "VS2015", getXCBuildExtraParam());
-  BuildNETSolution(@"tradecaptureservice/Apps/TradeCreator/TradeCreator.sln");
-  BuildNETSolution(@"tradecaptureservice/Apps/TradeValidator/TradeValidator.sln");
 
   RunTarget("ExportRuntime");
   RunTarget("ExportInterface");
   RunTarget("GenerateStudioCmd");
   RunTarget("GenerateRuntimeCmd");
 });
+
+Task("BuildAll")
+  .IsDependentOn("BuildApps")
+  .IsDependentOn("Build");
 
 Task("GenerateStudioCmd")
   .Does(() => {
