@@ -83,7 +83,7 @@
     "image-webpack-loader": "^4.0.0",
     "jasmine-reporters": "^2.2.0",
     "jest": "^23.0.0",
-    "jest-cli": "^19.0.2",
+    "jest-cli": "^23.0.0",
     "json-loader": "^0.5.4",
     "mock-socket": "^8.0.0",
     "node-sass": "^4.0.0",
