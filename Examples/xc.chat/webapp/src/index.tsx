@@ -2,8 +2,6 @@ import "scss/index.scss";
 
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import { createStore, applyMiddleware } from "redux";
-import * as App from "grommet/components/App";
 import { Provider } from "react-redux";
 import { Router, Route, browserHistory, IndexRoute } from "react-router";
 import { routes } from "routes";
