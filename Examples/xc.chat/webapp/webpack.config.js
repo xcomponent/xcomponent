@@ -8,7 +8,7 @@ const BUILD_DIR = path.resolve(__dirname, "dist");
 const APP_DIR = path.resolve(__dirname, "src");
 
 const config = {
-    entry: ["es6-shim", APP_DIR + "/index.tsx"],
+    entry: [APP_DIR + "/index.tsx"],
     devtool: "cheap-module-source-map",
     output: {
         path: BUILD_DIR,

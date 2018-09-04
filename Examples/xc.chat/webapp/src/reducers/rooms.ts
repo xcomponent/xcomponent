@@ -1,7 +1,6 @@
 import { Reducer, Action } from "redux";
-import { promiseSession } from "xcomponent";
 import { ADD_ROOM_EVENT, REMOVE_ROOM_EVENT, SELECT_ROOM_EVENT, ADD_MESSAGE_EVENT, CONNECT_EVENT, AddRoomDetailsAction, RoomDetailsAction, MessageDetailsAction, ConnectDetailsAction } from "actions";
-import { StateMachineRef } from "reactivexcomponent.js/lib/types/interfaces/StateMachineRef";
+import { StateMachineRef } from "reactivexcomponent.js";
 
 export interface RoomsState {
     availableRooms: Room[];
