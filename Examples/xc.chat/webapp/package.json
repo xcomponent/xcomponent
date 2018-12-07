@@ -72,7 +72,7 @@
     "@types/deep-freeze": "0.1.1",
     "babel-core": "^6.11.4",
     "babel-loader": "^8.0.0",
-    "clean-webpack-plugin": "^0.1.14",
+    "clean-webpack-plugin": "^1.0.0",
     "compression": "^1.6.2",
     "css-loader": "^2.0.0",
     "deep-freeze": "0.0.1",
