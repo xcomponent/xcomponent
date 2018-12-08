@@ -69,9 +69,9 @@
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/@types/react-intl/-/react-intl-2.3.2.tgz#a57433871dedf2f12ba8eeca645e5ce5a37d102a"
 
-"@types/react-redux@6.0.10":
-  version "6.0.10"
-  resolved "https://registry.yarnpkg.com/@types/react-redux/-/react-redux-6.0.10.tgz#80a3003a7d50112c65692a8b41752f623217a17c"
+"@types/react-redux@6.0.11":
+  version "6.0.11"
+  resolved "https://registry.yarnpkg.com/@types/react-redux/-/react-redux-6.0.11.tgz#d872254bbcba42465195a5475f40b22502b0407d"
   dependencies:
     "@types/react" "*"
     redux "^4.0.0"
