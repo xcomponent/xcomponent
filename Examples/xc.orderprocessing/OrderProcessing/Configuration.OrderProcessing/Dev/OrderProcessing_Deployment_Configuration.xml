@@ -17,7 +17,6 @@
     </exportFolders>
     <exportRuntimeFolders>
       <exportRuntimeFolder folder="..\build\exportMicroservice" docker="False" />
-      <exportRuntimeFolder folder="OrderProcessingClient\lib" docker="False" />
     </exportRuntimeFolders>
   </buildEvents>
   <components>
