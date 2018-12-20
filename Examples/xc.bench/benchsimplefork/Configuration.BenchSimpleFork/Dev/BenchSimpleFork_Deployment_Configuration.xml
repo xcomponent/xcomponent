@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<deployment environment="Dev" version="1.0" debugType="Debug" frameworkType="Framework45" visualstudioVersion="VS2015" defaultExportPath="" extractConfig="false" generateWebSocketApi="false" embedUserObjects="false" defaultDeployPath="" logsDirectory="$(installdir)" logsPattern="pid-${processid}-${component}-${shortdate}" runtimesLogs="True" logsLevel="WARN" logsMaxSize="50" reactiveApiName="ReactiveXComponent.Net" reactiveApiVersion="0.1.0-rcv011">
+<deployment environment="Dev" version="1.0" debugType="Debug" frameworkType="Framework452" visualstudioVersion="VS2015" defaultExportPath="" extractConfig="false" generateWebSocketApi="false" embedUserObjects="false" defaultDeployPath="" logsDirectory="$(installdir)" logsPattern="pid-${processid}-${component}-${shortdate}" runtimesLogs="True" logsLevel="WARN" logsMaxSize="50" reactiveApiName="" reactiveApiVersion="">
   <!--
 	THREADING IMPLEMENTATION VALUES = AKKA - ->
 	<!- - THREADING TYPE VALUES = ONEBYSTM, ONEBYINSTANCE, INHERITFROMPARENT, INHERITFROMLINKING - ->
@@ -27,49 +27,49 @@
       </communication>
       <threading impl="Akka" type="SEQUENTIAL" />
       <stateMachines>
-        <stateMachine id="1" poolSize="10000">
+        <stateMachine id="1" poolSize="10000" numberOfWorker="0">
           <communication name="localrabbit" type="BUS" messageQueue="SEQUENTIAL">
             <input>{topicType}.{version}.{runtime}.{component}.{std}</input>
             <output>{topicType}.{version}.{runtime}.{component}.{std}</output>
           </communication>
           <threading impl="Akka" type="INHERITFROMPARENT" />
         </stateMachine>
-        <stateMachine id="2" poolSize="10000">
+        <stateMachine id="2" poolSize="10000" numberOfWorker="0">
           <communication name="localrabbit" type="BUS" messageQueue="SEQUENTIAL">
             <input>{topicType}.{version}.{runtime}.{component}.{std}</input>
             <output>{topicType}.{version}.{runtime}.{component}.{std}</output>
           </communication>
           <threading impl="Akka" type="INHERITFROMPARENT" />
         </stateMachine>
-        <stateMachine id="3" poolSize="10000">
+        <stateMachine id="3" poolSize="10000" numberOfWorker="0">
           <communication name="localrabbit" type="BUS" messageQueue="SEQUENTIAL">
             <input>{topicType}.{version}.{runtime}.{component}.{std}</input>
             <output>{topicType}.{version}.{runtime}.{component}.{std}</output>
           </communication>
           <threading impl="Akka" type="INHERITFROMPARENT" />
         </stateMachine>
-        <stateMachine id="4" poolSize="10000">
+        <stateMachine id="4" poolSize="10000" numberOfWorker="0">
           <communication name="localrabbit" type="BUS" messageQueue="SEQUENTIAL">
             <input>{topicType}.{version}.{runtime}.{component}.{std}</input>
             <output>{topicType}.{version}.{runtime}.{component}.{std}</output>
           </communication>
           <threading impl="Akka" type="INHERITFROMPARENT" />
         </stateMachine>
-        <stateMachine id="5" poolSize="10000">
+        <stateMachine id="5" poolSize="10000" numberOfWorker="0">
           <communication name="localrabbit" type="BUS" messageQueue="SEQUENTIAL">
             <input>{topicType}.{version}.{runtime}.{component}.{std}</input>
             <output>{topicType}.{version}.{runtime}.{component}.{std}</output>
           </communication>
           <threading impl="Akka" type="INHERITFROMPARENT" />
         </stateMachine>
-        <stateMachine id="6" poolSize="10000">
+        <stateMachine id="6" poolSize="10000" numberOfWorker="0">
           <communication name="localrabbit" type="BUS" messageQueue="SEQUENTIAL">
             <input>{topicType}.{version}.{runtime}.{component}.{std}</input>
             <output>{topicType}.{version}.{runtime}.{component}.{std}</output>
           </communication>
           <threading impl="Akka" type="INHERITFROMPARENT" />
         </stateMachine>
-        <stateMachine id="7" poolSize="10000">
+        <stateMachine id="7" poolSize="10000" numberOfWorker="0">
           <communication name="localrabbit" type="BUS" messageQueue="SEQUENTIAL">
             <input>{topicType}.{version}.{runtime}.{component}.{std}</input>
             <output>{topicType}.{version}.{runtime}.{component}.{std}</output>
@@ -89,7 +89,7 @@
   </clientAPIs>
   <configuration serialization="Binary">
     <communication>
-      <bus name="localrabbit" host="localhost" port="5672" user="guest" password="guest" type="RABBIT_MQ" />
+      <bus name="localrabbit" host="localhost" virtualHost="" port="5672" user="guest" password="guest" type="RABBIT_MQ" sslEnabled="False" sslServerName="" sslCertPath="" sslCertPassphrase="" sslProtocol="None" sslAllowUntrustedServerCertificate="False" />
     </communication>
     <gateways>
       <websocket name="" host="" port="0" bridgeport="0" type="Plain" user="" password="">

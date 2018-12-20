@@ -20,7 +20,7 @@ namespace XComponent.BenchSimpleFork.TriggeredMethod
         /// <summary>
         /// Executing triggeredMethod ExecuteOn_Done_Through_TransitionTrigger
         /// </summary>
-        public static void ExecuteOn_Done_Through_TransitionTrigger(XComponent.BenchSimpleFork.UserObject.TransitionTrigger transitionTrigger, object object_PublicMember, object object_InternalMember, Context context, ITransitionTriggerTransitionTriggerOnDoneTransitionTriggerSenderInterface sender)
+        public static void ExecuteOn_Done_Through_TransitionTrigger(XComponent.BenchSimpleFork.UserObject.TransitionTrigger transitionTrigger, object object_PublicMember, object object_InternalMember, RuntimeContext context, ITransitionTriggerTransitionTriggerOnDoneTransitionTriggerSenderInterface sender)
         {
             TriggeredMethodContext.Instance.StartBench();
             for (int i = 0; i < transitionTrigger.NbInstances; i++)
