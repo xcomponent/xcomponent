@@ -14,7 +14,7 @@ namespace XComponent.SwaggerPetstore.TriggeredMethod
 {
     public static class PlaceOrderOperationTriggeredMethod
     {
-        public static void ExecuteOn_SendingRequest_Through_CreatePlaceOrderHttpRequest(XComponent.SwaggerPetstore.UserObject.PlaceOrderOperation placeOrderOperation, XComponent.SwaggerPetstore.UserObject.PlaceOrderOperation placeOrderOperation_PublicMember, object object_InternalMember, Context context, ICreatePlaceOrderHttpRequestPlaceOrderOperationOnSendingRequestPlaceOrderOperationSenderInterface sender)
+        public static void ExecuteOn_SendingRequest_Through_CreatePlaceOrderHttpRequest(XComponent.SwaggerPetstore.UserObject.PlaceOrderOperation placeOrderOperation, XComponent.SwaggerPetstore.UserObject.PlaceOrderOperation placeOrderOperation_PublicMember, object object_InternalMember, RuntimeContext context, ICreatePlaceOrderHttpRequestPlaceOrderOperationOnSendingRequestPlaceOrderOperationSenderInterface sender)
         {
             XComponent.Shared.XCClone.Clone(placeOrderOperation, placeOrderOperation_PublicMember);
 

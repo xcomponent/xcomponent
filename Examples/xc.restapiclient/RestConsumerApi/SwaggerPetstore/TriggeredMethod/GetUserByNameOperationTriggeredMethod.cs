@@ -14,7 +14,7 @@ namespace XComponent.SwaggerPetstore.TriggeredMethod
 {
     public static class GetUserByNameOperationTriggeredMethod
     {
-        public static void ExecuteOn_SendingRequest_Through_CreateGetUserByNameHttpRequest(XComponent.SwaggerPetstore.UserObject.GetUserByNameOperation getUserByNameOperation, XComponent.SwaggerPetstore.UserObject.GetUserByNameOperation getUserByNameOperation_PublicMember, object object_InternalMember, Context context, ICreateGetUserByNameHttpRequestGetUserByNameOperationOnSendingRequestGetUserByNameOperationSenderInterface sender)
+        public static void ExecuteOn_SendingRequest_Through_CreateGetUserByNameHttpRequest(XComponent.SwaggerPetstore.UserObject.GetUserByNameOperation getUserByNameOperation, XComponent.SwaggerPetstore.UserObject.GetUserByNameOperation getUserByNameOperation_PublicMember, object object_InternalMember, RuntimeContext context, ICreateGetUserByNameHttpRequestGetUserByNameOperationOnSendingRequestGetUserByNameOperationSenderInterface sender)
         {
             XComponent.Shared.XCClone.Clone(getUserByNameOperation, getUserByNameOperation_PublicMember);
 

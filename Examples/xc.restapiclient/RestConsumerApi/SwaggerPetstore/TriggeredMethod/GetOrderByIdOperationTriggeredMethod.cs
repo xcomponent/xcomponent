@@ -14,7 +14,7 @@ namespace XComponent.SwaggerPetstore.TriggeredMethod
 {
     public static class GetOrderByIdOperationTriggeredMethod
     {
-        public static void ExecuteOn_SendingRequest_Through_CreateGetOrderByIdHttpRequest(XComponent.SwaggerPetstore.UserObject.GetOrderByIdOperation getOrderByIdOperation, XComponent.SwaggerPetstore.UserObject.GetOrderByIdOperation getOrderByIdOperation_PublicMember, object object_InternalMember, Context context, ICreateGetOrderByIdHttpRequestGetOrderByIdOperationOnSendingRequestGetOrderByIdOperationSenderInterface sender)
+        public static void ExecuteOn_SendingRequest_Through_CreateGetOrderByIdHttpRequest(XComponent.SwaggerPetstore.UserObject.GetOrderByIdOperation getOrderByIdOperation, XComponent.SwaggerPetstore.UserObject.GetOrderByIdOperation getOrderByIdOperation_PublicMember, object object_InternalMember, RuntimeContext context, ICreateGetOrderByIdHttpRequestGetOrderByIdOperationOnSendingRequestGetOrderByIdOperationSenderInterface sender)
         {
             XComponent.Shared.XCClone.Clone(getOrderByIdOperation, getOrderByIdOperation_PublicMember);
 

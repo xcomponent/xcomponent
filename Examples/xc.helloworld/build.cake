@@ -77,6 +77,7 @@ Task("Build")
   BuildNETSolution(@"helloworld\HelloWorldClientApplication/HelloWorldClientApplication.sln");
   RunTarget("GenerateStudioCmd");
   RunTarget("GenerateRuntimeCmd");
+  RunTarget("GenerateClusteredRuntimeCmd");
 });
 
 Task("GenerateStudioCmd")
@@ -122,6 +123,29 @@ Task("GenerateRuntimeCmd")
     fileContents += "start runClientApp.cmd\n";
     fileContents += "start runSpy.cmd\n";
     FileWriteText(@"run.cmd", fileContents);
+});
+
+Task("GenerateClusteredRuntimeCmd")
+  .Does(() => {
+    var fileContents = "";
+    foreach(var xcrFile in GetFiles("./Runtime/xcassemblies/*.xcr"))
+    {
+      var xcPropertiesPath = xcrFile.FullPath.Replace("xcr", "xcproperties");
+      var xcRuntimeBinaryFilePath = MakeAbsolute(File(toolsRoot + @"XCBuild/XCRuntime/xcruntime.exe"));
+      var runServiceCmd = "start " + xcRuntimeBinaryFilePath + " " + xcrFile.FullPath + " " + xcPropertiesPath + "\n";
+
+      fileContents += runServiceCmd;
+      FileWriteText("run-"+xcrFile.GetFilename()+".cmd", runServiceCmd);
+    }
+
+    var runClientAppCmd = "";
+    runClientAppCmd += "cd helloworld/HelloWorldClientApplication/HelloWorldClientApplication/bin/Debug/\n";
+    runClientAppCmd += "timeout /t 15\n";
+    runClientAppCmd += "HelloWorldClientApplication.exe\n";
+    FileWriteText("runClientAppForClusterExample.cmd", runClientAppCmd);
+
+    fileContents += "start runClientApp.cmd\n";
+    FileWriteText(@"runForClusterExample.cmd", fileContents);
 });
   
 Task("Clean")

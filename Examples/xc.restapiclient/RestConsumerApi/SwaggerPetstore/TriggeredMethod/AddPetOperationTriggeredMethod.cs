@@ -14,7 +14,7 @@ namespace XComponent.SwaggerPetstore.TriggeredMethod
 {
     public static class AddPetOperationTriggeredMethod
     {
-        public static void ExecuteOn_SendingRequest_Through_CreateAddPetHttpRequest(XComponent.SwaggerPetstore.UserObject.AddPetOperation addPetOperation, XComponent.SwaggerPetstore.UserObject.AddPetOperation addPetOperation_PublicMember, object object_InternalMember, Context context, ICreateAddPetHttpRequestAddPetOperationOnSendingRequestAddPetOperationSenderInterface sender)
+        public static void ExecuteOn_SendingRequest_Through_CreateAddPetHttpRequest(XComponent.SwaggerPetstore.UserObject.AddPetOperation addPetOperation, XComponent.SwaggerPetstore.UserObject.AddPetOperation addPetOperation_PublicMember, object object_InternalMember, RuntimeContext context, ICreateAddPetHttpRequestAddPetOperationOnSendingRequestAddPetOperationSenderInterface sender)
         {
             XComponent.Shared.XCClone.Clone(addPetOperation, addPetOperation_PublicMember);
 

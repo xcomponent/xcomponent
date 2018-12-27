@@ -19,7 +19,7 @@ namespace XComponent.Order.TriggeredMethod
     {
         private static int currentOrderId;
 
-        public static void ExecuteOn_Pending_Through_CreateOrder(XComponent.Order.UserObject.OrderInput orderInput, XComponent.Order.UserObject.Order order, object object_InternalMember, Context context, ICreateOrderOrderInputOnPendingOrderSenderInterface sender)
+        public static void ExecuteOn_Pending_Through_CreateOrder(XComponent.Order.UserObject.OrderInput orderInput, XComponent.Order.UserObject.Order order, object object_InternalMember, RuntimeContext context, ICreateOrderOrderInputOnPendingOrderSenderInterface sender)
         {
             order.Id = System.Threading.Interlocked.Increment(ref currentOrderId);
             order.Quantity = orderInput.Quantity;
@@ -33,7 +33,7 @@ namespace XComponent.Order.TriggeredMethod
             });
 
         }
-        public static void ExecuteOn_Executed_Through_Execute(XComponent.Order.UserObject.ExecutionInput executionInput, XComponent.Order.UserObject.Order order, object object_InternalMember, Context context, IExecuteExecutionInputOnExecutedOrderSenderInterface sender)
+        public static void ExecuteOn_Executed_Through_Execute(XComponent.Order.UserObject.ExecutionInput executionInput, XComponent.Order.UserObject.Order order, object object_InternalMember, RuntimeContext context, IExecuteExecutionInputOnExecutedOrderSenderInterface sender)
         {
             double quantityToExecute = executionInput.Quantity;
 
@@ -49,7 +49,7 @@ namespace XComponent.Order.TriggeredMethod
                 Price = executionInput.Price
             });
         }
-        public static void ExecuteOn_PartiallyExecuted_Through_PartiallyExecute(XComponent.Order.UserObject.ExecutionInput executionInput, XComponent.Order.UserObject.Order order, object object_InternalMember, Context context, IPartiallyExecuteExecutionInputOnPartiallyExecutedOrderSenderInterface sender)
+        public static void ExecuteOn_PartiallyExecuted_Through_PartiallyExecute(XComponent.Order.UserObject.ExecutionInput executionInput, XComponent.Order.UserObject.Order order, object object_InternalMember, RuntimeContext context, IPartiallyExecuteExecutionInputOnPartiallyExecutedOrderSenderInterface sender)
         {
             double quantityToExecute = executionInput.Quantity;
 

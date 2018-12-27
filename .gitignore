@@ -33,6 +33,8 @@ runSpy.cmd
 runJS.cmd
 runClientApp*.cmd
 run.cmd
+runForClusterExample.cmd
+xcstudio.cmd
 *.generated.cs
 xcassemblies
 *.xcApi

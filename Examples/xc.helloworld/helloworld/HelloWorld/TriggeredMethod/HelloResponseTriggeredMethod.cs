@@ -20,9 +20,12 @@ namespace XComponent.HelloWorld.TriggeredMethod
         /// <summary>
         /// Executing triggeredMethod ExecuteOn_Done_Through_SayHello
         /// </summary>
-        public static void ExecuteOn_Done_Through_SayHello(XComponent.HelloWorld.UserObject.SayHello sayHello, XComponent.HelloWorld.UserObject.HelloResponse helloResponse, object object_InternalMember, Context context, ISayHelloSayHelloOnDoneHelloResponseSenderInterface sender)
+        public static void ExecuteOn_Done_Through_SayHello(XComponent.HelloWorld.UserObject.SayHello sayHello, XComponent.HelloWorld.UserObject.HelloResponse helloResponse, object object_InternalMember, RuntimeContext context, ISayHelloSayHelloOnDoneHelloResponseSenderInterface sender)
         {
             helloResponse.Text = "Hello " + sayHello.Name;
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine($"From the owner of the new instance of state machine HelloResponse: message is {helloResponse.Text}");
+            Console.ForegroundColor = ConsoleColor.White;
         }
     }
 }

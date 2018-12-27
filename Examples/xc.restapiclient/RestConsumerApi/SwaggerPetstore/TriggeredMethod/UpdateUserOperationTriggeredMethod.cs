@@ -14,7 +14,7 @@ namespace XComponent.SwaggerPetstore.TriggeredMethod
 {
     public static class UpdateUserOperationTriggeredMethod
     {
-        public static void ExecuteOn_SendingRequest_Through_CreateUpdateUserHttpRequest(XComponent.SwaggerPetstore.UserObject.UpdateUserOperation updateUserOperation, XComponent.SwaggerPetstore.UserObject.UpdateUserOperation updateUserOperation_PublicMember, object object_InternalMember, Context context, ICreateUpdateUserHttpRequestUpdateUserOperationOnSendingRequestUpdateUserOperationSenderInterface sender)
+        public static void ExecuteOn_SendingRequest_Through_CreateUpdateUserHttpRequest(XComponent.SwaggerPetstore.UserObject.UpdateUserOperation updateUserOperation, XComponent.SwaggerPetstore.UserObject.UpdateUserOperation updateUserOperation_PublicMember, object object_InternalMember, RuntimeContext context, ICreateUpdateUserHttpRequestUpdateUserOperationOnSendingRequestUpdateUserOperationSenderInterface sender)
         {
             XComponent.Shared.XCClone.Clone(updateUserOperation, updateUserOperation_PublicMember);
 

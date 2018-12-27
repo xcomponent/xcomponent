@@ -14,7 +14,7 @@ namespace XComponent.SwaggerPetstore.TriggeredMethod
 {
     public static class DeleteUserOperationTriggeredMethod
     {
-        public static void ExecuteOn_SendingRequest_Through_CreateDeleteUserHttpRequest(XComponent.SwaggerPetstore.UserObject.DeleteUserOperation deleteUserOperation, XComponent.SwaggerPetstore.UserObject.DeleteUserOperation deleteUserOperation_PublicMember, object object_InternalMember, Context context, ICreateDeleteUserHttpRequestDeleteUserOperationOnSendingRequestDeleteUserOperationSenderInterface sender)
+        public static void ExecuteOn_SendingRequest_Through_CreateDeleteUserHttpRequest(XComponent.SwaggerPetstore.UserObject.DeleteUserOperation deleteUserOperation, XComponent.SwaggerPetstore.UserObject.DeleteUserOperation deleteUserOperation_PublicMember, object object_InternalMember, RuntimeContext context, ICreateDeleteUserHttpRequestDeleteUserOperationOnSendingRequestDeleteUserOperationSenderInterface sender)
         {
             XComponent.Shared.XCClone.Clone(deleteUserOperation, deleteUserOperation_PublicMember);
 
