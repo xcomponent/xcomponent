@@ -17,14 +17,24 @@ XComponent integrated a new features which are Clustering and Failover. XCompone
 
 XComponent Cluster is based on [Akka.Net](https://getakka.net/articles/intro/what-is-akka.html) and [Akka.Cluster](https://getakka.net/articles/clustering/cluster-overview.html). Akka.Cluster features are based on the [cluster gossip](https://getakka.net/articles/clustering/cluster-overview.html#cluster-gossip), a distributed protocol implemented between cluster nodes (cluster members) that allows new nodes/members to join the cluster, existing nodes to leave it and a leader of the cluster to be elected. When the cluster gossip converges, the cluster has an elected leader that undertakes cluster actions like declaring as Up members that joined, declaring as Unreachable members for which a majority of nodes confirms they are unreachable. 
 
+For the dynamic sharding, XComponent Cluster implemented its own strategy based on consistent hash ring technique inspired by the [Chord](https://pdos.csail.mit.edu/papers/chord:sigcomm01/chord_sigcomm.pdf) algorithm in order to perform state machine instance sharding. Load balancing within a cluster with Consistent Hash ring technique allows load distribution between different cluster nodes based on a Hash Code value. In order to have a uniform distribution within the cluster, we use the Consistent Hash ring approach based on virtual nodes. This approach consists of creating replicas of the cluster nodes called virtual nodes. The following figure illustrates the basic idea of this approach.
+
+![Scheme](Consistent-hashing.png)
+
+This is an example of a cluster of 4 nodes. For each node, instead of adding one point on the ring, we add r points, called replicas. Replica ids are generated simply from the node id,
+by concatenating the node id with 0, 1, …, r. For this example, r = 8, so each node will have 8 replicas in the ring. This way, node replicas will be interleaved and during dynamic topology:
+- All the nodes will hand over a small amount of the instances they own to the new nodes in the cluster
+- All the nodes will take over a small amount of the instances of a removed node previously owned
 When a new node joins the cluster, it must point to an existing node as a **seed**, which can be any node in the cluster. The first node joining the cluster uses its own address as a seed, it does a self-join which creates the cluster with one node. 
 
 Partition tolerance is achieved through the concept of reachability. A node can be seen as Unreachable, but still be part of the cluster and able to handle work. XComponent implemented a strategy in order to solve this problem of network partition / split brain by implementing a first strategy called Quorum. This strategy consists of downing unreachable nodes if the number of reachable ones is greater than or equal to a minimum number of members in the cluster. This minimum number is defined by the user. This strategy works well when you are able to define minimum required cluster size and when you have a cluster with fixed size of nodes or fixed size of nodes with specific role.  
 
+## The example
+
 In the `Hello World in Cluster Mode` sample, we're going to use the `Hello World` project and run two different pieces of software concurrently:
 
-* **`[Hello World microservice]`** - A microservice launched in cluster mode (launching more than one node of XComponent runtime) that receives *say hello* requests 
-* **`[Console Application]`** - A simple application to test our microservice
+* **`[Hello World microservice]`** - A microservice launched on a 3 nodes cluster that receives *say hello* requests and prints them to the console.
+* **`[Console Application]`** - A simple application to send requests to the hello world cluster.
 
 ## Build the project
 
