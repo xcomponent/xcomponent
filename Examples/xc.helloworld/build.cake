@@ -128,24 +128,36 @@ Task("GenerateRuntimeCmd")
 Task("GenerateClusteredRuntimeCmd")
   .Does(() => {
     var fileContents = "";
-    foreach(var xcrFile in GetFiles("./Runtime/xcassemblies/*.xcr"))
-    {
-      var xcPropertiesPath = xcrFile.FullPath.Replace("xcr", "xcproperties");
-      var xcRuntimeBinaryFilePath = MakeAbsolute(File(toolsRoot + @"XCBuild/XCRuntime/xcruntime.exe"));
-      var runServiceCmd = "start " + xcRuntimeBinaryFilePath + " " + xcrFile.FullPath + " " + xcPropertiesPath + "\n";
+    var xcrFile = GetFiles("./Runtime/xcassemblies/*.xcr").First();
+    
+    var xcPropertiesPath = "\"" + xcrFile.FullPath.Replace("xcr", "xcproperties") + "\"";
+    var xcRuntimeBinaryFilePath = "\"" + MakeAbsolute(File(toolsRoot + @"XCBuild/XCRuntime/xcruntime.exe")) + "\"";
+    var runServiceCmd = "start " + xcRuntimeBinaryFilePath + " " + xcrFile.FullPath + " " + xcPropertiesPath + "\n";
 
-      fileContents += runServiceCmd;
-      FileWriteText("run-"+xcrFile.GetFilename()+".cmd", runServiceCmd);
-    }
+    fileContents += runServiceCmd;
+    FileWriteText("run-"+xcrFile.GetFilename()+".cmd", runServiceCmd);
 
     var runClientAppCmd = "";
     runClientAppCmd += "cd helloworld/HelloWorldClientApplication/HelloWorldClientApplication/bin/Debug/\n";
-    runClientAppCmd += "timeout /t 15\n";
+    runClientAppCmd += "timeout /t 30\n";
     runClientAppCmd += "HelloWorldClientApplication.exe\n";
     FileWriteText("runClientAppForClusterExample.cmd", runClientAppCmd);
 
-    fileContents += "start runClientApp.cmd\n";
-    FileWriteText(@"runForClusterExample.cmd", fileContents);
+    var clusterSeeds = "127.0.0.1:4035";
+    var xcFirstClusterNodeCmd = xcRuntimeBinaryFilePath + " \"" + xcrFile.FullPath + "\" -clusterPort 4035 -clusterSeeds " + clusterSeeds + "\n";
+    FileWriteText("runFirstClusterNode.cmd", xcFirstClusterNodeCmd);
+    var xcSecondClusterNodeCmd = xcRuntimeBinaryFilePath + " \"" + xcrFile.FullPath + "\" -clusterPort 4036 -clusterSeeds " + clusterSeeds + "\n";
+    FileWriteText("runSecondClusterNode.cmd", xcSecondClusterNodeCmd);
+    var xcThirdClusterNodeCmd = xcRuntimeBinaryFilePath + " \"" + xcrFile.FullPath + "\" -clusterPort 4037 -clusterSeeds " + clusterSeeds + "\n";
+    FileWriteText("runThirdClusterNode.cmd", xcThirdClusterNodeCmd);
+
+    fileContents += "start runFirstClusterNode.cmd\n";
+    fileContents += "timeout /t 20\n";
+    fileContents += "start runSecondClusterNode.cmd\n";
+    fileContents += "timeout /t 20\n";
+    fileContents += "start runThirdClusterNode.cmd\n";
+    fileContents += "start runClientAppForClusterExample.cmd\n";
+    FileWriteText(@"runCluster.cmd", fileContents);
 });
   
 Task("Clean")

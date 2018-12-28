@@ -60,8 +60,7 @@ Therefore, node replicas maintain a properly load balanced cluster when dynamic 
 Partition tolerance is achieved through the concept of reachability. A node can be seen as Unreachable, but still be part of the cluster and able to handle work. 
 XComponent implemented a strategy in order to solve this problem of network partition / split brain by implementing a first strategy called Quorum. This strategy consists of downing unreachable
 nodes if the number of reachable ones is greater than or equal to a minimum number of members in the cluster. This minimum number is defined by the user. This strategy works well when you are able
-to define minimum required cluster size and when you have a cluster with fixed size of nodes or fixed size of nodes with specific role.
-XComponent Cluster can apply other strategies like Keep Majority strategy that is suitable for clusters that can grow or shrink very dynamically. 
+to define minimum required cluster size and when you have a cluster with fixed size of nodes or fixed size of nodes with specific role. 
 
 
 In the `Hello World in Cluster Mode` sample, we're going to use the `Hello World` project and run two different pieces of software concurrently:
