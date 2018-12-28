@@ -10,7 +10,7 @@ namespace XComponent.ChatManager.TriggeredMethod
 {
     public static class ChatroomTriggeredMethod
     {
-        public static void ExecuteOn_Created_Through_PublishMessage(XComponent.ChatManager.UserObject.SentMessage sentMessage, XComponent.ChatManager.UserObject.Chatroom chatroom, object object_InternalMember, Context context, IPublishMessageSentMessageOnCreatedChatroomSenderInterface sender)
+        public static void ExecuteOn_Created_Through_PublishMessage(XComponent.ChatManager.UserObject.SentMessage sentMessage, XComponent.ChatManager.UserObject.Chatroom chatroom, object object_InternalMember, RuntimeContext context, IPublishMessageSentMessageOnCreatedChatroomSenderInterface sender)
         {
             sender.PublishMessage(context, new PublishedMessage
             {
@@ -22,7 +22,7 @@ namespace XComponent.ChatManager.TriggeredMethod
             context.PublishNotification = false;
         }
 
-        public static void ExecuteOn_Created_Through_CreateRoom(XComponent.ChatManager.UserObject.CreateChatroom createChatroom, XComponent.ChatManager.UserObject.Chatroom chatroom, object object_InternalMember, Context context, ICreateRoomCreateChatroomOnCreatedChatroomSenderInterface sender)
+        public static void ExecuteOn_Created_Through_CreateRoom(XComponent.ChatManager.UserObject.CreateChatroom createChatroom, XComponent.ChatManager.UserObject.Chatroom chatroom, object object_InternalMember, RuntimeContext context, ICreateRoomCreateChatroomOnCreatedChatroomSenderInterface sender)
         {
             chatroom.Name = createChatroom.Name;
         }

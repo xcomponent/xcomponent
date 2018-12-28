@@ -1,9 +1,11 @@
 language: csharp
 sudo: true
 mono:
-  - latest
+  - 5.12.0
+node_js:
+  - "10"
 os:
-- linux
+  - linux
 script:
-- cd Examples
-- ./build-linux.sh
+  - cd Examples
+  - ./build-linux.sh
