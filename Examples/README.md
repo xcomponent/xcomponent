@@ -30,3 +30,6 @@ example to demonstrate how to post messages to Slack with XComponent
 example to demonstrate how to connect a front end web application with XComponent
 * **Calculator** ([Click here](xc.calculator)): 
 example to demonstrate how to implement triggered methods using a REST client in JavaScript.
+* **Hello World in cluster mode** ([Click here](xc.helloworldInClusterMode)): 
+example to demonstrate native XComponent clustering capabilities.
+
