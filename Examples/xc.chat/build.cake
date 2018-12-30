@@ -115,7 +115,7 @@ Task("GenerateRuntimeCmd")
     foreach(var xcrFile in GetFiles("./Runtime/xcassemblies/*.xcr"))
     {
       var xcPropertiesPath = xcrFile.FullPath.Replace("xcr", "xcproperties");
-      var xcRuntimeBinaryFilePath = MakeAbsolute(File(@"../tools/XComponent.Community/tools/XCStudio/XCBuild/XCRuntime/xcruntime.exe"));
+      var xcRuntimeBinaryFilePath = MakeAbsolute(File(@"../tools/XComponent.Studio.Community/tools/XCStudio/XCBuild/XCRuntime/xcruntime.exe"));
       var runServiceCmd = "start " + xcRuntimeBinaryFilePath + " " + xcrFile.FullPath + " " + xcPropertiesPath + "\n";
 
       fileContents += runServiceCmd;
@@ -126,7 +126,7 @@ Task("GenerateRuntimeCmd")
     fileContents += "start npm run start:dev\n";
     fileContents += "cd ..\n";
 
-    var xcBridgeBinaryPath = MakeAbsolute(File(@"../tools/XComponent.Community/tools/XCStudio/XCBridge/XCWebSocketBridge.exe"));
+    var xcBridgeBinaryPath = MakeAbsolute(File(@"../tools/XComponent.Studio.Community/tools/XCStudio/XCBridge/XCWebSocketBridge.exe"));
     var xcBridgeParameters = "--apipath=\""+MakeAbsolute(File("./Runtime/Api/xcassemblies"))+"\" --port=9443  --unsecure";
 
     var runBridgeCmd = "start " + xcBridgeBinaryPath + " " + xcBridgeParameters + "\n";
