@@ -7,25 +7,23 @@ This project illustrates our clustering support applied to the [Hello World](../
 XComponent is a platform to create, monitor and share microservices.
 If you want to have more details about microservices, you should read [Martin Fowler's article.](http://martinfowler.com/articles/microservices.html)
  
-XComponent integrated a new features which are Clustering and Failover. In order to intergrate these features, XComponent team is based on the CAP (Consistency Availability Partition tolerance) theorem which is a theorem states that it is impossible for a distributed data store to simultaneously provide more than two out of the following three guarantees:
+XComponent integrates clustering and failover capabilities. The [CAP (Consistency-Availability-Partition tolerance) theorem](https://en.wikipedia.org/wiki/CAP_theorem) states that it is impossible for a distributed data store to simultaneously provide more than two out of the following three guarantees:
 
-- Consistency: Every read receives the most recent write or an error
+- **Consistency**: Every read receives the most recent write or an error
 
-- Availability: Every request receives a response that is not an error
+- **Availability**: Every request receives a response that is not an error
 
-- Partition tolerance: The system continues to operate despite an arbitrary number of messages being dropped (or delayed) by the network between nodes
+- **Partition tolerance**: The system continues to operate despite an arbitrary number of messages being dropped (or delayed) by the network
 
-To make things more concrete, Consistency means that every event will be executed on the most recent version of the state machine instance. Availability means that we won’t miss events. Partition tolerance means the cluster continues to operate in case of network failures.
+In XComponent, *Consistency* means that every event will be executed on the most recent version of the state machine instance; *Availability* means that we won’t miss events; and *Partition tolerance* means the cluster continues to operate in case of network failures. Since no system could provide the three properties on a given time, we chose to fcus on providing *Consistency* and *Availability*. In order to deal with *Partition tolerance*, we integrated an optional strategy in order to detect the network partition and to react to it. This strategy consists of downing all nodes in case the number of reachable ones becomes lower than the minimum number of members in the cluster. This minimum number is defined by the user. This strategy works well when you have a cluster with fixed size of nodes.
 
-Firstly, XComponent focused on the Consistency and High Availability criterions. Then, XComponent integrated an optional strategy in order to detect the network Partition and to react to it. This strategy consists of downing all nodes if the number of reachable ones is lower than the minimum number of members in the cluster. This minimum number is defined by the user. This strategy works well when you are able to define minimum required cluster size and when you have a cluster with fixed size of nodes or fixed size of nodes with specific role.
+Our clustering support allows developpers to implement stateful services, which simplify deployment and the time to process requests is shorter. In a cluster deployment, the application state is scattered across several nodes, this way:
 
-XComponent Cluster allows developpers to implement stateful services, which execute requests based on internal state, with High Availability (HA) and Fault Tolerance (FT). Stateful architectures are powerful, simplify deployment and the time to process requests is shorter. However, in a cluster deployment the application state is scattered across several nodes and this has major impacts on the implementation of HA and FT.
-
-- The context of the request is important: only a node in the cluster can handle a given context because it is the owner of the corresponding state. The cluster must implement a consistent partitioning of the application state among the nodes in the cluster. This is called dynamic sharding (or partitioning). Each node owns a shard at a given time.
+- The context of the request is important: state machines are owned by one and only one node in the cluster; this node will then handle all requests sent to this state machine. The cluster must implement a consistent partitioning strategy for the state machines. This is called *dynamic sharding* (or *partitioning*). Each node owns a shard at a given time.
 
 - When a node fails, another node in the cluster must take over requests formerly handled by the faulty node. This requires continuous state synchronization among the nodes in the cluster.
 
-- When a node joins the cluster, it does not own any state, so it cannot process any requests. Therefore, a protocol for load balancing must be implemented natively in the cluster: old nodes will handover some of their state to the new node. This is called resharding and it is performed by a partial shard handover.
+- When a node joins the cluster, it does not own any state, so it cannot process any requests. Therefore, a protocol for load balancing must be implemented natively in the cluster: old nodes will *handover* some of their state to the new node. This is called *resharding* and it is performed by a partial shard handover.
 
 XComponent Cluster is based on [Akka.Net](https://getakka.net/articles/intro/what-is-akka.html) and [Akka.Cluster](https://getakka.net/articles/clustering/cluster-overview.html). Akka.Cluster features are based on the [cluster gossip](https://getakka.net/articles/clustering/cluster-overview.html#cluster-gossip), a distributed protocol implemented between cluster nodes (cluster members) that allows new nodes/members to join the cluster, existing nodes to leave it and a leader of the cluster to be elected. When the cluster gossip converges, the cluster has an elected leader that undertakes cluster actions like declaring as Up members that joined, declaring as Unreachable members for which a majority of nodes confirms they are unreachable. 
 
