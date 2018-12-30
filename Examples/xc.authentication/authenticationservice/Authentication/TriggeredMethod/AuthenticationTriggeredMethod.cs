@@ -21,7 +21,7 @@ namespace XComponent.Authentication.TriggeredMethod
         /// <summary>
         /// Executing triggeredMethod ExecuteOn_Initializing_Through_Initialize
         /// </summary>
-        public static void ExecuteOn_Initializing_Through_Initialize(XComponent.Common.Event.DefaultEvent defaultEvent, object object_PublicMember, object object_InternalMember, Context context, IInitializeDefaultEventOnInitializingAuthenticationSenderInterface sender)
+        public static void ExecuteOn_Initializing_Through_Initialize(XComponent.Common.Event.DefaultEvent defaultEvent, object object_PublicMember, object object_InternalMember, RuntimeContext context, IInitializeDefaultEventOnInitializingAuthenticationSenderInterface sender)
         {
             if (!TriggeredMethodContext.Instance.Users.Any())
             {
@@ -36,7 +36,7 @@ namespace XComponent.Authentication.TriggeredMethod
         /// <summary>
         /// Executing triggeredMethod ExecuteOn_Up_Through_InitializationSuccess
         /// </summary>
-        public static void ExecuteOn_Up_Through_InitializationSuccess(XComponent.Authentication.UserObject.InitializationSuccess initializationSuccess, object object_PublicMember, object object_InternalMember, Context context, IInitializationSuccessInitializationSuccessOnUpAuthenticationSenderInterface sender)
+        public static void ExecuteOn_Up_Through_InitializationSuccess(XComponent.Authentication.UserObject.InitializationSuccess initializationSuccess, object object_PublicMember, object object_InternalMember, RuntimeContext context, IInitializationSuccessInitializationSuccessOnUpAuthenticationSenderInterface sender)
         {
             sender.CreateHeartBeat(context);
         }

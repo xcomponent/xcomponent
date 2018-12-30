@@ -20,7 +20,7 @@ namespace XComponent.BenchSimpleFork.TriggeredMethod
         /// <summary>
         /// Executing triggeredMethod ExecuteOn_Done_Through_CreateChild
         /// </summary>
-        public static void ExecuteOn_Done_Through_CreateChild(XComponent.BenchSimpleFork.UserObject.CreateChild createChild, object object_PublicMember, object object_InternalMember, Context context, ICreateChildCreateChildOnDoneForkBenchSenderInterface sender)
+        public static void ExecuteOn_Done_Through_CreateChild(XComponent.BenchSimpleFork.UserObject.CreateChild createChild, object object_PublicMember, object object_InternalMember, RuntimeContext context, ICreateChildCreateChildOnDoneForkBenchSenderInterface sender)
         {
             //if (createChild.IsFirst) {
             //	TriggeredMethodContext.Instance.StartBench();

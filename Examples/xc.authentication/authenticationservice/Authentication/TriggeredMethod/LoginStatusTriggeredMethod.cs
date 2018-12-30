@@ -13,7 +13,7 @@ namespace XComponent.Authentication.TriggeredMethod
     public class LoginStatusTriggeredMethod
     {
 
-        public static void ExecuteOn_CheckingLogin_Through_CheckLogin(XComponent.Authentication.UserObject.CheckLogin checkLogin_TriggeringEvent, XComponent.Authentication.UserObject.CheckLogin checkLogin_PublicMember, object object_InternalMember, Context context, ICheckLoginCheckLoginOnCheckingLoginLoginStatusSenderInterface sender)
+        public static void ExecuteOn_CheckingLogin_Through_CheckLogin(XComponent.Authentication.UserObject.CheckLogin checkLogin_TriggeringEvent, XComponent.Authentication.UserObject.CheckLogin checkLogin_PublicMember, object object_InternalMember, RuntimeContext context, ICheckLoginCheckLoginOnCheckingLoginLoginStatusSenderInterface sender)
         {
             checkLogin_PublicMember.Login = checkLogin_TriggeringEvent.Login;
             checkLogin_PublicMember.Password = checkLogin_TriggeringEvent.Password;
