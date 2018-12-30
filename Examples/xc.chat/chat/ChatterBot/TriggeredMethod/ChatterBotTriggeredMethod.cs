@@ -10,7 +10,7 @@ namespace XComponent.ChatterBot.TriggeredMethod
 {
     public static class ChatterBotTriggeredMethod
     {
-        public static void ExecuteOn_Up_Through_Receive(XComponent.ChatManager.UserObject.PublishedMessage publishedMessage, XComponent.ChatterBot.UserObject.ChatterBot chatterBot, object object_InternalMember, Context context, IReceivePublishedMessageOnUpChatterBotSenderInterface sender)
+        public static void ExecuteOn_Up_Through_Receive(XComponent.ChatManager.UserObject.PublishedMessage publishedMessage, XComponent.ChatterBot.UserObject.ChatterBot chatterBot, object object_InternalMember, RuntimeContext context, IReceivePublishedMessageOnUpChatterBotSenderInterface sender)
         {
             if (publishedMessage.Message.Contains(chatterBot.Name))
             {
@@ -19,8 +19,8 @@ namespace XComponent.ChatterBot.TriggeredMethod
             }
         }
 
-        private static void SendMessage(string message, UserObject.ChatterBot chatterBot, Context context,
-            Action<Context, SentMessage, string> sendMessageAction)
+        private static void SendMessage(string message, UserObject.ChatterBot chatterBot, RuntimeContext context,
+            Action<RuntimeContext, SentMessage, string> sendMessageAction)
         {
             sendMessageAction(context, new SentMessage()
             {
@@ -29,7 +29,7 @@ namespace XComponent.ChatterBot.TriggeredMethod
             }, null);
         }
 
-        public static void ExecuteOn_Up_Through_Init(XComponent.Common.Event.DefaultEvent defaultEvent, XComponent.ChatterBot.UserObject.ChatterBot chatterBot, object object_InternalMember, Context context, IInitDefaultEventOnUpChatterBotSenderInterface sender)
+        public static void ExecuteOn_Up_Through_Init(XComponent.Common.Event.DefaultEvent defaultEvent, XComponent.ChatterBot.UserObject.ChatterBot chatterBot, object object_InternalMember, RuntimeContext context, IInitDefaultEventOnUpChatterBotSenderInterface sender)
         {
             TriggeredMethodContext.Instance.GetDefaultLogger().Info("Chatter bot is up!");
             chatterBot.Name = "RealBot";

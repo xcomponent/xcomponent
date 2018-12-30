@@ -9,7 +9,7 @@ namespace XComponent.ChatterBot.TriggeredMethod
 {
     public static class SentMessageTriggeredMethod
     {
-        public static void ExecuteOn_Published_Through_Send(XComponent.ChatManager.UserObject.SentMessage sentMessage, XComponent.ChatManager.UserObject.SentMessage sentMessage_PublicMember, object object_InternalMember, Context context, ISendSentMessageOnPublishedSentMessageSenderInterface sender)
+        public static void ExecuteOn_Published_Through_Send(XComponent.ChatManager.UserObject.SentMessage sentMessage, XComponent.ChatManager.UserObject.SentMessage sentMessage_PublicMember, object object_InternalMember, RuntimeContext context, ISendSentMessageOnPublishedSentMessageSenderInterface sender)
         {
             XCClone.Clone(sentMessage, sentMessage_PublicMember);
         }
