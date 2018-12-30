@@ -34,7 +34,7 @@ namespace OrderProcessingClient
             {
                 ClientApiOptions clientApiOptions = new ClientApiOptions(); //fill this object to override default xcApi parameters
 
-                if (myOrderProcessingApi.Init(myOrderProcessingApi.Api.DefaultXcApiFileName, clientApiOptions))
+                if (myOrderProcessingApi.Init(@"C:\Projects\xcomponent\Examples\xc.orderprocessing\Runtime\Api\xcassemblies\OrderProcessingAPI.xcApi", clientApiOptions))
                 {
                     int orderId = 0;
                     using (var orderCreationEvent = new AutoResetEvent(false))

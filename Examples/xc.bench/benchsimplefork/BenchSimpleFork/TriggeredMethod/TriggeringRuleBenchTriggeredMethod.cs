@@ -20,7 +20,7 @@ namespace XComponent.BenchSimpleFork.TriggeredMethod
         /// <summary>
         /// Executing triggeredMethod ExecuteOn_Done_Through_TriggerTransition
         /// </summary>
-        public static void ExecuteOn_Done_Through_TriggerTransition(XComponent.BenchSimpleFork.UserObject.TriggerTransition triggerTransition, object object_PublicMember, XComponent.BenchSimpleFork.UserObject.TriggeringRuleBench triggeringRuleBench, Context context, ITriggerTransitionTriggerTransitionOnDoneTriggeringRuleBenchSenderInterface sender)
+        public static void ExecuteOn_Done_Through_TriggerTransition(XComponent.BenchSimpleFork.UserObject.TriggerTransition triggerTransition, object object_PublicMember, XComponent.BenchSimpleFork.UserObject.TriggeringRuleBench triggeringRuleBench, RuntimeContext context, ITriggerTransitionTriggerTransitionOnDoneTriggeringRuleBenchSenderInterface sender)
         {
             TriggeredMethodContext.Instance.IncrementInstances();
             if (triggeringRuleBench.IsLast)
@@ -37,7 +37,7 @@ namespace XComponent.BenchSimpleFork.TriggeredMethod
         /// <summary>
         /// Executing triggeredMethod ExecuteOn_Benching_Through_CreateInstance
         /// </summary>
-        public static void ExecuteOn_Benching_Through_CreateInstance(XComponent.BenchSimpleFork.UserObject.CreateInstance createInstance, object object_PublicMember, XComponent.BenchSimpleFork.UserObject.TriggeringRuleBench triggeringRuleBench, Context context, ICreateInstanceCreateInstanceOnBenchingTriggeringRuleBenchSenderInterface sender)
+        public static void ExecuteOn_Benching_Through_CreateInstance(XComponent.BenchSimpleFork.UserObject.CreateInstance createInstance, object object_PublicMember, XComponent.BenchSimpleFork.UserObject.TriggeringRuleBench triggeringRuleBench, RuntimeContext context, ICreateInstanceCreateInstanceOnBenchingTriggeringRuleBenchSenderInterface sender)
         {
             triggeringRuleBench.Id = createInstance.Id;
             triggeringRuleBench.IsLast = createInstance.IsLast;

@@ -43,17 +43,21 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="XComponent.Core">
-      <HintPath>..\..\..\Runtime\Api\xcassemblies\XComponent.Core.dll</HintPath>
+    <Reference Include="XComponent.Core, Version=5.0.0.30001, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\xcassemblies\XComponent.Core.dll</HintPath>
     </Reference>
-    <Reference Include="XComponent.Order.UserObject">
-      <HintPath>..\..\..\Runtime\Api\xcassemblies\XComponent.Order.UserObject.dll</HintPath>
+    <Reference Include="XComponent.Order.UserObject, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\xcassemblies\XComponent.Order.UserObject.dll</HintPath>
     </Reference>
-    <Reference Include="XComponent.OrderProcessing.ClientApi">
-      <HintPath>..\..\..\Runtime\Api\xcassemblies\XComponent.OrderProcessing.ClientApi.dll</HintPath>
+    <Reference Include="XComponent.OrderProcessing.ClientApi, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\xcassemblies\XComponent.OrderProcessing.ClientApi.dll</HintPath>
     </Reference>
-    <Reference Include="XComponent.Trade.UserObject">
-      <HintPath>..\..\..\Runtime\Api\xcassemblies\XComponent.Trade.UserObject.dll</HintPath>
+    <Reference Include="XComponent.Trade.UserObject, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\xcassemblies\XComponent.Trade.UserObject.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

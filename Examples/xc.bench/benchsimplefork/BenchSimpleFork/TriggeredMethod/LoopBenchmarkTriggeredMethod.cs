@@ -20,7 +20,7 @@ namespace XComponent.BenchSimpleFork.TriggeredMethod
         /// <summary>
         /// Executing triggeredMethod ExecuteOn_Benching_Through_TriggerLoopTransition
         /// </summary>
-        public static void ExecuteOn_Benching_Through_TriggerLoopTransition(XComponent.BenchSimpleFork.UserObject.TriggerLoopTransition triggerLoopTransition, object object_PublicMember, object object_InternalMember, Context context, ITriggerLoopTransitionTriggerLoopTransitionOnBenchingLoopBenchmarkSenderInterface sender)
+        public static void ExecuteOn_Benching_Through_TriggerLoopTransition(XComponent.BenchSimpleFork.UserObject.TriggerLoopTransition triggerLoopTransition, object object_PublicMember, object object_InternalMember, RuntimeContext context, ITriggerLoopTransitionTriggerLoopTransitionOnBenchingLoopBenchmarkSenderInterface sender)
         {
             TriggeredMethodContext.Instance.IncrementInstances();
             if (triggerLoopTransition.IsLast)
@@ -38,7 +38,7 @@ namespace XComponent.BenchSimpleFork.TriggeredMethod
         /// <summary>
         /// Executing triggeredMethod ExecuteOn_Benching_Through_StartLoopBench
         /// </summary>
-        public static void ExecuteOn_Benching_Through_StartLoopBench(XComponent.BenchSimpleFork.UserObject.StartLoopBench startLoopBench, object object_PublicMember, object object_InternalMember, Context context, IStartLoopBenchStartLoopBenchOnBenchingLoopBenchmarkSenderInterface sender)
+        public static void ExecuteOn_Benching_Through_StartLoopBench(XComponent.BenchSimpleFork.UserObject.StartLoopBench startLoopBench, object object_PublicMember, object object_InternalMember, RuntimeContext context, IStartLoopBenchStartLoopBenchOnBenchingLoopBenchmarkSenderInterface sender)
         {
             TriggerLoopTransition trigger = new TriggerLoopTransition();
             for (int i = 0; i < startLoopBench.NbInstances - 1; i++)

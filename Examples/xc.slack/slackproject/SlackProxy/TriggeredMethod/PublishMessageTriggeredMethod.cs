@@ -17,7 +17,7 @@ namespace XComponent.SlackProxy.TriggeredMethod
 
     public static class PublishMessageTriggeredMethod
     {
-        public static void ExecuteOn_Publishing_Through_SendMessage(XComponent.SlackProxy.UserObject.SendMessage sendMessage, XComponent.SlackProxy.UserObject.PublishMessage publishMessage, object object_InternalMember, Context context, ISendMessageSendMessageOnPublishingPublishMessageSenderInterface sender)
+        public static void ExecuteOn_Publishing_Through_SendMessage(XComponent.SlackProxy.UserObject.SendMessage sendMessage, XComponent.SlackProxy.UserObject.PublishMessage publishMessage, object object_InternalMember, RuntimeContext context, ISendMessageSendMessageOnPublishingPublishMessageSenderInterface sender)
         {
             try
             {

@@ -20,7 +20,7 @@ namespace XComponent.BenchSimpleFork.TriggeredMethod
         /// <summary>
         /// Executing triggeredMethod ExecuteOn_Benching_Through_TriggerTransition
         /// </summary>
-        public static void ExecuteOn_Benching_Through_TriggerTransition(XComponent.BenchSimpleFork.UserObject.TriggerTransition triggerTransition, object object_PublicMember, XComponent.BenchSimpleFork.UserObject.LoopTriggeringRuleBench loopTriggeringRuleBench, Context context, ITriggerTransitionTriggerTransitionOnBenchingLoopTriggeringRuleBenchSenderInterface sender)
+        public static void ExecuteOn_Benching_Through_TriggerTransition(XComponent.BenchSimpleFork.UserObject.TriggerTransition triggerTransition, object object_PublicMember, XComponent.BenchSimpleFork.UserObject.LoopTriggeringRuleBench loopTriggeringRuleBench, RuntimeContext context, ITriggerTransitionTriggerTransitionOnBenchingLoopTriggeringRuleBenchSenderInterface sender)
         {
             TriggeredMethodContext.Instance.IncrementInstances();
             if (triggerTransition.IsLast)
@@ -38,7 +38,7 @@ namespace XComponent.BenchSimpleFork.TriggeredMethod
         /// <summary>
         /// Executing triggeredMethod ExecuteOn_Benching_Through_StartLoopRuleBench
         /// </summary>
-        public static void ExecuteOn_Benching_Through_StartLoopRuleBench(XComponent.BenchSimpleFork.UserObject.StartLoopRuleBench startLoopRuleBench, object object_PublicMember, XComponent.BenchSimpleFork.UserObject.LoopTriggeringRuleBench loopTriggeringRuleBench, Context context, IStartLoopRuleBenchStartLoopRuleBenchOnBenchingLoopTriggeringRuleBenchSenderInterface sender)
+        public static void ExecuteOn_Benching_Through_StartLoopRuleBench(XComponent.BenchSimpleFork.UserObject.StartLoopRuleBench startLoopRuleBench, object object_PublicMember, XComponent.BenchSimpleFork.UserObject.LoopTriggeringRuleBench loopTriggeringRuleBench, RuntimeContext context, IStartLoopRuleBenchStartLoopRuleBenchOnBenchingLoopTriggeringRuleBenchSenderInterface sender)
         {
             loopTriggeringRuleBench.Id = new Random().Next();
             TriggerTransition trigger = new TriggerTransition { Id = loopTriggeringRuleBench.Id };
