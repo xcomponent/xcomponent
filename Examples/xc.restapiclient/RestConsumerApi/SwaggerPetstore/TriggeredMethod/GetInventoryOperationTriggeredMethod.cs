@@ -14,7 +14,7 @@ namespace XComponent.SwaggerPetstore.TriggeredMethod
 {
     public static class GetInventoryOperationTriggeredMethod
     {
-        public static void ExecuteOn_SendingRequest_Through_CreateGetInventoryHttpRequest(XComponent.SwaggerPetstore.UserObject.GetInventoryOperation getInventoryOperation, XComponent.SwaggerPetstore.UserObject.GetInventoryOperation getInventoryOperation_PublicMember, object object_InternalMember, Context context, ICreateGetInventoryHttpRequestGetInventoryOperationOnSendingRequestGetInventoryOperationSenderInterface sender)
+        public static void ExecuteOn_SendingRequest_Through_CreateGetInventoryHttpRequest(XComponent.SwaggerPetstore.UserObject.GetInventoryOperation getInventoryOperation, XComponent.SwaggerPetstore.UserObject.GetInventoryOperation getInventoryOperation_PublicMember, object object_InternalMember, RuntimeContext context, ICreateGetInventoryHttpRequestGetInventoryOperationOnSendingRequestGetInventoryOperationSenderInterface sender)
         {
             XComponent.Shared.XCClone.Clone(getInventoryOperation, getInventoryOperation_PublicMember);
 

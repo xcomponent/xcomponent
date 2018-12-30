@@ -14,7 +14,7 @@ namespace XComponent.SwaggerPetstore.TriggeredMethod
 {
     public static class UpdatePetWithFormOperationTriggeredMethod
     {
-        public static void ExecuteOn_SendingRequest_Through_CreateUpdatePetWithFormHttpRequest(XComponent.SwaggerPetstore.UserObject.UpdatePetWithFormOperation updatePetWithFormOperation, XComponent.SwaggerPetstore.UserObject.UpdatePetWithFormOperation updatePetWithFormOperation_PublicMember, object object_InternalMember, Context context, ICreateUpdatePetWithFormHttpRequestUpdatePetWithFormOperationOnSendingRequestUpdatePetWithFormOperationSenderInterface sender)
+        public static void ExecuteOn_SendingRequest_Through_CreateUpdatePetWithFormHttpRequest(XComponent.SwaggerPetstore.UserObject.UpdatePetWithFormOperation updatePetWithFormOperation, XComponent.SwaggerPetstore.UserObject.UpdatePetWithFormOperation updatePetWithFormOperation_PublicMember, object object_InternalMember, RuntimeContext context, ICreateUpdatePetWithFormHttpRequestUpdatePetWithFormOperationOnSendingRequestUpdatePetWithFormOperationSenderInterface sender)
         {
             XComponent.Shared.XCClone.Clone(updatePetWithFormOperation, updatePetWithFormOperation_PublicMember);
 
