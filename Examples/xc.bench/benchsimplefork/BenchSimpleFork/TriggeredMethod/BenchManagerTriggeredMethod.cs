@@ -20,7 +20,7 @@ namespace XComponent.BenchSimpleFork.TriggeredMethod
         /// <summary>
         /// Executing triggeredMethod ExecuteOn_BenchReady_Through_StartBench
         /// </summary>
-        public static void ExecuteOn_BenchReady_Through_StartSimpleForkBench(XComponent.BenchSimpleFork.UserObject.StartSimpleForkBench startSimpleForkBench, object object_PublicMember, object object_InternalMember, Context context, IStartSimpleForkBenchStartSimpleForkBenchOnBenchReadyBenchManagerSenderInterface sender)
+        public static void ExecuteOn_BenchReady_Through_StartSimpleForkBench(XComponent.BenchSimpleFork.UserObject.StartSimpleForkBench startSimpleForkBench, object object_PublicMember, object object_InternalMember, RuntimeContext context, IStartSimpleForkBenchStartSimpleForkBenchOnBenchReadyBenchManagerSenderInterface sender)
         {
             CreateChild child;
 
@@ -41,7 +41,7 @@ namespace XComponent.BenchSimpleFork.TriggeredMethod
         /// <summary>
         /// Executing triggeredMethod ExecuteOn_BenchReady_Through_StartTriggeringRulesBench
         /// </summary>
-        public static void ExecuteOn_BenchReady_Through_StartTriggeringRulesBench(XComponent.BenchSimpleFork.UserObject.StartTriggeringRulesBench startTriggeringRulesBench, object object_PublicMember, object object_InternalMember, Context context, IStartTriggeringRulesBenchStartTriggeringRulesBenchOnBenchReadyBenchManagerSenderInterface sender)
+        public static void ExecuteOn_BenchReady_Through_StartTriggeringRulesBench(XComponent.BenchSimpleFork.UserObject.StartTriggeringRulesBench startTriggeringRulesBench, object object_PublicMember, object object_InternalMember, RuntimeContext context, IStartTriggeringRulesBenchStartTriggeringRulesBenchOnBenchReadyBenchManagerSenderInterface sender)
         {
             CreateInstance createInstance;
             for (int i = 0; i < startTriggeringRulesBench.NbInstances - 1; i++)

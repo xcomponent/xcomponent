@@ -20,7 +20,7 @@ namespace XComponent.Order.TriggeredMethod
         /// <summary>
         /// Executing triggeredMethod ExecuteOn_Filled_Through_PublishOrderFilled
         /// </summary>
-        public static void ExecuteOn_Filled_Through_PublishOrderFilled(XComponent.Order.UserObject.OrderExecution orderExecution_TriggeringEvent, XComponent.Order.UserObject.OrderExecution orderExecution_PublicMember, object object_InternalMember, Context context, IPublishOrderFilledOrderExecutionOnFilledExecutionFacadeSenderInterface sender)
+        public static void ExecuteOn_Filled_Through_PublishOrderFilled(XComponent.Order.UserObject.OrderExecution orderExecution_TriggeringEvent, XComponent.Order.UserObject.OrderExecution orderExecution_PublicMember, object object_InternalMember, RuntimeContext context, IPublishOrderFilledOrderExecutionOnFilledExecutionFacadeSenderInterface sender)
         {
             XComponent.Shared.XCClone.Clone(orderExecution_TriggeringEvent, orderExecution_PublicMember);
         }

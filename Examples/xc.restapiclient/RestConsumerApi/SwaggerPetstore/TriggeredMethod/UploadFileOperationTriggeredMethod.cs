@@ -14,7 +14,7 @@ namespace XComponent.SwaggerPetstore.TriggeredMethod
 {
     public static class UploadFileOperationTriggeredMethod
     {
-        public static void ExecuteOn_SendingRequest_Through_CreateUploadFileHttpRequest(XComponent.SwaggerPetstore.UserObject.UploadFileOperation uploadFileOperation, XComponent.SwaggerPetstore.UserObject.UploadFileOperation uploadFileOperation_PublicMember, object object_InternalMember, Context context, ICreateUploadFileHttpRequestUploadFileOperationOnSendingRequestUploadFileOperationSenderInterface sender)
+        public static void ExecuteOn_SendingRequest_Through_CreateUploadFileHttpRequest(XComponent.SwaggerPetstore.UserObject.UploadFileOperation uploadFileOperation, XComponent.SwaggerPetstore.UserObject.UploadFileOperation uploadFileOperation_PublicMember, object object_InternalMember, RuntimeContext context, ICreateUploadFileHttpRequestUploadFileOperationOnSendingRequestUploadFileOperationSenderInterface sender)
         {
             XComponent.Shared.XCClone.Clone(uploadFileOperation, uploadFileOperation_PublicMember);
 

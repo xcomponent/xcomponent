@@ -14,7 +14,7 @@ namespace XComponent.SwaggerPetstore.TriggeredMethod
 {
     public static class CreateUsersWithListInputOperationTriggeredMethod
     {
-        public static void ExecuteOn_SendingRequest_Through_CreateCreateUsersWithListInputHttpRequest(XComponent.SwaggerPetstore.UserObject.CreateUsersWithListInputOperation createUsersWithListInputOperation, XComponent.SwaggerPetstore.UserObject.CreateUsersWithListInputOperation createUsersWithListInputOperation_PublicMember, object object_InternalMember, Context context, ICreateCreateUsersWithListInputHttpRequestCreateUsersWithListInputOperationOnSendingRequestCreateUsersWithListInputOperationSenderInterface sender)
+        public static void ExecuteOn_SendingRequest_Through_CreateCreateUsersWithListInputHttpRequest(XComponent.SwaggerPetstore.UserObject.CreateUsersWithListInputOperation createUsersWithListInputOperation, XComponent.SwaggerPetstore.UserObject.CreateUsersWithListInputOperation createUsersWithListInputOperation_PublicMember, object object_InternalMember, RuntimeContext context, ICreateCreateUsersWithListInputHttpRequestCreateUsersWithListInputOperationOnSendingRequestCreateUsersWithListInputOperationSenderInterface sender)
         {
             XComponent.Shared.XCClone.Clone(createUsersWithListInputOperation, createUsersWithListInputOperation_PublicMember);
 

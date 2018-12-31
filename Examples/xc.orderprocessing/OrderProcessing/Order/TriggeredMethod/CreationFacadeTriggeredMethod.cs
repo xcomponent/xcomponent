@@ -20,7 +20,7 @@ namespace XComponent.Order.TriggeredMethod
         /// <summary>
         /// Executing triggeredMethod ExecuteOn_Created_Through_PublishOrderCreation
         /// </summary>
-        public static void ExecuteOn_Created_Through_PublishOrderCreation(XComponent.Order.UserObject.OrderCreation orderCreation_TriggeringEvent, XComponent.Order.UserObject.OrderCreation orderCreation_PublicMember, object object_InternalMember, Context context, IPublishOrderCreationOrderCreationOnCreatedCreationFacadeSenderInterface sender)
+        public static void ExecuteOn_Created_Through_PublishOrderCreation(XComponent.Order.UserObject.OrderCreation orderCreation_TriggeringEvent, XComponent.Order.UserObject.OrderCreation orderCreation_PublicMember, object object_InternalMember, RuntimeContext context, IPublishOrderCreationOrderCreationOnCreatedCreationFacadeSenderInterface sender)
         {
             XComponent.Shared.XCClone.Clone(orderCreation_TriggeringEvent, orderCreation_PublicMember);
         }

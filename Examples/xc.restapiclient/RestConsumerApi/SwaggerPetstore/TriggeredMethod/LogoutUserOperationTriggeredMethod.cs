@@ -14,7 +14,7 @@ namespace XComponent.SwaggerPetstore.TriggeredMethod
 {
     public static class LogoutUserOperationTriggeredMethod
     {
-        public static void ExecuteOn_SendingRequest_Through_CreateLogoutUserHttpRequest(XComponent.SwaggerPetstore.UserObject.LogoutUserOperation logoutUserOperation, XComponent.SwaggerPetstore.UserObject.LogoutUserOperation logoutUserOperation_PublicMember, object object_InternalMember, Context context, ICreateLogoutUserHttpRequestLogoutUserOperationOnSendingRequestLogoutUserOperationSenderInterface sender)
+        public static void ExecuteOn_SendingRequest_Through_CreateLogoutUserHttpRequest(XComponent.SwaggerPetstore.UserObject.LogoutUserOperation logoutUserOperation, XComponent.SwaggerPetstore.UserObject.LogoutUserOperation logoutUserOperation_PublicMember, object object_InternalMember, RuntimeContext context, ICreateLogoutUserHttpRequestLogoutUserOperationOnSendingRequestLogoutUserOperationSenderInterface sender)
         {
             XComponent.Shared.XCClone.Clone(logoutUserOperation, logoutUserOperation_PublicMember);
 

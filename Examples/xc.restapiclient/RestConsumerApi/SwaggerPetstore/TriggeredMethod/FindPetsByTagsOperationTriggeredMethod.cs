@@ -14,7 +14,7 @@ namespace XComponent.SwaggerPetstore.TriggeredMethod
 {
     public static class FindPetsByTagsOperationTriggeredMethod
     {
-        public static void ExecuteOn_SendingRequest_Through_CreateFindPetsByTagsHttpRequest(XComponent.SwaggerPetstore.UserObject.FindPetsByTagsOperation findPetsByTagsOperation, XComponent.SwaggerPetstore.UserObject.FindPetsByTagsOperation findPetsByTagsOperation_PublicMember, object object_InternalMember, Context context, ICreateFindPetsByTagsHttpRequestFindPetsByTagsOperationOnSendingRequestFindPetsByTagsOperationSenderInterface sender)
+        public static void ExecuteOn_SendingRequest_Through_CreateFindPetsByTagsHttpRequest(XComponent.SwaggerPetstore.UserObject.FindPetsByTagsOperation findPetsByTagsOperation, XComponent.SwaggerPetstore.UserObject.FindPetsByTagsOperation findPetsByTagsOperation_PublicMember, object object_InternalMember, RuntimeContext context, ICreateFindPetsByTagsHttpRequestFindPetsByTagsOperationOnSendingRequestFindPetsByTagsOperationSenderInterface sender)
         {
             XComponent.Shared.XCClone.Clone(findPetsByTagsOperation, findPetsByTagsOperation_PublicMember);
 

@@ -14,7 +14,7 @@ namespace XComponent.SwaggerPetstore.TriggeredMethod
 {
     public static class FindPetsByStatusOperationTriggeredMethod
     {
-        public static void ExecuteOn_SendingRequest_Through_CreateFindPetsByStatusHttpRequest(XComponent.SwaggerPetstore.UserObject.FindPetsByStatusOperation findPetsByStatusOperation, XComponent.SwaggerPetstore.UserObject.FindPetsByStatusOperation findPetsByStatusOperation_PublicMember, object object_InternalMember, Context context, ICreateFindPetsByStatusHttpRequestFindPetsByStatusOperationOnSendingRequestFindPetsByStatusOperationSenderInterface sender)
+        public static void ExecuteOn_SendingRequest_Through_CreateFindPetsByStatusHttpRequest(XComponent.SwaggerPetstore.UserObject.FindPetsByStatusOperation findPetsByStatusOperation, XComponent.SwaggerPetstore.UserObject.FindPetsByStatusOperation findPetsByStatusOperation_PublicMember, object object_InternalMember, RuntimeContext context, ICreateFindPetsByStatusHttpRequestFindPetsByStatusOperationOnSendingRequestFindPetsByStatusOperationSenderInterface sender)
         {
             XComponent.Shared.XCClone.Clone(findPetsByStatusOperation, findPetsByStatusOperation_PublicMember);
 

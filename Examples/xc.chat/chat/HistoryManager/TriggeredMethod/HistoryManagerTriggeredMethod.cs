@@ -13,18 +13,18 @@ namespace XComponent.HistoryManager.TriggeredMethod
 {
     public static class HistoryManagerTriggeredMethod
     {
-        public static void ExecuteOn_Up_Through_MessageReceived(XComponent.ChatManager.UserObject.PublishedMessage publishedMessage, XComponent.HistoryManager.UserObject.PublishedHistory publishedHistory, object object_InternalMember, Context context, IMessageReceivedPublishedMessageOnUpHistoryManagerSenderInterface sender)
+        public static void ExecuteOn_Up_Through_MessageReceived(XComponent.ChatManager.UserObject.PublishedMessage publishedMessage, XComponent.HistoryManager.UserObject.PublishedHistory publishedHistory, object object_InternalMember, RuntimeContext context, IMessageReceivedPublishedMessageOnUpHistoryManagerSenderInterface sender)
         {
             // Notice: No concurrency here, thanks to our bus + akka core.
             publishedHistory.Messages.Add(publishedMessage);
         }
 
-        public static void ExecuteOn_Up_Through_Up(XComponent.Common.Event.DefaultEvent defaultEvent, XComponent.HistoryManager.UserObject.PublishedHistory publishedHistory, object object_InternalMember, Context context, IUpDefaultEventOnUpHistoryManagerSenderInterface sender)
+        public static void ExecuteOn_Up_Through_Up(XComponent.Common.Event.DefaultEvent defaultEvent, XComponent.HistoryManager.UserObject.PublishedHistory publishedHistory, object object_InternalMember, RuntimeContext context, IUpDefaultEventOnUpHistoryManagerSenderInterface sender)
         {
             TriggeredMethodContext.Instance.GetDefaultLogger().Info("History manager started!");
         }
 
-        public static void ExecuteOn_Up_Through_HistoryRequestReceived(XComponent.HistoryManager.UserObject.HistoryRequest historyRequest, XComponent.HistoryManager.UserObject.PublishedHistory publishedHistory, object object_InternalMember, Context context, IHistoryRequestReceivedHistoryRequestOnUpHistoryManagerSenderInterface sender)
+        public static void ExecuteOn_Up_Through_HistoryRequestReceived(XComponent.HistoryManager.UserObject.HistoryRequest historyRequest, XComponent.HistoryManager.UserObject.PublishedHistory publishedHistory, object object_InternalMember, RuntimeContext context, IHistoryRequestReceivedHistoryRequestOnUpHistoryManagerSenderInterface sender)
         {
             TriggeredMethodContext.Instance.GetDefaultLogger().Info($"Request received for messages in room {historyRequest.RoomName}...");
             TriggeredMethodContext.Instance.GetDefaultLogger().Info($"Sending response in private topic {historyRequest.ResponseTopic}...");

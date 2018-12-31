@@ -49,5 +49,5 @@
     <Compile Include="PublishedMessage.cs" />
     <Compile Include="SentMessage.cs" />
   </ItemGroup>
-  <Import Condition="true" Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" Condition="true" />
 </Project>
