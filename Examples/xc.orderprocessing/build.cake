@@ -110,8 +110,7 @@ Task("GenerateRuntimeCmd")
     runClientAppCmd += "cd OrderProcessing/OrderProcessingClient/OrderProcessingClient/bin/Debug/\n";
     runClientAppCmd += "timeout /t 15\n";
     runClientAppCmd += "OrderProcessingClient.exe\n";
-
-    fileContents += "start runClientApp.cmd\n";
+	FileWriteText("runClientApp.cmd", runClientAppCmd);
 
     var runSpyCmd = "";
     runSpyCmd += "cd " + xcAssembliesPath + "\n";
