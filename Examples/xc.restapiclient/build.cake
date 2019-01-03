@@ -111,7 +111,7 @@ Task("GenerateRuntimeCmd")
     runClientAppCmd += "timeout /t 15\n";
     runClientAppCmd += "ConsoleApplication.exe\n";
 	FileWriteText(@"runClientApp.cmd", runClientAppCmd);
-	
+
     var runSpyCmd = "";
     runSpyCmd += "cd " + xcAssembliesPath + "\n";
     runSpyCmd += xcSpyBinaryFilePath + " . --privateTopic=privateTopic\n";
