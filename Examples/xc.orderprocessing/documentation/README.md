@@ -376,7 +376,9 @@ Here is a step by step guide to implementing the Trade component
         }
 ```
    * Add a reference to the Order component so that user objects published by its facades (OrderCreation and OrderExecution) are available in the Trade component. 
-   To do so, in the Trade component, click on Component => Edit and check Order, then rebuild the Trade component.
+   To do so, in the Trade component, click on Component => Edit (in Reference) and check Order, then rebuild the Trade component.
+ ![TradeExecution user object image](images/add_reference.jpg)
+
  * Create the TradeExecution user object:
  
  ![TradeExecution user object image](images/add_tradeexecution_userobject.jpg)
