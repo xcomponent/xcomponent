@@ -65,7 +65,7 @@ A client API enables you to define how client applications interact with your mi
  > It is important to point out that an event notification (based on the public member) is published when the state of the state machine is updated.
   
  * Now, we want to add a custom action (code) on the *Done* state when the *SayHello* transition is triggered.
- Just select the *Done* state and check the triggered method called *SayHello* (see the following figure)
+ Just select the *Done* state and select *Native C#* option of the triggered method called *SayHello* (see the following figure)
   
  <img src="images/triggered_method.jpg" width="330" />
   
