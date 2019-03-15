@@ -91,33 +91,9 @@ In order to reduce the number of user objects we use the same triggering event f
             get { return Quantity - ExecutedQuantity; }
         }
 
-        private DateTime creationDate;
+        public DateTime CreationDate { get; set; }
 
-        public DateTime CreationDate
-        {
-            get
-            {
-                return this.creationDate;
-            }
-            set
-            {
-                this.creationDate = value;
-            }
-        }
-
-        private DateTime? executionDate;
-
-        public DateTime? ExecutionDate
-        {
-            get
-            {
-                return this.executionDate;
-            }
-            set
-            {
-                this.executionDate = value;
-            }
-        }
+        public DateTime? ExecutionDate { get; set; }
 ```
  
 * Create the CreationFaçade state machine
@@ -142,7 +118,7 @@ Use a triggering event of type OrderCreation
 ```cs
             private static int currentOrderId;
     
-            public static void ExecuteOn_Pending_Through_CreateOrder(XComponent.Order.UserObject.OrderInput orderInput, XComponent.Order.UserObject.Order order, object object_InternalMember, Context context, ICreateOrderOrderInputOnPendingOrderSenderInterface sender)
+            public static void ExecuteOn_Pending_Through_CreateOrder(XComponent.Order.UserObject.OrderInput orderInput, XComponent.Order.UserObject.Order order, object object_InternalMember, RuntimeContext context, ICreateOrderOrderInputOnPendingOrderSenderInterface sender)
             {
                 order.Id = System.Threading.Interlocked.Increment(ref currentOrderId);
                 order.Quantity = orderInput.Quantity;
