@@ -101,7 +101,13 @@
   "resolutions": {
     "**/**/js-yaml": "^3.13.1",
     "**/**/tunnel-agent": "^0.6.0",
-    "**/**/braces": "^2.3.1"
+    "**/**/braces": "^2.3.1",
+    "**/**/tar": "^2.2.2",
+    "**/**/handlebars": "^4.0.14",
+    "**/**/lodash": "^4.7.13",
+    "**/**/lodash.template": "^4.5.0",
+    "**/**/lodash-es": "^4.17.14",
+    "**/**/webpack-dev-server": "^3.1.11"
   }
 
 }
