@@ -53,7 +53,7 @@
     "prop-types": "^15.5.8",
     "react": "^16.1.0",
     "react-collapse": "^4.0.2",
-    "react-dom": "^16.1.0",
+    "react-dom": "^16.1.2",
     "react-height": "^3.0.0",
     "react-intl": "^2.2.3",
     "react-motion": "^0.5.0",
